@@ -1,0 +1,9 @@
+# Example private linkset: the same (fictional) person under two publishers' IRIs.
+# Kept apart from both datasets; load it only when cross-organisation identity
+# is wanted (and permitted — membership data is personal data).
+
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix sor:  <https://example.org/soror-exemplum/> .
+@prefix club: <https://example.org/lanternmere/> .
+
+sor:ada owl:sameAs club:hb-member-12 .

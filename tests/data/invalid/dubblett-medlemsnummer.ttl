@@ -1,0 +1,14 @@
+# EXPECT: membership number 101 used twice in the same organisation
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:a a foaf:Person .
+ex:b a foaf:Person .
+ex:ma a mbr:Membership ; org:member ex:a ; org:organization ex:Club ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipNumber 101 .
+ex:mb a mbr:Membership ; org:member ex:b ; org:organization ex:Club ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipNumber 101 .

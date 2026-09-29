@@ -1,0 +1,40 @@
+# CQ9: A club inventory — one row per organisation with type, status,
+# ownership model, founding year, current address and coordinates, website,
+# current secretary (a term of office with no end date) and latest member count.
+
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:    <https://w3id.org/membership#>
+PREFIX mbrc:   <https://w3id.org/membership/code/>
+
+SELECT ?club ?type ?status ?ownership ?founded ?street ?city ?country ?lat ?long ?website ?secretary ?members ?asOf
+WHERE {
+    ?c a mbr:MembershipOrganization ;
+       rdfs:label ?club ;
+       org:classification/skos:prefLabel ?type .
+    FILTER (lang(?type) = "en" && lang(?club) = "en")
+    OPTIONAL { ?c mbr:organizationStatus/skos:prefLabel ?status . FILTER (lang(?status) = "en") }
+    OPTIONAL { ?c mbr:ownershipModel/skos:prefLabel ?ownership . FILTER (lang(?ownership) = "en") }
+    OPTIONAL { ?c mbr:foundingDate ?founded }
+    OPTIONAL {
+        ?c org:hasSite ?site .
+        OPTIONAL {
+            ?site schema:address ?a .
+            FILTER NOT EXISTS { ?a mbr:endDate ?former }      # current address only
+            ?a schema:addressLocality ?city ; schema:addressCountry ?country .
+            OPTIONAL { ?a schema:streetAddress ?street }
+        }
+        OPTIONAL { ?site schema:geo ?g . ?g schema:latitude ?lat ; schema:longitude ?long }
+    }
+    OPTIONAL { ?c schema:url ?website }
+    OPTIONAL {
+        ?t a mbr:Tenure ; org:organization ?c ; org:role ?r ; org:member ?p .
+        ?r skos:exactMatch? mbrc:secretary .
+        FILTER NOT EXISTS { ?t mbr:endDate ?end }
+        ?p schema:name ?secretary .
+    }
+    OPTIONAL { ?c mbr:hasMemberCount ?mc . ?mc mbr:count ?members ; mbr:asOf ?asOf }
+}
+ORDER BY ?club

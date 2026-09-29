@@ -1,0 +1,22 @@
+# CQ7: The degree ladder of every order, in rank order, with the generic
+# hub degree each one corresponds to.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX fraternal: <https://w3id.org/fraternal#>
+
+SELECT ?order ?rank ?degree ?notation ?hub
+WHERE {
+    ?o fraternal:degreeSystem ?system .
+    ?d skos:inScheme ?system ;
+       fraternal:degreeRank ?rank .
+    OPTIONAL { ?o rdfs:label ?osv . FILTER (lang(?osv) = "sv") }
+    OPTIONAL { ?o rdfs:label ?oen . FILTER (lang(?oen) = "en") }
+    OPTIONAL { ?d skos:prefLabel ?dsv . FILTER (lang(?dsv) = "sv") }
+    OPTIONAL { ?d skos:prefLabel ?den . FILTER (lang(?den) = "en") }
+    OPTIONAL { ?d skos:notation ?notation }
+    OPTIONAL { ?d skos:exactMatch|skos:closeMatch ?h . ?h skos:prefLabel ?hub . FILTER (lang(?hub) = "en") }
+    BIND (COALESCE(?osv, ?oen) AS ?order)
+    BIND (COALESCE(?dsv, ?den) AS ?degree)
+}
+ORDER BY ?order ?rank

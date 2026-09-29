@@ -1,0 +1,31 @@
+# Run on the HermiT-reasoned stack + samples (make reason). Returns one row per
+# expected inference that is MISSING; `robot verify` fails on any row.
+
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf:  <http://xmlns.com/foaf/0.1/>
+PREFIX org:   <http://www.w3.org/ns/org#>
+PREFIX mbr:  <https://w3id.org/membership#>
+PREFIX fraternal:  <https://w3id.org/fraternal#>
+PREFIX club:  <https://example.org/lanternmere/>
+PREFIX sor:   <https://example.org/soror-exemplum/>
+
+SELECT ?missing WHERE {
+    VALUES (?s ?type) {
+        (club:Lanternmere        mbr:GentlemensClub)   # defined by org:classification
+        (club:Heatherbrook       mbr:LadiesClub)
+        (club:ExampleNation      mbr:StudentNation)
+        (sor:SororExemplum       fraternal:Sorority)
+        (sor:FraterExemplum      fraternal:CollegeFraternity)
+        (sor:SororExemplum       mbr:MembershipOrganization)
+        (sor:SororExemplum       foaf:Agent)
+        (sor:AlphaChapter        org:Organization)
+        (sor:sofia-membership    org:Membership)
+        (sor:ada-treasurer       org:Membership)        # a term of office is an ORG membership
+        (sor:sofia-init          mbr:Conferral)
+        (club:guestnight-2025-medal mbr:Conferral)
+        (sor:Treasurer           org:Role)
+        (club:HonTreasurer       org:Role)
+    }
+    FILTER NOT EXISTS { ?s rdf:type ?type }
+    BIND (CONCAT(STR(?s), " should be a ", STR(?type)) AS ?missing)
+}

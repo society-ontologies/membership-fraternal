@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Resolves the stack's owl:imports to local files (ROBOT: robot -catalog catalog-v001.xml ...). -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="https://w3id.org/membership/external" uri="external/external-declarations.ttl"/>
+    <uri name="https://w3id.org/membership" uri="membership/membership-ontology.ttl"/>
+    <uri name="https://w3id.org/membership/code" uri="membership/membership-codes.ttl"/>
+    <uri name="https://w3id.org/fraternal" uri="fraternal/fraternal-ontology.ttl"/>
+    <uri name="https://w3id.org/fraternal/code" uri="fraternal/fraternal-codes.ttl"/>
+</catalog>

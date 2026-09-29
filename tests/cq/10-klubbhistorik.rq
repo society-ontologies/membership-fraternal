@@ -1,0 +1,44 @@
+# CQ10: A club's history — the premises it occupied (shown with the address
+# the building had when the club moved in), changes of address of those
+# buildings (a street renamed or renumbered), and the clubs that merged into
+# it. Years are compared on their first four characters, as dates may be partial.
+
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <http://schema.org/>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:    <https://w3id.org/membership#>
+PREFIX club:   <https://example.org/lanternmere/>
+
+SELECT ?from ?until ?event ?what
+WHERE {
+    VALUES ?c { club:Lanternmere }
+    {
+        ?o mbr:occupant ?c ;
+           mbr:occupiedPremises ?p ;
+           mbr:startDate ?from .
+        OPTIONAL { ?o mbr:endDate ?until }
+        ?p schema:address ?a .
+        ?a schema:streetAddress ?what .
+        OPTIONAL { ?a mbr:startDate ?addrFrom }
+        OPTIONAL { ?a mbr:endDate ?addrUntil }
+        # the address in force when the club moved in
+        FILTER ((!BOUND(?addrFrom) || xsd:integer(SUBSTR(STR(?addrFrom), 1, 4)) <= xsd:integer(SUBSTR(STR(?from), 1, 4)))
+             && (!BOUND(?addrUntil) || xsd:integer(SUBSTR(STR(?addrUntil), 1, 4)) > xsd:integer(SUBSTR(STR(?from), 1, 4))))
+        BIND ("occupied premises" AS ?event)
+    } UNION {
+        ?o mbr:occupant ?c ;
+           mbr:occupiedPremises ?p .
+        ?p schema:address ?a .
+        ?a mbr:startDate ?from ;
+           schema:streetAddress ?what .
+        BIND ("address of the premises became" AS ?event)
+    } UNION {
+        ?e org:resultingOrganization ?c ;
+           org:originalOrganization ?old ;
+           mbr:startDate ?from .
+        ?old rdfs:label ?what .
+        BIND ("merged into this club" AS ?event)
+    }
+}
+ORDER BY ?from

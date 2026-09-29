@@ -1,0 +1,134 @@
+# Generated from membership-aat.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/membership/mappings/membership-aat> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "membership classes and codelist hubs mapped to the Getty Art & Architecture Thesaurus. Targets found via the Getty SPARQL endpoint on 2026-09-29. The object_label values are from the Art & Architecture Thesaurus (AAT), © J. Paul Getty Trust, used under the Open Data Commons Attribution License (ODC-By) 1.0." ;
+    <http://purl.org/dc/terms/created> "2026-09-29" .
+
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#relatedMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/membership/code/club> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300025975> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/club> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300025975> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Club" ;
+  <https://w3id.org/sssom/object_label> "clubs (associations)" ] .
+
+<https://w3id.org/membership/code/society> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300026009> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/society> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300026009> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Society" ;
+  <https://w3id.org/sssom/object_label> "societies (associations)" ] .
+
+<https://w3id.org/membership/code/charitableSociety> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300026015> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/charitableSociety> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300026015> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Charitable Society" ;
+  <https://w3id.org/sssom/object_label> "charitable societies" ] .
+
+<https://w3id.org/membership/code/diningClub> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300445687> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/diningClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300445687> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Dining Club" ;
+  <https://w3id.org/sssom/object_label> "eating clubs" ] .
+
+<https://w3id.org/membership/code/countryClub> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300000545> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/countryClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300000545> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Country Club" ;
+  <https://w3id.org/sssom/object_label> "country clubs" ;
+  <https://w3id.org/sssom/comment> "AAT concept may denote the built complex." ] .
+
+<https://w3id.org/membership/code/officersClub> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300006936> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/officersClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300006936> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Officers' Club" ;
+  <https://w3id.org/sssom/object_label> "officers' clubs" ;
+  <https://w3id.org/sssom/comment> "AAT concept may denote the building." ] .
+
+<https://w3id.org/membership/code/facultyClub> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://vocab.getty.edu/aat/300006636> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/facultyClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300006636> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Faculty Club" ;
+  <https://w3id.org/sssom/object_label> "faculty clubs (built works)" ;
+  <https://w3id.org/sssom/comment> "AAT concept is the building." ] .
+
+<https://w3id.org/membership/code/medal> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300046025> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/medal> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300046025> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Medal" ;
+  <https://w3id.org/sssom/object_label> "medals" ] .
+
+<https://w3id.org/membership/code/badge> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300193994> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/badge> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300193994> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Badge" ;
+  <https://w3id.org/sssom/object_label> "badges" ] .
+
+<https://w3id.org/membership#Premises> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300134512> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#Premises> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300134512> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Premises" ;
+  <https://w3id.org/sssom/object_label> "clubhouses" ] .
+
+<https://w3id.org/membership/code/yachtClub> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://vocab.getty.edu/aat/300000544> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/yachtClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300000544> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Yacht Club" ;
+  <https://w3id.org/sssom/object_label> "yacht clubs (building complexes)" ;
+  <https://w3id.org/sssom/comment> "AAT concept is the building." ] .
+

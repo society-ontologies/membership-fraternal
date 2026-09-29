@@ -1,0 +1,327 @@
+# Generated from membership-wikidata.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/membership/mappings/membership-wikidata> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29." ;
+    <http://purl.org/dc/terms/created> "2026-09-29" .
+
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#relatedMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/membership#MembershipOrganization> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q48204> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#MembershipOrganization> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q48204> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Membership Organisation" ;
+  <https://w3id.org/sssom/object_label> "voluntary association" ] .
+
+<https://w3id.org/membership#Office> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q4164871> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#Office> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q4164871> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Office" ;
+  <https://w3id.org/sssom/object_label> "position" ] .
+
+<https://w3id.org/membership#Tenure> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q524572> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#Tenure> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q524572> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Term of Office" ;
+  <https://w3id.org/sssom/object_label> "term of office" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is worded for politicians." ] .
+
+<https://w3id.org/membership#Distinction> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q618779> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#Distinction> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q618779> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Distinction" ;
+  <https://w3id.org/sssom/object_label> "award" ] .
+
+<https://w3id.org/membership#proposer> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/P4353> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#proposer> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/P4353> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "proposer" ;
+  <https://w3id.org/sssom/object_label> "nominated by" ] .
+
+<https://w3id.org/membership#startDate> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/P580> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#startDate> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/P580> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "start date" ;
+  <https://w3id.org/sssom/object_label> "start time" ] .
+
+<https://w3id.org/membership#endDate> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/P582> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#endDate> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/P582> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "end date" ;
+  <https://w3id.org/sssom/object_label> "end time" ] .
+
+<https://w3id.org/membership/code/voluntaryAssociation> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q48204> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/voluntaryAssociation> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q48204> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Voluntary Association" ;
+  <https://w3id.org/sssom/object_label> "voluntary association" ] .
+
+<https://w3id.org/membership/code/privateClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q3681673> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/privateClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q3681673> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Private Club" ;
+  <https://w3id.org/sssom/object_label> "private club" ] .
+
+<https://w3id.org/membership/code/gentlemensClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q1236680> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/gentlemensClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1236680> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Gentlemen's Club" ;
+  <https://w3id.org/sssom/object_label> "gentlemen's club" ] .
+
+<https://w3id.org/membership/code/ladiesClub> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q8031135> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/ladiesClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q8031135> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Ladies' Club" ;
+  <https://w3id.org/sssom/object_label> "women's club" ;
+  <https://w3id.org/sssom/comment> "Wikidata item describes the US women's club movement." ] .
+
+<https://w3id.org/membership/code/diningClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q5278332> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/diningClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q5278332> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Dining Club" ;
+  <https://w3id.org/sssom/object_label> "dining club" ] .
+
+<https://w3id.org/membership/code/studentNation> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q597897> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/studentNation> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q597897> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Student Nation" ;
+  <https://w3id.org/sssom/object_label> "nation" ] .
+
+<https://w3id.org/membership/code/fraternalOrganization> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q996839> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q996839> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/object_label> "fraternal organization" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is broader in practice: it also covers gentlemen's clubs." ] .
+
+<https://w3id.org/membership/code/treasurer> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q388338> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/treasurer> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q388338> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Treasurer" ;
+  <https://w3id.org/sssom/object_label> "treasurer" ] .
+
+<https://w3id.org/membership/code/archivist> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q635734> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/archivist> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q635734> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Archivist" ;
+  <https://w3id.org/sssom/object_label> "archivist" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is the profession." ] .
+
+<https://w3id.org/membership/code/chaplain> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q208762> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/chaplain> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q208762> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Chaplain" ;
+  <https://w3id.org/sssom/object_label> "chaplain" ] .
+
+<https://w3id.org/membership/code/herald> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q696819> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/herald> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q696819> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Herald" ;
+  <https://w3id.org/sssom/object_label> "herald" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is the historical profession." ] .
+
+<https://w3id.org/membership/code/songLeader> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q10688387> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/songLeader> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q10688387> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Song Leader" ;
+  <https://w3id.org/sssom/object_label> "song leader" ] .
+
+<https://w3id.org/membership/code/chronicler> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q3330547> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/chronicler> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q3330547> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Chronicler" ;
+  <https://w3id.org/sssom/object_label> "chronicler" ] .
+
+<https://w3id.org/membership/code/webmaster> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q41674> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/webmaster> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q41674> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Webmaster" ;
+  <https://w3id.org/sssom/object_label> "webmaster" ] .
+
+<https://w3id.org/membership/code/provost> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://www.wikidata.org/entity/Q18362440> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/provost> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q18362440> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Provost" ;
+  <https://w3id.org/sssom/object_label> "provost" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is military police." ] .
+
+<https://w3id.org/membership/code/ball> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q478515> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/ball> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q478515> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Ball" ;
+  <https://w3id.org/sssom/object_label> "ball" ] .
+
+<https://w3id.org/membership/code/gold> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q897> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/gold> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q897> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Gold" ;
+  <https://w3id.org/sssom/object_label> "gold" ] .
+
+<https://w3id.org/membership/code/silver> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q1090> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/silver> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1090> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Silver" ;
+  <https://w3id.org/sssom/object_label> "silver" ] .
+
+<https://w3id.org/membership/code/bronze> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q34095> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/bronze> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q34095> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Bronze" ;
+  <https://w3id.org/sssom/object_label> "bronze" ] .
+
+<https://w3id.org/membership/code/pewter> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q852372> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/pewter> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q852372> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Pewter" ;
+  <https://w3id.org/sssom/object_label> "pewter" ] .
+
+<https://w3id.org/membership/code/politicalClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q4370120> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/politicalClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q4370120> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Political Club" ;
+  <https://w3id.org/sssom/object_label> "political club" ] .
+
+<https://w3id.org/membership/code/yachtClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q1855011> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/yachtClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1855011> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Yacht Club" ;
+  <https://w3id.org/sssom/object_label> "yacht club" ] .
+
+<https://w3id.org/membership/code/serviceClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q1897098> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/serviceClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1897098> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Service Club" ;
+  <https://w3id.org/sssom/object_label> "service club" ;
+  <https://w3id.org/sssom/comment> "Rotary/Lions-type clubs, not armed-forces clubs." ] .
+

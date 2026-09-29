@@ -1,0 +1,19 @@
+# hasTopConcept and topConceptOf agree, and a top concept has no broader
+# concept in its own scheme.
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?c ?s ?problem WHERE {
+    {
+        ?s skos:hasTopConcept ?c .
+        FILTER NOT EXISTS { ?c skos:topConceptOf ?s }
+        BIND ("hasTopConcept without topConceptOf" AS ?problem)
+    } UNION {
+        ?c skos:topConceptOf ?s .
+        FILTER NOT EXISTS { ?s skos:hasTopConcept ?c }
+        BIND ("topConceptOf without hasTopConcept" AS ?problem)
+    } UNION {
+        ?c skos:topConceptOf ?s ;
+           skos:broader ?b .
+        ?b skos:inScheme ?s .
+        BIND ("top concept has a broader concept in its scheme" AS ?problem)
+    }
+}

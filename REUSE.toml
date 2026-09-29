@@ -1,0 +1,44 @@
+# Licensing of every file in this repository (REUSE specification 3.x,
+# https://reuse.software). Check with: make reuse
+# When several annotations match a file, the last one wins, so entries run
+# from general to specific.
+
+version = 1
+SPDX-PackageName = "membership-fraternal"
+SPDX-PackageSupplier = "Oscar Almgren"
+
+# Default: build tooling, tests, catalogs, w3id redirect drafts.
+[[annotations]]
+path = "**"
+SPDX-FileCopyrightText = "2026 Oscar Almgren"
+SPDX-License-Identifier = "MIT"
+
+# Documentation, including the generated HTML docs and the Pages landing page.
+[[annotations]]
+path = ["README.md", "index.html", "docs/**"]
+SPDX-FileCopyrightText = "2026 Oscar Almgren"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# The ontologies, codelists and shapes.
+[[annotations]]
+path = ["external/**", "membership/**", "fraternal/**"]
+SPDX-FileCopyrightText = "2026 Oscar Almgren"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Mappings.
+[[annotations]]
+path = "mappings/**"
+SPDX-FileCopyrightText = "2026 Oscar Almgren"
+SPDX-License-Identifier = "CC0-1.0"
+
+# The AAT mapping sets also contain labels from the Getty Art & Architecture Thesaurus.
+[[annotations]]
+path = ["mappings/*-aat.sssom.tsv", "mappings/generated/*-aat.ttl"]
+SPDX-FileCopyrightText = ["2026 Oscar Almgren", "J. Paul Getty Trust (AAT labels)"]
+SPDX-License-Identifier = "CC0-1.0 AND ODC-By-1.0"
+
+# Code inside the mappings folder.
+[[annotations]]
+path = "mappings/sssom2ttl.py"
+SPDX-FileCopyrightText = "2026 Oscar Almgren"
+SPDX-License-Identifier = "MIT"

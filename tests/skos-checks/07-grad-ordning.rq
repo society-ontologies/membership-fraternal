@@ -1,0 +1,19 @@
+# Within each degree system, ranks are unique and every degree except the
+# highest has a fraternal:nextDegree.
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX fraternal: <https://w3id.org/fraternal#>
+SELECT ?system ?d ?problem WHERE {
+    ?system a fraternal:DegreeSystem .
+    {
+        ?d skos:inScheme ?system ; fraternal:degreeRank ?r .
+        ?d2 skos:inScheme ?system ; fraternal:degreeRank ?r .
+        FILTER (?d != ?d2)
+        BIND ("duplicate rank" AS ?problem)
+    } UNION {
+        ?d skos:inScheme ?system ; fraternal:degreeRank ?r .
+        ?higher skos:inScheme ?system ; fraternal:degreeRank ?rh .
+        FILTER (?rh > ?r)
+        FILTER NOT EXISTS { ?d fraternal:nextDegree ?n }
+        BIND ("missing nextDegree" AS ?problem)
+    }
+}

@@ -1,0 +1,889 @@
+##############################################################################
+# membership codelists  —  v1.0.0
+#
+# SKOS codelists for the Membership Organisations Ontology. They are the
+# generic *hubs*: each organisation's own codelist maps to these (skos:*Match,
+# kept in mappings/*.sssom.tsv), never directly to other organisations' lists.
+# External mappings (Wikidata, Getty AAT) also live in mappings/, not here.
+##############################################################################
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrc:   <https://w3id.org/membership/code/> .
+
+<https://w3id.org/membership/code>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/membership/code/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    owl:imports <https://w3id.org/membership> ;
+    dcterms:title "Membership Organisations — codelists"@en ,
+                  "Medlemsorganisationer — kodlistor"@sv ;
+    dcterms:created "2026-09-29" ;
+    vann:preferredNamespacePrefix "mbrc" ;
+    vann:preferredNamespaceUri "https://w3id.org/membership/code/" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "Oscar Almgren" ;
+    dcterms:rightsHolder "Oscar Almgren" .
+
+##############################################################################
+# 1. ORGANISATION TYPES
+##############################################################################
+
+mbrc:OrganizationTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Organisation Types"@en , "Organisationstyper"@sv ;
+    skos:definition "Kinds of membership organisation, used with org:classification. The fraternal codelists extend the fraternal branch."@en ,
+                    "Typer av medlemsorganisationer, används med org:classification. Kodlistorna i fraternal utökar grenen för ordenssällskap."@sv ;
+    skos:hasTopConcept mbrc:voluntaryAssociation .
+
+mbrc:voluntaryAssociation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:topConceptOf mbrc:OrganizationTypes ;
+    skos:prefLabel "Voluntary Association"@en , "Frivillig sammanslutning"@sv ;
+    skos:altLabel "ideell förening"@sv ;
+    skos:definition "A group of people who join together voluntarily for a shared purpose."@en ,
+                    "En grupp människor som frivilligt går samman för ett gemensamt syfte."@sv ;
+    skos:narrower mbrc:club , mbrc:society , mbrc:fraternalOrganization .
+
+mbrc:club a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
+    skos:prefLabel "Club"@en , "Klubb"@sv ;
+    skos:definition "An association of people for social or recreational purposes or for a shared interest."@en ,
+                    "En sammanslutning för sällskapsliv, rekreation eller ett gemensamt intresse."@sv ;
+    skos:narrower mbrc:privateClub , mbrc:diningClub , mbrc:countryClub , mbrc:armedForcesClub ,
+                  mbrc:facultyClub , mbrc:sportsClub , mbrc:literaryClub , mbrc:serviceClub .
+
+mbrc:privateClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Private Club"@en , "Privat klubb"@sv ;
+    skos:definition "A club with exclusive membership, usually admitting members by proposal and election."@en ,
+                    "En klubb med slutet medlemskap, där medlemmar vanligen upptas efter förslag och val."@sv ;
+    skos:narrower mbrc:gentlemensClub , mbrc:ladiesClub , mbrc:politicalClub , mbrc:universityClub ,
+                  mbrc:professionalClub , mbrc:artsClub .
+
+mbrc:gentlemensClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
+    skos:prefLabel "Gentlemen's Club"@en , "Herrklubb"@sv ;
+    skos:definition "A private social club traditionally for men, usually with its own clubhouse."@en ,
+                    "En privat sällskapsklubb traditionellt för män, vanligen med eget klubbhus."@sv .
+
+mbrc:ladiesClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
+    skos:prefLabel "Ladies' Club"@en , "Damklubb"@sv ;
+    skos:altLabel "Women's Club"@en ;
+    skos:definition "A private social club for women."@en ,
+                    "En privat sällskapsklubb för kvinnor."@sv .
+
+mbrc:politicalClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
+    skos:prefLabel "Political Club"@en , "Politisk klubb"@sv ;
+    skos:definition "A private club whose members share an allegiance to a political party or tradition."@en ,
+                    "En privat klubb vars medlemmar delar tillhörighet till ett politiskt parti eller en politisk tradition."@sv .
+
+mbrc:universityClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
+    skos:prefLabel "University Club"@en , "Alumniklubb"@sv ;
+    skos:definition "A private club for graduates of one or more particular universities."@en ,
+                    "En privat klubb för dem som tagit examen vid ett eller flera bestämda universitet."@sv .
+
+mbrc:professionalClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
+    skos:prefLabel "Professional Club"@en , "Yrkesklubb"@sv ;
+    skos:definition "A private club whose members share a profession, such as law, medicine or the press."@en ,
+                    "En privat klubb vars medlemmar delar ett yrke, t.ex. juridik, medicin eller press."@sv .
+
+mbrc:artsClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
+    skos:prefLabel "Arts Club"@en , "Konstnärsklubb"@sv ;
+    skos:definition "A private club for people in the arts: artists, writers, actors, musicians and their patrons."@en ,
+                    "En privat klubb för kulturutövare: konstnärer, författare, skådespelare, musiker och deras mecenater."@sv .
+
+mbrc:diningClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Dining Club"@en , "Middagsklubb"@sv ;
+    skos:altLabel "middagssällskap"@sv ;
+    skos:definition "A club that meets regularly for dinner and conversation."@en ,
+                    "En klubb som regelbundet samlas till middag och samtal."@sv .
+
+mbrc:countryClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Country Club"@en , "Countryclub"@sv ;
+    skos:definition "A club with sporting and social facilities, typically outside a city."@en ,
+                    "En klubb med idrotts- och sällskapsanläggningar, oftast utanför staden."@sv .
+
+mbrc:armedForcesClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Armed Forces Club"@en , "Försvarsklubb"@sv ;
+    skos:altLabel "Service Club (military)"@en ;
+    skos:definition "A club for serving and former members of the armed forces."@en ,
+                    "En klubb för tjänstgörande och tidigare medlemmar av försvarsmakten."@sv ;
+    skos:narrower mbrc:officersClub .
+
+mbrc:officersClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:armedForcesClub ;
+    skos:prefLabel "Officers' Club"@en , "Officersklubb"@sv ;
+    skos:definition "A club for commissioned military officers."@en ,
+                    "En klubb för officerare."@sv .
+
+mbrc:facultyClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Faculty Club"@en , "Universitetslärarklubb"@sv ;
+    skos:definition "A club for the teaching staff of a university."@en ,
+                    "En klubb för ett universitets lärare och forskare."@sv .
+
+mbrc:sportsClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Sports Club"@en , "Idrottsklubb"@sv ;
+    skos:definition "A club organised around a sport."@en ,
+                    "En klubb organiserad kring en idrott."@sv ;
+    skos:narrower mbrc:yachtClub .
+
+mbrc:yachtClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:sportsClub ;
+    skos:prefLabel "Yacht Club"@en , "Segelsällskap"@sv ;
+    skos:altLabel "Kungliga segelsällskap"@sv ;
+    skos:definition "A club for sailing and yachting, often with a social clubhouse."@en ,
+                    "En klubb för segling och båtliv, ofta med ett sällskapligt klubbhus."@sv .
+
+mbrc:serviceClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Service Club"@en , "Serviceklubb"@sv ;
+    skos:definition "A club whose members meet socially and do voluntary or charitable work, such as Rotary or Lions clubs."@en ,
+                    "En klubb vars medlemmar träffas socialt och gör ideella insatser, t.ex. Rotary- eller Lionsklubbar."@sv .
+
+mbrc:literaryClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Literary Club"@en , "Litterär klubb"@sv ;
+    skos:definition "A club devoted to literature, reading or writing."@en ,
+                    "En klubb ägnad åt litteratur, läsning eller skrivande."@sv .
+
+mbrc:society a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
+    skos:prefLabel "Society"@en , "Sällskap"@sv ;
+    skos:definition "An association of people united by a common interest, purpose or profession."@en ,
+                    "En sammanslutning av personer förenade av ett gemensamt intresse, syfte eller yrke."@sv ;
+    skos:narrower mbrc:learnedSociety , mbrc:charitableSociety , mbrc:studentNation , mbrc:studentSociety .
+
+mbrc:learnedSociety a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Learned Society"@en , "Lärt sällskap"@sv ;
+    skos:definition "A society that promotes an academic discipline or the arts."@en ,
+                    "Ett sällskap som främjar en vetenskap eller konstart."@sv .
+
+mbrc:charitableSociety a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Charitable Society"@en , "Välgörenhetssällskap"@sv ;
+    skos:definition "A society whose main purpose is charity."@en ,
+                    "Ett sällskap vars huvudsyfte är välgörenhet."@sv .
+
+mbrc:studentNation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Student Nation"@en , "Studentnation"@sv ;
+    skos:definition "A student organisation at a university, traditionally based on the students' home region, as at Uppsala and Lund."@en ,
+                    "En studentorganisation vid ett universitet, traditionellt grundad på studenternas hembygd, som i Uppsala och Lund."@sv .
+
+mbrc:studentSociety a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Student Society"@en , "Studentförening"@sv ;
+    skos:definition "A society whose members are students or former students."@en ,
+                    "En förening vars medlemmar är studenter eller före detta studenter."@sv .
+
+mbrc:fraternalOrganization a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
+    skos:prefLabel "Fraternal Organisation"@en , "Ordenssällskap"@sv ;
+    skos:altLabel "Fraternal Order"@en , "brödraskap"@sv ;
+    skos:definition "An organisation whose members are bound together by initiation, ritual and usually graded degrees. Refined by the fraternal codelists."@en ,
+                    "En organisation vars medlemmar är förenade genom initiering, ritual och vanligen graderade grader. Förfinas av kodlistorna i fraternal."@sv .
+
+##############################################################################
+# 2. MEMBERSHIP STATUSES
+##############################################################################
+
+mbrc:MembershipStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Membership Statuses"@en , "Medlemskapsstatusar"@sv ;
+    skos:definition "Stages in the life of a membership, from being considered to leaving."@en ,
+                    "Stadier i ett medlemskaps livscykel, från att vara påtänkt till utträde."@sv ;
+    skos:hasTopConcept mbrc:prospect , mbrc:proposed , mbrc:candidate , mbrc:elected ,
+                       mbrc:active , mbrc:dormant , mbrc:suspended , mbrc:resigned ,
+                       mbrc:lapsed , mbrc:expelled , mbrc:deceased , mbrc:emeritus .
+
+mbrc:prospect a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Prospect"@en , "Påtänkt"@sv ;
+    skos:definition "Being considered for membership; not yet formally proposed."@en ,
+                    "Påtänkt för medlemskap men ännu inte formellt föreslagen."@sv .
+
+mbrc:proposed a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Proposed"@en , "Föreslagen"@sv ;
+    skos:definition "Formally proposed for membership by a member."@en ,
+                    "Formellt föreslagen till medlemskap av en medlem."@sv .
+
+mbrc:candidate a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Candidate"@en , "Kandidat"@sv ;
+    skos:definition "Accepted as a candidate and awaiting election or initiation."@en ,
+                    "Antagen som kandidat och i väntan på val eller initiering."@sv .
+
+mbrc:elected a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Elected"@en , "Invald"@sv ;
+    skos:definition "Elected to membership but not yet admitted."@en ,
+                    "Invald men ännu inte upptagen."@sv .
+
+mbrc:active a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Active Member"@en , "Aktiv medlem"@sv ;
+    skos:definition "A full member in good standing."@en ,
+                    "En fullvärdig medlem med alla rättigheter."@sv .
+
+mbrc:dormant a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Dormant"@en , "Vilande"@sv ;
+    skos:definition "A member who has, by agreement, paused participation."@en ,
+                    "En medlem som efter överenskommelse gjort uppehåll i deltagandet."@sv .
+
+mbrc:suspended a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Suspended"@en , "Avstängd"@sv ;
+    skos:definition "Temporarily deprived of the rights of membership."@en ,
+                    "Tillfälligt fråntagen medlemskapets rättigheter."@sv .
+
+mbrc:resigned a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Resigned"@en , "Utträdd"@sv ;
+    skos:definition "Left the organisation at their own request."@en ,
+                    "Har lämnat organisationen på egen begäran."@sv .
+
+mbrc:lapsed a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Lapsed"@en , "Avförd"@sv ;
+    skos:definition "Membership ended because obligations such as fees were not met."@en ,
+                    "Medlemskapet har upphört för att skyldigheter, t.ex. avgifter, inte fullgjorts."@sv .
+
+mbrc:expelled a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Expelled"@en , "Utesluten"@sv ;
+    skos:definition "Removed from membership by decision of the organisation."@en ,
+                    "Skild från medlemskapet genom beslut av organisationen."@sv .
+
+mbrc:deceased a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Deceased"@en , "Avliden"@sv ;
+    skos:definition "Membership ended by the death of the member."@en ,
+                    "Medlemskapet har upphört genom medlemmens död."@sv .
+
+mbrc:emeritus a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Emeritus"@en , "Emeritus"@sv ;
+    skos:definition "A retired member who keeps an honoured standing."@en ,
+                    "En medlem som dragit sig tillbaka men behåller en hedrad ställning."@sv .
+
+##############################################################################
+# 3. MEMBERSHIP CATEGORIES
+##############################################################################
+
+mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Membership Categories"@en , "Medlemskategorier"@sv ;
+    skos:definition "Categories of membership with different rights or fees."@en ,
+                    "Medlemskategorier med olika rättigheter eller avgifter."@sv ;
+    skos:hasTopConcept mbrc:ordinary , mbrc:life , mbrc:honorary , mbrc:associate ,
+                       mbrc:junior , mbrc:nonResident , mbrc:overseas , mbrc:partnerMember ,
+                       mbrc:founding .
+
+mbrc:ordinary a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Ordinary Member"@en , "Ordinarie medlem"@sv ;
+    skos:definition "The standard category with full rights."@en , "Standardkategorin med fulla rättigheter."@sv .
+
+mbrc:life a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Life Member"@en , "Ständig medlem"@sv ;
+    skos:definition "Membership for life, usually after a one-time fee."@en , "Medlemskap på livstid, vanligen efter en engångsavgift."@sv .
+
+mbrc:honorary a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Honorary Member"@en , "Hedersledamot"@sv ;
+    skos:definition "Membership conferred as an honour, usually without fees."@en , "Medlemskap som ges som hedersbetygelse, vanligen utan avgift."@sv .
+
+mbrc:associate a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Associate Member"@en , "Associerad medlem"@sv ;
+    skos:definition "Membership with limited rights, for example without vote."@en , "Medlemskap med begränsade rättigheter, t.ex. utan rösträtt."@sv .
+
+mbrc:junior a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Junior Member"@en , "Juniormedlem"@sv ;
+    skos:definition "Membership for younger members, often at a reduced fee."@en , "Medlemskap för yngre medlemmar, ofta till reducerad avgift."@sv .
+
+mbrc:nonResident a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Country Member"@en , "Landsortsmedlem"@sv ;
+    skos:altLabel "Non-resident Member"@en ;
+    skos:definition "Membership for members living far from the club's premises."@en , "Medlemskap för medlemmar som bor långt från klubbens lokaler."@sv .
+
+mbrc:overseas a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Overseas Member"@en , "Utlandsmedlem"@sv ;
+    skos:definition "Membership for members living abroad."@en , "Medlemskap för medlemmar bosatta utomlands."@sv .
+
+mbrc:partnerMember a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Partner Member"@en , "Partnermedlem"@sv ;
+    skos:definition "Membership granted to the spouse or partner of a member."@en , "Medlemskap för en medlems make, maka eller partner."@sv .
+
+mbrc:founding a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Founding Member"@en , "Stiftande medlem"@sv ;
+    skos:definition "A member who took part in founding the organisation."@en , "En medlem som deltog i organisationens grundande."@sv .
+
+##############################################################################
+# 4. MEMBERSHIP EVENT TYPES
+##############################################################################
+
+mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv ;
+    skos:hasTopConcept mbrc:proposal , mbrc:ballot , mbrc:admission , mbrc:statusChange ,
+                       mbrc:resignation , mbrc:lapse , mbrc:expulsion , mbrc:reinstatement ,
+                       mbrc:death .
+
+mbrc:proposal a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Proposal"@en , "Förslag"@sv ;
+    skos:definition "A member proposes a candidate."@en , "En medlem föreslår en kandidat."@sv .
+
+mbrc:ballot a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Ballot"@en , "Ballotering"@sv ;
+    skos:definition "The members vote on a candidate."@en , "Medlemmarna röstar om en kandidat."@sv .
+
+mbrc:admission a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Admission"@en , "Upptagning"@sv ;
+    skos:definition "The candidate becomes a member."@en , "Kandidaten blir medlem."@sv .
+
+mbrc:statusChange a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Status Change"@en , "Statusändring"@sv ;
+    skos:definition "Any other change of membership status or category."@en , "Annan ändring av medlemskapets status eller kategori."@sv .
+
+mbrc:resignation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Resignation"@en , "Utträde"@sv ;
+    skos:definition "The member leaves at their own request."@en , "Medlemmen lämnar på egen begäran."@sv .
+
+mbrc:lapse a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Lapse"@en , "Avförande"@sv ;
+    skos:definition "Membership ends because obligations were not met."@en , "Medlemskapet upphör för att skyldigheter inte fullgjorts."@sv .
+
+mbrc:expulsion a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Expulsion"@en , "Uteslutning"@sv ;
+    skos:definition "The organisation removes the member."@en , "Organisationen utesluter medlemmen."@sv .
+
+mbrc:reinstatement a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Reinstatement"@en , "Återinträde"@sv ;
+    skos:definition "A former member is admitted again."@en , "En tidigare medlem upptas på nytt."@sv .
+
+mbrc:death a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Death"@en , "Dödsfall"@sv ;
+    skos:definition "The member dies."@en , "Medlemmen avlider."@sv .
+
+##############################################################################
+# 5. OFFICE TYPES  (hub; every concept is also a mbr:Office, i.e. an org:Role)
+##############################################################################
+
+mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Office Types"@en , "Ämbetstyper"@sv ;
+    skos:definition "Generic offices found across clubs, societies and orders. Organisation-specific offices map to these."@en ,
+                    "Generiska ämbeten som förekommer i klubbar, sällskap och ordnar. Organisationsspecifika ämbeten mappas hit."@sv ;
+    skos:hasTopConcept mbrc:president , mbrc:vicePresident , mbrc:secretary , mbrc:treasurer ,
+                       mbrc:archivist , mbrc:librarian , mbrc:chaplain , mbrc:masterOfCeremonies ,
+                       mbrc:herald , mbrc:provost , mbrc:introducer , mbrc:steward ,
+                       mbrc:cellarMaster , mbrc:kitchenMaster , mbrc:songLeader ,
+                       mbrc:directorOfMusic , mbrc:chronicler , mbrc:webmaster , mbrc:custodian ,
+                       mbrc:seniorAdviser , mbrc:regionalRepresentative , mbrc:eventLeader .
+
+mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "President"@en , "Ordförande"@sv ;
+    skos:altLabel "Chair"@en , "Chancellor"@en , "Grand Master"@en , "Stormästare"@sv , "Kansler"@sv ;
+    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv .
+
+mbrc:vicePresident a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Vice President"@en , "Vice ordförande"@sv ;
+    skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv .
+
+mbrc:secretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Secretary"@en , "Sekreterare"@sv ;
+    skos:definition "Keeps minutes, the register of members and official correspondence."@en , "För protokoll, matrikel och officiell korrespondens."@sv .
+
+mbrc:treasurer a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Treasurer"@en , "Skattmästare"@sv ;
+    skos:altLabel "Kassör"@sv ;
+    skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv .
+
+mbrc:archivist a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Archivist"@en , "Arkivarie"@sv ;
+    skos:definition "Keeps the organisation's archives."@en , "Förvaltar organisationens arkiv."@sv .
+
+mbrc:librarian a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Librarian"@en , "Bibliotekarie"@sv ;
+    skos:definition "Keeps the organisation's library."@en , "Förvaltar organisationens bibliotek."@sv .
+
+mbrc:chaplain a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Chaplain"@en , "Kaplan"@sv ;
+    skos:definition "Leads the spiritual or reflective parts of ceremonies."@en , "Leder de andliga eller reflekterande inslagen i ceremonier."@sv .
+
+mbrc:masterOfCeremonies a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Master of Ceremonies"@en , "Ceremonimästare"@sv ;
+    skos:definition "Responsible for rituals, ceremonies and formal events."@en , "Ansvarar för ritualer, ceremonier och formella tillställningar."@sv .
+
+mbrc:herald a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Herald"@en , "Härold"@sv ;
+    skos:definition "Makes official proclamations and assists at ceremonies."@en , "Utropar officiella meddelanden och biträder vid ceremonier."@sv .
+
+mbrc:provost a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Provost"@en , "Profoss"@sv ;
+    skos:altLabel "Sergeant-at-Arms"@en , "Tyler"@en ;
+    skos:definition "Keeps order and discipline at gatherings."@en , "Upprätthåller ordning och disciplin vid sammankomster."@sv .
+
+mbrc:introducer a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Introducer"@en , "Introduktör"@sv ;
+    skos:definition "Introduces new members and guests."@en , "Introducerar nya medlemmar och gäster."@sv .
+
+mbrc:steward a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Feast Steward"@en , "Festvärd"@sv ;
+    skos:altLabel "Steward"@en ;
+    skos:definition "Arranges tables, hospitality and the practical side of feasts."@en , "Ordnar taffel, gästfrihet och det praktiska kring fester."@sv .
+
+mbrc:cellarMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Cellar Master"@en , "Källarmästare"@sv ;
+    skos:altLabel "Wine Steward"@en ;
+    skos:definition "Responsible for wines and spirits."@en , "Ansvarar för viner och spritdrycker."@sv .
+
+mbrc:kitchenMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Kitchen Master"@en , "Köksmästare"@sv ;
+    skos:definition "Responsible for food and the kitchen."@en , "Ansvarar för mat och kök."@sv .
+
+mbrc:songLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Song Leader"@en , "Sånganförare"@sv ;
+    skos:definition "Leads communal singing at dinners and events."@en , "Leder allsången vid middagar och tillställningar."@sv .
+
+mbrc:directorOfMusic a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Director of Music"@en , "Musikanförare"@sv ;
+    skos:altLabel "Director musices"@sv ;
+    skos:definition "Leads the music of the organisation."@en , "Leder organisationens musik."@sv .
+
+mbrc:chronicler a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Chronicler"@en , "Krönikör"@sv ;
+    skos:definition "Records the organisation's history and activities."@en , "Skriver organisationens historia och krönika."@sv .
+
+mbrc:webmaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Webmaster"@en , "Webbansvarig"@sv ;
+    skos:definition "Manages the website and digital presence."@en , "Förvaltar webbplats och digital närvaro."@sv .
+
+mbrc:custodian a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Custodian of Premises"@en , "Lokalansvarig"@sv ;
+    skos:definition "Responsible for premises and material assets."@en , "Ansvarar för lokaler och materiella tillgångar."@sv .
+
+mbrc:seniorAdviser a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Senior Adviser"@en , "Senior rådgivare"@sv ;
+    skos:altLabel "Elder"@en , "Äldste"@sv ;
+    skos:definition "An experienced member with an advisory role."@en , "En erfaren medlem med rådgivande roll."@sv .
+
+mbrc:regionalRepresentative a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Regional Representative"@en , "Regional representant"@sv ;
+    skos:definition "Represents the organisation, or leads a branch, in a region."@en , "Representerar organisationen, eller leder en avdelning, i en region."@sv .
+
+mbrc:eventLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Event Leader"@en , "Arrangemangsansvarig"@sv ;
+    skos:definition "Leads a particular event, trip or project, often temporarily."@en , "Leder ett visst arrangemang, en resa eller ett projekt, ofta tillfälligt."@sv .
+
+##############################################################################
+# 6. GATHERING TYPES
+##############################################################################
+
+mbrc:GatheringTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Gathering Types"@en , "Typer av sammankomster"@sv ;
+    skos:hasTopConcept mbrc:meeting , mbrc:formalDinner , mbrc:informalDinner , mbrc:ball ,
+                       mbrc:excursion , mbrc:lecture , mbrc:guestNight , mbrc:anniversary ,
+                       mbrc:commemoration .
+
+mbrc:meeting a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Meeting"@en , "Möte"@sv ;
+    skos:definition "A meeting for business or discussion."@en , "Ett möte för ärenden eller samtal."@sv ;
+    skos:narrower mbrc:generalMeeting .
+
+mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:meeting ;
+    skos:prefLabel "General Meeting"@en , "Stämma"@sv ;
+    skos:altLabel "Annual General Meeting"@en , "Årsmöte"@sv ;
+    skos:definition "A meeting of all members with decision-making power."@en , "Ett möte med alla medlemmar som har beslutanderätt."@sv .
+
+mbrc:formalDinner a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Formal Dinner"@en , "Högtidsmiddag"@sv ;
+    skos:altLabel "Banquet"@en , "Bankett"@sv ;
+    skos:definition "A formal dinner with a prescribed dress code and ceremonial elements."@en , "En formell middag med föreskriven klädkod och ceremoniella inslag."@sv .
+
+mbrc:informalDinner a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Informal Dinner"@en , "Informell middag"@sv ;
+    skos:definition "A dinner without full ceremonial."@en , "En middag utan fullt ceremoniel."@sv .
+
+mbrc:ball a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Ball"@en , "Bal"@sv ;
+    skos:definition "A formal dance."@en , "En formell dans."@sv .
+
+mbrc:excursion a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Excursion"@en , "Utflykt"@sv ;
+    skos:altLabel "Trip"@en , "Resa"@sv ;
+    skos:definition "A trip made together by members."@en , "En resa som medlemmarna gör tillsammans."@sv .
+
+mbrc:lecture a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Lecture"@en , "Föredrag"@sv ;
+    skos:definition "A talk given to the members."@en , "Ett föredrag för medlemmarna."@sv .
+
+mbrc:guestNight a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Guest Night"@en , "Gästafton"@sv ;
+    skos:altLabel "Ladies' Night"@en , "Damafton"@sv ;
+    skos:definition "A gathering to which members may bring guests."@en , "En sammankomst dit medlemmar får ta med gäster."@sv .
+
+mbrc:anniversary a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Anniversary"@en , "Jubileum"@sv ;
+    skos:definition "A celebration of an anniversary of the organisation."@en , "Ett firande av en av organisationens årsdagar."@sv .
+
+mbrc:commemoration a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Commemoration"@en , "Minneshögtid"@sv ;
+    skos:definition "A gathering in memory of a person or event."@en , "En sammankomst till minne av en person eller händelse."@sv .
+
+##############################################################################
+# 7. PARTICIPATION ROLES
+##############################################################################
+
+mbrc:ParticipationRoles a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Participation Roles"@en , "Deltagarroller"@sv ;
+    skos:hasTopConcept mbrc:member , mbrc:guest , mbrc:host , mbrc:partner , mbrc:speaker ,
+                       mbrc:officiant , mbrc:reciprocalVisitor .
+
+mbrc:member a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Member"@en , "Medlem"@sv ;
+    skos:definition "Takes part as a member of the organising organisation."@en , "Deltar som medlem i den anordnande organisationen."@sv .
+
+mbrc:guest a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Guest"@en , "Gäst"@sv ;
+    skos:definition "Takes part as a guest, usually introduced by a member."@en , "Deltar som gäst, vanligen introducerad av en medlem."@sv .
+
+mbrc:host a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Host"@en , "Värd"@sv ;
+    skos:definition "Hosts the gathering."@en , "Står värd för sammankomsten."@sv .
+
+mbrc:partner a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Partner"@en , "Partner"@sv ;
+    skos:altLabel "Dinner Partner"@en , "moatjé"@sv , "bordsdam"@sv , "bordskavaljer"@sv ;
+    skos:definition "Accompanies a member as partner or dinner companion."@en , "Följer med en medlem som partner eller bordsällskap."@sv .
+
+mbrc:speaker a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Speaker"@en , "Talare"@sv ;
+    skos:definition "Gives a speech or lecture."@en , "Håller tal eller föredrag."@sv .
+
+mbrc:officiant a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Officiant"@en , "Förrättare"@sv ;
+    skos:definition "Performs a ceremony or ritual."@en , "Förrättar en ceremoni eller ritual."@sv .
+
+mbrc:reciprocalVisitor a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
+    skos:prefLabel "Reciprocal Visitor"@en , "Besökare från vänorganisation"@sv ;
+    skos:definition "A member of a reciprocal or recognised organisation, visiting."@en , "En besökande medlem från en organisation med ömsesidighet eller erkännande."@sv .
+
+##############################################################################
+# 8. DRESS CODES
+##############################################################################
+
+mbrc:DressCodes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Dress Codes"@en , "Klädkoder"@sv ;
+    skos:hasTopConcept mbrc:whiteTie , mbrc:blackTie , mbrc:loungeSuit , mbrc:morningDress ,
+                       mbrc:academicDress , mbrc:uniform , mbrc:nationalCostume , mbrc:insigniaWorn .
+
+mbrc:whiteTie a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "White Tie"@en , "Frack"@sv ;
+    skos:definition "Tailcoat with white bow tie, or the equivalent evening dress."@en , "Frack med vit fluga, eller motsvarande aftonklädsel."@sv .
+
+mbrc:blackTie a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "Black Tie"@en , "Smoking"@sv ;
+    skos:altLabel "Tuxedo"@en ;
+    skos:definition "Dinner jacket with black bow tie, or the equivalent."@en , "Smoking med svart fluga, eller motsvarande."@sv .
+
+mbrc:loungeSuit a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "Lounge Suit"@en , "Kavaj"@sv ;
+    skos:definition "Dark suit and tie, or the equivalent."@en , "Mörk kostym och slips, eller motsvarande."@sv .
+
+mbrc:morningDress a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "Morning Dress"@en , "Jackett"@sv ;
+    skos:definition "Daytime formal dress with morning coat."@en , "Formell dagklädsel med jackett."@sv .
+
+mbrc:academicDress a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "Academic Dress"@en , "Akademisk högtidsdräkt"@sv ;
+    skos:definition "Academic dress as prescribed by the university."@en , "Akademisk högtidsdräkt enligt universitetets föreskrifter."@sv .
+
+mbrc:uniform a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "Uniform"@en , "Uniform"@sv ;
+    skos:definition "Military or other uniform."@en , "Militär eller annan uniform."@sv .
+
+mbrc:nationalCostume a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "National Costume"@en , "Folkdräkt"@sv ;
+    skos:definition "Traditional regional or national dress."@en , "Traditionell bygde- eller nationaldräkt."@sv .
+
+mbrc:insigniaWorn a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
+    skos:prefLabel "Insignia to Be Worn"@en , "Ordenstecken bäres"@sv ;
+    skos:altLabel "Decorations"@en , "Med ordnar"@sv ;
+    skos:definition "Orders, medals and insignia are to be worn. Combined with another dress code."@en , "Ordnar, medaljer och tecken ska bäras. Kombineras med en annan klädkod."@sv .
+
+##############################################################################
+# 9. GENDER POLICIES
+##############################################################################
+
+mbrc:GenderPolicies a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Gender Policies"@en , "Könspolicyer"@sv ;
+    skos:hasTopConcept mbrc:menOnly , mbrc:womenOnly , mbrc:mixed , mbrc:mixedSeparateBranches .
+
+mbrc:menOnly a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
+    skos:prefLabel "Men Only"@en , "Endast män"@sv ;
+    skos:definition "Only men are admitted as members."@en , "Endast män upptas som medlemmar."@sv .
+
+mbrc:womenOnly a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
+    skos:prefLabel "Women Only"@en , "Endast kvinnor"@sv ;
+    skos:definition "Only women are admitted as members."@en , "Endast kvinnor upptas som medlemmar."@sv .
+
+mbrc:mixed a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
+    skos:prefLabel "Mixed"@en , "Blandat"@sv ;
+    skos:definition "Members of any gender are admitted on equal terms."@en , "Medlemmar av alla kön upptas på lika villkor."@sv .
+
+mbrc:mixedSeparateBranches a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
+    skos:prefLabel "Mixed, Separate Branches"@en , "Blandat, separata avdelningar"@sv ;
+    skos:definition "Men and women are admitted, but to separate branches or lodges."@en , "Både män och kvinnor upptas, men i separata avdelningar eller loger."@sv .
+
+##############################################################################
+# 10. ADMISSION MODES
+##############################################################################
+
+mbrc:AdmissionModes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Admission Modes"@en , "Upptagningsformer"@sv ;
+    skos:hasTopConcept mbrc:byInvitation , mbrc:proposalAndBallot , mbrc:openApplication ,
+                       mbrc:hereditary , mbrc:exOfficio .
+
+mbrc:byInvitation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "By Invitation"@en , "Genom inbjudan"@sv ;
+    skos:definition "Membership is only offered by invitation."@en , "Medlemskap erbjuds endast genom inbjudan."@sv .
+
+mbrc:proposalAndBallot a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "Proposal and Ballot"@en , "Förslag och ballotering"@sv ;
+    skos:definition "Candidates are proposed by members and elected by ballot."@en , "Kandidater föreslås av medlemmar och väljs genom ballotering."@sv .
+
+mbrc:openApplication a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "Open Application"@en , "Öppen ansökan"@sv ;
+    skos:definition "Anyone meeting the criteria may apply."@en , "Alla som uppfyller kriterierna kan ansöka."@sv .
+
+mbrc:hereditary a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "Hereditary"@en , "Ärftligt"@sv ;
+    skos:definition "Membership passes by descent."@en , "Medlemskap går i arv."@sv .
+
+mbrc:exOfficio a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "Ex Officio"@en , "Ex officio"@sv ;
+    skos:definition "Membership follows from holding a certain position."@en , "Medlemskap följer av en viss befattning."@sv .
+
+##############################################################################
+# 11. DISTINCTION TYPES
+##############################################################################
+
+mbrc:DistinctionTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Distinction Types"@en , "Typer av utmärkelser"@sv ;
+    skos:hasTopConcept mbrc:medal , mbrc:badge , mbrc:honoraryTitle , mbrc:honoraryMembership ,
+                       mbrc:trophy , mbrc:diploma .
+
+mbrc:medal a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
+    skos:prefLabel "Medal"@en , "Medalj"@sv ;
+    skos:definition "A medal, usually worn on a ribbon."@en , "En medalj, vanligen buren i band."@sv .
+
+mbrc:badge a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
+    skos:prefLabel "Badge"@en , "Tecken"@sv ;
+    skos:definition "A badge or emblem of distinction."@en , "Ett hederstecken eller emblem."@sv .
+
+mbrc:honoraryTitle a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
+    skos:prefLabel "Honorary Title"@en , "Hederstitel"@sv ;
+    skos:definition "A title conferred as an honour."@en , "En titel som ges som hedersbetygelse."@sv .
+
+mbrc:honoraryMembership a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
+    skos:prefLabel "Honorary Membership"@en , "Hedersledamotskap"@sv ;
+    skos:definition "Membership conferred as an honour."@en , "Medlemskap som ges som hedersbetygelse."@sv .
+
+mbrc:trophy a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
+    skos:prefLabel "Trophy"@en , "Pris"@sv ;
+    skos:altLabel "Vandringspris"@sv ;
+    skos:definition "A prize object, often passed on between winners."@en , "Ett pris, ofta vandrande mellan vinnare."@sv .
+
+mbrc:diploma a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
+    skos:prefLabel "Diploma"@en , "Diplom"@sv ;
+    skos:definition "A certificate of distinction."@en , "Ett hedersdiplom."@sv .
+
+##############################################################################
+# 12. MATERIALS
+##############################################################################
+
+mbrc:Materials a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Materials"@en , "Material"@sv ;
+    skos:definition "Materials of medals, badges and insignia."@en , "Material i medaljer, tecken och insignier."@sv ;
+    skos:hasTopConcept mbrc:gold , mbrc:silver , mbrc:giltSilver , mbrc:bronze , mbrc:pewter ,
+                       mbrc:enamel .
+
+mbrc:gold a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
+    skos:prefLabel "Gold"@en , "Guld"@sv .
+
+mbrc:silver a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
+    skos:prefLabel "Silver"@en , "Silver"@sv .
+
+mbrc:giltSilver a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
+    skos:prefLabel "Silver-gilt"@en , "Förgyllt silver"@sv .
+
+mbrc:bronze a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
+    skos:prefLabel "Bronze"@en , "Brons"@sv .
+
+mbrc:pewter a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
+    skos:prefLabel "Pewter"@en , "Tenn"@sv ;
+    skos:scopeNote "The tin-based alloy (Swedish 'tenn' in the craft sense), not the element tin."@en ,
+                   "Den tennbaserade legeringen (tenn i hantverksbemärkelse), inte grundämnet."@sv .
+
+mbrc:enamel a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
+    skos:prefLabel "Enamel"@en , "Emalj"@sv .
+
+##############################################################################
+# 13. ORGANISATION STATUSES  (values of mbr:organizationStatus)
+##############################################################################
+
+mbrc:OrganizationStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Organisation Statuses"@en , "Organisationsstatusar"@sv ;
+    skos:definition "Whether an organisation still exists and operates."@en ,
+                    "Om en organisation fortfarande finns och är verksam."@sv ;
+    skos:hasTopConcept mbrc:activeOrganization , mbrc:dormantOrganization ,
+                       mbrc:mergedOrganization , mbrc:closedOrganization .
+
+mbrc:activeOrganization a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
+    skos:prefLabel "Active"@en , "Verksam"@sv ;
+    skos:definition "The organisation exists and operates."@en , "Organisationen finns och är verksam."@sv .
+
+mbrc:dormantOrganization a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
+    skos:prefLabel "Dormant"@en , "Vilande"@sv ;
+    skos:definition "The organisation still exists but has suspended its activities, for example while without premises."@en ,
+                    "Organisationen finns kvar men har gjort uppehåll i verksamheten, t.ex. i väntan på nya lokaler."@sv .
+
+mbrc:mergedOrganization a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
+    skos:prefLabel "Merged"@en , "Sammanslagen"@sv ;
+    skos:definition "The organisation no longer exists on its own, having merged into another. Record the merger as an org:ChangeEvent."@en ,
+                    "Organisationen finns inte längre självständigt, eftersom den gått upp i en annan. Registrera sammanslagningen som en org:ChangeEvent."@sv .
+
+mbrc:closedOrganization a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
+    skos:prefLabel "Closed"@en , "Nedlagd"@sv ;
+    skos:altLabel "Defunct"@en , "Upplöst"@sv ;
+    skos:definition "The organisation has been wound up."@en , "Organisationen har upplösts."@sv .
+
+##############################################################################
+# 14. OWNERSHIP MODELS  (values of mbr:ownershipModel)
+##############################################################################
+
+mbrc:OwnershipModels a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Ownership Models"@en , "Ägarformer"@sv ;
+    skos:definition "Who owns and runs a club or society."@en , "Vem som äger och driver en klubb eller ett sällskap."@sv ;
+    skos:hasTopConcept mbrc:membersClub , mbrc:proprietaryClub , mbrc:institutionalClub .
+
+mbrc:membersClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OwnershipModels ; skos:topConceptOf mbrc:OwnershipModels ;
+    skos:prefLabel "Members' Club"@en , "Medlemsägd klubb"@sv ;
+    skos:definition "Owned by its members, who govern it through a committee and share its property."@en ,
+                    "Ägs av medlemmarna, som styr den genom en styrelse och delar på dess egendom."@sv .
+
+mbrc:proprietaryClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OwnershipModels ; skos:topConceptOf mbrc:OwnershipModels ;
+    skos:prefLabel "Proprietary Club"@en , "Ägarklubb"@sv ;
+    skos:definition "Owned and run by a proprietor or company for profit; members pay for the use of its facilities but do not own it."@en ,
+                    "Ägs och drivs av en ägare eller ett bolag i vinstsyfte; medlemmarna betalar för tillgången men äger den inte."@sv .
+
+mbrc:institutionalClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OwnershipModels ; skos:topConceptOf mbrc:OwnershipModels ;
+    skos:prefLabel "Institutional Club"@en , "Institutionsdriven klubb"@sv ;
+    skos:definition "Owned or run by a parent institution, such as a university, regiment, company or government body."@en ,
+                    "Ägs eller drivs av en moderinstitution, t.ex. ett universitet, ett regemente, ett företag eller en myndighet."@sv .

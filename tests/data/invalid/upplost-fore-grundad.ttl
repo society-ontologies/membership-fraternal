@@ -1,0 +1,11 @@
+# EXPECT: dissolution date is before the founding date
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub ;
+    mbr:foundingDate "1901-05-01"^^xsd:date ;
+    mbr:dissolutionDate "1899"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:closedOrganization .

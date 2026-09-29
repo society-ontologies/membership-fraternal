@@ -1,0 +1,17 @@
+# CQ6: Organisations with a reciprocal arrangement with a given club, and
+# what kind of organisation each is. mbr:reciprocalWith is symmetric; the
+# UNION covers data that states it in one direction only (no reasoner).
+
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX org:   <http://www.w3.org/ns/org#>
+PREFIX mbr:  <https://w3id.org/membership#>
+PREFIX club:  <https://example.org/lanternmere/>
+
+SELECT ?name ?kind
+WHERE {
+    VALUES ?x { club:Heatherbrook }
+    { ?x mbr:reciprocalWith ?other } UNION { ?other mbr:reciprocalWith ?x }
+    OPTIONAL { ?other rdfs:label ?name }
+    OPTIONAL { ?other org:classification/skos:prefLabel ?kind . FILTER (lang(?kind) = "en") }
+}

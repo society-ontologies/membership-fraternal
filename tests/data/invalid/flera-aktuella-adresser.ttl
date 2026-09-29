@@ -1,0 +1,14 @@
+# EXPECT: premises with two current addresses (neither has an end date)
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix ex:     <https://example.org/invalid/> .
+
+ex:house a mbr:Premises ;
+    schema:address [ a schema:PostalAddress ;
+                     schema:streetAddress "2 Old Name Street" ;
+                     schema:addressLocality "London" ; schema:addressCountry "GB" ] ,
+                   [ a schema:PostalAddress ;
+                     schema:streetAddress "2 New Name Street" ;
+                     schema:addressLocality "London" ; schema:addressCountry "GB" ;
+                     mbr:startDate "1965"^^xsd:gYear ] .

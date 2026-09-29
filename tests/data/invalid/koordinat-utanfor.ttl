@@ -1,0 +1,9 @@
+# EXPECT: latitude outside -90..90
+@prefix schema: <http://schema.org/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix ex:     <https://example.org/invalid/> .
+
+ex:house a mbr:Premises ;
+    schema:geo [ a schema:GeoCoordinates ;
+                 schema:latitude 123.4 ;
+                 schema:longitude 18.07 ] .

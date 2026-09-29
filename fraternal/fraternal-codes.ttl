@@ -1,0 +1,373 @@
+##############################################################################
+# fraternal codelists  —  v1.0.0
+#
+# SKOS codelists for the Fraternal Orders and Sororities Ontology. Like the membership
+# codelists these are hubs: an order's own degrees and titles map to them in
+# mappings/*.sssom.tsv. The two generic degree ladders are real DegreeSystems,
+# so a small order can use them directly instead of defining its own.
+##############################################################################
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrc:   <https://w3id.org/membership/code/> .
+@prefix fraternal:    <https://w3id.org/fraternal#> .
+@prefix fraternalc:   <https://w3id.org/fraternal/code/> .
+
+<https://w3id.org/fraternal/code>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/fraternal/code/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    owl:imports <https://w3id.org/fraternal> , <https://w3id.org/membership/code> ;
+    dcterms:title "Fraternal Orders and Sororities — codelists"@en ,
+                  "Ordenssällskap — kodlistor"@sv ;
+    dcterms:created "2026-09-29" ;
+    vann:preferredNamespacePrefix "fraternalc" ;
+    vann:preferredNamespaceUri "https://w3id.org/fraternal/code/" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "Oscar Almgren" ;
+    dcterms:rightsHolder "Oscar Almgren" .
+
+##############################################################################
+# 1. ORDER TYPES  (each refines mbrc:fraternalOrganization via skos:broadMatch,
+#    stated in mappings/fraternal-hubs.sssom.tsv)
+##############################################################################
+
+fraternalc:OrderTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Order Types"@en , "Ordenstyper"@sv ;
+    skos:definition "Kinds of fraternal order, used with org:classification."@en ,
+                    "Typer av ordenssällskap, används med org:classification."@sv ;
+    skos:hasTopConcept fraternalc:fraternalOrder , fraternalc:collegeFraternity , fraternalc:sorority ,
+                       fraternalc:coedFraternity , fraternalc:secretSociety , fraternalc:confraternity ,
+                       fraternalc:chivalricStyleOrder , fraternalc:studentOrder , fraternalc:benevolentOrder ,
+                       fraternalc:adoptiveOrder .
+
+fraternalc:fraternalOrder a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Fraternal Order"@en , "Ordenssällskap"@sv ;
+    skos:definition "An order with initiation, ritual and degrees, not otherwise specified."@en ,
+                    "En orden med initiering, ritual och grader, utan närmare precisering."@sv .
+
+fraternalc:collegeFraternity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "College Fraternity"@en , "Studentbrödraskap"@sv ;
+    skos:definition "A collegiate social organisation for men, typically with Greek-letter names."@en ,
+                    "En studentorganisation för män, oftast med namn av grekiska bokstäver."@sv .
+
+fraternalc:sorority a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Sorority"@en , "Systerskap"@sv ;
+    skos:definition "A collegiate or fraternal organisation for women."@en ,
+                    "En student- eller ordensorganisation för kvinnor."@sv .
+
+fraternalc:coedFraternity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Co-ed Fraternity"@en , "Blandat ordenssällskap"@sv ;
+    skos:definition "A fraternal organisation admitting members of any gender."@en ,
+                    "Ett ordenssällskap som upptar medlemmar av alla kön."@sv .
+
+fraternalc:secretSociety a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Secret Society"@en , "Hemligt sällskap"@sv ;
+    skos:definition "An order whose activities and inner workings are concealed from non-members."@en ,
+                    "En orden vars verksamhet och inre liv är dolda för icke-medlemmar."@sv .
+
+fraternalc:confraternity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Confraternity"@en , "Konfraternitet"@sv ;
+    skos:definition "A religious lay brotherhood or sisterhood."@en ,
+                    "Ett religiöst lekmannabrödraskap eller -systerskap."@sv .
+
+fraternalc:chivalricStyleOrder a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Order in the Chivalric Style"@en , "Orden i riddarordensstil"@sv ;
+    skos:definition "A private order whose grades and insignia imitate those of an order of chivalry (member, knight, commander, grand cross)."@en ,
+                    "En privat orden vars grader och insignier efterbildar en riddarordens (ledamot, riddare, kommendör, stora korset)."@sv .
+
+fraternalc:studentOrder a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Student Order"@en , "Studentorden"@sv ;
+    skos:definition "An order founded by and recruiting mainly among university students and alumni."@en ,
+                    "En orden grundad av och med rekrytering främst bland studenter och akademiker."@sv .
+
+fraternalc:benevolentOrder a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Benevolent Order"@en , "Välgörenhetsorden"@sv ;
+    skos:definition "An order whose main purpose is mutual aid or charity."@en ,
+                    "En orden vars huvudsyfte är ömsesidig hjälp eller välgörenhet."@sv .
+
+fraternalc:adoptiveOrder a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Adoptive Order"@en , "Adoptivorden"@sv ;
+    skos:definition "An order open to relatives of members of another order, often women relatives of a men's order."@en ,
+                    "En orden öppen för anhöriga till medlemmar i en annan orden, ofta kvinnliga anhöriga till en herrorden."@sv .
+
+##############################################################################
+# 2. GENERIC DEGREE LADDERS  (hubs; also usable directly as degree systems)
+##############################################################################
+
+fraternalc:CraftDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    skos:prefLabel "Generic Craft-style Degrees"@en , "Generiska grader i hantverksstil"@sv ;
+    skos:definition "A generic ladder of degrees in the style of craft lodges: entry, intermediate, full, higher."@en ,
+                    "En generisk gradstege i hantverkslogernas stil: inträde, mellangrad, fullgrad, högre grad."@sv ;
+    skos:hasTopConcept fraternalc:entryDegree , fraternalc:intermediateDegree , fraternalc:fullDegree , fraternalc:higherDegree .
+
+fraternalc:entryDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:intermediateDegree ;
+    skos:prefLabel "Entry Degree"@en , "Inträdesgrad"@sv ;
+    skos:altLabel "Apprentice"@en , "Lärling"@sv ;
+    skos:definition "The first degree, conferred at initiation."@en , "Den första graden, som tilldelas vid initieringen."@sv .
+
+fraternalc:intermediateDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:fullDegree ;
+    skos:prefLabel "Intermediate Degree"@en , "Mellangrad"@sv ;
+    skos:altLabel "Fellow"@en , "Gesäll"@sv ;
+    skos:definition "A degree between entry and full membership."@en , "En grad mellan inträde och fullt medlemskap."@sv .
+
+fraternalc:fullDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:higherDegree ;
+    skos:prefLabel "Full Degree"@en , "Fullgrad"@sv ;
+    skos:altLabel "Master"@en , "Mästare"@sv ;
+    skos:definition "The degree that gives full membership."@en , "Den grad som ger fullt medlemskap."@sv .
+
+fraternalc:higherDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
+    fraternal:degreeRank 4 ;
+    skos:prefLabel "Higher Degree"@en , "Högre grad"@sv ;
+    skos:altLabel "Side Degree"@en ;
+    skos:definition "Any degree above full membership."@en , "Varje grad över fullt medlemskap."@sv .
+
+fraternalc:ChivalricGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    skos:prefLabel "Generic Chivalric-style Grades"@en , "Generiska grader i riddarordensstil"@sv ;
+    skos:definition "A generic ladder of grades in the style of orders of chivalry."@en ,
+                    "En generisk gradstege i riddarordnarnas stil."@sv ;
+    skos:hasTopConcept fraternalc:memberGrade , fraternalc:knightGrade , fraternalc:officerGrade ,
+                       fraternalc:commanderGrade , fraternalc:commanderFirstClassGrade , fraternalc:grandCrossGrade .
+
+fraternalc:memberGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:knightGrade ;
+    skos:prefLabel "Member"@en , "Ledamot"@sv ;
+    skos:definition "The lowest grade of an order."@en , "En ordens lägsta grad."@sv .
+
+fraternalc:knightGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:officerGrade ;
+    skos:prefLabel "Knight"@en , "Riddare"@sv ;
+    skos:definition "The knight grade of an order."@en , "En ordens riddargrad."@sv .
+
+fraternalc:officerGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:commanderGrade ;
+    skos:prefLabel "Officer"@en , "Officer"@sv ;
+    skos:altLabel "Knight First Class"@en , "Riddare av första klassen"@sv ;
+    skos:definition "The grade between knight and commander."@en , "Graden mellan riddare och kommendör."@sv .
+
+fraternalc:commanderGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree fraternalc:commanderFirstClassGrade ;
+    skos:prefLabel "Commander"@en , "Kommendör"@sv ;
+    skos:definition "The commander grade of an order."@en , "En ordens kommendörsgrad."@sv .
+
+fraternalc:commanderFirstClassGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 5 ; fraternal:nextDegree fraternalc:grandCrossGrade ;
+    skos:prefLabel "Commander First Class"@en , "Kommendör av första klassen"@sv ;
+    skos:altLabel "Grand Officer"@en ;
+    skos:definition "The grade between commander and grand cross."@en , "Graden mellan kommendör och stora korset."@sv .
+
+fraternalc:grandCrossGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 6 ;
+    skos:prefLabel "Grand Cross"@en , "Stora korset"@sv ;
+    skos:altLabel "Kommendör med stora korset"@sv ;
+    skos:definition "The highest grade of an order."@en , "En ordens högsta grad."@sv .
+
+##############################################################################
+# 3. MEMBER TITLES
+##############################################################################
+
+fraternalc:MemberTitles a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Member Titles"@en , "Medlemstitlar"@sv ;
+    skos:hasTopConcept fraternalc:brother , fraternalc:sister , fraternalc:sibling , fraternalc:companion ,
+                       fraternalc:fraterInSpe , fraternalc:sororInSpe .
+
+fraternalc:brother a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
+    skos:prefLabel "Brother"@en , "Broder"@sv ;
+    skos:altLabel "Frater"@la .
+
+fraternalc:sister a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
+    skos:prefLabel "Sister"@en , "Syster"@sv ;
+    skos:altLabel "Soror"@la .
+
+fraternalc:sibling a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
+    skos:prefLabel "Sibling"@en , "Syskon"@sv ;
+    skos:definition "Gender-neutral member title."@en , "Könsneutral medlemstitel."@sv .
+
+fraternalc:companion a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
+    skos:prefLabel "Companion"@en , "Kompanjon"@sv .
+
+fraternalc:fraterInSpe a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
+    skos:prefLabel "Frater in spe"@la , "Brother-to-be"@en , "Blivande broder"@sv ;
+    skos:definition "Title of a male candidate who has not yet been initiated."@en , "Titel för en manlig kandidat som ännu inte initierats."@sv .
+
+fraternalc:sororInSpe a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
+    skos:prefLabel "Soror in spe"@la , "Sister-to-be"@en , "Blivande syster"@sv ;
+    skos:definition "Title of a female candidate who has not yet been initiated."@en , "Titel för en kvinnlig kandidat som ännu inte initierats."@sv .
+
+##############################################################################
+# 4. CHARACTERISTICS
+##############################################################################
+
+fraternalc:Characteristics a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Characteristics of Orders"@en , "Ordensdrag"@sv ;
+    skos:hasTopConcept fraternalc:initiationRitual , fraternalc:gradedDegrees , fraternalc:oathOfObligation ,
+                       fraternalc:secrecy , fraternalc:regalia , fraternalc:mutualAid , fraternalc:charity ,
+                       fraternalc:religiousRequirement .
+
+fraternalc:initiationRitual a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Initiation Ritual"@en , "Initieringsritual"@sv .
+
+fraternalc:gradedDegrees a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Graded Degrees"@en , "Gradsystem"@sv .
+
+fraternalc:oathOfObligation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Oath or Obligation"@en , "Ed eller förpliktelse"@sv .
+
+fraternalc:secrecy a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Secrecy"@en , "Tystnadsplikt"@sv .
+
+fraternalc:regalia a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Regalia and Insignia"@en , "Ordensdräkt och insignier"@sv .
+
+fraternalc:mutualAid a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Mutual Aid"@en , "Ömsesidig hjälp"@sv .
+
+fraternalc:charity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Charity"@en , "Välgörenhet"@sv .
+
+fraternalc:religiousRequirement a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Religious Requirement"@en , "Religiöst krav"@sv ;
+    skos:definition "Members must profess a faith or belief."@en , "Medlemmar måste bekänna en tro."@sv .
+
+##############################################################################
+# 5. CEREMONY TYPES  (values for mbr:gatheringType on fraternal:Ceremony)
+##############################################################################
+
+fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Ceremony Types"@en , "Ceremonityper"@sv ;
+    skos:hasTopConcept fraternalc:initiationCeremony , fraternalc:degreeCeremony , fraternalc:installation ,
+                       fraternalc:memorialCeremony , fraternalc:festiveBoard , fraternalc:patronsFeast .
+
+fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Initiation Ceremony"@en , "Initieringsceremoni"@sv ;
+    skos:altLabel "Recipiering"@sv .
+
+fraternalc:degreeCeremony a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Degree Ceremony"@en , "Gradceremoni"@sv ;
+    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv .
+
+fraternalc:installation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Installation of Officers"@en , "Installation av ämbetsmän"@sv .
+
+fraternalc:memorialCeremony a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Memorial Ceremony"@en , "Sorgeloge"@sv ;
+    skos:altLabel "Lodge of Sorrow"@en ;
+    skos:definition "A ceremony in memory of deceased members."@en , "En ceremoni till minne av avlidna medlemmar."@sv .
+
+fraternalc:festiveBoard a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Festive Board"@en , "Ordensmåltid"@sv ;
+    skos:definition "The ritual meal following a ceremony."@en , "Den rituella måltiden efter en ceremoni."@sv .
+
+fraternalc:patronsFeast a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Patron's Feast"@en , "Patronshögtid"@sv ;
+    skos:definition "A feast in honour of the order's patron or namesake."@en , "En högtid till ära för ordens patron eller namngivare."@sv .
+
+##############################################################################
+# 6. INSIGNIA TYPES  (mapped to Getty AAT in mappings/fraternal-aat.sssom.tsv)
+##############################################################################
+
+fraternalc:InsigniaTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Insignia Types"@en , "Insignietyper"@sv ;
+    skos:hasTopConcept fraternalc:apron , fraternalc:collar , fraternalc:sash , fraternalc:jewel , fraternalc:ribbon ,
+                       fraternalc:ring , fraternalc:pin , fraternalc:hat , fraternalc:sword , fraternalc:breastStar ,
+                       fraternalc:cross .
+
+fraternalc:apron a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Apron"@en , "Förkläde"@sv .
+
+fraternalc:collar a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Collar"@en , "Ordenskedja"@sv ;
+    skos:altLabel "Kraga"@sv .
+
+fraternalc:sash a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Sash"@en , "Ordensband"@sv ;
+    skos:altLabel "Riband"@en .
+
+fraternalc:jewel a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Jewel"@en , "Juvel"@sv ;
+    skos:altLabel "Pendant"@en , "Hängsmycke"@sv .
+
+fraternalc:ribbon a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Ribbon"@en , "Band"@sv .
+
+fraternalc:ring a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Ring"@en , "Ordensring"@sv .
+
+fraternalc:pin a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Lapel Pin"@en , "Knappnål"@sv ;
+    skos:altLabel "Rosett"@sv .
+
+fraternalc:hat a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Hat"@en , "Hatt"@sv .
+
+fraternalc:sword a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Sword"@en , "Svärd"@sv .
+
+fraternalc:breastStar a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Breast Star"@en , "Kraschan"@sv ;
+    skos:altLabel "Plaque"@en .
+
+fraternalc:cross a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Cross"@en , "Kors"@sv ;
+    skos:definition "Cross-shaped badge of an order, worn at the neck or on the breast."@en ,
+                    "Korsformat ordenstecken, buret i halsen eller på bröstet."@sv .

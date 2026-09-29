@@ -1,0 +1,18 @@
+# CQ8: All fraternal organisations, whatever codelist classifies them.
+# Walks the SKOS hierarchy and the hub mappings (fraternal order types map to
+# mbrc:fraternalOrganization), so the sorority and the fraternity are
+# found, while the clubs and nations are not.
+
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX org:   <http://www.w3.org/ns/org#>
+PREFIX mbrc: <https://w3id.org/membership/code/>
+
+SELECT DISTINCT ?name ?classifiedAs
+WHERE {
+    ?org org:classification ?type .
+    ?type (skos:broader|skos:broadMatch|skos:exactMatch)* mbrc:fraternalOrganization .
+    ?type skos:prefLabel ?classifiedAs . FILTER (lang(?classifiedAs) = "en")
+    ?org rdfs:label ?name . FILTER (lang(?name) = "en")
+}
+ORDER BY ?name

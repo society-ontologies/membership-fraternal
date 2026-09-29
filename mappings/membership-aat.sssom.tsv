@@ -1,0 +1,23 @@
+# curie_map:
+#   mbr: https://w3id.org/membership#
+#   mbrc: https://w3id.org/membership/code/
+#   aat: http://vocab.getty.edu/aat/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/membership/mappings/membership-aat
+# mapping_set_version: 1.0.0
+# mapping_set_description: membership classes and codelist hubs mapped to the Getty Art & Architecture Thesaurus. Targets found via the Getty SPARQL endpoint on 2026-09-29. The object_label values are from the Art & Architecture Thesaurus (AAT), © J. Paul Getty Trust, used under the Open Data Commons Attribution License (ODC-By) 1.0.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-09-29
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+mbrc:club	Club	skos:exactMatch	aat:300025975	clubs (associations)	semapv:ManualMappingCuration	0.9
+mbrc:society	Society	skos:exactMatch	aat:300026009	societies (associations)	semapv:ManualMappingCuration	0.9
+mbrc:charitableSociety	Charitable Society	skos:exactMatch	aat:300026015	charitable societies	semapv:ManualMappingCuration	0.9
+mbrc:diningClub	Dining Club	skos:closeMatch	aat:300445687	eating clubs	semapv:ManualMappingCuration	0.7
+mbrc:countryClub	Country Club	skos:closeMatch	aat:300000545	country clubs	semapv:ManualMappingCuration	0.6	AAT concept may denote the built complex.
+mbrc:officersClub	Officers' Club	skos:closeMatch	aat:300006936	officers' clubs	semapv:ManualMappingCuration	0.6	AAT concept may denote the building.
+mbrc:facultyClub	Faculty Club	skos:relatedMatch	aat:300006636	faculty clubs (built works)	semapv:ManualMappingCuration	0.6	AAT concept is the building.
+mbrc:medal	Medal	skos:exactMatch	aat:300046025	medals	semapv:ManualMappingCuration	0.8
+mbrc:badge	Badge	skos:exactMatch	aat:300193994	badges	semapv:ManualMappingCuration	0.8
+mbr:Premises	Premises	skos:closeMatch	aat:300134512	clubhouses	semapv:ManualMappingCuration	0.6
+mbrc:yachtClub	Yacht Club	skos:relatedMatch	aat:300000544	yacht clubs (building complexes)	semapv:ManualMappingCuration	0.6	AAT concept is the building.

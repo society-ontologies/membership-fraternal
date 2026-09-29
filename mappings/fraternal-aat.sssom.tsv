@@ -1,0 +1,24 @@
+# curie_map:
+#   fraternal: https://w3id.org/fraternal#
+#   fraternalc: https://w3id.org/fraternal/code/
+#   aat: http://vocab.getty.edu/aat/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-aat
+# mapping_set_version: 1.0.0
+# mapping_set_description: fraternal classes and codelist hubs mapped to the Getty Art & Architecture Thesaurus. Targets found via the Getty SPARQL endpoint on 2026-09-29. The object_label values are from the Art & Architecture Thesaurus (AAT), © J. Paul Getty Trust, used under the Open Data Commons Attribution License (ODC-By) 1.0.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-09-29
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternal:Insignia	Insignia	skos:closeMatch	aat:300390959	order insignias	semapv:ManualMappingCuration	0.7
+fraternal:Lodge	Lodge	skos:relatedMatch	aat:300007071	fraternal lodges	semapv:ManualMappingCuration	0.6	AAT concept denotes the building.
+fraternalc:collegeFraternity	College Fraternity	skos:closeMatch	aat:300386371	fraternities (associations)	semapv:ManualMappingCuration	0.8
+fraternalc:sorority	Sorority	skos:exactMatch	aat:300386372	sororities	semapv:ManualMappingCuration	0.9
+fraternalc:secretSociety	Secret Society	skos:exactMatch	aat:300026020	secret societies	semapv:ManualMappingCuration	0.9
+fraternalc:apron	Apron	skos:exactMatch	aat:300425977	fraternal aprons	semapv:ManualMappingCuration	0.85
+fraternalc:jewel	Jewel	skos:closeMatch	aat:300425984	fraternal pendants	semapv:ManualMappingCuration	0.7
+fraternalc:ribbon	Ribbon	skos:closeMatch	aat:300425986	fraternal ribbons	semapv:ManualMappingCuration	0.7
+fraternalc:ring	Ring	skos:exactMatch	aat:300425987	fraternal rings	semapv:ManualMappingCuration	0.8
+fraternalc:pin	Lapel Pin	skos:exactMatch	aat:300425985	fraternal pins	semapv:ManualMappingCuration	0.8
+fraternalc:hat	Hat	skos:exactMatch	aat:300425979	fraternal hats	semapv:ManualMappingCuration	0.8
+fraternalc:breastStar	Breast Star	skos:closeMatch	aat:300426512	insignia plaques	semapv:ManualMappingCuration	0.6

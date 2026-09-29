@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Lets Protégé resolve imports when a membership file is opened from this folder. -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="https://w3id.org/membership/external" uri="../external/external-declarations.ttl"/>
+    <uri name="https://w3id.org/membership" uri="membership-ontology.ttl"/>
+</catalog>

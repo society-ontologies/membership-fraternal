@@ -1,0 +1,301 @@
+##############################################################################
+# membership SHACL shapes  —  v1.0.0
+#
+# Validation lives here, not in OWL domains/ranges. Validate a data graph that
+# is merged with the ontology and codelists, so sh:class sees the subclass
+# hierarchy (e.g. mbr:Office ⊑ org:Role ⊑ skos:Concept).
+##############################################################################
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrsh:  <https://w3id.org/membership/shapes#> .
+
+<https://w3id.org/membership/shapes>
+    a owl:Ontology ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:label "membership SHACL shapes"@en , "SHACL-regler för membership"@sv ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "Oscar Almgren" ;
+    dcterms:rightsHolder "Oscar Almgren" ;
+    sh:declare [ sh:prefix "mbr" ; sh:namespace "https://w3id.org/membership#"^^xsd:anyURI ] ,
+               [ sh:prefix "mbrc" ; sh:namespace "https://w3id.org/membership/code/"^^xsd:anyURI ] ,
+               [ sh:prefix "org" ; sh:namespace "http://www.w3.org/ns/org#"^^xsd:anyURI ] ,
+               [ sh:prefix "xsd" ; sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ] ,
+               [ sh:prefix "schema" ; sh:namespace "http://schema.org/"^^xsd:anyURI ] .
+
+##############################################################################
+# Dates: xsd:date, xsd:gYearMonth or xsd:gYear; at most one of each
+##############################################################################
+
+mbrsh:DateList
+    sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] ) .
+
+mbrsh:StartDateShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:startDate ;
+    sh:property [
+        sh:path mbr:startDate ;
+        sh:maxCount 1 ;
+        sh:node mbrsh:DateList ;
+        sh:message "mbr:startDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:startDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+    ] .
+
+mbrsh:EndDateShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:endDate ;
+    sh:property [
+        sh:path mbr:endDate ;
+        sh:maxCount 1 ;
+        sh:node mbrsh:DateList ;
+        sh:message "mbr:endDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:endDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+    ] ;
+    # An end cannot come before its start (compared by year, as dates may be partial).
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "The end date is before the start date. | Slutdatumet ligger före startdatumet." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this WHERE {
+                $this mbr:startDate ?s ;
+                      mbr:endDate ?e .
+                FILTER (xsd:integer(SUBSTR(STR(?e), 1, 4)) < xsd:integer(SUBSTR(STR(?s), 1, 4)))
+            }
+        """
+    ] .
+
+mbrsh:FoundingDateShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:foundingDate ;
+    sh:property [
+        sh:path mbr:foundingDate ;
+        sh:maxCount 1 ;
+        sh:node mbrsh:DateList ;
+        sh:message "mbr:foundingDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:foundingDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+    ] .
+
+mbrsh:DissolutionDateShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:dissolutionDate ;
+    sh:property [
+        sh:path mbr:dissolutionDate ;
+        sh:maxCount 1 ;
+        sh:node mbrsh:DateList ;
+        sh:message "mbr:dissolutionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:dissolutionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+    ] .
+
+mbrsh:AsOfShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:asOf ;
+    sh:property [
+        sh:path mbr:asOf ;
+        sh:maxCount 1 ;
+        sh:node mbrsh:DateList ;
+        sh:message "mbr:asOf must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:asOf ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+    ] .
+
+##############################################################################
+# Membership
+##############################################################################
+
+mbrsh:MembershipShape a sh:NodeShape ;
+    sh:targetClass mbr:Membership ;
+    sh:property [ sh:path org:member ; sh:minCount 1 ; sh:maxCount 1 ; sh:class foaf:Agent ] ,
+                [ sh:path org:organization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ] ,
+                [ sh:path mbr:membershipStatus ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:membershipCategory ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:sponsor ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:proposer ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:seconder ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:membershipNumber ; sh:maxCount 1 ;
+                  sh:or ( [ sh:datatype xsd:string ] [ sh:datatype xsd:integer ] ) ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Membership number {?num} is used by more than one membership in {?org}. | Medlemsnummer {?num} används av mer än ett medlemskap i {?org}." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this ?num ?org WHERE {
+                $this mbr:membershipNumber ?num ;
+                      org:organization ?org .
+                ?other mbr:membershipNumber ?num ;
+                       org:organization ?org .
+                FILTER (?other != $this)
+            }
+        """
+    ] .
+
+mbrsh:MembershipEventShape a sh:NodeShape ;
+    sh:targetClass mbr:MembershipEvent ;
+    sh:property [ sh:path mbr:concernsMembership ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Membership ] ,
+                [ sh:path mbr:membershipEventType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:resultingStatus ; sh:maxCount 1 ; sh:class skos:Concept ] .
+
+##############################################################################
+# Offices and terms of office
+##############################################################################
+
+mbrsh:TenureShape a sh:NodeShape ;
+    sh:targetClass mbr:Tenure ;
+    sh:property [ sh:path org:member ; sh:minCount 1 ; sh:maxCount 1 ; sh:class foaf:Agent ] ,
+                [ sh:path org:organization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ] ,
+                [ sh:path org:role ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mbr:Office ;
+                  sh:message "A term of office needs exactly one org:role that is a mbr:Office. | En ämbetsperiod behöver exakt en org:role som är ett mbr:Office." ] .
+
+##############################################################################
+# Gatherings and participation
+##############################################################################
+
+mbrsh:GatheringShape a sh:NodeShape ;
+    sh:targetClass mbr:Gathering ;
+    sh:property [ sh:path mbr:gatheringType ; sh:minCount 1 ; sh:class skos:Concept ;
+                  sh:severity sh:Warning ] ,
+                [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ] ,
+                [ sh:path mbr:organizer ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:dressCode ; sh:class skos:Concept ] ,
+                [ sh:path schema:superEvent ; sh:maxCount 1 ; sh:class schema:Event ] .
+
+mbrsh:ParticipationShape a sh:NodeShape ;
+    sh:targetClass mbr:Participation ;
+    sh:property [ sh:path mbr:participant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:participationIn ; sh:minCount 1 ; sh:maxCount 1 ; sh:class schema:Event ] ,
+                [ sh:path mbr:participationRole ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:introducedBy ; sh:maxCount 1 ; sh:class foaf:Agent ] .
+
+##############################################################################
+# Distinctions and conferrals
+##############################################################################
+
+mbrsh:DistinctionShape a sh:NodeShape ;
+    sh:targetClass mbr:Distinction ;
+    sh:property [ sh:path skos:inScheme ; sh:minCount 1 ] ,
+                [ sh:path mbr:distinctionType ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:material ; sh:class skos:Concept ] ,
+                [ sh:path mbr:ribbonColour ; sh:maxCount 1 ; sh:class skos:Concept ] .
+
+mbrsh:ConferralShape a sh:NodeShape ;
+    sh:targetClass mbr:Conferral ;
+    sh:property [ sh:path mbr:recipient ; sh:minCount 1 ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:conferred ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:message "A conferral needs exactly one conferred concept (distinction or degree). | En tilldelning behöver exakt ett tilldelat begrepp (utmärkelse eller grad)." ] ,
+                [ sh:path mbr:conferredAt ; sh:maxCount 1 ; sh:class schema:Event ] ,
+                [ sh:path mbr:conferredBy ; sh:maxCount 1 ; sh:class foaf:Agent ] .
+
+mbrsh:DistinctionConferralShape a sh:NodeShape ;
+    sh:targetClass mbr:DistinctionConferral ;
+    sh:property [ sh:path mbr:conferred ; sh:class mbr:Distinction ] .
+
+##############################################################################
+# Organisations and concepts
+##############################################################################
+
+mbrsh:OrganizationShape a sh:NodeShape ;
+    sh:targetClass mbr:MembershipOrganization ;
+    sh:property [ sh:path org:classification ; sh:minCount 1 ; sh:class skos:Concept ;
+                  sh:severity sh:Warning ] ,
+                [ sh:path mbr:genderPolicy ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:admissionMode ; sh:class skos:Concept ] ,
+                [ sh:path mbr:reciprocalWith ; sh:class org:Organization ] ,
+                [ sh:path mbr:organizationStatus ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:ownershipModel ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:hasMemberCount ; sh:class mbr:MemberCount ] ,
+                [ sh:path mbr:dressCode ; sh:class skos:Concept ] ,
+                [ sh:path schema:url ; sh:nodeKind sh:IRI ;
+                  sh:message "schema:url must be an IRI, e.g. <https://example.org/>. | schema:url ska vara en IRI, t.ex. <https://example.org/>." ] ,
+                [ sh:path schema:email ; sh:datatype xsd:string ; sh:pattern "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$" ;
+                  sh:message "schema:email must be a plain e-mail address. | schema:email ska vara en e-postadress." ] ,
+                [ sh:path schema:telephone ; sh:datatype xsd:string ] ;
+
+    # A closed or merged organisation should not still be marked active.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "An organisation with a dissolution date cannot have status active. | En organisation med upplösningsdatum kan inte ha status verksam." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this WHERE {
+                $this mbr:dissolutionDate ?d ;
+                      mbr:organizationStatus mbrc:activeOrganization .
+            }
+        """
+    ] ;
+
+    # Dissolution cannot come before founding (compared by year, as dates may be partial).
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "The dissolution date is before the founding date. | Upplösningsdatumet ligger före grundningsdatumet." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this WHERE {
+                $this mbr:foundingDate ?f ;
+                      mbr:dissolutionDate ?d .
+                FILTER (xsd:integer(SUBSTR(STR(?d), 1, 4)) < xsd:integer(SUBSTR(STR(?f), 1, 4)))
+            }
+        """
+    ] .
+
+##############################################################################
+# Premises, addresses, coordinates, occupancy and member counts
+##############################################################################
+
+mbrsh:PremisesShape a sh:NodeShape ;
+    sh:targetClass mbr:Premises ;
+    sh:property [ sh:path schema:address ; sh:class schema:PostalAddress ] ,
+                [ sh:path schema:geo ; sh:maxCount 1 ; sh:class schema:GeoCoordinates ] ,
+                [ sh:path schema:containedInPlace ; sh:nodeKind sh:IRI ] ,
+                [ sh:path mbr:dressCode ; sh:class skos:Concept ] ;
+    # A building may have had several addresses over time, but only one current one.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Premises have more than one current address (addresses without mbr:endDate). Give former addresses an end date. | Lokalen har mer än en nuvarande adress (adresser utan mbr:endDate). Ge tidigare adresser ett slutdatum." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT DISTINCT $this WHERE {
+                $this schema:address ?a1 , ?a2 .
+                FILTER (?a1 != ?a2)
+                FILTER NOT EXISTS { ?a1 mbr:endDate ?e1 }
+                FILTER NOT EXISTS { ?a2 mbr:endDate ?e2 }
+            }
+        """
+    ] .
+
+mbrsh:PostalAddressShape a sh:NodeShape ;
+    sh:targetClass schema:PostalAddress ;
+    sh:property [ sh:path schema:streetAddress ; sh:maxCount 1 ; sh:datatype xsd:string ] ,
+                [ sh:path schema:postalCode ; sh:maxCount 1 ; sh:datatype xsd:string ] ,
+                [ sh:path schema:addressRegion ; sh:maxCount 1 ; sh:datatype xsd:string ] ,
+                [ sh:path schema:addressLocality ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                  sh:severity sh:Warning ] ,
+                [ sh:path schema:addressCountry ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:datatype xsd:string ; sh:pattern "^[A-Z]{2}$" ;
+                  sh:message "schema:addressCountry must be a two-letter ISO 3166-1 code such as GB or SE. | schema:addressCountry ska vara en tvåbokstavskod enligt ISO 3166-1, t.ex. GB eller SE." ] .
+
+mbrsh:CoordinateList
+    sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:double ] ) .
+
+mbrsh:GeoCoordinatesShape a sh:NodeShape ;
+    sh:targetClass schema:GeoCoordinates ;
+    sh:property [ sh:path schema:latitude ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:node mbrsh:CoordinateList ; sh:minInclusive -90 ; sh:maxInclusive 90 ;
+                  sh:message "schema:latitude must be one decimal number between -90 and 90. | schema:latitude ska vara ett decimaltal mellan -90 och 90." ] ,
+                [ sh:path schema:longitude ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:node mbrsh:CoordinateList ; sh:minInclusive -180 ; sh:maxInclusive 180 ;
+                  sh:message "schema:longitude must be one decimal number between -180 and 180. | schema:longitude ska vara ett decimaltal mellan -180 och 180." ] .
+
+mbrsh:OccupancyShape a sh:NodeShape ;
+    sh:targetClass mbr:Occupancy ;
+    sh:property [ sh:path mbr:occupant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ] ,
+                [ sh:path mbr:occupiedPremises ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Site ] .
+
+mbrsh:MemberCountShape a sh:NodeShape ;
+    sh:targetClass mbr:MemberCount ;
+    sh:property [ sh:path mbr:count ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:datatype xsd:integer ; sh:minInclusive 0 ] ,
+                [ sh:path mbr:asOf ; sh:minCount 1 ;
+                  sh:message "A member count needs the date it refers to (mbr:asOf). | Ett medlemsantal behöver det datum det avser (mbr:asOf)." ] .
+
+mbrsh:ConceptShape a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:uniqueLang true ;
+                  sh:severity sh:Warning ] .

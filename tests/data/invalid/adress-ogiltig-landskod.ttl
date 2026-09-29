@@ -1,0 +1,9 @@
+# EXPECT: addressCountry is not a two-letter ISO 3166-1 code
+@prefix schema: <http://schema.org/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix ex:     <https://example.org/invalid/> .
+
+ex:house a mbr:Premises ;
+    schema:address [ a schema:PostalAddress ;
+                     schema:addressLocality "London" ;
+                     schema:addressCountry "England" ] .

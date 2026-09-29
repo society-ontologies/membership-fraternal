@@ -1,0 +1,21 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-hubs
+# mapping_set_version: 1.0.0
+# mapping_set_description: fraternal order types placed under the membership organisation-type hub.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-09-29
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:fraternalOrder	Fraternal Order	skos:exactMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
+fraternalc:collegeFraternity	College Fraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
+fraternalc:sorority	Sorority	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
+fraternalc:coedFraternity	Co-ed Fraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
+fraternalc:secretSociety	Secret Society	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8
+fraternalc:confraternity	Confraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8
+fraternalc:chivalricStyleOrder	Order in the Chivalric Style	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
+fraternalc:studentOrder	Student Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
+fraternalc:benevolentOrder	Benevolent Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
+fraternalc:adoptiveOrder	Adoptive Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9

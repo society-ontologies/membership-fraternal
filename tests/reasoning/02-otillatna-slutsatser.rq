@@ -1,0 +1,20 @@
+# Run on the HermiT-reasoned stack + samples (make reason). Returns one row per
+# inference that must NOT happen; `robot verify` fails on any row.
+
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX mbr:  <https://w3id.org/membership#>
+PREFIX fraternal:  <https://w3id.org/fraternal#>
+PREFIX club:  <https://example.org/lanternmere/>
+PREFIX sor:   <https://example.org/soror-exemplum/>
+
+SELECT ?wrong WHERE {
+    VALUES (?s ?type) {
+        (club:Heatherbrook  mbr:GentlemensClub)
+        (club:Lanternmere   mbr:LadiesClub)
+        (club:Lanternmere   fraternal:FraternalOrder)   # a club is not an order
+        (sor:FraterExemplum fraternal:Sorority)
+        (club:guest1        mbr:MembershipOrganization)
+    }
+    ?s rdf:type ?type .
+    BIND (CONCAT(STR(?s), " must not be a ", STR(?type)) AS ?wrong)
+}

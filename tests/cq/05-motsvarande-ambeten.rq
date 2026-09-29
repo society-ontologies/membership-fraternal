@@ -1,0 +1,14 @@
+# CQ5: Offices in other organisations equivalent to the club's Honorary
+# Treasurer, found through the membership office hub (no pairwise mapping).
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX club: <https://example.org/lanternmere/>
+
+SELECT ?hub ?equivalentOffice ?label ?scheme
+WHERE {
+    club:HonTreasurer skos:exactMatch ?hub .
+    ?equivalentOffice skos:exactMatch ?hub .
+    FILTER (?equivalentOffice != club:HonTreasurer)
+    OPTIONAL { ?equivalentOffice skos:prefLabel ?label }
+    OPTIONAL { ?equivalentOffice skos:inScheme ?scheme }
+}

@@ -1,0 +1,10 @@
+# The same pair of concepts is not linked by two different mapping relations
+# (e.g. exactMatch and broadMatch), and hierarchy and mapping don't clash.
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?a ?b ?p1 ?p2 WHERE {
+    VALUES ?p1 { skos:exactMatch skos:closeMatch skos:broadMatch skos:narrowMatch skos:relatedMatch skos:broader }
+    VALUES ?p2 { skos:exactMatch skos:closeMatch skos:broadMatch skos:narrowMatch skos:relatedMatch skos:broader }
+    ?a ?p1 ?b .
+    ?a ?p2 ?b .
+    FILTER (STR(?p1) < STR(?p2))
+}

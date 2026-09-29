@@ -1,0 +1,13 @@
+# EXPECT: degree conferral without a conferred degree
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Order a fraternal:FraternalOrder ; org:classification fraternalc:fraternalOrder .
+ex:a a foaf:Person .
+ex:g a fraternal:DegreeConferral ; mbr:recipient ex:a ; mbr:conferredBy ex:Order ;
+    mbr:startDate "2020-01-01"^^xsd:date .

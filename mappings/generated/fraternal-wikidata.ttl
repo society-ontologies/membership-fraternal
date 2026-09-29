@@ -1,0 +1,174 @@
+# Generated from fraternal-wikidata.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/fraternal/mappings/fraternal-wikidata> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29." ;
+    <http://purl.org/dc/terms/created> "2026-09-29" .
+
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#narrowMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#relatedMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/fraternal#FraternalOrder> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q996839> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#FraternalOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q996839> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Fraternal Order" ;
+  <https://w3id.org/sssom/object_label> "fraternal organization" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is broader in practice." ] .
+
+<https://w3id.org/fraternal#Lodge> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://www.wikidata.org/entity/Q1454597> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#Lodge> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1454597> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Lodge" ;
+  <https://w3id.org/sssom/object_label> "masonic lodge" ;
+  <https://w3id.org/sssom/comment> "fraternal:Lodge covers the local unit of any order." ] .
+
+<https://w3id.org/fraternal#Degree> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q1499804> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#Degree> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1499804> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Degree" ;
+  <https://w3id.org/sssom/object_label> "grade of an order" ] .
+
+<https://w3id.org/fraternal#nextDegree> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/P156> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#nextDegree> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/P156> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "next degree" ;
+  <https://w3id.org/sssom/object_label> "followed by" ] .
+
+<https://w3id.org/fraternal#namedAfter> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/P138> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#namedAfter> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/P138> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "named after" ;
+  <https://w3id.org/sssom/object_label> "named after" ] .
+
+<https://w3id.org/fraternal/code/fraternalOrder> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q996839> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/fraternalOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q996839> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Fraternal Order" ;
+  <https://w3id.org/sssom/object_label> "fraternal organization" ] .
+
+<https://w3id.org/fraternal/code/collegeFraternity> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q18811582> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/collegeFraternity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q18811582> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "College Fraternity" ;
+  <https://w3id.org/sssom/object_label> "fraternity" ] .
+
+<https://w3id.org/fraternal/code/sorority> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q18811583> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/sorority> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q18811583> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Sorority" ;
+  <https://w3id.org/sssom/object_label> "sorority" ] .
+
+<https://w3id.org/fraternal/code/secretSociety> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q276548> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/secretSociety> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q276548> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Secret Society" ;
+  <https://w3id.org/sssom/object_label> "secret society" ] .
+
+<https://w3id.org/fraternal/code/confraternity> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q992253> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/confraternity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q992253> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Confraternity" ;
+  <https://w3id.org/sssom/object_label> "confraternity" ] .
+
+<https://w3id.org/fraternal/code/chivalricStyleOrder> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://www.wikidata.org/entity/Q2003221> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/chivalricStyleOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q2003221> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Order in the Chivalric Style" ;
+  <https://w3id.org/sssom/object_label> "order of chivalry" ;
+  <https://w3id.org/sssom/comment> "Imitates, but is not, an order of chivalry." ] .
+
+<https://w3id.org/fraternal/code/memberGrade> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q59820617> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/memberGrade> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q59820617> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Member" ;
+  <https://w3id.org/sssom/object_label> "member" ] .
+
+<https://w3id.org/fraternal/code/knightGrade> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q2261440> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/knightGrade> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q2261440> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Knight" ;
+  <https://w3id.org/sssom/object_label> "Knight" ] .
+
+<https://w3id.org/fraternal/code/commanderGrade> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q524980> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/commanderGrade> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q524980> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Commander" ;
+  <https://w3id.org/sssom/object_label> "Commander" ] .
+
+<https://w3id.org/fraternal/code/grandCrossGrade> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q1549416> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/grandCrossGrade> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1549416> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Grand Cross" ;
+  <https://w3id.org/sssom/object_label> "grand cross" ] .
+

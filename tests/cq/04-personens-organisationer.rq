@@ -1,0 +1,24 @@
+# CQ4: Every organisation a person belongs or belonged to, across publishers,
+# following owl:sameAs links (here: a sorority member who is also a member of
+# a ladies' club under that club's own IRI).
+
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:   <https://w3id.org/membership#>
+PREFIX sor:    <https://example.org/soror-exemplum/>
+
+SELECT ?organisation ?status ?via
+WHERE {
+    VALUES ?person { sor:ada }
+    ?person (owl:sameAs|^owl:sameAs)* ?via .
+    ?m org:member ?via ;
+       org:organization ?org .
+    FILTER NOT EXISTS { ?m a mbr:Tenure }
+    OPTIONAL { ?m mbr:membershipStatus/skos:prefLabel ?status . FILTER (lang(?status) = "en") }
+    OPTIONAL { ?org rdfs:label ?sv . FILTER (lang(?sv) = "sv") }
+    OPTIONAL { ?org rdfs:label ?en . FILTER (lang(?en) = "en") }
+    BIND (COALESCE(?sv, ?en) AS ?organisation)
+}
+ORDER BY ?organisation

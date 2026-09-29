@@ -1,0 +1,200 @@
+# Fictional gentlemen's club and ladies' club (all names, addresses and
+# contact details invented for testing). Shows that membership works on its
+# own for organisations that are not orders, including a full catalogue entry:
+# founding, status, ownership, premises history with address and
+# coordinates, contact details, member count, and a merged predecessor club.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix club:    <https://example.org/lanternmere/> .
+
+# --- A catalogue entry ---
+
+club:Lanternmere a mbr:MembershipOrganization ;
+    rdfs:label "The Lanternmere Club"@en ;
+    org:classification mbrc:gentlemensClub ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1868"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:ownershipModel mbrc:membersClub ;
+    mbr:dressCode mbrc:loungeSuit ;
+    schema:url <https://lanternmere.example.org/> ;
+    schema:email "secretary@lanternmere.example.org" ;
+    schema:telephone "+44 20 0000 0000" ;
+    mbr:hasMemberCount club:members-2024 ;
+    org:hasSite club:clubhouse ;
+    mbr:reciprocalWith club:Heatherbrook .
+
+club:members-2024 a mbr:MemberCount ;
+    mbr:count 1200 ;
+    mbr:asOf "2024"^^xsd:gYear .
+
+# Same building throughout, but the street was renamed in 1965: two dated
+# addresses; the current one has no end date.
+club:clubhouse a mbr:Premises ;
+    rdfs:label "Lanternmere clubhouse"@en ;
+    schema:containedInPlace wd:Q84 ;                 # London
+    schema:address [
+        a schema:PostalAddress ;
+        schema:streetAddress "1 Old Lantern Street" ;
+        schema:addressLocality "London" ;
+        schema:addressCountry "GB" ;
+        mbr:endDate "1965"^^xsd:gYear
+    ] , [
+        a schema:PostalAddress ;
+        schema:streetAddress "1 Lanternmere Place" ;
+        schema:postalCode "XX1 1XX" ;
+        schema:addressLocality "London" ;
+        schema:addressCountry "GB" ;
+        mbr:startDate "1965"^^xsd:gYear
+    ] ;
+    schema:geo [
+        a schema:GeoCoordinates ;
+        schema:latitude 51.5074 ;
+        schema:longitude -0.1278
+    ] .
+
+club:old-clubhouse a mbr:Premises ;
+    rdfs:label "Former Lanternmere clubhouse"@en ;
+    schema:containedInPlace wd:Q84 ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:streetAddress "3 Former Row" ;
+        schema:addressLocality "London" ;
+        schema:addressCountry "GB"
+    ] .
+
+# The club moved in 1921; the old building is no longer its site.
+club:occupancy-1868 a mbr:Occupancy ;
+    mbr:occupant club:Lanternmere ;
+    mbr:occupiedPremises club:old-clubhouse ;
+    mbr:startDate "1868"^^xsd:gYear ;
+    mbr:endDate "1921"^^xsd:gYear .
+
+club:occupancy-1921 a mbr:Occupancy ;
+    mbr:occupant club:Lanternmere ;
+    mbr:occupiedPremises club:clubhouse ;
+    mbr:startDate "1921"^^xsd:gYear .
+
+# A defunct political club that merged into Lanternmere.
+club:OldCardinal a mbr:MembershipOrganization ;
+    rdfs:label "The Old Cardinal Club"@en ;
+    org:classification mbrc:politicalClub ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1832"^^xsd:gYear ;
+    mbr:dissolutionDate "1976"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:mergedOrganization .
+
+club:merger-1976 a org:ChangeEvent ;
+    rdfs:label "Merger of the Old Cardinal Club into the Lanternmere Club"@en ;
+    org:originalOrganization club:OldCardinal ;
+    org:resultingOrganization club:Lanternmere ;
+    mbr:startDate "1976"^^xsd:gYear .
+
+club:Heatherbrook a mbr:MembershipOrganization ;
+    rdfs:label "The Heatherbrook Ladies' Club"@en ;
+    org:classification mbrc:ladiesClub ;
+    mbr:genderPolicy mbrc:womenOnly ;
+    mbr:admissionMode mbrc:byInvitation .
+
+club:reciprocity a mbr:ReciprocityAgreement ;
+    mbr:party club:Lanternmere , club:Heatherbrook ;
+    mbr:startDate "2010"^^xsd:gYear .
+
+# The club's own office list, mapped to the membership hub.
+club:Offices a skos:ConceptScheme ;
+    skos:prefLabel "Lanternmere offices"@en ;
+    skos:hasTopConcept club:HonTreasurer , club:HonSecretary .
+
+club:HonTreasurer a mbr:Office ;
+    skos:inScheme club:Offices ; skos:topConceptOf club:Offices ;
+    skos:prefLabel "Honorary Treasurer"@en ;
+    skos:exactMatch mbrc:treasurer .
+
+club:HonSecretary a mbr:Office ;
+    skos:inScheme club:Offices ; skos:topConceptOf club:Offices ;
+    skos:prefLabel "Honorary Secretary"@en ;
+    skos:exactMatch mbrc:secretary .
+
+# --- Members ---
+
+club:william a foaf:Person ; schema:name "William Fictional" .
+club:henry   a foaf:Person ; schema:name "Henry Invented" .
+club:guest1  a foaf:Person ; schema:name "Arthur Guest" .
+
+# Heatherbrook's own identifier for a person who is also a sister of the
+# fictional sorority; the two IRIs are linked by owl:sameAs in
+# tests/data/linkset-exempel.ttl.
+club:hb-member-12 a foaf:Person ; schema:name "A. Invented" .
+
+club:william-membership a mbr:Membership ;
+    org:member club:william ; org:organization club:Lanternmere ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:membershipNumber "L-0042" ; mbr:startDate "2001-02"^^xsd:gYearMonth .
+
+club:henry-membership a mbr:Membership ;
+    org:member club:henry ; org:organization club:Lanternmere ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:life ;
+    mbr:membershipNumber "L-0007" ; mbr:proposer club:william .
+
+club:hb-member-12-membership a mbr:Membership ;
+    org:member club:hb-member-12 ; org:organization club:Heatherbrook ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:overseas ;
+    mbr:membershipNumber "H-12" .
+
+# "The club has a secretary": a term of office. No end date = current secretary.
+club:william-secretary a mbr:Tenure ;
+    org:member club:william ; org:organization club:Lanternmere ;
+    org:role club:HonSecretary ; mbr:startDate "2019"^^xsd:gYear .
+
+club:henry-treasurer a mbr:Tenure ;
+    org:member club:henry ; org:organization club:Lanternmere ;
+    org:role club:HonTreasurer ; mbr:startDate "2022"^^xsd:gYear .
+
+# --- A guest night ---
+
+club:guestnight-2025 a mbr:Gathering ;
+    rdfs:label "Autumn guest night 2025"@en ;
+    mbr:gatheringType mbrc:guestNight ;
+    mbr:organizer club:Lanternmere ;
+    mbr:dressCode mbrc:blackTie ;
+    mbr:startDate "2025-10-16"^^xsd:date .
+
+club:guestnight-2025-guest1 a mbr:Participation ;
+    mbr:participant club:guest1 ;
+    mbr:participationIn club:guestnight-2025 ;
+    mbr:participationRole mbrc:speaker ;
+    mbr:introducedBy club:william .
+
+# --- A distinction conferred on a non-member (the guest speaker) ---
+
+club:Distinctions a skos:ConceptScheme ;
+    skos:prefLabel "Lanternmere distinctions"@en ;
+    skos:hasTopConcept club:SpeakersMedal .
+
+club:SpeakersMedal a mbr:Distinction ;
+    skos:inScheme club:Distinctions ; skos:topConceptOf club:Distinctions ;
+    skos:prefLabel "Speaker's Medal"@en ;
+    mbr:distinctionType mbrc:medal ;
+    mbr:material mbrc:silver .
+
+club:guestnight-2025-medal a mbr:DistinctionConferral ;
+    mbr:recipient club:guest1 ;
+    mbr:conferred club:SpeakersMedal ;
+    mbr:conferredBy club:Lanternmere ;
+    mbr:conferredAt club:guestnight-2025 ;
+    mbr:startDate "2025-10-16"^^xsd:date .
+
+# --- A fictional student nation (classification makes it a mbr:StudentNation) ---
+
+club:ExampleNation a mbr:MembershipOrganization ;
+    rdfs:label "Exempelnationen"@sv , "The Example Nation"@en ;
+    org:classification mbrc:studentNation .

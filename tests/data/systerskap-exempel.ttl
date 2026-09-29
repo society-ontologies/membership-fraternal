@@ -1,0 +1,109 @@
+# Fictional sorority (names invented for testing). Shows fraternal on its own:
+# own degree system mapped to the fraternal hub, a chapter, initiation, insignia,
+# amity with another order.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrc:   <https://w3id.org/membership/code/> .
+@prefix fraternal:    <https://w3id.org/fraternal#> .
+@prefix fraternalc:   <https://w3id.org/fraternal/code/> .
+@prefix sor:     <https://example.org/soror-exemplum/> .
+
+sor:SororExemplum a fraternal:FraternalOrder ;
+    rdfs:label "Soror Exemplum"@en ;
+    org:classification fraternalc:sorority ;
+    mbr:genderPolicy mbrc:womenOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:sister ;
+    fraternal:degreeSystem sor:Degrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:secrecy , fraternalc:gradedDegrees ;
+    fraternal:inAmityWith sor:FraterExemplum ;
+    org:hasUnit sor:AlphaChapter .
+
+sor:AlphaChapter a fraternal:Lodge ;
+    rdfs:label "Alpha Chapter"@en ;
+    org:unitOf sor:SororExemplum ;
+    fraternal:warrantedBy sor:SororExemplum .
+
+sor:FraterExemplum a fraternal:FraternalOrder ;
+    rdfs:label "Frater Exemplum"@en ;
+    org:classification fraternalc:collegeFraternity ;
+    mbr:genderPolicy mbrc:menOnly .
+
+# --- Degrees, mapped to the generic craft-style ladder ---
+
+sor:Degrees a skos:ConceptScheme , fraternal:DegreeSystem ;
+    skos:prefLabel "Soror Exemplum degrees"@en ;
+    skos:hasTopConcept sor:NewMember , sor:Initiate .
+
+sor:NewMember a fraternal:Degree ;
+    skos:inScheme sor:Degrees ; skos:topConceptOf sor:Degrees ;
+    skos:prefLabel "New Member"@en ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree sor:Initiate ;
+    skos:closeMatch fraternalc:entryDegree .
+
+sor:Initiate a fraternal:Degree ;
+    skos:inScheme sor:Degrees ; skos:topConceptOf sor:Degrees ;
+    skos:prefLabel "Initiated Sister"@en ;
+    fraternal:degreeRank 2 ;
+    skos:closeMatch fraternalc:fullDegree .
+
+sor:Pin a fraternal:Insignia ;
+    skos:prefLabel "Badge pin"@en ;
+    fraternal:insigniaOf sor:Initiate ;
+    fraternal:insigniaType fraternalc:pin ;
+    mbr:material mbrc:gold .
+
+# --- A sister's path ---
+
+sor:sofia a foaf:Person ; schema:name "Sofia Imaginary" .
+sor:ada   a foaf:Person ; schema:name "Ada Invented" .
+
+sor:ada-membership a mbr:Membership ;
+    org:member sor:ada ; org:organization sor:SororExemplum ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipNumber "A-03" .
+
+sor:sofia-membership a mbr:Membership ;
+    org:member sor:sofia ; org:organization sor:SororExemplum ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipNumber "A-17" ;
+    mbr:proposer sor:ada .
+
+sor:initiation-2025 a fraternal:Ceremony ;
+    rdfs:label "Spring initiation 2025"@en ;
+    mbr:gatheringType fraternalc:initiationCeremony ;
+    mbr:organizer sor:AlphaChapter ;
+    mbr:startDate "2025-03-15"^^xsd:date .
+
+sor:sofia-init a fraternal:Initiation ;
+    mbr:recipient sor:sofia ;
+    mbr:conferred sor:NewMember ;
+    mbr:conferredBy sor:SororExemplum ;
+    mbr:conferredAt sor:initiation-2025 ;
+    mbr:startDate "2025-03-15"^^xsd:date .
+
+sor:sofia-admission a mbr:MembershipEvent ;
+    mbr:concernsMembership sor:sofia-membership ;
+    mbr:membershipEventType mbrc:admission ;
+    mbr:resultingStatus mbrc:active ;
+    mbr:startDate "2025-03-15"^^xsd:date .
+
+# --- Offices, mapped to the membership hub ---
+
+sor:Offices a skos:ConceptScheme ;
+    skos:prefLabel "Soror Exemplum offices"@en ;
+    skos:hasTopConcept sor:Treasurer .
+
+sor:Treasurer a mbr:Office ;
+    skos:inScheme sor:Offices ; skos:topConceptOf sor:Offices ;
+    skos:prefLabel "Treasurer of the Sorority"@en ;
+    skos:exactMatch mbrc:treasurer .
+
+sor:ada-treasurer a mbr:Tenure ;
+    org:member sor:ada ; org:organization sor:SororExemplum ;
+    org:role sor:Treasurer ;
+    mbr:startDate "2023"^^xsd:gYear ; mbr:endDate "2024"^^xsd:gYear .

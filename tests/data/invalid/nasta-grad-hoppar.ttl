@@ -1,0 +1,10 @@
+# EXPECT: fraternal:nextDegree skips a rank (1 -> 3)
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fraternal: <https://w3id.org/fraternal#> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:S a skos:ConceptScheme , fraternal:DegreeSystem ; skos:prefLabel "Broken ladder"@en .
+ex:d1 a fraternal:Degree ; skos:inScheme ex:S ; skos:prefLabel "One"@en ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree ex:d3 .
+ex:d3 a fraternal:Degree ; skos:inScheme ex:S ; skos:prefLabel "Three"@en ;
+    fraternal:degreeRank 3 .

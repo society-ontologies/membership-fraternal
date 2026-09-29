@@ -1,0 +1,68 @@
+##############################################################################
+# fraternal SHACL shapes  —  v1.0.0   (use together with membership-shapes.ttl)
+##############################################################################
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fraternal:    <https://w3id.org/fraternal#> .
+@prefix fraternalsh:  <https://w3id.org/fraternal/shapes#> .
+
+<https://w3id.org/fraternal/shapes>
+    a owl:Ontology ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:label "fraternal SHACL shapes"@en , "SHACL-regler för fraternal"@sv ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "Oscar Almgren" ;
+    dcterms:rightsHolder "Oscar Almgren" ;
+    sh:declare [ sh:prefix "fraternal" ; sh:namespace "https://w3id.org/fraternal#"^^xsd:anyURI ] ,
+               [ sh:prefix "skos" ; sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ] .
+
+fraternalsh:DegreeShape a sh:NodeShape ;
+    sh:targetClass fraternal:Degree ;
+    sh:property [ sh:path skos:inScheme ; sh:minCount 1 ;
+                  sh:qualifiedValueShape [ sh:class fraternal:DegreeSystem ] ;
+                  sh:qualifiedMinCount 1 ;
+                  sh:message "A degree must be in at least one fraternal:DegreeSystem. | En grad måste ingå i minst ett fraternal:DegreeSystem." ] ,
+                [ sh:path fraternal:degreeRank ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:datatype xsd:integer ; sh:minInclusive 1 ] ,
+                [ sh:path fraternal:nextDegree ; sh:maxCount 1 ; sh:class fraternal:Degree ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "The next degree must be in the same degree system and have rank one higher. | Nästa grad måste ingå i samma gradsystem och ha ett gradnummer som är ett högre." ;
+        sh:prefixes <https://w3id.org/fraternal/shapes> ;
+        sh:select """
+            SELECT $this ?next WHERE {
+                $this fraternal:nextDegree ?next ;
+                      fraternal:degreeRank ?r ;
+                      skos:inScheme ?s .
+                ?s a fraternal:DegreeSystem .
+                FILTER NOT EXISTS { ?next skos:inScheme ?s ; fraternal:degreeRank ?rn2 .
+                                    FILTER (?rn2 = ?r + 1) }
+            }
+        """
+    ] .
+
+fraternalsh:DegreeConferralShape a sh:NodeShape ;
+    sh:targetClass fraternal:DegreeConferral ;
+    sh:property [ sh:path mbr:conferred ; sh:minCount 1 ; sh:maxCount 1 ; sh:class fraternal:Degree ;
+                  sh:message "A degree conferral needs exactly one conferred fraternal:Degree. | En gradtilldelning behöver exakt en tilldelad fraternal:Degree." ] .
+
+fraternalsh:FraternalOrderShape a sh:NodeShape ;
+    sh:targetClass fraternal:FraternalOrder ;
+    sh:property [ sh:path fraternal:degreeSystem ; sh:class fraternal:DegreeSystem ] ,
+                [ sh:path fraternal:memberTitle ; sh:class skos:Concept ] ,
+                [ sh:path fraternal:characteristic ; sh:class skos:Concept ] ,
+                [ sh:path fraternal:recognizes ; sh:class org:Organization ] ,
+                [ sh:path fraternal:inAmityWith ; sh:class org:Organization ] .
+
+fraternalsh:InsigniaShape a sh:NodeShape ;
+    sh:targetClass fraternal:Insignia ;
+    sh:property [ sh:path fraternal:insigniaOf ; sh:minCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path fraternal:insigniaType ; sh:maxCount 1 ; sh:class skos:Concept ] .

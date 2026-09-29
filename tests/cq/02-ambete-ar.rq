@@ -1,0 +1,33 @@
+# CQ2: Who held a treasurer-type office in 2023, in any organisation?
+# Uses the membership office hub, so a sorority's Treasurer and a club's Honorary
+# Treasurer are both found. Dates may be xsd:date, xsd:gYearMonth or xsd:gYear,
+# so the year is read from the first four characters.
+
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:   <https://w3id.org/membership#>
+PREFIX mbrc:  <https://w3id.org/membership/code/>
+
+SELECT ?name ?office ?organisation ?from ?until
+WHERE {
+    VALUES (?hub ?year) { (mbrc:treasurer 2023) }
+    ?t a mbr:Tenure ;
+       org:member ?person ;
+       org:role ?role ;
+       org:organization ?org ;
+       mbr:startDate ?from .
+    ?role skos:exactMatch? ?hub .
+    OPTIONAL { ?t mbr:endDate ?until }
+    FILTER (xsd:integer(SUBSTR(STR(?from), 1, 4)) <= ?year)
+    FILTER (!BOUND(?until) || xsd:integer(SUBSTR(STR(?until), 1, 4)) >= ?year)
+    OPTIONAL { ?person schema:name ?name }
+    OPTIONAL { ?role skos:prefLabel ?osv . FILTER (lang(?osv) = "sv") }
+    OPTIONAL { ?role skos:prefLabel ?oen . FILTER (lang(?oen) = "en") }
+    OPTIONAL { ?org rdfs:label ?gsv . FILTER (lang(?gsv) = "sv") }
+    OPTIONAL { ?org rdfs:label ?gen . FILTER (lang(?gen) = "en") }
+    BIND (COALESCE(?osv, ?oen) AS ?office)
+    BIND (COALESCE(?gsv, ?gen) AS ?organisation)
+}

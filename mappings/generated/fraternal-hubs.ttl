@@ -1,0 +1,119 @@
+# Generated from fraternal-hubs.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/fraternal/mappings/fraternal-hubs> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "fraternal order types placed under the membership organisation-type hub." ;
+    <http://purl.org/dc/terms/created> "2026-09-29" .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/fraternal/code/fraternalOrder> <http://www.w3.org/2004/02/skos/core#exactMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/fraternalOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Fraternal Order" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/collegeFraternity> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/collegeFraternity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "College Fraternity" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/sorority> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/sorority> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Sorority" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/coedFraternity> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/coedFraternity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Co-ed Fraternity" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/secretSociety> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/secretSociety> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Secret Society" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/confraternity> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/confraternity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Confraternity" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/chivalricStyleOrder> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/chivalricStyleOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Order in the Chivalric Style" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/studentOrder> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/studentOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Student Order" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/benevolentOrder> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/benevolentOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Benevolent Order" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/adoptiveOrder> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/adoptiveOrder> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Adoptive Order" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+

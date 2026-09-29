@@ -1,0 +1,23 @@
+# DRAFT for a pull request to https://github.com/perma-id/w3id.org  (folder: ids/fraternal/)
+# Not submitted yet. Targets are the GitHub Pages site of this repository
+# (https://society-ontologies.github.io/membership-fraternal/).
+#
+#   https://w3id.org/fraternal            -> ontology (Turtle or HTML docs)
+#   https://w3id.org/fraternal/code[/x]   -> codelists
+#   https://w3id.org/fraternal/shapes     -> SHACL shapes
+#   https://w3id.org/fraternal/mappings/x -> generated mapping set x
+
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} application/n-triples
+RewriteRule ^$ https://society-ontologies.github.io/membership-fraternal/fraternal/fraternal-ontology.ttl [R=303,L]
+RewriteRule ^$ https://society-ontologies.github.io/membership-fraternal/docs/fraternal/ [R=303,L]
+
+RewriteRule ^1\.0\.0$ https://society-ontologies.github.io/membership-fraternal/fraternal/fraternal-ontology.ttl [R=303,L]
+RewriteRule ^code(/1\.0\.0)?/?$ https://society-ontologies.github.io/membership-fraternal/fraternal/fraternal-codes.ttl [R=303,L]
+RewriteRule ^code/(.+)$ https://society-ontologies.github.io/membership-fraternal/fraternal/fraternal-codes.ttl [R=303,L]
+RewriteRule ^shapes$ https://society-ontologies.github.io/membership-fraternal/fraternal/fraternal-shapes.ttl [R=303,L]
+RewriteRule ^mappings/(.+)$ https://society-ontologies.github.io/membership-fraternal/mappings/generated/$1.ttl [R=303,L]

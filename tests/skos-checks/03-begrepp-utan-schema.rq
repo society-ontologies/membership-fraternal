@@ -1,0 +1,8 @@
+# Every named concept belongs to a concept scheme (no orphans).
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?c WHERE {
+    ?c a/rdfs:subClassOf* skos:Concept .
+    FILTER isIRI(?c)
+    FILTER NOT EXISTS { ?c skos:inScheme ?s }
+}

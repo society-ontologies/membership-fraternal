@@ -1,0 +1,27 @@
+# CQ3: Everything conferred at a gathering, including on non-members, and
+# whether each recipient is a member of the organiser (or of the organisation
+# the organising branch belongs to).
+
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:   <https://w3id.org/membership#>
+PREFIX club:   <https://example.org/lanternmere/>
+PREFIX sor:    <https://example.org/soror-exemplum/>
+
+SELECT ?gatheringName ?name ?conferred ?recipientIsMember
+WHERE {
+    VALUES ?gathering { club:guestnight-2025 sor:initiation-2025 }
+    ?c mbr:conferredAt ?gathering ;
+       mbr:recipient ?recipient ;
+       mbr:conferred ?x .
+    OPTIONAL { ?gathering rdfs:label ?gatheringName }
+    OPTIONAL { ?recipient schema:name ?name }
+    OPTIONAL { ?x skos:prefLabel ?conferred }
+    BIND (EXISTS {
+        ?gathering mbr:organizer/org:unitOf? ?org .
+        ?m a mbr:Membership ; org:member ?recipient ; org:organization ?org .
+    } AS ?recipientIsMember)
+}
+ORDER BY ?gatheringName

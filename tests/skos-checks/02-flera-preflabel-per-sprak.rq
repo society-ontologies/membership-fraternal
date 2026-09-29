@@ -1,0 +1,6 @@
+# At most one skos:prefLabel per language tag.
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?c ?l1 ?l2 WHERE {
+    ?c skos:prefLabel ?l1 , ?l2 .
+    FILTER (?l1 != ?l2 && lang(?l1) = lang(?l2))
+}

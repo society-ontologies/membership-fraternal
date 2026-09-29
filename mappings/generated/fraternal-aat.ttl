@@ -1,0 +1,141 @@
+# Generated from fraternal-aat.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/fraternal/mappings/fraternal-aat> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "fraternal classes and codelist hubs mapped to the Getty Art & Architecture Thesaurus. Targets found via the Getty SPARQL endpoint on 2026-09-29. The object_label values are from the Art & Architecture Thesaurus (AAT), © J. Paul Getty Trust, used under the Open Data Commons Attribution License (ODC-By) 1.0." ;
+    <http://purl.org/dc/terms/created> "2026-09-29" .
+
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#relatedMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/fraternal#Insignia> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300390959> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#Insignia> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300390959> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Insignia" ;
+  <https://w3id.org/sssom/object_label> "order insignias" ] .
+
+<https://w3id.org/fraternal#Lodge> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://vocab.getty.edu/aat/300007071> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#Lodge> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300007071> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Lodge" ;
+  <https://w3id.org/sssom/object_label> "fraternal lodges" ;
+  <https://w3id.org/sssom/comment> "AAT concept denotes the building." ] .
+
+<https://w3id.org/fraternal/code/collegeFraternity> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300386371> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/collegeFraternity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300386371> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "College Fraternity" ;
+  <https://w3id.org/sssom/object_label> "fraternities (associations)" ] .
+
+<https://w3id.org/fraternal/code/sorority> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300386372> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/sorority> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300386372> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Sorority" ;
+  <https://w3id.org/sssom/object_label> "sororities" ] .
+
+<https://w3id.org/fraternal/code/secretSociety> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300026020> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/secretSociety> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300026020> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Secret Society" ;
+  <https://w3id.org/sssom/object_label> "secret societies" ] .
+
+<https://w3id.org/fraternal/code/apron> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425977> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/apron> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425977> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.85"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Apron" ;
+  <https://w3id.org/sssom/object_label> "fraternal aprons" ] .
+
+<https://w3id.org/fraternal/code/jewel> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300425984> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/jewel> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425984> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Jewel" ;
+  <https://w3id.org/sssom/object_label> "fraternal pendants" ] .
+
+<https://w3id.org/fraternal/code/ribbon> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300425986> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/ribbon> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425986> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Ribbon" ;
+  <https://w3id.org/sssom/object_label> "fraternal ribbons" ] .
+
+<https://w3id.org/fraternal/code/ring> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425987> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/ring> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425987> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Ring" ;
+  <https://w3id.org/sssom/object_label> "fraternal rings" ] .
+
+<https://w3id.org/fraternal/code/pin> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425985> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/pin> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425985> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Lapel Pin" ;
+  <https://w3id.org/sssom/object_label> "fraternal pins" ] .
+
+<https://w3id.org/fraternal/code/hat> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425979> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/hat> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425979> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Hat" ;
+  <https://w3id.org/sssom/object_label> "fraternal hats" ] .
+
+<https://w3id.org/fraternal/code/breastStar> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300426512> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/breastStar> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300426512> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Breast Star" ;
+  <https://w3id.org/sssom/object_label> "insignia plaques" ] .
+

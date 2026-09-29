@@ -1,0 +1,27 @@
+# curie_map:
+#   fraternal: https://w3id.org/fraternal#
+#   fraternalc: https://w3id.org/fraternal/code/
+#   wd: http://www.wikidata.org/entity/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-wikidata
+# mapping_set_version: 1.0.0
+# mapping_set_description: fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-09-29
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternal:FraternalOrder	Fraternal Order	skos:closeMatch	wd:Q996839	fraternal organization	semapv:ManualMappingCuration	0.8	Wikidata item is broader in practice.
+fraternal:Lodge	Lodge	skos:narrowMatch	wd:Q1454597	masonic lodge	semapv:ManualMappingCuration	0.9	fraternal:Lodge covers the local unit of any order.
+fraternal:Degree	Degree	skos:closeMatch	wd:Q1499804	grade of an order	semapv:ManualMappingCuration	0.8
+fraternal:nextDegree	next degree	skos:closeMatch	wd:P156	followed by	semapv:ManualMappingCuration	0.8
+fraternal:namedAfter	named after	skos:exactMatch	wd:P138	named after	semapv:ManualMappingCuration	0.9
+fraternalc:fraternalOrder	Fraternal Order	skos:closeMatch	wd:Q996839	fraternal organization	semapv:ManualMappingCuration	0.8
+fraternalc:collegeFraternity	College Fraternity	skos:exactMatch	wd:Q18811582	fraternity	semapv:ManualMappingCuration	0.9
+fraternalc:sorority	Sorority	skos:exactMatch	wd:Q18811583	sorority	semapv:ManualMappingCuration	0.9
+fraternalc:secretSociety	Secret Society	skos:exactMatch	wd:Q276548	secret society	semapv:ManualMappingCuration	0.9
+fraternalc:confraternity	Confraternity	skos:exactMatch	wd:Q992253	confraternity	semapv:ManualMappingCuration	0.9
+fraternalc:chivalricStyleOrder	Order in the Chivalric Style	skos:relatedMatch	wd:Q2003221	order of chivalry	semapv:ManualMappingCuration	0.7	Imitates, but is not, an order of chivalry.
+fraternalc:memberGrade	Member	skos:exactMatch	wd:Q59820617	member	semapv:ManualMappingCuration	0.9
+fraternalc:knightGrade	Knight	skos:closeMatch	wd:Q2261440	Knight	semapv:ManualMappingCuration	0.8
+fraternalc:commanderGrade	Commander	skos:exactMatch	wd:Q524980	Commander	semapv:ManualMappingCuration	0.9
+fraternalc:grandCrossGrade	Grand Cross	skos:exactMatch	wd:Q1549416	grand cross	semapv:ManualMappingCuration	0.9

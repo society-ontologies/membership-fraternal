@@ -1,0 +1,9 @@
+# EXPECT: member count without the date it refers to
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub ;
+    mbr:hasMemberCount ex:count .
+ex:count a mbr:MemberCount ; mbr:count 450 .
