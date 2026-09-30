@@ -3,8 +3,8 @@
 <https://w3id.org/fraternal/mappings/fraternal-wikidata> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29." ;
-    <http://purl.org/dc/terms/created> "2026-09-29" .
+    <http://purl.org/dc/terms/description> "fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30." ;
+    <http://purl.org/dc/terms/created> "2026-09-30" .
 
 <http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -171,4 +171,56 @@
   <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Grand Cross" ;
   <https://w3id.org/sssom/object_label> "grand cross" ] .
+
+<https://w3id.org/fraternal/code/orderOfChivalry> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q2003221> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/orderOfChivalry> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q2003221> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Order of Chivalry" ;
+  <https://w3id.org/sssom/object_label> "order of chivalry" ;
+  <https://w3id.org/sssom/comment> "Wikidata item does not separate genuine from self-styled orders." ] .
+
+<https://w3id.org/fraternal/code/selfStyledOrderOfChivalry> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q3123840> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/selfStyledOrderOfChivalry> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q3123840> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Self-styled Order of Chivalry" ;
+  <https://w3id.org/sssom/object_label> "self-styled order" ] .
+
+<https://w3id.org/fraternal#fonsHonorum> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://www.wikidata.org/entity/Q1884636> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal#fonsHonorum> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1884636> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "fons honorum" ;
+  <https://w3id.org/sssom/object_label> "Fount of honour" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is the concept, not a property." ] .
+
+<https://w3id.org/fraternal/code/breastStar> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q118807> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/breastStar> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q118807> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Breast Star" ;
+  <https://w3id.org/sssom/object_label> "breast star" ] .
+
+<https://w3id.org/fraternal/code/pin> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q213426> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/pin> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q213426> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Lapel Pin" ;
+  <https://w3id.org/sssom/object_label> "lapel pin" ] .
 

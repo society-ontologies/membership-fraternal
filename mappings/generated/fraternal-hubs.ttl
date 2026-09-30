@@ -4,7 +4,7 @@
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
     <http://purl.org/dc/terms/description> "fraternal order types placed under the membership organisation-type hub." ;
-    <http://purl.org/dc/terms/created> "2026-09-29" .
+    <http://purl.org/dc/terms/created> "2026-09-30" .
 
 <http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -116,4 +116,26 @@
   <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Adoptive Order" ;
   <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
+
+<https://w3id.org/fraternal/code/orderOfChivalry> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/society> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/orderOfChivalry> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/society> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Order of Chivalry" ;
+  <https://w3id.org/sssom/object_label> "Society" ;
+  <https://w3id.org/sssom/comment> "An association of its knights and dames; not an ordenssällskap." ] .
+
+<https://w3id.org/fraternal/code/selfStyledOrderOfChivalry> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/society> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/selfStyledOrderOfChivalry> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/society> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Self-styled Order of Chivalry" ;
+  <https://w3id.org/sssom/object_label> "Society" ;
+  <https://w3id.org/sssom/comment> "An association of its members; not an ordenssällskap." ] .
 

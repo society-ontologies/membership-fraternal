@@ -6,9 +6,9 @@
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/membership/mappings/membership-wikidata
 # mapping_set_version: 1.0.0
-# mapping_set_description: membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29.
+# mapping_set_description: membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-29
+# mapping_date: 2026-09-30
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 mbr:MembershipOrganization	Membership Organisation	skos:closeMatch	wd:Q48204	voluntary association	semapv:ManualMappingCuration	0.8
 mbr:Office	Office	skos:closeMatch	wd:Q4164871	position	semapv:ManualMappingCuration	0.8
@@ -40,3 +40,4 @@ mbrc:pewter	Pewter	skos:exactMatch	wd:Q852372	pewter	semapv:ManualMappingCuratio
 mbrc:politicalClub	Political Club	skos:exactMatch	wd:Q4370120	political club	semapv:ManualMappingCuration	0.9	
 mbrc:yachtClub	Yacht Club	skos:exactMatch	wd:Q1855011	yacht club	semapv:ManualMappingCuration	0.9	
 mbrc:serviceClub	Service Club	skos:exactMatch	wd:Q1897098	service club	semapv:ManualMappingCuration	0.9	Rotary/Lions-type clubs, not armed-forces clubs.
+mbrc:chancellor	Chancellor	skos:closeMatch	wd:Q3439258	ordenskansler	semapv:ManualMappingCuration	0.6	Wikidata item has only a Swedish label.

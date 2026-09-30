@@ -6,9 +6,9 @@
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-wikidata
 # mapping_set_version: 1.0.0
-# mapping_set_description: fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29.
+# mapping_set_description: fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-29
+# mapping_date: 2026-09-30
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 fraternal:FraternalOrder	Fraternal Order	skos:closeMatch	wd:Q996839	fraternal organization	semapv:ManualMappingCuration	0.8	Wikidata item is broader in practice.
 fraternal:Lodge	Lodge	skos:narrowMatch	wd:Q1454597	masonic lodge	semapv:ManualMappingCuration	0.9	fraternal:Lodge covers the local unit of any order.
@@ -25,3 +25,8 @@ fraternalc:memberGrade	Member	skos:exactMatch	wd:Q59820617	member	semapv:ManualM
 fraternalc:knightGrade	Knight	skos:closeMatch	wd:Q2261440	Knight	semapv:ManualMappingCuration	0.8
 fraternalc:commanderGrade	Commander	skos:exactMatch	wd:Q524980	Commander	semapv:ManualMappingCuration	0.9
 fraternalc:grandCrossGrade	Grand Cross	skos:exactMatch	wd:Q1549416	grand cross	semapv:ManualMappingCuration	0.9
+fraternalc:orderOfChivalry	Order of Chivalry	skos:closeMatch	wd:Q2003221	order of chivalry	semapv:ManualMappingCuration	0.8	Wikidata item does not separate genuine from self-styled orders.
+fraternalc:selfStyledOrderOfChivalry	Self-styled Order of Chivalry	skos:exactMatch	wd:Q3123840	self-styled order	semapv:ManualMappingCuration	0.9
+fraternal:fonsHonorum	fons honorum	skos:relatedMatch	wd:Q1884636	Fount of honour	semapv:ManualMappingCuration	0.7	Wikidata item is the concept, not a property.
+fraternalc:breastStar	Breast Star	skos:exactMatch	wd:Q118807	breast star	semapv:ManualMappingCuration	0.9
+fraternalc:pin	Lapel Pin	skos:exactMatch	wd:Q213426	lapel pin	semapv:ManualMappingCuration	0.9

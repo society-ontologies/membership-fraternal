@@ -1,0 +1,14 @@
+# EXPECT: a legitimacy assessment without fraternal:assessedBy
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:SomeOrder a fraternal:FraternalOrder ; rdfs:label "Some order"@en ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+ex:assessment a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder ex:SomeOrder ;
+    fraternal:assessmentOutcome fraternalc:notRecognised ;
+    mbr:startDate "2001"^^xsd:gYear .

@@ -297,14 +297,19 @@ td {
         "@value": "2026-09-29"
       }
     ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2026-09-30"
+      }
+    ],
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, and recognition and amity between orders."
+        "@value": "Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, recognition and amity between orders, and assessments of whether an order of chivalry is genuine."
       },
       {
         "@language": "sv",
-        "@value": "Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier samt erkännande och vänskap mellan ordnar."
+        "@value": "Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier, erkännande och vänskap mellan ordnar samt bedömningar av om en riddarorden är äkta."
       }
     ],
     "https://schema.org/license": [
@@ -365,6 +370,12 @@ td {
           </div>
           <div>
             <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
+            </dt>
+            <dd><p>2026-09-30</p></dd>
+          </div>
+          <div>
+            <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/license" title="A legal document giving official permission to do something with the resource. Defined in DCMI Metadata Terms">License</a>
             </dt>
             <dd>
@@ -405,8 +416,8 @@ td {
             </dt>
             <dd>
               <ul>
-                <li><p>Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, and recognition and amity between orders.</p></li>
-                <li><p>Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier samt erkännande och vänskap mellan ordnar.</p></li>
+                <li><p>Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, recognition and amity between orders, and assessments of whether an order of chivalry is genuine.</p></li>
+                <li><p>Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier, erkännande och vänskap mellan ordnar samt bedömningar av om en riddarorden är äkta.</p></li>
               </ul>
             </dd>
           </div>
@@ -433,6 +444,17 @@ td {
                 <ul>
                   <li><p>A membership organisation whose members are admitted by initiation and advance through a system of degrees, usually under oath and with ritual. Covers fraternities, sororities, co-ed and adoptive orders. The kind of order is given with org:classification (see fraternalc:OrderTypes).</p></li>
                   <li><p>En medlemsorganisation där medlemmar upptas genom initiering och avancerar i ett gradsystem, vanligen under ed och med ritual. Omfattar brödra- och systerskap samt blandade ordnar. Ordens typ anges med org:classification (se fraternalc:OrderTypes).</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Also used for orders of chivalry, genuine or self-styled, described as organisations of their members (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). In Swedish these are riddarordnar, not ordenssällskap. An order of merit that consists only of a dignity and its insignia is a mbr:Distinction, not an organisation.</p></li>
+                  <li><p>Används även för riddarordnar, äkta eller självutnämnda, beskrivna som sammanslutningar av sina medlemmar (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). På svenska är dessa riddarordnar, inte ordenssällskap. En förtjänstorden som bara består av en värdighet och dess insignier är en mbr:Distinction, inte en organisation.</p></li>
                 </ul>
               </td>
             </tr>
@@ -698,8 +720,19 @@ td {
               </th>
               <td>
                 <ul>
-                  <li><p>A degree or grade within a degree system. Position is given by fraternal:degreeRank and fraternal:nextDegree — not by skos:broader, which would state that a higher degree is a narrower concept of a lower one.</p></li>
-                  <li><p>En grad inom ett gradsystem. Placeringen anges med fraternal:degreeRank och fraternal:nextDegree — inte med skos:broader, som skulle säga att en högre grad är ett underbegrepp till en lägre.</p></li>
+                  <li><p>A degree or grade within a degree system. A degree in the numbered sequence has its position given by fraternal:degreeRank and fraternal:nextDegree — not by skos:broader, which would state that a higher degree is a narrower concept of a lower one. Honorary, office and side degrees that stand outside the sequence have no rank; their kind is given with fraternal:degreeKind.</p></li>
+                  <li><p>En grad inom ett gradsystem. En grad i den numrerade följden får sin plats genom fraternal:degreeRank och fraternal:nextDegree — inte genom skos:broader, som skulle säga att en högre grad är ett underbegrepp till en lägre. Heders-, ämbets- och tilläggsgrader som står utanför följden saknar gradnummer; deras art anges med fraternal:degreeKind.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>The order's own numeral or abbreviation for a degree (e.g. IV–V, 3=8, RKFV) goes in skos:notation. It may differ from the rank or run in reverse.</p></li>
+                  <li><p>Ordens egen numrering eller förkortning för en grad (t.ex. IV–V, 3=8, RKFV) anges med skos:notation. Den kan skilja sig från gradnumret eller löpa baklänges.</p></li>
                 </ul>
               </td>
             </tr>
@@ -724,6 +757,12 @@ td {
                     <span>
                       <a href="#degreeRank">degree rank</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#degreeKind">degree kind</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                   <li>
@@ -914,9 +953,117 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="LegitimacyAssessment">
+          <h3>Legitimacy AssessmentLegitimitetsbedömning
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#LegitimacyAssessment</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>A statement by an agent — a commission such as the ICOC, the Holy See, a state or another order — about whether an order is a genuine order of chivalry or may be worn, with its outcome (fraternal:assessmentOutcome), date (mbr:startDate) and source (dcterms:source).</p></li>
+                  <li><p>Ett uttalande av en agent — en kommission som ICOC, Den heliga stolen, en stat eller en annan orden — om huruvida en orden är en äkta riddarorden eller får bäras, med utfall (fraternal:assessmentOutcome), datum (mbr:startDate) och källa (dcterms:source).</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/ns/prov#Activity">Activity</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#assessedOrder">assessed order</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#assessedBy">assessed by</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#assessmentOutcome">assessment outcome</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
+        <div class="property entity" id="degreeKind">
+          <h3>degree kindgradart
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#degreeKind</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>The kind of degree: honorary, office, side, probationary and so on (see fraternalc:DegreeKinds). A degree without a kind is an ordinary degree in the numbered sequence.</p></li>
+                  <li><p>Gradens art: heders-, ämbets-, tillägg-, prövograd osv. (se fraternalc:DegreeKinds). En grad utan art är en vanlig grad i den numrerade följden.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Degree">Degree</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="higherDegree">
           <h3>higher degreehögre grad
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -1353,6 +1500,17 @@ td {
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>For a dated judgement by a commission, a state or the Holy See on whether an order of chivalry is genuine, use fraternal:LegitimacyAssessment.</p></li>
+                  <li><p>För en daterad bedömning av en kommission, en stat eller Den heliga stolen av om en riddarorden är äkta används fraternal:LegitimacyAssessment.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
               </th>
               <td>
@@ -1393,6 +1551,192 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="fonshonorum">
+          <h3>fons honorumfons honorum
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#fonsHonorum</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>The authority from which an order derives its right to confer knighthood or honours: a sovereign state or its head, the head of a reigning or formerly reigning royal house, or the Holy See.</p></li>
+                  <li><p>Den auktoritet från vilken en orden härleder sin rätt att förläna riddarvärdighet eller utmärkelser: en suverän stat eller dess statschef, huvudmannen för ett regerande eller tidigare regerande furstehus, eller Den heliga stolen.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>States the fons honorum an order claims or is recorded with. Whether the claim is accepted is a fraternal:LegitimacyAssessment.</p></li>
+                  <li><p>Anger den fons honorum en orden hävdar eller registreras med. Om anspråket godtas är en fraternal:LegitimacyAssessment.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="assessedOrder">
+          <h3>assessed orderbedömd orden
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#assessedOrder</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>The order the assessment is about.</p></li>
+                  <li><p>Den orden som bedömningen avser.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#LegitimacyAssessment">Legitimacy Assessment</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">org:Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="assessedBy">
+          <h3>assessed bybedömd av
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#assessedBy</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>The agent that made the assessment.</p></li>
+                  <li><p>Den agent som gjorde bedömningen.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/ns/prov#wasAssociatedWith">was associated with</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#LegitimacyAssessment">Legitimacy Assessment</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="assessmentOutcome">
+          <h3>assessment outcomebedömningens utfall
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#assessmentOutcome</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>What the assessment concluded (see fraternalc:AssessmentOutcomes).</p></li>
+                  <li><p>Vad bedömningen kom fram till (se fraternalc:AssessmentOutcomes).</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#LegitimacyAssessment">Legitimacy Assessment</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div class="section" id="datatypeproperties">
         <h2>Datatype Properties</h2>
@@ -1413,8 +1757,8 @@ td {
               </th>
               <td>
                 <ul>
-                  <li><p>Position of the degree in its system, starting at 1 for the entry degree.</p></li>
-                  <li><p>Gradens plats i systemet, med 1 för inträdesgraden.</p></li>
+                  <li><p>Position of the degree in the numbered sequence of its system, starting at 1 for the entry degree. Positional only: degrees outside the sequence have no rank.</p></li>
+                  <li><p>Gradens plats i systemets numrerade följd, med 1 för inträdesgraden. Anger bara position: grader utanför följden saknar gradnummer.</p></li>
                 </ul>
               </td>
             </tr>
@@ -1459,8 +1803,8 @@ td {
               </th>
               <td>
                 <ul>
-                  <li><p>Position of the degree in its system, starting at 1 for the entry degree.</p></li>
-                  <li><p>Gradens plats i systemet, med 1 för inträdesgraden.</p></li>
+                  <li><p>Position of the degree in the numbered sequence of its system, starting at 1 for the entry degree. Positional only: degrees outside the sequence have no rank.</p></li>
+                  <li><p>Gradens plats i systemets numrerade följd, med 1 för inträdesgraden. Anger bara position: grader utanför följden saknar gradnummer.</p></li>
                 </ul>
               </td>
             </tr>
@@ -1528,6 +1872,10 @@ td {
           <dd>
             <code>http://purl.org/dc/terms/</code>
           </dd>
+          <dt id="foaf">foaf</dt>
+          <dd>
+            <code>http://xmlns.com/foaf/0.1/</code>
+          </dd>
           <dt id="fraternal">fraternal</dt>
           <dd>
             <code>https://w3id.org/fraternal#</code>
@@ -1547,6 +1895,10 @@ td {
           <dt id="owl">owl</dt>
           <dd>
             <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="prov">prov</dt>
+          <dd>
+            <code>http://www.w3.org/ns/prov#</code>
           </dd>
           <dt id="rdf">rdf</dt>
           <dd>
@@ -1659,6 +2011,9 @@ td {
             <li>
               <a href="#Insignia">InsigniaInsignie</a>
             </li>
+            <li>
+              <a href="#LegitimacyAssessment">Legitimacy AssessmentLegitimitetsbedömning</a>
+            </li>
           </ul>
         </li>
         <li>
@@ -1666,6 +2021,9 @@ td {
             <a href="#objectproperties">Object Properties</a>
           </h4>
           <ul class="second">
+            <li>
+              <a href="#degreeKind">degree kindgradart</a>
+            </li>
             <li>
               <a href="#higherDegree">higher degreehögre grad</a>
             </li>
@@ -1705,6 +2063,18 @@ td {
             <li>
               <a href="#inamitywith">in amity withi vänskap med</a>
             </li>
+            <li>
+              <a href="#fonshonorum">fons honorumfons honorum</a>
+            </li>
+            <li>
+              <a href="#assessedOrder">assessed orderbedömd orden</a>
+            </li>
+            <li>
+              <a href="#assessedBy">assessed bybedömd av</a>
+            </li>
+            <li>
+              <a href="#assessmentOutcome">assessment outcomebedömningens utfall</a>
+            </li>
           </ul>
         </li>
         <li>
@@ -1739,6 +2109,9 @@ td {
               <a href="#dcterms">dcterms</a>
             </li>
             <li>
+              <a href="#foaf">foaf</a>
+            </li>
+            <li>
               <a href="#fraternal">fraternal</a>
             </li>
             <li>
@@ -1752,6 +2125,9 @@ td {
             </li>
             <li>
               <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#prov">prov</a>
             </li>
             <li>
               <a href="#rdf">rdf</a>

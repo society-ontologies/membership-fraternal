@@ -25,6 +25,7 @@
     dcterms:title "Membership Organisations — codelists"@en ,
                   "Medlemsorganisationer — kodlistor"@sv ;
     dcterms:created "2026-09-29" ;
+    dcterms:modified "2026-09-30" ;
     vann:preferredNamespacePrefix "mbrc" ;
     vann:preferredNamespaceUri "https://w3id.org/membership/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -404,7 +405,7 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Office Types"@en , "Ämbetstyper"@sv ;
     skos:definition "Generic offices found across clubs, societies and orders. Organisation-specific offices map to these."@en ,
                     "Generiska ämbeten som förekommer i klubbar, sällskap och ordnar. Organisationsspecifika ämbeten mappas hit."@sv ;
-    skos:hasTopConcept mbrc:president , mbrc:vicePresident , mbrc:secretary , mbrc:treasurer ,
+    skos:hasTopConcept mbrc:president , mbrc:vicePresident , mbrc:chancellor , mbrc:secretary , mbrc:treasurer ,
                        mbrc:archivist , mbrc:librarian , mbrc:chaplain , mbrc:masterOfCeremonies ,
                        mbrc:herald , mbrc:provost , mbrc:introducer , mbrc:steward ,
                        mbrc:cellarMaster , mbrc:kitchenMaster , mbrc:songLeader ,
@@ -414,13 +415,24 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "President"@en , "Ordförande"@sv ;
-    skos:altLabel "Chair"@en , "Chancellor"@en , "Grand Master"@en , "Stormästare"@sv , "Kansler"@sv ;
-    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv .
+    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv ;
+    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv ;
+    skos:scopeNote "Whatever the head is called locally (grand master, chancellor, governor …), map the head's office here and keep the local title as its label."@en ,
+                   "Vad den högste ämbetsmannen än kallas lokalt (stormästare, kansler, guvernör …) mappas ämbetet hit och den lokala titeln behålls som dess etikett."@sv .
 
 mbrc:vicePresident a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Vice President"@en , "Vice ordförande"@sv ;
     skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv .
+
+mbrc:chancellor a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Chancellor"@en , "Kansler"@sv ;
+    skos:altLabel "Grand Chancellor"@en , "Ordenskansler"@sv , "Storkansler"@sv ;
+    skos:definition "The officer who keeps an order's seal, statutes and records of admissions and conferrals, usually second to the head."@en ,
+                    "Den ämbetsman som förvarar en ordens sigill, stadgar och förteckningar över upptagningar och tilldelningar, vanligen närmast under den högste ämbetsmannen."@sv ;
+    skos:scopeNote "Where the chancellor is the head of the order, record that office as mbrc:president."@en ,
+                   "Där kanslern är ordens högste ämbetsman anges ämbetet som mbrc:president."@sv .
 
 mbrc:secretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
@@ -660,8 +672,11 @@ mbrc:blackTie a skos:Concept , owl:NamedIndividual ;
 
 mbrc:loungeSuit a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Lounge Suit"@en , "Kavaj"@sv ;
-    skos:definition "Dark suit and tie, or the equivalent."@en , "Mörk kostym och slips, eller motsvarande."@sv .
+    skos:prefLabel "Lounge Suit"@en , "Mörk kostym"@sv ;
+    skos:altLabel "Dark Suit"@en , "Kavaj"@sv ;
+    skos:definition "Dark suit and tie, or the equivalent."@en , "Mörk kostym och slips, eller motsvarande."@sv ;
+    skos:scopeNote "Swedish invitations sometimes distinguish \"mörk kostym\" from the slightly less formal \"kavaj\"; both are recorded with this code."@en ,
+                   "Svenska inbjudningar skiljer ibland mellan \"mörk kostym\" och den något mindre formella \"kavaj\"; båda anges med denna kod."@sv .
 
 mbrc:morningDress a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;

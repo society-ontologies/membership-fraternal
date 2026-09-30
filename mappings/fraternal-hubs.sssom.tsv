@@ -7,7 +7,7 @@
 # mapping_set_version: 1.0.0
 # mapping_set_description: fraternal order types placed under the membership organisation-type hub.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-29
+# mapping_date: 2026-09-30
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 fraternalc:fraternalOrder	Fraternal Order	skos:exactMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
 fraternalc:collegeFraternity	College Fraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
@@ -19,3 +19,5 @@ fraternalc:chivalricStyleOrder	Order in the Chivalric Style	skos:broadMatch	mbrc
 fraternalc:studentOrder	Student Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
 fraternalc:benevolentOrder	Benevolent Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
 fraternalc:adoptiveOrder	Adoptive Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
+fraternalc:orderOfChivalry	Order of Chivalry	skos:broadMatch	mbrc:society	Society	semapv:ManualMappingCuration	0.6	An association of its knights and dames; not an ordenssällskap.
+fraternalc:selfStyledOrderOfChivalry	Self-styled Order of Chivalry	skos:broadMatch	mbrc:society	Society	semapv:ManualMappingCuration	0.6	An association of its members; not an ordenssällskap.

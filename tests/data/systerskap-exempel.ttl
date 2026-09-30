@@ -39,7 +39,7 @@ sor:FraterExemplum a fraternal:FraternalOrder ;
 
 sor:Degrees a skos:ConceptScheme , fraternal:DegreeSystem ;
     skos:prefLabel "Soror Exemplum degrees"@en ;
-    skos:hasTopConcept sor:NewMember , sor:Initiate .
+    skos:hasTopConcept sor:NewMember , sor:Initiate , sor:Honorary .
 
 sor:NewMember a fraternal:Degree ;
     skos:inScheme sor:Degrees ; skos:topConceptOf sor:Degrees ;
@@ -52,6 +52,13 @@ sor:Initiate a fraternal:Degree ;
     skos:prefLabel "Initiated Sister"@en ;
     fraternal:degreeRank 2 ;
     skos:closeMatch fraternalc:fullDegree .
+
+# An honorary degree outside the numbered sequence: no rank, a degree kind instead.
+sor:Honorary a fraternal:Degree ;
+    skos:inScheme sor:Degrees ; skos:topConceptOf sor:Degrees ;
+    skos:prefLabel "Honorary Sister"@en ;
+    skos:notation "HS" ;
+    fraternal:degreeKind fraternalc:honoraryDegree .
 
 sor:Pin a fraternal:Insignia ;
     skos:prefLabel "Badge pin"@en ;

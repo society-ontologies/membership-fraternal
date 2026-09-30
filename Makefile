@@ -11,7 +11,7 @@ ONT := external/external-declarations.ttl \
 SHAPES := membership/membership-shapes.ttl fraternal/fraternal-shapes.ttl
 MAPPINGS_TSV := $(wildcard mappings/*.sssom.tsv)
 MAPPINGS_TTL := $(patsubst mappings/%.sssom.tsv,mappings/generated/%.ttl,$(MAPPINGS_TSV))
-VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl
+VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/data/riddarorden-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 
 .PHONY: all validate shacl shacl-invalid skos cq mappings wikidata-check dl reason reuse docs clean

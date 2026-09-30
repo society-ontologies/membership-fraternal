@@ -8,6 +8,7 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix sh:      <http://www.w3.org/ns/shacl#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix org:     <http://www.w3.org/ns/org#> .
 @prefix mbr:    <https://w3id.org/membership#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -30,9 +31,10 @@ fraternalsh:DegreeShape a sh:NodeShape ;
                   sh:qualifiedValueShape [ sh:class fraternal:DegreeSystem ] ;
                   sh:qualifiedMinCount 1 ;
                   sh:message "A degree must be in at least one fraternal:DegreeSystem. | En grad måste ingå i minst ett fraternal:DegreeSystem." ] ,
-                [ sh:path fraternal:degreeRank ; sh:minCount 1 ; sh:maxCount 1 ;
+                [ sh:path fraternal:degreeRank ; sh:maxCount 1 ;
                   sh:datatype xsd:integer ; sh:minInclusive 1 ] ,
-                [ sh:path fraternal:nextDegree ; sh:maxCount 1 ; sh:class fraternal:Degree ] ;
+                [ sh:path fraternal:nextDegree ; sh:maxCount 1 ; sh:class fraternal:Degree ] ,
+                [ sh:path fraternal:degreeKind ; sh:class skos:Concept ] ;
     sh:sparql [
         a sh:SPARQLConstraint ;
         sh:message "The next degree must be in the same degree system and have rank one higher. | Nästa grad måste ingå i samma gradsystem och ha ett gradnummer som är ett högre." ;
@@ -49,6 +51,14 @@ fraternalsh:DegreeShape a sh:NodeShape ;
         """
     ] .
 
+# A degree is either in the numbered sequence (it has a rank) or of a stated
+# kind outside it (honorary, office, side …).
+fraternalsh:DegreeRankOrKindShape a sh:NodeShape ;
+    sh:targetClass fraternal:Degree ;
+    sh:or ( [ sh:path fraternal:degreeRank ; sh:minCount 1 ]
+            [ sh:path fraternal:degreeKind ; sh:minCount 1 ] ) ;
+    sh:message "A degree needs a fraternal:degreeRank, or a fraternal:degreeKind if it stands outside the numbered sequence. | En grad behöver ett fraternal:degreeRank, eller en fraternal:degreeKind om den står utanför den numrerade följden." .
+
 fraternalsh:DegreeConferralShape a sh:NodeShape ;
     sh:targetClass fraternal:DegreeConferral ;
     sh:property [ sh:path mbr:conferred ; sh:minCount 1 ; sh:maxCount 1 ; sh:class fraternal:Degree ;
@@ -60,7 +70,18 @@ fraternalsh:FraternalOrderShape a sh:NodeShape ;
                 [ sh:path fraternal:memberTitle ; sh:class skos:Concept ] ,
                 [ sh:path fraternal:characteristic ; sh:class skos:Concept ] ,
                 [ sh:path fraternal:recognizes ; sh:class org:Organization ] ,
-                [ sh:path fraternal:inAmityWith ; sh:class org:Organization ] .
+                [ sh:path fraternal:inAmityWith ; sh:class org:Organization ] ,
+                [ sh:path fraternal:fonsHonorum ; sh:class foaf:Agent ] .
+
+fraternalsh:LegitimacyAssessmentShape a sh:NodeShape ;
+    sh:targetClass fraternal:LegitimacyAssessment ;
+    sh:property [ sh:path fraternal:assessedOrder ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
+                  sh:message "An assessment needs exactly one assessed order. | En bedömning behöver exakt en bedömd orden." ] ,
+                [ sh:path fraternal:assessedBy ; sh:minCount 1 ; sh:class foaf:Agent ;
+                  sh:message "An assessment needs the agent that made it (fraternal:assessedBy). | En bedömning behöver den agent som gjorde den (fraternal:assessedBy)." ] ,
+                [ sh:path fraternal:assessmentOutcome ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ] ,
+                [ sh:path dcterms:source ; sh:minCount 1 ; sh:severity sh:Warning ] .
 
 fraternalsh:InsigniaShape a sh:NodeShape ;
     sh:targetClass fraternal:Insignia ;

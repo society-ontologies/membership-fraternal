@@ -3,8 +3,8 @@
 <https://w3id.org/membership/mappings/membership-wikidata> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-29." ;
-    <http://purl.org/dc/terms/created> "2026-09-29" .
+    <http://purl.org/dc/terms/description> "membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30." ;
+    <http://purl.org/dc/terms/created> "2026-09-30" .
 
 <http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -324,4 +324,15 @@
   <https://w3id.org/sssom/subject_label> "Service Club" ;
   <https://w3id.org/sssom/object_label> "service club" ;
   <https://w3id.org/sssom/comment> "Rotary/Lions-type clubs, not armed-forces clubs." ] .
+
+<https://w3id.org/membership/code/chancellor> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q3439258> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/chancellor> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q3439258> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Chancellor" ;
+  <https://w3id.org/sssom/object_label> "ordenskansler" ;
+  <https://w3id.org/sssom/comment> "Wikidata item has only a Swedish label." ] .
 

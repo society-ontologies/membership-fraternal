@@ -1,0 +1,83 @@
+# Fictional orders of chivalry (all names invented for testing). Shows an
+# order of chivalry and a self-styled order described as organisations, the
+# fons honorum each claims, and legitimacy recorded only as dated assessments
+# by named agents — never as a bare fact.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix ch:      <https://example.org/examplia/> .
+
+# --- Authorities ---
+
+ch:HouseOfExamplia a org:Organization ;
+    rdfs:label "Royal House of Examplia"@en .
+
+ch:ExampleCommission a org:Organization ;
+    rdfs:label "Example Commission on Orders"@en .
+
+# --- An order of chivalry with a national branch ---
+
+ch:OrderOfTheSilverHeron a fraternal:FraternalOrder ;
+    rdfs:label "Order of the Silver Heron"@en ;
+    org:classification fraternalc:orderOfChivalry ;
+    fraternal:fonsHonorum ch:HouseOfExamplia ;
+    fraternal:degreeSystem ch:HeronClasses ;
+    org:hasUnit ch:HeronNordicDelegation .
+
+ch:HeronNordicDelegation a mbr:Branch ;
+    rdfs:label "Nordic Delegation of the Order of the Silver Heron"@en ;
+    org:unitOf ch:OrderOfTheSilverHeron .
+
+ch:HeronClasses a skos:ConceptScheme , fraternal:DegreeSystem ;
+    skos:prefLabel "Classes of the Order of the Silver Heron"@en ;
+    skos:hasTopConcept ch:heronKnight .
+
+ch:heronKnight a fraternal:Degree ;
+    skos:inScheme ch:HeronClasses ; skos:topConceptOf ch:HeronClasses ;
+    skos:prefLabel "Knight"@en ; skos:notation "KSH" ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree ch:heronGrandCross ;
+    skos:broadMatch fraternalc:knightGrade .
+
+ch:heronGrandCross a fraternal:Degree ;
+    skos:inScheme ch:HeronClasses ; skos:topConceptOf ch:HeronClasses ;
+    skos:prefLabel "Grand Cross"@en ; skos:notation "GCSH" ;
+    fraternal:degreeRank 2 ;
+    skos:broadMatch fraternalc:grandCrossGrade .
+
+ch:assessment-heron a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder ch:OrderOfTheSilverHeron ;
+    fraternal:assessedBy ch:ExampleCommission ;
+    fraternal:assessmentOutcome fraternalc:recognisedAsGenuine ;
+    mbr:startDate "1964"^^xsd:gYear ;
+    dcterms:source "Example Commission register, 1964 edition" .
+
+# --- A self-styled order: the classification is attributed, not asserted alone ---
+
+ch:SelfStyledHeron a fraternal:FraternalOrder ;
+    rdfs:label "Sovereign Military Order of the Golden Heron"@en ;
+    org:classification fraternalc:selfStyledOrderOfChivalry ;
+    fraternal:fonsHonorum ch:SelfProclaimedPrince .
+
+ch:SelfProclaimedPrince a org:Organization ;
+    rdfs:label "Princely House of Nowhere (self-proclaimed)"@en .
+
+ch:assessment-golden-heron a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder ch:SelfStyledHeron ;
+    fraternal:assessedBy ch:ExampleCommission ;
+    fraternal:assessmentOutcome fraternalc:declaredSelfStyled ;
+    mbr:startDate "2001"^^xsd:gYear ;
+    dcterms:source "Example Commission register, 2001 revision" .
+
+# --- An order society in the chivalric style: no claim, no assessment needed ---
+
+ch:SocietyOfTheHeron a fraternal:FraternalOrder ;
+    rdfs:label "Society of the Heron"@en ;
+    org:classification fraternalc:chivalricStyleOrder , fraternalc:studentOrder ;
+    fraternal:modelledOn ch:OrderOfTheSilverHeron .
