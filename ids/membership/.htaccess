@@ -1,5 +1,6 @@
-# DRAFT for a pull request to https://github.com/perma-id/w3id.org  (folder: ids/membership/)
-# Not submitted yet. Targets are the GitHub Pages site of this repository
+# w3id.org/membership — Membership Organisations Ontology
+# Source: https://github.com/society-ontologies/membership-fraternal
+# Targets are that repository's GitHub Pages site
 # (https://society-ontologies.github.io/membership-fraternal/).
 #
 #   https://w3id.org/membership            -> ontology (Turtle or HTML docs)

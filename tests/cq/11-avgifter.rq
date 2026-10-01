@@ -1,0 +1,31 @@
+# CQ11: What does membership cost? One row per fee in force on a given date,
+# with organisation type, how members are admitted, fee type, membership
+# category (blank = all members), amount and currency.
+
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:    <https://w3id.org/membership#>
+
+SELECT ?organisation ?type ?admission ?feeType ?category ?price ?currency
+WHERE {
+    BIND (2025 AS ?year)
+    ?o mbr:membershipFee ?fee ;
+       rdfs:label ?organisation ;
+       org:classification/skos:prefLabel ?type .
+    FILTER (lang(?type) = "en")
+    OPTIONAL { ?o mbr:admissionMode/skos:prefLabel ?admission . FILTER (lang(?admission) = "en") }
+    ?fee mbr:feeType/skos:prefLabel ?feeType ;
+         schema:price ?price ;
+         schema:priceCurrency ?currency .
+    FILTER (lang(?feeType) = "en")
+    OPTIONAL { ?fee mbr:appliesToCategory/skos:prefLabel ?category . FILTER (lang(?category) = "en") }
+    # In force during ?year (compared by year, as dates may be partial).
+    OPTIONAL { ?fee mbr:startDate ?s }
+    OPTIONAL { ?fee mbr:endDate ?e }
+    FILTER (!BOUND(?s) || xsd:integer(SUBSTR(STR(?s), 1, 4)) <= ?year)
+    FILTER (!BOUND(?e) || xsd:integer(SUBSTR(STR(?e), 1, 4)) >= ?year)
+}
+ORDER BY ?organisation ?feeType ?category

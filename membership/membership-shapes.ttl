@@ -134,6 +134,31 @@ mbrsh:MembershipEventShape a sh:NodeShape ;
                 [ sh:path mbr:resultingStatus ; sh:maxCount 1 ; sh:class skos:Concept ] .
 
 ##############################################################################
+# Membership fees
+##############################################################################
+
+mbrsh:AmountList
+    sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) .
+
+mbrsh:MembershipFeeLinkShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:membershipFee ;
+    sh:property [ sh:path mbr:membershipFee ; sh:class mbr:MembershipFee ] .
+
+mbrsh:MembershipFeeShape a sh:NodeShape ;
+    sh:targetClass mbr:MembershipFee ;
+    sh:property [ sh:path mbr:feeType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:message "A membership fee needs exactly one mbr:feeType (see mbrc:FeeTypes). | En medlemsavgift behöver exakt en mbr:feeType (se mbrc:FeeTypes)." ] ,
+                [ sh:path schema:price ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:node mbrsh:AmountList ; sh:minInclusive 0 ;
+                  sh:message "A membership fee needs exactly one schema:price, a number of zero or more. | En medlemsavgift behöver exakt ett schema:price, ett tal som är noll eller större." ] ,
+                [ sh:path schema:priceCurrency ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:datatype xsd:string ; sh:pattern "^[A-Z]{3}$" ;
+                  sh:message "schema:priceCurrency must be a three-letter ISO 4217 code such as SEK or GBP. | schema:priceCurrency ska vara en trebokstavskod enligt ISO 4217, t.ex. SEK eller GBP." ] ,
+                [ sh:path mbr:appliesToCategory ; sh:class skos:Concept ] ,
+                [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ;
+                  sh:message "Give the date from which the fee applies (mbr:startDate). | Ange från vilket datum avgiften gäller (mbr:startDate)." ] .
+
+##############################################################################
 # Offices and terms of office
 ##############################################################################
 

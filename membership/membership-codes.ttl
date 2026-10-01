@@ -25,7 +25,7 @@
     dcterms:title "Membership Organisations — codelists"@en ,
                   "Medlemsorganisationer — kodlistor"@sv ;
     dcterms:created "2026-09-29" ;
-    dcterms:modified "2026-09-30" ;
+    dcterms:modified "2026-10-01" ;
     vann:preferredNamespacePrefix "mbrc" ;
     vann:preferredNamespaceUri "https://w3id.org/membership/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -48,7 +48,8 @@ mbrc:voluntaryAssociation a skos:Concept , owl:NamedIndividual ;
     skos:altLabel "ideell förening"@sv ;
     skos:definition "A group of people who join together voluntarily for a shared purpose."@en ,
                     "En grupp människor som frivilligt går samman för ett gemensamt syfte."@sv ;
-    skos:narrower mbrc:club , mbrc:society , mbrc:fraternalOrganization .
+    skos:narrower mbrc:club , mbrc:society , mbrc:fraternalOrganization ,
+                  mbrc:politicalParty , mbrc:tradeUnion .
 
 mbrc:club a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
@@ -56,7 +57,8 @@ mbrc:club a skos:Concept , owl:NamedIndividual ;
     skos:definition "An association of people for social or recreational purposes or for a shared interest."@en ,
                     "En sammanslutning för sällskapsliv, rekreation eller ett gemensamt intresse."@sv ;
     skos:narrower mbrc:privateClub , mbrc:diningClub , mbrc:countryClub , mbrc:armedForcesClub ,
-                  mbrc:facultyClub , mbrc:sportsClub , mbrc:literaryClub , mbrc:serviceClub .
+                  mbrc:facultyClub , mbrc:sportsClub , mbrc:literaryClub , mbrc:serviceClub ,
+                  mbrc:hobbyClub , mbrc:supportersClub .
 
 mbrc:privateClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
@@ -83,7 +85,9 @@ mbrc:politicalClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
     skos:prefLabel "Political Club"@en , "Politisk klubb"@sv ;
     skos:definition "A private club whose members share an allegiance to a political party or tradition."@en ,
-                    "En privat klubb vars medlemmar delar tillhörighet till ett politiskt parti eller en politisk tradition."@sv .
+                    "En privat klubb vars medlemmar delar tillhörighet till ett politiskt parti eller en politisk tradition."@sv ;
+    skos:scopeNote "Not a political party: use mbrc:politicalParty for the party itself."@en ,
+                   "Inte ett politiskt parti: använd mbrc:politicalParty för själva partiet."@sv .
 
 mbrc:universityClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
@@ -162,6 +166,20 @@ mbrc:literaryClub a skos:Concept , owl:NamedIndividual ;
     skos:definition "A club devoted to literature, reading or writing."@en ,
                     "En klubb ägnad åt litteratur, läsning eller skrivande."@sv .
 
+mbrc:hobbyClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Hobby Club"@en , "Hobbyklubb"@sv ;
+    skos:altLabel "Hobbyförening"@sv ;
+    skos:definition "A club whose members pursue a hobby or craft together, such as a sewing circle, a photography club or a model railway club."@en ,
+                    "En klubb vars medlemmar utövar en hobby eller ett hantverk tillsammans, t.ex. en syförening, en fotoklubb eller en modelljärnvägsklubb."@sv .
+
+mbrc:supportersClub a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
+    skos:prefLabel "Supporters' Club"@en , "Supporterklubb"@sv ;
+    skos:altLabel "Supporters' Association"@en , "Supporterförening"@sv ;
+    skos:definition "A club for supporters of a sports team, most often a football club. It may be independent of the team or affiliated with it."@en ,
+                    "En klubb för supportrar till ett idrottslag, oftast en fotbollsklubb. Den kan vara fristående från laget eller knuten till det."@sv .
+
 mbrc:society a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
     skos:prefLabel "Society"@en , "Sällskap"@sv ;
@@ -200,6 +218,23 @@ mbrc:fraternalOrganization a skos:Concept , owl:NamedIndividual ;
     skos:definition "An organisation whose members are bound together by initiation, ritual and usually graded degrees. Refined by the fraternal codelists."@en ,
                     "En organisation vars medlemmar är förenade genom initiering, ritual och vanligen graderade grader. Förfinas av kodlistorna i fraternal."@sv .
 
+mbrc:politicalParty a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
+    skos:prefLabel "Political Party"@en , "Politiskt parti"@sv ;
+    skos:definition "An organisation that seeks to influence public policy, usually by nominating candidates in public elections, and that people join as members."@en ,
+                    "En organisation som söker påverka den offentliga politiken, vanligen genom att ställa upp kandidater i allmänna val, och som man blir medlem i."@sv ;
+    skos:scopeNote "Not the same as mbrc:politicalClub, a private club whose members share a party allegiance. Data about who belongs to a party reveals political opinions: see the scope note on mbr:Membership."@en ,
+                   "Inte detsamma som mbrc:politicalClub, en privat klubb vars medlemmar delar partitillhörighet. Uppgifter om vem som tillhör ett parti röjer politiska åsikter: se anmärkningen till mbr:Membership."@sv .
+
+mbrc:tradeUnion a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
+    skos:prefLabel "Trade Union"@en , "Fackförening"@sv ;
+    skos:altLabel "Labour Union"@en , "Labor Union"@en , "Fackförbund"@sv ;
+    skos:definition "An organisation of employees that represents its members' interests towards employers, for example in collective bargaining."@en ,
+                    "En organisation av arbetstagare som företräder medlemmarnas intressen gentemot arbetsgivare, t.ex. i förhandlingar om kollektivavtal."@sv ;
+    skos:scopeNote "Trade union membership is special-category personal data: see the scope note on mbr:Membership."@en ,
+                   "Medlemskap i en fackförening är en känslig personuppgift: se anmärkningen till mbr:Membership."@sv .
+
 ##############################################################################
 # 2. MEMBERSHIP STATUSES
 ##############################################################################
@@ -227,8 +262,9 @@ mbrc:proposed a skos:Concept , owl:NamedIndividual ;
 mbrc:candidate a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
     skos:prefLabel "Candidate"@en , "Kandidat"@sv ;
-    skos:definition "Accepted as a candidate and awaiting election or initiation."@en ,
-                    "Antagen som kandidat och i väntan på val eller initiering."@sv .
+    skos:altLabel "Applicant"@en , "Sökande"@sv ;
+    skos:definition "Accepted as a candidate, or has applied, and awaiting election, an admission decision or initiation."@en ,
+                    "Antagen som kandidat, eller har ansökt, och i väntan på val, beslut om upptagning eller initiering."@sv .
 
 mbrc:elected a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
@@ -348,9 +384,14 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
 
 mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv ;
-    skos:hasTopConcept mbrc:proposal , mbrc:ballot , mbrc:admission , mbrc:statusChange ,
-                       mbrc:resignation , mbrc:lapse , mbrc:expulsion , mbrc:reinstatement ,
-                       mbrc:death .
+    skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:ballot , mbrc:admission ,
+                       mbrc:statusChange , mbrc:resignation , mbrc:lapse , mbrc:expulsion ,
+                       mbrc:reinstatement , mbrc:death .
+
+mbrc:application a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Application"@en , "Ansökan"@sv ;
+    skos:definition "Someone applies for membership."@en , "Någon ansöker om medlemskap."@sv .
 
 mbrc:proposal a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
@@ -365,7 +406,8 @@ mbrc:ballot a skos:Concept , owl:NamedIndividual ;
 mbrc:admission a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
     skos:prefLabel "Admission"@en , "Upptagning"@sv ;
-    skos:definition "The candidate becomes a member."@en , "Kandidaten blir medlem."@sv .
+    skos:definition "The candidate, applicant or person enrolling becomes a member."@en ,
+                    "Kandidaten, den sökande eller den som anmäler sig blir medlem."@sv .
 
 mbrc:statusChange a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
@@ -559,8 +601,9 @@ mbrc:meeting a skos:Concept , owl:NamedIndividual ;
 mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:meeting ;
     skos:prefLabel "General Meeting"@en , "Stämma"@sv ;
-    skos:altLabel "Annual General Meeting"@en , "Årsmöte"@sv ;
-    skos:definition "A meeting of all members with decision-making power."@en , "Ett möte med alla medlemmar som har beslutanderätt."@sv .
+    skos:altLabel "Annual General Meeting"@en , "Congress"@en , "Årsmöte"@sv , "Kongress"@sv ;
+    skos:definition "A meeting of all members, or of delegates elected by them, with decision-making power."@en ,
+                    "Ett möte med alla medlemmar, eller med ombud valda av dem, som har beslutanderätt."@sv .
 
 mbrc:formalDinner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
@@ -739,7 +782,7 @@ mbrc:mixedSeparateBranches a skos:Concept , owl:NamedIndividual ;
 mbrc:AdmissionModes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Admission Modes"@en , "Upptagningsformer"@sv ;
     skos:hasTopConcept mbrc:byInvitation , mbrc:proposalAndBallot , mbrc:openApplication ,
-                       mbrc:hereditary , mbrc:exOfficio .
+                       mbrc:openEnrolment , mbrc:hereditary , mbrc:exOfficio .
 
 mbrc:byInvitation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
@@ -754,7 +797,17 @@ mbrc:proposalAndBallot a skos:Concept , owl:NamedIndividual ;
 mbrc:openApplication a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
     skos:prefLabel "Open Application"@en , "Öppen ansökan"@sv ;
-    skos:definition "Anyone meeting the criteria may apply."@en , "Alla som uppfyller kriterierna kan ansöka."@sv .
+    skos:definition "Anyone meeting the criteria may apply, and the organisation, usually its board, decides whether to admit the applicant."@en ,
+                    "Alla som uppfyller kriterierna kan ansöka, och organisationen, vanligen styrelsen, beslutar om den sökande ska tas upp."@sv ;
+    skos:scopeNote "Compare mbrc:openEnrolment, where no admission decision is made."@en ,
+                   "Jämför mbrc:openEnrolment, där inget beslut om upptagning fattas."@sv .
+
+mbrc:openEnrolment a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "Open Enrolment"@en , "Inträde genom anmälan"@sv ;
+    skos:altLabel "Open Membership"@en , "Open Enrollment"@en , "Öppet medlemskap"@sv ;
+    skos:definition "Anyone who accepts the organisation's purpose and rules may join by registering and, where required, paying the fee. No admission decision is made."@en ,
+                    "Var och en som godtar organisationens ändamål och stadgar kan bli medlem genom att anmäla sig och i förekommande fall betala avgiften. Inget beslut om upptagning fattas."@sv .
 
 mbrc:hereditary a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
@@ -902,3 +955,37 @@ mbrc:institutionalClub a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Institutional Club"@en , "Institutionsdriven klubb"@sv ;
     skos:definition "Owned or run by a parent institution, such as a university, regiment, company or government body."@en ,
                     "Ägs eller drivs av en moderinstitution, t.ex. ett universitet, ett regemente, ett företag eller en myndighet."@sv .
+
+##############################################################################
+# 15. FEE TYPES  (values of mbr:feeType)
+##############################################################################
+
+mbrc:FeeTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Fee Types"@en , "Avgiftstyper"@sv ;
+    skos:definition "Kinds of membership fee, by when and how often they are paid."@en ,
+                    "Typer av medlemsavgift, efter när och hur ofta de betalas."@sv ;
+    skos:hasTopConcept mbrc:entranceFee , mbrc:annualFee , mbrc:monthlyFee , mbrc:lifeMembershipFee .
+
+mbrc:entranceFee a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
+    skos:prefLabel "Entrance Fee"@en , "Inträdesavgift"@sv ;
+    skos:altLabel "Joining Fee"@en , "Anslutningsavgift"@sv ;
+    skos:definition "A one-off fee paid on admission."@en , "En engångsavgift som betalas vid upptagningen."@sv .
+
+mbrc:annualFee a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
+    skos:prefLabel "Annual Fee"@en , "Årsavgift"@sv ;
+    skos:altLabel "Annual Subscription"@en , "Annual Dues"@en ;
+    skos:definition "A fee paid every year to remain a member."@en , "En avgift som betalas varje år för att förbli medlem."@sv .
+
+mbrc:monthlyFee a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
+    skos:prefLabel "Monthly Fee"@en , "Månadsavgift"@sv ;
+    skos:definition "A fee paid every month to remain a member, as is usual in trade unions."@en ,
+                    "En avgift som betalas varje månad för att förbli medlem, som är vanligt i fackföreningar."@sv .
+
+mbrc:lifeMembershipFee a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
+    skos:prefLabel "Life Membership Fee"@en , "Avgift för ständigt medlemskap"@sv ;
+    skos:definition "A one-off fee that buys membership for life (see mbrc:life)."@en ,
+                    "En engångsavgift som ger medlemskap på livstid (se mbrc:life)."@sv .

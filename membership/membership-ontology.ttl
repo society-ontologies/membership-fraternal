@@ -1,19 +1,22 @@
 ##############################################################################
 # membership — Membership Organisations Ontology  —  v1.0.0
 #
-# Generic layer for membership-only organisations: gentlemen's and ladies'
-# clubs, dining clubs, societies, student nations — and, via the fraternal layer,
-# fraternal orders and sororities. It also describes organisations
-# as catalogue entries: founding and closure, status, ownership model, where
-# their premises are (postal address, coordinates) and how that changed over
-# time, contact details and membership size.
+# Generic layer for membership organisations of every kind, closed or open:
+# private clubs (gentlemen's and ladies' clubs, dining clubs), societies and
+# student nations, hobby and supporters' clubs, associations, political parties
+# and trade unions — and, via the fraternal layer, fraternal orders and
+# sororities. It also describes organisations as catalogue entries: founding
+# and closure, status, ownership model, admission and fees, where their premises
+# are (postal address, coordinates) and how that changed over time, contact
+# details and membership size.
 #
 # Design:
 #   * Built on W3C ORG. Anything with a time span or a role is a qualified node
 #     (Membership, Tenure, Occupancy, Conferral, Participation), not a direct link.
-#   * Addresses, coordinates and contact details reuse schema.org
-#     (schema:PostalAddress, schema:GeoCoordinates, schema:url/email/telephone),
-#     the vocabulary directory sites and search engines already read.
+#   * Addresses, coordinates, contact details and fee amounts reuse schema.org
+#     (schema:PostalAddress, schema:GeoCoordinates, schema:url/email/telephone,
+#     schema:price/priceCurrency), the vocabulary directory sites and search
+#     engines already read.
 #   * Anything that is "a value from a list" is a SKOS concept (membership-codes.ttl).
 #   * Constraints live in SHACL (membership-shapes.ttl); OWL domains/ranges are only
 #     stated where they hold for every use.
@@ -42,9 +45,10 @@
     owl:imports <https://w3id.org/membership/external> ;
     dcterms:title "Membership Organisations Ontology"@en ,
                   "Ontologi för medlemsorganisationer"@sv ;
-    dcterms:description "Generic ontology for membership-only organisations — clubs, societies, student nations and, through the fraternal extension, fraternal orders: memberships and their lifecycle, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations."@en ,
-                        "Generisk ontologi för organisationer med slutet medlemskap — klubbar, sällskap, studentnationer och, via tillägget fraternal, ordenssällskap: medlemskap och dess livscykel, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."@sv ;
+    dcterms:description "Generic ontology for membership organisations of every kind, closed or open — from private clubs, societies, student nations and (through the fraternal extension) fraternal orders to hobby and supporters' clubs, associations, political parties and trade unions: memberships and their lifecycle, admission and fees, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations."@en ,
+                        "Generisk ontologi för medlemsorganisationer av alla slag, med slutet eller öppet medlemskap — från privata klubbar, sällskap, studentnationer och (via tillägget fraternal) ordenssällskap till hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar: medlemskap och dess livscykel, upptagning och avgifter, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."@sv ;
     dcterms:created "2026-09-29" ;
+    dcterms:modified "2026-10-01" ;
     vann:preferredNamespacePrefix "mbr" ;
     vann:preferredNamespaceUri "https://w3id.org/membership#" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -58,8 +62,10 @@
 mbr:MembershipOrganization a owl:Class ;
     rdfs:subClassOf org:FormalOrganization ;
     rdfs:label "Membership Organisation"@en , "Medlemsorganisation"@sv ;
-    skos:definition "An organisation whose participants are admitted as members and which is run for, and largely by, those members. The kind of organisation is given with org:classification (see mbrc:OrganizationTypes)."@en ,
-                    "En organisation vars deltagare upptas som medlemmar och som drivs för, och till stor del av, medlemmarna. Organisationstypen anges med org:classification (se mbrc:OrganizationTypes)."@sv .
+    skos:definition "An organisation whose participants are admitted as members and which exists for those members as a body: they share its purpose, premises or activities, and usually govern it themselves. Some clubs are instead owned by a proprietor or an institution (see mbr:ownershipModel). The kind of organisation is given with org:classification (see mbrc:OrganizationTypes)."@en ,
+                    "En organisation vars deltagare upptas som medlemmar och som finns till för medlemmarna som grupp: de delar dess syfte, lokaler eller verksamhet och styr den vanligen själva. Vissa klubbar ägs i stället av en ägare eller en institution (se mbr:ownershipModel). Organisationstypen anges med org:classification (se mbrc:OrganizationTypes)."@sv ;
+    skos:scopeNote "Covers organisations with closed membership, such as private clubs and order societies, and open ones, such as hobby and supporters' clubs, associations, political parties and trade unions (see mbr:admissionMode). Not covered: customer loyalty schemes and commercial subscriptions such as most gym memberships, where membership means no more than buying the service."@en ,
+                   "Omfattar organisationer med slutet medlemskap, som privata klubbar och ordenssällskap, och med öppet, som hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar (se mbr:admissionMode). Omfattas inte: kundklubbar och kommersiella abonnemang som de flesta gymkort, där medlemskapet inte är mer än köpet av tjänsten."@sv .
 
 mbr:Branch a owl:Class ;
     rdfs:subClassOf org:OrganizationalUnit ;
@@ -192,7 +198,9 @@ mbr:Membership a owl:Class ;
     rdfs:subClassOf org:Membership ;
     rdfs:label "Membership"@en , "Medlemskap"@sv ;
     skos:definition "The qualified relationship between an agent (org:member) and a membership organisation (org:organization), carrying status, category, membership number, sponsors and dates. A person's path from prospect to full member is recorded as status changes on one Membership, not as changes of the person's type."@en ,
-                    "Den kvalificerade relationen mellan en agent (org:member) och en medlemsorganisation (org:organization), med status, kategori, medlemsnummer, rekommendatörer och datum. En persons väg från påtänkt till fullvärdig medlem registreras som statusändringar på ett och samma medlemskap, inte som ändringar av personens typ."@sv .
+                    "Den kvalificerade relationen mellan en agent (org:member) och en medlemsorganisation (org:organization), med status, kategori, medlemsnummer, rekommendatörer och datum. En persons väg från påtänkt till fullvärdig medlem registreras som statusändringar på ett och samma medlemskap, inte som ändringar av personens typ."@sv ;
+    skos:scopeNote "Data about who belongs to a political party, a trade union, or an organisation with a religious or philosophical aim (which can include fraternal orders) is special-category personal data under Article 9 of the EU General Data Protection Regulation (GDPR). The organisation itself may keep a register of its members and former members (Art. 9(2)(d)), but may not disclose it outside the organisation without their consent. Anyone else needs another exception in Art. 9(2) to process such data, for example explicit consent, or that the person has made the membership public, as elected representatives do. GDPR does not apply to deceased persons."@en ,
+                   "Uppgifter om vem som tillhör ett politiskt parti, en fackförening eller en organisation med religiöst eller filosofiskt syfte (vilket kan omfatta ordenssällskap) är känsliga personuppgifter enligt artikel 9 i EU:s dataskyddsförordning (GDPR). Organisationen själv får föra register över sina nuvarande och tidigare medlemmar (art. 9.2 d) men inte lämna ut det utanför organisationen utan deras samtycke. Andra behöver ett annat undantag i art. 9.2 för att behandla sådana uppgifter, t.ex. uttryckligt samtycke eller att personen själv har offentliggjort medlemskapet, som förtroendevalda gör. GDPR gäller inte avlidna personer."@sv .
 
 mbr:MembershipEvent a owl:Class ;
     rdfs:subClassOf prov:Activity ;
@@ -255,6 +263,36 @@ mbr:resultingStatus a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:definition "The membership status that applies after the event."@en ,
                     "Den medlemskapsstatus som gäller efter händelsen."@sv .
+
+##############################################################################
+# MEMBERSHIP FEES
+##############################################################################
+
+mbr:MembershipFee a owl:Class ;
+    rdfs:subClassOf schema:PriceSpecification ;
+    rdfs:label "Membership Fee"@en , "Medlemsavgift"@sv ;
+    skos:definition "A fee an organisation charges for membership: the kind of fee (mbr:feeType), the amount (schema:price) in a currency (schema:priceCurrency, an ISO 4217 code such as SEK), the membership categories it applies to (mbr:appliesToCategory; left out when it applies to all members) and when it was in force (mbr:startDate, mbr:endDate). Linked from the organisation or branch with mbr:membershipFee. When a fee changes, add a new fee and give the old one an end date."@en ,
+                    "En avgift som en organisation tar ut för medlemskap: avgiftens typ (mbr:feeType), beloppet (schema:price) i en valuta (schema:priceCurrency, en kod enligt ISO 4217, t.ex. SEK), de medlemskategorier den gäller (mbr:appliesToCategory; utelämnas när den gäller alla medlemmar) och när den gällde (mbr:startDate, mbr:endDate). Kopplas från organisationen eller avdelningen med mbr:membershipFee. När en avgift ändras läggs en ny avgift till och den gamla får ett slutdatum."@sv .
+
+mbr:membershipFee a owl:ObjectProperty ;
+    rdfs:label "membership fee"@en , "medlemsavgift"@sv ;
+    rdfs:range mbr:MembershipFee ;
+    skos:definition "A fee the organisation or branch charges for membership, now or in the past."@en ,
+                    "En avgift som organisationen eller avdelningen tar eller har tagit ut för medlemskap."@sv .
+
+mbr:feeType a owl:ObjectProperty ;
+    rdfs:label "fee type"@en , "avgiftstyp"@sv ;
+    rdfs:domain mbr:MembershipFee ;
+    rdfs:range skos:Concept ;
+    skos:definition "When and how often the fee is paid: on joining, every year, every month or once for life (see mbrc:FeeTypes)."@en ,
+                    "När och hur ofta avgiften betalas: vid inträdet, varje år, varje månad eller en gång för livet (se mbrc:FeeTypes)."@sv .
+
+mbr:appliesToCategory a owl:ObjectProperty ;
+    rdfs:label "applies to category"@en , "gäller kategori"@sv ;
+    rdfs:domain mbr:MembershipFee ;
+    rdfs:range skos:Concept ;
+    skos:definition "A membership category the fee applies to, such as junior or overseas members (see mbrc:MembershipCategories). Left out when the fee applies to all members."@en ,
+                    "En medlemskategori som avgiften gäller, t.ex. junior- eller utlandsmedlemmar (se mbrc:MembershipCategories). Utelämnas när avgiften gäller alla medlemmar."@sv .
 
 ##############################################################################
 # OFFICES AND TERMS OF OFFICE

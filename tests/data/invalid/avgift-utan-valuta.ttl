@@ -1,0 +1,11 @@
+# EXPECT: membership fee without schema:priceCurrency
+@prefix org:    <http://www.w3.org/ns/org#> .
+@prefix schema: <http://schema.org/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrc:   <https://w3id.org/membership/code/> .
+@prefix ex:     <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:hobbyClub ;
+    mbr:membershipFee ex:fee .
+ex:fee a mbr:MembershipFee ; mbr:feeType mbrc:annualFee ; schema:price 200 ;
+    mbr:startDate "2025"^^<http://www.w3.org/2001/XMLSchema#gYear> .

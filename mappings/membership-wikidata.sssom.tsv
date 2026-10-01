@@ -6,9 +6,9 @@
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/membership/mappings/membership-wikidata
 # mapping_set_version: 1.0.0
-# mapping_set_description: membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30.
+# mapping_set_description: membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-10-01.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-30
+# mapping_date: 2026-10-01
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 mbr:MembershipOrganization	Membership Organisation	skos:closeMatch	wd:Q48204	voluntary association	semapv:ManualMappingCuration	0.8
 mbr:Office	Office	skos:closeMatch	wd:Q4164871	position	semapv:ManualMappingCuration	0.8
@@ -17,6 +17,7 @@ mbr:Distinction	Distinction	skos:closeMatch	wd:Q618779	award	semapv:ManualMappin
 mbr:proposer	proposer	skos:closeMatch	wd:P4353	nominated by	semapv:ManualMappingCuration	0.6
 mbr:startDate	start date	skos:closeMatch	wd:P580	start time	semapv:ManualMappingCuration	0.8
 mbr:endDate	end date	skos:closeMatch	wd:P582	end time	semapv:ManualMappingCuration	0.8
+mbr:MembershipFee	Membership Fee	skos:closeMatch	wd:Q1992300	membership fee	semapv:ManualMappingCuration	0.8	Wikidata item is the periodic fee; this class also covers entrance and life-membership fees.
 mbrc:voluntaryAssociation	Voluntary Association	skos:exactMatch	wd:Q48204	voluntary association	semapv:ManualMappingCuration	0.9
 mbrc:privateClub	Private Club	skos:exactMatch	wd:Q3681673	private club	semapv:ManualMappingCuration	0.9
 mbrc:gentlemensClub	Gentlemen's Club	skos:exactMatch	wd:Q1236680	gentlemen's club	semapv:ManualMappingCuration	0.95
@@ -24,6 +25,8 @@ mbrc:ladiesClub	Ladies' Club	skos:closeMatch	wd:Q8031135	women's club	semapv:Man
 mbrc:diningClub	Dining Club	skos:exactMatch	wd:Q5278332	dining club	semapv:ManualMappingCuration	0.9
 mbrc:studentNation	Student Nation	skos:exactMatch	wd:Q597897	nation	semapv:ManualMappingCuration	0.9
 mbrc:fraternalOrganization	Fraternal Organisation	skos:closeMatch	wd:Q996839	fraternal organization	semapv:ManualMappingCuration	0.8	Wikidata item is broader in practice: it also covers gentlemen's clubs.
+mbrc:politicalParty	Political Party	skos:exactMatch	wd:Q7278	political party	semapv:ManualMappingCuration	0.9
+mbrc:tradeUnion	Trade Union	skos:exactMatch	wd:Q178790	labor union	semapv:ManualMappingCuration	0.9
 mbrc:treasurer	Treasurer	skos:exactMatch	wd:Q388338	treasurer	semapv:ManualMappingCuration	0.9
 mbrc:archivist	Archivist	skos:closeMatch	wd:Q635734	archivist	semapv:ManualMappingCuration	0.7	Wikidata item is the profession.
 mbrc:chaplain	Chaplain	skos:closeMatch	wd:Q208762	chaplain	semapv:ManualMappingCuration	0.7
@@ -40,4 +43,7 @@ mbrc:pewter	Pewter	skos:exactMatch	wd:Q852372	pewter	semapv:ManualMappingCuratio
 mbrc:politicalClub	Political Club	skos:exactMatch	wd:Q4370120	political club	semapv:ManualMappingCuration	0.9	
 mbrc:yachtClub	Yacht Club	skos:exactMatch	wd:Q1855011	yacht club	semapv:ManualMappingCuration	0.9	
 mbrc:serviceClub	Service Club	skos:exactMatch	wd:Q1897098	service club	semapv:ManualMappingCuration	0.9	Rotary/Lions-type clubs, not armed-forces clubs.
+mbrc:supportersClub	Supporters' Club	skos:exactMatch	wd:Q1070414	supporters' group	semapv:ManualMappingCuration	0.9
 mbrc:chancellor	Chancellor	skos:closeMatch	wd:Q3439258	ordenskansler	semapv:ManualMappingCuration	0.6	Wikidata item has only a Swedish label.
+mbrc:annualFee	Annual Fee	skos:broadMatch	wd:Q1992300	membership fee	semapv:ManualMappingCuration	0.8
+mbrc:monthlyFee	Monthly Fee	skos:broadMatch	wd:Q1992300	membership fee	semapv:ManualMappingCuration	0.8

@@ -3,9 +3,10 @@
 <https://w3id.org/membership/mappings/membership-wikidata> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30." ;
-    <http://purl.org/dc/terms/created> "2026-09-30" .
+    <http://purl.org/dc/terms/description> "membership classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-10-01." ;
+    <http://purl.org/dc/terms/created> "2026-10-01" .
 
+<http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#relatedMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -89,6 +90,17 @@
   <https://w3id.org/sssom/subject_label> "end date" ;
   <https://w3id.org/sssom/object_label> "end time" ] .
 
+<https://w3id.org/membership#MembershipFee> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q1992300> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership#MembershipFee> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1992300> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Membership Fee" ;
+  <https://w3id.org/sssom/object_label> "membership fee" ;
+  <https://w3id.org/sssom/comment> "Wikidata item is the periodic fee; this class also covers entrance and life-membership fees." ] .
+
 <https://w3id.org/membership/code/voluntaryAssociation> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q48204> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/voluntaryAssociation> ;
@@ -160,6 +172,26 @@
   <https://w3id.org/sssom/subject_label> "Fraternal Organisation" ;
   <https://w3id.org/sssom/object_label> "fraternal organization" ;
   <https://w3id.org/sssom/comment> "Wikidata item is broader in practice: it also covers gentlemen's clubs." ] .
+
+<https://w3id.org/membership/code/politicalParty> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q7278> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/politicalParty> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q7278> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Political Party" ;
+  <https://w3id.org/sssom/object_label> "political party" ] .
+
+<https://w3id.org/membership/code/tradeUnion> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q178790> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/tradeUnion> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q178790> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Trade Union" ;
+  <https://w3id.org/sssom/object_label> "labor union" ] .
 
 <https://w3id.org/membership/code/treasurer> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q388338> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
@@ -325,6 +357,16 @@
   <https://w3id.org/sssom/object_label> "service club" ;
   <https://w3id.org/sssom/comment> "Rotary/Lions-type clubs, not armed-forces clubs." ] .
 
+<https://w3id.org/membership/code/supportersClub> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q1070414> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/supportersClub> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1070414> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Supporters' Club" ;
+  <https://w3id.org/sssom/object_label> "supporters' group" ] .
+
 <https://w3id.org/membership/code/chancellor> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q3439258> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/chancellor> ;
@@ -335,4 +377,24 @@
   <https://w3id.org/sssom/subject_label> "Chancellor" ;
   <https://w3id.org/sssom/object_label> "ordenskansler" ;
   <https://w3id.org/sssom/comment> "Wikidata item has only a Swedish label." ] .
+
+<https://w3id.org/membership/code/annualFee> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://www.wikidata.org/entity/Q1992300> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/annualFee> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1992300> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Annual Fee" ;
+  <https://w3id.org/sssom/object_label> "membership fee" ] .
+
+<https://w3id.org/membership/code/monthlyFee> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://www.wikidata.org/entity/Q1992300> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/monthlyFee> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q1992300> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Monthly Fee" ;
+  <https://w3id.org/sssom/object_label> "membership fee" ] .
 

@@ -297,14 +297,19 @@ td {
         "@value": "2026-09-29"
       }
     ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2026-10-01"
+      }
+    ],
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "Generic ontology for membership-only organisations — clubs, societies, student nations and, through the fraternal extension, fraternal orders: memberships and their lifecycle, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations."
+        "@value": "Generic ontology for membership organisations of every kind, closed or open — from private clubs, societies, student nations and (through the fraternal extension) fraternal orders to hobby and supporters' clubs, associations, political parties and trade unions: memberships and their lifecycle, admission and fees, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations."
       },
       {
         "@language": "sv",
-        "@value": "Generisk ontologi för organisationer med slutet medlemskap — klubbar, sällskap, studentnationer och, via tillägget fraternal, ordenssällskap: medlemskap och dess livscykel, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."
+        "@value": "Generisk ontologi för medlemsorganisationer av alla slag, med slutet eller öppet medlemskap — från privata klubbar, sällskap, studentnationer och (via tillägget fraternal) ordenssällskap till hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar: medlemskap och dess livscykel, upptagning och avgifter, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."
       }
     ],
     "https://schema.org/license": [
@@ -365,6 +370,12 @@ td {
           </div>
           <div>
             <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
+            </dt>
+            <dd><p>2026-10-01</p></dd>
+          </div>
+          <div>
+            <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/license" title="A legal document giving official permission to do something with the resource. Defined in DCMI Metadata Terms">License</a>
             </dt>
             <dd>
@@ -405,8 +416,8 @@ td {
             </dt>
             <dd>
               <ul>
-                <li><p>Generic ontology for membership-only organisations — clubs, societies, student nations and, through the fraternal extension, fraternal orders: memberships and their lifecycle, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations.</p></li>
-                <li><p>Generisk ontologi för organisationer med slutet medlemskap — klubbar, sällskap, studentnationer och, via tillägget fraternal, ordenssällskap: medlemskap och dess livscykel, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer.</p></li>
+                <li><p>Generic ontology for membership organisations of every kind, closed or open — from private clubs, societies, student nations and (through the fraternal extension) fraternal orders to hobby and supporters' clubs, associations, political parties and trade unions: memberships and their lifecycle, admission and fees, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations.</p></li>
+                <li><p>Generisk ontologi för medlemsorganisationer av alla slag, med slutet eller öppet medlemskap — från privata klubbar, sällskap, studentnationer och (via tillägget fraternal) ordenssällskap till hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar: medlemskap och dess livscykel, upptagning och avgifter, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer.</p></li>
               </ul>
             </dd>
           </div>
@@ -431,8 +442,19 @@ td {
               </th>
               <td>
                 <ul>
-                  <li><p>An organisation whose participants are admitted as members and which is run for, and largely by, those members. The kind of organisation is given with org:classification (see mbrc:OrganizationTypes).</p></li>
-                  <li><p>En organisation vars deltagare upptas som medlemmar och som drivs för, och till stor del av, medlemmarna. Organisationstypen anges med org:classification (se mbrc:OrganizationTypes).</p></li>
+                  <li><p>An organisation whose participants are admitted as members and which exists for those members as a body: they share its purpose, premises or activities, and usually govern it themselves. Some clubs are instead owned by a proprietor or an institution (see mbr:ownershipModel). The kind of organisation is given with org:classification (see mbrc:OrganizationTypes).</p></li>
+                  <li><p>En organisation vars deltagare upptas som medlemmar och som finns till för medlemmarna som grupp: de delar dess syfte, lokaler eller verksamhet och styr den vanligen själva. Vissa klubbar ägs i stället av en ägare eller en institution (se mbr:ownershipModel). Organisationstypen anges med org:classification (se mbrc:OrganizationTypes).</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Covers organisations with closed membership, such as private clubs and order societies, and open ones, such as hobby and supporters' clubs, associations, political parties and trade unions (see mbr:admissionMode). Not covered: customer loyalty schemes and commercial subscriptions such as most gym memberships, where membership means no more than buying the service.</p></li>
+                  <li><p>Omfattar organisationer med slutet medlemskap, som privata klubbar och ordenssällskap, och med öppet, som hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar (se mbr:admissionMode). Omfattas inte: kundklubbar och kommersiella abonnemang som de flesta gymkort, där medlemskapet inte är mer än köpet av tjänsten.</p></li>
                 </ul>
               </td>
             </tr>
@@ -664,11 +686,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#MembershipOrganisation">Membership Organisation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">org:classification</a>
                     <span>
@@ -681,6 +698,11 @@ td {
                       </span>
                     </span><br>
                   </span>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#MembershipOrganisation">Membership Organisation</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -810,6 +832,17 @@ td {
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Data about who belongs to a political party, a trade union, or an organisation with a religious or philosophical aim (which can include fraternal orders) is special-category personal data under Article 9 of the EU General Data Protection Regulation (GDPR). The organisation itself may keep a register of its members and former members (Art. 9(2)(d)), but may not disclose it outside the organisation without their consent. Anyone else needs another exception in Art. 9(2) to process such data, for example explicit consent, or that the person has made the membership public, as elected representatives do. GDPR does not apply to deceased persons.</p></li>
+                  <li><p>Uppgifter om vem som tillhör ett politiskt parti, en fackförening eller en organisation med religiöst eller filosofiskt syfte (vilket kan omfatta ordenssällskap) är känsliga personuppgifter enligt artikel 9 i EU:s dataskyddsförordning (GDPR). Organisationen själv får föra register över sina nuvarande och tidigare medlemmar (art. 9.2 d) men inte lämna ut det utanför organisationen utan deras samtycke. Andra behöver ett annat undantag i art. 9.2 för att behandla sådana uppgifter, t.ex. uttryckligt samtycke eller att personen själv har offentliggjort medlemskapet, som förtroendevalda gör. GDPR gäller inte avlidna personer.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
@@ -870,6 +903,70 @@ td {
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="MembershipFee">
+          <h3>Membership FeeMedlemsavgift
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#MembershipFee</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>A fee an organisation charges for membership: the kind of fee (mbr:feeType), the amount (schema:price) in a currency (schema:priceCurrency, an ISO 4217 code such as SEK), the membership categories it applies to (mbr:appliesToCategory; left out when it applies to all members) and when it was in force (mbr:startDate, mbr:endDate). Linked from the organisation or branch with mbr:membershipFee. When a fee changes, add a new fee and give the old one an end date.</p></li>
+                  <li><p>En avgift som en organisation tar ut för medlemskap: avgiftens typ (mbr:feeType), beloppet (schema:price) i en valuta (schema:priceCurrency, en kod enligt ISO 4217, t.ex. SEK), de medlemskategorier den gäller (mbr:appliesToCategory; utelämnas när den gäller alla medlemmar) och när den gällde (mbr:startDate, mbr:endDate). Kopplas från organisationen eller avdelningen med mbr:membershipFee. När en avgift ändras läggs en ny avgift till och den gamla får ett slutdatum.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://schema.org/PriceSpecification">schema:PriceSpecification</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#feeType">fee type</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#appliesToCategory">applies to category</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#membershipFee">membership fee</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -1669,6 +1766,133 @@ td {
               <td>
                 <span>
                   <a href="#MembershipEvent">Membership Event</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="membershipFee">
+          <h3>membership feemedlemsavgift
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#membershipFee</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>A fee the organisation or branch charges for membership, now or in the past.</p></li>
+                  <li><p>En avgift som organisationen eller avdelningen tar eller har tagit ut för medlemskap.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#MembershipFee">Membership Fee</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="feeType">
+          <h3>fee typeavgiftstyp
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#feeType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>When and how often the fee is paid: on joining, every year, every month or once for life (see mbrc:FeeTypes).</p></li>
+                  <li><p>När och hur ofta avgiften betalas: vid inträdet, varje år, varje månad eller en gång för livet (se mbrc:FeeTypes).</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#MembershipFee">Membership Fee</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="appliesToCategory">
+          <h3>applies to categorygäller kategori
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#appliesToCategory</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>A membership category the fee applies to, such as junior or overseas members (see mbrc:MembershipCategories). Left out when the fee applies to all members.</p></li>
+                  <li><p>En medlemskategori som avgiften gäller, t.ex. junior- eller utlandsmedlemmar (se mbrc:MembershipCategories). Utelämnas när avgiften gäller alla medlemmar.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#MembershipFee">Membership Fee</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2789,6 +3013,9 @@ td {
               <a href="#MembershipEvent">Membership EventMedlemskapshändelse</a>
             </li>
             <li>
+              <a href="#MembershipFee">Membership FeeMedlemsavgift</a>
+            </li>
+            <li>
               <a href="#Office">OfficeÄmbete</a>
             </li>
             <li>
@@ -2857,6 +3084,15 @@ td {
             </li>
             <li>
               <a href="#resultingStatus">resulting statusresulterande status</a>
+            </li>
+            <li>
+              <a href="#membershipFee">membership feemedlemsavgift</a>
+            </li>
+            <li>
+              <a href="#feeType">fee typeavgiftstyp</a>
+            </li>
+            <li>
+              <a href="#appliesToCategory">applies to categorygäller kategori</a>
             </li>
             <li>
               <a href="#gatheringtype">gathering typetyp av sammankomst</a>

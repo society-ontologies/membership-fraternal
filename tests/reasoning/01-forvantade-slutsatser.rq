@@ -8,6 +8,8 @@ PREFIX mbr:  <https://w3id.org/membership#>
 PREFIX fraternal:  <https://w3id.org/fraternal#>
 PREFIX club:  <https://example.org/lanternmere/>
 PREFIX sor:   <https://example.org/soror-exemplum/>
+PREFIX schema: <http://schema.org/>
+PREFIX fore:  <https://example.org/foreningar/>
 
 SELECT ?missing WHERE {
     VALUES (?s ?type) {
@@ -25,6 +27,8 @@ SELECT ?missing WHERE {
         (club:guestnight-2025-medal mbr:Conferral)
         (sor:Treasurer           org:Role)
         (club:HonTreasurer       org:Role)
+        (fore:nalen-annual-2024  schema:PriceSpecification)   # a membership fee is a schema.org price
+        (fore:ep-exempelstad     org:Organization)    # a party branch
     }
     FILTER NOT EXISTS { ?s rdf:type ?type }
     BIND (CONCAT(STR(?s), " should be a ", STR(?type)) AS ?missing)

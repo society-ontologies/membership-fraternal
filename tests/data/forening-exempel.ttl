@@ -1,0 +1,163 @@
+# Fictional open-membership organisations (all names, people and amounts
+# invented for testing): a sewing circle, a supporters' club, a political party
+# with a local branch and a congress, and a trade union. Shows open enrolment
+# versus open application, the application event, and membership fees by type
+# and category, including a fee change over time.
+#
+# Real records of who belongs to a political party or a trade union are
+# special-category personal data under GDPR Art. 9 (see the scope note on
+# mbr:Membership). The people below are invented.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fore:    <https://example.org/foreningar/> .
+
+# --- A sewing circle: anyone may join; the annual fee was raised in 2024 ---
+
+fore:Nalen a mbr:MembershipOrganization ;
+    rdfs:label "Syföreningen Nålen"@sv ;
+    org:classification mbrc:hobbyClub ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:ownershipModel mbrc:membersClub ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:foundingDate "1952"^^xsd:gYear ;
+    mbr:hasMemberCount fore:nalen-members-2025 ;
+    mbr:membershipFee fore:nalen-entrance , fore:nalen-annual-2020 , fore:nalen-annual-2024 .
+
+fore:nalen-members-2025 a mbr:MemberCount ;
+    mbr:count 34 ;
+    mbr:asOf "2025"^^xsd:gYear .
+
+fore:nalen-entrance a mbr:MembershipFee ;
+    mbr:feeType mbrc:entranceFee ;
+    schema:price 50 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "1990"^^xsd:gYear .
+
+fore:nalen-annual-2020 a mbr:MembershipFee ;
+    mbr:feeType mbrc:annualFee ;
+    schema:price 150 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2020"^^xsd:gYear ;
+    mbr:endDate "2023"^^xsd:gYear .
+
+fore:nalen-annual-2024 a mbr:MembershipFee ;
+    mbr:feeType mbrc:annualFee ;
+    schema:price 200 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2024"^^xsd:gYear .
+
+# --- A supporters' club: fees differ by membership category ---
+
+fore:GulaVagen a mbr:MembershipOrganization ;
+    rdfs:label "Supporterföreningen Gula Vågen"@sv ;
+    org:classification mbrc:supportersClub ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:membershipFee fore:gv-annual , fore:gv-annual-junior , fore:gv-life .
+
+fore:gv-annual a mbr:MembershipFee ;
+    mbr:feeType mbrc:annualFee ;
+    mbr:appliesToCategory mbrc:ordinary ;
+    schema:price 250.00 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2025-01-01"^^xsd:date .
+
+fore:gv-annual-junior a mbr:MembershipFee ;
+    mbr:feeType mbrc:annualFee ;
+    mbr:appliesToCategory mbrc:junior ;
+    schema:price 100.00 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2025-01-01"^^xsd:date .
+
+fore:gv-life a mbr:MembershipFee ;
+    mbr:feeType mbrc:lifeMembershipFee ;
+    mbr:appliesToCategory mbrc:life ;
+    schema:price 5000 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2025-01-01"^^xsd:date .
+
+fore:karin a foaf:Person ; schema:name "Karin Exempel" .
+
+# Open enrolment: no application or decision, she joins and is a member.
+fore:karin-membership a mbr:Membership ;
+    org:member fore:karin ; org:organization fore:GulaVagen ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:membershipNumber 1207 ; mbr:startDate "2025-03-01"^^xsd:date .
+
+fore:karin-joins a mbr:MembershipEvent ;
+    mbr:concernsMembership fore:karin-membership ;
+    mbr:membershipEventType mbrc:admission ;
+    mbr:resultingStatus mbrc:active ;
+    mbr:startDate "2025-03-01"^^xsd:date .
+
+# --- A political party: open application, decided by the local branch board ---
+
+fore:Exempelpartiet a mbr:MembershipOrganization ;
+    rdfs:label "Exempelpartiet"@sv ;
+    org:classification mbrc:politicalParty ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1971"^^xsd:gYear ;
+    mbr:hasMemberCount fore:ep-members-2025 ;
+    mbr:membershipFee fore:ep-annual .
+
+fore:ep-members-2025 a mbr:MemberCount ;
+    mbr:count 12400 ;
+    mbr:asOf "2025-12-31"^^xsd:date .
+
+fore:ep-annual a mbr:MembershipFee ;
+    mbr:feeType mbrc:annualFee ;
+    schema:price 100 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2022"^^xsd:gYear .
+
+fore:ep-exempelstad a mbr:Branch ;
+    rdfs:label "Exempelpartiet i Exempelstad"@sv ;
+    org:unitOf fore:Exempelpartiet .
+
+fore:ep-congress-2025 a mbr:Gathering ;
+    rdfs:label "Exempelpartiets kongress 2025"@sv ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer fore:Exempelpartiet ;
+    mbr:startDate "2025-05-17"^^xsd:date .
+
+fore:ola a foaf:Person ; schema:name "Ola Påhittad" .
+
+fore:ola-membership a mbr:Membership ;
+    org:member fore:ola ; org:organization fore:Exempelpartiet ;
+    mbr:membershipStatus mbrc:active ;
+    mbr:startDate "2025-03-20"^^xsd:date .
+
+fore:ola-applies a mbr:MembershipEvent ;
+    mbr:concernsMembership fore:ola-membership ;
+    mbr:membershipEventType mbrc:application ;
+    mbr:resultingStatus mbrc:candidate ;
+    mbr:startDate "2025-03-02"^^xsd:date .
+
+fore:ola-admitted a mbr:MembershipEvent ;
+    mbr:concernsMembership fore:ola-membership ;
+    mbr:membershipEventType mbrc:admission ;
+    mbr:resultingStatus mbrc:active ;
+    mbr:startDate "2025-03-20"^^xsd:date .
+
+# --- A trade union: open to employees in its field, monthly fee ---
+
+fore:Exempelfacket a mbr:MembershipOrganization ;
+    rdfs:label "Exempelfacket"@sv ;
+    org:classification mbrc:tradeUnion ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:membershipFee fore:ef-monthly .
+
+fore:ef-monthly a mbr:MembershipFee ;
+    mbr:feeType mbrc:monthlyFee ;
+    schema:price 280 ;
+    schema:priceCurrency "SEK" ;
+    mbr:startDate "2026-01"^^xsd:gYearMonth .
