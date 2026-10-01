@@ -244,8 +244,9 @@ mbrc:MembershipStatuses a skos:ConceptScheme , owl:NamedIndividual ;
     skos:definition "Stages in the life of a membership, from being considered to leaving."@en ,
                     "Stadier i ett medlemskaps livscykel, från att vara påtänkt till utträde."@sv ;
     skos:hasTopConcept mbrc:prospect , mbrc:proposed , mbrc:candidate , mbrc:elected ,
-                       mbrc:active , mbrc:dormant , mbrc:suspended , mbrc:resigned ,
-                       mbrc:lapsed , mbrc:expelled , mbrc:deceased , mbrc:emeritus .
+                       mbrc:notAdmitted , mbrc:active , mbrc:dormant , mbrc:suspended ,
+                       mbrc:resigned , mbrc:lapsed , mbrc:expelled , mbrc:deceased ,
+                       mbrc:emeritus .
 
 mbrc:prospect a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
@@ -271,6 +272,14 @@ mbrc:elected a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Elected"@en , "Invald"@sv ;
     skos:definition "Elected to membership but not yet admitted."@en ,
                     "Invald men ännu inte upptagen."@sv .
+
+mbrc:notAdmitted a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
+    skos:prefLabel "Not Admitted"@en , "Ej upptagen"@sv ;
+    skos:definition "The proposal or application ended without admission: it was rejected, stopped or withdrawn."@en ,
+                    "Förslaget eller ansökan avslutades utan upptagning: det avslogs, stoppades eller drogs tillbaka."@sv ;
+    skos:scopeNote "Record the organisation's decision as a mbr:MembershipEvent of type mbrc:rejection with mbr:resultingStatus mbrc:notAdmitted."@en ,
+                   "Organisationens beslut registreras som en mbr:MembershipEvent av typen mbrc:rejection med mbr:resultingStatus mbrc:notAdmitted."@sv .
 
 mbrc:active a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
@@ -384,9 +393,9 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
 
 mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv ;
-    skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:ballot , mbrc:admission ,
-                       mbrc:statusChange , mbrc:resignation , mbrc:lapse , mbrc:expulsion ,
-                       mbrc:reinstatement , mbrc:death .
+    skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:ballot , mbrc:rejection ,
+                       mbrc:admission , mbrc:statusChange , mbrc:resignation , mbrc:lapse ,
+                       mbrc:expulsion , mbrc:reinstatement , mbrc:death .
 
 mbrc:application a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
@@ -402,6 +411,12 @@ mbrc:ballot a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
     skos:prefLabel "Ballot"@en , "Ballotering"@sv ;
     skos:definition "The members vote on a candidate."@en , "Medlemmarna röstar om en kandidat."@sv .
+
+mbrc:rejection a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Rejection"@en , "Avslag"@sv ;
+    skos:definition "The organisation decides not to go ahead with a proposal or application, by ballot or otherwise. The resulting status is mbrc:notAdmitted."@en ,
+                    "Organisationen beslutar att inte gå vidare med ett förslag eller en ansökan, genom ballotering eller på annat sätt. Den nya statusen blir mbrc:notAdmitted."@sv .
 
 mbrc:admission a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
@@ -781,8 +796,8 @@ mbrc:mixedSeparateBranches a skos:Concept , owl:NamedIndividual ;
 
 mbrc:AdmissionModes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Admission Modes"@en , "Upptagningsformer"@sv ;
-    skos:hasTopConcept mbrc:byInvitation , mbrc:proposalAndBallot , mbrc:openApplication ,
-                       mbrc:openEnrolment , mbrc:hereditary , mbrc:exOfficio .
+    skos:hasTopConcept mbrc:byInvitation , mbrc:proposalAndBallot , mbrc:proposalAndObjectionPeriod ,
+                       mbrc:openApplication , mbrc:openEnrolment , mbrc:hereditary , mbrc:exOfficio .
 
 mbrc:byInvitation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
@@ -793,6 +808,14 @@ mbrc:proposalAndBallot a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
     skos:prefLabel "Proposal and Ballot"@en , "Förslag och ballotering"@sv ;
     skos:definition "Candidates are proposed by members and elected by ballot."@en , "Kandidater föreslås av medlemmar och väljs genom ballotering."@sv .
+
+mbrc:proposalAndObjectionPeriod a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
+    skos:prefLabel "Proposal and Objection Period"@en , "Förslag och invändningstid"@sv ;
+    skos:definition "Candidates are proposed and seconded by members, and the proposal is made known to the members for a set period. Unless an objection leads the organisation to stop it, the candidate goes ahead to admission; there is no vote."@en ,
+                    "Kandidater föreslås och understöds av medlemmar, och förslaget görs känt för medlemmarna under en bestämd tid. Om ingen invändning får organisationen att stoppa det går kandidaten vidare till upptagning; ingen omröstning sker."@sv ;
+    skos:scopeNote "Compare mbrc:proposalAndBallot, where the members vote. A proposal that is stopped is recorded as a mbrc:rejection event with the resulting status mbrc:notAdmitted."@en ,
+                   "Jämför mbrc:proposalAndBallot, där medlemmarna röstar. Ett förslag som stoppas registreras som en händelse av typen mbrc:rejection med den nya statusen mbrc:notAdmitted."@sv .
 
 mbrc:openApplication a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;

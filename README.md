@@ -175,6 +175,10 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 
 ## Changelog
 
+**Unreleased (1.1.0).** Additions only; nothing is removed or renamed.
+- Admission without a vote: new admission mode `mbrc:proposalAndObjectionPeriod`. Candidates are proposed and seconded, the proposal is made known to the members for a set period, and the candidate goes ahead unless an objection leads the organisation to stop it.
+- Proposals and applications that end without admission: new membership status `mbrc:notAdmitted` and event type `mbrc:rejection`. Ballot clubs use them for candidates who are not elected.
+
 **1.0.0.** First public version of the Membership Organisations ontology and the Fraternal Orders and Sororities ontology.
 
 Amended on 2026-09-30, before any known outside use:

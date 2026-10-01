@@ -150,6 +150,27 @@ club:hb-member-12-membership a mbr:Membership ;
     mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:overseas ;
     mbr:membershipNumber "H-12" .
 
+# A candidate who was proposed but not elected: the ballot went against him,
+# so the club records a rejection and the membership ends as not admitted.
+club:edmund a foaf:Person ; schema:name "Edmund Madeup" .
+
+club:edmund-membership a mbr:Membership ;
+    org:member club:edmund ; org:organization club:Lanternmere ;
+    mbr:membershipStatus mbrc:notAdmitted ;
+    mbr:proposer club:william ; mbr:seconder club:henry .
+
+club:edmund-proposal a mbr:MembershipEvent ;
+    mbr:concernsMembership club:edmund-membership ;
+    mbr:membershipEventType mbrc:proposal ;
+    mbr:resultingStatus mbrc:proposed ;
+    mbr:startDate "2025-03-04"^^xsd:date .
+
+club:edmund-rejection a mbr:MembershipEvent ;
+    mbr:concernsMembership club:edmund-membership ;
+    mbr:membershipEventType mbrc:rejection ;
+    mbr:resultingStatus mbrc:notAdmitted ;
+    mbr:startDate "2025-05-13"^^xsd:date .
+
 # "The club has a secretary": a term of office. No end date = current secretary.
 club:william-secretary a mbr:Tenure ;
     org:member club:william ; org:organization club:Lanternmere ;
