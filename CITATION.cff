@@ -16,7 +16,7 @@ authors:
   - family-names: Almgren
     given-names: Oscar
     orcid: "https://orcid.org/0009-0002-6239-5346"
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-10-01
 # Zenodo concept DOI: covers all versions and resolves to the latest.
 doi: 10.5281/zenodo.23080656

@@ -1,5 +1,5 @@
 ##############################################################################
-# fraternal codelists  —  v1.0.0
+# fraternal codelists  —  v1.1.0
 #
 # SKOS codelists for the Fraternal Orders and Sororities Ontology. Like the membership
 # codelists these are hubs: an order's own degrees and titles map to them in
@@ -21,18 +21,23 @@
 
 <https://w3id.org/fraternal/code>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/fraternal/code/1.0.0> ;
-    owl:versionInfo "1.0.0" ;
+    owl:versionIRI <https://w3id.org/fraternal/code/1.1.0> ;
+    owl:versionInfo "1.1.0" ;
+    owl:priorVersion <https://w3id.org/fraternal/code/1.0.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/fraternal/code/1.0.0> ;
     owl:imports <https://w3id.org/fraternal> , <https://w3id.org/membership/code> ;
     dcterms:title "Fraternal Orders and Sororities — codelists"@en ,
                   "Ordenssällskap — kodlistor"@sv ;
-    dcterms:created "2026-09-29" ;
-    dcterms:modified "2026-09-30" ;
+    dcterms:created "2026-09-29"^^xsd:date ;
+    dcterms:issued "2026-10-01"^^xsd:date ;
+    dcterms:modified "2026-10-01"^^xsd:date ;
     vann:preferredNamespacePrefix "fraternalc" ;
     vann:preferredNamespaceUri "https://w3id.org/fraternal/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:creator "Oscar Almgren" ;
-    dcterms:rightsHolder "Oscar Almgren" .
+    dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> .
+
+<https://orcid.org/0009-0002-6239-5346> <http://xmlns.com/foaf/0.1/name> "Oscar Almgren" .
 
 ##############################################################################
 # 1. ORDER TYPES  (each refines mbrc:fraternalOrganization via skos:broadMatch,

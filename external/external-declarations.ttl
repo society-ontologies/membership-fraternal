@@ -25,15 +25,19 @@
 
 <https://w3id.org/membership/external>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/membership/external/1.0.0> ;
-    owl:versionInfo "1.0.0" ;
+    owl:versionIRI <https://w3id.org/membership/external/1.1.0> ;
+    owl:versionInfo "1.1.0" ;
+    owl:priorVersion <https://w3id.org/membership/external/1.0.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/membership/external/1.0.0> ;
     rdfs:label "External declarations for the membership/fraternal ontology stack"@en ,
                "Externa deklarationer för ontologistacken membership/fraternal"@sv ;
     rdfs:comment "OWL 2 DL declarations of the FOAF, W3C ORG, schema.org, SKOS, PROV-O and DCTERMS terms used by membership, fraternal and ontologies built on them."@en ,
                  "OWL 2 DL-deklarationer av de FOAF-, ORG-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:creator "Oscar Almgren" ;
-    dcterms:rightsHolder "Oscar Almgren" .
+    dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> .
+
+<https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .
 
 ##############################################################################
 # Annotation properties
@@ -43,6 +47,7 @@ dcterms:title a owl:AnnotationProperty .
 dcterms:description a owl:AnnotationProperty .
 dcterms:created a owl:AnnotationProperty .
 dcterms:modified a owl:AnnotationProperty .
+dcterms:issued a owl:AnnotationProperty .
 dcterms:creator a owl:AnnotationProperty .
 dcterms:source a owl:AnnotationProperty .
 dcterms:isPartOf a owl:AnnotationProperty .
@@ -108,6 +113,7 @@ foaf:Organization a owl:Class ;
 
 # The real-world thing a SKOS concept stands for.
 foaf:focus a owl:ObjectProperty .
+foaf:name a owl:DatatypeProperty .
 
 ##############################################################################
 # W3C ORG  (https://www.w3.org/TR/vocab-org/)

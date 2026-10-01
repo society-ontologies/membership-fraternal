@@ -1,5 +1,5 @@
 ##############################################################################
-# membership SHACL shapes  —  v1.0.0
+# membership SHACL shapes  —  v1.1.0
 #
 # Validation lives here, not in OWL domains/ranges. Validate a data graph that
 # is merged with the ontology and codelists, so sh:class sees the subclass
@@ -21,16 +21,18 @@
 
 <https://w3id.org/membership/shapes>
     a owl:Ontology ;
-    owl:versionInfo "1.0.0" ;
+    owl:versionInfo "1.1.0" ;
     rdfs:label "membership SHACL shapes"@en , "SHACL-regler för membership"@sv ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:creator "Oscar Almgren" ;
-    dcterms:rightsHolder "Oscar Almgren" ;
+    dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
     sh:declare [ sh:prefix "mbr" ; sh:namespace "https://w3id.org/membership#"^^xsd:anyURI ] ,
                [ sh:prefix "mbrc" ; sh:namespace "https://w3id.org/membership/code/"^^xsd:anyURI ] ,
                [ sh:prefix "org" ; sh:namespace "http://www.w3.org/ns/org#"^^xsd:anyURI ] ,
                [ sh:prefix "xsd" ; sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ] ,
                [ sh:prefix "schema" ; sh:namespace "http://schema.org/"^^xsd:anyURI ] .
+
+<https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .
 
 ##############################################################################
 # Dates: xsd:date, xsd:gYearMonth or xsd:gYear; at most one of each

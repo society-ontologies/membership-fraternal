@@ -11,7 +11,7 @@ Two layered OWL 2 DL + SKOS ontologies for describing membership organisations o
 
 "Fraternal" follows the established catalogue term *fraternal organization* (Wikidata, Getty AAT, Library of Congress). It covers women's, mixed and adoptive orders as well as men's.
 
-Status: version 1.0.0 of both ontologies, served from GitHub Pages at <https://society-ontologies.github.io/membership-fraternal/>. The w3id.org IRIs resolve: they were registered in [perma-id/w3id.org#6779](https://github.com/perma-id/w3id.org/pull/6779), and the redirect rules are in [`ids/`](ids/).
+Status: version 1.1.0 of both ontologies, served from GitHub Pages at <https://society-ontologies.github.io/membership-fraternal/>. The w3id.org IRIs resolve: they were registered in [perma-id/w3id.org#6779](https://github.com/perma-id/w3id.org/pull/6779), and the redirect rules are in [`ids/`](ids/). Every release stays available at its version IRI (for example `https://w3id.org/membership/1.0.0`), served from a frozen copy in [`versions/`](versions/).
 
 ```
 external/external-declarations.ttl      FOAF, W3C ORG, schema.org, SKOS, PROV terms declared DL-safe
@@ -178,6 +178,12 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 **Unreleased (1.1.0).** Additions only; nothing is removed or renamed.
 - Admission without a vote: new admission mode `mbrc:proposalAndObjectionPeriod`. Candidates are proposed and seconded, the proposal is made known to the members for a set period, and the candidate goes ahead unless an objection leads the organisation to stop it.
 - Proposals and applications that end without admission: new membership status `mbrc:notAdmitted` and event type `mbrc:rejection`. Ballot clubs use them for candidates who are not elected.
+- Metadata, following the Linked Open Vocabularies recommendations:
+  - every class and property has `rdfs:isDefinedBy` and a definition in English and Swedish (eight `mbr:` properties had none);
+  - creator and rights holder are the maintainer's ORCID IRI;
+  - `dcterms:issued` is added, and dates are typed `xsd:date`;
+  - each file has `owl:priorVersion` and `owl:backwardCompatibleWith` 1.0.0.
+- Versions: every release keeps a frozen copy in `versions/<version>/`, and the w3id rules resolve any version IRI to it, so `https://w3id.org/membership/1.0.0` keeps returning 1.0.0.
 
 **1.0.0.** First public version of the Membership Organisations ontology and the Fraternal Orders and Sororities ontology.
 
