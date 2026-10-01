@@ -1,0 +1,287 @@
+##############################################################################
+# fraternal — Fraternal Orders and Sororities Ontology  —  v1.0.0
+#
+# Specialises membership for organisations bound together by initiation, ritual and
+# graded degrees: fraternal orders, lodges, college fraternities, sororities,
+# co-ed and adoptive orders, and orders in the chivalric style. Orders of
+# chivalry, genuine and self-styled, are also described here as organisations of
+# their members; whether an order is genuine is recorded as a dated assessment
+# by someone (fraternal:LegitimacyAssessment), never as a bare fact.
+# Gender-neutral throughout; the member title (brother, sister, sibling …) is a
+# property of the order, not of the model.
+##############################################################################
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix fraternal:    <https://w3id.org/fraternal#> .
+@prefix fraternalc:   <https://w3id.org/fraternal/code/> .
+
+<https://w3id.org/fraternal>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/fraternal/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    owl:imports <https://w3id.org/membership> ;
+    dcterms:title "Fraternal Orders and Sororities Ontology"@en ,
+                  "Ontologi för ordenssällskap"@sv ;
+    dcterms:description "Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, recognition and amity between orders, and assessments of whether an order of chivalry is genuine."@en ,
+                        "Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier, erkännande och vänskap mellan ordnar samt bedömningar av om en riddarorden är äkta."@sv ;
+    dcterms:created "2026-09-29" ;
+    dcterms:modified "2026-09-30" ;
+    vann:preferredNamespacePrefix "fraternal" ;
+    vann:preferredNamespaceUri "https://w3id.org/fraternal#" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "Oscar Almgren" ;
+    dcterms:rightsHolder "Oscar Almgren" .
+
+##############################################################################
+# ORGANISATIONS
+##############################################################################
+
+fraternal:FraternalOrder a owl:Class ;
+    rdfs:subClassOf mbr:MembershipOrganization ;
+    rdfs:label "Fraternal Order"@en , "Ordenssällskap"@sv ;
+    skos:definition "A membership organisation whose members are admitted by initiation and advance through a system of degrees, usually under oath and with ritual. Covers fraternities, sororities, co-ed and adoptive orders. The kind of order is given with org:classification (see fraternalc:OrderTypes)."@en ,
+                    "En medlemsorganisation där medlemmar upptas genom initiering och avancerar i ett gradsystem, vanligen under ed och med ritual. Omfattar brödra- och systerskap samt blandade ordnar. Ordens typ anges med org:classification (se fraternalc:OrderTypes)."@sv ;
+    skos:scopeNote "Also used for orders of chivalry, genuine or self-styled, described as organisations of their members (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). In Swedish these are riddarordnar, not ordenssällskap. An order of merit that consists only of a dignity and its insignia is a mbr:Distinction, not an organisation."@en ,
+                   "Används även för riddarordnar, äkta eller självutnämnda, beskrivna som sammanslutningar av sina medlemmar (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). På svenska är dessa riddarordnar, inte ordenssällskap. En förtjänstorden som bara består av en värdighet och dess insignier är en mbr:Distinction, inte en organisation."@sv .
+
+fraternal:GrandBody a owl:Class ;
+    rdfs:subClassOf fraternal:FraternalOrder ;
+    rdfs:label "Grand Body"@en , "Storloge"@sv ;
+    skos:definition "A governing body of a fraternal order, such as a grand lodge or supreme council, with jurisdiction over lodges."@en ,
+                    "Ett styrande organ för ett ordenssällskap, t.ex. en storloge eller ett högsta råd, med jurisdiktion över loger."@sv .
+
+fraternal:Lodge a owl:Class ;
+    rdfs:subClassOf mbr:Branch ;
+    rdfs:label "Lodge"@en , "Loge"@sv ;
+    skos:definition "A local unit of a fraternal order: lodge, chapter, court, tent and the like."@en ,
+                    "En lokal enhet i ett ordenssällskap: loge, kapitel, avdelning och liknande."@sv .
+
+# Convenience classes defined by classification (pattern P2).
+fraternalc:sorority a owl:NamedIndividual .
+fraternalc:collegeFraternity a owl:NamedIndividual .
+
+fraternal:Sorority a owl:Class ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( fraternal:FraternalOrder
+                             [ a owl:Restriction ;
+                               owl:onProperty org:classification ;
+                               owl:hasValue fraternalc:sorority ] )
+    ] ;
+    rdfs:label "Sorority"@en , "Systerskap"@sv ;
+    skos:definition "A fraternal order classified as a sorority."@en ,
+                    "Ett ordenssällskap klassificerat som systerskap."@sv .
+
+fraternal:CollegeFraternity a owl:Class ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( fraternal:FraternalOrder
+                             [ a owl:Restriction ;
+                               owl:onProperty org:classification ;
+                               owl:hasValue fraternalc:collegeFraternity ] )
+    ] ;
+    rdfs:label "College Fraternity"@en , "Studentbrödraskap"@sv ;
+    skos:definition "A fraternal order classified as a college fraternity."@en ,
+                    "Ett ordenssällskap klassificerat som studentbrödraskap."@sv .
+
+##############################################################################
+# DEGREES
+##############################################################################
+
+fraternal:DegreeSystem a owl:Class ;
+    rdfs:subClassOf skos:ConceptScheme ;
+    rdfs:label "Degree System"@en , "Gradsystem"@sv ;
+    skos:definition "The ordered set of degrees of an order (a rite). Each order's grade codelist is a DegreeSystem."@en ,
+                    "Den ordnade mängden grader i en orden (ett system). Varje ordens gradlista är ett Gradsystem."@sv .
+
+fraternal:Degree a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Degree"@en , "Grad"@sv ;
+    skos:definition "A degree or grade within a degree system. A degree in the numbered sequence has its position given by fraternal:degreeRank and fraternal:nextDegree — not by skos:broader, which would state that a higher degree is a narrower concept of a lower one. Honorary, office and side degrees that stand outside the sequence have no rank; their kind is given with fraternal:degreeKind."@en ,
+                    "En grad inom ett gradsystem. En grad i den numrerade följden får sin plats genom fraternal:degreeRank och fraternal:nextDegree — inte genom skos:broader, som skulle säga att en högre grad är ett underbegrepp till en lägre. Heders-, ämbets- och tilläggsgrader som står utanför följden saknar gradnummer; deras art anges med fraternal:degreeKind."@sv ;
+    skos:scopeNote "The order's own numeral or abbreviation for a degree (e.g. IV–V, 3=8, RKFV) goes in skos:notation. It may differ from the rank or run in reverse."@en ,
+                   "Ordens egen numrering eller förkortning för en grad (t.ex. IV–V, 3=8, RKFV) anges med skos:notation. Den kan skilja sig från gradnumret eller löpa baklänges."@sv .
+
+fraternal:degreeRank a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "degree rank"@en , "gradnummer"@sv ;
+    rdfs:domain fraternal:Degree ;
+    rdfs:range xsd:positiveInteger ;
+    skos:definition "Position of the degree in the numbered sequence of its system, starting at 1 for the entry degree. Positional only: degrees outside the sequence have no rank."@en ,
+                    "Gradens plats i systemets numrerade följd, med 1 för inträdesgraden. Anger bara position: grader utanför följden saknar gradnummer."@sv .
+
+fraternal:degreeKind a owl:ObjectProperty ;
+    rdfs:label "degree kind"@en , "gradart"@sv ;
+    rdfs:domain fraternal:Degree ;
+    rdfs:range skos:Concept ;
+    skos:definition "The kind of degree: honorary, office, side, probationary and so on (see fraternalc:DegreeKinds). A degree without a kind is an ordinary degree in the numbered sequence."@en ,
+                    "Gradens art: heders-, ämbets-, tillägg-, prövograd osv. (se fraternalc:DegreeKinds). En grad utan art är en vanlig grad i den numrerade följden."@sv .
+
+fraternal:higherDegree a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:label "higher degree"@en , "högre grad"@sv ;
+    rdfs:domain fraternal:Degree ;
+    rdfs:range fraternal:Degree ;
+    skos:definition "Any degree above this one in the same system."@en ,
+                    "Varje grad ovanför denna i samma system."@sv .
+
+fraternal:nextDegree a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf fraternal:higherDegree ;
+    rdfs:label "next degree"@en , "nästa grad"@sv ;
+    skos:definition "The degree immediately above this one."@en ,
+                    "Graden omedelbart ovanför denna."@sv .
+
+fraternal:degreeSystem a owl:ObjectProperty ;
+    rdfs:label "degree system"@en , "gradsystem"@sv ;
+    rdfs:range fraternal:DegreeSystem ;
+    skos:definition "The degree system an order works."@en ,
+                    "Det gradsystem en orden arbetar i."@sv .
+
+fraternal:DegreeConferral a owl:Class ;
+    rdfs:subClassOf mbr:Conferral ;
+    rdfs:label "Degree Conferral"@en , "Gradtilldelning"@sv ;
+    skos:definition "The conferral of a degree (mbr:conferred is a fraternal:Degree), usually at a ceremony."@en ,
+                    "Tilldelningen av en grad (mbr:conferred är en fraternal:Degree), vanligen vid en ceremoni."@sv .
+
+fraternal:Initiation a owl:Class ;
+    rdfs:subClassOf fraternal:DegreeConferral ;
+    rdfs:label "Initiation"@en , "Initiering"@sv ;
+    skos:definition "The conferral of the entry degree, by which a candidate becomes a member. Record the admission itself as a mbr:MembershipEvent of type mbrc:admission."@en ,
+                    "Tilldelningen av inträdesgraden, genom vilken en kandidat blir medlem. Själva upptagningen registreras som en mbr:MembershipEvent av typen mbrc:admission."@sv .
+
+##############################################################################
+# CEREMONIES AND INSIGNIA
+##############################################################################
+
+fraternal:Ceremony a owl:Class ;
+    rdfs:subClassOf mbr:Gathering ;
+    rdfs:label "Ceremony"@en , "Ceremoni"@sv ;
+    skos:definition "A gathering at which ritual is worked or degrees and distinctions are conferred. The kind of ceremony is given with mbr:gatheringType (see fraternalc:CeremonyTypes)."@en ,
+                    "En sammankomst där ritual utförs eller grader och utmärkelser tilldelas. Ceremonins typ anges med mbr:gatheringType (se fraternalc:CeremonyTypes)."@sv .
+
+fraternal:Insignia a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Insignia"@en , "Insignie"@sv ;
+    skos:definition "A kind of regalia or insignia belonging to a degree, office or distinction: apron, collar, jewel, cross, star and so on."@en ,
+                    "En typ av ordensdräkt eller insignie som hör till en grad, ett ämbete eller en utmärkelse: förkläde, kedja, juvel, kors, kraschan osv."@sv .
+
+fraternal:insigniaOf a owl:ObjectProperty ;
+    rdfs:label "insignia of"@en , "insignie för"@sv ;
+    rdfs:domain fraternal:Insignia ;
+    rdfs:range skos:Concept ;
+    skos:definition "The degree, office or distinction the insignia belongs to."@en ,
+                    "Den grad, det ämbete eller den utmärkelse insignien hör till."@sv .
+
+fraternal:insigniaType a owl:ObjectProperty ;
+    rdfs:label "insignia type"@en , "insignietyp"@sv ;
+    rdfs:domain fraternal:Insignia ;
+    rdfs:range skos:Concept ;
+    skos:definition "The generic kind of insignia (see fraternalc:InsigniaTypes)."@en ,
+                    "Insigniens generiska typ (se fraternalc:InsigniaTypes)."@sv .
+
+##############################################################################
+# ORDER-LEVEL PROPERTIES
+##############################################################################
+
+fraternal:memberTitle a owl:ObjectProperty ;
+    rdfs:label "member title"@en , "medlemstitel"@sv ;
+    rdfs:range skos:Concept ;
+    skos:definition "How members address one another: brother, sister, sibling, companion … (see fraternalc:MemberTitles)."@en ,
+                    "Hur medlemmar tituleras: broder, syster, syskon, kompanjon … (se fraternalc:MemberTitles)."@sv .
+
+fraternal:characteristic a owl:ObjectProperty ;
+    rdfs:label "characteristic"@en , "kännetecken"@sv ;
+    rdfs:range skos:Concept ;
+    skos:definition "A defining feature of the order: initiation ritual, graded degrees, oath, secrecy … (see fraternalc:Characteristics)."@en ,
+                    "Ett utmärkande drag hos orden: initieringsritual, grader, ed, tystnadsplikt … (se fraternalc:Characteristics)."@sv .
+
+fraternal:namedAfter a owl:ObjectProperty ;
+    rdfs:label "named after"@en , "uppkallad efter"@sv ;
+    skos:definition "The person or thing the order is named after, for example its patron."@en ,
+                    "Den person eller sak orden är uppkallad efter, t.ex. dess patron."@sv .
+
+fraternal:modelledOn a owl:ObjectProperty ;
+    rdfs:label "modelled on"@en , "förebild"@sv ;
+    skos:definition "An order, or other thing, whose structure this order imitates — for example grade names borrowed from a royal order of chivalry. States inspiration, not identity or hierarchy."@en ,
+                    "En orden, eller annat, vars struktur denna orden efterbildar — t.ex. gradbenämningar lånade från en kunglig riddarorden. Anger förebild, inte identitet eller hierarki."@sv .
+
+##############################################################################
+# RELATIONS BETWEEN ORDERS
+##############################################################################
+
+fraternal:hasJurisdictionOver a owl:ObjectProperty ;
+    rdfs:subPropertyOf org:hasSubOrganization ;
+    rdfs:label "has jurisdiction over"@en , "har jurisdiktion över"@sv ;
+    rdfs:domain fraternal:GrandBody ;
+    skos:definition "A grand body governs the lodge or order."@en ,
+                    "En storloge styr logen eller orden."@sv .
+
+fraternal:warrantedBy a owl:ObjectProperty ;
+    rdfs:label "warranted by"@en , "konstituerad av"@sv ;
+    rdfs:range org:Organization ;
+    skos:definition "The body that issued the lodge's warrant or charter."@en ,
+                    "Det organ som utfärdade logens stiftelsebrev."@sv .
+
+fraternal:recognizes a owl:ObjectProperty ;
+    rdfs:subPropertyOf org:linkedTo ;
+    rdfs:label "recognises"@en , "erkänner"@sv ;
+    skos:definition "The order formally recognises the other as regular (directional, as in Masonic recognition)."@en ,
+                    "Orden erkänner formellt den andra som reguljär (riktad, som i frimurarnas erkännande)."@sv ;
+    skos:scopeNote "For a dated judgement by a commission, a state or the Holy See on whether an order of chivalry is genuine, use fraternal:LegitimacyAssessment."@en ,
+                   "För en daterad bedömning av en kommission, en stat eller Den heliga stolen av om en riddarorden är äkta används fraternal:LegitimacyAssessment."@sv .
+
+fraternal:inAmityWith a owl:ObjectProperty , owl:SymmetricProperty ;
+    rdfs:subPropertyOf org:linkedTo ;
+    rdfs:label "in amity with"@en , "i vänskap med"@sv ;
+    skos:definition "The two orders have a mutual friendship agreement, for example allowing visits."@en ,
+                    "De två ordnarna har ett ömsesidigt vänskapsavtal, t.ex. om besök."@sv .
+
+##############################################################################
+# LEGITIMACY OF ORDERS OF CHIVALRY
+# Whether an order is a genuine order of chivalry is a judgement. It is
+# recorded as an assessment by a named agent, with a date and a source, so the
+# data never asserts legitimacy on its own authority.
+##############################################################################
+
+fraternal:fonsHonorum a owl:ObjectProperty ;
+    rdfs:label "fons honorum"@en , "fons honorum"@sv ;
+    rdfs:range foaf:Agent ;
+    skos:definition "The authority from which an order derives its right to confer knighthood or honours: a sovereign state or its head, the head of a reigning or formerly reigning royal house, or the Holy See."@en ,
+                    "Den auktoritet från vilken en orden härleder sin rätt att förläna riddarvärdighet eller utmärkelser: en suverän stat eller dess statschef, huvudmannen för ett regerande eller tidigare regerande furstehus, eller Den heliga stolen."@sv ;
+    skos:scopeNote "States the fons honorum an order claims or is recorded with. Whether the claim is accepted is a fraternal:LegitimacyAssessment."@en ,
+                   "Anger den fons honorum en orden hävdar eller registreras med. Om anspråket godtas är en fraternal:LegitimacyAssessment."@sv .
+
+fraternal:LegitimacyAssessment a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Legitimacy Assessment"@en , "Legitimitetsbedömning"@sv ;
+    skos:definition "A statement by an agent — a commission such as the ICOC, the Holy See, a state or another order — about whether an order is a genuine order of chivalry or may be worn, with its outcome (fraternal:assessmentOutcome), date (mbr:startDate) and source (dcterms:source)."@en ,
+                    "Ett uttalande av en agent — en kommission som ICOC, Den heliga stolen, en stat eller en annan orden — om huruvida en orden är en äkta riddarorden eller får bäras, med utfall (fraternal:assessmentOutcome), datum (mbr:startDate) och källa (dcterms:source)."@sv .
+
+fraternal:assessedOrder a owl:ObjectProperty ;
+    rdfs:label "assessed order"@en , "bedömd orden"@sv ;
+    rdfs:domain fraternal:LegitimacyAssessment ;
+    rdfs:range org:Organization ;
+    skos:definition "The order the assessment is about."@en , "Den orden som bedömningen avser."@sv .
+
+fraternal:assessedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    rdfs:label "assessed by"@en , "bedömd av"@sv ;
+    rdfs:domain fraternal:LegitimacyAssessment ;
+    rdfs:range foaf:Agent ;
+    skos:definition "The agent that made the assessment."@en , "Den agent som gjorde bedömningen."@sv .
+
+fraternal:assessmentOutcome a owl:ObjectProperty ;
+    rdfs:label "assessment outcome"@en , "bedömningens utfall"@sv ;
+    rdfs:domain fraternal:LegitimacyAssessment ;
+    rdfs:range skos:Concept ;
+    skos:definition "What the assessment concluded (see fraternalc:AssessmentOutcomes)."@en ,
+                    "Vad bedömningen kom fram till (se fraternalc:AssessmentOutcomes)."@sv .
