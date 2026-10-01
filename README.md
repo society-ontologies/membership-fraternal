@@ -1,5 +1,7 @@
 # Membership and Fraternal Ontologies
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23080656.svg)](https://doi.org/10.5281/zenodo.23080656)
+
 Two layered OWL 2 DL + SKOS ontologies for describing membership organisations of every kind, closed or open, as Linked Open Data:
 
 | Ontology | IRI | Prefixes | Covers |
@@ -9,7 +11,7 @@ Two layered OWL 2 DL + SKOS ontologies for describing membership organisations o
 
 "Fraternal" follows the established catalogue term *fraternal organization* (Wikidata, Getty AAT, Library of Congress). It covers women's, mixed and adoptive orders as well as men's.
 
-Status: version 1.0.0 of both ontologies, served from GitHub Pages at <https://society-ontologies.github.io/membership-fraternal/>. The w3id.org redirect rules are in [`ids/`](ids/).
+Status: version 1.0.0 of both ontologies, served from GitHub Pages at <https://society-ontologies.github.io/membership-fraternal/>. The w3id.org IRIs resolve: they were registered in [perma-id/w3id.org#6779](https://github.com/perma-id/w3id.org/pull/6779), and the redirect rules are in [`ids/`](ids/).
 
 ```
 external/external-declarations.ttl      FOAF, W3C ORG, schema.org, SKOS, PROV terms declared DL-safe
@@ -159,7 +161,7 @@ The aim is that no single person or service is a point of failure:
 
 | Layer | Plan |
 |---|---|
-| Identifiers | `w3id.org/membership` and `w3id.org/fraternal`, registered by pull request to [perma-id/w3id.org](https://github.com/perma-id/w3id.org) (`ids/membership/`, `ids/fraternal/`). The IRIs never change even if the hosting does. |
+| Identifiers | `w3id.org/membership` and `w3id.org/fraternal`, registered in [perma-id/w3id.org](https://github.com/perma-id/w3id.org) by [#6779](https://github.com/perma-id/w3id.org/pull/6779) (`ids/membership/`, `ids/fraternal/`). The IRIs never change even if the hosting does. |
 | Primary host | GitHub Pages, <https://society-ontologies.github.io/membership-fraternal/>, from the GitHub organization [society-ontologies](https://github.com/society-ontologies). The organization should have at least two owners. |
 | Mirror | Codeberg Pages, pushed automatically. A single w3id pull request switches the redirects if the primary fails. |
 | Archive | Zenodo's GitHub integration: a DOI for every tagged release, plus automatic copies in Software Heritage. |

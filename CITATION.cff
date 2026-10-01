@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use these ontologies, please cite them as below."
+type: dataset
+title: "Membership and Fraternal Ontologies"
+abstract: >-
+  Two layered OWL 2 DL and SKOS ontologies for describing membership
+  organisations as Linked Open Data. The Membership Organisations Ontology
+  (https://w3id.org/membership) covers any membership organisation, closed or
+  open: clubs, societies, student nations, associations, political parties and
+  trade unions. It models memberships and their lifecycle, admission and fees,
+  offices and terms of office, gatherings, distinctions and premises. The
+  Fraternal Orders and Sororities Ontology (https://w3id.org/fraternal) extends
+  it with degree systems, lodges and grand bodies, ceremonies, insignia, and
+  recognition between orders.
+authors:
+  - family-names: Almgren
+    given-names: Oscar
+    orcid: "https://orcid.org/0009-0002-6239-5346"
+version: 1.0.0
+date-released: 2026-10-01
+# Zenodo concept DOI: covers all versions and resolves to the latest.
+doi: 10.5281/zenodo.23080656
+license:
+  - CC-BY-4.0
+  - CC0-1.0
+  - MIT
+repository-code: "https://github.com/society-ontologies/membership-fraternal"
+url: "https://society-ontologies.github.io/membership-fraternal/"
+identifiers:
+  - type: url
+    value: "https://w3id.org/membership"
+    description: Membership Organisations Ontology
+  - type: url
+    value: "https://w3id.org/fraternal"
+    description: Fraternal Orders and Sororities Ontology
+keywords:
+  - ontology
+  - OWL
+  - SKOS
+  - Linked Open Data
+  - membership organisations
+  - clubs
+  - societies
+  - fraternal orders
+  - sororities
+  - student nations
