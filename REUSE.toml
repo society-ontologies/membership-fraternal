@@ -7,7 +7,7 @@ version = 1
 SPDX-PackageName = "membership-fraternal"
 SPDX-PackageSupplier = "Oscar Almgren"
 
-# Default: build tooling, tests, catalogs, w3id redirect drafts.
+# Default: build tooling, tests, catalogs, w3id redirect rules.
 [[annotations]]
 path = "**"
 SPDX-FileCopyrightText = "2026 Oscar Almgren"

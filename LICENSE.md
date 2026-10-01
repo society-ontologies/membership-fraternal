@@ -8,7 +8,7 @@ texts are in [`LICENSES/`](LICENSES/).
 |---|---|
 | Ontologies, codelists and shapes (`external/`, `membership/`, `fraternal/`) and the README | [CC BY 4.0](LICENSES/CC-BY-4.0.txt) |
 | Mappings (`mappings/`) | [CC0 1.0](LICENSES/CC0-1.0.txt) (dedicated to the public domain) |
-| Code, build files, tests and redirect drafts (`Makefile`, `*.py`, `*.rq`, `*.ru`, `tests/`, `ids/`) | [MIT](LICENSES/MIT.txt) |
+| Code, build files, tests and redirect rules (`Makefile`, `*.py`, `*.rq`, `*.ru`, `tests/`, `ids/`) | [MIT](LICENSES/MIT.txt) |
 
 Copyright holder: Oscar Almgren.
 
