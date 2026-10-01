@@ -1,0 +1,252 @@
+##############################################################################
+# External declarations — shared by membership, fraternal and ontologies built on them
+#
+# Declares exactly the external terms the stack uses (FOAF, W3C ORG, schema.org,
+# SKOS, PROV-O, DCTERMS, VANN) so that every layer is OWL 2 DL without importing
+# vocabularies that are not DL-clean themselves (FOAF, schema.org).
+#
+# Only axioms that the source vocabularies themselves state are repeated here.
+# SKOS mapping properties are declared as annotation properties on purpose:
+# alignments of OWL classes/properties to Wikidata items must not turn those
+# classes into skos:Concept individuals.
+##############################################################################
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+
+<https://w3id.org/membership/external>
+    a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/membership/external/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:label "External declarations for the membership/fraternal ontology stack"@en ,
+               "Externa deklarationer för ontologistacken membership/fraternal"@sv ;
+    rdfs:comment "OWL 2 DL declarations of the FOAF, W3C ORG, schema.org, SKOS, PROV-O and DCTERMS terms used by membership, fraternal and ontologies built on them."@en ,
+                 "OWL 2 DL-deklarationer av de FOAF-, ORG-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator "Oscar Almgren" ;
+    dcterms:rightsHolder "Oscar Almgren" .
+
+##############################################################################
+# Annotation properties
+##############################################################################
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+dcterms:isPartOf a owl:AnnotationProperty .
+dcterms:isReplacedBy a owl:AnnotationProperty .
+dcterms:replaces a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:rightsHolder a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+skos:prefLabel a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+skos:hiddenLabel a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:scopeNote a owl:AnnotationProperty .
+skos:note a owl:AnnotationProperty .
+skos:example a owl:AnnotationProperty .
+skos:editorialNote a owl:AnnotationProperty .
+skos:changeNote a owl:AnnotationProperty .
+skos:historyNote a owl:AnnotationProperty .
+skos:notation a owl:AnnotationProperty .
+
+# Mapping properties: annotations (see header). Concept-to-concept mappings keep
+# their SKOS meaning for SPARQL and SKOS tools; OWL reasoners ignore them.
+skos:exactMatch a owl:AnnotationProperty .
+skos:closeMatch a owl:AnnotationProperty .
+skos:broadMatch a owl:AnnotationProperty .
+skos:narrowMatch a owl:AnnotationProperty .
+skos:relatedMatch a owl:AnnotationProperty .
+
+##############################################################################
+# SKOS
+##############################################################################
+
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+skos:Collection a owl:Class .
+
+skos:inScheme a owl:ObjectProperty ;
+    rdfs:range skos:ConceptScheme .
+skos:hasTopConcept a owl:ObjectProperty ;
+    rdfs:domain skos:ConceptScheme ;
+    rdfs:range skos:Concept ;
+    owl:inverseOf skos:topConceptOf .
+skos:topConceptOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf skos:inScheme .
+skos:broader a owl:ObjectProperty ;
+    owl:inverseOf skos:narrower .
+skos:narrower a owl:ObjectProperty .
+skos:related a owl:ObjectProperty , owl:SymmetricProperty .
+skos:member a owl:ObjectProperty ;
+    rdfs:domain skos:Collection .
+
+##############################################################################
+# FOAF
+##############################################################################
+
+foaf:Agent a owl:Class .
+foaf:Person a owl:Class ;
+    rdfs:subClassOf foaf:Agent .
+foaf:Organization a owl:Class ;
+    rdfs:subClassOf foaf:Agent .
+
+# The real-world thing a SKOS concept stands for.
+foaf:focus a owl:ObjectProperty .
+
+##############################################################################
+# W3C ORG  (https://www.w3.org/TR/vocab-org/)
+##############################################################################
+
+org:Organization a owl:Class ;
+    owl:equivalentClass foaf:Organization ;
+    # Both directions of the equivalence stated as subclass axioms as well, so
+    # that SHACL's sh:class (which follows rdfs:subClassOf only) sees them.
+    rdfs:subClassOf foaf:Organization .
+foaf:Organization rdfs:subClassOf org:Organization .
+org:FormalOrganization a owl:Class ;
+    rdfs:subClassOf org:Organization .
+org:OrganizationalUnit a owl:Class ;
+    rdfs:subClassOf org:Organization .
+org:Membership a owl:Class .
+org:Role a owl:Class ;
+    rdfs:subClassOf skos:Concept .
+org:Site a owl:Class .
+org:ChangeEvent a owl:Class ;
+    rdfs:subClassOf prov:Activity .
+
+org:member a owl:ObjectProperty ;
+    rdfs:domain org:Membership ;
+    rdfs:range foaf:Agent .
+org:hasMembership a owl:ObjectProperty ;
+    owl:inverseOf org:member .
+org:organization a owl:ObjectProperty ;
+    rdfs:domain org:Membership ;
+    rdfs:range org:Organization .
+org:role a owl:ObjectProperty ;
+    rdfs:domain org:Membership ;
+    rdfs:range org:Role .
+org:memberOf a owl:ObjectProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range org:Organization ;
+    owl:inverseOf org:hasMember .
+org:hasMember a owl:ObjectProperty .
+org:subOrganizationOf a owl:ObjectProperty ;
+    owl:inverseOf org:hasSubOrganization .
+org:hasSubOrganization a owl:ObjectProperty .
+org:hasUnit a owl:ObjectProperty ;
+    rdfs:subPropertyOf org:hasSubOrganization ;
+    rdfs:range org:OrganizationalUnit ;
+    owl:inverseOf org:unitOf .
+org:unitOf a owl:ObjectProperty .
+org:linkedTo a owl:ObjectProperty ;
+    rdfs:domain org:Organization ;
+    rdfs:range org:Organization .
+org:classification a owl:ObjectProperty ;
+    rdfs:domain org:Organization ;
+    rdfs:range skos:Concept .
+org:hasSite a owl:ObjectProperty ;
+    rdfs:range org:Site ;
+    owl:inverseOf org:siteOf .
+org:siteOf a owl:ObjectProperty .
+org:resultedFrom a owl:ObjectProperty ;
+    rdfs:range org:ChangeEvent .
+org:originalOrganization a owl:ObjectProperty ;
+    rdfs:domain org:ChangeEvent .
+org:resultingOrganization a owl:ObjectProperty ;
+    rdfs:domain org:ChangeEvent ;
+    owl:inverseOf org:resultedFrom .
+org:changedBy a owl:ObjectProperty ;
+    rdfs:range org:ChangeEvent ;
+    owl:inverseOf org:originalOrganization .
+
+##############################################################################
+# PROV-O
+##############################################################################
+
+prov:Activity a owl:Class .
+prov:wasAssociatedWith a owl:ObjectProperty ;
+    rdfs:domain prov:Activity ;
+    rdfs:range foaf:Agent .
+prov:wasDerivedFrom a owl:ObjectProperty .
+
+##############################################################################
+# DCTERMS used in data
+##############################################################################
+
+dcterms:type a owl:ObjectProperty .
+
+##############################################################################
+# schema.org  (declared locally; schema.org is not an OWL DL vocabulary)
+##############################################################################
+
+schema:Event a owl:Class .
+schema:EventSeries a owl:Class ;
+    rdfs:subClassOf schema:Event .
+schema:Place a owl:Class .
+schema:EducationalOccupationalCredential a owl:Class .
+
+schema:superEvent a owl:ObjectProperty ;
+    owl:inverseOf schema:subEvent .
+schema:subEvent a owl:ObjectProperty .
+schema:organizer a owl:ObjectProperty .
+schema:attendee a owl:ObjectProperty .
+schema:spouse a owl:ObjectProperty , owl:SymmetricProperty .
+schema:children a owl:ObjectProperty ;
+    owl:inverseOf schema:parent .
+schema:parent a owl:ObjectProperty .
+schema:hasCredential a owl:ObjectProperty .
+schema:recognizedBy a owl:ObjectProperty .
+schema:birthPlace a owl:ObjectProperty .
+schema:about a owl:ObjectProperty .
+
+schema:name a owl:DatatypeProperty .
+schema:description a owl:DatatypeProperty .
+schema:givenName a owl:DatatypeProperty .
+schema:familyName a owl:DatatypeProperty .
+schema:birthDate a owl:DatatypeProperty .
+schema:deathDate a owl:DatatypeProperty .
+schema:dateCreated a owl:DatatypeProperty .
+schema:credentialCategory a owl:DatatypeProperty .
+schema:membershipNumber a owl:DatatypeProperty .
+schema:startDate a owl:DatatypeProperty .
+schema:endDate a owl:DatatypeProperty .
+schema:foundingDate a owl:DatatypeProperty .
+schema:dissolutionDate a owl:DatatypeProperty .
+
+# Addresses, coordinates and contact details.
+schema:PostalAddress a owl:Class .
+schema:GeoCoordinates a owl:Class .
+schema:address a owl:ObjectProperty .
+schema:geo a owl:ObjectProperty .
+schema:containedInPlace a owl:ObjectProperty .
+schema:url a owl:ObjectProperty .
+schema:streetAddress a owl:DatatypeProperty .
+schema:postalCode a owl:DatatypeProperty .
+schema:addressLocality a owl:DatatypeProperty .
+schema:addressRegion a owl:DatatypeProperty .
+schema:addressCountry a owl:DatatypeProperty .
+schema:latitude a owl:DatatypeProperty .
+schema:longitude a owl:DatatypeProperty .
+schema:email a owl:DatatypeProperty .
+schema:telephone a owl:DatatypeProperty .
+
+# Fees.
+schema:PriceSpecification a owl:Class .
+schema:price a owl:DatatypeProperty .
+schema:priceCurrency a owl:DatatypeProperty .

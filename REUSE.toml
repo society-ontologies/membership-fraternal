@@ -19,9 +19,9 @@ path = ["README.md", "index.html", "docs/**"]
 SPDX-FileCopyrightText = "2026 Oscar Almgren"
 SPDX-License-Identifier = "CC-BY-4.0"
 
-# The ontologies, codelists and shapes.
+# The ontologies, codelists and shapes, and the frozen copy of every release.
 [[annotations]]
-path = ["external/**", "membership/**", "fraternal/**"]
+path = ["external/**", "membership/**", "fraternal/**", "versions/**"]
 SPDX-FileCopyrightText = "2026 Oscar Almgren"
 SPDX-License-Identifier = "CC-BY-4.0"
 

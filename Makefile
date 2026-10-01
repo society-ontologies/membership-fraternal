@@ -15,7 +15,7 @@ VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/da
          tests/data/forening-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 
-.PHONY: all validate shacl shacl-invalid skos cq mappings wikidata-check dl reason reuse docs clean
+.PHONY: all validate shacl shacl-invalid skos cq mappings wikidata-check dl reason reuse docs freeze clean
 
 all: validate shacl shacl-invalid skos cq
 
@@ -127,6 +127,19 @@ docs:
 	mkdir -p docs/membership docs/fraternal
 	$(PYLODE) membership/membership-ontology.ttl -o docs/membership/index.html
 	$(PYLODE) fraternal/fraternal-ontology.ttl -o docs/fraternal/index.html
+
+# --- Frozen release copies ----------------------------------------------------
+# The w3id rules send every version IRI (…/1.0.0, …/code/1.0.0, …) to
+# versions/<version>/ on GitHub Pages. Run on release day, after the last change
+# and before tagging; a released version is never changed afterwards.
+
+VERSION := $(shell sed -n 's/.*owl:versionInfo "\([0-9.]*\)".*/\1/p' membership/membership-ontology.ttl | head -1)
+
+freeze:
+	@test -n "$(VERSION)" || { echo "no owl:versionInfo in membership/membership-ontology.ttl"; exit 1; }
+	@test ! -e versions/$(VERSION) || { echo "versions/$(VERSION) exists: a released version is never changed"; exit 1; }
+	@for f in $(ONT) $(SHAPES); do mkdir -p versions/$(VERSION)/$$(dirname $$f) && cp $$f versions/$(VERSION)/$$f; done
+	@echo "froze $(VERSION) in versions/$(VERSION)/"
 
 clean:
 	rm -rf $(BUILD)
