@@ -22,10 +22,14 @@
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:publisher <https://github.com/society-ontologies> ;
     sh:declare [ sh:prefix "fraternal" ; sh:namespace "https://w3id.org/fraternal#"^^xsd:anyURI ] ,
                [ sh:prefix "skos" ; sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ] .
 
 <https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .
+
+<https://github.com/society-ontologies> a foaf:Organization ;
+    foaf:name "Society Ontologies" .
 
 fraternalsh:DegreeShape a sh:NodeShape ;
     sh:targetClass fraternal:Degree ;

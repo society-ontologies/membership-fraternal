@@ -35,6 +35,7 @@
 @prefix org:     <http://www.w3.org/ns/org#> .
 @prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
 @prefix mbr:    <https://w3id.org/membership#> .
 @prefix mbrc:   <https://w3id.org/membership/code/> .
 
@@ -56,9 +57,18 @@
     vann:preferredNamespaceUri "https://w3id.org/membership#" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
-    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> .
+    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:publisher <https://github.com/society-ontologies> ;
+    bibo:status <http://purl.org/ontology/bibo/status/published> ;
+    dcterms:source <https://github.com/society-ontologies/membership-fraternal> ;
+    dcterms:bibliographicCitation "Almgren, O. (2026). Membership Organisations Ontology. https://w3id.org/membership" ;
+    dcterms:identifier "10.5281/zenodo.23080656" ;
+    schema:includedInDataCatalog <https://lov.linkeddata.es/dataset/lov> .
 
 <https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .
+
+<https://github.com/society-ontologies> a foaf:Organization ;
+    foaf:name "Society Ontologies" .
 
 ##############################################################################
 # ORGANISATIONS

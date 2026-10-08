@@ -35,9 +35,13 @@
     vann:preferredNamespaceUri "https://w3id.org/fraternal/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
-    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> .
+    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:publisher <https://github.com/society-ontologies> .
 
 <https://orcid.org/0009-0002-6239-5346> <http://xmlns.com/foaf/0.1/name> "Oscar Almgren" .
+
+<https://github.com/society-ontologies> a <http://xmlns.com/foaf/0.1/Organization> ;
+    <http://xmlns.com/foaf/0.1/name> "Society Ontologies" .
 
 ##############################################################################
 # 1. ORDER TYPES  (each refines mbrc:fraternalOrganization via skos:broadMatch,

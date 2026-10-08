@@ -283,6 +283,22 @@ td {
     <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://orcid.org/0009-0002-6239-5346",
+    "https://schema.org/name": [
+      {
+        "@value": "Oscar Almgren"
+      }
+    ]
+  },
+  {
+    "@id": "https://github.com/society-ontologies",
+    "https://schema.org/name": [
+      {
+        "@value": "Society Ontologies"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/membership",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -334,13 +350,10 @@ td {
         "@language": "sv",
         "@value": "Ontologi för medlemsorganisationer"
       }
-    ]
-  },
-  {
-    "@id": "https://orcid.org/0009-0002-6239-5346",
-    "https://schema.org/name": [
+    ],
+    "https://schema.org/publisher": [
       {
-        "@value": "Oscar Almgren"
+        "@id": "https://github.com/society-ontologies"
       }
     ]
   }
@@ -370,6 +383,16 @@ td {
                 <li><p>Membership Organisations Ontology</p></li>
                 <li><p>Ontologi för medlemsorganisationer</p></li>
               </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="An entity responsible for making the resource available. Defined in DCMI Metadata Terms">Publisher</a>
+            </dt>
+            <dd>
+              <span>
+                <span>Society Ontologies</span>
+              </span>
             </dd>
           </div>
           <div>
@@ -462,6 +485,14 @@ td {
             </dt>
             <dd>
               <a href="https://w3id.org/membership#">mbr:</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/source" title="A related resource from which the described resource is derived. Defined in DCMI Metadata Terms">Source</a>
+            </dt>
+            <dd>
+              <a href="https://github.com/society-ontologies/membership-fraternal">https://github.com/society-ontologies/membership-fraternal</a>
             </dd>
           </div>
           <div>
@@ -796,6 +827,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#MembershipOrganisation">Membership Organisation</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">org:classification</a>
                     <span>
@@ -808,11 +844,6 @@ td {
                       </span>
                     </span><br>
                   </span>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#MembershipOrganisation">Membership Organisation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -912,6 +943,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#MembershipOrganisation">Membership Organisation</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">org:classification</a>
                     <span>
@@ -924,11 +960,6 @@ td {
                       </span>
                     </span><br>
                   </span>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#MembershipOrganisation">Membership Organisation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -3526,6 +3557,10 @@ td {
       <div id="namespaces">
         <h2>Namespaces</h2>
         <dl>
+          <dt id="bibo">bibo</dt>
+          <dd>
+            <code>http://purl.org/ontology/bibo/</code>
+          </dd>
           <dt id="dcterms">dcterms</dt>
           <dd>
             <code>http://purl.org/dc/terms/</code>
@@ -3853,6 +3888,9 @@ td {
             <a href="#namespaces">Namespaces</a>
           </h4>
           <ul class="second">
+            <li>
+              <a href="#bibo">bibo</a>
+            </li>
             <li>
               <a href="#dcterms">dcterms</a>
             </li>

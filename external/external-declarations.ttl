@@ -17,6 +17,7 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
 @prefix schema:  <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix org:     <http://www.w3.org/ns/org#> .
@@ -35,9 +36,13 @@
                  "OWL 2 DL-deklarationer av de FOAF-, ORG-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
-    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> .
+    dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:publisher <https://github.com/society-ontologies> .
 
 <https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .
+
+<https://github.com/society-ontologies> a foaf:Organization ;
+    foaf:name "Society Ontologies" .
 
 ##############################################################################
 # Annotation properties
@@ -49,6 +54,11 @@ dcterms:created a owl:AnnotationProperty .
 dcterms:modified a owl:AnnotationProperty .
 dcterms:issued a owl:AnnotationProperty .
 dcterms:creator a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:identifier a owl:AnnotationProperty .
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+schema:includedInDataCatalog a owl:AnnotationProperty .
 dcterms:source a owl:AnnotationProperty .
 dcterms:isPartOf a owl:AnnotationProperty .
 dcterms:isReplacedBy a owl:AnnotationProperty .

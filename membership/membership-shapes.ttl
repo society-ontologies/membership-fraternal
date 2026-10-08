@@ -26,6 +26,7 @@
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
+    dcterms:publisher <https://github.com/society-ontologies> ;
     sh:declare [ sh:prefix "mbr" ; sh:namespace "https://w3id.org/membership#"^^xsd:anyURI ] ,
                [ sh:prefix "mbrc" ; sh:namespace "https://w3id.org/membership/code/"^^xsd:anyURI ] ,
                [ sh:prefix "org" ; sh:namespace "http://www.w3.org/ns/org#"^^xsd:anyURI ] ,
@@ -33,6 +34,9 @@
                [ sh:prefix "schema" ; sh:namespace "http://schema.org/"^^xsd:anyURI ] .
 
 <https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .
+
+<https://github.com/society-ontologies> a foaf:Organization ;
+    foaf:name "Society Ontologies" .
 
 ##############################################################################
 # Dates: xsd:date, xsd:gYearMonth or xsd:gYear; at most one of each
