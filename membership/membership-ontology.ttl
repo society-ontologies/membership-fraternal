@@ -51,8 +51,8 @@
     dcterms:description "Generic ontology for membership organisations of every kind, closed or open — from private clubs, societies, student nations and (through the fraternal extension) fraternal orders to hobby and supporters' clubs, associations, political parties and trade unions: memberships and their lifecycle, admission and fees, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations."@en ,
                         "Generisk ontologi för medlemsorganisationer av alla slag, med slutet eller öppet medlemskap — från privata klubbar, sällskap, studentnationer och (via tillägget fraternal) ordenssällskap till hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar: medlemskap och dess livscykel, upptagning och avgifter, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."@sv ;
     dcterms:created "2026-09-29"^^xsd:date ;
-    dcterms:issued "2026-10-01"^^xsd:date ;
-    dcterms:modified "2026-10-01"^^xsd:date ;
+    dcterms:issued "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-09"^^xsd:date ;
     vann:preferredNamespacePrefix "mbr" ;
     vann:preferredNamespaceUri "https://w3id.org/membership#" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;

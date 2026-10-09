@@ -27,8 +27,8 @@
     dcterms:title "Membership Organisations — codelists"@en ,
                   "Medlemsorganisationer — kodlistor"@sv ;
     dcterms:created "2026-09-29"^^xsd:date ;
-    dcterms:issued "2026-10-01"^^xsd:date ;
-    dcterms:modified "2026-10-01"^^xsd:date ;
+    dcterms:issued "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-09"^^xsd:date ;
     vann:preferredNamespacePrefix "mbrc" ;
     vann:preferredNamespaceUri "https://w3id.org/membership/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;

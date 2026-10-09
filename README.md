@@ -175,14 +175,15 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 
 ## Changelog
 
-**Unreleased (1.1.0).** Additions only; nothing is removed or renamed.
+**1.1.0 (2026-10-09).** Additions only; nothing is removed or renamed.
 - Admission without a vote: new admission mode `mbrc:proposalAndObjectionPeriod`. Candidates are proposed and seconded, the proposal is made known to the members for a set period, and the candidate goes ahead unless an objection leads the organisation to stop it.
 - Proposals and applications that end without admission: new membership status `mbrc:notAdmitted` and event type `mbrc:rejection`. Ballot clubs use them for candidates who are not elected.
 - Metadata, following the Linked Open Vocabularies recommendations:
   - every class and property has `rdfs:isDefinedBy` and a definition in English and Swedish (eight `mbr:` properties had none);
   - creator and rights holder are the maintainer's ORCID IRI;
   - `dcterms:issued` is added, and dates are typed `xsd:date`;
-  - each file has `owl:priorVersion` and `owl:backwardCompatibleWith` 1.0.0.
+  - each file has `owl:priorVersion` and `owl:backwardCompatibleWith` 1.0.0;
+  - the two ontologies declare Society Ontologies as `dcterms:publisher`, and add status, source, citation, the Zenodo DOI and a link to the LOV catalogue, for the FOOPS checks on the LOV portal.
 - Versions: every release keeps a frozen copy in `versions/<version>/`, and the w3id rules resolve any version IRI to it, so `https://w3id.org/membership/1.0.0` keeps returning 1.0.0.
 
 **1.0.0.** First public version of the Membership Organisations ontology and the Fraternal Orders and Sororities ontology.

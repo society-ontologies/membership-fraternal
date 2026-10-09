@@ -39,8 +39,8 @@
     dcterms:description "Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, recognition and amity between orders, and assessments of whether an order of chivalry is genuine."@en ,
                         "Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier, erkännande och vänskap mellan ordnar samt bedömningar av om en riddarorden är äkta."@sv ;
     dcterms:created "2026-09-29"^^xsd:date ;
-    dcterms:issued "2026-10-01"^^xsd:date ;
-    dcterms:modified "2026-10-01"^^xsd:date ;
+    dcterms:issued "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-09"^^xsd:date ;
     vann:preferredNamespacePrefix "fraternal" ;
     vann:preferredNamespaceUri "https://w3id.org/fraternal#" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
