@@ -23,3 +23,6 @@ fraternalc:orderOfChivalry	Order of Chivalry	skos:broadMatch	mbrc:society	Societ
 fraternalc:selfStyledOrderOfChivalry	Self-styled Order of Chivalry	skos:broadMatch	mbrc:society	Society	semapv:ManualMappingCuration	0.6	An association of its members; not an ordenssällskap.
 fraternalc:gastronomicBrotherhood	Food and Wine Brotherhood	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.7	Ceremonial induction and robes, but usually no degrees or oath.
 fraternalc:craftBrotherhood	Craft Brotherhood	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Initiation, ritual and stages of membership, tied to the transmission of a trade.
+fraternalc:studentenverbindung	Studentenverbindung	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Lifelong union with ritual, colours and stages; narrower types such as fraternalc:corps follow skos:broader in the scheme.
+fraternalc:studentenverbindung	Studentenverbindung	skos:broadMatch	mbrc:studentSociety	Student Society	semapv:ManualMappingCuration	0.9	
+fraternalc:studentenverbindungDachverband	Federation of Studentenverbindungen	skos:broadMatch	mbrc:voluntaryAssociation	Voluntary Association	semapv:ManualMappingCuration	0.6	An association of associations.

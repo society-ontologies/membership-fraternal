@@ -1,0 +1,17 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-offices
+# mapping_set_version: 1.0.0
+# mapping_set_description: Offices of a Studentenverbindung placed under the generic office types of the membership ontology.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-09
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:senior	Senior	skos:broadMatch	mbrc:president	President	semapv:ManualMappingCuration	0.9	Called Sprecher in a Burschenschaft.
+fraternalc:consenior	Consenior	skos:broadMatch	mbrc:vicePresident	Vice President	semapv:ManualMappingCuration	0.9	
+fraternalc:scriptor	Scriptor	skos:broadMatch	mbrc:secretary	Secretary	semapv:ManualMappingCuration	0.95	
+fraternalc:kassenwart	Kassenwart	skos:broadMatch	mbrc:treasurer	Treasurer	semapv:ManualMappingCuration	0.95	
+fraternalc:philistersenior	Philistersenior	skos:broadMatch	mbrc:president	President	semapv:ManualMappingCuration	0.6	Head of the alumni branch, not of the Verbindung as a whole.
+fraternalc:fuchsmajor	Fuchsmajor	skos:broadMatch	mbrc:introducer	Introducer	semapv:ManualMappingCuration	0.5	Trains new members; there is no closer generic office.

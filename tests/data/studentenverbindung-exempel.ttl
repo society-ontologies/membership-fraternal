@@ -1,0 +1,141 @@
+# Fictional Studentenverbindung (names invented for testing). Shows the German-speaking
+# student fraternities with the codelists of fraternal only: a Corps in a federation, the
+# stages Fuchs, Bursch and Alter Herr with the ceremonies that begin them, categories,
+# an office, principles, insignia, a Stiftungsfest and a Mensur.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrc:   <https://w3id.org/membership/code/> .
+@prefix fraternal:    <https://w3id.org/fraternal#> .
+@prefix fraternalc:   <https://w3id.org/fraternal/code/> .
+@prefix ci:      <https://example.org/corps-imaginaria/> .
+
+# --- The Verbindung and its federation ---
+
+ci:CorpsImaginaria a fraternal:FraternalOrder ;
+    rdfs:label "Corps Imaginaria zu Exemplarburg"@de , "Corps Imaginaria at Exemplarburg"@en ;
+    org:classification fraternalc:corps ;
+    mbr:foundingDate "1810"^^xsd:gYear ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:corpsbruder ;
+    fraternal:degreeSystem fraternalc:StudentenverbindungDegrees ;
+    fraternal:characteristic fraternalc:lifelongBond , fraternalc:conventPrinciple , fraternalc:tolerancePrinciple ,
+                             fraternalc:compulsoryFencing , fraternalc:colourWearing ,
+                             fraternalc:initiationRitual , fraternalc:gradedDegrees ;
+    org:subOrganizationOf ci:Verband .
+
+ci:Verband a mbr:MembershipOrganization ;
+    rdfs:label "Imaginärer Senioren-Convents-Verband"@de ;
+    org:classification fraternalc:studentenverbindungDachverband .
+
+# --- Insignia: the colour band of a Bursch ---
+
+ci:Couleurband a fraternal:Insignia ;
+    skos:prefLabel "Couleurband"@de ;
+    fraternal:insigniaOf fraternalc:bursch ;
+    fraternal:insigniaType fraternalc:couleurband .
+
+# --- The three members, one in each stage ---
+
+ci:fritz a foaf:Person ; schema:name "Fritz Erfunden" .
+ci:karl  a foaf:Person ; schema:name "Karl Ausgedacht" .
+ci:wilhelm a foaf:Person ; schema:name "Wilhelm Beispiel" .
+
+ci:fritz-membership a mbr:Membership ;
+    org:member ci:fritz ; org:organization ci:CorpsImaginaria ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory fraternalc:aktiver ;
+    mbr:membershipNumber "2025-04" ;
+    mbr:sponsor ci:karl .
+
+ci:karl-membership a mbr:Membership ;
+    org:member ci:karl ; org:organization ci:CorpsImaginaria ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory fraternalc:inaktiver ;
+    mbr:membershipNumber "2021-11" .
+
+ci:wilhelm-membership a mbr:Membership ;
+    org:member ci:wilhelm ; org:organization ci:CorpsImaginaria ;
+    mbr:membershipStatus mbrc:active ;
+    mbr:membershipNumber "1998-02" .
+
+# --- Fritz is received as a Fuchs ---
+
+ci:rezeption-2025 a fraternal:Ceremony ;
+    rdfs:label "Rezeption im Wintersemester 2025"@de ;
+    mbr:gatheringType fraternalc:rezeption ;
+    mbr:organizer ci:CorpsImaginaria ;
+    mbr:startDate "2025-10-18"^^xsd:date .
+
+ci:fritz-rezeption a fraternal:Initiation ;
+    mbr:recipient ci:fritz ;
+    mbr:conferred fraternalc:fuchs ;
+    mbr:conferredBy ci:CorpsImaginaria ;
+    mbr:conferredAt ci:rezeption-2025 ;
+    mbr:startDate "2025-10-18"^^xsd:date .
+
+ci:fritz-admission a mbr:MembershipEvent ;
+    mbr:concernsMembership ci:fritz-membership ;
+    mbr:membershipEventType mbrc:admission ;
+    mbr:resultingStatus mbrc:active ;
+    mbr:startDate "2025-10-18"^^xsd:date .
+
+# --- Karl is made a Bursch, and later passes to the Altherrenschaft ---
+
+ci:burschung-2022 a fraternal:Ceremony ;
+    rdfs:label "Burschung im Sommersemester 2022"@de ;
+    mbr:gatheringType fraternalc:burschung ;
+    mbr:organizer ci:CorpsImaginaria ;
+    mbr:startDate "2022-06-11"^^xsd:date .
+
+ci:karl-burschung a fraternal:DegreeConferral ;
+    mbr:recipient ci:karl ;
+    mbr:conferred fraternalc:bursch ;
+    mbr:conferredBy ci:CorpsImaginaria ;
+    mbr:conferredAt ci:burschung-2022 ;
+    mbr:startDate "2022-06-11"^^xsd:date .
+
+# --- Wilhelm has become an Alter Herr ---
+
+ci:philistrierung-2003 a fraternal:Ceremony ;
+    rdfs:label "Philistrierung im Wintersemester 2002/03"@de ;
+    mbr:gatheringType fraternalc:philistrierung ;
+    mbr:organizer ci:CorpsImaginaria ;
+    mbr:startDate "2003-02-08"^^xsd:date .
+
+ci:wilhelm-philistrierung a fraternal:DegreeConferral ;
+    mbr:recipient ci:wilhelm ;
+    mbr:conferred fraternalc:alterHerr ;
+    mbr:conferredBy ci:CorpsImaginaria ;
+    mbr:conferredAt ci:philistrierung-2003 ;
+    mbr:startDate "2003-02-08"^^xsd:date .
+
+# --- An office: Karl was Senior ---
+
+ci:karl-senior a mbr:Tenure ;
+    org:member ci:karl ; org:organization ci:CorpsImaginaria ;
+    org:role fraternalc:senior ;
+    mbr:startDate "2023-04-01"^^xsd:date ; mbr:endDate "2023-09-30"^^xsd:date .
+
+# --- The yearly Stiftungsfest and a Mensur ---
+
+ci:stiftungsfest-2025 a fraternal:Ceremony ;
+    rdfs:label "215. Stiftungsfest"@de ;
+    mbr:gatheringType fraternalc:stiftungsfest ;
+    mbr:organizer ci:CorpsImaginaria ;
+    mbr:startDate "2025-06-20"^^xsd:date ; mbr:endDate "2025-06-22"^^xsd:date .
+
+ci:mensur-2023 a fraternal:Ceremony ;
+    rdfs:label "Mensur gegen das Corps Fictivia"@de ;
+    mbr:gatheringType fraternalc:mensur ;
+    mbr:organizer ci:CorpsImaginaria ;
+    mbr:startDate "2023-05-06"^^xsd:date .
+
+ci:karl-mensur a mbr:Participation ;
+    mbr:participant ci:karl ;
+    mbr:participationIn ci:mensur-2023 ;
+    mbr:participationRole mbrc:member .
