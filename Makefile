@@ -123,10 +123,17 @@ reuse:
 
 PYLODE := pipx run --backend pip --spec 'pylode==3.2.1' pylode
 
+# pyLODE joins the English and Swedish titles of a term without a separator
+# ("Membership OrganisationMedlemsorganisation"); tools/fix_pylode_titles.py
+# separates them with " / " in the generated HTML.
+PYLODE_PYTHON := pipx run --backend pip --spec 'pylode==3.2.1' python
+
 docs:
 	mkdir -p docs/membership docs/fraternal
 	$(PYLODE) membership/membership-ontology.ttl -o docs/membership/index.html
+	$(PYLODE_PYTHON) tools/fix_pylode_titles.py membership/membership-ontology.ttl docs/membership/index.html
 	$(PYLODE) fraternal/fraternal-ontology.ttl -o docs/fraternal/index.html
+	$(PYLODE_PYTHON) tools/fix_pylode_titles.py fraternal/fraternal-ontology.ttl docs/fraternal/index.html
 
 # --- Frozen release copies ----------------------------------------------------
 # The w3id rules send every version IRI (…/1.0.0, …/code/1.0.0, …) to
