@@ -1,0 +1,7 @@
+@prefix mbr: <https://w3id.org/membership#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# A German definition without the English one it falls back to.
+mbr:Branch a rdfs:Class ; rdfs:label "Branch"@en ;
+    skos:definition "Ein nachgeordneter Teil."@de .

@@ -1,0 +1,6 @@
+@prefix mbr: <https://w3id.org/membership#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# "deutsch" is not a language code.
+mbr:Branch a rdfs:Class ; rdfs:label "Branch"@en , "Zweigstelle"@deutsch .

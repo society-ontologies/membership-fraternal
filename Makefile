@@ -15,9 +15,9 @@ VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/da
          tests/data/forening-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 
-.PHONY: all validate shacl shacl-invalid skos cq mappings wikidata-check dl reason reuse docs freeze clean
+.PHONY: all validate shacl shacl-invalid skos cq i18n mappings wikidata-check dl reason reuse docs freeze clean
 
-all: validate shacl shacl-invalid skos cq
+all: validate shacl shacl-invalid skos cq i18n
 
 $(BUILD):
 	mkdir -p $@
@@ -121,19 +121,30 @@ reuse:
 
 # --- HTML documentation for GitHub Pages (pyLODE, pinned: 3.3.x breaks on import) ---
 
-PYLODE := pipx run --backend pip --spec 'pylode==3.2.1' pylode
-
-# pyLODE joins the English and Swedish titles of a term without a separator
-# ("Membership OrganisationMedlemsorganisation"); tools/fix_pylode_titles.py
-# separates them with " / " in the generated HTML.
+# pyLODE runs a term's titles together when it has more than one language
+# ("Membership OrganisationMedlemsorganisation"), so tools/i18n.py gives it one
+# language at a time: English at docs/<ontology>/, the others at docs/<ontology>/<lang>/.
+# Translations are written in the ontology files; see TRANSLATING.md.
 PYLODE_PYTHON := pipx run --backend pip --spec 'pylode==3.2.1' python
 
+# A fixed hash seed makes pyLODE's output the same on every run (it otherwise
+# reorders the metadata block), so a regenerated page only differs when the ontology does.
+docs: export PYTHONHASHSEED = 0
 docs:
-	mkdir -p docs/membership docs/fraternal
-	$(PYLODE) membership/membership-ontology.ttl -o docs/membership/index.html
-	$(PYLODE_PYTHON) tools/fix_pylode_titles.py membership/membership-ontology.ttl docs/membership/index.html
-	$(PYLODE) fraternal/fraternal-ontology.ttl -o docs/fraternal/index.html
-	$(PYLODE_PYTHON) tools/fix_pylode_titles.py fraternal/fraternal-ontology.ttl docs/fraternal/index.html
+	$(PYLODE_PYTHON) tools/i18n.py docs membership/membership-ontology.ttl docs/membership
+	$(PYLODE_PYTHON) tools/i18n.py docs fraternal/fraternal-ontology.ttl docs/fraternal
+
+# --- Translations -------------------------------------------------------------
+# Well-formed, registered language tags, and English text behind every translation.
+# The valid fixture must pass and each invalid one must fail.
+
+i18n: | $(BUILD)
+	$(PYLODE_PYTHON) tools/i18n.py check $(ONT) tests/i18n/valid/*.ttl
+	@for f in tests/i18n/invalid/*.ttl; do \
+	  if $(PYLODE_PYTHON) tools/i18n.py check "$$f" >$(BUILD)/i18n-invalid.txt 2>&1; then \
+	    echo "FAIL $$f passed but should not"; exit 1; \
+	  else echo "PASS $$f: $$(grep -c . $(BUILD)/i18n-invalid.txt) problem(s)"; fi; \
+	done
 
 # --- Frozen release copies ----------------------------------------------------
 # The w3id rules send every version IRI (…/1.0.0, …/code/1.0.0, …) to
