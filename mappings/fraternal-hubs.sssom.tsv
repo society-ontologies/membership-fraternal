@@ -21,3 +21,6 @@ fraternalc:benevolentOrder	Benevolent Order	skos:broadMatch	mbrc:fraternalOrgani
 fraternalc:adoptiveOrder	Adoptive Order	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
 fraternalc:orderOfChivalry	Order of Chivalry	skos:broadMatch	mbrc:society	Society	semapv:ManualMappingCuration	0.6	An association of its knights and dames; not an ordenssällskap.
 fraternalc:selfStyledOrderOfChivalry	Self-styled Order of Chivalry	skos:broadMatch	mbrc:society	Society	semapv:ManualMappingCuration	0.6	An association of its members; not an ordenssällskap.
+fraternalc:studentenverbindung	Studentenverbindung	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Lifelong union with ritual, colours and stages; narrower types such as fraternalc:corps follow skos:broader in the scheme.
+fraternalc:studentenverbindung	Studentenverbindung	skos:broadMatch	mbrc:studentSociety	Student Society	semapv:ManualMappingCuration	0.9	
+fraternalc:studentenverbindungDachverband	Federation of Studentenverbindungen	skos:broadMatch	mbrc:voluntaryAssociation	Voluntary Association	semapv:ManualMappingCuration	0.6	An association of associations.
