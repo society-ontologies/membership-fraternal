@@ -219,3 +219,16 @@ club:guestnight-2025-medal a mbr:DistinctionConferral ;
 club:ExampleNation a mbr:MembershipOrganization ;
     rdfs:label "Exempelnationen"@sv , "The Example Nation"@en ;
     org:classification mbrc:studentNation .
+
+# --- An informal circle (kotteri): no legal status, joined by invitation, arranges a ball ---
+
+club:Kotteriet a mbr:MembershipOrganization ;
+    rdfs:label "Kotteriet vid Exempelnationen"@sv , "The Circle at the Example Nation"@en ;
+    org:classification mbrc:informalCircle ;
+    mbr:admissionMode mbrc:byInvitation .
+
+club:circleball-2025 a mbr:Gathering ;
+    rdfs:label "Kotteriets vårbal 2025"@sv ;
+    mbr:gatheringType mbrc:ball ;
+    mbr:organizer club:Kotteriet ;
+    mbr:startDate "2025-04-26"^^xsd:date .

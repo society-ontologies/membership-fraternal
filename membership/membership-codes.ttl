@@ -57,8 +57,18 @@ mbrc:voluntaryAssociation a skos:Concept , owl:NamedIndividual ;
     skos:altLabel "ideell förening"@sv ;
     skos:definition "A group of people who join together voluntarily for a shared purpose."@en ,
                     "En grupp människor som frivilligt går samman för ett gemensamt syfte."@sv ;
-    skos:narrower mbrc:club , mbrc:society , mbrc:fraternalOrganization ,
+    skos:narrower mbrc:club , mbrc:society , mbrc:informalCircle , mbrc:fraternalOrganization ,
                   mbrc:politicalParty , mbrc:tradeUnion .
+
+mbrc:informalCircle a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
+    skos:prefLabel "Informal Circle"@en , "Kotteri"@sv ;
+    skos:altLabel "Coterie"@en , "Circle of Friends"@en , "Vänkrets"@sv , "Umgängeskrets"@sv ,
+                  "Coterie"@fr , "Cercle d'amis"@fr , "Freundeskreis"@de ;
+    skos:definition "A relatively closed company of friends or associates without legal status or registration, held together by friendship or invitation rather than formal admission. It may be a temporary group that keeps together at a larger gathering, or a more lasting circle of friends, often formed to arrange or take part in an occasion such as a ball, a banquet or a student celebration."@en ,
+                    "Ett relativt slutet sällskap av vänner eller bekanta utan rättslig status eller registrering, som hålls samman av vänskap eller inbjudan snarare än av formellt upptagande. Det kan vara en tillfällig grupp som håller ihop vid ett större samkväm, eller en mer varaktig vänkrets, ofta bildad för att ordna eller delta i en tillställning som en bal, en bankett eller ett studentfirande."@sv ;
+    skos:scopeNote "The Swedish word kotteri, from French coterie, is often used in a derogatory sense of a clique that favours its own. That is a judgement, not a kind of organisation, and is not what this code records. The organiser of a gathering is given with mbr:organizer; compare mbrc:diningClub, a club that meets regularly for dinner."@en ,
+                   "Ordet kotteri, av franskans coterie, används ofta i nedsättande mening om en klick som gynnar sina egna. Det är en bedömning och inte en slags organisation, och är inte vad den här koden anger. Den som ordnar en tillställning anges med mbr:organizer; jämför mbrc:diningClub, en klubb som regelbundet träffas för middag."@sv .
 
 mbrc:club a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
