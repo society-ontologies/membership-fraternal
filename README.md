@@ -180,6 +180,7 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).
+- Organisation type `mbrc:informalCircle` (Swedish *kotteri*, from French *coterie*): a relatively closed company of friends or associates without legal status or registration, under `mbrc:voluntaryAssociation`. Example in `tests/data/klubb-exempel.ttl`.
 
 **1.1.0 (2026-10-09).** Additions only; nothing is removed or renamed.
 - Admission without a vote: new admission mode `mbrc:proposalAndObjectionPeriod`. Candidates are proposed and seconded, the proposal is made known to the members for a set period, and the candidate goes ahead unless an objection leads the organisation to stop it.
