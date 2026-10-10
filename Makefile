@@ -12,7 +12,7 @@ SHAPES := membership/membership-shapes.ttl fraternal/fraternal-shapes.ttl
 MAPPINGS_TSV := $(wildcard mappings/*.sssom.tsv)
 MAPPINGS_TTL := $(patsubst mappings/%.sssom.tsv,mappings/generated/%.ttl,$(MAPPINGS_TSV))
 VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/data/riddarorden-exempel.ttl \
-         tests/data/forening-exempel.ttl
+         tests/data/forening-exempel.ttl tests/data/studentenverbindung-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 
 .PHONY: all validate shacl shacl-invalid skos cq i18n mappings wikidata-check dl reason reuse docs freeze clean
