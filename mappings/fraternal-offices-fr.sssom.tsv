@@ -1,0 +1,16 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-offices-fr
+# mapping_set_version: 1.0.0
+# mapping_set_description: Offices of French lodges and learned societies placed under the generic office types of the membership ontology. The orator and the almoner have no close generic office and are not mapped.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-11
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:venerableMaster	Venerable Master	skos:broadMatch	mbrc:president	President	semapv:ManualMappingCuration	0.9	Presides over one lodge; the head of an obedience is the Grand Master (also mbrc:president).
+fraternalc:firstWarden	First Warden	skos:broadMatch	mbrc:vicePresident	Vice President	semapv:ManualMappingCuration	0.6	Deputises for the master and directs the companions.
+fraternalc:secondWarden	Second Warden	skos:broadMatch	mbrc:vicePresident	Vice President	semapv:ManualMappingCuration	0.5	Second deputy; directs the apprentices.
+fraternalc:expert	Expert	skos:broadMatch	mbrc:introducer	Introducer	semapv:ManualMappingCuration	0.6	Prepares and accompanies candidates.
+fraternalc:perpetualSecretary	Permanent Secretary	skos:broadMatch	mbrc:secretary	Secretary	semapv:ManualMappingCuration	0.7	Runs an academy and speaks for it; more senior than an ordinary secretary.

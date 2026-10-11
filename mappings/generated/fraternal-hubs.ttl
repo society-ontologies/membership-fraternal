@@ -139,3 +139,14 @@
   <https://w3id.org/sssom/object_label> "Society" ;
   <https://w3id.org/sssom/comment> "An association of its members; not an ordenssällskap." ] .
 
+<https://w3id.org/fraternal/code/gastronomicBrotherhood> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/gastronomicBrotherhood> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Food and Wine Brotherhood" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Ceremonial induction and robes, but usually no degrees or oath." ] .
+

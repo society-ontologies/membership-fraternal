@@ -56,7 +56,8 @@ fraternalc:OrderTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:hasTopConcept fraternalc:fraternalOrder , fraternalc:collegeFraternity , fraternalc:sorority ,
                        fraternalc:coedFraternity , fraternalc:secretSociety , fraternalc:confraternity ,
                        fraternalc:chivalricStyleOrder , fraternalc:studentOrder , fraternalc:benevolentOrder ,
-                       fraternalc:adoptiveOrder , fraternalc:orderOfChivalry , fraternalc:selfStyledOrderOfChivalry .
+                       fraternalc:adoptiveOrder , fraternalc:orderOfChivalry , fraternalc:selfStyledOrderOfChivalry ,
+                       fraternalc:gastronomicBrotherhood .
 
 fraternalc:fraternalOrder a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
@@ -139,6 +140,16 @@ fraternalc:selfStyledOrderOfChivalry a skos:Concept , owl:NamedIndividual ;
                     "En sammanslutning som gör anspråk på att vara en riddarorden utan en allmänt erkänd fons honorum."@sv ;
     skos:scopeNote "Calling an order self-styled is a judgement: record who made it, when and where with a fraternal:LegitimacyAssessment. An order society that uses chivalric grades without claiming to be an order of chivalry is fraternalc:chivalricStyleOrder."@en ,
                    "Att kalla en orden självutnämnd är en bedömning: ange vem som gjort den, när och var med en fraternal:LegitimacyAssessment. Ett ordenssällskap som använder riddarordensgrader utan att göra anspråk på att vara en riddarorden är fraternalc:chivalricStyleOrder."@sv .
+
+fraternalc:gastronomicBrotherhood a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Food and Wine Brotherhood"@en , "Gastronomiskt brödraskap"@sv , "Confrérie gastronomique"@fr ;
+    skos:altLabel "Wine Brotherhood"@en , "Confrérie bachique"@fr , "Confrérie vineuse"@fr ;
+    skos:definition "A brotherhood devoted to a regional food or drink tradition, such as a wine, cheese or beer brotherhood, whose members are inducted at a ceremonial chapter and often wear robes and bear titles in the chivalric style."@en ,
+                    "Ett brödraskap ägnat en regional mat- eller dryckestradition, som ett vin-, ost- eller ölbrödraskap, vars medlemmar upptas vid en ceremoniell sammankomst och ofta bär dräkt och titlar i riddarordensstil."@sv ,
+                    "Confrérie vouée à une tradition gastronomique ou viticole régionale, dont les membres sont intronisés lors d'un chapitre et portent souvent une robe et des titres de style chevaleresque."@fr ;
+    skos:scopeNote "Often also fraternalc:chivalricStyleOrder: classify with both. Not a religious confraternity (fraternalc:confraternity), though the French word confrérie covers those too."@en ,
+                   "Är ofta också fraternalc:chivalricStyleOrder: klassificera med båda. Inte ett religiöst lekmannabrödraskap (fraternalc:confraternity), fast det franska ordet confrérie också omfattar sådana."@sv .
 
 ##############################################################################
 # 2. GENERIC DEGREE LADDERS  (hubs; also usable directly as degree systems)
@@ -324,7 +335,8 @@ fraternalc:Characteristics a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Characteristics of Orders"@en , "Ordensdrag"@sv ;
     skos:hasTopConcept fraternalc:initiationRitual , fraternalc:gradedDegrees , fraternalc:oathOfObligation ,
                        fraternalc:secrecy , fraternalc:regalia , fraternalc:mutualAid , fraternalc:charity ,
-                       fraternalc:religiousRequirement .
+                       fraternalc:religiousRequirement , fraternalc:noDogmaticRequirement ,
+                       fraternalc:masonicRite .
 
 fraternalc:initiationRitual a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -357,7 +369,58 @@ fraternalc:charity a skos:Concept , owl:NamedIndividual ;
 fraternalc:religiousRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
     skos:prefLabel "Religious Requirement"@en , "Religiöst krav"@sv ;
-    skos:definition "Members must profess a faith or belief."@en , "Medlemmar måste bekänna en tro."@sv .
+    skos:definition "Members must profess a faith or belief."@en , "Medlemmar måste bekänna en tro."@sv ;
+    skos:narrower fraternalc:supremeBeingRequirement .
+
+fraternalc:supremeBeingRequirement a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:religiousRequirement ;
+    skos:prefLabel "Belief in a Supreme Being"@en , "Tro på ett högsta väsen"@sv , "Croyance en un Être suprême"@fr ;
+    skos:altLabel "Great Architect of the Universe"@en , "Grand Architecte de l'Univers"@fr ;
+    skos:definition "Members must profess belief in a supreme being, called the Great Architect of the Universe in masonic orders."@en ,
+                    "Medlemmar måste bekänna tro på ett högsta väsen, som i frimurarordnar kallas Världsalltets store byggmästare."@sv ,
+                    "Les membres doivent professer la croyance en un être suprême, appelé Grand Architecte de l'Univers dans les ordres maçonniques."@fr .
+
+fraternalc:noDogmaticRequirement a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "No Dogmatic Requirement"@en , "Inget trosbekännelsekrav"@sv , "Adogmatique"@fr ;
+    skos:altLabel "Non-dogmatic"@en , "Adogmatic"@en ;
+    skos:definition "Members are not required to profess any belief or disbelief. In French masonry, the adogmatic obediences, such as the Grand Orient de France, which removed the requirement in 1877, take this position."@en ,
+                    "Medlemmar behöver inte bekänna någon tro eller icke-tro. Inom fransk frimureri intar de adogmatiska obedienserna, som Grand Orient de France, som slopade kravet 1877, denna hållning."@sv ,
+                    "Les membres n'ont à professer aucune croyance ni aucune incroyance. En franc-maçonnerie française, les obédiences adogmatiques, comme le Grand Orient de France qui a supprimé cette exigence en 1877, adoptent cette position."@fr ;
+    skos:scopeNote "The opposite of fraternalc:supremeBeingRequirement, which is a kind of fraternalc:religiousRequirement."@en .
+
+fraternalc:masonicRite a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Masonic Rite"@en , "Frimurarsystem"@sv , "Rite maçonnique"@fr ;
+    skos:definition "The ritual tradition a lodge or masonic body works, with its own wording of the ceremonies and its own series of higher degrees."@en ,
+                    "Den ritualtradition en loge eller ett frimurarorgan arbetar efter, med egen lydelse av ceremonierna och egen följd av högre grader."@sv ,
+                    "Tradition rituelle selon laquelle travaille une loge ou un corps maçonnique, avec sa propre rédaction des cérémonies et sa propre suite de hauts grades."@fr ;
+    skos:scopeNote "A rite is not a degree system: give the lodge's ladder with fraternal:degreeSystem and its rite with fraternal:characteristic."@en ;
+    skos:narrower fraternalc:ancientAndAcceptedScottishRite , fraternalc:frenchRite , fraternalc:rectifiedScottishRite .
+
+fraternalc:ancientAndAcceptedScottishRite a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:masonicRite ;
+    skos:prefLabel "Ancient and Accepted Scottish Rite"@en , "Antika och accepterade skotska riten"@sv , "Rite écossais ancien et accepté"@fr ;
+    skos:altLabel "AASR"@en , "REAA"@fr ;
+    skos:definition "A masonic rite of thirty-three degrees, worked in France and in many other countries."@en ,
+                    "Ett frimurarsystem med trettiotre grader, som används i Frankrike och i många andra länder."@sv ,
+                    "Rite maçonnique de trente-trois degrés, pratiqué en France et dans de nombreux autres pays."@fr .
+
+fraternalc:frenchRite a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:masonicRite ;
+    skos:prefLabel "French Rite"@en , "Franska riten"@sv , "Rite français"@fr ;
+    skos:altLabel "Modern Rite"@en , "Rite moderne"@fr , "RF"@fr ;
+    skos:definition "The rite of the Grand Orient de France: the three craft degrees followed by a short series of higher orders."@en ,
+                    "Det system som Grand Orient de France arbetar efter: de tre symboliska graderna följda av en kort följd av högre ordnar."@sv ,
+                    "Rite du Grand Orient de France : les trois degrés symboliques suivis d'une courte série d'ordres supérieurs."@fr .
+
+fraternalc:rectifiedScottishRite a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:masonicRite ;
+    skos:prefLabel "Rectified Scottish Rite"@en , "Rektifierade skotska riten"@sv , "Rite écossais rectifié"@fr ;
+    skos:altLabel "RER"@fr ;
+    skos:definition "A rite descending from the Strict Observance, reformed at the Convent of Lyon in 1778, with a Christian-rooted ritual and chivalric higher degrees."@en ,
+                    "Ett system som härstammar från Strikt observans, reformerat vid konventet i Lyon 1778, med en kristet förankrad ritual och riddargrader som högre grader."@sv ,
+                    "Rite issu de la Stricte Observance, réformé au convent de Lyon en 1778, au rituel d'inspiration chrétienne et aux grades supérieurs chevaleresques."@fr .
 
 ##############################################################################
 # 5. CEREMONY TYPES  (values for mbr:gatheringType on fraternal:Ceremony)
@@ -366,7 +429,8 @@ fraternalc:religiousRequirement a skos:Concept , owl:NamedIndividual ;
 fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Ceremony Types"@en , "Ceremonityper"@sv ;
     skos:hasTopConcept fraternalc:initiationCeremony , fraternalc:degreeCeremony , fraternalc:installation ,
-                       fraternalc:memorialCeremony , fraternalc:festiveBoard , fraternalc:patronsFeast .
+                       fraternalc:memorialCeremony , fraternalc:festiveBoard , fraternalc:patronsFeast ,
+                       fraternalc:openMeeting .
 
 fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
@@ -398,6 +462,13 @@ fraternalc:patronsFeast a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Patron's Feast"@en , "Patronshögtid"@sv ;
     skos:definition "A feast in honour of the order's patron or namesake."@en , "En högtid till ära för ordens patron eller namngivare."@sv .
 
+fraternalc:openMeeting a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Open Meeting"@en , "Öppen sammankomst"@sv , "Tenue blanche"@fr ;
+    skos:definition "A meeting of a lodge or order that non-members, such as relatives and friends, may attend; no ritual reserved for members is worked."@en ,
+                    "En sammankomst i en loge eller orden dit icke-medlemmar, som anhöriga och vänner, får komma; ingen ritual som är förbehållen medlemmar utförs."@sv ,
+                    "Réunion d'une loge ou d'un ordre à laquelle peuvent assister des non-membres, comme des proches et des amis ; aucun rituel réservé aux membres n'y est pratiqué."@fr .
+
 ##############################################################################
 # 6. INSIGNIA TYPES  (mapped to Getty AAT in mappings/fraternal-aat.sssom.tsv)
 ##############################################################################
@@ -406,7 +477,7 @@ fraternalc:InsigniaTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Insignia Types"@en , "Insignietyper"@sv ;
     skos:hasTopConcept fraternalc:apron , fraternalc:collar , fraternalc:sash , fraternalc:jewel , fraternalc:ribbon ,
                        fraternalc:ring , fraternalc:pin , fraternalc:hat , fraternalc:sword , fraternalc:breastStar ,
-                       fraternalc:cross .
+                       fraternalc:cross , fraternalc:rosette .
 
 fraternalc:apron a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
@@ -480,6 +551,13 @@ fraternalc:cross a skos:Concept , owl:NamedIndividual ;
     skos:definition "Cross-shaped badge of an order, worn at the neck or on the breast."@en ,
                     "Korsformat ordenstecken, buret i halsen eller på bröstet."@sv .
 
+fraternalc:rosette a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Rosette"@en , "Rosett"@sv , "Rosette"@fr ;
+    skos:definition "A small rosette of pleated ribbon in the order's colours, worn on the lapel. In some orders of chivalry it marks the higher grades, while the lowest grade wears a plain ribbon."@en ,
+                    "En liten rosett av vecklat band i ordens färger, buren på kavajslaget. I vissa riddarordnar markerar den de högre graderna, medan den lägsta graden bär ett enkelt band."@sv ,
+                    "Petite rosette de ruban plissé aux couleurs de l'ordre, portée à la boutonnière. Dans certains ordres, elle marque les grades supérieurs, le grade le plus bas portant un simple ruban."@fr .
+
 ##############################################################################
 # 7. ASSESSMENT OUTCOMES  (values of fraternal:assessmentOutcome)
 ##############################################################################
@@ -523,3 +601,70 @@ fraternalc:wearingProhibited a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Wearing Prohibited"@en , "Bärande förbjudet"@sv ;
     skos:definition "An authority forbids the order's insignia to be worn in public or in a given setting."@en ,
                     "En myndighet förbjuder att ordens insignier bärs offentligt eller i ett visst sammanhang."@sv .
+
+##############################################################################
+# 8. FRENCH OFFICES  (offices of French lodges and learned societies that have
+#    no close generic equivalent; placed under the generic office types in
+#    mappings/fraternal-offices-fr.sssom.tsv. Draft from general knowledge:
+#    the French and Swedish wording needs a native reviewer.)
+##############################################################################
+
+fraternalc:FrenchOffices a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "French Offices"@en , "Franska ämbeten"@sv , "Offices français"@fr ;
+    skos:definition "Offices of French lodges and learned societies that the generic office types do not cover. The treasurer, secretary, master of ceremonies and tyler (couvreur) of a lodge are the generic mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies and mbrc:provost."@en ,
+                    "Ämbeten i franska loger och lärda sällskap som de generiska ämbetstyperna inte täcker. Logens skattmästare, sekreterare, ceremonimästare och vaktmästare (couvreur) är de generiska mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies och mbrc:provost."@sv ;
+    skos:hasTopConcept fraternalc:venerableMaster , fraternalc:firstWarden , fraternalc:secondWarden ,
+                       fraternalc:orator , fraternalc:almoner , fraternalc:expert ,
+                       fraternalc:perpetualSecretary .
+
+fraternalc:venerableMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Venerable Master"@en , "Vördnadsvärd mästare"@sv , "Vénérable Maître"@fr ;
+    skos:altLabel "Worshipful Master"@en , "Vénérable"@fr ;
+    skos:definition "The officer who presides over a lodge, elected for a fixed term."@en ,
+                    "Den ämbetsman som leder en loge, vald för en bestämd tid."@sv ,
+                    "Officier qui préside une loge, élu pour une durée déterminée."@fr .
+
+fraternalc:firstWarden a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "First Warden"@en , "Förste uppsyningsman"@sv , "Premier Surveillant"@fr ;
+    skos:definition "The officer who stands first after the master of a lodge and directs the work of the companions."@en ,
+                    "Den ämbetsman som står närmast efter logens mästare och leder gesällernas arbete."@sv ,
+                    "Officier qui vient en premier après le Vénérable Maître et dirige les travaux des compagnons."@fr .
+
+fraternalc:secondWarden a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Second Warden"@en , "Andre uppsyningsman"@sv , "Second Surveillant"@fr ;
+    skos:definition "The officer who stands second after the master of a lodge and directs the work of the apprentices."@en ,
+                    "Den ämbetsman som står näst efter logens mästare och leder lärlingarnas arbete."@sv ,
+                    "Officier qui vient en second après le Vénérable Maître et dirige les travaux des apprentis."@fr .
+
+fraternalc:orator a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Orator"@en , "Talare"@sv , "Orateur"@fr ;
+    skos:definition "The officer who guards the constitution and rules of a lodge and gives conclusions on the work presented."@en ,
+                    "Den ämbetsman som vaktar logens stadgar och regler och framför slutsatser om det arbete som läggs fram."@sv ,
+                    "Officier garant des constitutions et des règlements de la loge, qui donne ses conclusions sur les travaux présentés."@fr ;
+    skos:scopeNote "No generic office comes close, so it is not mapped."@en .
+
+fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Almoner"@en , "Allmosegivare"@sv , "Hospitalier"@fr ;
+    skos:definition "The officer who collects and distributes the lodge's charitable relief and looks after members in need."@en ,
+                    "Den ämbetsman som samlar in och delar ut logens understöd och tar hand om medlemmar i nöd."@sv ,
+                    "Officier qui recueille et distribue les secours de bienfaisance de la loge et veille sur les membres dans le besoin."@fr ;
+    skos:scopeNote "No generic office comes close, so it is not mapped."@en .
+
+fraternalc:expert a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Expert"@en , "Expert"@sv , "Expert"@fr ;
+    skos:definition "The officer who prepares candidates and accompanies them through the ceremonies of initiation."@en ,
+                    "Den ämbetsman som förbereder kandidater och följer dem genom initieringens ceremonier."@sv ,
+                    "Officier qui prépare les candidats et les accompagne au cours des cérémonies d'initiation."@fr .
+
+fraternalc:perpetualSecretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Permanent Secretary"@en , "Ständig sekreterare"@sv , "Secrétaire perpétuel"@fr ;
+    skos:definition "The officer who runs an academy and speaks for it, elected for a long term; more senior than an ordinary secretary."@en ,
+                    "Den ämbetsman som leder en akademi och talar för den, vald för en lång period; mer framskjuten än en vanlig sekreterare."@sv ,
+                    "Officier qui dirige une académie et parle en son nom, élu pour une longue durée ; plus élevé qu'un secrétaire ordinaire."@fr .

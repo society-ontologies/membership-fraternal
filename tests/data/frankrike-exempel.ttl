@@ -1,0 +1,187 @@
+# Fictional French organisations (all names, numbers and people invented for
+# testing): an obedience with a lodge, a state order of merit with a members'
+# association, a wine brotherhood, an association under the law of 1901 and an
+# academy. Shows that French forms fit the generic model: degrees and grades on
+# the generic ladders, French offices mapped to generic ones, legal form with
+# rov:orgType and the register number as an adms:Identifier.
+#
+# A draft from general knowledge; the French wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix fr:      <https://example.org/exemplie/> .
+
+# --- An obedience and a lodge --------------------------------------------------
+
+fr:GrandeLogeExemplaire a fraternal:GrandBody ;
+    rdfs:label "Grande Loge Exemplaire de France"@fr ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration fr:gle-rna ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:brother , fraternalc:sister ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:noDogmaticRequirement , fraternalc:ancientAndAcceptedScottishRite ;
+    fraternal:hasJurisdictionOver fr:LogeLaLanterne .
+
+fr:gle-rna a adms:Identifier ;
+    skos:notation "W000000000" ;
+    adms:schemaAgency "Répertoire national des associations (RNA)" .
+
+fr:LogeLaLanterne a fraternal:Lodge ;
+    rdfs:label "Loge La Lanterne"@fr ;
+    org:unitOf fr:GrandeLogeExemplaire ;
+    fraternal:warrantedBy fr:GrandeLogeExemplaire .
+
+fr:marie a foaf:Person ; schema:name "Marie Imaginaire" .
+
+fr:marie-venerable a mbr:Tenure ;
+    org:member fr:marie ; org:organization fr:LogeLaLanterne ;
+    org:role fraternalc:venerableMaster ;
+    mbr:startDate "2025-09"^^xsd:gYearMonth .
+
+# An initiation, and a tenue blanche open to relatives and friends.
+fr:tenue-initiation a fraternal:Ceremony ;
+    rdfs:label "Tenue d'initiation"@fr ;
+    mbr:gatheringType fraternalc:initiationCeremony ;
+    mbr:organizer fr:LogeLaLanterne ;
+    mbr:startDate "2025-11-08"^^xsd:date .
+
+fr:tenue-blanche a fraternal:Ceremony ;
+    rdfs:label "Tenue blanche ouverte"@fr ;
+    mbr:gatheringType fraternalc:openMeeting ;
+    mbr:organizer fr:LogeLaLanterne ;
+    mbr:startDate "2026-03-14"^^xsd:date .
+
+# --- A state order of merit and the association of its holders ------------------
+
+fr:RepubliqueExemplaire a org:Organization ;
+    rdfs:label "République exemplaire"@fr .
+
+fr:OrdreDuMeriteExemplaire a fraternal:FraternalOrder ;
+    rdfs:label "Ordre du Mérite exemplaire"@fr ;
+    org:classification fraternalc:orderOfChivalry ;
+    rov:orgType mbrc:publicLawBody ;
+    fraternal:fonsHonorum fr:RepubliqueExemplaire ;
+    fraternal:degreeSystem fr:GradesMerite .
+
+# Three grades, taken from the generic chivalric ladder (the Légion d'honneur has five).
+fr:GradesMerite a skos:ConceptScheme , fraternal:DegreeSystem ;
+    skos:prefLabel "Grades de l'Ordre du Mérite exemplaire"@fr ;
+    skos:hasTopConcept fr:chevalier , fr:officier , fr:commandeur .
+
+fr:chevalier a fraternal:Degree ;
+    skos:inScheme fr:GradesMerite ; skos:topConceptOf fr:GradesMerite ;
+    skos:prefLabel "Chevalier"@fr ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fr:officier ;
+    skos:broadMatch fraternalc:knightGrade .
+
+fr:officier a fraternal:Degree ;
+    skos:inScheme fr:GradesMerite ; skos:topConceptOf fr:GradesMerite ;
+    skos:prefLabel "Officier"@fr ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fr:commandeur ;
+    skos:broadMatch fraternalc:officerGrade .
+
+fr:commandeur a fraternal:Degree ;
+    skos:inScheme fr:GradesMerite ; skos:topConceptOf fr:GradesMerite ;
+    skos:prefLabel "Commandeur"@fr ;
+    fraternal:degreeRank 3 ;
+    skos:broadMatch fraternalc:commanderGrade .
+
+fr:rosette-officier a fraternal:Insignia ;
+    skos:prefLabel "Rosette d'officier"@fr ;
+    fraternal:insigniaOf fr:officier ;
+    fraternal:insigniaType fraternalc:rosette .
+
+# The holders' association is a separate body, with its own legal form.
+fr:AssociationDesMembresDuMerite a mbr:MembershipOrganization ;
+    rdfs:label "Association des membres de l'Ordre du Mérite exemplaire"@fr ;
+    org:classification mbrc:decorationHoldersAssociation ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed .
+
+# --- A wine brotherhood ---------------------------------------------------------
+
+fr:ConfrerieDuPichet a fraternal:FraternalOrder ;
+    rdfs:label "Confrérie des Chevaliers du Pichet"@fr ;
+    org:classification fraternalc:gastronomicBrotherhood , fraternalc:chivalricStyleOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:genderPolicy mbrc:mixed ;
+    fraternal:modelledOn fr:OrdreDuMeriteExemplaire .
+
+fr:chapitre-2025 a fraternal:Ceremony ;
+    rdfs:label "Chapitre d'intronisation 2025"@fr ;
+    mbr:gatheringType fraternalc:initiationCeremony ;
+    mbr:organizer fr:ConfrerieDuPichet ;
+    mbr:startDate "2025-10-18"^^xsd:date .
+
+# --- An association under the law of 1901 ---------------------------------------
+
+fr:AmisDeLaFontaine a mbr:MembershipOrganization ;
+    rdfs:label "Association Les Amis de la Fontaine"@fr ;
+    org:classification mbrc:hobbyClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration fr:amis-rna ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1998"^^xsd:gYear .
+
+fr:amis-rna a adms:Identifier ;
+    skos:notation "W000000001" ;
+    adms:schemaAgency "Répertoire national des associations (RNA)" .
+
+# adhérent, membre d'honneur, membre bienfaiteur
+fr:paul a foaf:Person ; schema:name "Paul Inventé" .
+fr:louise a foaf:Person ; schema:name "Louise Fictive" .
+
+fr:paul-membership a mbr:Membership ;
+    org:member fr:paul ; org:organization fr:AmisDeLaFontaine ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2019-01-12"^^xsd:date .
+
+fr:louise-membership a mbr:Membership ;
+    org:member fr:louise ; org:organization fr:AmisDeLaFontaine ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:benefactorMember ;
+    mbr:startDate "2021-02-03"^^xsd:date .
+
+fr:ag-2026 a mbr:Gathering ;
+    rdfs:label "Assemblée générale ordinaire 2026"@fr ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer fr:AmisDeLaFontaine ;
+    mbr:startDate "2026-03-21"^^xsd:date .
+
+fr:age-2026 a mbr:Gathering ;
+    rdfs:label "Assemblée générale extraordinaire 2026 (modification des statuts)"@fr ;
+    mbr:gatheringType mbrc:extraordinaryGeneralMeeting ;
+    mbr:organizer fr:AmisDeLaFontaine ;
+    mbr:startDate "2026-06-13"^^xsd:date .
+
+# --- An academy ----------------------------------------------------------------
+
+fr:AcademieExemplaire a mbr:MembershipOrganization ;
+    rdfs:label "Académie exemplaire"@fr ;
+    org:classification mbrc:academy ;
+    rov:orgType mbrc:publicLawBody ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed .
+
+fr:jean a foaf:Person ; schema:name "Jean Supposé" .
+
+fr:jean-secretaire a mbr:Tenure ;
+    org:member fr:jean ; org:organization fr:AcademieExemplaire ;
+    org:role fraternalc:perpetualSecretary ;
+    mbr:startDate "2018"^^xsd:gYear .
