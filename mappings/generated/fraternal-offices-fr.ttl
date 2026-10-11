@@ -3,7 +3,7 @@
 <https://w3id.org/fraternal/mappings/fraternal-offices-fr> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "Offices of French lodges and learned societies placed under the generic office types of the membership ontology. The orator and the almoner have no close generic office and are not mapped." ;
+    <http://purl.org/dc/terms/description> "Offices of French lodges, learned societies and compagnonnage placed under the generic office types of the membership ontology. The orator and the almoner have no close generic office and are not mapped." ;
     <http://purl.org/dc/terms/created> "2026-10-11" .
 
 <http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -70,4 +70,37 @@
   <https://w3id.org/sssom/subject_label> "Permanent Secretary" ;
   <https://w3id.org/sssom/object_label> "Secretary" ;
   <https://w3id.org/sssom/comment> "Runs an academy and speaks for it; more senior than an ordinary secretary." ] .
+
+<https://w3id.org/fraternal/code/housePrevot> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/president> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/housePrevot> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/president> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "House Provost" ;
+  <https://w3id.org/sssom/object_label> "President" ;
+  <https://w3id.org/sssom/comment> "Heads one compagnons' house, not the whole brotherhood." ] .
+
+<https://w3id.org/fraternal/code/rolleur> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/masterOfCeremonies> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/rolleur> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/masterOfCeremonies> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Rôleur" ;
+  <https://w3id.org/sssom/object_label> "Master of Ceremonies" ;
+  <https://w3id.org/sssom/comment> "Also handled hiring; today often acts as master of ceremonies." ] .
+
+<https://w3id.org/fraternal/code/houseMother> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/custodian> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/houseMother> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/custodian> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "House Mother" ;
+  <https://w3id.org/sssom/object_label> "Custodian of Premises" ;
+  <https://w3id.org/sssom/comment> "Runs the house, lodging and meals." ] .
 
