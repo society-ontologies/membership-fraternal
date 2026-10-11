@@ -66,7 +66,7 @@ mbrsh:StartDateShape a sh:NodeShape ;
         sh:path mbr:startDate ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
-        sh:message "mbr:startDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:startDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+        sh:message "mbr:startDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:startDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear. | mbr:startDate doit être un unique xsd:date, xsd:gYearMonth ou xsd:gYear."
     ] .
 
 mbrsh:EndDateShape a sh:NodeShape ;
@@ -75,7 +75,7 @@ mbrsh:EndDateShape a sh:NodeShape ;
         sh:path mbr:endDate ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
-        sh:message "mbr:endDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:endDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+        sh:message "mbr:endDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:endDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear. | mbr:endDate doit être un unique xsd:date, xsd:gYearMonth ou xsd:gYear."
     ] ;
     # An end cannot come before its start. Partial dates are widened to the earliest
     # and latest day they could mean ("2000" is 2000-01-01 to 2000-12-31, "2000-03" is
@@ -84,7 +84,7 @@ mbrsh:EndDateShape a sh:NodeShape ;
     # before the start's earliest day is an error.
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "The end date is certainly before the start date. | Slutdatumet ligger säkert före startdatumet." ;
+        sh:message "The end date is certainly before the start date. | Slutdatumet ligger säkert före startdatumet. | La date de fin est certainement antérieure à la date de début." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this WHERE {
@@ -200,7 +200,7 @@ mbrsh:FoundingDateShape a sh:NodeShape ;
         sh:path mbr:foundingDate ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
-        sh:message "mbr:foundingDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:foundingDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+        sh:message "mbr:foundingDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:foundingDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear. | mbr:foundingDate doit être un unique xsd:date, xsd:gYearMonth ou xsd:gYear."
     ] .
 
 mbrsh:DissolutionDateShape a sh:NodeShape ;
@@ -209,7 +209,7 @@ mbrsh:DissolutionDateShape a sh:NodeShape ;
         sh:path mbr:dissolutionDate ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
-        sh:message "mbr:dissolutionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:dissolutionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+        sh:message "mbr:dissolutionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:dissolutionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear. | mbr:dissolutionDate doit être un unique xsd:date, xsd:gYearMonth ou xsd:gYear."
     ] .
 
 # A decision may come before or after it takes effect, so it is not ordered against mbr:startDate.
@@ -228,7 +228,7 @@ mbrsh:AsOfShape a sh:NodeShape ;
         sh:path mbr:asOf ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
-        sh:message "mbr:asOf must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:asOf ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+        sh:message "mbr:asOf must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:asOf ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear. | mbr:asOf doit être un unique xsd:date, xsd:gYearMonth ou xsd:gYear."
     ] .
 
 ##############################################################################
@@ -260,7 +260,7 @@ mbrsh:MembershipShape a sh:NodeShape ;
     # dates cannot show that, so a shared number is reported.
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "Membership number {?num} is used by more than one membership in {?org} at overlapping or unknown times. | Medlemsnummer {?num} används av mer än ett medlemskap i {?org} under överlappande eller okända tider." ;
+        sh:message "Membership number {?num} is used by more than one membership in {?org} at overlapping or unknown times. | Medlemsnummer {?num} används av mer än ett medlemskap i {?org} under överlappande eller okända tider. | Le numéro d'adhérent {?num} est utilisé par plus d'une adhésion dans {?org} à des moments qui se chevauchent ou qui sont inconnus." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this ?num ?org WHERE {
@@ -330,18 +330,18 @@ mbrsh:MembershipFeeShape a sh:NodeShape ;
     sh:targetClass mbr:MembershipFee ;
     sh:property [ sh:path mbr:feeType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:FeeTypeValue ;
-                  sh:message "A membership fee needs exactly one mbr:feeType from mbrc:FeeTypes, or a concept mapped to it. | En medlemsavgift behöver exakt en mbr:feeType från mbrc:FeeTypes, eller ett begrepp som är mappat dit." ] ,
+                  sh:message "A membership fee needs exactly one mbr:feeType from mbrc:FeeTypes, or a concept mapped to it. | En medlemsavgift behöver exakt en mbr:feeType från mbrc:FeeTypes, eller ett begrepp som är mappat dit. | Une cotisation a besoin d'exactement un mbr:feeType de mbrc:FeeTypes, ou d'un concept qui y est mappé." ] ,
                 [ sh:path schema:price ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:node mbrsh:AmountList ; sh:minInclusive 0 ;
-                  sh:message "A membership fee needs exactly one schema:price, a number of zero or more. | En medlemsavgift behöver exakt ett schema:price, ett tal som är noll eller större." ] ,
+                  sh:message "A membership fee needs exactly one schema:price, a number of zero or more. | En medlemsavgift behöver exakt ett schema:price, ett tal som är noll eller större. | Une cotisation a besoin d'exactement un schema:price, un nombre supérieur ou égal à zéro." ] ,
                 [ sh:path schema:priceCurrency ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:datatype xsd:string ; sh:pattern "^[A-Z]{3}$" ;
-                  sh:message "schema:priceCurrency must be a three-letter ISO 4217 code such as SEK or GBP. | schema:priceCurrency ska vara en trebokstavskod enligt ISO 4217, t.ex. SEK eller GBP." ] ,
+                  sh:message "schema:priceCurrency must be a three-letter ISO 4217 code such as SEK or GBP. | schema:priceCurrency ska vara en trebokstavskod enligt ISO 4217, t.ex. SEK eller GBP. | schema:priceCurrency doit être un code ISO 4217 de trois lettres, comme SEK ou GBP." ] ,
                 [ sh:path mbr:appliesToCategory ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipCategoryValue ;
-                  sh:message "mbr:appliesToCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:appliesToCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:appliesToCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:appliesToCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit. | mbr:appliesToCategory doit être un concept de mbrc:MembershipCategories, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ;
-                  sh:message "Give the date from which the fee applies (mbr:startDate). | Ange från vilket datum avgiften gäller (mbr:startDate)." ] .
+                  sh:message "Give the date from which the fee applies (mbr:startDate). | Ange från vilket datum avgiften gäller (mbr:startDate). | Indiquer la date à partir de laquelle la cotisation s'applique (mbr:startDate)." ] .
 
 ##############################################################################
 # Offices and terms of office
@@ -352,7 +352,7 @@ mbrsh:TenureShape a sh:NodeShape ;
     sh:property [ sh:path org:member ; sh:minCount 1 ; sh:maxCount 1 ; sh:class foaf:Agent ] ,
                 [ sh:path org:organization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ] ,
                 [ sh:path org:role ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mbr:Office ;
-                  sh:message "A term of office needs exactly one org:role that is a mbr:Office. | En ämbetsperiod behöver exakt en org:role som är ett mbr:Office." ] .
+                  sh:message "A term of office needs exactly one org:role that is a mbr:Office. | En ämbetsperiod behöver exakt en org:role som är ett mbr:Office. | Un mandat a besoin d'exactement un org:role qui est un mbr:Office." ] .
 
 ##############################################################################
 # Gatherings and participation
@@ -398,7 +398,7 @@ mbrsh:ConferralShape a sh:NodeShape ;
     sh:targetClass mbr:Conferral ;
     sh:property [ sh:path mbr:recipient ; sh:minCount 1 ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:conferred ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
-                  sh:message "A conferral needs exactly one conferred concept (distinction or degree). | En tilldelning behöver exakt ett tilldelat begrepp (utmärkelse eller grad)." ] ,
+                  sh:message "A conferral needs exactly one conferred concept (distinction or degree). | En tilldelning behöver exakt ett tilldelat begrepp (utmärkelse eller grad). | Une attribution a besoin d'exactement un concept conféré (distinction ou degré)." ] ,
                 [ sh:path mbr:conferredAt ; sh:maxCount 1 ; sh:class schema:Event ] ,
                 [ sh:path mbr:conferredBy ; sh:maxCount 1 ; sh:class foaf:Agent ] .
 
@@ -437,15 +437,15 @@ mbrsh:OrganizationShape a sh:NodeShape ;
                 [ sh:path mbr:dressCode ; sh:class skos:Concept ; sh:node mbrsh:DressCodeValue ;
                   sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit." ] ,
                 [ sh:path schema:url ; sh:nodeKind sh:IRI ;
-                  sh:message "schema:url must be an IRI, e.g. <https://example.org/>. | schema:url ska vara en IRI, t.ex. <https://example.org/>." ] ,
+                  sh:message "schema:url must be an IRI, e.g. <https://example.org/>. | schema:url ska vara en IRI, t.ex. <https://example.org/>. | schema:url doit être une IRI, par ex. <https://example.org/>." ] ,
                 [ sh:path schema:email ; sh:datatype xsd:string ; sh:pattern "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$" ;
-                  sh:message "schema:email must be a plain e-mail address. | schema:email ska vara en e-postadress." ] ,
+                  sh:message "schema:email must be a plain e-mail address. | schema:email ska vara en e-postadress. | schema:email doit être une simple adresse e-mail." ] ,
                 [ sh:path schema:telephone ; sh:datatype xsd:string ] ;
 
     # A closed or merged organisation should not still be marked active.
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "An organisation with a dissolution date cannot have status active. | En organisation med upplösningsdatum kan inte ha status verksam." ;
+        sh:message "An organisation with a dissolution date cannot have status active. | En organisation med upplösningsdatum kan inte ha status verksam. | Une organisation ayant une date de dissolution ne peut pas avoir le statut en activité." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this WHERE {
@@ -459,7 +459,7 @@ mbrsh:OrganizationShape a sh:NodeShape ;
     # mbrsh:EndDateShape (an error only when certain).
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "The dissolution date is certainly before the founding date. | Upplösningsdatumet ligger säkert före grundningsdatumet." ;
+        sh:message "The dissolution date is certainly before the founding date. | Upplösningsdatumet ligger säkert före grundningsdatumet. | La date de dissolution est certainement antérieure à la date de fondation." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this WHERE {
@@ -577,10 +577,10 @@ mbrsh:OrganizationPeriodShape a sh:NodeShape ;
 mbrsh:IdentifierShape a sh:NodeShape ;
     sh:targetClass adms:Identifier ;
     sh:property [ sh:path skos:notation ; sh:minCount 1 ; sh:maxCount 1 ;
-                  sh:message "A registry identifier needs exactly one skos:notation, the number itself. | Ett registeridentifierare behöver exakt en skos:notation, själva numret." ] ,
+                  sh:message "A registry identifier needs exactly one skos:notation, the number itself. | En registeridentifierare behöver exakt en skos:notation, själva numret. | Un identifiant de registre a besoin d'exactement une skos:notation, le numéro lui-même." ] ,
                 [ sh:path adms:schemaAgency ; sh:minCount 1 ; sh:datatype xsd:string ;
                   sh:severity sh:Warning ;
-                  sh:message "Name the register that issued the identifier with adms:schemaAgency. | Ange registret som utfärdat identifieraren med adms:schemaAgency." ] .
+                  sh:message "Name the register that issued the identifier with adms:schemaAgency. | Ange registret som utfärdat identifieraren med adms:schemaAgency. | Nommer le registre qui a délivré l'identifiant avec adms:schemaAgency." ] .
 
 ##############################################################################
 # Premises, addresses, coordinates, occupancy and member counts
@@ -596,7 +596,7 @@ mbrsh:PremisesShape a sh:NodeShape ;
     # A building may have had several addresses over time, but only one current one.
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "Premises have more than one current address (addresses without mbr:endDate). Give former addresses an end date. | Lokalen har mer än en nuvarande adress (adresser utan mbr:endDate). Ge tidigare adresser ett slutdatum." ;
+        sh:message "Premises have more than one current address (addresses without mbr:endDate). Give former addresses an end date. | Lokalen har mer än en nuvarande adress (adresser utan mbr:endDate). Ge tidigare adresser ett slutdatum. | Les locaux ont plus d'une adresse actuelle (adresses sans mbr:endDate). Donner une date de fin aux anciennes adresses." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT DISTINCT $this WHERE {
@@ -617,7 +617,7 @@ mbrsh:PostalAddressShape a sh:NodeShape ;
                   sh:severity sh:Warning ] ,
                 [ sh:path schema:addressCountry ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:datatype xsd:string ; sh:pattern "^[A-Z]{2}$" ;
-                  sh:message "schema:addressCountry must be a two-letter ISO 3166-1 code such as GB or SE. | schema:addressCountry ska vara en tvåbokstavskod enligt ISO 3166-1, t.ex. GB eller SE." ] .
+                  sh:message "schema:addressCountry must be a two-letter ISO 3166-1 code such as GB or SE. | schema:addressCountry ska vara en tvåbokstavskod enligt ISO 3166-1, t.ex. GB eller SE. | schema:addressCountry doit être un code ISO 3166-1 de deux lettres, comme GB ou SE." ] .
 
 mbrsh:CoordinateList
     sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:double ] ) .
@@ -626,10 +626,10 @@ mbrsh:GeoCoordinatesShape a sh:NodeShape ;
     sh:targetClass schema:GeoCoordinates ;
     sh:property [ sh:path schema:latitude ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:node mbrsh:CoordinateList ; sh:minInclusive -90 ; sh:maxInclusive 90 ;
-                  sh:message "schema:latitude must be one decimal number between -90 and 90. | schema:latitude ska vara ett decimaltal mellan -90 och 90." ] ,
+                  sh:message "schema:latitude must be one decimal number between -90 and 90. | schema:latitude ska vara ett decimaltal mellan -90 och 90. | schema:latitude doit être un seul nombre décimal compris entre -90 et 90." ] ,
                 [ sh:path schema:longitude ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:node mbrsh:CoordinateList ; sh:minInclusive -180 ; sh:maxInclusive 180 ;
-                  sh:message "schema:longitude must be one decimal number between -180 and 180. | schema:longitude ska vara ett decimaltal mellan -180 och 180." ] .
+                  sh:message "schema:longitude must be one decimal number between -180 and 180. | schema:longitude ska vara ett decimaltal mellan -180 och 180. | schema:longitude doit être un seul nombre décimal compris entre -180 et 180." ] .
 
 mbrsh:OccupancyShape a sh:NodeShape ;
     sh:targetClass mbr:Occupancy ;
@@ -647,7 +647,7 @@ mbrsh:MemberCountShape a sh:NodeShape ;
                   sh:node mbrsh:CountList ;
                   sh:message "mbr:count must be one non-negative integer (xsd:nonNegativeInteger, or xsd:integer of zero or more). | mbr:count ska vara ett enda icke-negativt heltal (xsd:nonNegativeInteger, eller xsd:integer som är noll eller större)." ] ,
                 [ sh:path mbr:asOf ; sh:minCount 1 ;
-                  sh:message "A member count needs the date it refers to (mbr:asOf). | Ett medlemsantal behöver det datum det avser (mbr:asOf)." ] .
+                  sh:message "A member count needs the date it refers to (mbr:asOf). | Ett medlemsantal behöver det datum det avser (mbr:asOf). | Un effectif a besoin de la date à laquelle il se rapporte (mbr:asOf)." ] .
 
 mbrsh:ConceptShape a sh:NodeShape ;
     sh:targetClass skos:Concept ;
