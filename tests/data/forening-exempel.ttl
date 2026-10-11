@@ -13,7 +13,10 @@
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix schema:  <http://schema.org/> .
 @prefix org:     <http://www.w3.org/ns/org#> .
-@prefix mbr:     <https://w3id.org/membership#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:    <https://w3id.org/membership#> .
 @prefix mbrc:    <https://w3id.org/membership/code/> .
 @prefix fore:    <https://example.org/foreningar/> .
 
@@ -161,3 +164,29 @@ fore:ef-monthly a mbr:MembershipFee ;
     schema:price 280 ;
     schema:priceCurrency "SEK" ;
     mbr:startDate "2026-01"^^xsd:gYearMonth .
+
+# --- Legal form: one model across jurisdictions (rov:orgType, mbrc:LegalForms) ---
+
+# A Swedish ideell förening is a legal person without any registration.
+fore:Nalen rov:orgType mbrc:incorporatedAssociation .
+
+# A registered association with its register number (register and number invented).
+fore:Pennan a mbr:MembershipOrganization ;
+    rdfs:label "Skrivklubben Pennan"@sv ;
+    org:classification mbrc:hobbyClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration fore:pennan-reg ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    mbr:genderPolicy mbrc:mixed .
+
+fore:pennan-reg a adms:Identifier ;
+    skos:notation "EX-000123" ;
+    adms:schemaAgency "Exempelregistret" .
+
+# An informal circle of friends is not a legal person.
+fore:Kotteriet a mbr:MembershipOrganization ;
+    rdfs:label "Kotteriet vid hörnbordet"@sv ;
+    org:classification mbrc:informalCircle ;
+    rov:orgType mbrc:unincorporated ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:genderPolicy mbrc:mixed .

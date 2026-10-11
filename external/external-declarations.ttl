@@ -22,7 +22,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix org:     <http://www.w3.org/ns/org#> .
 @prefix prov:    <http://www.w3.org/ns/prov#> .
-@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
 
 <https://w3id.org/membership/external>
     a owl:Ontology ;
@@ -32,8 +34,8 @@
     owl:backwardCompatibleWith <https://w3id.org/membership/external/1.0.0> ;
     rdfs:label "External declarations for the membership/fraternal ontology stack"@en ,
                "Externa deklarationer för ontologistacken membership/fraternal"@sv ;
-    rdfs:comment "OWL 2 DL declarations of the FOAF, W3C ORG, schema.org, SKOS, PROV-O and DCTERMS terms used by membership, fraternal and ontologies built on them."@en ,
-                 "OWL 2 DL-deklarationer av de FOAF-, ORG-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ;
+    rdfs:comment "OWL 2 DL declarations of the FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O and DCTERMS terms used by membership, fraternal and ontologies built on them."@en ,
+                 "OWL 2 DL-deklarationer av de FOAF-, ORG-, ROV-, ADMS-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
@@ -190,6 +192,25 @@ org:resultingOrganization a owl:ObjectProperty ;
 org:changedBy a owl:ObjectProperty ;
     rdfs:range org:ChangeEvent ;
     owl:inverseOf org:originalOrganization .
+
+##############################################################################
+# W3C Registered Organization Vocabulary  (https://www.w3.org/TR/vocab-regorg/)
+# and the ADMS identifier it uses for registry numbers
+##############################################################################
+
+rov:RegisteredOrganization a owl:Class ;
+    rdfs:subClassOf org:FormalOrganization .
+rov:orgType a owl:ObjectProperty ;
+    rdfs:subPropertyOf org:classification ;
+    rdfs:domain org:Organization ;
+    rdfs:range skos:Concept .
+rov:registration a owl:ObjectProperty ;
+    rdfs:subPropertyOf adms:identifier ;
+    rdfs:domain rov:RegisteredOrganization ;
+    rdfs:range adms:Identifier .
+adms:Identifier a owl:Class .
+adms:identifier a owl:ObjectProperty .
+adms:schemaAgency a owl:DatatypeProperty .
 
 ##############################################################################
 # PROV-O

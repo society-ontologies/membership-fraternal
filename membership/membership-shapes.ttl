@@ -16,8 +16,10 @@
 @prefix schema:  <http://schema.org/> .
 @prefix org:     <http://www.w3.org/ns/org#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
 @prefix mbr:    <https://w3id.org/membership#> .
-@prefix mbrsh:  <https://w3id.org/membership/shapes#> .
+@prefix mbrsh: <https://w3id.org/membership/shapes#> .
 
 <https://w3id.org/membership/shapes>
     a owl:Ontology ;
@@ -230,6 +232,8 @@ mbrsh:OrganizationShape a sh:NodeShape ;
                 [ sh:path mbr:admissionMode ; sh:class skos:Concept ] ,
                 [ sh:path mbr:reciprocalWith ; sh:class org:Organization ] ,
                 [ sh:path mbr:organizationStatus ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path rov:orgType ; sh:class skos:Concept ] ,
+                [ sh:path rov:registration ; sh:class adms:Identifier ] ,
                 [ sh:path mbr:ownershipModel ; sh:maxCount 1 ; sh:class skos:Concept ] ,
                 [ sh:path mbr:hasMemberCount ; sh:class mbr:MemberCount ] ,
                 [ sh:path mbr:dressCode ; sh:class skos:Concept ] ,
@@ -265,6 +269,18 @@ mbrsh:OrganizationShape a sh:NodeShape ;
             }
         """
     ] .
+
+##############################################################################
+# Registry identifiers (rov:registration)
+##############################################################################
+
+mbrsh:IdentifierShape a sh:NodeShape ;
+    sh:targetClass adms:Identifier ;
+    sh:property [ sh:path skos:notation ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:message "A registry identifier needs exactly one skos:notation, the number itself. | Ett registeridentifierare behöver exakt en skos:notation, själva numret." ] ,
+                [ sh:path adms:schemaAgency ; sh:minCount 1 ; sh:datatype xsd:string ;
+                  sh:severity sh:Warning ;
+                  sh:message "Name the register that issued the identifier with adms:schemaAgency. | Ange registret som utfärdat identifieraren med adms:schemaAgency." ] .
 
 ##############################################################################
 # Premises, addresses, coordinates, occupancy and member counts

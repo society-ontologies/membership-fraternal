@@ -65,6 +65,8 @@ A directory or inventory of clubs or associations needs no extra ontology. Each 
 |---|---|
 | Name, former names | `rdfs:label`; former names as `skos:altLabel`, or a renaming as an `org:ChangeEvent` |
 | Type of organisation | `org:classification`, a value from `mbrc:OrganizationTypes` (gentlemen's, ladies', political, university, professional, arts, armed forces, yacht, service, hobby, supporters' club; political party, trade union …), or from your own list mapped to it |
+| Legal form | `rov:orgType` ([W3C Registered Organization Vocabulary](https://www.w3.org/TR/vocab-regorg/)), a value from `mbrc:LegalForms`: unincorporated, incorporated association (registered or not), foundation, company, public-law body. Map a national list such as ISO 20275 to these values with SKOS mappings. |
+| Register number | `rov:registration` → `adms:Identifier` (`skos:notation` for the number, `adms:schemaAgency` for the register) |
 | How members are admitted | `mbr:admissionMode`: by invitation, proposal and ballot, open application (the board decides), open enrolment (anyone may join), hereditary, ex officio |
 | Membership fees | `mbr:membershipFee` → `mbr:MembershipFee` (`mbr:feeType`: entrance, annual, monthly or life-membership fee; `schema:price`; ISO 4217 currency in `schema:priceCurrency`; `mbr:appliesToCategory` when the fee is for, say, junior members only; start and end dates). A fee change is a new fee, and the old one gets an end date. |
 | Founded / closed | `mbr:foundingDate` / `mbr:dissolutionDate` (a year is enough) |
@@ -176,6 +178,9 @@ The aim is that no single person or service is a point of failure:
 Questions and proposals: [GitHub issues](https://github.com/society-ontologies/membership-fraternal/issues).
 
 ## Changelog
+
+**Unreleased.** Additions only.
+- Legal form: new codelist `mbrc:LegalForms` (unincorporated, incorporated association, registered association, foundation, company, public-law body), used with `rov:orgType` from the W3C Registered Organization Vocabulary, and registry numbers with `rov:registration` and `adms:Identifier`. No new property: the ROV and ADMS terms are declared in the external declarations, and a shape requires a `skos:notation` on every identifier. Informal circles such as the *kotteri* are `mbrc:unincorporated`.
 
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
