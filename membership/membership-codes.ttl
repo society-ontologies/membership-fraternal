@@ -441,7 +441,7 @@ mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
                        mbrc:founding , mbrc:benefactorMember .
 
 mbrc:ordinary a skos:Concept , owl:NamedIndividual ;
-    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:inScheme mbrc:MembershipCategories , mbrc:CategoryRights ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryRights ;
     skos:prefLabel "Ordinary Member"@en , "Ordinarie medlem"@sv , "Membre ordinaire"@fr ;
     skos:definition "The standard category with full rights."@en , "Standardkategorin med fulla rättigheter."@sv , "La catégorie normale, avec tous les droits."@fr .
 
