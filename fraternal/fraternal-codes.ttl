@@ -59,7 +59,7 @@ fraternalc:OrderTypes a skos:ConceptScheme , owl:NamedIndividual ;
                        fraternalc:coedFraternity , fraternalc:secretSociety , fraternalc:confraternity ,
                        fraternalc:chivalricStyleOrder , fraternalc:studentOrder , fraternalc:benevolentOrder ,
                        fraternalc:adoptiveOrder , fraternalc:orderOfChivalry , fraternalc:selfStyledOrderOfChivalry ,
-                       fraternalc:gastronomicBrotherhood .
+                       fraternalc:gastronomicBrotherhood , fraternalc:craftBrotherhood .
 
 fraternalc:fraternalOrder a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
@@ -171,6 +171,17 @@ fraternalc:gastronomicBrotherhood a skos:Concept , owl:NamedIndividual ;
                    "Är ofta också fraternalc:chivalricStyleOrder: klassificera med båda. Inte ett religiöst lekmannabrödraskap (fraternalc:confraternity), fast det franska ordet confrérie också omfattar sådana."@sv ,
                    "Souvent aussi un fraternalc:chivalricStyleOrder : classer avec les deux. Pas une confrérie religieuse (fraternalc:confraternity), bien que le mot confrérie couvre aussi celles-ci."@fr .
 
+fraternalc:craftBrotherhood a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Craft Brotherhood"@en , "Hantverksbrödraskap"@sv , "Compagnonnage"@fr ;
+    skos:altLabel "Journeymen's Brotherhood"@en , "Association compagnonnique"@fr ;
+    skos:definition "A brotherhood of craftsmen that passes on a trade through initiation, ritual and stages of membership, typically with years of travel between workplaces and a masterpiece before full membership. French compagnonnage, a network of such brotherhoods, is the main example."@en ,
+                    "Ett brödraskap av hantverkare som för ett yrke vidare genom initiering, ritual och medlemsstadier, vanligen med år av vandring mellan arbetsplatser och ett mästerstycke före fullt medlemskap. Det franska compagnonnage, ett nätverk av sådana brödraskap, är det främsta exemplet."@sv ,
+                    "Fraternité d'artisans qui transmet un métier par l'initiation, le rituel et des étapes d'appartenance, en général avec des années de voyage d'un lieu de travail à l'autre et un chef-d'œuvre avant le plein statut de membre. Le compagnonnage français, réseau de telles fraternités, en est l'exemple principal."@fr ;
+    skos:scopeNote "A guild or trade association that only represents a trade, without initiation, ritual or stages of membership, is not a craft brotherhood. The compagnonnage was entered on the UNESCO Representative List of the Intangible Cultural Heritage of Humanity in 2010."@en ,
+                   "Ett skrå eller en yrkesförening som bara företräder ett yrke, utan initiering, ritual eller medlemsstadier, är inte ett hantverksbrödraskap. Compagnonnage togs 2010 upp på Unescos representativa lista över mänsklighetens immateriella kulturarv."@sv ,
+                   "Une corporation ou une association professionnelle qui ne fait que représenter un métier, sans initiation, rituel ni étapes d'appartenance, n'est pas une fraternité d'artisans. Le compagnonnage a été inscrit en 2010 sur la Liste représentative du patrimoine culturel immatériel de l'humanité de l'UNESCO."@fr .
+
 ##############################################################################
 # 2. GENERIC DEGREE LADDERS  (hubs; also usable directly as degree systems)
 ##############################################################################
@@ -194,7 +205,10 @@ fraternalc:intermediateDegree a fraternal:Degree , skos:Concept , owl:NamedIndiv
     fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:fullDegree ;
     skos:prefLabel "Intermediate Degree"@en , "Mellangrad"@sv , "Degré intermédiaire"@fr ;
     skos:altLabel "Fellow"@en , "Gesäll"@sv , "Compagnon"@fr ;
-    skos:definition "A degree between entry and full membership."@en , "En grad mellan inträde och fullt medlemskap."@sv , "Degré entre l'entrée et le plein statut de membre."@fr .
+    skos:definition "A degree between entry and full membership."@en , "En grad mellan inträde och fullt medlemskap."@sv , "Degré entre l'entrée et le plein statut de membre."@fr ;
+    skos:scopeNote "In freemasonry the fellow (compagnon) is the second degree. In French compagnonnage the compagnon is instead the full status reached after the masterpiece; map that to fraternalc:fullDegree."@en ,
+                   "I frimureriet är gesällen (compagnon) den andra graden. I det franska compagnonnage är compagnon i stället den fulla ställning man når efter mästerstycket; koppla den till fraternalc:fullDegree."@sv ,
+                   "En franc-maçonnerie, le compagnon est le deuxième degré. Dans le compagnonnage français, le compagnon est au contraire le plein statut atteint après le chef-d'œuvre ; l'associer à fraternalc:fullDegree."@fr .
 
 fraternalc:fullDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
@@ -367,7 +381,8 @@ fraternalc:Characteristics a skos:ConceptScheme , owl:NamedIndividual ;
     skos:hasTopConcept fraternalc:initiationRitual , fraternalc:gradedDegrees , fraternalc:oathOfObligation ,
                        fraternalc:secrecy , fraternalc:regalia , fraternalc:mutualAid , fraternalc:charity ,
                        fraternalc:religiousRequirement , fraternalc:noDogmaticRequirement ,
-                       fraternalc:masonicRite .
+                       fraternalc:masonicRite , fraternalc:itinerantTraining ,
+                       fraternalc:masterpieceRequirement .
 
 fraternalc:initiationRitual a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -419,6 +434,23 @@ fraternalc:noDogmaticRequirement a skos:Concept , owl:NamedIndividual ;
                     "Medlemmar behöver inte bekänna någon tro eller icke-tro. Inom fransk frimureri intar de adogmatiska obedienserna, som Grand Orient de France, som slopade kravet 1877, denna hållning."@sv ,
                     "Les membres n'ont à professer aucune croyance ni aucune incroyance. En franc-maçonnerie française, les obédiences adogmatiques, comme le Grand Orient de France qui a supprimé cette exigence en 1877, adoptent cette position."@fr ;
     skos:scopeNote "The opposite of fraternalc:supremeBeingRequirement, which is a kind of fraternalc:religiousRequirement."@en , "L'inverse de fraternalc:supremeBeingRequirement, qui est une sorte de fraternalc:religiousRequirement."@fr .
+
+fraternalc:itinerantTraining a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Itinerant Training"@en , "Gesällvandring"@sv , "Tour de France"@fr ;
+    skos:altLabel "Journeyman Years"@en , "Wanderjahre"@de ;
+    skos:definition "Members in training travel between workplaces and places, often for years, to learn their trade, as the French compagnons do on their Tour de France."@en ,
+                    "Medlemmar under utbildning vandrar mellan arbetsplatser och orter, ofta i flera år, för att lära sitt yrke, som de franska compagnons gör på sin Tour de France."@sv ,
+                    "Les membres en formation voyagent d'un lieu de travail et d'une ville à l'autre, souvent pendant des années, pour apprendre leur métier, comme le font les compagnons français lors de leur Tour de France."@fr ;
+    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en .
+
+fraternalc:masterpieceRequirement a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
+    skos:prefLabel "Masterpiece Requirement"@en , "Krav på mästerstycke"@sv , "Chef-d'œuvre"@fr ;
+    skos:altLabel "Travail de réception"@fr ;
+    skos:definition "A member must make and present a masterpiece, judged by the order, to advance to full membership."@en ,
+                    "En medlem måste göra och lägga fram ett mästerstycke, som bedöms av orden, för att nå fullt medlemskap."@sv ,
+                    "Un membre doit réaliser et présenter un chef-d'œuvre, jugé par l'ordre, pour accéder au plein statut de membre."@fr .
 
 fraternalc:masonicRite a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -508,7 +540,7 @@ fraternalc:InsigniaTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Insignia Types"@en , "Insignietyper"@sv , "Types d'insignes"@fr ;
     skos:hasTopConcept fraternalc:apron , fraternalc:collar , fraternalc:sash , fraternalc:jewel , fraternalc:ribbon ,
                        fraternalc:ring , fraternalc:pin , fraternalc:hat , fraternalc:sword , fraternalc:breastStar ,
-                       fraternalc:cross , fraternalc:rosette .
+                       fraternalc:cross , fraternalc:rosette , fraternalc:staff .
 
 fraternalc:apron a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
@@ -600,6 +632,14 @@ fraternalc:rosette a skos:Concept , owl:NamedIndividual ;
                     "En liten rosett av vecklat band i ordens färger, buren på kavajslaget. I vissa riddarordnar markerar den de högre graderna, medan den lägsta graden bär ett enkelt band."@sv ,
                     "Petite rosette de ruban plissé aux couleurs de l'ordre, portée à la boutonnière. Dans certains ordres, elle marque les grades supérieurs, le grade le plus bas portant un simple ruban."@fr .
 
+fraternalc:staff a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Staff"@en , "Stav"@sv , "Canne"@fr ;
+    skos:altLabel "Walking Staff"@en , "Cane"@en , "Vandringsstav"@sv ;
+    skos:definition "A staff or cane received at reception and carried as a sign of membership, as the compagnons carry theirs; it stands for the travelling life of the trade."@en ,
+                    "En stav eller käpp som tas emot vid upptagningen och bärs som tecken på medlemskap, som compagnons bär sin; den står för yrkets vandringsliv."@sv ,
+                    "Bâton ou canne reçu lors de la réception et porté comme signe d'appartenance, comme le font les compagnons ; il représente la vie itinérante du métier."@fr .
+
 ##############################################################################
 # 7. ASSESSMENT OUTCOMES  (values of fraternal:assessmentOutcome)
 ##############################################################################
@@ -659,12 +699,13 @@ fraternalc:wearingProhibited a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:FrenchOffices a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "French Offices"@en , "Franska ämbeten"@sv , "Offices français"@fr ;
-    skos:definition "Offices of French lodges and learned societies that the generic office types do not cover. The treasurer, secretary, master of ceremonies and tyler (couvreur) of a lodge are the generic mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies and mbrc:provost."@en ,
-                    "Ämbeten i franska loger och lärda sällskap som de generiska ämbetstyperna inte täcker. Logens skattmästare, sekreterare, ceremonimästare och vaktmästare (couvreur) är de generiska mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies och mbrc:provost."@sv ,
-                    "Fonctions des loges françaises et des sociétés savantes que les types de fonctions génériques ne couvrent pas. Le trésorier, le secrétaire, le maître des cérémonies et le couvreur d'une loge correspondent aux fonctions génériques mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies et mbrc:provost."@fr ;
+    skos:definition "Offices of French lodges, learned societies and compagnonnage that the generic office types do not cover. The treasurer, secretary, master of ceremonies and tyler (couvreur) of a lodge are the generic mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies and mbrc:provost."@en ,
+                    "Ämbeten i franska loger, lärda sällskap och compagnonnage som de generiska ämbetstyperna inte täcker. Logens skattmästare, sekreterare, ceremonimästare och vaktmästare (couvreur) är de generiska mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies och mbrc:provost."@sv ,
+                    "Fonctions des loges françaises, des sociétés savantes et du compagnonnage que les types de fonctions génériques ne couvrent pas. Le trésorier, le secrétaire, le maître des cérémonies et le couvreur d'une loge correspondent aux fonctions génériques mbrc:treasurer, mbrc:secretary, mbrc:masterOfCeremonies et mbrc:provost."@fr ;
     skos:hasTopConcept fraternalc:venerableMaster , fraternalc:firstWarden , fraternalc:secondWarden ,
                        fraternalc:orator , fraternalc:almoner , fraternalc:expert ,
-                       fraternalc:perpetualSecretary .
+                       fraternalc:perpetualSecretary , fraternalc:housePrevot ,
+                       fraternalc:rolleur , fraternalc:houseMother .
 
 fraternalc:venerableMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -717,3 +758,27 @@ fraternalc:perpetualSecretary a mbr:Office , skos:Concept , owl:NamedIndividual 
     skos:definition "The officer who runs an academy and speaks for it, elected for a long term; more senior than an ordinary secretary."@en ,
                     "Den ämbetsman som leder en akademi och talar för den, vald för en lång period; mer framskjuten än en vanlig sekreterare."@sv ,
                     "Officier qui dirige une académie et parle en son nom, élu pour une longue durée ; plus élevé qu'un secrétaire ordinaire."@fr .
+
+fraternalc:housePrevot a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "House Provost"@en , "Husföreståndare"@sv , "Prévôt"@fr ;
+    skos:definition "The officer in charge of a compagnons' house (cayenne), where the compagnons and aspirants of a town live and meet."@en ,
+                    "Den ämbetsman som ansvarar för ett compagnons hus (cayenne), där compagnons och aspiranter i en stad bor och möts."@sv ,
+                    "Responsable d'une maison de compagnons (cayenne), où les compagnons et aspirants d'une ville logent et se réunissent."@fr ;
+    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en .
+
+fraternalc:rolleur a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "Rôleur"@en , "Rôleur"@sv , "Rôleur"@fr ;
+    skos:altLabel "Rouleur"@fr ;
+    skos:definition "Originally the itinerant compagnon in charge of hiring; now the officer who assists the house provost and often acts as master of ceremonies."@en ,
+                    "Ursprungligen den vandrande compagnon som ansvarade för anställning; nu den ämbetsman som biträder husföreståndaren och ofta är ceremonimästare."@sv ,
+                    "À l'origine le compagnon itinérant chargé de l'embauche ; aujourd'hui l'officier qui assiste le prévôt et fait souvent office de maître des cérémonies."@fr .
+
+fraternalc:houseMother a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
+    skos:prefLabel "House Mother"@en , "Husmor"@sv , "Mère"@fr ;
+    skos:altLabel "Maîtresse de maison"@fr ;
+    skos:definition "The woman who runs a compagnons' house, with its lodging and meals. Her title (dame économe, dame hôtesse, mère) depends on her level of initiation."@en ,
+                    "Kvinnan som driver ett compagnons hus, med logi och måltider. Hennes titel (dame économe, dame hôtesse, mère) beror på hennes initieringsnivå."@sv ,
+                    "Femme qui tient une maison de compagnons, avec son hébergement et ses repas. Son titre (dame économe, dame hôtesse, mère) dépend de son niveau d'initiation."@fr .

@@ -1,0 +1,110 @@
+# A fictional compagnonnage association (all names and people invented for
+# testing). Shows the craft brotherhood type, its own two-stage ladder mapped
+# to the generic craft degrees (the compagnon is the FULL degree here, not the
+# intermediate one), the Tour de France and the chef-d'oeuvre as
+# characteristics, a house (cayenne) with its provost and house mother, a
+# reception and the staff received at it.
+#
+# Stages that differ between the real organisations (a first-year stagiaire,
+# an affilié, the itinerant and settled compagnon) are left out on purpose.
+# A draft from general knowledge; the French wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix cp:      <https://example.org/compagnons/> .
+
+cp:CompagnonsDeLAtelier a fraternal:FraternalOrder ;
+    rdfs:label "Compagnons de l'Atelier exemplaire"@fr ;
+    org:classification fraternalc:craftBrotherhood ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration cp:rna ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:companion ;
+    fraternal:degreeSystem cp:Degres ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:itinerantTraining , fraternalc:masterpieceRequirement ;
+    org:hasUnit cp:CayenneDeExemplieVille .
+
+cp:rna a adms:Identifier ;
+    skos:notation "W000000002" ;
+    adms:schemaAgency "Répertoire national des associations (RNA)" .
+
+# --- Two stages. The compagnon is the full status, reached after the chef-d'oeuvre. ---
+
+cp:Degres a skos:ConceptScheme , fraternal:DegreeSystem ;
+    skos:prefLabel "Étapes des Compagnons de l'Atelier exemplaire"@fr ;
+    skos:hasTopConcept cp:aspirant , cp:compagnon .
+
+cp:aspirant a fraternal:Degree ;
+    skos:inScheme cp:Degres ; skos:topConceptOf cp:Degres ;
+    skos:prefLabel "Aspirant"@fr ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree cp:compagnon ;
+    skos:closeMatch fraternalc:entryDegree .
+
+cp:compagnon a fraternal:Degree ;
+    skos:inScheme cp:Degres ; skos:topConceptOf cp:Degres ;
+    skos:prefLabel "Compagnon"@fr ;
+    fraternal:degreeRank 2 ;
+    skos:closeMatch fraternalc:fullDegree .
+
+cp:staff a fraternal:Insignia ;
+    skos:prefLabel "Canne du compagnon"@fr ;
+    fraternal:insigniaOf cp:compagnon ;
+    fraternal:insigniaType fraternalc:staff .
+
+cp:sash a fraternal:Insignia ;
+    skos:prefLabel "Couleurs du compagnon"@fr ;
+    fraternal:insigniaOf cp:compagnon ;
+    fraternal:insigniaType fraternalc:sash .
+
+# --- A house in a town, with its provost and house mother ---
+
+cp:CayenneDeExemplieVille a fraternal:Lodge ;
+    rdfs:label "Cayenne d'Exemplie-Ville"@fr ;
+    org:unitOf cp:CompagnonsDeLAtelier ;
+    fraternal:warrantedBy cp:CompagnonsDeLAtelier .
+
+cp:luc a foaf:Person ; schema:name "Luc Imaginé" .
+cp:anne a foaf:Person ; schema:name "Anne Inventée" .
+cp:remi a foaf:Person ; schema:name "Rémi Fictif" .
+
+cp:luc-prevot a mbr:Tenure ;
+    org:member cp:luc ; org:organization cp:CayenneDeExemplieVille ;
+    org:role fraternalc:housePrevot ;
+    mbr:startDate "2024"^^xsd:gYear .
+
+cp:anne-mere a mbr:Tenure ;
+    org:member cp:anne ; org:organization cp:CayenneDeExemplieVille ;
+    org:role fraternalc:houseMother ;
+    mbr:startDate "2019"^^xsd:gYear .
+
+cp:remi-rolleur a mbr:Tenure ;
+    org:member cp:remi ; org:organization cp:CayenneDeExemplieVille ;
+    org:role fraternalc:rolleur ;
+    mbr:startDate "2025-09"^^xsd:gYearMonth .
+
+# --- A reception: a private ceremony at which the aspirant becomes a compagnon ---
+
+cp:reception-2026 a fraternal:Ceremony ;
+    rdfs:label "Réception de compagnons 2026"@fr ;
+    mbr:gatheringType fraternalc:degreeCeremony ;
+    mbr:organizer cp:CayenneDeExemplieVille ;
+    mbr:startDate "2026-05-30"^^xsd:date .
+
+cp:remi-reception a fraternal:DegreeConferral ;
+    mbr:recipient cp:remi ;
+    mbr:conferred cp:compagnon ;
+    mbr:conferredBy cp:CompagnonsDeLAtelier ;
+    mbr:conferredAt cp:reception-2026 ;
+    mbr:startDate "2026-05-30"^^xsd:date .
