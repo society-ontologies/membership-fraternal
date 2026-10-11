@@ -13,7 +13,7 @@ MAPPINGS_TSV := $(wildcard mappings/*.sssom.tsv)
 MAPPINGS_TTL := $(patsubst mappings/%.sssom.tsv,mappings/generated/%.ttl,$(MAPPINGS_TSV))
 VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/data/riddarorden-exempel.ttl \
          tests/data/forening-exempel.ttl tests/data/medlemskap-exempel.ttl \
-         tests/data/organisationsperioder-exempel.ttl
+         tests/data/organisationsperioder-exempel.ttl tests/data/frankrike-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 CANARY := $(wildcard tests/reasoning/canary/*.ttl)
 

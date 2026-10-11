@@ -204,13 +204,40 @@ mbrc:society a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Society"@en , "Sällskap"@sv ;
     skos:definition "An association of people united by a common interest, purpose or profession."@en ,
                     "En sammanslutning av personer förenade av ett gemensamt intresse, syfte eller yrke."@sv ;
-    skos:narrower mbrc:learnedSociety , mbrc:charitableSociety , mbrc:studentNation , mbrc:studentSociety .
+    skos:narrower mbrc:learnedSociety , mbrc:charitableSociety , mbrc:studentNation , mbrc:studentSociety ,
+                  mbrc:alumniAssociation , mbrc:decorationHoldersAssociation .
 
 mbrc:learnedSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
     skos:prefLabel "Learned Society"@en , "Lärt sällskap"@sv ;
     skos:definition "A society that promotes an academic discipline or the arts."@en ,
-                    "Ett sällskap som främjar en vetenskap eller konstart."@sv .
+                    "Ett sällskap som främjar en vetenskap eller konstart."@sv ;
+    skos:narrower mbrc:academy .
+
+mbrc:academy a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:learnedSociety ;
+    skos:prefLabel "Academy"@en , "Akademi"@sv , "Académie"@fr ;
+    skos:definition "A learned society whose members are elected by its existing members, usually for life and often to a fixed number of numbered seats, as in the Académie française or the Swedish Academy."@en ,
+                    "Ett lärt sällskap vars ledamöter väljs av de sittande ledamöterna, vanligen på livstid och ofta till ett fast antal numrerade stolar, som i Académie française eller Svenska Akademien."@sv ,
+                    "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ;
+    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en .
+
+mbrc:alumniAssociation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Alumni Association"@en , "Alumniförening"@sv , "Association d'anciens"@fr ;
+    skos:altLabel "Old Pupils' Association"@en , "Amicale"@fr ;
+    skos:definition "An association of former pupils, students or members of one school, university or institution, kept up for fellowship and mutual support."@en ,
+                    "En förening för tidigare elever, studenter eller medlemmar vid en skola, ett universitet eller en institution, som hålls vid liv för gemenskap och ömsesidigt stöd."@sv ,
+                    "Association d'anciens élèves, étudiants ou membres d'une école, d'une université ou d'une institution, entretenue pour la convivialité et l'entraide."@fr ;
+    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en .
+
+mbrc:decorationHoldersAssociation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Association of Decoration Holders"@en , "Förening för utmärkelsemottagare"@sv , "Association de décorés"@fr ;
+    skos:definition "An association of people who hold a state order or decoration, separate from the order itself, which they do not run: it keeps up fellowship and supports the order's aims."@en ,
+                    "En förening för personer som innehar en statlig orden eller utmärkelse, skild från själva orden, som den inte driver: den vårdar gemenskapen och stöder ordens syften."@sv ,
+                    "Association de personnes titulaires d'un ordre ou d'une décoration de l'État, distincte de l'ordre lui-même, qu'elle ne dirige pas : elle entretient la convivialité et soutient les buts de l'ordre."@fr ;
+    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en .
 
 mbrc:charitableSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
@@ -360,7 +387,7 @@ mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
                    "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i sju underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ;
     skos:hasTopConcept mbrc:ordinary , mbrc:life , mbrc:honorary , mbrc:associate ,
                        mbrc:junior , mbrc:nonResident , mbrc:overseas , mbrc:partnerMember ,
-                       mbrc:founding .
+                       mbrc:founding , mbrc:benefactorMember .
 
 mbrc:ordinary a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryRights ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryRights ;
@@ -408,6 +435,13 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Founding Member"@en , "Stiftande medlem"@sv ;
     skos:definition "A member who took part in founding the organisation."@en , "En medlem som deltog i organisationens grundande."@sv .
 
+mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr ;
+    skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv ;
+    skos:definition "A member who supports the organisation with a contribution above the ordinary fee. Whether the category carries a vote depends on the statutes."@en ,
+                    "En medlem som stöder organisationen med ett bidrag utöver den ordinarie avgiften. Om kategorin har rösträtt avgörs av stadgarna."@sv ,
+                    "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr .
 mbrc:CategoryRights a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
     skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv ;
@@ -688,7 +722,17 @@ mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "General Meeting"@en , "Stämma"@sv ;
     skos:altLabel "Annual General Meeting"@en , "Congress"@en , "Årsmöte"@sv , "Kongress"@sv ;
     skos:definition "A meeting of all members, or of delegates elected by them, with decision-making power."@en ,
-                    "Ett möte med alla medlemmar, eller med ombud valda av dem, som har beslutanderätt."@sv .
+                    "Ett möte med alla medlemmar, eller med ombud valda av dem, som har beslutanderätt."@sv ;
+    skos:narrower mbrc:extraordinaryGeneralMeeting .
+
+mbrc:extraordinaryGeneralMeeting a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:generalMeeting ;
+    skos:prefLabel "Extraordinary General Meeting"@en , "Extra stämma"@sv , "Assemblée générale extraordinaire"@fr ;
+    skos:altLabel "Extra årsmöte"@sv , "Extra föreningsstämma"@sv ;
+    skos:definition "A general meeting called outside the regular yearly cycle to decide a particular matter, such as a change of statutes or the dissolution of the organisation."@en ,
+                    "En stämma som kallas utanför den ordinarie årliga cykeln för att avgöra en bestämd fråga, t.ex. ändring av stadgarna eller organisationens upplösning."@sv ,
+                    "Assemblée générale convoquée en dehors du cycle annuel ordinaire pour décider d'une question précise, comme la modification des statuts ou la dissolution de l'association."@fr ;
+    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en .
 
 mbrc:formalDinner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;

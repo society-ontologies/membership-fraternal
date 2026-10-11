@@ -208,6 +208,13 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).
 - Organisation type `mbrc:informalCircle` (Swedish *kotteri*, from French *coterie*): a relatively closed company of friends or associates without legal status or registration, under `mbrc:voluntaryAssociation`. Example in `tests/data/klubb-exempel.ttl`.
 - Legal form: new codelist `mbrc:LegalForms` (unincorporated, incorporated association, registered association, foundation, company, public-law body), used with `rov:orgType` from the W3C Registered Organization Vocabulary, and registry numbers with `rov:registration` and `adms:Identifier`. No new property: the ROV and ADMS terms are declared in the external declarations, and a shape requires a `skos:notation` on every identifier. Informal circles such as the *kotteri* are `mbrc:unincorporated`.
+- French organisations, as a draft from general knowledge that needs a French-speaking reviewer. New concepts have English, Swedish and French labels; the French labels of existing terms follow separately. No new class or property.
+  - Organisation types: `mbrc:academy`, `mbrc:alumniAssociation`, `mbrc:decorationHoldersAssociation`, `fraternalc:gastronomicBrotherhood` (the *confrérie*).
+  - Categories and meetings: `mbrc:benefactorMember` (*membre bienfaiteur*), `mbrc:extraordinaryGeneralMeeting`, `fraternalc:openMeeting` (*tenue blanche*).
+  - Freemasonry: `fraternalc:masonicRite` with the Ancient and Accepted Scottish, French and Rectified Scottish rites, and `fraternalc:noDogmaticRequirement` (*adogmatique*) beside `fraternalc:supremeBeingRequirement`. The three craft degrees are the existing `fraternalc:CraftDegrees`.
+  - Offices: scheme `fraternalc:FrenchOffices` (*Vénérable Maître*, *Surveillants*, *Orateur*, *Hospitalier*, *Expert*, *Secrétaire perpétuel*), mapped in `mappings/fraternal-offices-fr.sssom.tsv`. The grades of the Légion d'honneur and the Ordre national du Mérite are the existing `fraternalc:ChivalricGrades`; `fraternalc:rosette` is a new insignia type.
+  - Compulsory and economic-benefit memberships (professional *ordres*, mutuelles, cooperatives) stay outside the model, now stated in the scope note of `mbr:MembershipOrganization`.
+  - Example: `tests/data/frankrike-exempel.ttl`.
 
 **1.1.0 (2026-10-09).** Additions only; nothing is removed or renamed.
 - Admission without a vote: new admission mode `mbrc:proposalAndObjectionPeriod`. Candidates are proposed and seconded, the proposal is made known to the members for a set period, and the candidate goes ahead unless an objection leads the organisation to stop it.
