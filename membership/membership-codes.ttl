@@ -1031,3 +1031,60 @@ mbrc:lifeMembershipFee a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Life Membership Fee"@en , "Avgift för ständigt medlemskap"@sv ;
     skos:definition "A one-off fee that buys membership for life (see mbrc:life)."@en ,
                     "En engångsavgift som ger medlemskap på livstid (se mbrc:life)."@sv .
+
+##############################################################################
+# 16. LEGAL FORMS  (values of rov:orgType)
+##############################################################################
+
+mbrc:LegalForms a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Legal Forms"@en , "Associationsformer"@sv ;
+    skos:definition "Nation-neutral kinds of legal form for membership organisations, used with rov:orgType from the W3C Registered Organization Vocabulary. They say whether and how an organisation is a legal person of its own, not which national statute it falls under. Where a jurisdiction has its own list (such as the ISO 20275 entity legal forms), map that list to these values with SKOS mapping properties."@en ,
+                    "Nationsneutrala slag av associationsform för medlemsorganisationer, används med rov:orgType från W3C:s Registered Organization Vocabulary. De anger om och hur en organisation är en egen juridisk person, inte under vilken nationell lag den faller. Där en jurisdiktion har en egen lista (som ISO 20275 för juridiska former) kopplas den listan till dessa värden med SKOS-kopplingar."@sv ;
+    skos:scopeNote "Compulsory memberships and economic-benefit memberships, such as professional chambers, mutual insurers and cooperatives whose members are customers, are outside the scope of the membership model and so of this list (compare the scope note on mbr:MembershipOrganization)."@en ,
+                   "Obligatoriska medlemskap och medlemskap för ekonomisk nytta, som yrkeskårer, ömsesidiga försäkringsbolag och kooperativ vars medlemmar är kunder, ligger utanför medlemsmodellen och därmed utanför den här listan (jämför omfattningsanmärkningen vid mbr:MembershipOrganization)."@sv ;
+    skos:hasTopConcept mbrc:unincorporated , mbrc:incorporatedAssociation ,
+                       mbrc:foundation , mbrc:company , mbrc:publicLawBody .
+
+mbrc:unincorporated a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
+    skos:prefLabel "Unincorporated"@en , "Utan juridisk person"@sv ;
+    skos:altLabel "Informal"@en , "Unincorporated association"@en , "Oregistrerad sammanslutning"@sv ;
+    skos:definition "A group that is not a legal person of its own: it cannot hold property or sign contracts in its own name, and its members or officers act in their own names. Includes informal circles (mbrc:informalCircle) and associations that have not completed the steps their law requires for legal personality."@en ,
+                    "En grupp som inte är en egen juridisk person: den kan inte äga egendom eller ingå avtal i eget namn, och medlemmarna eller funktionärerna agerar i eget namn. Hit hör informella sällskap (mbrc:informalCircle) och föreningar som inte tagit de steg som lagen kräver för att bli juridisk person."@sv ;
+    skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri."@en ;
+    skos:related mbrc:informalCircle .
+
+mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
+    skos:prefLabel "Incorporated association"@en , "Förening som juridisk person"@sv ;
+    skos:definition "A non-profit association that is a legal person of its own, whether it gets that status by registration or simply by adopting statutes and appointing a board."@en ,
+                    "En ideell sammanslutning som är en egen juridisk person, oavsett om den får den ställningen genom registrering eller bara genom att anta stadgar och utse en styrelse."@sv ;
+    skos:note "Example without registration: a Swedish ideell förening."@en ;
+    skos:narrower mbrc:registeredAssociation .
+
+mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:LegalForms ; skos:broader mbrc:incorporatedAssociation ;
+    skos:prefLabel "Registered association"@en , "Registrerad förening"@sv ;
+    skos:definition "An incorporated association that becomes a legal person by being entered in, or declared to, a public register. The register entry can carry an identifier (see rov:registration)."@en ,
+                    "En förening som blir juridisk person genom att föras in i eller anmälas till ett offentligt register. Registerposten kan ha ett identifierande nummer (se rov:registration)."@sv ;
+    skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L)."@en .
+
+mbrc:foundation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
+    skos:prefLabel "Foundation"@en , "Stiftelse"@sv ;
+    skos:definition "A legal person formed by dedicating assets to a purpose, with no members of its own. A membership organisation can be run or funded by a foundation."@en ,
+                    "En juridisk person som bildas genom att egendom avsätts för ett ändamål, utan egna medlemmar. En medlemsorganisation kan drivas eller finansieras av en stiftelse."@sv ;
+    skos:note "Examples: a French fondation (ISO 20275 ELF 9T5S); a German Stiftung des privaten Rechts (ELF V2YH)."@en .
+
+mbrc:company a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
+    skos:prefLabel "Company"@en , "Bolag"@sv ;
+    skos:definition "A legal person with owners or shareholders, used by proprietary clubs (see mbrc:proprietaryClub) and by clubs that are limited by guarantee."@en ,
+                    "En juridisk person med ägare eller aktieägare, som används av ägarklubbar (se mbrc:proprietaryClub) och av klubbar som är garantibegränsade."@sv .
+
+mbrc:publicLawBody a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
+    skos:prefLabel "Public-law body"@en , "Offentligrättslig juridisk person"@sv ;
+    skos:definition "A legal person created or recognised by public law, such as a state institution or a corporation of public law, as opposed to one formed by private agreement."@en ,
+                    "En juridisk person som skapats eller erkänns genom offentlig rätt, som en statlig institution eller en offentligrättslig korporation, till skillnad från en som bildats genom privat avtal."@sv ;
+    skos:note "Example: a German Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@en .

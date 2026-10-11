@@ -516,7 +516,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>An organisation whose participants are admitted as members and which exists for those members as a body: they share its purpose, premises or activities, and usually govern it themselves. Some clubs are instead owned by a proprietor or an institution (see mbr:ownershipModel). The kind of organisation is given with org:classification (see mbrc:OrganizationTypes).</p></td>
+              <td><p>An organisation whose participants are admitted as members and which exists for those members as a body: they share its purpose, premises or activities, and usually govern it themselves. Some clubs are instead owned by a proprietor or an institution (see mbr:ownershipModel). The kind of organisation is given with org:classification (see mbrc:OrganizationTypes). Its legal form is given with rov:orgType (see mbrc:LegalForms).</p></td>
             </tr>
             <tr>
               <th>
@@ -823,11 +823,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#MembershipOrganisation">Membership Organisation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -840,6 +835,11 @@ td {
                       </span>
                     </span><br>
                   </span>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#MembershipOrganisation">Membership Organisation</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>

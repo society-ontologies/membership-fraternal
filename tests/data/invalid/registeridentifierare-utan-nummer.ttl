@@ -1,0 +1,12 @@
+# EXPECT: registry identifier without skos:notation
+@prefix org:    <http://www.w3.org/ns/org#> .
+@prefix rov:    <http://www.w3.org/ns/regorg#> .
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+@prefix mbr:    <https://w3id.org/membership#> .
+@prefix mbrc:   <https://w3id.org/membership/code/> .
+@prefix ex:     <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:hobbyClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration ex:reg .
+ex:reg a adms:Identifier ; adms:schemaAgency "Exempelregistret" .
