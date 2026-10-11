@@ -391,7 +391,7 @@ fraternalc:noDogmaticRequirement a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:masonicRite a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Masonic Rite"@en , "Frimurarsystem"@sv , "Rite maçonnique"@fr ;
+    skos:prefLabel "Masonic Rite"@en , "Frimurarrit"@sv , "Rite maçonnique"@fr ;
     skos:definition "The ritual tradition a lodge or masonic body works, with its own wording of the ceremonies and its own series of higher degrees."@en ,
                     "Den ritualtradition en loge eller ett frimurarorgan arbetar efter, med egen lydelse av ceremonierna och egen följd av högre grader."@sv ,
                     "Tradition rituelle selon laquelle travaille une loge ou un corps maçonnique, avec sa propre rédaction des cérémonies et sa propre suite de hauts grades."@fr ;
@@ -403,7 +403,7 @@ fraternalc:ancientAndAcceptedScottishRite a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Ancient and Accepted Scottish Rite"@en , "Antika och accepterade skotska riten"@sv , "Rite écossais ancien et accepté"@fr ;
     skos:altLabel "AASR"@en , "REAA"@fr ;
     skos:definition "A masonic rite of thirty-three degrees, worked in France and in many other countries."@en ,
-                    "Ett frimurarsystem med trettiotre grader, som används i Frankrike och i många andra länder."@sv ,
+                    "En frimurarrit med trettiotre grader, som används i Frankrike och i många andra länder."@sv ,
                     "Rite maçonnique de trente-trois degrés, pratiqué en France et dans de nombreux autres pays."@fr .
 
 fraternalc:frenchRite a skos:Concept , owl:NamedIndividual ;
@@ -411,7 +411,7 @@ fraternalc:frenchRite a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "French Rite"@en , "Franska riten"@sv , "Rite français"@fr ;
     skos:altLabel "Modern Rite"@en , "Rite moderne"@fr , "RF"@fr ;
     skos:definition "The rite of the Grand Orient de France: the three craft degrees followed by a short series of higher orders."@en ,
-                    "Det system som Grand Orient de France arbetar efter: de tre symboliska graderna följda av en kort följd av högre ordnar."@sv ,
+                    "Den rit som Grand Orient de France arbetar efter: de tre symboliska graderna följda av en kort följd av högre ordnar."@sv ,
                     "Rite du Grand Orient de France : les trois degrés symboliques suivis d'une courte série d'ordres supérieurs."@fr .
 
 fraternalc:rectifiedScottishRite a skos:Concept , owl:NamedIndividual ;
@@ -419,7 +419,7 @@ fraternalc:rectifiedScottishRite a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Rectified Scottish Rite"@en , "Rektifierade skotska riten"@sv , "Rite écossais rectifié"@fr ;
     skos:altLabel "RER"@fr ;
     skos:definition "A rite descending from the Strict Observance, reformed at the Convent of Lyon in 1778, with a Christian-rooted ritual and chivalric higher degrees."@en ,
-                    "Ett system som härstammar från Strikt observans, reformerat vid konventet i Lyon 1778, med en kristet förankrad ritual och riddargrader som högre grader."@sv ,
+                    "En rit som härstammar från Strikt observans, reformerat vid konventet i Lyon 1778, med en kristet förankrad ritual och riddargrader som högre grader."@sv ,
                     "Rite issu de la Stricte Observance, réformé au convent de Lyon en 1778, au rituel d'inspiration chrétienne et aux grades supérieurs chevaleresques."@fr .
 
 ##############################################################################
