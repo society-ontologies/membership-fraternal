@@ -36,14 +36,14 @@ fraternalsh:DegreeShape a sh:NodeShape ;
     sh:property [ sh:path skos:inScheme ; sh:minCount 1 ;
                   sh:qualifiedValueShape [ sh:class fraternal:DegreeSystem ] ;
                   sh:qualifiedMinCount 1 ;
-                  sh:message "A degree must be in at least one fraternal:DegreeSystem. | En grad måste ingå i minst ett fraternal:DegreeSystem." ] ,
+                  sh:message "A degree must be in at least one fraternal:DegreeSystem. | En grad måste ingå i minst ett fraternal:DegreeSystem. | Un degré doit figurer dans au moins un fraternal:DegreeSystem." ] ,
                 [ sh:path fraternal:degreeRank ; sh:maxCount 1 ;
                   sh:datatype xsd:integer ; sh:minInclusive 1 ] ,
                 [ sh:path fraternal:nextDegree ; sh:maxCount 1 ; sh:class fraternal:Degree ] ,
                 [ sh:path fraternal:degreeKind ; sh:class skos:Concept ] ;
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "The next degree must be in the same degree system and have rank one higher. | Nästa grad måste ingå i samma gradsystem och ha ett gradnummer som är ett högre." ;
+        sh:message "The next degree must be in the same degree system and have rank one higher. | Nästa grad måste ingå i samma gradsystem och ha ett gradnummer som är ett högre. | Le degré suivant doit figurer dans le même système de degrés et avoir un rang supérieur d'une unité." ;
         sh:prefixes <https://w3id.org/fraternal/shapes> ;
         sh:select """
             SELECT $this ?next WHERE {
@@ -63,12 +63,12 @@ fraternalsh:DegreeRankOrKindShape a sh:NodeShape ;
     sh:targetClass fraternal:Degree ;
     sh:or ( [ sh:path fraternal:degreeRank ; sh:minCount 1 ]
             [ sh:path fraternal:degreeKind ; sh:minCount 1 ] ) ;
-    sh:message "A degree needs a fraternal:degreeRank, or a fraternal:degreeKind if it stands outside the numbered sequence. | En grad behöver ett fraternal:degreeRank, eller en fraternal:degreeKind om den står utanför den numrerade följden." .
+    sh:message "A degree needs a fraternal:degreeRank, or a fraternal:degreeKind if it stands outside the numbered sequence. | En grad behöver ett fraternal:degreeRank, eller en fraternal:degreeKind om den står utanför den numrerade följden. | Un degré a besoin d'un fraternal:degreeRank, ou d'un fraternal:degreeKind s'il se tient hors de la suite numérotée." .
 
 fraternalsh:DegreeConferralShape a sh:NodeShape ;
     sh:targetClass fraternal:DegreeConferral ;
     sh:property [ sh:path mbr:conferred ; sh:minCount 1 ; sh:maxCount 1 ; sh:class fraternal:Degree ;
-                  sh:message "A degree conferral needs exactly one conferred fraternal:Degree. | En gradtilldelning behöver exakt en tilldelad fraternal:Degree." ] .
+                  sh:message "A degree conferral needs exactly one conferred fraternal:Degree. | En gradtilldelning behöver exakt en tilldelad fraternal:Degree. | Une attribution de degré a besoin d'exactement un fraternal:Degree conféré." ] .
 
 fraternalsh:FraternalOrderShape a sh:NodeShape ;
     sh:targetClass fraternal:FraternalOrder ;
@@ -82,9 +82,9 @@ fraternalsh:FraternalOrderShape a sh:NodeShape ;
 fraternalsh:LegitimacyAssessmentShape a sh:NodeShape ;
     sh:targetClass fraternal:LegitimacyAssessment ;
     sh:property [ sh:path fraternal:assessedOrder ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
-                  sh:message "An assessment needs exactly one assessed order. | En bedömning behöver exakt en bedömd orden." ] ,
+                  sh:message "An assessment needs exactly one assessed order. | En bedömning behöver exakt en bedömd orden. | Une évaluation a besoin d'exactement un ordre évalué." ] ,
                 [ sh:path fraternal:assessedBy ; sh:minCount 1 ; sh:class foaf:Agent ;
-                  sh:message "An assessment needs the agent that made it (fraternal:assessedBy). | En bedömning behöver den agent som gjorde den (fraternal:assessedBy)." ] ,
+                  sh:message "An assessment needs the agent that made it (fraternal:assessedBy). | En bedömning behöver den agent som gjorde den (fraternal:assessedBy). | Une évaluation a besoin de l'agent qui l'a faite (fraternal:assessedBy)." ] ,
                 [ sh:path fraternal:assessmentOutcome ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ] ,
                 [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ] ,
                 [ sh:path dcterms:source ; sh:minCount 1 ; sh:severity sh:Warning ] .
