@@ -513,9 +513,10 @@ mbrc:death a skos:Concept , owl:NamedIndividual ;
 ##############################################################################
 
 mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Office Types"@en , "Ämbetstyper"@sv ;
+    skos:prefLabel "Office Types"@en , "Ämbetstyper"@sv , "Types de fonctions"@fr ;
     skos:definition "Generic offices found across clubs, societies and orders. Organisation-specific offices map to these."@en ,
-                    "Generiska ämbeten som förekommer i klubbar, sällskap och ordnar. Organisationsspecifika ämbeten mappas hit."@sv ;
+                    "Generiska ämbeten som förekommer i klubbar, sällskap och ordnar. Organisationsspecifika ämbeten mappas hit."@sv ,
+                    "Fonctions génériques que l'on trouve dans les clubs, sociétés et ordres. Les fonctions propres à une organisation y sont associées."@fr ;
     skos:hasTopConcept mbrc:president , mbrc:vicePresident , mbrc:chancellor , mbrc:secretary , mbrc:treasurer ,
                        mbrc:archivist , mbrc:librarian , mbrc:chaplain , mbrc:masterOfCeremonies ,
                        mbrc:herald , mbrc:provost , mbrc:introducer , mbrc:steward ,
@@ -525,36 +526,39 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
 
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "President"@en , "Ordförande"@sv ;
-    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv ;
-    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv ;
+    skos:prefLabel "President"@en , "Ordförande"@sv , "Président"@fr ;
+    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv , "Grand Maître"@fr ;
+    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv , "Le premier responsable exécutif de l'organisation."@fr ;
     skos:scopeNote "Whatever the head is called locally (grand master, chancellor, governor …), map the head's office here and keep the local title as its label."@en ,
-                   "Vad den högste ämbetsmannen än kallas lokalt (stormästare, kansler, guvernör …) mappas ämbetet hit och den lokala titeln behålls som dess etikett."@sv .
+                   "Vad den högste ämbetsmannen än kallas lokalt (stormästare, kansler, guvernör …) mappas ämbetet hit och den lokala titeln behålls som dess etikett."@sv ,
+                   "Quel que soit le nom local du chef (grand maître, chancelier, gouverneur …), associer ici la fonction du chef et conserver le titre local comme libellé."@fr .
 
 mbrc:vicePresident a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Vice President"@en , "Vice ordförande"@sv ;
-    skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv .
+    skos:prefLabel "Vice President"@en , "Vice ordförande"@sv , "Vice-président"@fr ;
+    skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv , "Suppléant du premier responsable."@fr .
 
 mbrc:chancellor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Chancellor"@en , "Kansler"@sv ;
-    skos:altLabel "Grand Chancellor"@en , "Ordenskansler"@sv , "Storkansler"@sv ;
+    skos:prefLabel "Chancellor"@en , "Kansler"@sv , "Chancelier"@fr ;
+    skos:altLabel "Grand Chancellor"@en , "Ordenskansler"@sv , "Storkansler"@sv , "Grand chancelier"@fr ;
     skos:definition "The officer who keeps an order's seal, statutes and records of admissions and conferrals, usually second to the head."@en ,
-                    "Den ämbetsman som förvarar en ordens sigill, stadgar och förteckningar över upptagningar och tilldelningar, vanligen närmast under den högste ämbetsmannen."@sv ;
+                    "Den ämbetsman som förvarar en ordens sigill, stadgar och förteckningar över upptagningar och tilldelningar, vanligen närmast under den högste ämbetsmannen."@sv ,
+                    "Officier qui garde le sceau, les statuts et les registres d'admission et de remise des distinctions d'un ordre, en général le second après le chef."@fr ;
     skos:scopeNote "Where the chancellor is the head of the order, record that office as mbrc:president."@en ,
-                   "Där kanslern är ordens högste ämbetsman anges ämbetet som mbrc:president."@sv .
+                   "Där kanslern är ordens högste ämbetsman anges ämbetet som mbrc:president."@sv ,
+                   "Lorsque le chancelier est le chef de l'ordre, consigner cette fonction comme mbrc:president."@fr .
 
 mbrc:secretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Secretary"@en , "Sekreterare"@sv ;
-    skos:definition "Keeps minutes, the register of members and official correspondence."@en , "För protokoll, matrikel och officiell korrespondens."@sv .
+    skos:prefLabel "Secretary"@en , "Sekreterare"@sv , "Secrétaire"@fr ;
+    skos:definition "Keeps minutes, the register of members and official correspondence."@en , "För protokoll, matrikel och officiell korrespondens."@sv , "Tient les procès-verbaux, le registre des membres et la correspondance officielle."@fr .
 
 mbrc:treasurer a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Treasurer"@en , "Skattmästare"@sv ;
+    skos:prefLabel "Treasurer"@en , "Skattmästare"@sv , "Trésorier"@fr ;
     skos:altLabel "Kassör"@sv ;
-    skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv .
+    skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv , "Gère les finances de l'organisation."@fr .
 
 mbrc:archivist a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
@@ -568,29 +572,29 @@ mbrc:librarian a mbr:Office , skos:Concept , owl:NamedIndividual ;
 
 mbrc:chaplain a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Chaplain"@en , "Kaplan"@sv ;
-    skos:definition "Leads the spiritual or reflective parts of ceremonies."@en , "Leder de andliga eller reflekterande inslagen i ceremonier."@sv .
+    skos:prefLabel "Chaplain"@en , "Kaplan"@sv , "Aumônier"@fr ;
+    skos:definition "Leads the spiritual or reflective parts of ceremonies."@en , "Leder de andliga eller reflekterande inslagen i ceremonier."@sv , "Dirige les parties spirituelles ou de recueillement des cérémonies."@fr .
 
 mbrc:masterOfCeremonies a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Master of Ceremonies"@en , "Ceremonimästare"@sv ;
-    skos:definition "Responsible for rituals, ceremonies and formal events."@en , "Ansvarar för ritualer, ceremonier och formella tillställningar."@sv .
+    skos:prefLabel "Master of Ceremonies"@en , "Ceremonimästare"@sv , "Maître des cérémonies"@fr ;
+    skos:definition "Responsible for rituals, ceremonies and formal events."@en , "Ansvarar för ritualer, ceremonier och formella tillställningar."@sv , "Responsable des rites, des cérémonies et des manifestations solennelles."@fr .
 
 mbrc:herald a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Herald"@en , "Härold"@sv ;
-    skos:definition "Makes official proclamations and assists at ceremonies."@en , "Utropar officiella meddelanden och biträder vid ceremonier."@sv .
+    skos:prefLabel "Herald"@en , "Härold"@sv , "Héraut"@fr ;
+    skos:definition "Makes official proclamations and assists at ceremonies."@en , "Utropar officiella meddelanden och biträder vid ceremonier."@sv , "Fait les proclamations officielles et assiste lors des cérémonies."@fr .
 
 mbrc:provost a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Provost"@en , "Profoss"@sv ;
-    skos:altLabel "Sergeant-at-Arms"@en , "Tyler"@en ;
-    skos:definition "Keeps order and discipline at gatherings."@en , "Upprätthåller ordning och disciplin vid sammankomster."@sv .
+    skos:prefLabel "Provost"@en , "Profoss"@sv , "Prévôt"@fr ;
+    skos:altLabel "Sergeant-at-Arms"@en , "Tyler"@en , "Couvreur"@fr , "Sergent d'armes"@fr ;
+    skos:definition "Keeps order and discipline at gatherings."@en , "Upprätthåller ordning och disciplin vid sammankomster."@sv , "Maintient l'ordre et la discipline lors des réunions."@fr .
 
 mbrc:introducer a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Introducer"@en , "Introduktör"@sv ;
-    skos:definition "Introduces new members and guests."@en , "Introducerar nya medlemmar och gäster."@sv .
+    skos:prefLabel "Introducer"@en , "Introduktör"@sv , "Introducteur"@fr ;
+    skos:definition "Introduces new members and guests."@en , "Introducerar nya medlemmar och gäster."@sv , "Présente les nouveaux membres et les invités."@fr .
 
 mbrc:steward a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
