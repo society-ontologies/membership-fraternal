@@ -131,9 +131,9 @@ fraternal:DegreeSystem a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf skos:ConceptScheme ;
     rdfs:label "Degree System"@en , "Gradsystem"@sv , "Système de degrés"@fr ;
-    skos:definition "The ordered set of degrees of an order (a rite). Each order's grade codelist is a DegreeSystem."@en ,
-                    "Den ordnade mängden grader i en orden (ett system). Varje ordens gradlista är ett Gradsystem."@sv ,
-                    "L'ensemble ordonné des degrés d'un ordre (un rite). La liste de grades de chaque ordre est un système de degrés."@fr .
+    skos:definition "The ordered set of degrees of an order, its ladder. Each order's grade codelist is a DegreeSystem. Not the same as a rite, the ritual tradition an order works (see fraternalc:masonicRite)."@en ,
+                    "Den ordnade mängden grader i en orden, dess gradstege. Varje ordens gradlista är ett Gradsystem. Inte detsamma som en rit, den ritualtradition en orden arbetar efter (se fraternalc:masonicRite)."@sv ,
+                    "L'ensemble ordonné des degrés d'un ordre, son échelle. La liste de grades de chaque ordre est un système de degrés. À ne pas confondre avec un rite, la tradition rituelle que pratique l'ordre (voir fraternalc:masonicRite)."@fr .
 
 fraternal:Degree a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
