@@ -15,3 +15,4 @@ fraternalc:installation	Installation of Officers	skos:broadMatch	mbrc:ceremony	C
 fraternalc:memorialCeremony	Memorial Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
 fraternalc:festiveBoard	Festive Board	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	The ritual meal that follows a ceremony; fraternalc:CeremonyTypes counts it as a kind of ceremony.
 fraternalc:patronsFeast	Patron's Feast	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	A feast in honour of the order's patron; fraternalc:CeremonyTypes counts it as a kind of ceremony.
+fraternalc:openMeeting	Open Meeting	skos:broadMatch	mbrc:meeting	Meeting	semapv:ManualMappingCuration	0.8	No ritual is worked, so it is a kind of meeting and not of mbrc:ceremony.
