@@ -355,25 +355,33 @@ mbrc:studentSociety a skos:Concept , owl:NamedIndividual ;
 
 mbrc:guild a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Guild"@en , "Skrå"@sv , "Corporazione di mestiere"@it ;
+    skos:prefLabel "Guild"@en , "Skrå"@sv , "Corporazione di mestiere"@it , "Corporation de métier"@fr , "Zunft"@de ;
     skos:altLabel "Arte"@it , "Gille"@sv ;
     skos:definition "An association of the practitioners of one trade or craft in a town, founded to regulate the trade and look after its members: a medieval guild, a livery company, a Zunft, an Italian arte."@en ,
                     "En sammanslutning av utövarna av ett hantverk eller yrke i en stad, bildad för att reglera yrket och ta hand om sina medlemmar: ett medeltida skrå, en livery company, en Zunft, en italiensk arte."@sv ,
-                    "Associazione dei praticanti di un mestiere o di un'arte in una città, nata per regolare il mestiere e provvedere ai propri membri: una gilda medievale, una livery company, una Zunft, un'arte italiana."@it ;
+                    "Associazione dei praticanti di un mestiere o di un'arte in una città, nata per regolare il mestiere e provvedere ai propri membri: una gilda medievale, una livery company, una Zunft, un'arte italiana."@it ,
+                    "Association des praticiens d'un métier ou d'un art dans une ville, fondée pour réglementer le métier et veiller sur ses membres : une guilde médiévale, une livery company, une Zunft, une arte italienne."@fr ,
+                    "Ein Zusammenschluss der Ausübenden eines Handwerks oder Gewerbes in einer Stadt, gegründet, um das Gewerbe zu regeln und für seine Mitglieder zu sorgen: eine mittelalterliche Gilde, eine Livery Company, eine Zunft, eine italienische Arte."@de ;
     skos:scopeNote "A brotherhood that passes a trade on through initiation, ritual and stages of membership is fraternalc:craftBrotherhood. A body that only represents a trade today is a mbrc:professionalClub or a mbrc:tradeUnion, not a guild; use this type for organisations that call themselves guilds or continue a historic one."@en ,
                    "Ett brödraskap som för ett yrke vidare genom initiering, ritual och medlemsstadier är fraternalc:craftBrotherhood. Ett organ som i dag bara företräder ett yrke är en mbrc:professionalClub eller en mbrc:tradeUnion, inte ett skrå; använd typen för organisationer som kallar sig skrå eller för ett historiskt skrå vidare."@sv ,
-                   "Una confraternita che trasmette un mestiere con iniziazione, rituale e stadi di appartenenza è fraternalc:craftBrotherhood. Un organismo che oggi si limita a rappresentare un mestiere è un mbrc:professionalClub o un mbrc:tradeUnion, non una corporazione; questo tipo vale per le organizzazioni che si dicono corporazioni o che ne proseguono una storica."@it .
+                   "Una confraternita che trasmette un mestiere con iniziazione, rituale e stadi di appartenenza è fraternalc:craftBrotherhood. Un organismo che oggi si limita a rappresentare un mestiere è un mbrc:professionalClub o un mbrc:tradeUnion, non una corporazione; questo tipo vale per le organizzazioni che si dicono corporazioni o che ne proseguono una storica."@it ,
+                   "Une fraternité qui transmet un métier par l'initiation, le rituel et des étapes d'appartenance est un fraternalc:craftBrotherhood. Un organisme qui ne fait aujourd'hui que représenter un métier est un mbrc:professionalClub ou un mbrc:tradeUnion, non une corporation de métier ; ce type vaut pour les organisations qui se disent corporations de métier ou qui en poursuivent une historique."@fr ,
+                   "Eine Bruderschaft, die ein Gewerbe durch Aufnahme, Ritual und Mitgliedschaftsstufen weitergibt, ist fraternalc:craftBrotherhood. Eine Einrichtung, die heute nur ein Gewerbe vertritt, ist ein mbrc:professionalClub oder eine mbrc:tradeUnion, keine Zunft; dieser Typ gilt für Organisationen, die sich Zunft oder Gilde nennen oder eine historische fortführen."@de .
 
 mbrc:contrada a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Contrada"@en , "Contrada"@sv , "Contrada"@it ;
+    skos:prefLabel "Contrada"@en , "Contrada"@sv , "Contrada"@it , "Contrada"@fr , "Contrada"@de ;
     skos:altLabel "Neighbourhood society"@en , "Kvartersförening"@sv ;
     skos:definition "A society tied to a district of a town, whose members, the contradaioli, belong to it from birth or baptism and which carries its district's colours and traditions into a civic festival, as the seventeen contrade of Siena do in the Palio."@en ,
                     "Ett sällskap knutet till en stadsdel, vars medlemmar, contradaioli, hör till det från födseln eller dopet och som för sin stadsdels färger och traditioner in i en stadsfest, som Sienas sjutton contrade gör i Palio."@sv ,
-                    "Società legata a un rione della città, i cui membri, i contradaioli, ne fanno parte dalla nascita o dal battesimo e che porta i colori e le tradizioni del proprio rione in una festa civica, come le diciassette contrade di Siena nel Palio."@it ;
+                    "Società legata a un rione della città, i cui membri, i contradaioli, ne fanno parte dalla nascita o dal battesimo e che porta i colori e le tradizioni del proprio rione in una festa civica, come le diciassette contrade di Siena nel Palio."@it ,
+                    "Société liée à un quartier d'une ville, dont les membres, les contradaioli, lui appartiennent dès la naissance ou le baptême et qui porte les couleurs et les traditions de son quartier dans une fête civique, comme les dix-sept contrade de Sienne dans le Palio."@fr ,
+                    "Eine an einen Stadtteil gebundene Gesellschaft, deren Mitglieder, die Contradaioli, ihr von Geburt oder Taufe an angehören und die die Farben und Traditionen ihres Stadtteils in ein Stadtfest trägt, wie die siebzehn Contrade von Siena beim Palio."@de ;
     skos:scopeNote "Membership by birth and baptism has no value of its own in mbrc:AdmissionModes; the closest is mbrc:hereditary. The head of a contrada, the priore, is recorded as mbrc:president with the local title as label; the capitano, who leads the contrada in the contest, is a local office."@en ,
                    "Medlemskap genom födelse och dop har inget eget värde i mbrc:AdmissionModes; närmast är mbrc:hereditary. En contradas chef, priore, anges som mbrc:president med den lokala titeln som etikett; capitano, som leder contradan i tävlingen, är ett lokalt ämbete."@sv ,
-                   "L'appartenenza per nascita e battesimo non ha un valore proprio in mbrc:AdmissionModes; il più vicino è mbrc:hereditary. Il capo di una contrada, il priore, si registra come mbrc:president con il titolo locale come etichetta; il capitano, che guida la contrada nella gara, è un ufficio locale."@it .
+                   "L'appartenenza per nascita e battesimo non ha un valore proprio in mbrc:AdmissionModes; il più vicino è mbrc:hereditary. Il capo di una contrada, il priore, si registra come mbrc:president con il titolo locale come etichetta; il capitano, che guida la contrada nella gara, è un ufficio locale."@it ,
+                   "L'appartenance par la naissance et le baptême n'a pas de valeur propre dans mbrc:AdmissionModes ; le plus proche est mbrc:hereditary. Le chef d'une contrada, le priore, est consigné comme mbrc:president avec le titre local pour libellé ; le capitano, qui conduit la contrada dans la course, est une fonction locale."@fr ,
+                   "Die Mitgliedschaft durch Geburt und Taufe hat in mbrc:AdmissionModes keinen eigenen Wert; am nächsten liegt mbrc:hereditary. Das Oberhaupt einer Contrada, der Priore, wird als mbrc:president mit dem örtlichen Titel als Bezeichnung erfasst; der Capitano, der die Contrada im Wettkampf führt, ist ein örtliches Amt."@de .
 
 mbrc:fraternalOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
@@ -928,10 +936,12 @@ mbrc:eventLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
 
 mbrc:auditor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Auditor"@en , "Revisor"@sv , "Revisore dei conti"@it ;
+    skos:prefLabel "Auditor"@en , "Revisor"@sv , "Revisore dei conti"@it , "Vérificateur aux comptes"@fr , "Rechnungsprüfer"@de ;
     skos:definition "Checks the organisation's accounts and the board's management of them, independently of the board, and reports to the members."@en ,
                     "Granskar organisationens räkenskaper och styrelsens förvaltning av dem, oberoende av styrelsen, och rapporterar till medlemmarna."@sv ,
-                    "Controlla i conti dell'organizzazione e la gestione che ne fa il direttivo, in modo indipendente da questo, e riferisce ai soci."@it .
+                    "Controlla i conti dell'organizzazione e la gestione che ne fa il direttivo, in modo indipendente da questo, e riferisce ai soci."@it ,
+                    "Contrôle les comptes de l'organisation et la gestion qu'en fait le bureau, indépendamment de celui-ci, et rend compte aux membres."@fr ,
+                    "Prüft die Rechnungsführung der Organisation und die Verwaltung durch den Vorstand, unabhängig von diesem, und berichtet den Mitgliedern."@de .
 
 ##############################################################################
 # 6. GATHERING TYPES
