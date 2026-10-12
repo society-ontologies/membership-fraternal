@@ -497,8 +497,10 @@ mbrsh:OrganizationPeriodContentShape a sh:NodeShape ;
     sh:or ( [ sh:path mbr:genderPolicy ; sh:minCount 1 ]
             [ sh:path mbr:admissionMode ; sh:minCount 1 ]
             [ sh:path mbr:ownershipModel ; sh:minCount 1 ]
-            [ sh:path mbr:organizationStatus ; sh:minCount 1 ] ) ;
-    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel and mbr:organizationStatus. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel och mbr:organizationStatus." .
+            [ sh:path mbr:organizationStatus ; sh:minCount 1 ]
+            [ sh:path mbr:organizationType ; sh:minCount 1 ]
+            [ sh:path mbr:legalForm ; sh:minCount 1 ] ) ;
+    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm." .
 
 mbrsh:OrganizationPeriodShape a sh:NodeShape ;
     sh:targetClass mbr:OrganizationPeriod ;
@@ -517,6 +519,12 @@ mbrsh:OrganizationPeriodShape a sh:NodeShape ;
                 [ sh:path mbr:organizationStatus ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:OrganizationStatusValue ;
                   sh:message "mbr:organizationStatus must be one concept in mbrc:OrganizationStatuses, or one mapped to it. | mbr:organizationStatus ska vara ett begrepp i mbrc:OrganizationStatuses, eller ett som är mappat dit." ] ,
+                [ sh:path mbr:organizationType ; sh:class skos:Concept ;
+                  sh:node mbrsh:OrganizationTypeValue ;
+                  sh:message "mbr:organizationType must be a concept in mbrc:OrganizationTypes, or one mapped to it. | mbr:organizationType ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit." ] ,
+                [ sh:path mbr:legalForm ; sh:class skos:Concept ;
+                  sh:node mbrsh:LegalFormValue ;
+                  sh:message "mbr:legalForm must be a concept in mbrc:LegalForms, or one mapped to it. | mbr:legalForm ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit." ] ,
                 [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ;
                   sh:message "Give the date from which the period applies (mbr:startDate). | Ange från vilket datum perioden gäller (mbr:startDate)." ] ;
 
@@ -524,8 +532,9 @@ mbrsh:OrganizationPeriodShape a sh:NodeShape ;
     # at once. Reported only when two periods certainly overlap: both have a start and an end,
     # and the latest each could start is before the earliest the other could end (dates
     # compared as in mbrsh:EndDateShape). A period that ends on the day another starts, or
-    # that has no end date, is not reported. mbr:admissionMode is left out: an organisation
-    # may admit in several ways at once.
+    # that has no end date, is not reported. mbr:admissionMode, mbr:organizationType and
+    # mbr:legalForm are left out: an organisation may admit in several ways, have several
+    # types and, in some jurisdictions, more than one legal form at once.
     sh:sparql [
         a sh:SPARQLConstraint ;
         sh:message "The organisation has two different values of {?p} in periods that certainly overlap ({?other}). | Organisationen har två olika värden på {?p} i perioder som säkert överlappar ({?other})." ;

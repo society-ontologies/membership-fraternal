@@ -6,6 +6,9 @@
 #   * the club's ownership changed, and the later decision was made with
 #     retroactive effect (decision date after the start);
 #   * one period can carry several properties changed at once;
+#   * the club's type and legal form changed too (a dining club that became a
+#     gentlemen's club; an unincorporated club that became an incorporated
+#     association), with mbr:organizationType and mbr:legalForm on periods;
 #   * periods meet on a shared year or day without overlapping, and the open last
 #     period has no stated end.
 # The registered current picture stays on the organisation itself.
@@ -15,6 +18,7 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix mbr:     <https://w3id.org/membership#> .
 @prefix mbrc:    <https://w3id.org/membership/code/> .
@@ -27,10 +31,13 @@ th:Thistledown a mbr:MembershipOrganization ;
     mbr:genderPolicy mbrc:mixed ;
     mbr:ownershipModel mbrc:membersClub ;
     mbr:organizationStatus mbrc:activeOrganization ;
+    rov:orgType mbrc:incorporatedAssociation ;
     mbr:foundingDate "1831"^^xsd:gYear ;
     mbr:hasPeriod th:policy-menonly , th:policy-mixed ,
                   th:owner-proprietor , th:owner-members ,
-                  th:wartime-dormancy .
+                  th:wartime-dormancy ,
+                  th:type-dining , th:type-gentlemens ,
+                  th:form-unincorporated , th:form-association .
 
 # --- Gender policy ---
 
@@ -67,3 +74,26 @@ th:wartime-dormancy a mbr:OrganizationPeriod ;
     mbr:admissionMode mbrc:byInvitation ;
     mbr:startDate "1940"^^xsd:gYear ;
     mbr:endDate "1945"^^xsd:gYear .
+
+# --- Organisation type and legal form ---
+# org:classification and rov:orgType stay on the club as its current picture. The
+# earlier values are kept on periods, with their own properties.
+
+th:type-dining a mbr:OrganizationPeriod ;
+    mbr:organizationType mbrc:diningClub ;
+    mbr:startDate "1831"^^xsd:gYear ;
+    mbr:endDate "1870"^^xsd:gYear .
+
+th:type-gentlemens a mbr:OrganizationPeriod ;
+    mbr:organizationType mbrc:gentlemensClub ;
+    mbr:startDate "1870"^^xsd:gYear .
+
+th:form-unincorporated a mbr:OrganizationPeriod ;
+    mbr:legalForm mbrc:unincorporated ;
+    mbr:startDate "1831"^^xsd:gYear ;
+    mbr:endDate "1923-05-01"^^xsd:date .
+
+th:form-association a mbr:OrganizationPeriod ;
+    mbr:legalForm mbrc:incorporatedAssociation ;
+    mbr:decisionDate "1923-03-12"^^xsd:date ;
+    mbr:startDate "1923-05-01"^^xsd:date .
