@@ -26,7 +26,8 @@
     owl:imports <https://w3id.org/membership> ;
     dcterms:title "Membership Organisations — codelists"@en ,
                   "Medlemsorganisationer — kodlistor"@sv ,
-                  "Organisations de membres — listes de codes"@fr ;
+                  "Organisations de membres — listes de codes"@fr ,
+                  "Mitgliederorganisationen – Codelisten"@de ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
     dcterms:modified "2026-10-09"^^xsd:date ;
@@ -47,284 +48,322 @@
 ##############################################################################
 
 mbrc:OrganizationTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Organisation Types"@en , "Organisationstyper"@sv , "Types d'organisations"@fr ;
+    skos:prefLabel "Organisation Types"@en , "Organisationstyper"@sv , "Types d'organisations"@fr , "Organisationsarten"@de ;
     skos:definition "Kinds of membership organisation, used with org:classification. The fraternal codelists extend the fraternal branch."@en ,
                     "Typer av medlemsorganisationer, används med org:classification. Kodlistorna i fraternal utökar grenen för ordenssällskap."@sv ,
-                    "Sortes d'organisations de membres, utilisées avec org:classification. Les listes de codes de fraternal étendent la branche des ordres fraternels."@fr ;
+                    "Sortes d'organisations de membres, utilisées avec org:classification. Les listes de codes de fraternal étendent la branche des ordres fraternels."@fr ,
+                    "Arten von Mitgliederorganisationen, verwendet mit org:classification. Die Codelisten von fraternal erweitern den Zweig der Ordensgesellschaften."@de ;
     skos:hasTopConcept mbrc:voluntaryAssociation .
 
 mbrc:voluntaryAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:topConceptOf mbrc:OrganizationTypes ;
-    skos:prefLabel "Voluntary Association"@en , "Frivillig sammanslutning"@sv , "Association volontaire"@fr ;
+    skos:prefLabel "Voluntary Association"@en , "Frivillig sammanslutning"@sv , "Association volontaire"@fr , "Freiwillige Vereinigung"@de ;
     skos:altLabel "ideell förening"@sv ;
     skos:definition "A group of people who join together voluntarily for a shared purpose."@en ,
                     "En grupp människor som frivilligt går samman för ett gemensamt syfte."@sv ,
-                    "Groupe de personnes qui se réunissent volontairement dans un but commun."@fr ;
+                    "Groupe de personnes qui se réunissent volontairement dans un but commun."@fr ,
+                    "Eine Gruppe von Menschen, die sich freiwillig für einen gemeinsamen Zweck zusammenschließen."@de ;
     skos:narrower mbrc:club , mbrc:society , mbrc:informalCircle , mbrc:fraternalOrganization ,
                   mbrc:politicalParty , mbrc:tradeUnion .
 
 mbrc:informalCircle a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
-    skos:prefLabel "Informal Circle"@en , "Kotteri"@sv , "Cercle informel"@fr ;
+    skos:prefLabel "Informal Circle"@en , "Kotteri"@sv , "Cercle informel"@fr , "Informeller Kreis"@de ;
     skos:altLabel "Coterie"@en , "Circle of Friends"@en , "Vänkrets"@sv , "Umgängeskrets"@sv ,
                   "Coterie"@fr , "Cercle d'amis"@fr , "Freundeskreis"@de ;
     skos:definition "A relatively closed company of friends or associates without legal status or registration, held together by friendship or invitation rather than formal admission. It may be a temporary group that keeps together at a larger gathering, or a more lasting circle of friends, often formed to arrange or take part in an occasion such as a ball, a banquet or a student celebration."@en ,
                     "Ett relativt slutet sällskap av vänner eller bekanta utan rättslig status eller registrering, som hålls samman av vänskap eller inbjudan snarare än av formellt upptagande. Det kan vara en tillfällig grupp som håller ihop vid ett större samkväm, eller en mer varaktig vänkrets, ofta bildad för att ordna eller delta i en tillställning som en bal, en bankett eller ett studentfirande."@sv ,
-                    "Compagnie relativement fermée d'amis ou de relations, sans statut juridique ni enregistrement, unie par l'amitié ou l'invitation plutôt que par une admission formelle. Ce peut être un groupe provisoire qui reste ensemble lors d'une réunion plus large, ou un cercle d'amis plus durable, souvent formé pour organiser ou prendre part à une occasion comme un bal, un banquet ou une fête étudiante."@fr ;
+                    "Compagnie relativement fermée d'amis ou de relations, sans statut juridique ni enregistrement, unie par l'amitié ou l'invitation plutôt que par une admission formelle. Ce peut être un groupe provisoire qui reste ensemble lors d'une réunion plus large, ou un cercle d'amis plus durable, souvent formé pour organiser ou prendre part à une occasion comme un bal, un banquet ou une fête étudiante."@fr ,
+                    "Eine verhältnismäßig geschlossene Gesellschaft von Freunden oder Bekannten ohne Rechtsstatus und ohne Eintragung, die durch Freundschaft oder Einladung statt durch förmliche Aufnahme zusammengehalten wird. Es kann eine vorübergehende Gruppe sein, die bei einer größeren Zusammenkunft zusammenbleibt, oder ein dauerhafterer Freundeskreis, oft gebildet, um einen Anlass wie einen Ball, ein Bankett oder eine Studentenfeier auszurichten oder daran teilzunehmen."@de ;
     skos:scopeNote "The Swedish word kotteri, from French coterie, is often used in a derogatory sense of a clique that favours its own. That is a judgement, not a kind of organisation, and is not what this code records. The organiser of a gathering is given with mbr:organizer; compare mbrc:diningClub, a club that meets regularly for dinner."@en ,
                    "Ordet kotteri, av franskans coterie, används ofta i nedsättande mening om en klick som gynnar sina egna. Det är en bedömning och inte en slags organisation, och är inte vad den här koden anger. Den som ordnar en tillställning anges med mbr:organizer; jämför mbrc:diningClub, en klubb som regelbundet träffas för middag."@sv ,
-                   "Le mot suédois kotteri, issu du français coterie, s'emploie souvent de façon péjorative pour une clique qui favorise les siens. C'est un jugement et non un genre d'organisation, et ce n'est pas ce que ce code enregistre. L'organisateur d'une réunion est indiqué avec mbr:organizer ; comparer mbrc:diningClub, club qui se réunit régulièrement pour dîner."@fr .
+                   "Le mot suédois kotteri, issu du français coterie, s'emploie souvent de façon péjorative pour une clique qui favorise les siens. C'est un jugement et non un genre d'organisation, et ce n'est pas ce que ce code enregistre. L'organisateur d'une réunion est indiqué avec mbr:organizer ; comparer mbrc:diningClub, club qui se réunit régulièrement pour dîner."@fr ,
+                   "Das schwedische Wort kotteri, vom französischen coterie, wird oft abwertend für eine Clique gebraucht, die die Ihren begünstigt. Das ist ein Urteil und keine Art von Organisation und wird mit diesem Code nicht erfasst. Der Ausrichter einer Zusammenkunft wird mit mbr:organizer angegeben; vergleiche mbrc:diningClub, einen Club, der sich regelmäßig zum Essen trifft."@de .
 
 mbrc:club a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
-    skos:prefLabel "Club"@en , "Klubb"@sv , "Club"@fr ;
+    skos:prefLabel "Club"@en , "Klubb"@sv , "Club"@fr , "Club"@de ;
     skos:definition "An association of people for social or recreational purposes or for a shared interest."@en ,
                     "En sammanslutning för sällskapsliv, rekreation eller ett gemensamt intresse."@sv ,
-                    "Association de personnes à but social ou récréatif ou autour d'un intérêt commun."@fr ;
+                    "Association de personnes à but social ou récréatif ou autour d'un intérêt commun."@fr ,
+                    "Ein Zusammenschluss von Menschen zu geselligen oder erholsamen Zwecken oder für ein gemeinsames Interesse."@de ;
     skos:narrower mbrc:privateClub , mbrc:diningClub , mbrc:countryClub , mbrc:armedForcesClub ,
                   mbrc:facultyClub , mbrc:sportsClub , mbrc:literaryClub , mbrc:serviceClub ,
                   mbrc:hobbyClub , mbrc:supportersClub .
 
 mbrc:privateClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Private Club"@en , "Privat klubb"@sv , "Club privé"@fr ;
+    skos:prefLabel "Private Club"@en , "Privat klubb"@sv , "Club privé"@fr , "Privatclub"@de ;
     skos:definition "A club with exclusive membership, usually admitting members by proposal and election."@en ,
                     "En klubb med slutet medlemskap, där medlemmar vanligen upptas efter förslag och val."@sv ,
-                    "Club à admission fermée, qui reçoit en général ses membres sur proposition et élection ; en France, un cercle."@fr ;
+                    "Club à admission fermée, qui reçoit en général ses membres sur proposition et élection ; en France, un cercle."@fr ,
+                    "Ein Club mit exklusiver Mitgliedschaft, der Mitglieder in der Regel auf Vorschlag und durch Wahl aufnimmt."@de ;
     skos:narrower mbrc:gentlemensClub , mbrc:ladiesClub , mbrc:politicalClub , mbrc:universityClub ,
                   mbrc:professionalClub , mbrc:artsClub .
 
 mbrc:gentlemensClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
-    skos:prefLabel "Gentlemen's Club"@en , "Herrklubb"@sv , "Club pour hommes"@fr ;
+    skos:prefLabel "Gentlemen's Club"@en , "Herrklubb"@sv , "Club pour hommes"@fr , "Herrenclub"@de ;
     skos:definition "A private social club traditionally for men, usually with its own clubhouse."@en ,
                     "En privat sällskapsklubb traditionellt för män, vanligen med eget klubbhus."@sv ,
-                    "Club social privé traditionnellement réservé aux hommes, en général doté de son propre local ; en France, un cercle."@fr .
+                    "Club social privé traditionnellement réservé aux hommes, en général doté de son propre local ; en France, un cercle."@fr ,
+                    "Ein privater geselliger Club, traditionell für Männer, meist mit eigenem Clubhaus."@de .
 
 mbrc:ladiesClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
-    skos:prefLabel "Ladies' Club"@en , "Damklubb"@sv , "Club pour femmes"@fr ;
+    skos:prefLabel "Ladies' Club"@en , "Damklubb"@sv , "Club pour femmes"@fr , "Damenclub"@de ;
     skos:altLabel "Women's Club"@en , "Club féminin"@fr ;
     skos:definition "A private social club for women."@en ,
                     "En privat sällskapsklubb för kvinnor."@sv ,
-                    "Club social privé pour femmes."@fr .
+                    "Club social privé pour femmes."@fr ,
+                    "Ein privater geselliger Club für Frauen."@de .
 
 mbrc:politicalClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
-    skos:prefLabel "Political Club"@en , "Politisk klubb"@sv , "Club politique"@fr ;
+    skos:prefLabel "Political Club"@en , "Politisk klubb"@sv , "Club politique"@fr , "Politischer Club"@de ;
     skos:definition "A private club whose members share an allegiance to a political party or tradition."@en ,
                     "En privat klubb vars medlemmar delar tillhörighet till ett politiskt parti eller en politisk tradition."@sv ,
-                    "Club privé dont les membres partagent l'adhésion à un parti ou à une tradition politique."@fr ;
+                    "Club privé dont les membres partagent l'adhésion à un parti ou à une tradition politique."@fr ,
+                    "Ein privater Club, dessen Mitglieder einer politischen Partei oder Richtung verbunden sind."@de ;
     skos:scopeNote "Not a political party: use mbrc:politicalParty for the party itself."@en ,
                    "Inte ett politiskt parti: använd mbrc:politicalParty för själva partiet."@sv ,
-                   "Pas un parti politique : utiliser mbrc:politicalParty pour le parti lui-même."@fr .
+                   "Pas un parti politique : utiliser mbrc:politicalParty pour le parti lui-même."@fr ,
+                   "Keine politische Partei: Für die Partei selbst mbrc:politicalParty verwenden."@de .
 
 mbrc:universityClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
-    skos:prefLabel "University Club"@en , "Alumniklubb"@sv , "Club universitaire"@fr ;
+    skos:prefLabel "University Club"@en , "Alumniklubb"@sv , "Club universitaire"@fr , "Universitätsclub"@de ;
     skos:definition "A private club for graduates of one or more particular universities."@en ,
                     "En privat klubb för dem som tagit examen vid ett eller flera bestämda universitet."@sv ,
-                    "Club privé pour les diplômés d'une ou de plusieurs universités données."@fr .
+                    "Club privé pour les diplômés d'une ou de plusieurs universités données."@fr ,
+                    "Ein privater Club für Absolventen einer oder mehrerer bestimmter Universitäten."@de .
 
 mbrc:professionalClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
-    skos:prefLabel "Professional Club"@en , "Yrkesklubb"@sv , "Club professionnel"@fr ;
+    skos:prefLabel "Professional Club"@en , "Yrkesklubb"@sv , "Club professionnel"@fr , "Berufsclub"@de ;
     skos:definition "A private club whose members share a profession, such as law, medicine or the press."@en ,
                     "En privat klubb vars medlemmar delar ett yrke, t.ex. juridik, medicin eller press."@sv ,
-                    "Club privé dont les membres partagent une profession, comme le droit, la médecine ou la presse."@fr .
+                    "Club privé dont les membres partagent une profession, comme le droit, la médecine ou la presse."@fr ,
+                    "Ein privater Club, dessen Mitglieder einen Beruf teilen, etwa Recht, Medizin oder Presse."@de .
 
 mbrc:artsClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
-    skos:prefLabel "Arts Club"@en , "Konstnärsklubb"@sv , "Club des arts"@fr ;
+    skos:prefLabel "Arts Club"@en , "Konstnärsklubb"@sv , "Club des arts"@fr , "Künstlerclub"@de ;
     skos:definition "A private club for people in the arts: artists, writers, actors, musicians and their patrons."@en ,
                     "En privat klubb för kulturutövare: konstnärer, författare, skådespelare, musiker och deras mecenater."@sv ,
-                    "Club privé pour les gens des arts : artistes, écrivains, acteurs, musiciens et leurs mécènes."@fr .
+                    "Club privé pour les gens des arts : artistes, écrivains, acteurs, musiciens et leurs mécènes."@fr ,
+                    "Ein privater Club für Menschen in den Künsten: Künstler, Schriftsteller, Schauspieler, Musiker und ihre Förderer."@de .
 
 mbrc:diningClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Dining Club"@en , "Middagsklubb"@sv , "Club de dîner"@fr ;
+    skos:prefLabel "Dining Club"@en , "Middagsklubb"@sv , "Club de dîner"@fr , "Dinnerclub"@de ;
     skos:altLabel "middagssällskap"@sv , "Dîner-club"@fr ;
     skos:definition "A club that meets regularly for dinner and conversation."@en ,
                     "En klubb som regelbundet samlas till middag och samtal."@sv ,
-                    "Club qui se réunit régulièrement pour dîner et converser."@fr .
+                    "Club qui se réunit régulièrement pour dîner et converser."@fr ,
+                    "Ein Club, der sich regelmäßig zu Essen und Gespräch trifft."@de .
 
 mbrc:countryClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Country Club"@en , "Countryclub"@sv , "Country club"@fr ;
+    skos:prefLabel "Country Club"@en , "Countryclub"@sv , "Country club"@fr , "Country-Club"@de ;
     skos:definition "A club with sporting and social facilities, typically outside a city."@en ,
                     "En klubb med idrotts- och sällskapsanläggningar, oftast utanför staden."@sv ,
-                    "Club doté d'installations sportives et sociales, en général hors de la ville."@fr .
+                    "Club doté d'installations sportives et sociales, en général hors de la ville."@fr ,
+                    "Ein Club mit sportlichen und geselligen Einrichtungen, in der Regel außerhalb einer Stadt."@de .
 
 mbrc:armedForcesClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Armed Forces Club"@en , "Försvarsklubb"@sv , "Club des armées"@fr ;
+    skos:prefLabel "Armed Forces Club"@en , "Försvarsklubb"@sv , "Club des armées"@fr , "Club der Streitkräfte"@de ;
     skos:altLabel "Service Club (military)"@en , "Cercle militaire"@fr ;
     skos:definition "A club for serving and former members of the armed forces."@en ,
                     "En klubb för tjänstgörande och tidigare medlemmar av försvarsmakten."@sv ,
-                    "Club pour les membres actuels et anciens des forces armées."@fr ;
+                    "Club pour les membres actuels et anciens des forces armées."@fr ,
+                    "Ein Club für aktive und ehemalige Angehörige der Streitkräfte."@de ;
     skos:narrower mbrc:officersClub .
 
 mbrc:officersClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:armedForcesClub ;
-    skos:prefLabel "Officers' Club"@en , "Officersklubb"@sv , "Cercle des officiers"@fr ;
+    skos:prefLabel "Officers' Club"@en , "Officersklubb"@sv , "Cercle des officiers"@fr , "Offiziersclub"@de ;
     skos:definition "A club for commissioned military officers."@en ,
                     "En klubb för officerare."@sv ,
-                    "Club pour les officiers militaires."@fr .
+                    "Club pour les officiers militaires."@fr ,
+                    "Ein Club für Offiziere."@de .
 
 mbrc:facultyClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Faculty Club"@en , "Universitetslärarklubb"@sv , "Club du corps enseignant"@fr ;
+    skos:prefLabel "Faculty Club"@en , "Universitetslärarklubb"@sv , "Club du corps enseignant"@fr , "Dozentenclub"@de ;
     skos:definition "A club for the teaching staff of a university."@en ,
                     "En klubb för ett universitets lärare och forskare."@sv ,
-                    "Club pour le personnel enseignant d'une université."@fr .
+                    "Club pour le personnel enseignant d'une université."@fr ,
+                    "Ein Club für das Lehrpersonal einer Universität."@de .
 
 mbrc:sportsClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Sports Club"@en , "Idrottsklubb"@sv , "Club sportif"@fr ;
+    skos:prefLabel "Sports Club"@en , "Idrottsklubb"@sv , "Club sportif"@fr , "Sportverein"@de ;
     skos:definition "A club organised around a sport."@en ,
                     "En klubb organiserad kring en idrott."@sv ,
-                    "Club organisé autour d'un sport."@fr ;
+                    "Club organisé autour d'un sport."@fr ,
+                    "Ein um eine Sportart organisierter Club."@de ;
     skos:narrower mbrc:yachtClub .
 
 mbrc:yachtClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:sportsClub ;
-    skos:prefLabel "Yacht Club"@en , "Segelsällskap"@sv , "Yacht-club"@fr ;
+    skos:prefLabel "Yacht Club"@en , "Segelsällskap"@sv , "Yacht-club"@fr , "Yachtclub"@de ;
     skos:altLabel "Kungliga segelsällskap"@sv ;
     skos:definition "A club for sailing and yachting, often with a social clubhouse."@en ,
                     "En klubb för segling och båtliv, ofta med ett sällskapligt klubbhus."@sv ,
-                    "Club de voile et de plaisance, souvent doté d'un local social."@fr .
+                    "Club de voile et de plaisance, souvent doté d'un local social."@fr ,
+                    "Ein Club für Segeln und Yachtsport, oft mit einem geselligen Clubhaus."@de .
 
 mbrc:serviceClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Service Club"@en , "Serviceklubb"@sv , "Club service"@fr ;
+    skos:prefLabel "Service Club"@en , "Serviceklubb"@sv , "Club service"@fr , "Service-Club"@de ;
     skos:definition "A club whose members meet socially and do voluntary or charitable work, such as Rotary or Lions clubs."@en ,
                     "En klubb vars medlemmar träffas socialt och gör ideella insatser, t.ex. Rotary- eller Lionsklubbar."@sv ,
-                    "Club dont les membres se réunissent pour la convivialité et mènent des actions bénévoles ou caritatives, comme les clubs Rotary ou Lions."@fr .
+                    "Club dont les membres se réunissent pour la convivialité et mènent des actions bénévoles ou caritatives, comme les clubs Rotary ou Lions."@fr ,
+                    "Ein Club, dessen Mitglieder sich gesellig treffen und ehrenamtliche oder wohltätige Arbeit leisten, etwa Rotary- oder Lions-Clubs."@de .
 
 mbrc:literaryClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Literary Club"@en , "Litterär klubb"@sv , "Club littéraire"@fr ;
+    skos:prefLabel "Literary Club"@en , "Litterär klubb"@sv , "Club littéraire"@fr , "Literaturclub"@de ;
     skos:definition "A club devoted to literature, reading or writing."@en ,
                     "En klubb ägnad åt litteratur, läsning eller skrivande."@sv ,
-                    "Club consacré à la littérature, à la lecture ou à l'écriture."@fr .
+                    "Club consacré à la littérature, à la lecture ou à l'écriture."@fr ,
+                    "Ein Club, der der Literatur, dem Lesen oder dem Schreiben gewidmet ist."@de .
 
 mbrc:hobbyClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Hobby Club"@en , "Hobbyklubb"@sv , "Club de loisirs"@fr ;
+    skos:prefLabel "Hobby Club"@en , "Hobbyklubb"@sv , "Club de loisirs"@fr , "Hobbyclub"@de ;
     skos:altLabel "Hobbyförening"@sv , "Association de loisirs"@fr ;
     skos:definition "A club whose members pursue a hobby or craft together, such as a sewing circle, a photography club or a model railway club."@en ,
                     "En klubb vars medlemmar utövar en hobby eller ett hantverk tillsammans, t.ex. en syförening, en fotoklubb eller en modelljärnvägsklubb."@sv ,
-                    "Club dont les membres pratiquent ensemble un passe-temps ou un artisanat, comme un cercle de couture, un club photo ou un club de modélisme ferroviaire."@fr .
+                    "Club dont les membres pratiquent ensemble un passe-temps ou un artisanat, comme un cercle de couture, un club photo ou un club de modélisme ferroviaire."@fr ,
+                    "Ein Club, dessen Mitglieder gemeinsam einem Hobby oder Handwerk nachgehen, etwa ein Nähkreis, ein Fotoclub oder ein Modelleisenbahnclub."@de .
 
 mbrc:supportersClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
-    skos:prefLabel "Supporters' Club"@en , "Supporterklubb"@sv , "Club de supporters"@fr ;
+    skos:prefLabel "Supporters' Club"@en , "Supporterklubb"@sv , "Club de supporters"@fr , "Fanclub"@de ;
     skos:altLabel "Supporters' Association"@en , "Supporterförening"@sv , "Association de supporters"@fr ;
     skos:definition "A club for supporters of a sports team, most often a football club. It may be independent of the team or affiliated with it."@en ,
                     "En klubb för supportrar till ett idrottslag, oftast en fotbollsklubb. Den kan vara fristående från laget eller knuten till det."@sv ,
-                    "Club de supporters d'une équipe sportive, le plus souvent de football. Il peut être indépendant de l'équipe ou lui être rattaché."@fr .
+                    "Club de supporters d'une équipe sportive, le plus souvent de football. Il peut être indépendant de l'équipe ou lui être rattaché."@fr ,
+                    "Ein Club für Anhänger einer Sportmannschaft, meist eines Fußballvereins. Er kann von der Mannschaft unabhängig oder mit ihr verbunden sein."@de .
 
 mbrc:society a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
-    skos:prefLabel "Society"@en , "Sällskap"@sv , "Société"@fr ;
+    skos:prefLabel "Society"@en , "Sällskap"@sv , "Société"@fr , "Gesellschaft"@de ;
     skos:definition "An association of people united by a common interest, purpose or profession."@en ,
                     "En sammanslutning av personer förenade av ett gemensamt intresse, syfte eller yrke."@sv ,
-                    "Association de personnes unies par un intérêt, un but ou une profession communs."@fr ;
+                    "Association de personnes unies par un intérêt, un but ou une profession communs."@fr ,
+                    "Ein Zusammenschluss von Menschen, die ein gemeinsames Interesse, ein gemeinsamer Zweck oder ein gemeinsamer Beruf verbindet."@de ;
     skos:narrower mbrc:learnedSociety , mbrc:charitableSociety , mbrc:studentNation , mbrc:studentSociety ,
                   mbrc:alumniAssociation , mbrc:decorationHoldersAssociation .
 
 mbrc:learnedSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Learned Society"@en , "Lärt sällskap"@sv , "Société savante"@fr ;
+    skos:prefLabel "Learned Society"@en , "Lärt sällskap"@sv , "Société savante"@fr , "Gelehrte Gesellschaft"@de ;
     skos:definition "A society that promotes an academic discipline or the arts."@en ,
                     "Ett sällskap som främjar en vetenskap eller konstart."@sv ,
-                    "Société qui promeut une discipline universitaire ou les arts."@fr ;
+                    "Société qui promeut une discipline universitaire ou les arts."@fr ,
+                    "Eine Gesellschaft, die eine wissenschaftliche Disziplin oder die Künste fördert."@de ;
     skos:narrower mbrc:academy .
 
 mbrc:academy a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:learnedSociety ;
-    skos:prefLabel "Academy"@en , "Akademi"@sv , "Académie"@fr ;
+    skos:prefLabel "Academy"@en , "Akademi"@sv , "Académie"@fr , "Akademie"@de ;
     skos:definition "A learned society whose members are elected by its existing members, usually for life and often to a fixed number of numbered seats, as in the Académie française or the Swedish Academy."@en ,
                     "Ett lärt sällskap vars ledamöter väljs av de sittande ledamöterna, vanligen på livstid och ofta till ett fast antal numrerade stolar, som i Académie française eller Svenska Akademien."@sv ,
-                    "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ;
-    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en , "Les fauteuils numérotés eux-mêmes ne sont pas modélisés ; le modèle enregistre qui est membre et quand."@fr .
+                    "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ,
+                    "Eine gelehrte Gesellschaft, deren Mitglieder von den bisherigen Mitgliedern gewählt werden, meist auf Lebenszeit und oft auf eine feste Zahl nummerierter Sitze, wie bei der Académie française oder der Schwedischen Akademie."@de ;
+    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en , "Les fauteuils numérotés eux-mêmes ne sont pas modélisés ; le modèle enregistre qui est membre et quand."@fr , "Die nummerierten Sitze selbst (fauteuils, stolar) werden nicht modelliert; das Modell hält fest, wer Mitglied ist und seit wann."@de .
 
 mbrc:alumniAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Alumni Association"@en , "Alumniförening"@sv , "Association d'anciens"@fr ;
+    skos:prefLabel "Alumni Association"@en , "Alumniförening"@sv , "Association d'anciens"@fr , "Ehemaligenvereinigung"@de ;
     skos:altLabel "Old Pupils' Association"@en , "Amicale"@fr ;
     skos:definition "An association of former pupils, students or members of one school, university or institution, kept up for fellowship and mutual support."@en ,
                     "En förening för tidigare elever, studenter eller medlemmar vid en skola, ett universitet eller en institution, som hålls vid liv för gemenskap och ömsesidigt stöd."@sv ,
-                    "Association d'anciens élèves, étudiants ou membres d'une école, d'une université ou d'une institution, entretenue pour la convivialité et l'entraide."@fr ;
-    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en , "Comparer mbrc:studentSociety, dont les membres sont des étudiants ou d'anciens étudiants et qui existe dans l'établissement même."@fr .
+                    "Association d'anciens élèves, étudiants ou membres d'une école, d'une université ou d'une institution, entretenue pour la convivialité et l'entraide."@fr ,
+                    "Eine Vereinigung ehemaliger Schüler, Studenten oder Mitglieder einer Schule, Universität oder Einrichtung, die der Geselligkeit und gegenseitigen Unterstützung dient."@de ;
+    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en , "Comparer mbrc:studentSociety, dont les membres sont des étudiants ou d'anciens étudiants et qui existe dans l'établissement même."@fr , "Vgl. mbrc:studentSociety, deren Mitglieder Studenten oder ehemalige Studenten sind und die an der Einrichtung selbst besteht."@de .
 
 mbrc:decorationHoldersAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Association of Decoration Holders"@en , "Förening för utmärkelsemottagare"@sv , "Association de décorés"@fr ;
+    skos:prefLabel "Association of Decoration Holders"@en , "Förening för utmärkelsemottagare"@sv , "Association de décorés"@fr , "Vereinigung von Ordensträgern"@de ;
     skos:definition "An association of people who hold a state order or decoration, separate from the order itself, which they do not run: it keeps up fellowship and supports the order's aims."@en ,
                     "En förening för personer som innehar en statlig orden eller utmärkelse, skild från själva orden, som den inte driver: den vårdar gemenskapen och stöder ordens syften."@sv ,
-                    "Association de personnes titulaires d'un ordre ou d'une décoration de l'État, distincte de l'ordre lui-même, qu'elle ne dirige pas : elle entretient la convivialité et soutient les buts de l'ordre."@fr ;
-    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en , "L'ordre lui-même est un fraternalc:orderOfChivalry, ou une mbr:Distinction s'il n'a pas de corps de membres. Exemple : la Société des membres de la Légion d'honneur, qui n'est pas la Légion d'honneur."@fr .
+                    "Association de personnes titulaires d'un ordre ou d'une décoration de l'État, distincte de l'ordre lui-même, qu'elle ne dirige pas : elle entretient la convivialité et soutient les buts de l'ordre."@fr ,
+                    "Eine Vereinigung von Personen, die einen staatlichen Orden oder eine Auszeichnung tragen, getrennt vom Orden selbst, den sie nicht leitet: Sie pflegt die Geselligkeit und unterstützt die Ziele des Ordens."@de ;
+    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en , "L'ordre lui-même est un fraternalc:orderOfChivalry, ou une mbr:Distinction s'il n'a pas de corps de membres. Exemple : la Société des membres de la Légion d'honneur, qui n'est pas la Légion d'honneur."@fr , "Der Orden selbst ist fraternalc:orderOfChivalry oder, wo er keinen Mitgliederkreis hat, eine mbr:Distinction. Beispiel: die Société des membres de la Légion d'honneur, die nicht die Ehrenlegion ist."@de .
 
 mbrc:charitableSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Charitable Society"@en , "Välgörenhetssällskap"@sv , "Société de bienfaisance"@fr ;
+    skos:prefLabel "Charitable Society"@en , "Välgörenhetssällskap"@sv , "Société de bienfaisance"@fr , "Wohltätigkeitsgesellschaft"@de ;
     skos:definition "A society whose main purpose is charity."@en ,
                     "Ett sällskap vars huvudsyfte är välgörenhet."@sv ,
-                    "Société dont le but principal est la bienfaisance."@fr .
+                    "Société dont le but principal est la bienfaisance."@fr ,
+                    "Eine Gesellschaft, deren Hauptzweck die Wohltätigkeit ist."@de .
 
 mbrc:studentNation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Student Nation"@en , "Studentnation"@sv , "Nation étudiante"@fr ;
+    skos:prefLabel "Student Nation"@en , "Studentnation"@sv , "Nation étudiante"@fr , "Studentennation"@de ;
     skos:definition "A student organisation at a university, traditionally based on the students' home region, as at Uppsala and Lund."@en ,
                     "En studentorganisation vid ett universitet, traditionellt grundad på studenternas hembygd, som i Uppsala och Lund."@sv ,
-                    "Organisation étudiante d'une université, fondée traditionnellement sur la région d'origine des étudiants, comme à Uppsala et à Lund."@fr .
+                    "Organisation étudiante d'une université, fondée traditionnellement sur la région d'origine des étudiants, comme à Uppsala et à Lund."@fr ,
+                    "Eine studentische Organisation an einer Universität, traditionell nach der Herkunftsregion der Studierenden gebildet, wie in Uppsala und Lund."@de .
 
 mbrc:studentSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Student Society"@en , "Studentförening"@sv , "Association d'étudiants"@fr ;
+    skos:prefLabel "Student Society"@en , "Studentförening"@sv , "Association d'étudiants"@fr , "Studentische Vereinigung"@de ;
     skos:definition "A society whose members are students or former students."@en ,
                     "En förening vars medlemmar är studenter eller före detta studenter."@sv ,
-                    "Société dont les membres sont des étudiants ou d'anciens étudiants."@fr .
+                    "Société dont les membres sont des étudiants ou d'anciens étudiants."@fr ,
+                    "Eine Gesellschaft, deren Mitglieder Studierende oder ehemalige Studierende sind."@de .
 
 mbrc:fraternalOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
-    skos:prefLabel "Fraternal Organisation"@en , "Ordenssällskap"@sv , "Organisation fraternelle"@fr ;
+    skos:prefLabel "Fraternal Organisation"@en , "Ordenssällskap"@sv , "Organisation fraternelle"@fr , "Ordensgesellschaft"@de ;
     skos:altLabel "Fraternal Order"@en , "brödraskap"@sv , "Ordre fraternel"@fr ;
     skos:definition "An organisation whose members are bound together by initiation, ritual and usually graded degrees. Refined by the fraternal codelists."@en ,
                     "En organisation vars medlemmar är förenade genom initiering, ritual och vanligen graderade grader. Förfinas av kodlistorna i fraternal."@sv ,
-                    "Organisation dont les membres sont liés par l'initiation, le rituel et en général des degrés gradués. Précisée par les listes de codes de fraternal."@fr .
+                    "Organisation dont les membres sont liés par l'initiation, le rituel et en général des degrés gradués. Précisée par les listes de codes de fraternal."@fr ,
+                    "Eine Organisation, deren Mitglieder durch Initiation, Ritual und meist gestufte Grade verbunden sind. Wird von den Codelisten von fraternal verfeinert."@de .
 
 mbrc:politicalParty a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
-    skos:prefLabel "Political Party"@en , "Politiskt parti"@sv , "Parti politique"@fr ;
+    skos:prefLabel "Political Party"@en , "Politiskt parti"@sv , "Parti politique"@fr , "Politische Partei"@de ;
     skos:definition "An organisation that seeks to influence public policy, usually by nominating candidates in public elections, and that people join as members."@en ,
                     "En organisation som söker påverka den offentliga politiken, vanligen genom att ställa upp kandidater i allmänna val, och som man blir medlem i."@sv ,
-                    "Organisation qui cherche à influencer l'action publique, en général en présentant des candidats aux élections publiques, et à laquelle on adhère."@fr ;
+                    "Organisation qui cherche à influencer l'action publique, en général en présentant des candidats aux élections publiques, et à laquelle on adhère."@fr ,
+                    "Eine Organisation, die Einfluss auf die Politik zu nehmen sucht, meist indem sie Kandidaten für öffentliche Wahlen aufstellt, und der man als Mitglied beitritt."@de ;
     skos:scopeNote "Not the same as mbrc:politicalClub, a private club whose members share a party allegiance. Data about who belongs to a party reveals political opinions: see the scope note on mbr:Membership."@en ,
                    "Inte detsamma som mbrc:politicalClub, en privat klubb vars medlemmar delar partitillhörighet. Uppgifter om vem som tillhör ett parti röjer politiska åsikter: se anmärkningen till mbr:Membership."@sv ,
-                   "À ne pas confondre avec mbrc:politicalClub, club privé dont les membres partagent l'appartenance à un parti. Savoir qui appartient à un parti révèle des opinions politiques : voir la note d'application de mbr:Membership."@fr .
+                   "À ne pas confondre avec mbrc:politicalClub, club privé dont les membres partagent l'appartenance à un parti. Savoir qui appartient à un parti révèle des opinions politiques : voir la note d'application de mbr:Membership."@fr ,
+                   "Nicht dasselbe wie mbrc:politicalClub, ein privater Club, dessen Mitglieder einer Partei verbunden sind. Daten darüber, wer einer Partei angehört, offenbaren politische Meinungen: siehe die Anwendungshinweise zu mbr:Membership."@de .
 
 mbrc:tradeUnion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
-    skos:prefLabel "Trade Union"@en , "Fackförening"@sv , "Syndicat"@fr ;
+    skos:prefLabel "Trade Union"@en , "Fackförening"@sv , "Syndicat"@fr , "Gewerkschaft"@de ;
     skos:altLabel "Labour Union"@en , "Labor Union"@en , "Fackförbund"@sv , "Syndicat de salariés"@fr ;
     skos:definition "An organisation of employees that represents its members' interests towards employers, for example in collective bargaining."@en ,
                     "En organisation av arbetstagare som företräder medlemmarnas intressen gentemot arbetsgivare, t.ex. i förhandlingar om kollektivavtal."@sv ,
-                    "Organisation de salariés qui défend les intérêts de ses membres face aux employeurs, par exemple dans les négociations collectives."@fr ;
+                    "Organisation de salariés qui défend les intérêts de ses membres face aux employeurs, par exemple dans les négociations collectives."@fr ,
+                    "Eine Organisation von Arbeitnehmern, die die Interessen ihrer Mitglieder gegenüber Arbeitgebern vertritt, etwa in Tarifverhandlungen."@de ;
     skos:scopeNote "Trade union membership is special-category personal data: see the scope note on mbr:Membership."@en ,
                    "Medlemskap i en fackförening är en känslig personuppgift: se anmärkningen till mbr:Membership."@sv ,
-                   "L'adhésion à un syndicat est une donnée personnelle de catégorie particulière : voir la note d'application de mbr:Membership."@fr .
+                   "L'adhésion à un syndicat est une donnée personnelle de catégorie particulière : voir la note d'application de mbr:Membership."@fr ,
+                   "Die Mitgliedschaft in einer Gewerkschaft gehört zu den besonderen Kategorien personenbezogener Daten: siehe die Anwendungshinweise zu mbr:Membership."@de .
 
 ##############################################################################
 # 2. MEMBERSHIP STATUSES
 ##############################################################################
 
 mbrc:MembershipStatuses a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Membership Statuses"@en , "Medlemskapsstatusar"@sv , "Statuts d'adhésion"@fr ;
+    skos:prefLabel "Membership Statuses"@en , "Medlemskapsstatusar"@sv , "Statuts d'adhésion"@fr , "Mitgliedschaftsstatus"@de ;
     skos:definition "Stages in the life of a membership, from being considered to leaving."@en ,
                     "Stadier i ett medlemskaps livscykel, från att vara påtänkt till utträde."@sv ,
-                    "Étapes de la vie d'une adhésion, de la prise en considération au départ."@fr ;
+                    "Étapes de la vie d'une adhésion, de la prise en considération au départ."@fr ,
+                    "Abschnitte im Leben einer Mitgliedschaft, von der Erwägung bis zum Ausscheiden."@de ;
     skos:hasTopConcept mbrc:prospect , mbrc:proposed , mbrc:candidate , mbrc:elected ,
                        mbrc:notAdmitted , mbrc:active , mbrc:dormant , mbrc:suspended ,
                        mbrc:resigned , mbrc:lapsed , mbrc:expelled , mbrc:deceased ,
@@ -332,222 +371,246 @@ mbrc:MembershipStatuses a skos:ConceptScheme , owl:NamedIndividual ;
 
 mbrc:prospect a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Prospect"@en , "Påtänkt"@sv , "Personne envisagée"@fr ;
+    skos:prefLabel "Prospect"@en , "Påtänkt"@sv , "Personne envisagée"@fr , "Interessent"@de ;
     skos:definition "Being considered for membership; not yet formally proposed."@en ,
                     "Påtänkt för medlemskap men ännu inte formellt föreslagen."@sv ,
-                    "Envisagée pour l'adhésion ; pas encore formellement proposée."@fr .
+                    "Envisagée pour l'adhésion ; pas encore formellement proposée."@fr ,
+                    "Wird für die Mitgliedschaft in Betracht gezogen; noch nicht förmlich vorgeschlagen."@de .
 
 mbrc:proposed a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Proposed"@en , "Föreslagen"@sv , "Proposé"@fr ;
+    skos:prefLabel "Proposed"@en , "Föreslagen"@sv , "Proposé"@fr , "Vorgeschlagen"@de ;
     skos:definition "Formally proposed for membership by a member."@en ,
                     "Formellt föreslagen till medlemskap av en medlem."@sv ,
-                    "Formellement proposé à l'adhésion par un membre."@fr .
+                    "Formellement proposé à l'adhésion par un membre."@fr ,
+                    "Von einem Mitglied förmlich für die Mitgliedschaft vorgeschlagen."@de .
 
 mbrc:candidate a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Candidate"@en , "Kandidat"@sv , "Candidat"@fr ;
+    skos:prefLabel "Candidate"@en , "Kandidat"@sv , "Candidat"@fr , "Kandidat"@de ;
     skos:altLabel "Applicant"@en , "Sökande"@sv , "Postulant"@fr ;
     skos:definition "Accepted as a candidate, or has applied, and awaiting election, an admission decision or initiation."@en ,
                     "Antagen som kandidat, eller har ansökt, och i väntan på val, beslut om upptagning eller initiering."@sv ,
-                    "Accepté comme candidat, ou ayant fait une demande, dans l'attente d'une élection, d'une décision d'admission ou d'une initiation."@fr .
+                    "Accepté comme candidat, ou ayant fait une demande, dans l'attente d'une élection, d'une décision d'admission ou d'une initiation."@fr ,
+                    "Als Kandidat angenommen oder hat sich beworben und erwartet Wahl, Aufnahmeentscheidung oder Initiation."@de .
 
 mbrc:elected a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Elected"@en , "Invald"@sv , "Élu"@fr ;
+    skos:prefLabel "Elected"@en , "Invald"@sv , "Élu"@fr , "Gewählt"@de ;
     skos:definition "Elected to membership but not yet admitted."@en ,
                     "Invald men ännu inte upptagen."@sv ,
-                    "Élu à l'adhésion mais pas encore admis."@fr .
+                    "Élu à l'adhésion mais pas encore admis."@fr ,
+                    "In die Mitgliedschaft gewählt, aber noch nicht aufgenommen."@de .
 
 mbrc:notAdmitted a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Not Admitted"@en , "Ej upptagen"@sv , "Non admis"@fr ;
+    skos:prefLabel "Not Admitted"@en , "Ej upptagen"@sv , "Non admis"@fr , "Nicht aufgenommen"@de ;
     skos:definition "The proposal or application ended without admission: it was rejected, stopped or withdrawn."@en ,
                     "Förslaget eller ansökan avslutades utan upptagning: det avslogs, stoppades eller drogs tillbaka."@sv ,
-                    "La proposition ou la demande s'est terminée sans admission : elle a été rejetée, arrêtée ou retirée."@fr ;
+                    "La proposition ou la demande s'est terminée sans admission : elle a été rejetée, arrêtée ou retirée."@fr ,
+                    "Der Vorschlag oder die Bewerbung endete ohne Aufnahme: Sie wurde abgelehnt, gestoppt oder zurückgezogen."@de ;
     skos:scopeNote "Record the organisation's decision as a mbr:MembershipEvent of type mbrc:rejection with mbr:resultingStatus mbrc:notAdmitted."@en ,
                    "Organisationens beslut registreras som en mbr:MembershipEvent av typen mbrc:rejection med mbr:resultingStatus mbrc:notAdmitted."@sv ,
-                   "Consigner la décision de l'organisation comme une mbr:MembershipEvent de type mbrc:rejection avec mbr:resultingStatus mbrc:notAdmitted."@fr .
+                   "Consigner la décision de l'organisation comme une mbr:MembershipEvent de type mbrc:rejection avec mbr:resultingStatus mbrc:notAdmitted."@fr ,
+                   "Die Entscheidung der Organisation als mbr:MembershipEvent der Art mbrc:rejection mit mbr:resultingStatus mbrc:notAdmitted festhalten."@de .
 
 mbrc:active a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Active Member"@en , "Aktiv medlem"@sv , "Membre actif"@fr ;
+    skos:prefLabel "Active Member"@en , "Aktiv medlem"@sv , "Membre actif"@fr , "Aktives Mitglied"@de ;
     skos:definition "A full member in good standing."@en ,
                     "En fullvärdig medlem med alla rättigheter."@sv ,
-                    "Membre à part entière en règle."@fr .
+                    "Membre à part entière en règle."@fr ,
+                    "Ein Vollmitglied in gutem Ansehen."@de .
 
 mbrc:dormant a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Dormant"@en , "Vilande"@sv , "En sommeil"@fr ;
+    skos:prefLabel "Dormant"@en , "Vilande"@sv , "En sommeil"@fr , "Ruhend"@de ;
     skos:definition "A member who has, by agreement, paused participation."@en ,
                     "En medlem som efter överenskommelse gjort uppehåll i deltagandet."@sv ,
-                    "Membre qui a, d'un commun accord, suspendu sa participation."@fr .
+                    "Membre qui a, d'un commun accord, suspendu sa participation."@fr ,
+                    "Ein Mitglied, das die Teilnahme einvernehmlich ausgesetzt hat."@de .
 
 mbrc:suspended a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Suspended"@en , "Avstängd"@sv , "Suspendu"@fr ;
+    skos:prefLabel "Suspended"@en , "Avstängd"@sv , "Suspendu"@fr , "Suspendiert"@de ;
     skos:definition "Temporarily deprived of the rights of membership."@en ,
                     "Tillfälligt fråntagen medlemskapets rättigheter."@sv ,
-                    "Provisoirement privé des droits d'adhérent."@fr .
+                    "Provisoirement privé des droits d'adhérent."@fr ,
+                    "Vorübergehend der Rechte der Mitgliedschaft beraubt."@de .
 
 mbrc:resigned a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Resigned"@en , "Utträdd"@sv , "Démissionnaire"@fr ;
+    skos:prefLabel "Resigned"@en , "Utträdd"@sv , "Démissionnaire"@fr , "Ausgetreten"@de ;
     skos:definition "Left the organisation at their own request."@en ,
                     "Har lämnat organisationen på egen begäran."@sv ,
-                    "A quitté l'organisation à sa propre demande."@fr .
+                    "A quitté l'organisation à sa propre demande."@fr ,
+                    "Hat die Organisation auf eigenen Wunsch verlassen."@de .
 
 mbrc:lapsed a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Lapsed"@en , "Avförd"@sv , "Radié pour défaut de paiement"@fr ;
+    skos:prefLabel "Lapsed"@en , "Avförd"@sv , "Radié pour défaut de paiement"@fr , "Erloschen"@de ;
     skos:definition "Membership ended because obligations such as fees were not met."@en ,
                     "Medlemskapet har upphört för att skyldigheter, t.ex. avgifter, inte fullgjorts."@sv ,
-                    "L'adhésion a pris fin parce que des obligations comme la cotisation n'ont pas été remplies."@fr .
+                    "L'adhésion a pris fin parce que des obligations comme la cotisation n'ont pas été remplies."@fr ,
+                    "Die Mitgliedschaft endete, weil Pflichten wie die Beitragszahlung nicht erfüllt wurden."@de .
 
 mbrc:expelled a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Expelled"@en , "Utesluten"@sv , "Exclu"@fr ;
+    skos:prefLabel "Expelled"@en , "Utesluten"@sv , "Exclu"@fr , "Ausgeschlossen"@de ;
     skos:definition "Removed from membership by decision of the organisation."@en ,
                     "Skild från medlemskapet genom beslut av organisationen."@sv ,
-                    "Retiré de l'organisation par décision de celle-ci."@fr .
+                    "Retiré de l'organisation par décision de celle-ci."@fr ,
+                    "Durch Beschluss der Organisation aus der Mitgliedschaft entfernt."@de .
 
 mbrc:deceased a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Deceased"@en , "Avliden"@sv , "Décédé"@fr ;
+    skos:prefLabel "Deceased"@en , "Avliden"@sv , "Décédé"@fr , "Verstorben"@de ;
     skos:definition "Membership ended by the death of the member."@en ,
                     "Medlemskapet har upphört genom medlemmens död."@sv ,
-                    "L'adhésion a pris fin par le décès du membre."@fr .
+                    "L'adhésion a pris fin par le décès du membre."@fr ,
+                    "Die Mitgliedschaft endete mit dem Tod des Mitglieds."@de .
 
 mbrc:emeritus a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Emeritus"@en , "Emeritus"@sv , "Émérite"@fr ;
+    skos:prefLabel "Emeritus"@en , "Emeritus"@sv , "Émérite"@fr , "Emeritus"@de ;
     skos:definition "A retired member who keeps an honoured standing."@en ,
                     "En medlem som dragit sig tillbaka men behåller en hedrad ställning."@sv ,
-                    "Membre retiré qui garde un rang honorifique."@fr .
+                    "Membre retiré qui garde un rang honorifique."@fr ,
+                    "Ein im Ruhestand befindliches Mitglied, das ein ehrenvolles Ansehen behält."@de .
 
 ##############################################################################
 # 3. MEMBERSHIP CATEGORIES
 ##############################################################################
 
 mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Membership Categories"@en , "Medlemskategorier"@sv , "Catégories de membres"@fr ;
+    skos:prefLabel "Membership Categories"@en , "Medlemskategorier"@sv , "Catégories de membres"@fr , "Mitgliedschaftskategorien"@de ;
     skos:definition "Categories of membership with different rights or fees."@en ,
                     "Medlemskategorier med olika rättigheter eller avgifter."@sv ,
-                    "Catégories d'adhésion aux droits ou cotisations différents."@fr ;
+                    "Catégories d'adhésion aux droits ou cotisations différents."@fr ,
+                    "Kategorien der Mitgliedschaft mit unterschiedlichen Rechten oder Beiträgen."@de ;
     skos:scopeNote "The categories can be combined: a membership may be both life and founding, or junior and overseas. They are grouped in seven sub-schemes by what they say (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); every category is also in this scheme. The list is open, not an exhaustive division, and a membership without a category is not thereby ordinary. No combination is ruled out unless a category's definition says so."@en ,
                    "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i sju underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ,
-                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en sept sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ;
+                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en sept sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ,
+                   "Die Kategorien lassen sich kombinieren: Eine Mitgliedschaft kann zugleich auf Lebenszeit und Gründungsmitgliedschaft sein, oder jugendlich und im Ausland. Sie sind in sieben Unterschemata danach gruppiert, was sie aussagen (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); jede Kategorie gehört auch zu diesem Schema. Die Liste ist offen, keine erschöpfende Einteilung, und eine Mitgliedschaft ohne Kategorie ist dadurch nicht gewöhnlich. Keine Kombination ist ausgeschlossen, es sei denn, die Definition einer Kategorie sagt es."@de ;
     skos:hasTopConcept mbrc:ordinary , mbrc:life , mbrc:honorary , mbrc:associate ,
                        mbrc:junior , mbrc:nonResident , mbrc:overseas , mbrc:partnerMember ,
                        mbrc:founding , mbrc:benefactorMember .
 
 mbrc:ordinary a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryRights ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryRights ;
-    skos:prefLabel "Ordinary Member"@en , "Ordinarie medlem"@sv , "Membre ordinaire"@fr ;
-    skos:definition "The standard category with full rights."@en , "Standardkategorin med fulla rättigheter."@sv , "La catégorie normale, avec tous les droits."@fr .
+    skos:prefLabel "Ordinary Member"@en , "Ordinarie medlem"@sv , "Membre ordinaire"@fr , "Ordentliches Mitglied"@de ;
+    skos:definition "The standard category with full rights."@en , "Standardkategorin med fulla rättigheter."@sv , "La catégorie normale, avec tous les droits."@fr , "Die Standardkategorie mit allen Rechten."@de .
 
 mbrc:life a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryDuration ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryDuration ;
-    skos:prefLabel "Life Member"@en , "Ständig medlem"@sv , "Membre à vie"@fr ;
-    skos:definition "Membership for life, usually after a one-time fee."@en , "Medlemskap på livstid, vanligen efter en engångsavgift."@sv , "Adhésion à vie, en général après une cotisation unique."@fr .
+    skos:prefLabel "Life Member"@en , "Ständig medlem"@sv , "Membre à vie"@fr , "Mitglied auf Lebenszeit"@de ;
+    skos:definition "Membership for life, usually after a one-time fee."@en , "Medlemskap på livstid, vanligen efter en engångsavgift."@sv , "Adhésion à vie, en général après une cotisation unique."@fr , "Mitgliedschaft auf Lebenszeit, meist nach einer einmaligen Gebühr."@de .
 
 mbrc:honorary a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryHonour ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryHonour ;
-    skos:prefLabel "Honorary Member"@en , "Hedersledamot"@sv , "Membre d'honneur"@fr ;
-    skos:definition "Membership conferred as an honour, usually without fees."@en , "Medlemskap som ges som hedersbetygelse, vanligen utan avgift."@sv , "Adhésion conférée à titre d'honneur, en général sans cotisation."@fr .
+    skos:prefLabel "Honorary Member"@en , "Hedersledamot"@sv , "Membre d'honneur"@fr , "Ehrenmitglied"@de ;
+    skos:definition "Membership conferred as an honour, usually without fees."@en , "Medlemskap som ges som hedersbetygelse, vanligen utan avgift."@sv , "Adhésion conférée à titre d'honneur, en général sans cotisation."@fr , "Als Ehre verliehene Mitgliedschaft, meist ohne Beiträge."@de .
 
 mbrc:associate a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryRights ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryRights ;
-    skos:prefLabel "Associate Member"@en , "Associerad medlem"@sv , "Membre associé"@fr ;
-    skos:definition "Membership with limited rights, for example without vote."@en , "Medlemskap med begränsade rättigheter, t.ex. utan rösträtt."@sv , "Adhésion aux droits limités, par exemple sans droit de vote."@fr .
+    skos:prefLabel "Associate Member"@en , "Associerad medlem"@sv , "Membre associé"@fr , "Außerordentliches Mitglied"@de ;
+    skos:definition "Membership with limited rights, for example without vote."@en , "Medlemskap med begränsade rättigheter, t.ex. utan rösträtt."@sv , "Adhésion aux droits limités, par exemple sans droit de vote."@fr , "Mitgliedschaft mit eingeschränkten Rechten, zum Beispiel ohne Stimmrecht."@de .
 
 mbrc:junior a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryAge ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryAge ;
-    skos:prefLabel "Junior Member"@en , "Juniormedlem"@sv , "Membre junior"@fr ;
-    skos:definition "Membership for younger members, often at a reduced fee."@en , "Medlemskap för yngre medlemmar, ofta till reducerad avgift."@sv , "Adhésion pour les membres plus jeunes, souvent à cotisation réduite."@fr .
+    skos:prefLabel "Junior Member"@en , "Juniormedlem"@sv , "Membre junior"@fr , "Jugendmitglied"@de ;
+    skos:definition "Membership for younger members, often at a reduced fee."@en , "Medlemskap för yngre medlemmar, ofta till reducerad avgift."@sv , "Adhésion pour les membres plus jeunes, souvent à cotisation réduite."@fr , "Mitgliedschaft für jüngere Mitglieder, oft mit ermäßigtem Beitrag."@de .
 
 mbrc:nonResident a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryResidence ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryResidence ;
-    skos:prefLabel "Country Member"@en , "Landsortsmedlem"@sv , "Membre non résident"@fr ;
+    skos:prefLabel "Country Member"@en , "Landsortsmedlem"@sv , "Membre non résident"@fr , "Auswärtiges Mitglied"@de ;
     skos:altLabel "Non-resident Member"@en , "Membre de province"@fr ;
-    skos:definition "Membership for members living far from the club's premises."@en , "Medlemskap för medlemmar som bor långt från klubbens lokaler."@sv , "Adhésion pour les membres qui habitent loin des locaux du club."@fr .
+    skos:definition "Membership for members living far from the club's premises."@en , "Medlemskap för medlemmar som bor långt från klubbens lokaler."@sv , "Adhésion pour les membres qui habitent loin des locaux du club."@fr , "Mitgliedschaft für Mitglieder, die weit von den Räumlichkeiten des Clubs entfernt wohnen."@de .
 
 mbrc:overseas a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryResidence ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryResidence ;
-    skos:prefLabel "Overseas Member"@en , "Utlandsmedlem"@sv , "Membre à l'étranger"@fr ;
-    skos:definition "Membership for members living abroad."@en , "Medlemskap för medlemmar bosatta utomlands."@sv , "Adhésion pour les membres qui résident à l'étranger."@fr .
+    skos:prefLabel "Overseas Member"@en , "Utlandsmedlem"@sv , "Membre à l'étranger"@fr , "Mitglied im Ausland"@de ;
+    skos:definition "Membership for members living abroad."@en , "Medlemskap för medlemmar bosatta utomlands."@sv , "Adhésion pour les membres qui résident à l'étranger."@fr , "Mitgliedschaft für Mitglieder, die im Ausland leben."@de .
 
 mbrc:partnerMember a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryAffiliation ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryAffiliation ;
-    skos:prefLabel "Partner Member"@en , "Partnermedlem"@sv , "Membre conjoint"@fr ;
-    skos:definition "Membership granted to the spouse or partner of a member."@en , "Medlemskap för en medlems make, maka eller partner."@sv , "Adhésion accordée au conjoint ou au partenaire d'un membre."@fr .
+    skos:prefLabel "Partner Member"@en , "Partnermedlem"@sv , "Membre conjoint"@fr , "Partnermitglied"@de ;
+    skos:definition "Membership granted to the spouse or partner of a member."@en , "Medlemskap för en medlems make, maka eller partner."@sv , "Adhésion accordée au conjoint ou au partenaire d'un membre."@fr , "Mitgliedschaft, die dem Ehegatten oder Partner eines Mitglieds gewährt wird."@de .
 
 mbrc:founding a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryFoundation ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryFoundation ;
-    skos:prefLabel "Founding Member"@en , "Stiftande medlem"@sv , "Membre fondateur"@fr ;
-    skos:definition "A member who took part in founding the organisation."@en , "En medlem som deltog i organisationens grundande."@sv , "Membre qui a pris part à la fondation de l'organisation."@fr .
+    skos:prefLabel "Founding Member"@en , "Stiftande medlem"@sv , "Membre fondateur"@fr , "Gründungsmitglied"@de ;
+    skos:definition "A member who took part in founding the organisation."@en , "En medlem som deltog i organisationens grundande."@sv , "Membre qui a pris part à la fondation de l'organisation."@fr , "Ein Mitglied, das an der Gründung der Organisation beteiligt war."@de .
 
 mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
-    skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr ;
+    skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr , "Fördermitglied"@de ;
     skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv ;
     skos:definition "A member who supports the organisation with a contribution above the ordinary fee. Whether the category carries a vote depends on the statutes."@en ,
                     "En medlem som stöder organisationen med ett bidrag utöver den ordinarie avgiften. Om kategorin har rösträtt avgörs av stadgarna."@sv ,
-                    "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr .
+                    "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr ,
+                    "Ein Mitglied, das die Organisation mit einem Beitrag über dem gewöhnlichen Beitrag unterstützt. Ob die Kategorie ein Stimmrecht trägt, hängt von der Satzung ab."@de .
 mbrc:CategoryRights a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv , "Catégorie : droits"@fr ;
+    skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv , "Catégorie : droits"@fr , "Kategorie: Rechte"@de ;
     skos:definition "Categories that say what rights a membership carries. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger vilka rättigheter ett medlemskap ger. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent quels droits comporte une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent quels droits comporte une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, welche Rechte eine Mitgliedschaft mit sich bringt. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:ordinary , mbrc:associate .
 
 mbrc:CategoryDuration a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Duration"@en , "Kategori: varaktighet"@sv , "Catégorie : durée"@fr ;
+    skos:prefLabel "Category: Duration"@en , "Kategori: varaktighet"@sv , "Catégorie : durée"@fr , "Kategorie: Dauer"@de ;
     skos:definition "Categories that say how long a membership lasts. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger hur länge ett medlemskap varar. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent combien de temps dure une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent combien de temps dure une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, wie lange eine Mitgliedschaft dauert. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:life .
 
 mbrc:CategoryHonour a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Honour"@en , "Kategori: hedersställning"@sv , "Catégorie : honneur"@fr ;
+    skos:prefLabel "Category: Honour"@en , "Kategori: hedersställning"@sv , "Catégorie : honneur"@fr , "Kategorie: Ehrung"@de ;
     skos:definition "Categories that say a membership is held as an honour. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger att ett medlemskap innehas som en hedersbetygelse. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent qu'une adhésion est détenue à titre d'honneur. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent qu'une adhésion est détenue à titre d'honneur. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, dass eine Mitgliedschaft als Ehre gehalten wird. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:honorary .
 
 mbrc:CategoryAge a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Age"@en , "Kategori: ålder"@sv , "Catégorie : âge"@fr ;
+    skos:prefLabel "Category: Age"@en , "Kategori: ålder"@sv , "Catégorie : âge"@fr , "Kategorie: Alter"@de ;
     skos:definition "Categories that depend on the age of the member. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som beror på medlemmens ålder. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui dépendent de l'âge du membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui dépendent de l'âge du membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die vom Alter des Mitglieds abhängen. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:junior .
 
 mbrc:CategoryResidence a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Residence"@en , "Kategori: bosättning"@sv , "Catégorie : résidence"@fr ;
+    skos:prefLabel "Category: Residence"@en , "Kategori: bosättning"@sv , "Catégorie : résidence"@fr , "Kategorie: Wohnsitz"@de ;
     skos:definition "Categories that depend on where the member lives. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som beror på var medlemmen bor. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui dépendent du lieu où vit le membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui dépendent du lieu où vit le membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die davon abhängen, wo das Mitglied wohnt. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:nonResident , mbrc:overseas .
 
 mbrc:CategoryAffiliation a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Affiliation"@en , "Kategori: anknytning"@sv , "Catégorie : rattachement"@fr ;
+    skos:prefLabel "Category: Affiliation"@en , "Kategori: anknytning"@sv , "Catégorie : rattachement"@fr , "Kategorie: Zugehörigkeit"@de ;
     skos:definition "Categories that depend on the member's tie to another member. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som beror på medlemmens anknytning till en annan medlem. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui dépendent du lien du membre avec un autre membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui dépendent du lien du membre avec un autre membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die von der Verbindung des Mitglieds zu einem anderen Mitglied abhängen. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:partnerMember .
 
 mbrc:CategoryFoundation a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Founding"@en , "Kategori: grundande"@sv , "Catégorie : fondation"@fr ;
+    skos:prefLabel "Category: Founding"@en , "Kategori: grundande"@sv , "Catégorie : fondation"@fr , "Kategorie: Gründung"@de ;
     skos:definition "Categories that say the member took part in founding the organisation. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger att medlemmen deltog i organisationens grundande. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent que le membre a pris part à la fondation de l'organisation. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent que le membre a pris part à la fondation de l'organisation. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, dass das Mitglied an der Gründung der Organisation beteiligt war. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:founding .
 
 ##############################################################################
@@ -555,79 +618,82 @@ mbrc:CategoryFoundation a skos:ConceptScheme , owl:NamedIndividual ;
 ##############################################################################
 
 mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv , "Types d'événements d'adhésion"@fr ;
+    skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv , "Types d'événements d'adhésion"@fr , "Arten von Mitgliedschaftsereignissen"@de ;
     skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:ballot , mbrc:rejection ,
                        mbrc:admission , mbrc:statusChange , mbrc:resignation , mbrc:lapse ,
                        mbrc:expulsion , mbrc:reinstatement , mbrc:death .
 
 mbrc:application a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Application"@en , "Ansökan"@sv , "Demande d'adhésion"@fr ;
-    skos:definition "Someone applies for membership."@en , "Någon ansöker om medlemskap."@sv , "Quelqu'un demande à adhérer."@fr .
+    skos:prefLabel "Application"@en , "Ansökan"@sv , "Demande d'adhésion"@fr , "Antrag"@de ;
+    skos:definition "Someone applies for membership."@en , "Någon ansöker om medlemskap."@sv , "Quelqu'un demande à adhérer."@fr , "Jemand beantragt die Mitgliedschaft."@de .
 
 mbrc:proposal a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Proposal"@en , "Förslag"@sv , "Proposition"@fr ;
-    skos:definition "A member proposes a candidate."@en , "En medlem föreslår en kandidat."@sv , "Un membre propose un candidat."@fr .
+    skos:prefLabel "Proposal"@en , "Förslag"@sv , "Proposition"@fr , "Vorschlag"@de ;
+    skos:definition "A member proposes a candidate."@en , "En medlem föreslår en kandidat."@sv , "Un membre propose un candidat."@fr , "Ein Mitglied schlägt einen Kandidaten vor."@de .
 
 mbrc:ballot a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Ballot"@en , "Ballotering"@sv , "Scrutin"@fr ;
-    skos:definition "The members vote on a candidate."@en , "Medlemmarna röstar om en kandidat."@sv , "Les membres votent sur un candidat."@fr .
+    skos:prefLabel "Ballot"@en , "Ballotering"@sv , "Scrutin"@fr , "Abstimmung"@de ;
+    skos:definition "The members vote on a candidate."@en , "Medlemmarna röstar om en kandidat."@sv , "Les membres votent sur un candidat."@fr , "Die Mitglieder stimmen über einen Kandidaten ab."@de .
 
 mbrc:rejection a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Rejection"@en , "Avslag"@sv , "Rejet"@fr ;
+    skos:prefLabel "Rejection"@en , "Avslag"@sv , "Rejet"@fr , "Ablehnung"@de ;
     skos:definition "The organisation decides not to go ahead with a proposal or application, by ballot or otherwise. The resulting status is mbrc:notAdmitted."@en ,
                     "Organisationen beslutar att inte gå vidare med ett förslag eller en ansökan, genom ballotering eller på annat sätt. Den nya statusen blir mbrc:notAdmitted."@sv ,
-                    "L'organisation décide de ne pas donner suite à une proposition ou à une demande, par scrutin ou autrement. Le statut qui en résulte est mbrc:notAdmitted."@fr .
+                    "L'organisation décide de ne pas donner suite à une proposition ou à une demande, par scrutin ou autrement. Le statut qui en résulte est mbrc:notAdmitted."@fr ,
+                    "Die Organisation beschließt, einen Vorschlag oder Antrag nicht weiterzuverfolgen, durch Abstimmung oder auf andere Weise. Der resultierende Status ist mbrc:notAdmitted."@de .
 
 mbrc:admission a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Admission"@en , "Upptagning"@sv , "Admission"@fr ;
+    skos:prefLabel "Admission"@en , "Upptagning"@sv , "Admission"@fr , "Aufnahme"@de ;
     skos:definition "The candidate, applicant or person enrolling becomes a member."@en ,
                     "Kandidaten, den sökande eller den som anmäler sig blir medlem."@sv ,
-                    "Le candidat, le demandeur ou la personne qui s'inscrit devient membre."@fr .
+                    "Le candidat, le demandeur ou la personne qui s'inscrit devient membre."@fr ,
+                    "Der Kandidat, Antragsteller oder Eintretende wird Mitglied."@de .
 
 mbrc:statusChange a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Status Change"@en , "Statusändring"@sv , "Changement de statut"@fr ;
-    skos:definition "Any other change of membership status or category."@en , "Annan ändring av medlemskapets status eller kategori."@sv , "Tout autre changement de statut ou de catégorie d'adhésion."@fr .
+    skos:prefLabel "Status Change"@en , "Statusändring"@sv , "Changement de statut"@fr , "Statusänderung"@de ;
+    skos:definition "Any other change of membership status or category."@en , "Annan ändring av medlemskapets status eller kategori."@sv , "Tout autre changement de statut ou de catégorie d'adhésion."@fr , "Jede andere Änderung des Mitgliedschaftsstatus oder der Kategorie."@de .
 
 mbrc:resignation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Resignation"@en , "Utträde"@sv , "Démission"@fr ;
-    skos:definition "The member leaves at their own request."@en , "Medlemmen lämnar på egen begäran."@sv , "Le membre part à sa propre demande."@fr .
+    skos:prefLabel "Resignation"@en , "Utträde"@sv , "Démission"@fr , "Austritt"@de ;
+    skos:definition "The member leaves at their own request."@en , "Medlemmen lämnar på egen begäran."@sv , "Le membre part à sa propre demande."@fr , "Das Mitglied scheidet auf eigenen Wunsch aus."@de .
 
 mbrc:lapse a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Lapse"@en , "Avförande"@sv , "Radiation pour défaut de paiement"@fr ;
-    skos:definition "Membership ends because obligations were not met."@en , "Medlemskapet upphör för att skyldigheter inte fullgjorts."@sv , "L'adhésion prend fin parce que des obligations n'ont pas été remplies."@fr .
+    skos:prefLabel "Lapse"@en , "Avförande"@sv , "Radiation pour défaut de paiement"@fr , "Erlöschen"@de ;
+    skos:definition "Membership ends because obligations were not met."@en , "Medlemskapet upphör för att skyldigheter inte fullgjorts."@sv , "L'adhésion prend fin parce que des obligations n'ont pas été remplies."@fr , "Die Mitgliedschaft endet, weil Pflichten nicht erfüllt wurden."@de .
 
 mbrc:expulsion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Expulsion"@en , "Uteslutning"@sv , "Exclusion"@fr ;
-    skos:definition "The organisation removes the member."@en , "Organisationen utesluter medlemmen."@sv , "L'organisation retire le membre."@fr .
+    skos:prefLabel "Expulsion"@en , "Uteslutning"@sv , "Exclusion"@fr , "Ausschluss"@de ;
+    skos:definition "The organisation removes the member."@en , "Organisationen utesluter medlemmen."@sv , "L'organisation retire le membre."@fr , "Die Organisation entfernt das Mitglied."@de .
 
 mbrc:reinstatement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Reinstatement"@en , "Återinträde"@sv , "Réintégration"@fr ;
-    skos:definition "A former member is admitted again."@en , "En tidigare medlem upptas på nytt."@sv , "Un ancien membre est de nouveau admis."@fr .
+    skos:prefLabel "Reinstatement"@en , "Återinträde"@sv , "Réintégration"@fr , "Wiederaufnahme"@de ;
+    skos:definition "A former member is admitted again."@en , "En tidigare medlem upptas på nytt."@sv , "Un ancien membre est de nouveau admis."@fr , "Ein ehemaliges Mitglied wird erneut aufgenommen."@de .
 
 mbrc:death a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
-    skos:prefLabel "Death"@en , "Dödsfall"@sv , "Décès"@fr ;
-    skos:definition "The member dies."@en , "Medlemmen avlider."@sv , "Le membre décède."@fr .
+    skos:prefLabel "Death"@en , "Dödsfall"@sv , "Décès"@fr , "Tod"@de ;
+    skos:definition "The member dies."@en , "Medlemmen avlider."@sv , "Le membre décède."@fr , "Das Mitglied stirbt."@de .
 
 ##############################################################################
 # 5. OFFICE TYPES  (hub; every concept is also a mbr:Office, i.e. an org:Role)
 ##############################################################################
 
 mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Office Types"@en , "Ämbetstyper"@sv , "Types de fonctions"@fr ;
+    skos:prefLabel "Office Types"@en , "Ämbetstyper"@sv , "Types de fonctions"@fr , "Amtsarten"@de ;
     skos:definition "Generic offices found across clubs, societies and orders. Organisation-specific offices map to these."@en ,
                     "Generiska ämbeten som förekommer i klubbar, sällskap och ordnar. Organisationsspecifika ämbeten mappas hit."@sv ,
-                    "Fonctions génériques que l'on trouve dans les clubs, sociétés et ordres. Les fonctions propres à une organisation y sont associées."@fr ;
+                    "Fonctions génériques que l'on trouve dans les clubs, sociétés et ordres. Les fonctions propres à une organisation y sont associées."@fr ,
+                    "Allgemeine Ämter, die sich in Clubs, Gesellschaften und Orden finden. Organisationsspezifische Ämter werden ihnen zugeordnet."@de ;
     skos:hasTopConcept mbrc:president , mbrc:vicePresident , mbrc:chancellor , mbrc:secretary , mbrc:treasurer ,
                        mbrc:archivist , mbrc:librarian , mbrc:chaplain , mbrc:masterOfCeremonies ,
                        mbrc:herald , mbrc:provost , mbrc:introducer , mbrc:steward ,
@@ -637,649 +703,680 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
 
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "President"@en , "Ordförande"@sv , "Président"@fr ;
+    skos:prefLabel "President"@en , "Ordförande"@sv , "Président"@fr , "Präsident"@de ;
     skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv , "Grand Maître"@fr ;
-    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv , "Le premier responsable exécutif de l'organisation."@fr ;
+    skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv , "Le premier responsable exécutif de l'organisation."@fr , "Der höchste Amtsträger der Organisation."@de ;
     skos:scopeNote "Whatever the head is called locally (grand master, chancellor, governor …), map the head's office here and keep the local title as its label."@en ,
                    "Vad den högste ämbetsmannen än kallas lokalt (stormästare, kansler, guvernör …) mappas ämbetet hit och den lokala titeln behålls som dess etikett."@sv ,
-                   "Quel que soit le nom local du chef (grand maître, chancelier, gouverneur …), associer ici la fonction du chef et conserver le titre local comme libellé."@fr .
+                   "Quel que soit le nom local du chef (grand maître, chancelier, gouverneur …), associer ici la fonction du chef et conserver le titre local comme libellé."@fr ,
+                   "Wie auch immer das Oberhaupt vor Ort heißt (Großmeister, Kanzler, Statthalter …), das Amt des Oberhaupts hier zuordnen und den örtlichen Titel als Bezeichnung beibehalten."@de .
 
 mbrc:vicePresident a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Vice President"@en , "Vice ordförande"@sv , "Vice-président"@fr ;
-    skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv , "Suppléant du premier responsable."@fr .
+    skos:prefLabel "Vice President"@en , "Vice ordförande"@sv , "Vice-président"@fr , "Vizepräsident"@de ;
+    skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv , "Suppléant du premier responsable."@fr , "Stellvertreter des höchsten Amtsträgers."@de .
 
 mbrc:chancellor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Chancellor"@en , "Kansler"@sv , "Chancelier"@fr ;
+    skos:prefLabel "Chancellor"@en , "Kansler"@sv , "Chancelier"@fr , "Kanzler"@de ;
     skos:altLabel "Grand Chancellor"@en , "Ordenskansler"@sv , "Storkansler"@sv , "Grand chancelier"@fr ;
     skos:definition "The officer who keeps an order's seal, statutes and records of admissions and conferrals, usually second to the head."@en ,
                     "Den ämbetsman som förvarar en ordens sigill, stadgar och förteckningar över upptagningar och tilldelningar, vanligen närmast under den högste ämbetsmannen."@sv ,
-                    "Officier qui garde le sceau, les statuts et les registres d'admission et de remise des distinctions d'un ordre, en général le second après le chef."@fr ;
+                    "Officier qui garde le sceau, les statuts et les registres d'admission et de remise des distinctions d'un ordre, en général le second après le chef."@fr ,
+                    "Der Amtsträger, der Siegel, Statuten und die Aufzeichnungen über Aufnahmen und Verleihungen eines Ordens verwahrt, meist der Zweite nach dem Oberhaupt."@de ;
     skos:scopeNote "Where the chancellor is the head of the order, record that office as mbrc:president."@en ,
                    "Där kanslern är ordens högste ämbetsman anges ämbetet som mbrc:president."@sv ,
-                   "Lorsque le chancelier est le chef de l'ordre, consigner cette fonction comme mbrc:president."@fr .
+                   "Lorsque le chancelier est le chef de l'ordre, consigner cette fonction comme mbrc:president."@fr ,
+                   "Ist der Kanzler das Oberhaupt des Ordens, dieses Amt als mbrc:president festhalten."@de .
 
 mbrc:secretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Secretary"@en , "Sekreterare"@sv , "Secrétaire"@fr ;
-    skos:definition "Keeps minutes, the register of members and official correspondence."@en , "För protokoll, matrikel och officiell korrespondens."@sv , "Tient les procès-verbaux, le registre des membres et la correspondance officielle."@fr .
+    skos:prefLabel "Secretary"@en , "Sekreterare"@sv , "Secrétaire"@fr , "Schriftführer"@de ;
+    skos:definition "Keeps minutes, the register of members and official correspondence."@en , "För protokoll, matrikel och officiell korrespondens."@sv , "Tient les procès-verbaux, le registre des membres et la correspondance officielle."@fr , "Führt Protokolle, das Mitgliederverzeichnis und die offizielle Korrespondenz."@de .
 
 mbrc:treasurer a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Treasurer"@en , "Skattmästare"@sv , "Trésorier"@fr ;
+    skos:prefLabel "Treasurer"@en , "Skattmästare"@sv , "Trésorier"@fr , "Schatzmeister"@de ;
     skos:altLabel "Kassör"@sv ;
-    skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv , "Gère les finances de l'organisation."@fr .
+    skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv , "Gère les finances de l'organisation."@fr , "Verwaltet die Finanzen der Organisation."@de .
 
 mbrc:archivist a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Archivist"@en , "Arkivarie"@sv , "Archiviste"@fr ;
-    skos:definition "Keeps the organisation's archives."@en , "Förvaltar organisationens arkiv."@sv , "Tient les archives de l'organisation."@fr .
+    skos:prefLabel "Archivist"@en , "Arkivarie"@sv , "Archiviste"@fr , "Archivar"@de ;
+    skos:definition "Keeps the organisation's archives."@en , "Förvaltar organisationens arkiv."@sv , "Tient les archives de l'organisation."@fr , "Verwahrt das Archiv der Organisation."@de .
 
 mbrc:librarian a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Librarian"@en , "Bibliotekarie"@sv , "Bibliothécaire"@fr ;
-    skos:definition "Keeps the organisation's library."@en , "Förvaltar organisationens bibliotek."@sv , "Tient la bibliothèque de l'organisation."@fr .
+    skos:prefLabel "Librarian"@en , "Bibliotekarie"@sv , "Bibliothécaire"@fr , "Bibliothekar"@de ;
+    skos:definition "Keeps the organisation's library."@en , "Förvaltar organisationens bibliotek."@sv , "Tient la bibliothèque de l'organisation."@fr , "Verwahrt die Bibliothek der Organisation."@de .
 
 mbrc:chaplain a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Chaplain"@en , "Kaplan"@sv , "Aumônier"@fr ;
-    skos:definition "Leads the spiritual or reflective parts of ceremonies."@en , "Leder de andliga eller reflekterande inslagen i ceremonier."@sv , "Dirige les parties spirituelles ou de recueillement des cérémonies."@fr .
+    skos:prefLabel "Chaplain"@en , "Kaplan"@sv , "Aumônier"@fr , "Kaplan"@de ;
+    skos:definition "Leads the spiritual or reflective parts of ceremonies."@en , "Leder de andliga eller reflekterande inslagen i ceremonier."@sv , "Dirige les parties spirituelles ou de recueillement des cérémonies."@fr , "Leitet die geistlichen oder besinnlichen Teile von Zeremonien."@de .
 
 mbrc:masterOfCeremonies a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Master of Ceremonies"@en , "Ceremonimästare"@sv , "Maître des cérémonies"@fr ;
-    skos:definition "Responsible for rituals, ceremonies and formal events."@en , "Ansvarar för ritualer, ceremonier och formella tillställningar."@sv , "Responsable des rites, des cérémonies et des manifestations solennelles."@fr .
+    skos:prefLabel "Master of Ceremonies"@en , "Ceremonimästare"@sv , "Maître des cérémonies"@fr , "Zeremonienmeister"@de ;
+    skos:definition "Responsible for rituals, ceremonies and formal events."@en , "Ansvarar för ritualer, ceremonier och formella tillställningar."@sv , "Responsable des rites, des cérémonies et des manifestations solennelles."@fr , "Zuständig für Rituale, Zeremonien und förmliche Veranstaltungen."@de .
 
 mbrc:herald a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Herald"@en , "Härold"@sv , "Héraut"@fr ;
-    skos:definition "Makes official proclamations and assists at ceremonies."@en , "Utropar officiella meddelanden och biträder vid ceremonier."@sv , "Fait les proclamations officielles et assiste lors des cérémonies."@fr .
+    skos:prefLabel "Herald"@en , "Härold"@sv , "Héraut"@fr , "Herold"@de ;
+    skos:definition "Makes official proclamations and assists at ceremonies."@en , "Utropar officiella meddelanden och biträder vid ceremonier."@sv , "Fait les proclamations officielles et assiste lors des cérémonies."@fr , "Verkündet amtliche Bekanntmachungen und wirkt bei Zeremonien mit."@de .
 
 mbrc:provost a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Provost"@en , "Profoss"@sv , "Prévôt"@fr ;
+    skos:prefLabel "Provost"@en , "Profoss"@sv , "Prévôt"@fr , "Profos"@de ;
     skos:altLabel "Sergeant-at-Arms"@en , "Tyler"@en , "Couvreur"@fr , "Sergent d'armes"@fr ;
-    skos:definition "Keeps order and discipline at gatherings."@en , "Upprätthåller ordning och disciplin vid sammankomster."@sv , "Maintient l'ordre et la discipline lors des réunions."@fr .
+    skos:definition "Keeps order and discipline at gatherings."@en , "Upprätthåller ordning och disciplin vid sammankomster."@sv , "Maintient l'ordre et la discipline lors des réunions."@fr , "Wahrt Ordnung und Disziplin bei Zusammenkünften."@de .
 
 mbrc:introducer a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Introducer"@en , "Introduktör"@sv , "Introducteur"@fr ;
-    skos:definition "Introduces new members and guests."@en , "Introducerar nya medlemmar och gäster."@sv , "Présente les nouveaux membres et les invités."@fr .
+    skos:prefLabel "Introducer"@en , "Introduktör"@sv , "Introducteur"@fr , "Einführer"@de ;
+    skos:definition "Introduces new members and guests."@en , "Introducerar nya medlemmar och gäster."@sv , "Présente les nouveaux membres et les invités."@fr , "Führt neue Mitglieder und Gäste ein."@de .
 
 mbrc:steward a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Feast Steward"@en , "Festvärd"@sv , "Responsable des banquets"@fr ;
+    skos:prefLabel "Feast Steward"@en , "Festvärd"@sv , "Responsable des banquets"@fr , "Festordner"@de ;
     skos:altLabel "Steward"@en ;
-    skos:definition "Arranges tables, hospitality and the practical side of feasts."@en , "Ordnar taffel, gästfrihet och det praktiska kring fester."@sv , "Organise les tables, l'accueil et l'intendance pratique des festins."@fr .
+    skos:definition "Arranges tables, hospitality and the practical side of feasts."@en , "Ordnar taffel, gästfrihet och det praktiska kring fester."@sv , "Organise les tables, l'accueil et l'intendance pratique des festins."@fr , "Richtet Tische, Bewirtung und die praktische Seite von Festen aus."@de .
 
 mbrc:cellarMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Cellar Master"@en , "Källarmästare"@sv , "Maître de chai"@fr ;
+    skos:prefLabel "Cellar Master"@en , "Källarmästare"@sv , "Maître de chai"@fr , "Kellermeister"@de ;
     skos:altLabel "Wine Steward"@en ;
-    skos:definition "Responsible for wines and spirits."@en , "Ansvarar för viner och spritdrycker."@sv , "Responsable des vins et des spiritueux."@fr .
+    skos:definition "Responsible for wines and spirits."@en , "Ansvarar för viner och spritdrycker."@sv , "Responsable des vins et des spiritueux."@fr , "Zuständig für Wein und Spirituosen."@de .
 
 mbrc:kitchenMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Kitchen Master"@en , "Köksmästare"@sv , "Maître queux"@fr ;
-    skos:definition "Responsible for food and the kitchen."@en , "Ansvarar för mat och kök."@sv , "Responsable de la nourriture et de la cuisine."@fr .
+    skos:prefLabel "Kitchen Master"@en , "Köksmästare"@sv , "Maître queux"@fr , "Küchenmeister"@de ;
+    skos:definition "Responsible for food and the kitchen."@en , "Ansvarar för mat och kök."@sv , "Responsable de la nourriture et de la cuisine."@fr , "Zuständig für das Essen und die Küche."@de .
 
 mbrc:songLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Song Leader"@en , "Sånganförare"@sv , "Chef de chant"@fr ;
-    skos:definition "Leads communal singing at dinners and events."@en , "Leder allsången vid middagar och tillställningar."@sv , "Dirige le chant collectif lors des dîners et manifestations."@fr .
+    skos:prefLabel "Song Leader"@en , "Sånganförare"@sv , "Chef de chant"@fr , "Vorsänger"@de ;
+    skos:definition "Leads communal singing at dinners and events."@en , "Leder allsången vid middagar och tillställningar."@sv , "Dirige le chant collectif lors des dîners et manifestations."@fr , "Leitet den gemeinsamen Gesang bei Essen und Veranstaltungen."@de .
 
 mbrc:directorOfMusic a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Director of Music"@en , "Musikanförare"@sv , "Directeur de la musique"@fr ;
+    skos:prefLabel "Director of Music"@en , "Musikanförare"@sv , "Directeur de la musique"@fr , "Musikdirektor"@de ;
     skos:altLabel "Director musices"@sv ;
-    skos:definition "Leads the music of the organisation."@en , "Leder organisationens musik."@sv , "Dirige la musique de l'organisation."@fr .
+    skos:definition "Leads the music of the organisation."@en , "Leder organisationens musik."@sv , "Dirige la musique de l'organisation."@fr , "Leitet die Musik der Organisation."@de .
 
 mbrc:chronicler a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Chronicler"@en , "Krönikör"@sv , "Chroniqueur"@fr ;
-    skos:definition "Records the organisation's history and activities."@en , "Skriver organisationens historia och krönika."@sv , "Consigne l'histoire et les activités de l'organisation."@fr .
+    skos:prefLabel "Chronicler"@en , "Krönikör"@sv , "Chroniqueur"@fr , "Chronist"@de ;
+    skos:definition "Records the organisation's history and activities."@en , "Skriver organisationens historia och krönika."@sv , "Consigne l'histoire et les activités de l'organisation."@fr , "Hält die Geschichte und die Tätigkeiten der Organisation fest."@de .
 
 mbrc:webmaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Webmaster"@en , "Webbansvarig"@sv , "Webmestre"@fr ;
-    skos:definition "Manages the website and digital presence."@en , "Förvaltar webbplats och digital närvaro."@sv , "Gère le site web et la présence numérique."@fr .
+    skos:prefLabel "Webmaster"@en , "Webbansvarig"@sv , "Webmestre"@fr , "Webmaster"@de ;
+    skos:definition "Manages the website and digital presence."@en , "Förvaltar webbplats och digital närvaro."@sv , "Gère le site web et la présence numérique."@fr , "Betreut die Website und den digitalen Auftritt."@de .
 
 mbrc:custodian a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Custodian of Premises"@en , "Lokalansvarig"@sv , "Responsable des locaux"@fr ;
-    skos:definition "Responsible for premises and material assets."@en , "Ansvarar för lokaler och materiella tillgångar."@sv , "Responsable des locaux et des biens matériels."@fr .
+    skos:prefLabel "Custodian of Premises"@en , "Lokalansvarig"@sv , "Responsable des locaux"@fr , "Hausverwalter"@de ;
+    skos:definition "Responsible for premises and material assets."@en , "Ansvarar för lokaler och materiella tillgångar."@sv , "Responsable des locaux et des biens matériels."@fr , "Zuständig für die Räumlichkeiten und das Sachvermögen."@de .
 
 mbrc:seniorAdviser a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Senior Adviser"@en , "Senior rådgivare"@sv , "Conseiller senior"@fr ;
+    skos:prefLabel "Senior Adviser"@en , "Senior rådgivare"@sv , "Conseiller senior"@fr , "Seniorberater"@de ;
     skos:altLabel "Elder"@en , "Äldste"@sv ;
-    skos:definition "An experienced member with an advisory role."@en , "En erfaren medlem med rådgivande roll."@sv , "Membre expérimenté ayant un rôle consultatif."@fr .
+    skos:definition "An experienced member with an advisory role."@en , "En erfaren medlem med rådgivande roll."@sv , "Membre expérimenté ayant un rôle consultatif."@fr , "Ein erfahrenes Mitglied mit beratender Rolle."@de .
 
 mbrc:regionalRepresentative a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Regional Representative"@en , "Regional representant"@sv , "Délégué régional"@fr ;
-    skos:definition "Represents the organisation, or leads a branch, in a region."@en , "Representerar organisationen, eller leder en avdelning, i en region."@sv , "Représente l'organisation, ou dirige une section, dans une région."@fr .
+    skos:prefLabel "Regional Representative"@en , "Regional representant"@sv , "Délégué régional"@fr , "Regionalvertreter"@de ;
+    skos:definition "Represents the organisation, or leads a branch, in a region."@en , "Representerar organisationen, eller leder en avdelning, i en region."@sv , "Représente l'organisation, ou dirige une section, dans une région."@fr , "Vertritt die Organisation in einer Region oder leitet dort eine Zweigstelle."@de .
 
 mbrc:eventLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Event Leader"@en , "Arrangemangsansvarig"@sv , "Responsable d'événement"@fr ;
-    skos:definition "Leads a particular event, trip or project, often temporarily."@en , "Leder ett visst arrangemang, en resa eller ett projekt, ofta tillfälligt."@sv , "Dirige une manifestation, un voyage ou un projet donné, souvent à titre temporaire."@fr .
+    skos:prefLabel "Event Leader"@en , "Arrangemangsansvarig"@sv , "Responsable d'événement"@fr , "Veranstaltungsleiter"@de ;
+    skos:definition "Leads a particular event, trip or project, often temporarily."@en , "Leder ett visst arrangemang, en resa eller ett projekt, ofta tillfälligt."@sv , "Dirige une manifestation, un voyage ou un projet donné, souvent à titre temporaire."@fr , "Leitet eine bestimmte Veranstaltung, Reise oder ein Projekt, oft vorübergehend."@de .
 
 ##############################################################################
 # 6. GATHERING TYPES
 ##############################################################################
 
 mbrc:GatheringTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Gathering Types"@en , "Typer av sammankomster"@sv , "Types de réunions"@fr ;
+    skos:prefLabel "Gathering Types"@en , "Typer av sammankomster"@sv , "Types de réunions"@fr , "Arten von Zusammenkünften"@de ;
     skos:hasTopConcept mbrc:meeting , mbrc:formalDinner , mbrc:informalDinner , mbrc:ball ,
                        mbrc:excursion , mbrc:lecture , mbrc:guestNight , mbrc:anniversary ,
                        mbrc:commemoration , mbrc:ceremony .
 
 mbrc:meeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Meeting"@en , "Möte"@sv , "Réunion"@fr ;
-    skos:definition "A meeting for business or discussion."@en , "Ett möte för ärenden eller samtal."@sv , "Réunion pour traiter d'affaires ou discuter."@fr ;
+    skos:prefLabel "Meeting"@en , "Möte"@sv , "Réunion"@fr , "Sitzung"@de ;
+    skos:definition "A meeting for business or discussion."@en , "Ett möte för ärenden eller samtal."@sv , "Réunion pour traiter d'affaires ou discuter."@fr , "Eine Zusammenkunft zur Beratung oder Erledigung von Geschäften."@de ;
     skos:narrower mbrc:generalMeeting .
 
 mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:meeting ;
-    skos:prefLabel "General Meeting"@en , "Stämma"@sv , "Assemblée générale"@fr ;
+    skos:prefLabel "General Meeting"@en , "Stämma"@sv , "Assemblée générale"@fr , "Mitgliederversammlung"@de ;
     skos:altLabel "Annual General Meeting"@en , "Congress"@en , "Årsmöte"@sv , "Kongress"@sv ;
     skos:definition "A meeting of all members, or of delegates elected by them, with decision-making power."@en ,
                     "Ett möte med alla medlemmar, eller med ombud valda av dem, som har beslutanderätt."@sv ,
-                    "Réunion de tous les membres, ou de délégués élus par eux, dotée du pouvoir de décision."@fr ;
+                    "Réunion de tous les membres, ou de délégués élus par eux, dotée du pouvoir de décision."@fr ,
+                    "Eine Versammlung aller Mitglieder oder der von ihnen gewählten Delegierten mit Beschlussbefugnis."@de ;
     skos:narrower mbrc:extraordinaryGeneralMeeting .
 
 mbrc:extraordinaryGeneralMeeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:generalMeeting ;
-    skos:prefLabel "Extraordinary General Meeting"@en , "Extra stämma"@sv , "Assemblée générale extraordinaire"@fr ;
+    skos:prefLabel "Extraordinary General Meeting"@en , "Extra stämma"@sv , "Assemblée générale extraordinaire"@fr , "Außerordentliche Mitgliederversammlung"@de ;
     skos:altLabel "Extra årsmöte"@sv , "Extra föreningsstämma"@sv ;
     skos:definition "A general meeting called outside the regular yearly cycle to decide a particular matter, such as a change of statutes or the dissolution of the organisation."@en ,
                     "En stämma som kallas utanför den ordinarie årliga cykeln för att avgöra en bestämd fråga, t.ex. ändring av stadgarna eller organisationens upplösning."@sv ,
-                    "Assemblée générale convoquée en dehors du cycle annuel ordinaire pour décider d'une question précise, comme la modification des statuts ou la dissolution de l'association."@fr ;
-    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en , "L'assemblée annuelle ordinaire est mbrc:generalMeeting."@fr .
+                    "Assemblée générale convoquée en dehors du cycle annuel ordinaire pour décider d'une question précise, comme la modification des statuts ou la dissolution de l'association."@fr ,
+                    "Eine Mitgliederversammlung, die außerhalb des regelmäßigen Jahreszyklus einberufen wird, um eine bestimmte Angelegenheit zu entscheiden, etwa eine Satzungsänderung oder die Auflösung der Organisation."@de ;
+    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en , "L'assemblée annuelle ordinaire est mbrc:generalMeeting."@fr , "Die ordentliche Jahresversammlung ist mbrc:generalMeeting."@de .
 
 mbrc:formalDinner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Formal Dinner"@en , "Högtidsmiddag"@sv , "Dîner de gala"@fr ;
+    skos:prefLabel "Formal Dinner"@en , "Högtidsmiddag"@sv , "Dîner de gala"@fr , "Festessen"@de ;
     skos:altLabel "Banquet"@en , "Bankett"@sv ;
-    skos:definition "A formal dinner with a prescribed dress code and ceremonial elements."@en , "En formell middag med föreskriven klädkod och ceremoniella inslag."@sv , "Dîner solennel avec un code vestimentaire prescrit et des éléments cérémoniels."@fr .
+    skos:definition "A formal dinner with a prescribed dress code and ceremonial elements."@en , "En formell middag med föreskriven klädkod och ceremoniella inslag."@sv , "Dîner solennel avec un code vestimentaire prescrit et des éléments cérémoniels."@fr , "Ein förmliches Essen mit vorgeschriebener Kleiderordnung und zeremoniellen Elementen."@de .
 
 mbrc:informalDinner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Informal Dinner"@en , "Informell middag"@sv , "Dîner informel"@fr ;
-    skos:definition "A dinner without full ceremonial."@en , "En middag utan fullt ceremoniel."@sv , "Dîner sans cérémonial complet."@fr .
+    skos:prefLabel "Informal Dinner"@en , "Informell middag"@sv , "Dîner informel"@fr , "Zwangloses Essen"@de ;
+    skos:definition "A dinner without full ceremonial."@en , "En middag utan fullt ceremoniel."@sv , "Dîner sans cérémonial complet."@fr , "Ein Essen ohne volles Zeremoniell."@de .
 
 mbrc:ball a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Ball"@en , "Bal"@sv , "Bal"@fr ;
-    skos:definition "A formal dance."@en , "En formell dans."@sv , "Danse de cérémonie."@fr .
+    skos:prefLabel "Ball"@en , "Bal"@sv , "Bal"@fr , "Ball"@de ;
+    skos:definition "A formal dance."@en , "En formell dans."@sv , "Danse de cérémonie."@fr , "Ein förmlicher Tanzabend."@de .
 
 mbrc:excursion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Excursion"@en , "Utflykt"@sv , "Excursion"@fr ;
+    skos:prefLabel "Excursion"@en , "Utflykt"@sv , "Excursion"@fr , "Ausflug"@de ;
     skos:altLabel "Trip"@en , "Resa"@sv ;
-    skos:definition "A trip made together by members."@en , "En resa som medlemmarna gör tillsammans."@sv , "Voyage fait ensemble par les membres."@fr .
+    skos:definition "A trip made together by members."@en , "En resa som medlemmarna gör tillsammans."@sv , "Voyage fait ensemble par les membres."@fr , "Eine gemeinsame Fahrt der Mitglieder."@de .
 
 mbrc:lecture a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Lecture"@en , "Föredrag"@sv , "Conférence"@fr ;
-    skos:definition "A talk given to the members."@en , "Ett föredrag för medlemmarna."@sv , "Exposé fait aux membres."@fr .
+    skos:prefLabel "Lecture"@en , "Föredrag"@sv , "Conférence"@fr , "Vortrag"@de ;
+    skos:definition "A talk given to the members."@en , "Ett föredrag för medlemmarna."@sv , "Exposé fait aux membres."@fr , "Ein Vortrag vor den Mitgliedern."@de .
 
 mbrc:guestNight a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Guest Night"@en , "Gästafton"@sv , "Soirée des invités"@fr ;
+    skos:prefLabel "Guest Night"@en , "Gästafton"@sv , "Soirée des invités"@fr , "Gästeabend"@de ;
     skos:altLabel "Ladies' Night"@en , "Damafton"@sv ;
-    skos:definition "A gathering to which members may bring guests."@en , "En sammankomst dit medlemmar får ta med gäster."@sv , "Réunion à laquelle les membres peuvent amener des invités."@fr .
+    skos:definition "A gathering to which members may bring guests."@en , "En sammankomst dit medlemmar får ta med gäster."@sv , "Réunion à laquelle les membres peuvent amener des invités."@fr , "Eine Zusammenkunft, zu der Mitglieder Gäste mitbringen dürfen."@de .
 
 mbrc:anniversary a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Anniversary"@en , "Jubileum"@sv , "Anniversaire"@fr ;
-    skos:definition "A celebration of an anniversary of the organisation."@en , "Ett firande av en av organisationens årsdagar."@sv , "Célébration d'un anniversaire de l'organisation."@fr .
+    skos:prefLabel "Anniversary"@en , "Jubileum"@sv , "Anniversaire"@fr , "Jubiläum"@de ;
+    skos:definition "A celebration of an anniversary of the organisation."@en , "Ett firande av en av organisationens årsdagar."@sv , "Célébration d'un anniversaire de l'organisation."@fr , "Eine Feier zu einem Jubiläum der Organisation."@de .
 
 mbrc:commemoration a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Commemoration"@en , "Minneshögtid"@sv , "Commémoration"@fr ;
-    skos:definition "A gathering in memory of a person or event."@en , "En sammankomst till minne av en person eller händelse."@sv , "Réunion à la mémoire d'une personne ou d'un événement."@fr .
+    skos:prefLabel "Commemoration"@en , "Minneshögtid"@sv , "Commémoration"@fr , "Gedenkfeier"@de ;
+    skos:definition "A gathering in memory of a person or event."@en , "En sammankomst till minne av en person eller händelse."@sv , "Réunion à la mémoire d'une personne ou d'un événement."@fr , "Eine Zusammenkunft zum Gedenken an eine Person oder ein Ereignis."@de .
 
 mbrc:ceremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr ;
+    skos:prefLabel "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr , "Zeremonie"@de ;
     skos:definition "A gathering at which a prescribed ritual is performed, such as an initiation, an installation of officers or a conferral of degrees."@en ,
                     "En sammankomst där en föreskriven ritual utförs, till exempel en upptagning, en installation av ämbetsmän eller en tilldelning av grader."@sv ,
-                    "Réunion au cours de laquelle un rituel prescrit est accompli, comme une initiation, une installation des officiers ou une collation de grades."@fr ;
+                    "Réunion au cours de laquelle un rituel prescrit est accompli, comme une initiation, une installation des officiers ou une collation de grades."@fr ,
+                    "Eine Zusammenkunft, bei der ein vorgeschriebenes Ritual vollzogen wird, etwa eine Aufnahme, eine Einsetzung von Amtsträgern oder eine Verleihung von Graden."@de ;
     skos:scopeNote "The hub for the ceremony types of the fraternal codelists (fraternalc:CeremonyTypes), which map to it with skos:broadMatch."@en ,
                    "Navet för ceremonityperna i fraternals kodlistor (fraternalc:CeremonyTypes), som mappas hit med skos:broadMatch."@sv ,
-                   "Le pivot des types de cérémonies des listes de codes fraternal (fraternalc:CeremonyTypes), qui y sont reliés par skos:broadMatch."@fr .
+                   "Le pivot des types de cérémonies des listes de codes fraternal (fraternalc:CeremonyTypes), qui y sont reliés par skos:broadMatch."@fr ,
+                   "Der Oberbegriff für die Zeremonienarten der fraternalen Codelisten (fraternalc:CeremonyTypes), die mit skos:broadMatch auf ihn abgebildet werden."@de .
 
 ##############################################################################
 # 7. PARTICIPATION ROLES
 ##############################################################################
 
 mbrc:ParticipationRoles a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Participation Roles"@en , "Deltagarroller"@sv , "Rôles de participation"@fr ;
+    skos:prefLabel "Participation Roles"@en , "Deltagarroller"@sv , "Rôles de participation"@fr , "Teilnahmerollen"@de ;
     skos:hasTopConcept mbrc:member , mbrc:guest , mbrc:host , mbrc:partner , mbrc:speaker ,
                        mbrc:officiant , mbrc:reciprocalVisitor .
 
 mbrc:member a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Member"@en , "Medlem"@sv , "Membre"@fr ;
-    skos:definition "Takes part as a member of the organising organisation."@en , "Deltar som medlem i den anordnande organisationen."@sv , "Participe en tant que membre de l'organisation qui organise."@fr .
+    skos:prefLabel "Member"@en , "Medlem"@sv , "Membre"@fr , "Mitglied"@de ;
+    skos:definition "Takes part as a member of the organising organisation."@en , "Deltar som medlem i den anordnande organisationen."@sv , "Participe en tant que membre de l'organisation qui organise."@fr , "Nimmt als Mitglied der veranstaltenden Organisation teil."@de .
 
 mbrc:guest a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Guest"@en , "Gäst"@sv , "Invité"@fr ;
-    skos:definition "Takes part as a guest, usually introduced by a member."@en , "Deltar som gäst, vanligen introducerad av en medlem."@sv , "Participe en tant qu'invité, en général présenté par un membre."@fr .
+    skos:prefLabel "Guest"@en , "Gäst"@sv , "Invité"@fr , "Gast"@de ;
+    skos:definition "Takes part as a guest, usually introduced by a member."@en , "Deltar som gäst, vanligen introducerad av en medlem."@sv , "Participe en tant qu'invité, en général présenté par un membre."@fr , "Nimmt als Gast teil, meist von einem Mitglied eingeführt."@de .
 
 mbrc:host a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Host"@en , "Värd"@sv , "Hôte"@fr ;
-    skos:definition "Hosts the gathering."@en , "Står värd för sammankomsten."@sv , "Reçoit la réunion."@fr .
+    skos:prefLabel "Host"@en , "Värd"@sv , "Hôte"@fr , "Gastgeber"@de ;
+    skos:definition "Hosts the gathering."@en , "Står värd för sammankomsten."@sv , "Reçoit la réunion."@fr , "Richtet die Zusammenkunft aus."@de .
 
 mbrc:partner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Partner"@en , "Partner"@sv , "Accompagnant"@fr ;
+    skos:prefLabel "Partner"@en , "Partner"@sv , "Accompagnant"@fr , "Begleitung"@de ;
     skos:altLabel "Dinner Partner"@en , "moatjé"@sv , "bordsdam"@sv , "bordskavaljer"@sv ;
-    skos:definition "Accompanies a member as partner or dinner companion."@en , "Följer med en medlem som partner eller bordsällskap."@sv , "Accompagne un membre comme partenaire ou convive."@fr .
+    skos:definition "Accompanies a member as partner or dinner companion."@en , "Följer med en medlem som partner eller bordsällskap."@sv , "Accompagne un membre comme partenaire ou convive."@fr , "Begleitet ein Mitglied als Partner oder Tischdame beziehungsweise Tischherr."@de .
 
 mbrc:speaker a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Speaker"@en , "Talare"@sv , "Orateur invité"@fr ;
-    skos:definition "Gives a speech or lecture."@en , "Håller tal eller föredrag."@sv , "Prononce un discours ou une conférence."@fr .
+    skos:prefLabel "Speaker"@en , "Talare"@sv , "Orateur invité"@fr , "Redner"@de ;
+    skos:definition "Gives a speech or lecture."@en , "Håller tal eller föredrag."@sv , "Prononce un discours ou une conférence."@fr , "Hält eine Rede oder einen Vortrag."@de .
 
 mbrc:officiant a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Officiant"@en , "Förrättare"@sv , "Officiant"@fr ;
-    skos:definition "Performs a ceremony or ritual."@en , "Förrättar en ceremoni eller ritual."@sv , "Célèbre une cérémonie ou un rituel."@fr .
+    skos:prefLabel "Officiant"@en , "Förrättare"@sv , "Officiant"@fr , "Zelebrant"@de ;
+    skos:definition "Performs a ceremony or ritual."@en , "Förrättar en ceremoni eller ritual."@sv , "Célèbre une cérémonie ou un rituel."@fr , "Führt eine Zeremonie oder ein Ritual durch."@de .
 
 mbrc:reciprocalVisitor a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:ParticipationRoles ; skos:topConceptOf mbrc:ParticipationRoles ;
-    skos:prefLabel "Reciprocal Visitor"@en , "Besökare från vänorganisation"@sv , "Visiteur réciproque"@fr ;
-    skos:definition "A member of a reciprocal or recognised organisation, visiting."@en , "En besökande medlem från en organisation med ömsesidighet eller erkännande."@sv , "Membre d'une organisation réciproque ou reconnue, en visite."@fr .
+    skos:prefLabel "Reciprocal Visitor"@en , "Besökare från vänorganisation"@sv , "Visiteur réciproque"@fr , "Besucher auf Gegenseitigkeit"@de ;
+    skos:definition "A member of a reciprocal or recognised organisation, visiting."@en , "En besökande medlem från en organisation med ömsesidighet eller erkännande."@sv , "Membre d'une organisation réciproque ou reconnue, en visite."@fr , "Ein Mitglied einer auf Gegenseitigkeit verbundenen oder anerkannten Organisation, das zu Besuch ist."@de .
 
 ##############################################################################
 # 8. DRESS CODES
 ##############################################################################
 
 mbrc:DressCodes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Dress Codes"@en , "Klädkoder"@sv , "Codes vestimentaires"@fr ;
+    skos:prefLabel "Dress Codes"@en , "Klädkoder"@sv , "Codes vestimentaires"@fr , "Kleiderordnungen"@de ;
     skos:hasTopConcept mbrc:whiteTie , mbrc:blackTie , mbrc:loungeSuit , mbrc:morningDress ,
                        mbrc:academicDress , mbrc:uniform , mbrc:nationalCostume , mbrc:insigniaWorn .
 
 mbrc:whiteTie a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "White Tie"@en , "Frack"@sv , "Cravate blanche"@fr ;
-    skos:definition "Tailcoat with white bow tie, or the equivalent evening dress."@en , "Frack med vit fluga, eller motsvarande aftonklädsel."@sv , "Habit avec nœud papillon blanc, ou tenue de soirée équivalente."@fr .
+    skos:prefLabel "White Tie"@en , "Frack"@sv , "Cravate blanche"@fr , "Frack (weiße Fliege)"@de ;
+    skos:definition "Tailcoat with white bow tie, or the equivalent evening dress."@en , "Frack med vit fluga, eller motsvarande aftonklädsel."@sv , "Habit avec nœud papillon blanc, ou tenue de soirée équivalente."@fr , "Frack mit weißer Fliege oder die entsprechende Abendkleidung."@de .
 
 mbrc:blackTie a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Black Tie"@en , "Smoking"@sv , "Cravate noire"@fr ;
+    skos:prefLabel "Black Tie"@en , "Smoking"@sv , "Cravate noire"@fr , "Smoking (schwarze Fliege)"@de ;
     skos:altLabel "Tuxedo"@en ;
-    skos:definition "Dinner jacket with black bow tie, or the equivalent."@en , "Smoking med svart fluga, eller motsvarande."@sv , "Smoking avec nœud papillon noir, ou l'équivalent."@fr .
+    skos:definition "Dinner jacket with black bow tie, or the equivalent."@en , "Smoking med svart fluga, eller motsvarande."@sv , "Smoking avec nœud papillon noir, ou l'équivalent."@fr , "Smoking mit schwarzer Fliege oder das Entsprechende."@de .
 
 mbrc:loungeSuit a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Lounge Suit"@en , "Mörk kostym"@sv , "Costume sombre"@fr ;
+    skos:prefLabel "Lounge Suit"@en , "Mörk kostym"@sv , "Costume sombre"@fr , "Dunkler Anzug"@de ;
     skos:altLabel "Dark Suit"@en , "Kavaj"@sv ;
-    skos:definition "Dark suit and tie, or the equivalent."@en , "Mörk kostym och slips, eller motsvarande."@sv , "Costume sombre et cravate, ou l'équivalent."@fr ;
+    skos:definition "Dark suit and tie, or the equivalent."@en , "Mörk kostym och slips, eller motsvarande."@sv , "Costume sombre et cravate, ou l'équivalent."@fr , "Dunkler Anzug mit Krawatte oder das Entsprechende."@de ;
     skos:scopeNote "Swedish invitations sometimes distinguish \"mörk kostym\" from the slightly less formal \"kavaj\"; both are recorded with this code."@en ,
                    "Svenska inbjudningar skiljer ibland mellan \"mörk kostym\" och den något mindre formella \"kavaj\"; båda anges med denna kod."@sv ,
-                   "Les invitations suédoises distinguent parfois « mörk kostym » du « kavaj », un peu moins formel ; les deux sont consignés avec ce code."@fr .
+                   "Les invitations suédoises distinguent parfois « mörk kostym » du « kavaj », un peu moins formel ; les deux sont consignés avec ce code."@fr ,
+                   "Schwedische Einladungen unterscheiden mitunter „mörk kostym“ vom etwas weniger förmlichen „kavaj“; beide werden mit diesem Code erfasst."@de .
 
 mbrc:morningDress a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Morning Dress"@en , "Jackett"@sv , "Tenue de jour"@fr ;
-    skos:definition "Daytime formal dress with morning coat."@en , "Formell dagklädsel med jackett."@sv , "Tenue de cérémonie de jour avec redingote."@fr .
+    skos:prefLabel "Morning Dress"@en , "Jackett"@sv , "Tenue de jour"@fr , "Cut"@de ;
+    skos:definition "Daytime formal dress with morning coat."@en , "Formell dagklädsel med jackett."@sv , "Tenue de cérémonie de jour avec redingote."@fr , "Förmliche Tageskleidung mit Cutaway."@de .
 
 mbrc:academicDress a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Academic Dress"@en , "Akademisk högtidsdräkt"@sv , "Tenue académique"@fr ;
-    skos:definition "Academic dress as prescribed by the university."@en , "Akademisk högtidsdräkt enligt universitetets föreskrifter."@sv , "Tenue académique telle que prescrite par l'université."@fr .
+    skos:prefLabel "Academic Dress"@en , "Akademisk högtidsdräkt"@sv , "Tenue académique"@fr , "Akademische Tracht"@de ;
+    skos:definition "Academic dress as prescribed by the university."@en , "Akademisk högtidsdräkt enligt universitetets föreskrifter."@sv , "Tenue académique telle que prescrite par l'université."@fr , "Akademische Tracht, wie sie von der Universität vorgeschrieben ist."@de .
 
 mbrc:uniform a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Uniform"@en , "Uniform"@sv , "Uniforme"@fr ;
-    skos:definition "Military or other uniform."@en , "Militär eller annan uniform."@sv , "Uniforme militaire ou autre."@fr .
+    skos:prefLabel "Uniform"@en , "Uniform"@sv , "Uniforme"@fr , "Uniform"@de ;
+    skos:definition "Military or other uniform."@en , "Militär eller annan uniform."@sv , "Uniforme militaire ou autre."@fr , "Militär- oder andere Uniform."@de .
 
 mbrc:nationalCostume a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "National Costume"@en , "Folkdräkt"@sv , "Costume traditionnel"@fr ;
-    skos:definition "Traditional regional or national dress."@en , "Traditionell bygde- eller nationaldräkt."@sv , "Costume traditionnel régional ou national."@fr .
+    skos:prefLabel "National Costume"@en , "Folkdräkt"@sv , "Costume traditionnel"@fr , "Tracht"@de ;
+    skos:definition "Traditional regional or national dress."@en , "Traditionell bygde- eller nationaldräkt."@sv , "Costume traditionnel régional ou national."@fr , "Traditionelle regionale oder nationale Kleidung."@de .
 
 mbrc:insigniaWorn a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
-    skos:prefLabel "Insignia to Be Worn"@en , "Ordenstecken bäres"@sv , "Décorations à porter"@fr ;
+    skos:prefLabel "Insignia to Be Worn"@en , "Ordenstecken bäres"@sv , "Décorations à porter"@fr , "Ordenszeichen werden getragen"@de ;
     skos:altLabel "Decorations"@en , "Med ordnar"@sv ;
-    skos:definition "Orders, medals and insignia are to be worn. Combined with another dress code."@en , "Ordnar, medaljer och tecken ska bäras. Kombineras med en annan klädkod."@sv , "Les ordres, médailles et insignes doivent être portés. Se combine avec un autre code vestimentaire."@fr .
+    skos:definition "Orders, medals and insignia are to be worn. Combined with another dress code."@en , "Ordnar, medaljer och tecken ska bäras. Kombineras med en annan klädkod."@sv , "Les ordres, médailles et insignes doivent être portés. Se combine avec un autre code vestimentaire."@fr , "Orden, Medaillen und Insignien sind zu tragen. Wird mit einer anderen Kleiderordnung kombiniert."@de .
 
 ##############################################################################
 # 9. GENDER POLICIES
 ##############################################################################
 
 mbrc:GenderPolicies a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Gender Policies"@en , "Könspolicyer"@sv , "Règles de mixité"@fr ;
+    skos:prefLabel "Gender Policies"@en , "Könspolicyer"@sv , "Règles de mixité"@fr , "Geschlechterregelungen"@de ;
     skos:hasTopConcept mbrc:menOnly , mbrc:womenOnly , mbrc:mixed , mbrc:mixedSeparateBranches .
 
 mbrc:menOnly a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
-    skos:prefLabel "Men Only"@en , "Endast män"@sv , "Réservé aux hommes"@fr ;
-    skos:definition "Only men are admitted as members."@en , "Endast män upptas som medlemmar."@sv , "Seuls les hommes sont admis comme membres."@fr .
+    skos:prefLabel "Men Only"@en , "Endast män"@sv , "Réservé aux hommes"@fr , "Nur Männer"@de ;
+    skos:definition "Only men are admitted as members."@en , "Endast män upptas som medlemmar."@sv , "Seuls les hommes sont admis comme membres."@fr , "Nur Männer werden als Mitglieder aufgenommen."@de .
 
 mbrc:womenOnly a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
-    skos:prefLabel "Women Only"@en , "Endast kvinnor"@sv , "Réservé aux femmes"@fr ;
-    skos:definition "Only women are admitted as members."@en , "Endast kvinnor upptas som medlemmar."@sv , "Seules les femmes sont admises comme membres."@fr .
+    skos:prefLabel "Women Only"@en , "Endast kvinnor"@sv , "Réservé aux femmes"@fr , "Nur Frauen"@de ;
+    skos:definition "Only women are admitted as members."@en , "Endast kvinnor upptas som medlemmar."@sv , "Seules les femmes sont admises comme membres."@fr , "Nur Frauen werden als Mitglieder aufgenommen."@de .
 
 mbrc:mixed a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
-    skos:prefLabel "Mixed"@en , "Blandat"@sv , "Mixte"@fr ;
-    skos:definition "Members of any gender are admitted on equal terms."@en , "Medlemmar av alla kön upptas på lika villkor."@sv , "Les membres de tout genre sont admis dans les mêmes conditions."@fr .
+    skos:prefLabel "Mixed"@en , "Blandat"@sv , "Mixte"@fr , "Gemischt"@de ;
+    skos:definition "Members of any gender are admitted on equal terms."@en , "Medlemmar av alla kön upptas på lika villkor."@sv , "Les membres de tout genre sont admis dans les mêmes conditions."@fr , "Mitglieder jeden Geschlechts werden zu gleichen Bedingungen aufgenommen."@de .
 
 mbrc:mixedSeparateBranches a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GenderPolicies ; skos:topConceptOf mbrc:GenderPolicies ;
-    skos:prefLabel "Mixed, Separate Branches"@en , "Blandat, separata avdelningar"@sv , "Mixte, sections séparées"@fr ;
-    skos:definition "Men and women are admitted, but to separate branches or lodges."@en , "Både män och kvinnor upptas, men i separata avdelningar eller loger."@sv , "Hommes et femmes sont admis, mais dans des sections ou des loges séparées."@fr .
+    skos:prefLabel "Mixed, Separate Branches"@en , "Blandat, separata avdelningar"@sv , "Mixte, sections séparées"@fr , "Gemischt, getrennte Zweigstellen"@de ;
+    skos:definition "Men and women are admitted, but to separate branches or lodges."@en , "Både män och kvinnor upptas, men i separata avdelningar eller loger."@sv , "Hommes et femmes sont admis, mais dans des sections ou des loges séparées."@fr , "Männer und Frauen werden aufgenommen, aber in getrennte Zweigstellen oder Logen."@de .
 
 ##############################################################################
 # 10. ADMISSION MODES
 ##############################################################################
 
 mbrc:AdmissionModes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Admission Modes"@en , "Upptagningsformer"@sv , "Modes d'admission"@fr ;
+    skos:prefLabel "Admission Modes"@en , "Upptagningsformer"@sv , "Modes d'admission"@fr , "Aufnahmeverfahren"@de ;
     skos:hasTopConcept mbrc:byInvitation , mbrc:proposalAndBallot , mbrc:proposalAndObjectionPeriod ,
                        mbrc:openApplication , mbrc:openEnrolment , mbrc:hereditary , mbrc:exOfficio .
 
 mbrc:byInvitation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "By Invitation"@en , "Genom inbjudan"@sv , "Sur invitation"@fr ;
-    skos:definition "Membership is only offered by invitation."@en , "Medlemskap erbjuds endast genom inbjudan."@sv , "L'adhésion n'est offerte que sur invitation."@fr .
+    skos:prefLabel "By Invitation"@en , "Genom inbjudan"@sv , "Sur invitation"@fr , "Auf Einladung"@de ;
+    skos:definition "Membership is only offered by invitation."@en , "Medlemskap erbjuds endast genom inbjudan."@sv , "L'adhésion n'est offerte que sur invitation."@fr , "Die Mitgliedschaft wird nur auf Einladung angeboten."@de .
 
 mbrc:proposalAndBallot a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "Proposal and Ballot"@en , "Förslag och ballotering"@sv , "Proposition et scrutin"@fr ;
-    skos:definition "Candidates are proposed by members and elected by ballot."@en , "Kandidater föreslås av medlemmar och väljs genom ballotering."@sv , "Les candidats sont proposés par des membres et élus au scrutin."@fr .
+    skos:prefLabel "Proposal and Ballot"@en , "Förslag och ballotering"@sv , "Proposition et scrutin"@fr , "Vorschlag und Abstimmung"@de ;
+    skos:definition "Candidates are proposed by members and elected by ballot."@en , "Kandidater föreslås av medlemmar och väljs genom ballotering."@sv , "Les candidats sont proposés par des membres et élus au scrutin."@fr , "Kandidaten werden von Mitgliedern vorgeschlagen und durch Abstimmung gewählt."@de .
 
 mbrc:proposalAndObjectionPeriod a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "Proposal and Objection Period"@en , "Förslag och invändningstid"@sv , "Proposition et délai d'opposition"@fr ;
+    skos:prefLabel "Proposal and Objection Period"@en , "Förslag och invändningstid"@sv , "Proposition et délai d'opposition"@fr , "Vorschlag und Einspruchsfrist"@de ;
     skos:definition "Candidates are proposed and seconded by members, and the proposal is made known to the members for a set period. Unless an objection leads the organisation to stop it, the candidate goes ahead to admission; there is no vote."@en ,
                     "Kandidater föreslås och understöds av medlemmar, och förslaget görs känt för medlemmarna under en bestämd tid. Om ingen invändning får organisationen att stoppa det går kandidaten vidare till upptagning; ingen omröstning sker."@sv ,
-                    "Les candidats sont proposés et appuyés par des membres, et la proposition est portée à la connaissance des membres pendant un délai fixé. Sauf si une opposition conduit l'organisation à l'arrêter, le candidat passe à l'admission ; il n'y a pas de vote."@fr ;
+                    "Les candidats sont proposés et appuyés par des membres, et la proposition est portée à la connaissance des membres pendant un délai fixé. Sauf si une opposition conduit l'organisation à l'arrêter, le candidat passe à l'admission ; il n'y a pas de vote."@fr ,
+                    "Kandidaten werden von Mitgliedern vorgeschlagen und unterstützt, und der Vorschlag wird den Mitgliedern für eine bestimmte Frist bekannt gemacht. Führt kein Einspruch dazu, dass die Organisation ihn stoppt, geht der Kandidat weiter zur Aufnahme; es gibt keine Abstimmung."@de ;
     skos:scopeNote "Compare mbrc:proposalAndBallot, where the members vote. A proposal that is stopped is recorded as a mbrc:rejection event with the resulting status mbrc:notAdmitted."@en ,
                    "Jämför mbrc:proposalAndBallot, där medlemmarna röstar. Ett förslag som stoppas registreras som en händelse av typen mbrc:rejection med den nya statusen mbrc:notAdmitted."@sv ,
-                   "Comparer mbrc:proposalAndBallot, où les membres votent. Une proposition arrêtée est consignée comme un événement mbrc:rejection avec le statut résultant mbrc:notAdmitted."@fr .
+                   "Comparer mbrc:proposalAndBallot, où les membres votent. Une proposition arrêtée est consignée comme un événement mbrc:rejection avec le statut résultant mbrc:notAdmitted."@fr ,
+                   "Vergleiche mbrc:proposalAndBallot, wo die Mitglieder abstimmen. Ein gestoppter Vorschlag wird als Ereignis mbrc:rejection mit dem resultierenden Status mbrc:notAdmitted festgehalten."@de .
 
 mbrc:openApplication a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "Open Application"@en , "Öppen ansökan"@sv , "Candidature libre"@fr ;
+    skos:prefLabel "Open Application"@en , "Öppen ansökan"@sv , "Candidature libre"@fr , "Offene Bewerbung"@de ;
     skos:definition "Anyone meeting the criteria may apply, and the organisation, usually its board, decides whether to admit the applicant."@en ,
                     "Alla som uppfyller kriterierna kan ansöka, och organisationen, vanligen styrelsen, beslutar om den sökande ska tas upp."@sv ,
-                    "Toute personne remplissant les critères peut poser sa candidature, et l'organisation, en général son bureau ou son conseil, décide de l'admettre ou non."@fr ;
+                    "Toute personne remplissant les critères peut poser sa candidature, et l'organisation, en général son bureau ou son conseil, décide de l'admettre ou non."@fr ,
+                    "Jeder, der die Kriterien erfüllt, kann sich bewerben, und die Organisation, meist ihr Vorstand, entscheidet über die Aufnahme des Bewerbers."@de ;
     skos:scopeNote "Compare mbrc:openEnrolment, where no admission decision is made."@en ,
                    "Jämför mbrc:openEnrolment, där inget beslut om upptagning fattas."@sv ,
-                   "Comparer mbrc:openEnrolment, où aucune décision d'admission n'est prise."@fr .
+                   "Comparer mbrc:openEnrolment, où aucune décision d'admission n'est prise."@fr ,
+                   "Vergleiche mbrc:openEnrolment, wo keine Aufnahmeentscheidung getroffen wird."@de .
 
 mbrc:openEnrolment a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "Open Enrolment"@en , "Inträde genom anmälan"@sv , "Adhésion libre"@fr ;
+    skos:prefLabel "Open Enrolment"@en , "Inträde genom anmälan"@sv , "Adhésion libre"@fr , "Offener Beitritt"@de ;
     skos:altLabel "Open Membership"@en , "Open Enrollment"@en , "Öppet medlemskap"@sv ;
     skos:definition "Anyone who accepts the organisation's purpose and rules may join by registering and, where required, paying the fee. No admission decision is made."@en ,
                     "Var och en som godtar organisationens ändamål och stadgar kan bli medlem genom att anmäla sig och i förekommande fall betala avgiften. Inget beslut om upptagning fattas."@sv ,
-                    "Toute personne qui accepte le but et les statuts de l'organisation peut adhérer en s'inscrivant et, le cas échéant, en payant la cotisation. Aucune décision d'admission n'est prise."@fr .
+                    "Toute personne qui accepte le but et les statuts de l'organisation peut adhérer en s'inscrivant et, le cas échéant, en payant la cotisation. Aucune décision d'admission n'est prise."@fr ,
+                    "Jeder, der den Zweck und die Regeln der Organisation anerkennt, kann durch Anmeldung und, wo verlangt, Zahlung des Beitrags beitreten. Es wird keine Aufnahmeentscheidung getroffen."@de .
 
 mbrc:hereditary a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "Hereditary"@en , "Ärftligt"@sv , "Héréditaire"@fr ;
-    skos:definition "Membership passes by descent."@en , "Medlemskap går i arv."@sv , "L'adhésion se transmet par filiation."@fr .
+    skos:prefLabel "Hereditary"@en , "Ärftligt"@sv , "Héréditaire"@fr , "Erblich"@de ;
+    skos:definition "Membership passes by descent."@en , "Medlemskap går i arv."@sv , "L'adhésion se transmet par filiation."@fr , "Die Mitgliedschaft geht durch Abstammung über."@de .
 
 mbrc:exOfficio a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
-    skos:prefLabel "Ex Officio"@en , "Ex officio"@sv , "De droit"@fr ;
-    skos:definition "Membership follows from holding a certain position."@en , "Medlemskap följer av en viss befattning."@sv , "L'adhésion découle de l'exercice d'une certaine fonction."@fr .
+    skos:prefLabel "Ex Officio"@en , "Ex officio"@sv , "De droit"@fr , "Von Amts wegen"@de ;
+    skos:definition "Membership follows from holding a certain position."@en , "Medlemskap följer av en viss befattning."@sv , "L'adhésion découle de l'exercice d'une certaine fonction."@fr , "Die Mitgliedschaft ergibt sich aus der Innehabung einer bestimmten Position."@de .
 
 ##############################################################################
 # 11. DISTINCTION TYPES
 ##############################################################################
 
 mbrc:DistinctionTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Distinction Types"@en , "Typer av utmärkelser"@sv , "Types de distinctions"@fr ;
+    skos:prefLabel "Distinction Types"@en , "Typer av utmärkelser"@sv , "Types de distinctions"@fr , "Arten von Auszeichnungen"@de ;
     skos:hasTopConcept mbrc:medal , mbrc:badge , mbrc:honoraryTitle , mbrc:honoraryMembership ,
                        mbrc:trophy , mbrc:diploma .
 
 mbrc:medal a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
-    skos:prefLabel "Medal"@en , "Medalj"@sv , "Médaille"@fr ;
-    skos:definition "A medal, usually worn on a ribbon."@en , "En medalj, vanligen buren i band."@sv , "Médaille, en général portée sur un ruban."@fr .
+    skos:prefLabel "Medal"@en , "Medalj"@sv , "Médaille"@fr , "Medaille"@de ;
+    skos:definition "A medal, usually worn on a ribbon."@en , "En medalj, vanligen buren i band."@sv , "Médaille, en général portée sur un ruban."@fr , "Eine Medaille, meist an einem Band getragen."@de .
 
 mbrc:badge a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
-    skos:prefLabel "Badge"@en , "Tecken"@sv , "Insigne"@fr ;
-    skos:definition "A badge or emblem of distinction."@en , "Ett hederstecken eller emblem."@sv , "Insigne ou emblème de distinction."@fr .
+    skos:prefLabel "Badge"@en , "Tecken"@sv , "Insigne"@fr , "Abzeichen"@de ;
+    skos:definition "A badge or emblem of distinction."@en , "Ett hederstecken eller emblem."@sv , "Insigne ou emblème de distinction."@fr , "Ein Abzeichen oder Emblem als Auszeichnung."@de .
 
 mbrc:honoraryTitle a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
-    skos:prefLabel "Honorary Title"@en , "Hederstitel"@sv , "Titre honorifique"@fr ;
-    skos:definition "A title conferred as an honour."@en , "En titel som ges som hedersbetygelse."@sv , "Titre conféré à titre d'honneur."@fr .
+    skos:prefLabel "Honorary Title"@en , "Hederstitel"@sv , "Titre honorifique"@fr , "Ehrentitel"@de ;
+    skos:definition "A title conferred as an honour."@en , "En titel som ges som hedersbetygelse."@sv , "Titre conféré à titre d'honneur."@fr , "Ein als Ehre verliehener Titel."@de .
 
 mbrc:honoraryMembership a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
-    skos:prefLabel "Honorary Membership"@en , "Hedersledamotskap"@sv , "Adhésion honoraire"@fr ;
-    skos:definition "Membership conferred as an honour."@en , "Medlemskap som ges som hedersbetygelse."@sv , "Adhésion conférée à titre d'honneur."@fr .
+    skos:prefLabel "Honorary Membership"@en , "Hedersledamotskap"@sv , "Adhésion honoraire"@fr , "Ehrenmitgliedschaft"@de ;
+    skos:definition "Membership conferred as an honour."@en , "Medlemskap som ges som hedersbetygelse."@sv , "Adhésion conférée à titre d'honneur."@fr , "Als Ehre verliehene Mitgliedschaft."@de .
 
 mbrc:trophy a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
-    skos:prefLabel "Trophy"@en , "Pris"@sv , "Trophée"@fr ;
+    skos:prefLabel "Trophy"@en , "Pris"@sv , "Trophée"@fr , "Pokal"@de ;
     skos:altLabel "Vandringspris"@sv ;
-    skos:definition "A prize object, often passed on between winners."@en , "Ett pris, ofta vandrande mellan vinnare."@sv , "Objet de prix, souvent transmis de lauréat en lauréat."@fr .
+    skos:definition "A prize object, often passed on between winners."@en , "Ett pris, ofta vandrande mellan vinnare."@sv , "Objet de prix, souvent transmis de lauréat en lauréat."@fr , "Ein Preisgegenstand, der oft von Sieger zu Sieger weitergereicht wird."@de .
 
 mbrc:diploma a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DistinctionTypes ; skos:topConceptOf mbrc:DistinctionTypes ;
-    skos:prefLabel "Diploma"@en , "Diplom"@sv , "Diplôme"@fr ;
-    skos:definition "A certificate of distinction."@en , "Ett hedersdiplom."@sv , "Certificat de distinction."@fr .
+    skos:prefLabel "Diploma"@en , "Diplom"@sv , "Diplôme"@fr , "Urkunde"@de ;
+    skos:definition "A certificate of distinction."@en , "Ett hedersdiplom."@sv , "Certificat de distinction."@fr , "Eine Urkunde als Auszeichnung."@de .
 
 ##############################################################################
 # 12. MATERIALS
 ##############################################################################
 
 mbrc:Materials a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Materials"@en , "Material"@sv , "Matériaux"@fr ;
-    skos:definition "Materials of medals, badges and insignia."@en , "Material i medaljer, tecken och insignier."@sv , "Matériaux des médailles, insignes et décorations."@fr ;
+    skos:prefLabel "Materials"@en , "Material"@sv , "Matériaux"@fr , "Materialien"@de ;
+    skos:definition "Materials of medals, badges and insignia."@en , "Material i medaljer, tecken och insignier."@sv , "Matériaux des médailles, insignes et décorations."@fr , "Materialien von Medaillen, Abzeichen und Insignien."@de ;
     skos:hasTopConcept mbrc:gold , mbrc:silver , mbrc:giltSilver , mbrc:bronze , mbrc:pewter ,
                        mbrc:enamel .
 
 mbrc:gold a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Gold"@en , "Guld"@sv , "Or"@fr .
+    skos:prefLabel "Gold"@en , "Guld"@sv , "Or"@fr , "Gold"@de .
 
 mbrc:silver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Silver"@en , "Silver"@sv , "Argent"@fr .
+    skos:prefLabel "Silver"@en , "Silver"@sv , "Argent"@fr , "Silber"@de .
 
 mbrc:giltSilver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Silver-gilt"@en , "Förgyllt silver"@sv , "Vermeil"@fr .
+    skos:prefLabel "Silver-gilt"@en , "Förgyllt silver"@sv , "Vermeil"@fr , "Vergoldetes Silber"@de .
 
 mbrc:bronze a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Bronze"@en , "Brons"@sv , "Bronze"@fr .
+    skos:prefLabel "Bronze"@en , "Brons"@sv , "Bronze"@fr , "Bronze"@de .
 
 mbrc:pewter a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Pewter"@en , "Tenn"@sv , "Étain"@fr ;
+    skos:prefLabel "Pewter"@en , "Tenn"@sv , "Étain"@fr , "Zinn"@de ;
     skos:scopeNote "The tin-based alloy (Swedish 'tenn' in the craft sense), not the element tin."@en ,
                    "Den tennbaserade legeringen (tenn i hantverksbemärkelse), inte grundämnet."@sv ,
-                   "L'alliage à base d'étain (le suédois « tenn » au sens artisanal), et non l'élément étain."@fr .
+                   "L'alliage à base d'étain (le suédois « tenn » au sens artisanal), et non l'élément étain."@fr ,
+                   "Die Legierung auf Zinnbasis (schwedisch 'tenn' im handwerklichen Sinn), nicht das Element Zinn."@de .
 
 mbrc:enamel a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Enamel"@en , "Emalj"@sv , "Émail"@fr .
+    skos:prefLabel "Enamel"@en , "Emalj"@sv , "Émail"@fr , "Email"@de .
 
 ##############################################################################
 # 13. ORGANISATION STATUSES  (values of mbr:organizationStatus)
 ##############################################################################
 
 mbrc:OrganizationStatuses a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Organisation Statuses"@en , "Organisationsstatusar"@sv , "Statuts des organisations"@fr ;
+    skos:prefLabel "Organisation Statuses"@en , "Organisationsstatusar"@sv , "Statuts des organisations"@fr , "Organisationsstatus"@de ;
     skos:definition "Whether an organisation still exists and operates."@en ,
                     "Om en organisation fortfarande finns och är verksam."@sv ,
-                    "Indique si une organisation existe encore et est en activité."@fr ;
+                    "Indique si une organisation existe encore et est en activité."@fr ,
+                    "Ob eine Organisation noch besteht und tätig ist."@de ;
     skos:hasTopConcept mbrc:activeOrganization , mbrc:dormantOrganization ,
                        mbrc:mergedOrganization , mbrc:closedOrganization .
 
 mbrc:activeOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
-    skos:prefLabel "Active"@en , "Verksam"@sv , "En activité"@fr ;
-    skos:definition "The organisation exists and operates."@en , "Organisationen finns och är verksam."@sv , "L'organisation existe et est en activité."@fr .
+    skos:prefLabel "Active"@en , "Verksam"@sv , "En activité"@fr , "Aktiv"@de ;
+    skos:definition "The organisation exists and operates."@en , "Organisationen finns och är verksam."@sv , "L'organisation existe et est en activité."@fr , "Die Organisation besteht und ist tätig."@de .
 
 mbrc:dormantOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
-    skos:prefLabel "Dormant"@en , "Vilande"@sv , "En sommeil"@fr ;
+    skos:prefLabel "Dormant"@en , "Vilande"@sv , "En sommeil"@fr , "Ruhend"@de ;
     skos:definition "The organisation still exists but has suspended its activities, for example while without premises."@en ,
                     "Organisationen finns kvar men har gjort uppehåll i verksamheten, t.ex. i väntan på nya lokaler."@sv ,
-                    "L'organisation existe encore mais a suspendu ses activités, par exemple faute de locaux."@fr .
+                    "L'organisation existe encore mais a suspendu ses activités, par exemple faute de locaux."@fr ,
+                    "Die Organisation besteht noch, hat ihre Tätigkeit aber eingestellt, zum Beispiel solange sie keine Räumlichkeiten hat."@de .
 
 mbrc:mergedOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
-    skos:prefLabel "Merged"@en , "Sammanslagen"@sv , "Fusionnée"@fr ;
+    skos:prefLabel "Merged"@en , "Sammanslagen"@sv , "Fusionnée"@fr , "Fusioniert"@de ;
     skos:definition "The organisation no longer exists on its own, having merged into another. Record the merger as an org:ChangeEvent."@en ,
                     "Organisationen finns inte längre självständigt, eftersom den gått upp i en annan. Registrera sammanslagningen som en org:ChangeEvent."@sv ,
-                    "L'organisation n'existe plus en propre, car elle a fusionné avec une autre. Consigner la fusion comme une org:ChangeEvent."@fr .
+                    "L'organisation n'existe plus en propre, car elle a fusionné avec une autre. Consigner la fusion comme une org:ChangeEvent."@fr ,
+                    "Die Organisation besteht nicht mehr für sich, da sie in eine andere aufgegangen ist. Die Fusion als org:ChangeEvent festhalten."@de .
 
 mbrc:closedOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
-    skos:prefLabel "Closed"@en , "Nedlagd"@sv , "Dissoute"@fr ;
+    skos:prefLabel "Closed"@en , "Nedlagd"@sv , "Dissoute"@fr , "Aufgelöst"@de ;
     skos:altLabel "Defunct"@en , "Upplöst"@sv ;
-    skos:definition "The organisation has been wound up."@en , "Organisationen har upplösts."@sv , "L'organisation a été liquidée."@fr .
+    skos:definition "The organisation has been wound up."@en , "Organisationen har upplösts."@sv , "L'organisation a été liquidée."@fr , "Die Organisation wurde abgewickelt."@de .
 
 ##############################################################################
 # 14. OWNERSHIP MODELS  (values of mbr:ownershipModel)
 ##############################################################################
 
 mbrc:OwnershipModels a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Ownership Models"@en , "Ägarformer"@sv , "Modes de propriété"@fr ;
-    skos:definition "Who owns and runs a club or society."@en , "Vem som äger och driver en klubb eller ett sällskap."@sv , "Qui possède et dirige un club ou une société."@fr ;
+    skos:prefLabel "Ownership Models"@en , "Ägarformer"@sv , "Modes de propriété"@fr , "Eigentumsmodelle"@de ;
+    skos:definition "Who owns and runs a club or society."@en , "Vem som äger och driver en klubb eller ett sällskap."@sv , "Qui possède et dirige un club ou une société."@fr , "Wem ein Club oder eine Gesellschaft gehört und wer sie betreibt."@de ;
     skos:hasTopConcept mbrc:membersClub , mbrc:proprietaryClub , mbrc:institutionalClub .
 
 mbrc:membersClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OwnershipModels ; skos:topConceptOf mbrc:OwnershipModels ;
-    skos:prefLabel "Members' Club"@en , "Medlemsägd klubb"@sv , "Club de membres"@fr ;
+    skos:prefLabel "Members' Club"@en , "Medlemsägd klubb"@sv , "Club de membres"@fr , "Mitgliederclub"@de ;
     skos:definition "Owned by its members, who govern it through a committee and share its property."@en ,
                     "Ägs av medlemmarna, som styr den genom en styrelse och delar på dess egendom."@sv ,
-                    "Appartient à ses membres, qui la dirigent par un comité et en partagent les biens."@fr .
+                    "Appartient à ses membres, qui la dirigent par un comité et en partagent les biens."@fr ,
+                    "Im Eigentum seiner Mitglieder, die ihn durch einen Ausschuss leiten und sein Vermögen teilen."@de .
 
 mbrc:proprietaryClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OwnershipModels ; skos:topConceptOf mbrc:OwnershipModels ;
-    skos:prefLabel "Proprietary Club"@en , "Ägarklubb"@sv , "Club à propriétaire"@fr ;
+    skos:prefLabel "Proprietary Club"@en , "Ägarklubb"@sv , "Club à propriétaire"@fr , "Eigentümerclub"@de ;
     skos:definition "Owned and run by a proprietor or company for profit; members pay for the use of its facilities but do not own it."@en ,
                     "Ägs och drivs av en ägare eller ett bolag i vinstsyfte; medlemmarna betalar för tillgången men äger den inte."@sv ,
-                    "Possédé et exploité par un propriétaire ou une société dans un but lucratif ; les membres paient l'accès aux installations mais n'en sont pas propriétaires."@fr .
+                    "Possédé et exploité par un propriétaire ou une société dans un but lucratif ; les membres paient l'accès aux installations mais n'en sont pas propriétaires."@fr ,
+                    "Von einem Eigentümer oder einem Unternehmen auf Gewinn ausgerichtet geführt und besessen; Mitglieder zahlen für die Nutzung der Einrichtungen, besitzen ihn aber nicht."@de .
 
 mbrc:institutionalClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OwnershipModels ; skos:topConceptOf mbrc:OwnershipModels ;
-    skos:prefLabel "Institutional Club"@en , "Institutionsdriven klubb"@sv , "Club institutionnel"@fr ;
+    skos:prefLabel "Institutional Club"@en , "Institutionsdriven klubb"@sv , "Club institutionnel"@fr , "Institutionsclub"@de ;
     skos:definition "Owned or run by a parent institution, such as a university, regiment, company or government body."@en ,
                     "Ägs eller drivs av en moderinstitution, t.ex. ett universitet, ett regemente, ett företag eller en myndighet."@sv ,
-                    "Possédé ou exploité par une institution mère, comme une université, un régiment, une entreprise ou un organisme public."@fr .
+                    "Possédé ou exploité par une institution mère, comme une université, un régiment, une entreprise ou un organisme public."@fr ,
+                    "Im Besitz oder unter der Leitung einer übergeordneten Institution, etwa einer Universität, eines Regiments, eines Unternehmens oder einer Behörde."@de .
 
 ##############################################################################
 # 15. FEE TYPES  (values of mbr:feeType)
 ##############################################################################
 
 mbrc:FeeTypes a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Fee Types"@en , "Avgiftstyper"@sv , "Types de cotisation"@fr ;
+    skos:prefLabel "Fee Types"@en , "Avgiftstyper"@sv , "Types de cotisation"@fr , "Beitragsarten"@de ;
     skos:definition "Kinds of membership fee, by when and how often they are paid."@en ,
                     "Typer av medlemsavgift, efter när och hur ofta de betalas."@sv ,
-                    "Sortes de cotisations, selon le moment et la fréquence de leur paiement."@fr ;
+                    "Sortes de cotisations, selon le moment et la fréquence de leur paiement."@fr ,
+                    "Arten von Mitgliedsbeiträgen, danach, wann und wie oft sie gezahlt werden."@de ;
     skos:hasTopConcept mbrc:entranceFee , mbrc:annualFee , mbrc:monthlyFee , mbrc:lifeMembershipFee .
 
 mbrc:entranceFee a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
-    skos:prefLabel "Entrance Fee"@en , "Inträdesavgift"@sv , "Droit d'entrée"@fr ;
+    skos:prefLabel "Entrance Fee"@en , "Inträdesavgift"@sv , "Droit d'entrée"@fr , "Aufnahmegebühr"@de ;
     skos:altLabel "Joining Fee"@en , "Anslutningsavgift"@sv ;
-    skos:definition "A one-off fee paid on admission."@en , "En engångsavgift som betalas vid upptagningen."@sv , "Somme unique payée lors de l'admission."@fr .
+    skos:definition "A one-off fee paid on admission."@en , "En engångsavgift som betalas vid upptagningen."@sv , "Somme unique payée lors de l'admission."@fr , "Eine einmalige Gebühr bei der Aufnahme."@de .
 
 mbrc:annualFee a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
-    skos:prefLabel "Annual Fee"@en , "Årsavgift"@sv , "Cotisation annuelle"@fr ;
+    skos:prefLabel "Annual Fee"@en , "Årsavgift"@sv , "Cotisation annuelle"@fr , "Jahresbeitrag"@de ;
     skos:altLabel "Annual Subscription"@en , "Annual Dues"@en ;
-    skos:definition "A fee paid every year to remain a member."@en , "En avgift som betalas varje år för att förbli medlem."@sv , "Somme payée chaque année pour rester membre."@fr .
+    skos:definition "A fee paid every year to remain a member."@en , "En avgift som betalas varje år för att förbli medlem."@sv , "Somme payée chaque année pour rester membre."@fr , "Ein Beitrag, der jedes Jahr zu zahlen ist, um Mitglied zu bleiben."@de .
 
 mbrc:monthlyFee a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
-    skos:prefLabel "Monthly Fee"@en , "Månadsavgift"@sv , "Cotisation mensuelle"@fr ;
+    skos:prefLabel "Monthly Fee"@en , "Månadsavgift"@sv , "Cotisation mensuelle"@fr , "Monatsbeitrag"@de ;
     skos:definition "A fee paid every month to remain a member, as is usual in trade unions."@en ,
                     "En avgift som betalas varje månad för att förbli medlem, som är vanligt i fackföreningar."@sv ,
-                    "Somme payée chaque mois pour rester membre, comme c'est l'usage dans les syndicats."@fr .
+                    "Somme payée chaque mois pour rester membre, comme c'est l'usage dans les syndicats."@fr ,
+                    "Ein Beitrag, der jeden Monat zu zahlen ist, um Mitglied zu bleiben, wie bei Gewerkschaften üblich."@de .
 
 mbrc:lifeMembershipFee a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
-    skos:prefLabel "Life Membership Fee"@en , "Avgift för ständigt medlemskap"@sv , "Cotisation à vie"@fr ;
+    skos:prefLabel "Life Membership Fee"@en , "Avgift för ständigt medlemskap"@sv , "Cotisation à vie"@fr , "Beitrag für lebenslange Mitgliedschaft"@de ;
     skos:definition "A one-off fee that buys membership for life (see mbrc:life)."@en ,
                     "En engångsavgift som ger medlemskap på livstid (se mbrc:life)."@sv ,
-                    "Somme unique qui achète l'adhésion à vie (voir mbrc:life)."@fr .
+                    "Somme unique qui achète l'adhésion à vie (voir mbrc:life)."@fr ,
+                    "Eine einmalige Gebühr, die die Mitgliedschaft auf Lebenszeit erwirbt (siehe mbrc:life)."@de .
 
 ##############################################################################
 # 16. LEGAL FORMS  (values of rov:orgType)
 ##############################################################################
 
 mbrc:LegalForms a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Legal Forms"@en , "Associationsformer"@sv , "Formes juridiques"@fr ;
+    skos:prefLabel "Legal Forms"@en , "Associationsformer"@sv , "Formes juridiques"@fr , "Rechtsformen"@de ;
     skos:definition "Nation-neutral kinds of legal form for membership organisations, used with rov:orgType from the W3C Registered Organization Vocabulary. They say whether and how an organisation is a legal person of its own, not which national statute it falls under. Where a jurisdiction has its own list (such as the ISO 20275 entity legal forms), map that list to these values with SKOS mapping properties."@en ,
                     "Nationsneutrala slag av associationsform för medlemsorganisationer, används med rov:orgType från W3C:s Registered Organization Vocabulary. De anger om och hur en organisation är en egen juridisk person, inte under vilken nationell lag den faller. Där en jurisdiktion har en egen lista (som ISO 20275 för juridiska former) kopplas den listan till dessa värden med SKOS-kopplingar."@sv ,
-                    "Sortes de formes juridiques, neutres quant au pays, pour les organisations de membres, utilisées avec rov:orgType du vocabulaire W3C des organisations enregistrées. Elles disent si et comment une organisation est une personne morale, et non de quelle loi nationale elle relève. Lorsqu'une juridiction a sa propre liste (comme les formes juridiques de l'ISO 20275), associer cette liste à ces valeurs avec les propriétés de correspondance SKOS."@fr ;
+                    "Sortes de formes juridiques, neutres quant au pays, pour les organisations de membres, utilisées avec rov:orgType du vocabulaire W3C des organisations enregistrées. Elles disent si et comment une organisation est une personne morale, et non de quelle loi nationale elle relève. Lorsqu'une juridiction a sa propre liste (comme les formes juridiques de l'ISO 20275), associer cette liste à ces valeurs avec les propriétés de correspondance SKOS."@fr ,
+                    "Länderneutrale Arten der Rechtsform für Mitgliederorganisationen, verwendet mit rov:orgType aus dem W3C Registered Organization Vocabulary. Sie sagen, ob und wie eine Organisation eine eigene juristische Person ist, nicht unter welches nationale Gesetz sie fällt. Wo eine Rechtsordnung eine eigene Liste hat (etwa die Rechtsformen nach ISO 20275), ist diese Liste mit SKOS-Abbildungseigenschaften auf diese Werte abzubilden."@de ;
     skos:scopeNote "Compulsory memberships and economic-benefit memberships, such as professional chambers, mutual insurers and cooperatives whose members are customers, are outside the scope of the membership model and so of this list (compare the scope note on mbr:MembershipOrganization)."@en ,
                    "Obligatoriska medlemskap och medlemskap för ekonomisk nytta, som yrkeskårer, ömsesidiga försäkringsbolag och kooperativ vars medlemmar är kunder, ligger utanför medlemsmodellen och därmed utanför den här listan (jämför omfattningsanmärkningen vid mbr:MembershipOrganization)."@sv ,
-                   "Les adhésions obligatoires et les adhésions procurant un avantage économique, comme les chambres professionnelles, les mutuelles d'assurance et les coopératives dont les membres sont des clients, sortent du champ du modèle d'adhésion et donc de cette liste (voir la note d'application de mbr:MembershipOrganization)."@fr ;
+                   "Les adhésions obligatoires et les adhésions procurant un avantage économique, comme les chambres professionnelles, les mutuelles d'assurance et les coopératives dont les membres sont des clients, sortent du champ du modèle d'adhésion et donc de cette liste (voir la note d'application de mbr:MembershipOrganization)."@fr ,
+                   "Pflichtmitgliedschaften und Mitgliedschaften mit wirtschaftlichem Nutzen, etwa berufsständische Kammern, Versicherungsvereine auf Gegenseitigkeit und Genossenschaften, deren Mitglieder Kunden sind, liegen außerhalb des Mitgliedschaftsmodells und damit dieser Liste (vgl. die Anmerkung zu mbr:MembershipOrganization)."@de ;
     skos:hasTopConcept mbrc:unincorporated , mbrc:incorporatedAssociation ,
                        mbrc:foundation , mbrc:company , mbrc:publicLawBody .
 
 mbrc:unincorporated a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Unincorporated"@en , "Utan juridisk person"@sv , "Sans personnalité morale"@fr ;
+    skos:prefLabel "Unincorporated"@en , "Utan juridisk person"@sv , "Sans personnalité morale"@fr , "Nicht rechtsfähig"@de ;
     skos:altLabel "Informal"@en , "Unincorporated association"@en , "Oregistrerad sammanslutning"@sv ;
     skos:definition "A group that is not a legal person of its own: it cannot hold property or sign contracts in its own name, and its members or officers act in their own names. Includes informal circles (mbrc:informalCircle) and associations that have not completed the steps their law requires for legal personality."@en ,
                     "En grupp som inte är en egen juridisk person: den kan inte äga egendom eller ingå avtal i eget namn, och medlemmarna eller funktionärerna agerar i eget namn. Hit hör informella sällskap (mbrc:informalCircle) och föreningar som inte tagit de steg som lagen kräver för att bli juridisk person."@sv ,
-                    "Groupe qui n'est pas une personne morale : il ne peut pas posséder de biens ni conclure de contrats en son propre nom, et ses membres ou responsables agissent en leur nom propre. Comprend les cercles informels (mbrc:informalCircle) et les associations qui n'ont pas accompli les formalités que leur droit exige pour la personnalité morale."@fr ;
+                    "Groupe qui n'est pas une personne morale : il ne peut pas posséder de biens ni conclure de contrats en son propre nom, et ses membres ou responsables agissent en leur nom propre. Comprend les cercles informels (mbrc:informalCircle) et les associations qui n'ont pas accompli les formalités que leur droit exige pour la personnalité morale."@fr ,
+                    "Eine Gruppe, die keine eigene juristische Person ist: Sie kann nicht in eigenem Namen Eigentum halten oder Verträge schließen, und ihre Mitglieder oder Amtsträger handeln in eigenem Namen. Dazu gehören informelle Kreise (mbrc:informalCircle) und Vereinigungen, die die nach ihrem Recht für die Rechtsfähigkeit nötigen Schritte nicht vollzogen haben."@de ;
     skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri."@en ;
     skos:related mbrc:informalCircle .
 
 mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Incorporated association"@en , "Förening som juridisk person"@sv , "Association dotée de la personnalité morale"@fr ;
+    skos:prefLabel "Incorporated association"@en , "Förening som juridisk person"@sv , "Association dotée de la personnalité morale"@fr , "Rechtsfähige Vereinigung"@de ;
     skos:definition "A non-profit association that is a legal person of its own, whether it gets that status by registration or simply by adopting statutes and appointing a board."@en ,
                     "En ideell sammanslutning som är en egen juridisk person, oavsett om den får den ställningen genom registrering eller bara genom att anta stadgar och utse en styrelse."@sv ,
-                    "Association à but non lucratif qui est une personne morale, que ce statut résulte d'un enregistrement ou simplement de l'adoption de statuts et de la désignation d'un bureau."@fr ;
+                    "Association à but non lucratif qui est une personne morale, que ce statut résulte d'un enregistrement ou simplement de l'adoption de statuts et de la désignation d'un bureau."@fr ,
+                    "Eine gemeinnützige Vereinigung, die eine eigene juristische Person ist, sei es durch Eintragung oder schlicht dadurch, dass sie sich eine Satzung gibt und einen Vorstand bestellt."@de ;
     skos:note "Example without registration: a Swedish ideell förening."@en ;
     skos:narrower mbrc:registeredAssociation .
 
 mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:broader mbrc:incorporatedAssociation ;
-    skos:prefLabel "Registered association"@en , "Registrerad förening"@sv , "Association déclarée ou enregistrée"@fr ;
+    skos:prefLabel "Registered association"@en , "Registrerad förening"@sv , "Association déclarée ou enregistrée"@fr , "Eingetragene Vereinigung"@de ;
     skos:definition "An incorporated association that becomes a legal person by being entered in, or declared to, a public register. The register entry can carry an identifier (see rov:registration)."@en ,
                     "En förening som blir juridisk person genom att föras in i eller anmälas till ett offentligt register. Registerposten kan ha ett identifierande nummer (se rov:registration)."@sv ,
-                    "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ;
+                    "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ,
+                    "Eine rechtsfähige Vereinigung, die dadurch juristische Person wird, dass sie in ein öffentliches Register eingetragen oder bei ihm angemeldet wird. Der Registereintrag kann eine Kennung tragen (siehe rov:registration)."@de ;
     skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L)."@en .
 
 mbrc:foundation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Foundation"@en , "Stiftelse"@sv , "Fondation"@fr ;
+    skos:prefLabel "Foundation"@en , "Stiftelse"@sv , "Fondation"@fr , "Stiftung"@de ;
     skos:definition "A legal person formed by dedicating assets to a purpose, with no members of its own. A membership organisation can be run or funded by a foundation."@en ,
                     "En juridisk person som bildas genom att egendom avsätts för ett ändamål, utan egna medlemmar. En medlemsorganisation kan drivas eller finansieras av en stiftelse."@sv ,
-                    "Personne morale constituée par l'affectation de biens à un but, sans membres propres. Une organisation de membres peut être dirigée ou financée par une fondation."@fr ;
+                    "Personne morale constituée par l'affectation de biens à un but, sans membres propres. Une organisation de membres peut être dirigée ou financée par une fondation."@fr ,
+                    "Eine juristische Person, die durch die Widmung von Vermögen für einen Zweck entsteht und keine eigenen Mitglieder hat. Eine Mitgliederorganisation kann von einer Stiftung geführt oder finanziert werden."@de ;
     skos:note "Examples: a French fondation (ISO 20275 ELF 9T5S); a German Stiftung des privaten Rechts (ELF V2YH)."@en .
 
 mbrc:company a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Company"@en , "Bolag"@sv , "Société commerciale"@fr ;
+    skos:prefLabel "Company"@en , "Bolag"@sv , "Société commerciale"@fr , "Handelsgesellschaft"@de ;
     skos:definition "A legal person with owners or shareholders, used by proprietary clubs (see mbrc:proprietaryClub) and by clubs that are limited by guarantee."@en ,
                     "En juridisk person med ägare eller aktieägare, som används av ägarklubbar (se mbrc:proprietaryClub) och av klubbar som är garantibegränsade."@sv ,
-                    "Personne morale à propriétaires ou actionnaires, utilisée par les clubs à propriétaire (voir mbrc:proprietaryClub) et par les clubs à responsabilité limitée par garantie."@fr .
+                    "Personne morale à propriétaires ou actionnaires, utilisée par les clubs à propriétaire (voir mbrc:proprietaryClub) et par les clubs à responsabilité limitée par garantie."@fr ,
+                    "Eine juristische Person mit Eigentümern oder Gesellschaftern, verwendet von Eigentümerclubs (siehe mbrc:proprietaryClub) und von Clubs, deren Haftung begrenzt ist."@de .
 
 mbrc:publicLawBody a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Public-law body"@en , "Offentligrättslig juridisk person"@sv , "Personne morale de droit public"@fr ;
+    skos:prefLabel "Public-law body"@en , "Offentligrättslig juridisk person"@sv , "Personne morale de droit public"@fr , "Öffentlich-rechtliche Körperschaft"@de ;
     skos:definition "A legal person created or recognised by public law, such as a state institution or a corporation of public law, as opposed to one formed by private agreement."@en ,
                     "En juridisk person som skapats eller erkänns genom offentlig rätt, som en statlig institution eller en offentligrättslig korporation, till skillnad från en som bildats genom privat avtal."@sv ,
-                    "Personne morale créée ou reconnue par le droit public, comme une institution d'État ou une corporation de droit public, par opposition à celle formée par accord privé."@fr ;
+                    "Personne morale créée ou reconnue par le droit public, comme une institution d'État ou une corporation de droit public, par opposition à celle formée par accord privé."@fr ,
+                    "Eine juristische Person, die durch öffentliches Recht geschaffen oder anerkannt ist, etwa eine staatliche Einrichtung oder eine Körperschaft des öffentlichen Rechts, im Gegensatz zu einer durch private Vereinbarung gebildeten."@de ;
     skos:note "Example: a German Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@en .
