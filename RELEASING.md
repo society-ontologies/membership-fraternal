@@ -19,6 +19,7 @@ The order matters: each published step depends on the one before it.
    - The w3id rules send every version IRI (`https://w3id.org/membership/<version>`, `…/code/<version>`, `…/external/<version>`, `…/shapes/<version>`) to `versions/<version>/`. A release therefore needs no w3id pull request.
 5. **Archive:** publish a GitHub Release from the tag. Zenodo's GitHub integration archives it and mints a version DOI under the concept DOI [10.5281/zenodo.23080656](https://doi.org/10.5281/zenodo.23080656).
    - Check the Zenodo record: it takes title, authors, ORCID, licenses and keywords from CITATION.cff.
+   - Submit the new version to [Linked Open Vocabularies](https://lov.linkeddata.es/) (only 1.1.0 has been sent so far).
 6. **Verify:**
    - the current IRI and the new version IRI return Turtle;
    - the previous version IRI still returns the previous version;

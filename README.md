@@ -170,9 +170,9 @@ The aim is that no single person or service is a point of failure:
 |---|---|
 | Identifiers | `w3id.org/membership` and `w3id.org/fraternal`, registered in [perma-id/w3id.org](https://github.com/perma-id/w3id.org) by [#6779](https://github.com/perma-id/w3id.org/pull/6779) (`ids/membership/`, `ids/fraternal/`). The IRIs never change even if the hosting does. |
 | Primary host | GitHub Pages, <https://society-ontologies.github.io/membership-fraternal/>, from the GitHub organization [society-ontologies](https://github.com/society-ontologies). The organization should have at least two owners. |
-| Mirror | Codeberg Pages, pushed automatically. A single w3id pull request switches the redirects if the primary fails. |
+| Mirror | Planned: Codeberg Pages. It is not set up yet. Once it is, a single w3id pull request can switch the redirects if the primary fails. |
 | Archive | Zenodo's GitHub integration: a DOI for every tagged release, plus automatic copies in Software Heritage. |
-| Discovery | Listed in [Linked Open Vocabularies](https://lov.linkeddata.es/); the ontologies point to it with `schema:includedInDataCatalog`. |
+| Discovery | Version 1.1.0 is submitted to [Linked Open Vocabularies](https://lov.linkeddata.es/); later versions are submitted when they are released. The ontologies point to it with `schema:includedInDataCatalog`. |
 
 ## Maintainers
 
