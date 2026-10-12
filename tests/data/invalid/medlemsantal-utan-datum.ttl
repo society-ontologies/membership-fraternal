@@ -1,4 +1,5 @@
 # EXPECT: member count without the date it refers to
+# MESSAGE: A member count needs the date it refers to
 @prefix org:  <http://www.w3.org/ns/org#> .
 @prefix mbr:  <https://w3id.org/membership#> .
 @prefix mbrc: <https://w3id.org/membership/code/> .

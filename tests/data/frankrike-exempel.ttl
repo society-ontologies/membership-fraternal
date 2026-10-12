@@ -36,6 +36,32 @@ fr:GrandeLogeExemplaire a fraternal:GrandBody ;
                              fraternalc:noDogmaticRequirement , fraternalc:ancientAndAcceptedScottishRite ;
     fraternal:hasJurisdictionOver fr:LogeLaLanterne .
 
+# Two more obediences, to show recognition between grand bodies. Recognition is
+# directional: the Grand Orient recognises the Grande Loge Exemplaire, which does not
+# recognise it in return. Amity is symmetric: it is stated once, from the Grand Orient to
+# the Grande Loge du Sud, and holds both ways.
+fr:GrandOrientExemplaire a fraternal:GrandBody ;
+    rdfs:label "Grand Orient Exemplaire de France"@fr ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:noDogmaticRequirement , fraternalc:frenchRite ;
+    fraternal:recognizes fr:GrandeLogeExemplaire ;
+    fraternal:inAmityWith fr:GrandeLogeDuSudExemplaire .
+
+fr:GrandeLogeDuSudExemplaire a fraternal:GrandBody ;
+    rdfs:label "Grande Loge du Sud Exemplaire"@fr ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:womenOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:supremeBeingRequirement , fraternalc:ancientAndAcceptedScottishRite .
+
 fr:gle-rna a adms:Identifier ;
     skos:notation "W000000000" ;
     adms:schemaAgency "Répertoire national des associations (RNA)" .

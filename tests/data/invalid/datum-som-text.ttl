@@ -1,4 +1,5 @@
 # EXPECT: start date given as a plain string instead of xsd:date/gYearMonth/gYear
+# MESSAGE: mbr:startDate must be a single xsd:date
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix mbr:  <https://w3id.org/membership#> .

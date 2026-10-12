@@ -1,5 +1,6 @@
 # CQ5: Offices in other organisations equivalent to the club's Honorary
 # Treasurer, found through the membership office hub (no pairwise mapping).
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX club: <https://example.org/lanternmere/>
@@ -9,6 +10,7 @@ WHERE {
     club:HonTreasurer skos:exactMatch ?hub .
     ?equivalentOffice skos:exactMatch ?hub .
     FILTER (?equivalentOffice != club:HonTreasurer)
-    OPTIONAL { ?equivalentOffice skos:prefLabel ?label }
+    OPTIONAL { { SELECT ?equivalentOffice (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?label)
+                 WHERE { ?equivalentOffice skos:prefLabel ?l } GROUP BY ?equivalentOffice } }
     OPTIONAL { ?equivalentOffice skos:inScheme ?scheme }
 }

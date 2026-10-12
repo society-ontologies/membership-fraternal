@@ -1,4 +1,5 @@
-# EXPECT: a period with none of genderPolicy, admissionMode, ownershipModel and organizationStatus
+# EXPECT: a period with none of genderPolicy, admissionMode, ownershipModel, organizationStatus, organizationType and legalForm
+# MESSAGE: A period needs at least one of mbr:genderPolicy
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix mbr:  <https://w3id.org/membership#> .

@@ -1,6 +1,7 @@
 # CQ6: Organisations with a reciprocal arrangement with a given club, and
 # what kind of organisation each is. mbr:reciprocalWith is symmetric; the
 # UNION covers data that states it in one direction only (no reasoner).
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
@@ -12,6 +13,9 @@ SELECT ?name ?kind
 WHERE {
     VALUES ?x { club:Heatherbrook }
     { ?x mbr:reciprocalWith ?other } UNION { ?other mbr:reciprocalWith ?x }
-    OPTIONAL { ?other rdfs:label ?name }
-    OPTIONAL { ?other org:classification/skos:prefLabel ?kind . FILTER (lang(?kind) = "en") }
+    OPTIONAL { { SELECT ?other (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?name)
+                 WHERE { ?other rdfs:label ?l } GROUP BY ?other } }
+    OPTIONAL { ?other org:classification ?type .
+               { SELECT ?type (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?kind)
+                 WHERE { ?type skos:prefLabel ?l } GROUP BY ?type } }
 }

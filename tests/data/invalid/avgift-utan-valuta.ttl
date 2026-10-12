@@ -1,4 +1,5 @@
 # EXPECT: membership fee without schema:priceCurrency
+# MESSAGE: schema:priceCurrency must be a three-letter ISO 4217 code
 @prefix org:    <http://www.w3.org/ns/org#> .
 @prefix schema: <http://schema.org/> .
 @prefix mbr:    <https://w3id.org/membership#> .

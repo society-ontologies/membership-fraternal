@@ -1,4 +1,5 @@
 # EXPECT: dissolution date is before the founding date
+# MESSAGE: The dissolution date is certainly before the founding date
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix org:  <http://www.w3.org/ns/org#> .
 @prefix mbr:  <https://w3id.org/membership#> .

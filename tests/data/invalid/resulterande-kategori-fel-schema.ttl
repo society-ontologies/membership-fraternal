@@ -1,4 +1,5 @@
 # EXPECT: mbr:resultingCategory takes a membership status, not a category
+# MESSAGE: mbr:resultingCategory must be a concept in mbrc:MembershipCategories
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .

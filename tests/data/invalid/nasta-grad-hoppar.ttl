@@ -1,4 +1,5 @@
 # EXPECT: fraternal:nextDegree skips a rank (1 -> 3)
+# MESSAGE: The next degree must be in the same degree system and have rank one higher
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fraternal: <https://w3id.org/fraternal#> .
 @prefix ex:   <https://example.org/invalid/> .

@@ -2,6 +2,7 @@
 # Uses the membership office hub, so a sorority's Treasurer and a club's Honorary
 # Treasurer are both found. Dates may be xsd:date, xsd:gYearMonth or xsd:gYear,
 # so the year is read from the first four characters.
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
@@ -24,10 +25,8 @@ WHERE {
     FILTER (xsd:integer(SUBSTR(STR(?from), 1, 4)) <= ?year)
     FILTER (!BOUND(?until) || xsd:integer(SUBSTR(STR(?until), 1, 4)) >= ?year)
     OPTIONAL { ?person schema:name ?name }
-    OPTIONAL { ?role skos:prefLabel ?osv . FILTER (lang(?osv) = "sv") }
-    OPTIONAL { ?role skos:prefLabel ?oen . FILTER (lang(?oen) = "en") }
-    OPTIONAL { ?org rdfs:label ?gsv . FILTER (lang(?gsv) = "sv") }
-    OPTIONAL { ?org rdfs:label ?gen . FILTER (lang(?gen) = "en") }
-    BIND (COALESCE(?osv, ?oen) AS ?office)
-    BIND (COALESCE(?gsv, ?gen) AS ?organisation)
+    OPTIONAL { { SELECT ?role (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?office)
+                 WHERE { ?role skos:prefLabel ?l } GROUP BY ?role } }
+    OPTIONAL { { SELECT ?org (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+                 WHERE { ?org rdfs:label ?l } GROUP BY ?org } }
 }

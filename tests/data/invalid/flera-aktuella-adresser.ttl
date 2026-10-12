@@ -1,4 +1,5 @@
 # EXPECT: premises with two current addresses (neither has an end date)
+# MESSAGE: Premises have more than one current address
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 @prefix schema: <http://schema.org/> .
 @prefix mbr:    <https://w3id.org/membership#> .

@@ -29,7 +29,7 @@ $(BUILD):
 # --- Syntax ---------------------------------------------------------------
 
 validate:
-	@for f in $(ONT) $(SHAPES) $(MAPPINGS_TTL) tests/data/*.ttl $(INVALID) $(CANARY); do \
+	@for f in $(ONT) $(SHAPES) $(MAPPINGS_TTL) tests/data/*.ttl $(INVALID) $(CANARY) tests/i18n/*/*.ttl; do \
 	  riot --validate "$$f" || { echo "syntax error in $$f"; exit 1; }; \
 	done; echo "syntax OK"
 
@@ -65,14 +65,19 @@ shacl: $(BUILD)/shapes.nt $(BUILD)/stack.nt $(BUILD)/mappings.nt
 	  else echo "FAIL  $$d"; cat $(BUILD)/report.ttl; exit 1; fi; \
 	done
 
-# Each invalid fixture must produce at least one sh:Violation.
+# Each invalid fixture must produce at least one sh:Violation, and the report must contain
+# the text on the fixture's "# MESSAGE:" line (a piece of the English sh:message). Without
+# that line a fixture can pass because of some other, unintended violation.
 shacl-invalid: $(BUILD)/shapes.nt $(BUILD)/stack.nt $(BUILD)/mappings.nt
 	@for d in $(INVALID); do \
+	  msg=$$(sed -n 's/^# MESSAGE: //p' "$$d" | head -1); \
+	  if [ -z "$$msg" ]; then echo "FAIL  $$d has no '# MESSAGE:' line"; exit 1; fi; \
 	  riot --output=nt $(BUILD)/stack.nt $(BUILD)/mappings.nt "$$d" > $(BUILD)/data.nt; \
 	  shacl validate --shapes=$(BUILD)/shapes.nt --data=$(BUILD)/data.nt > $(BUILD)/report.ttl; \
 	  n=$$(grep -c 'sh:Violation' $(BUILD)/report.ttl); \
-	  if [ "$$n" -gt 0 ]; then echo "PASS  $$d  ($$n violation(s))"; \
-	  else echo "FAIL  $$d  (expected violations, got none)"; exit 1; fi; \
+	  if [ "$$n" -eq 0 ]; then echo "FAIL  $$d  (expected violations, got none)"; exit 1; fi; \
+	  if grep -qF -- "$$msg" $(BUILD)/report.ttl; then echo "PASS  $$d  ($$n violation(s))"; \
+	  else echo "FAIL  $$d  (no result says: $$msg)"; grep 'sh:resultMessage' $(BUILD)/report.ttl | cut -c1-200; exit 1; fi; \
 	done
 
 # --- SKOS quality checks (each query must return no rows) -------------------
@@ -86,9 +91,18 @@ skos: $(BUILD)/skos-dataset.nt
 
 # --- Competency questions -------------------------------------------------
 
+# Each question's result must equal tests/cq/expected/<name>.csv (rows compared in sorted
+# order, so a question without ORDER BY is not flaky). A new sample or codelist concept
+# changes some results; look at the diff, and if the new rows are right, write them with
+#   sparql --data=build/cq-dataset.nt --query=tests/cq/NN-name.rq --results=csv > tests/cq/expected/NN-name.csv
 cq: $(BUILD)/cq-dataset.nt
 	@for q in tests/cq/*.rq; do \
-	  echo "== $$q"; sparql --data=$(BUILD)/cq-dataset.nt --query="$$q"; \
+	  n=$$(basename "$$q" .rq); \
+	  test -f tests/cq/expected/$$n.csv || { echo "FAIL  $$q has no tests/cq/expected/$$n.csv"; exit 1; }; \
+	  sparql --data=$(BUILD)/cq-dataset.nt --query="$$q" --results=csv | tr -d '\r' | LC_ALL=C sort > $(BUILD)/cq-$$n.actual; \
+	  tr -d '\r' < tests/cq/expected/$$n.csv | LC_ALL=C sort > $(BUILD)/cq-$$n.expected; \
+	  if diff -u $(BUILD)/cq-$$n.expected $(BUILD)/cq-$$n.actual > $(BUILD)/cq-$$n.diff; then echo "PASS  $$q"; \
+	  else echo "FAIL  $$q (- expected, + actual)"; cat $(BUILD)/cq-$$n.diff; exit 1; fi; \
 	done
 
 # --- Mappings (SSSOM TSV -> RDF) --------------------------------------------

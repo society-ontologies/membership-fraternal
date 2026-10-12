@@ -1,4 +1,5 @@
 # EXPECT: a degree whose fraternal:degreeRank is text, not a positive integer
+# MESSAGE: fraternal:degreeRank must be one positive integer
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fraternal: <https://w3id.org/fraternal#> .
 @prefix ex:   <https://example.org/invalid/> .

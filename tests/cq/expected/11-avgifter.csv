@@ -1,0 +1,7 @@
+organisation,type,admission,feeType,category,price,currency
+Exempelpartiet,Political Party,Open Application,Annual Fee,,100,SEK
+Supporterföreningen Gula Vågen,Supporters' Club,Open Enrolment,Annual Fee,Junior Member,100.00,SEK
+Supporterföreningen Gula Vågen,Supporters' Club,Open Enrolment,Annual Fee,Ordinary Member,250.00,SEK
+Supporterföreningen Gula Vågen,Supporters' Club,Open Enrolment,Life Membership Fee,Life Member,5000,SEK
+Syföreningen Nålen,Hobby Club,Open Enrolment,Annual Fee,,200,SEK
+Syföreningen Nålen,Hobby Club,Open Enrolment,Entrance Fee,,50,SEK

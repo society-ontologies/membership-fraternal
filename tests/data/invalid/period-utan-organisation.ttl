@@ -1,4 +1,5 @@
 # EXPECT: a period that no organisation links to with mbr:hasPeriod
+# MESSAGE: A period belongs to exactly one organisation
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix mbr:  <https://w3id.org/membership#> .

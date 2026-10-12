@@ -1,0 +1,23 @@
+# CQ16: What legal form did each organisation have, and when? One row per period
+# that records a legal form, with the start, the end (blank = no stated end), and the
+# date of the decision where one is recorded. The registered current picture stays on
+# the organisation (rov:orgType); the periods hold the earlier forms.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mbr:  <https://w3id.org/membership#>
+
+SELECT ?organisation ?legalForm ?from ?until ?decided
+WHERE {
+    ?c mbr:hasPeriod ?p .
+    ?p mbr:legalForm ?lf ;
+       mbr:startDate ?from .
+    OPTIONAL { ?p mbr:endDate ?until }
+    OPTIONAL { ?p mbr:decisionDate ?decided }
+    OPTIONAL { { SELECT ?c (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+                 WHERE { ?c rdfs:label ?l } GROUP BY ?c } }
+    OPTIONAL { { SELECT ?lf (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?legalForm)
+                 WHERE { ?lf skos:prefLabel ?l } GROUP BY ?lf } }
+}
+ORDER BY ?organisation ?from

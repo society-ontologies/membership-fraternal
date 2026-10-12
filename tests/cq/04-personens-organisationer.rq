@@ -1,6 +1,7 @@
 # CQ4: Every organisation a person belongs or belonged to, across publishers,
 # following owl:sameAs links (here: a sorority member who is also a member of
 # a ladies' club under that club's own IRI).
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX owl:    <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
@@ -16,9 +17,10 @@ WHERE {
     ?m org:member ?via ;
        org:organization ?org .
     FILTER NOT EXISTS { ?m a mbr:Tenure }
-    OPTIONAL { ?m mbr:membershipStatus/skos:prefLabel ?status . FILTER (lang(?status) = "en") }
-    OPTIONAL { ?org rdfs:label ?sv . FILTER (lang(?sv) = "sv") }
-    OPTIONAL { ?org rdfs:label ?en . FILTER (lang(?en) = "en") }
-    BIND (COALESCE(?sv, ?en) AS ?organisation)
+    OPTIONAL { ?m mbr:membershipStatus ?st .
+               { SELECT ?st (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?status)
+                 WHERE { ?st skos:prefLabel ?l } GROUP BY ?st } }
+    OPTIONAL { { SELECT ?org (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+                 WHERE { ?org rdfs:label ?l } GROUP BY ?org } }
 }
 ORDER BY ?organisation

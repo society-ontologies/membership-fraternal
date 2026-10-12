@@ -8,6 +8,8 @@ PREFIX club:  <https://example.org/lanternmere/>
 PREFIX sor:   <https://example.org/soror-exemplum/>
 PREFIX org:   <http://www.w3.org/ns/org#>
 PREFIX th:    <https://example.org/thistledown/>
+PREFIX fr:    <https://example.org/exemplie/>
+PREFIX it:    <https://example.org/esempio/>
 
 SELECT ?wrong WHERE {
     VALUES (?s ?type) {
@@ -20,6 +22,14 @@ SELECT ?wrong WHERE {
         (th:policy-menonly  org:Organization)
         (th:policy-mixed    org:Organization)
         (th:policy-mixed    mbr:MembershipOrganization)
+        # a women-only obedience is not a sorority: the gender policy does not define the class
+        (fr:GrandeLogeDuSudExemplaire fraternal:Sorority)
+        # a lodge is a branch, not an organisation in its own right
+        (fr:LogeLaLanterne     mbr:MembershipOrganization)
+        (it:LoggiaLaFenice     mbr:MembershipOrganization)
+        # an association and a contrada are not orders
+        (fr:AmisDeLaFontaine   fraternal:FraternalOrder)
+        (it:ContradaDelFalco   fraternal:FraternalOrder)
     }
     ?s rdf:type ?type .
     BIND (CONCAT(STR(?s), " must not be a ", STR(?type)) AS ?wrong)

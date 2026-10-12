@@ -1,4 +1,5 @@
 # EXPECT: insignia whose type is a local concept with no mapping to fraternalc:InsigniaTypes
+# MESSAGE: fraternal:insigniaType must be a concept in fraternalc:InsigniaTypes
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fraternal:  <https://w3id.org/fraternal#> .
 @prefix fraternalc: <https://w3id.org/fraternal/code/> .
