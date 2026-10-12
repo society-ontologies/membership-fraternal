@@ -18,7 +18,7 @@
 <https://w3id.org/fraternal/shapes>
     a owl:Ontology ;
     owl:versionInfo "1.1.0" ;
-    rdfs:label "fraternal SHACL shapes"@en , "SHACL-regler för fraternal"@sv ;
+    rdfs:label "fraternal SHACL shapes"@en , "SHACL-regler för fraternal"@sv , "SHACL-Shapes für fraternal"@de , "Shapes SHACL pour fraternal"@fr , "Shape SHACL per fraternal"@it ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;

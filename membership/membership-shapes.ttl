@@ -37,7 +37,7 @@
 <https://w3id.org/membership/shapes>
     a owl:Ontology ;
     owl:versionInfo "1.1.0" ;
-    rdfs:label "membership SHACL shapes"@en , "SHACL-regler för membership"@sv ;
+    rdfs:label "membership SHACL shapes"@en , "SHACL-regler för membership"@sv , "SHACL-Shapes für membership"@de , "Shapes SHACL pour membership"@fr , "Shape SHACL per membership"@it ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
