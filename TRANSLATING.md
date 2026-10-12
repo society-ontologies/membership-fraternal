@@ -25,8 +25,9 @@ mbr:Branch a owl:Class ;
 4. Run `make i18n`. It must say `i18n OK`.
 5. Run `make docs`. It writes the documentation in your language to `docs/<ontology>/<language>/`.
 6. Open a pull request. Say who translated it and whether a native speaker has reviewed it, and
-   mark machine translations so they are not mistaken for reviewed ones. Translators are credited
-   as `dcterms:contributor` in the ontology header.
+   mark machine translations so they are not mistaken for reviewed ones. A translator who agrees
+   can be credited as `dcterms:contributor` in the ontology header (none is yet; the README says
+   which languages a native speaker has reviewed).
 
 By contributing you license your translation under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
 like the ontologies.
@@ -38,7 +39,8 @@ like the ontologies.
   is the fallback.
 - A SKOS concept has one `skos:prefLabel` per language (`make skos`).
 
-`tests/i18n/` has a valid example and one invalid example per check.
+`tests/i18n/` has a valid example and invalid ones for the first two points (a malformed tag, an
+unregistered language, text with no English). The third point is checked by `make skos`.
 
 ## Validation messages
 

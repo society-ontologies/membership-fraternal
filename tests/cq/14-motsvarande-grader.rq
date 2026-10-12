@@ -1,0 +1,27 @@
+# CQ14: Which degrees in different orders and countries correspond to the same
+# generic degree? Each order's own degree maps directly (exact, close or broad match)
+# to a degree in a generic ladder, so a French chevalier, an Italian cavaliere and a
+# Swedish knight are found together without any pairwise mapping.
+# Rows are grouped by the generic degree and its rank in its ladder.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX fraternal: <https://w3id.org/fraternal#>
+
+SELECT ?hubRank ?hub ?order ?degree
+WHERE {
+    ?d a fraternal:Degree ;
+       skos:exactMatch|skos:closeMatch|skos:broadMatch ?h ;
+       skos:inScheme ?system .
+    ?h a fraternal:Degree ;
+       fraternal:degreeRank ?hubRank .
+    ?o fraternal:degreeSystem ?system .
+    OPTIONAL { { SELECT ?h (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?hub)
+                 WHERE { ?h skos:prefLabel ?l } GROUP BY ?h } }
+    OPTIONAL { { SELECT ?o (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?order)
+                 WHERE { ?o rdfs:label ?l } GROUP BY ?o } }
+    OPTIONAL { { SELECT ?d (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?degree)
+                 WHERE { ?d skos:prefLabel ?l } GROUP BY ?d } }
+}
+ORDER BY ?hub ?order ?degree

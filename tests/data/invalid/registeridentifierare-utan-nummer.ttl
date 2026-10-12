@@ -1,4 +1,5 @@
 # EXPECT: registry identifier without skos:notation
+# MESSAGE: A registry identifier needs exactly one skos:notation
 @prefix org:    <http://www.w3.org/ns/org#> .
 @prefix rov:    <http://www.w3.org/ns/regorg#> .
 @prefix adms:   <http://www.w3.org/ns/adms#> .

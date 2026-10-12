@@ -1,4 +1,5 @@
 # EXPECT: membership fee with a negative schema:price
+# MESSAGE: A membership fee needs exactly one schema:price
 @prefix org:    <http://www.w3.org/ns/org#> .
 @prefix schema: <http://schema.org/> .
 @prefix mbr:    <https://w3id.org/membership#> .

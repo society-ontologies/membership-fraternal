@@ -1,4 +1,5 @@
 # EXPECT: membership number written as an integer, not an xsd:string
+# MESSAGE: mbr:membershipNumber must be one xsd:string
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .

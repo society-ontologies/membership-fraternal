@@ -1,4 +1,5 @@
 # EXPECT: a degree kind that is a local concept with no mapping to fraternalc:DegreeKinds
+# MESSAGE: fraternal:degreeKind must be a concept in fraternalc:DegreeKinds
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fraternal: <https://w3id.org/fraternal#> .
 @prefix ex:   <https://example.org/invalid/> .

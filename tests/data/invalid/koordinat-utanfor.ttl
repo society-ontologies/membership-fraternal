@@ -1,4 +1,5 @@
 # EXPECT: latitude outside -90..90
+# MESSAGE: schema:latitude must be one decimal number between -90 and 90
 @prefix schema: <http://schema.org/> .
 @prefix mbr:    <https://w3id.org/membership#> .
 @prefix ex:     <https://example.org/invalid/> .

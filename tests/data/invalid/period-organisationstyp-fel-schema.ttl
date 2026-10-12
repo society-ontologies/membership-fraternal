@@ -1,4 +1,5 @@
 # EXPECT: a period gives an organisation type (mbrc:foundation is a legal form) from the wrong codelist
+# MESSAGE: mbr:organizationType must be a concept in mbrc:OrganizationTypes
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix mbr:  <https://w3id.org/membership#> .

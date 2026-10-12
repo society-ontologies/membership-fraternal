@@ -1,4 +1,5 @@
 # EXPECT: a degree with neither fraternal:degreeRank nor fraternal:degreeKind
+# MESSAGE: A degree needs a fraternal:degreeRank, or a fraternal:degreeKind
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fraternal: <https://w3id.org/fraternal#> .
 @prefix ex:   <https://example.org/invalid/> .

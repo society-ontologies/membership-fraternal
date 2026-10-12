@@ -1,5 +1,7 @@
 # CQ7: The degree ladder of every order, in rank order, with the generic
-# hub degree each one corresponds to.
+# hub degree each one corresponds to (a direct exact, close or broad match, as
+# the shapes accept).
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -10,13 +12,13 @@ WHERE {
     ?o fraternal:degreeSystem ?system .
     ?d skos:inScheme ?system ;
        fraternal:degreeRank ?rank .
-    OPTIONAL { ?o rdfs:label ?osv . FILTER (lang(?osv) = "sv") }
-    OPTIONAL { ?o rdfs:label ?oen . FILTER (lang(?oen) = "en") }
-    OPTIONAL { ?d skos:prefLabel ?dsv . FILTER (lang(?dsv) = "sv") }
-    OPTIONAL { ?d skos:prefLabel ?den . FILTER (lang(?den) = "en") }
+    OPTIONAL { { SELECT ?o (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?order)
+                 WHERE { ?o rdfs:label ?l } GROUP BY ?o } }
+    OPTIONAL { { SELECT ?d (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?degree)
+                 WHERE { ?d skos:prefLabel ?l } GROUP BY ?d } }
     OPTIONAL { ?d skos:notation ?notation }
-    OPTIONAL { ?d skos:exactMatch|skos:closeMatch ?h . ?h skos:prefLabel ?hub . FILTER (lang(?hub) = "en") }
-    BIND (COALESCE(?osv, ?oen) AS ?order)
-    BIND (COALESCE(?dsv, ?den) AS ?degree)
+    OPTIONAL { ?d skos:exactMatch|skos:closeMatch|skos:broadMatch ?h .
+               { SELECT ?h (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?hub)
+                 WHERE { ?h skos:prefLabel ?l } GROUP BY ?h } }
 }
 ORDER BY ?order ?rank

@@ -3,6 +3,7 @@
 # VALUES. A period without an end date has no stated end, so it is returned with
 # ?endStated false and should be read as "possibly still in force", not "certainly".
 # Years are compared on their first four characters, as dates may be partial.
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
@@ -17,7 +18,8 @@ WHERE {
        mbr:startDate ?from .
     OPTIONAL { ?p mbr:endDate ?until }
     OPTIONAL { ?p mbr:decisionDate ?decided }
-    ?c rdfs:label ?club .
+    { SELECT ?c (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?club)
+      WHERE { ?c rdfs:label ?l } GROUP BY ?c }
     FILTER (xsd:integer(SUBSTR(STR(?from), 1, 4)) <= ?year)
     FILTER (!BOUND(?until) || xsd:integer(SUBSTR(STR(?until), 1, 4)) >= ?year)
     BIND (BOUND(?until) AS ?endStated)

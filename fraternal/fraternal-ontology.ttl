@@ -56,7 +56,7 @@
     bibo:status <http://purl.org/ontology/bibo/status/published> ;
     dcterms:source <https://github.com/society-ontologies/membership-fraternal> ;
     dcterms:bibliographicCitation "Almgren, O. (2026). Fraternal Orders and Sororities Ontology. https://w3id.org/fraternal" ;
-    dcterms:identifier "10.5281/zenodo.23080656" ;
+    dcterms:identifier <https://doi.org/10.5281/zenodo.23080656> ;
     schema:includedInDataCatalog <https://lov.linkeddata.es/dataset/lov> .
 
 <https://orcid.org/0009-0002-6239-5346> foaf:name "Oscar Almgren" .

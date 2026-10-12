@@ -11,6 +11,12 @@ PREFIX sor:   <https://example.org/soror-exemplum/>
 PREFIX schema: <http://schema.org/>
 PREFIX fore:  <https://example.org/foreningar/>
 PREFIX th:    <https://example.org/thistledown/>
+PREFIX fr:    <https://example.org/exemplie/>
+PREFIX it:    <https://example.org/esempio/>
+PREFIX ci:    <https://example.org/corps-imaginaria/>
+PREFIX cp:    <https://example.org/compagnons/>
+PREFIX ch:    <https://example.org/examplia/>
+PREFIX prov:  <http://www.w3.org/ns/prov#>
 
 SELECT ?missing WHERE {
     VALUES (?s ?type) {
@@ -32,6 +38,31 @@ SELECT ?missing WHERE {
         (fore:ep-exempelstad     org:Organization)    # a party branch
         (th:Thistledown          mbr:GentlemensClub)  # follows org:classification, not mbr:genderPolicy (now mixed)
         (th:policy-menonly       mbr:OrganizationPeriod)
+        # France: an obedience is a fraternal order and a membership organisation; a lodge is a branch
+        (fr:GrandeLogeExemplaire    fraternal:FraternalOrder)
+        (fr:GrandeLogeExemplaire    mbr:MembershipOrganization)
+        (fr:GrandOrientExemplaire   org:Organization)          # also the object of recognition
+        (fr:LogeLaLanterne          mbr:Branch)
+        (fr:LogeLaLanterne          org:Organization)          # a unit is an organisation
+        (fr:marie-venerable         org:Membership)            # a term of office
+        (fr:tenue-initiation        mbr:Gathering)             # a ceremony is a gathering
+        # Italy
+        (it:GrandeOrienteEsemplare  mbr:MembershipOrganization)
+        (it:LoggiaLaFenice          mbr:Branch)
+        (it:giulia-priora           org:Membership)
+        # Germany: a Corps is a membership organisation; a reception is a conferral and a ceremony a gathering
+        (ci:CorpsImaginaria         mbr:MembershipOrganization)
+        (ci:fritz-rezeption         mbr:Conferral)             # an initiation is a degree conferral
+        (ci:rezeption-2025          mbr:Gathering)
+        (ci:mensur-2023             mbr:Gathering)
+        # Compagnonnage
+        (cp:CompagnonsDeLAtelier    mbr:MembershipOrganization)
+        (cp:CayenneDeExemplieVille  mbr:Branch)
+        (cp:remi-reception          mbr:Conferral)
+        # Orders of chivalry
+        (ch:OrderOfTheSilverHeron   mbr:MembershipOrganization)
+        (ch:HeronNordicDelegation   org:Organization)
+        (ch:assessment-heron        prov:Activity)             # a legitimacy assessment
     }
     FILTER NOT EXISTS { ?s rdf:type ?type }
     BIND (CONCAT(STR(?s), " should be a ", STR(?type)) AS ?missing)

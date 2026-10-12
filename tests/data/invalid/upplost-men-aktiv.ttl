@@ -1,4 +1,5 @@
 # EXPECT: organisation has a dissolution date but status active
+# MESSAGE: An organisation with a dissolution date cannot have status active
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix org:  <http://www.w3.org/ns/org#> .
 @prefix mbr:  <https://w3id.org/membership#> .

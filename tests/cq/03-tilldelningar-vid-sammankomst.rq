@@ -1,6 +1,7 @@
 # CQ3: Everything conferred at a gathering, including on non-members, and
 # whether each recipient is a member of the organiser (or of the organisation
 # the organising branch belongs to).
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
@@ -16,9 +17,11 @@ WHERE {
     ?c mbr:conferredAt ?gathering ;
        mbr:recipient ?recipient ;
        mbr:conferred ?x .
-    OPTIONAL { ?gathering rdfs:label ?gatheringName }
+    OPTIONAL { { SELECT ?gathering (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?gatheringName)
+                 WHERE { ?gathering rdfs:label ?l } GROUP BY ?gathering } }
     OPTIONAL { ?recipient schema:name ?name }
-    OPTIONAL { ?x skos:prefLabel ?conferred }
+    OPTIONAL { { SELECT ?x (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?conferred)
+                 WHERE { ?x skos:prefLabel ?l } GROUP BY ?x } }
     BIND (EXISTS {
         ?gathering mbr:organizer/org:unitOf? ?org .
         ?m a mbr:Membership ; org:member ?recipient ; org:organization ?org .

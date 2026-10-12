@@ -1,4 +1,5 @@
 # EXPECT: a period gives a legal form (mbrc:privateClub is an organisation type) from the wrong codelist
+# MESSAGE: mbr:legalForm must be a concept in mbrc:LegalForms
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix mbr:  <https://w3id.org/membership#> .

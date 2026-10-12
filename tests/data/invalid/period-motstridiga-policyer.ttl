@@ -1,4 +1,5 @@
 # EXPECT: two different gender policies in periods that certainly overlap (1990-2010 and 2000-2020)
+# MESSAGE: The organisation has two different values of
 @prefix org:   <http://www.w3.org/ns/org#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix mbr:  <https://w3id.org/membership#> .

@@ -1,4 +1,5 @@
 # EXPECT: an order with a characteristic that is a local concept with no mapping to fraternalc:Characteristics
+# MESSAGE: fraternal:characteristic must be a concept in fraternalc:Characteristics
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix fraternal:  <https://w3id.org/fraternal#> .

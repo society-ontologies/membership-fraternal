@@ -1,0 +1,27 @@
+# CQ13: Which grand bodies and orders recognise, or are in amity with, which others,
+# and is it mutual? Recognition (fraternal:recognizes) is directional, so each row
+# says whether the other body recognises back. Amity (fraternal:inAmityWith) is symmetric;
+# the UNION covers data that states it in one direction only (no reasoner), and the
+# relation is mutual by definition.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fraternal: <https://w3id.org/fraternal#>
+
+SELECT DISTINCT ?body ?relation ?other ?mutual
+WHERE {
+    {
+        ?a fraternal:recognizes ?b .
+        BIND ("recognises" AS ?relation)
+        BIND (EXISTS { ?b fraternal:recognizes ?a } AS ?mutual)
+    } UNION {
+        { ?a fraternal:inAmityWith ?b } UNION { ?b fraternal:inAmityWith ?a }
+        BIND ("is in amity with" AS ?relation)
+        BIND (true AS ?mutual)
+    }
+    OPTIONAL { { SELECT ?a (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?body)
+                 WHERE { ?a rdfs:label ?l } GROUP BY ?a } }
+    OPTIONAL { { SELECT ?b (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?other)
+                 WHERE { ?b rdfs:label ?l } GROUP BY ?b } }
+}
+ORDER BY ?body ?relation ?other

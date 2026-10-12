@@ -1,4 +1,5 @@
 # EXPECT: addressCountry is not a two-letter ISO 3166-1 code
+# MESSAGE: schema:addressCountry must be a two-letter ISO 3166-1 code
 @prefix schema: <http://schema.org/> .
 @prefix mbr:    <https://w3id.org/membership#> .
 @prefix ex:     <https://example.org/invalid/> .

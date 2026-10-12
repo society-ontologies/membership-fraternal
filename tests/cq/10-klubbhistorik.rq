@@ -2,6 +2,7 @@
 # the building had when the club moved in), changes of address of those
 # buildings (a street renamed or renumbered), and the clubs that merged into
 # it. Years are compared on their first four characters, as dates may be partial.
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
@@ -37,7 +38,8 @@ WHERE {
         ?e org:resultingOrganization ?c ;
            org:originalOrganization ?old ;
            mbr:startDate ?from .
-        ?old rdfs:label ?what .
+        { SELECT ?old (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?what)
+          WHERE { ?old rdfs:label ?l } GROUP BY ?old }
         BIND ("merged into this club" AS ?event)
     }
 }

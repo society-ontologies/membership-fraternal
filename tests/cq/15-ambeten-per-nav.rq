@@ -1,0 +1,26 @@
+# CQ15: Which offices, in any codelist and any country, correspond to the generic
+# office of president? Each local office maps directly (exact, close or broad match) to
+# a concept in mbrc:OfficeTypes, so a lodge's Venerable Master, a compagnons' House
+# Provost and a Studentenverbindung's Senior are found together. The generic office is
+# set in VALUES.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mbr:  <https://w3id.org/membership#>
+PREFIX mbrc: <https://w3id.org/membership/code/>
+
+SELECT ?office ?match ?scheme
+WHERE {
+    VALUES ?hub { mbrc:president }
+    VALUES ?p { skos:exactMatch skos:closeMatch skos:broadMatch }
+    ?o a mbr:Office ;
+       ?p ?hub .
+    FILTER (?o != ?hub)
+    BIND (STRAFTER(STR(?p), "core#") AS ?match)
+    OPTIONAL { { SELECT ?o (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?office)
+                 WHERE { ?o skos:prefLabel ?l } GROUP BY ?o } }
+    OPTIONAL { ?o skos:inScheme ?s .
+               { SELECT ?s (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?scheme)
+                 WHERE { ?s skos:prefLabel ?l } GROUP BY ?s } }
+}
+ORDER BY ?scheme ?office

@@ -1,6 +1,7 @@
 # CQ11: What does membership cost? One row per fee in force on a given date,
 # with organisation type, how members are admitted, fee type, membership
 # category (blank = all members), amount and currency.
+# Labels: English if there is one, otherwise the first language alphabetically.
 
 PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
@@ -13,15 +14,22 @@ SELECT ?organisation ?type ?admission ?feeType ?category ?price ?currency
 WHERE {
     BIND (2025 AS ?year)
     ?o mbr:membershipFee ?fee ;
-       rdfs:label ?organisation ;
-       org:classification/skos:prefLabel ?type .
-    FILTER (lang(?type) = "en")
-    OPTIONAL { ?o mbr:admissionMode/skos:prefLabel ?admission . FILTER (lang(?admission) = "en") }
-    ?fee mbr:feeType/skos:prefLabel ?feeType ;
+       org:classification ?otype .
+    { SELECT ?o (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+      WHERE { ?o rdfs:label ?l } GROUP BY ?o }
+    { SELECT ?otype (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?type)
+      WHERE { ?otype skos:prefLabel ?l } GROUP BY ?otype }
+    OPTIONAL { ?o mbr:admissionMode ?am .
+               { SELECT ?am (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?admission)
+                 WHERE { ?am skos:prefLabel ?l } GROUP BY ?am } }
+    ?fee mbr:feeType ?ft ;
          schema:price ?price ;
          schema:priceCurrency ?currency .
-    FILTER (lang(?feeType) = "en")
-    OPTIONAL { ?fee mbr:appliesToCategory/skos:prefLabel ?category . FILTER (lang(?category) = "en") }
+    { SELECT ?ft (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?feeType)
+      WHERE { ?ft skos:prefLabel ?l } GROUP BY ?ft }
+    OPTIONAL { ?fee mbr:appliesToCategory ?cat .
+               { SELECT ?cat (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?category)
+                 WHERE { ?cat skos:prefLabel ?l } GROUP BY ?cat } }
     # In force during ?year (compared by year, as dates may be partial).
     OPTIONAL { ?fee mbr:startDate ?s }
     OPTIONAL { ?fee mbr:endDate ?e }

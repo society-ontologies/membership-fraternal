@@ -1,0 +1,6 @@
+body,relation,other,mutual
+Frater Exemplum,is in amity with,Soror Exemplum,true
+Grand Orient Exemplaire de France,is in amity with,Grande Loge du Sud Exemplaire,true
+Grand Orient Exemplaire de France,recognises,Grande Loge Exemplaire de France,false
+Grande Loge du Sud Exemplaire,is in amity with,Grand Orient Exemplaire de France,true
+Soror Exemplum,is in amity with,Frater Exemplum,true
