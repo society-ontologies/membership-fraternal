@@ -724,13 +724,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform eller status. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel och mbr:organizationStatus, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod.</p></td>
+              <td><p>En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras.</p></td>
+              <td><p>Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras. När den ändras byts den registrerade aktuella klassificeringen på organisationen och den tidigare behålls som en period med mbr:organizationType. Bekvämlighetsklasserna följer den aktuella org:classification på organisationen, aldrig perioderna.</p></td>
             </tr>
             <tr>
               <th>
@@ -814,6 +814,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#Medlemsorganisation">Medlemsorganisation</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -826,11 +831,6 @@ td {
                       </span>
                     </span><br>
                   </span>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#Medlemsorganisation">Medlemsorganisation</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -1717,7 +1717,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform eller status. En organisation kan ha många.</p></td>
+              <td><p>Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. En organisation kan ha många.</p></td>
             </tr>
             <tr>
               <th>
@@ -1726,6 +1726,94 @@ td {
               <td>
                 <span>
                   <a href="#Organisationsperiod">Organisationsperiod</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="organisationstyp">
+          <h3>organisationstyp
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#organizationType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologi för medlemsorganisationer</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Vilken sorts organisation den var under en period (se mbrc:OrganizationTypes). Används på en mbr:OrganizationPeriod; samma värden som org:classification anger på organisationen.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>En egen egenskap eftersom org:classification har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. En organisation kan ha flera typer samtidigt, så perioder med olika typer får överlappa. Den registrerade aktuella klassificeringen finns kvar på organisationen med org:classification.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="associationsform">
+          <h3>associationsform
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#legalForm</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologi för medlemsorganisationer</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Den associationsform organisationen hade under en period (se mbrc:LegalForms). Används på en mbr:OrganizationPeriod; samma värden som rov:orgType anger på organisationen.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>En egen egenskap eftersom rov:orgType, en underegenskap till org:classification, har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. Den registrerade aktuella associationsformen finns kvar på organisationen med rov:orgType. En ändrad associationsform är en ändring av organisationens form, inte en ny organisation; ersätts organisationen av en annan, registrera det som en org:ChangeEvent.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -3596,6 +3684,12 @@ td {
             </li>
             <li>
               <a href="#hasPeriod">har period</a>
+            </li>
+            <li>
+              <a href="#organisationstyp">organisationstyp</a>
+            </li>
+            <li>
+              <a href="#associationsform">associationsform</a>
             </li>
             <li>
               <a href="#medlemskapsstatus">medlemskapsstatus</a>
