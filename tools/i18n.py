@@ -26,7 +26,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from rdflib import RDF, Graph, Literal
+from rdflib import RDF, BNode, Graph, Literal
 from rdflib.namespace import DCTERMS, RDFS, SKOS
 
 # The languages the ontologies are written in, with the name shown in the language switcher.
@@ -137,10 +137,19 @@ def write_ntriples(graph, triples, path):
         by_subject.setdefault(s, []).append((p, o))
     typed = dict.fromkeys(graph.subjects(RDF.type, None))
     order = [s for s in typed if s in by_subject] + [s for s in by_subject if s not in typed]
+    # rdflib gives blank nodes a new random identifier at every parse, and pyLODE's output
+    # depends on them, so number them in the order they are written.
+    blank = {}
+
+    def term(t):
+        if isinstance(t, BNode):
+            return "_:b" + str(blank.setdefault(t, len(blank)))
+        return t.n3()
+
     with open(path, "w", encoding="utf-8") as f:
         for s in order:
             for p, o in by_subject[s]:
-                f.write(f"{s.n3()} {p.n3()} {o.n3()} .\n")
+                f.write(f"{term(s)} {term(p)} {term(o)} .\n")
 
 
 def switcher(language, available):
