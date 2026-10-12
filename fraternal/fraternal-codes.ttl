@@ -185,7 +185,9 @@ fraternalc:selfStyledOrderOfChivalry a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Self-styled Order of Chivalry"@en , "Självutnämnd riddarorden"@sv , "Ordre de chevalerie autoproclamé"@fr , "Selbsternannter Ritterorden"@de , "Ordine cavalleresco autoproclamato"@it ;
     skos:altLabel "False Order of Chivalry"@en , "Private Order"@en ,
                   "Oäkta riddarorden"@sv , "Privatorden"@sv ,
-                  "Oäkta riddarorden"@sv , "Ordre de fantaisie"@fr ;
+                  "Ordre de fantaisie"@fr ,
+                  "Falso ordine cavalleresco"@it ,
+                  "Ordine privato"@it ;
     skos:definition "An organisation that claims to be an order of chivalry without a generally recognised fons honorum."@en ,
                     "En sammanslutning som gör anspråk på att vara en riddarorden utan en allmänt erkänd fons honorum."@sv ,
                     "Organisation qui prétend être un ordre de chevalerie sans fons honorum généralement reconnue."@fr ,
@@ -200,7 +202,7 @@ fraternalc:selfStyledOrderOfChivalry a skos:Concept , owl:NamedIndividual ;
 fraternalc:gastronomicBrotherhood a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
     skos:prefLabel "Food and Wine Brotherhood"@en , "Gastronomiskt brödraskap"@sv , "Confrérie gastronomique"@fr , "Wein- und Gastronomiebruderschaft"@de , "Confraternita enogastronomica"@it ;
-    skos:altLabel "Wine Brotherhood"@en , "Confrérie bachique"@fr , "Confrérie vineuse"@fr ;
+    skos:altLabel "Wine Brotherhood"@en , "Confrérie bachique"@fr , "Confrérie vineuse"@fr , "Confraternita del vino"@it ;
     skos:definition "A brotherhood devoted to a regional food or drink tradition, such as a wine, cheese or beer brotherhood, whose members are inducted at a ceremonial chapter and often wear robes and bear titles in the chivalric style."@en ,
                     "Ett brödraskap ägnat en regional mat- eller dryckestradition, som ett vin-, ost- eller ölbrödraskap, vars medlemmar upptas vid en ceremoniell sammankomst och ofta bär dräkt och titlar i riddarordensstil."@sv ,
                     "Confrérie vouée à une tradition gastronomique ou viticole régionale, dont les membres sont intronisés lors d'un chapitre et portent souvent une robe et des titres de style chevaleresque."@fr ,
@@ -229,116 +231,129 @@ fraternalc:craftBrotherhood a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:studentenverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
-    skos:prefLabel "Studentenverbindung"@en , "Tysk studentkorporation"@sv , "Studentenverbindung"@de , "Studentenverbindung"@it ;
-    skos:altLabel "German Student Fraternity"@en , "Student Corporation"@en , "Korporation"@de , "Verbindung"@de , "Studentenverbindning"@sv ;
+    skos:prefLabel "Studentenverbindung"@en , "Tysk studentkorporation"@sv , "Studentenverbindung"@de , "Studentenverbindung"@it , "Studentenverbindung"@fr ;
+    skos:altLabel "German Student Fraternity"@en , "Student Corporation"@en , "Korporation"@de , "Verbindung"@de , "Studentenverbindning"@sv , "Corporazione studentesca"@it ;
     skos:definition "A student fraternity of the German-speaking countries (Germany, Austria, Switzerland), also called a Korporation: a lifelong union of students and alumni with its own house, colours, customs and a rule book (the Comment), usually organised in an active branch of current students (Aktivitas) and an alumni branch (Altherrenschaft). The traditions below refine it."@en ,
                     "En studentförening i de tyskspråkiga länderna (Tyskland, Österrike, Schweiz), även kallad korporation: ett livslångt förbund av studenter och alumner med eget hus, egna färger och sedvänjor samt ett regelverk (Comment), vanligen uppdelat i en aktivitas av nuvarande studenter och en gammalherrarförening (Altherrenschaft). Traditionerna nedan förfinar den."@sv ,
                     "Eine studentische Gemeinschaft des deutschsprachigen Raums (Deutschland, Österreich, Schweiz), auch Korporation genannt: ein auf Lebenszeit angelegter Bund von Studierenden und Ehemaligen mit eigenem Haus, Farben, Bräuchen und einem Regelwerk (dem Komment), meist gegliedert in die Aktivitas der Studierenden und die Altherrenschaft. Die folgenden Traditionen verfeinern sie."@de ,
-                    "Una corporazione studentesca dei paesi di lingua tedesca (Germania, Austria, Svizzera), detta anche Korporation: un'unione per la vita di studenti ed ex studenti con una propria casa, propri colori, usanze e un regolamento (il Comment), di solito organizzata in un ramo attivo di studenti in corso (Aktivitas) e in un ramo di ex studenti (Altherrenschaft). Le tradizioni qui sotto la specificano."@it .
+                    "Una corporazione studentesca dei paesi di lingua tedesca (Germania, Austria, Svizzera), detta anche Korporation: un'unione per la vita di studenti ed ex studenti con una propria casa, propri colori, usanze e un regolamento (il Comment), di solito organizzata in un ramo attivo di studenti in corso (Aktivitas) e in un ramo di ex studenti (Altherrenschaft). Le tradizioni qui sotto la specificano."@it ,
+                    "Corporation d'étudiants des pays de langue allemande (Allemagne, Autriche, Suisse), appelée aussi Korporation : union à vie d'étudiants et d'anciens avec sa propre maison, ses couleurs, ses usages et un règlement (le Comment), en général organisée en une branche active d'étudiants en cours d'études (Aktivitas) et une branche d'anciens (Altherrenschaft). Les traditions ci-dessous la précisent."@fr .
 
 fraternalc:corps a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Corps"@en , "Corps"@sv , "Corps"@de , "Corps"@it ;
+    skos:prefLabel "Corps"@en , "Corps"@sv , "Corps"@de , "Corps"@it , "Corps"@fr ;
     skos:altLabel "Kösener Corps"@de , "Weinheimer Corps"@de ;
     skos:definition "The oldest tradition of Studentenverbindung, growing out of the regional student groups of the 18th century. Typically lifelong (Lebensbund), self-governing through the convent, tolerant in politics and religion, wearing colours and requiring the Mensur. Federations include the Kösener Senioren-Convents-Verband (KSCV) and the Weinheimer Senioren-Convent (WSC)."@en ,
                     "Den äldsta traditionen av Studentenverbindung, framvuxen ur 1700-talets regionala studentgrupper. Vanligen livslång (Lebensbund), självstyrande genom konventet, tolerant i politik och religion, med färger och krav på mensur. Förbund är bland andra Kösener Senioren-Convents-Verband (KSCV) och Weinheimer Senioren-Convent (WSC)."@sv ,
                     "Die älteste Tradition der Studentenverbindung, hervorgegangen aus den regionalen Studentengruppen des 18. Jahrhunderts. In der Regel auf Lebenszeit (Lebensbund), durch den Convent selbst verwaltet, politisch und religiös tolerant, farbentragend und mit Mensurpflicht. Dachverbände sind unter anderem der Kösener Senioren-Convents-Verband (KSCV) und der Weinheimer Senioren-Convent (WSC)."@de ,
-                    "La più antica tradizione di Studentenverbindung, nata dai gruppi studenteschi regionali del Settecento. Di norma per la vita (Lebensbund), autogovernata attraverso il convent, tollerante in politica e religione, con colori portati e con la Mensur obbligatoria. Le federazioni comprendono il Kösener Senioren-Convents-Verband (KSCV) e il Weinheimer Senioren-Convent (WSC)."@it .
+                    "La più antica tradizione di Studentenverbindung, nata dai gruppi studenteschi regionali del Settecento. Di norma per la vita (Lebensbund), autogovernata attraverso il convent, tollerante in politica e religione, con colori portati e con la Mensur obbligatoria. Le federazioni comprendono il Kösener Senioren-Convents-Verband (KSCV) e il Weinheimer Senioren-Convent (WSC)."@it ,
+                    "La plus ancienne tradition de Studentenverbindung, issue des groupes d'étudiants régionaux du XVIIIe siècle. En général à vie (Lebensbund), autogérée par le convent, tolérante en politique et en religion, portant les couleurs et exigeant la Mensur. Parmi les fédérations : le Kösener Senioren-Convents-Verband (KSCV) et le Weinheimer Senioren-Convent (WSC)."@fr .
 
 fraternalc:burschenschaft a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Burschenschaft"@en , "Burschenschaft"@sv , "Burschenschaft"@de , "Burschenschaft"@it ;
+    skos:prefLabel "Burschenschaft"@en , "Burschenschaft"@sv , "Burschenschaft"@de , "Burschenschaft"@it , "Burschenschaft"@fr ;
     skos:definition "A tradition of Studentenverbindung that arose from the patriotic and liberal student movement after 1815 (the first at Jena), with the motto Ehre, Freiheit, Vaterland and the colours black, red and gold. The federation is the Deutsche Burschenschaft (DB); in Austria there are Burschenschaften of their own. Some are schlagend, others not."@en ,
                     "En tradition av Studentenverbindung som uppstod ur den patriotiska och liberala studentrörelsen efter 1815 (den första i Jena), med devisen Ehre, Freiheit, Vaterland och färgerna svart, rött och guld. Förbundet är Deutsche Burschenschaft (DB); i Österrike finns egna Burschenschaften. Vissa är schlagend, andra inte."@sv ,
                     "Eine Tradition der Studentenverbindung, die aus der patriotisch-liberalen Studentenbewegung nach 1815 hervorging (die erste in Jena), mit dem Wahlspruch Ehre, Freiheit, Vaterland und den Farben Schwarz, Rot und Gold. Der Dachverband ist die Deutsche Burschenschaft (DB); in Österreich gibt es eigene Burschenschaften. Manche sind schlagend, andere nicht."@de ,
-                    "Una tradizione di Studentenverbindung sorta dal movimento studentesco patriottico e liberale dopo il 1815 (la prima a Jena), con il motto Ehre, Freiheit, Vaterland e i colori nero, rosso e oro. La federazione è la Deutsche Burschenschaft (DB); in Austria esistono Burschenschaften proprie. Alcune sono schlagend, altre no."@it .
+                    "Una tradizione di Studentenverbindung sorta dal movimento studentesco patriottico e liberale dopo il 1815 (la prima a Jena), con il motto Ehre, Freiheit, Vaterland e i colori nero, rosso e oro. La federazione è la Deutsche Burschenschaft (DB); in Austria esistono Burschenschaften proprie. Alcune sono schlagend, altre no."@it ,
+                    "Tradition de Studentenverbindung née du mouvement étudiant patriotique et libéral après 1815 (la première à Iéna), avec la devise Ehre, Freiheit, Vaterland et les couleurs noir, rouge et or. La fédération est la Deutsche Burschenschaft (DB) ; en Autriche il existe des Burschenschaften propres. Certaines sont schlagend, d'autres non."@fr .
 
 fraternalc:landsmannschaft a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Landsmannschaft"@en , "Landsmannschaft"@sv , "Landsmannschaft"@de , "Landsmannschaft"@it ;
+    skos:prefLabel "Landsmannschaft"@en , "Landsmannschaft"@sv , "Landsmannschaft"@de , "Landsmannschaft"@it , "Landsmannschaft"@fr ;
     skos:definition "A tradition of Studentenverbindung that goes back to the student groups formed by region of origin (Land). Landsmannschaften are usually schlagend and wear colours; many belong to the Coburger Convent (CC)."@en ,
                     "En tradition av Studentenverbindung som går tillbaka på studentgrupper bildade efter hemtrakt (Land). Landsmannschaften är oftast schlagend och bär färger; många tillhör Coburger Convent (CC)."@sv ,
                     "Eine Tradition der Studentenverbindung, die auf die nach Herkunftsland gebildeten Studentengruppen zurückgeht. Landsmannschaften sind meist schlagend und farbentragend; viele gehören dem Coburger Convent (CC) an."@de ,
-                    "Una tradizione di Studentenverbindung che risale ai gruppi studenteschi formati per regione di provenienza (Land). Le Landsmannschaften sono di solito schlagend e portano i colori; molte appartengono al Coburger Convent (CC)."@it .
+                    "Una tradizione di Studentenverbindung che risale ai gruppi studenteschi formati per regione di provenienza (Land). Le Landsmannschaften sono di solito schlagend e portano i colori; molte appartengono al Coburger Convent (CC)."@it ,
+                    "Tradition de Studentenverbindung qui remonte aux groupes d'étudiants formés selon la région d'origine (Land). Les Landsmannschaften sont en général schlagend et portent les couleurs ; beaucoup appartiennent au Coburger Convent (CC)."@fr .
 
 fraternalc:turnerschaft a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Turnerschaft"@en , "Turnerschaft"@sv , "Turnerschaft"@de , "Turnerschaft"@it ;
+    skos:prefLabel "Turnerschaft"@en , "Turnerschaft"@sv , "Turnerschaft"@de , "Turnerschaft"@it , "Turnerschaft"@fr ;
     skos:definition "A tradition of Studentenverbindung rooted in the 19th-century gymnastics movement (Turnbewegung), combining gymnastics with fencing. Turnerschaften usually belong to the Coburger Convent (CC)."@en ,
                     "En tradition av Studentenverbindung med rötter i 1800-talets gymnastikrörelse (Turnbewegung), som förenar gymnastik med fäktning. Turnerschaften tillhör oftast Coburger Convent (CC)."@sv ,
                     "Eine Tradition der Studentenverbindung mit Wurzeln in der Turnbewegung des 19. Jahrhunderts, die Turnen mit Fechten verbindet. Turnerschaften gehören meist dem Coburger Convent (CC) an."@de ,
-                    "Una tradizione di Studentenverbindung radicata nel movimento ginnico dell'Ottocento (Turnbewegung), che unisce ginnastica e scherma. Le Turnerschaften di solito appartengono al Coburger Convent (CC)."@it .
+                    "Una tradizione di Studentenverbindung radicata nel movimento ginnico dell'Ottocento (Turnbewegung), che unisce ginnastica e scherma. Le Turnerschaften di solito appartengono al Coburger Convent (CC)."@it ,
+                    "Tradition de Studentenverbindung enracinée dans le mouvement gymnique du XIXe siècle (Turnbewegung), qui associe la gymnastique et l'escrime. Les Turnerschaften appartiennent en général au Coburger Convent (CC)."@fr .
 
 fraternalc:saengerschaft a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Sängerschaft"@en , "Sängerschaft"@sv , "Sängerschaft"@de , "Sängerschaft"@it ;
+    skos:prefLabel "Sängerschaft"@en , "Sängerschaft"@sv , "Sängerschaft"@de , "Sängerschaft"@it , "Sängerschaft"@fr ;
     skos:definition "A tradition of Studentenverbindung built around choral singing and music. Sängerschaften belong to the Deutsche Sängerschaft (DS) and most are schlagend."@en ,
                     "En tradition av Studentenverbindung med kör- och musikutövning som kärna. Sängerschaften tillhör Deutsche Sängerschaft (DS) och de flesta är schlagend."@sv ,
                     "Eine Tradition der Studentenverbindung, die auf Chorgesang und Musik gründet. Sängerschaften gehören der Deutschen Sängerschaft (DS) an und sind meist schlagend."@de ,
-                    "Una tradizione di Studentenverbindung costruita intorno al canto corale e alla musica. Le Sängerschaften appartengono alla Deutsche Sängerschaft (DS) e la maggior parte è schlagend."@it .
+                    "Una tradizione di Studentenverbindung costruita intorno al canto corale e alla musica. Le Sängerschaften appartengono alla Deutsche Sängerschaft (DS) e la maggior parte è schlagend."@it ,
+                    "Tradition de Studentenverbindung construite autour du chant choral et de la musique. Les Sängerschaften appartiennent à la Deutsche Sängerschaft (DS) et la plupart sont schlagend."@fr .
 
 fraternalc:catholicStudentenverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Catholic Studentenverbindung"@en , "Katolsk studentkorporation"@sv , "Katholische Studentenverbindung"@de , "Studentenverbindung cattolica"@it ;
+    skos:prefLabel "Catholic Studentenverbindung"@en , "Katolsk studentkorporation"@sv , "Katholische Studentenverbindung"@de , "Studentenverbindung cattolica"@it , "Studentenverbindung catholique"@fr ;
     skos:altLabel "Katholische Verbindung"@de ;
     skos:definition "A Studentenverbindung founded on the Catholic faith, usually colour-wearing and not schlagend, with principles such as religio, scientia and amicitia (in the CV also patria). Federations include the Cartellverband (CV), the Kartellverband (KV), the Unitas-Verband (UV) and, in Austria, the Österreichischer Cartellverband (ÖCV)."@en ,
                     "En Studentenverbindung grundad på katolsk tro, vanligen med färger och inte schlagend, med principer som religio, scientia och amicitia (i CV även patria). Förbund är bland andra Cartellverband (CV), Kartellverband (KV), Unitas-Verband (UV) och i Österrike Österreichischer Cartellverband (ÖCV)."@sv ,
                     "Eine auf den katholischen Glauben gegründete Studentenverbindung, meist farbentragend und nichtschlagend, mit Prinzipien wie religio, scientia und amicitia (im CV auch patria). Dachverbände sind unter anderem der Cartellverband (CV), der Kartellverband (KV), der Unitas-Verband (UV) und in Österreich der Österreichische Cartellverband (ÖCV)."@de ,
-                    "Una Studentenverbindung fondata sulla fede cattolica, di solito con colori portati e non schlagend, con principi come religio, scientia e amicitia (nel CV anche patria). Le federazioni comprendono il Cartellverband (CV), il Kartellverband (KV), l'Unitas-Verband (UV) e, in Austria, l'Österreichischer Cartellverband (ÖCV)."@it .
+                    "Una Studentenverbindung fondata sulla fede cattolica, di solito con colori portati e non schlagend, con principi come religio, scientia e amicitia (nel CV anche patria). Le federazioni comprendono il Cartellverband (CV), il Kartellverband (KV), l'Unitas-Verband (UV) e, in Austria, l'Österreichischer Cartellverband (ÖCV)."@it ,
+                    "Studentenverbindung fondée sur la foi catholique, en général portant les couleurs et non schlagend, avec des principes tels que religio, scientia et amicitia (dans le CV aussi patria). Parmi les fédérations : le Cartellverband (CV), le Kartellverband (KV), l'Unitas-Verband (UV) et, en Autriche, l'Österreichischer Cartellverband (ÖCV)."@fr .
 
 fraternalc:christianStudentenverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Protestant Studentenverbindung"@en , "Protestantisk studentkorporation"@sv , "Evangelische Studentenverbindung"@de , "Studentenverbindung protestante"@it ;
+    skos:prefLabel "Protestant Studentenverbindung"@en , "Protestantisk studentkorporation"@sv , "Evangelische Studentenverbindung"@de , "Studentenverbindung protestante"@it , "Studentenverbindung protestante"@fr ;
     skos:altLabel "Christian Studentenverbindung"@en , "Christliche Studentenverbindung"@de ;
     skos:definition "A Studentenverbindung founded on the Protestant Christian faith, usually colour-wearing and not schlagend. Federations include the Wingolfsbund (Wingolf) and the Schwarzburgbund (SB)."@en ,
                     "En Studentenverbindung grundad på protestantisk kristen tro, vanligen med färger och inte schlagend. Förbund är bland andra Wingolfsbund (Wingolf) och Schwarzburgbund (SB)."@sv ,
                     "Eine auf den evangelischen christlichen Glauben gegründete Studentenverbindung, meist farbentragend und nichtschlagend. Dachverbände sind unter anderem der Wingolfsbund (Wingolf) und der Schwarzburgbund (SB)."@de ,
-                    "Una Studentenverbindung fondata sulla fede cristiana protestante, di solito con colori portati e non schlagend. Le federazioni comprendono il Wingolfsbund (Wingolf) e lo Schwarzburgbund (SB)."@it .
+                    "Una Studentenverbindung fondata sulla fede cristiana protestante, di solito con colori portati e non schlagend. Le federazioni comprendono il Wingolfsbund (Wingolf) e lo Schwarzburgbund (SB)."@it ,
+                    "Studentenverbindung fondée sur la foi chrétienne protestante, en général portant les couleurs et non schlagend. Parmi les fédérations : le Wingolfsbund (Wingolf) et le Schwarzburgbund (SB)."@fr .
 
 fraternalc:turnverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Akademische Turnverbindung"@en , "Akademisk Turnverbindung"@sv , "Akademische Turnverbindung"@de , "Akademische Turnverbindung"@it ;
+    skos:prefLabel "Akademische Turnverbindung"@en , "Akademisk Turnverbindung"@sv , "Akademische Turnverbindung"@de , "Akademische Turnverbindung"@it , "Akademische Turnverbindung"@fr ;
     skos:altLabel "ATV"@de ;
     skos:definition "A Studentenverbindung in the gymnastics tradition that practises gymnastics and sport. Akademische Turnverbindungen belong to the Akademischer Turnbund (ATB)."@en ,
                     "En Studentenverbindung i gymnastiktraditionen som utövar gymnastik och idrott. Akademische Turnverbindungen tillhör Akademischer Turnbund (ATB)."@sv ,
                     "Eine Studentenverbindung in der Turntradition, die Turnen und Sport betreibt. Akademische Turnverbindungen gehören dem Akademischen Turnbund (ATB) an."@de ,
-                    "Una Studentenverbindung nella tradizione ginnica che pratica ginnastica e sport. Le Akademische Turnverbindungen appartengono all'Akademischer Turnbund (ATB)."@it .
+                    "Una Studentenverbindung nella tradizione ginnica che pratica ginnastica e sport. Le Akademische Turnverbindungen appartengono all'Akademischer Turnbund (ATB)."@it ,
+                    "Studentenverbindung de tradition gymnique qui pratique la gymnastique et le sport. Les Akademische Turnverbindungen appartiennent à l'Akademischer Turnbund (ATB)."@fr .
 
 fraternalc:wissenschaftlicheVerbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Scientific Studentenverbindung"@en , "Vetenskaplig studentkorporation"@sv , "Wissenschaftliche Verbindung"@de , "Studentenverbindung scientifica"@it ;
+    skos:prefLabel "Scientific Studentenverbindung"@en , "Vetenskaplig studentkorporation"@sv , "Wissenschaftliche Verbindung"@de , "Studentenverbindung scientifica"@it , "Studentenverbindung scientifique"@fr ;
     skos:altLabel "Fachverbindung"@de ;
     skos:definition "A Studentenverbindung whose members belong to one academic field or profession, for example chemistry, engineering or forestry."@en ,
                     "En Studentenverbindung vars medlemmar tillhör ett vetenskapsområde eller ett yrke, till exempel kemi, teknik eller skogsbruk."@sv ,
                     "Eine Studentenverbindung, deren Mitglieder einem Fachgebiet oder Beruf angehören, zum Beispiel Chemie, Technik oder Forstwesen."@de ,
-                    "Una Studentenverbindung i cui soci appartengono a un solo campo accademico o professione, per esempio chimica, ingegneria o scienze forestali."@it .
+                    "Una Studentenverbindung i cui soci appartengono a un solo campo accademico o professione, per esempio chimica, ingegneria o scienze forestali."@it ,
+                    "Studentenverbindung dont les membres relèvent d'une même discipline universitaire ou d'une même profession, par exemple la chimie, l'ingénierie ou les sciences forestières."@fr .
 
 fraternalc:damenverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Damenverbindung"@en , "Damverbindung"@sv , "Damenverbindung"@de , "Damenverbindung"@it ;
+    skos:prefLabel "Damenverbindung"@en , "Damverbindung"@sv , "Damenverbindung"@de , "Damenverbindung"@it , "Damenverbindung"@fr ;
     skos:altLabel "Women's Studentenverbindung"@en , "Studentinnenverbindung"@de ;
     skos:definition "A Studentenverbindung whose members are women students, formed on the model of the men's Verbindungen since the early 20th century."@en ,
                     "En Studentenverbindung vars medlemmar är kvinnliga studenter, bildad efter förebild från männens Verbindungen sedan tidigt 1900-tal."@sv ,
                     "Eine Studentenverbindung, deren Mitglieder Studentinnen sind, nach dem Vorbild der Männerverbindungen seit dem frühen 20. Jahrhundert gebildet."@de ,
-                    "Una Studentenverbindung i cui soci sono studentesse, formata sul modello delle Verbindungen maschili dall'inizio del Novecento."@it .
+                    "Una Studentenverbindung i cui soci sono studentesse, formata sul modello delle Verbindungen maschili dall'inizio del Novecento."@it ,
+                    "Studentenverbindung dont les membres sont des étudiantes, formée depuis le début du XXe siècle sur le modèle des Verbindungen masculines."@fr .
 
 fraternalc:schuelerverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:broader fraternalc:studentenverbindung ;
-    skos:prefLabel "Schülerverbindung"@en , "Gymnasistkorporation"@sv , "Schülerverbindung"@de , "Schülerverbindung"@it ;
+    skos:prefLabel "Schülerverbindung"@en , "Gymnasistkorporation"@sv , "Schülerverbindung"@de , "Schülerverbindung"@it , "Schülerverbindung"@fr ;
     skos:altLabel "Pennalie"@de , "Mittelschülerverbindung"@de ;
     skos:definition "A Verbindung of secondary-school pupils, modelled on the Studentenverbindungen and with its own federations, for example the Mittelschüler-Kartell-Verband (MKV) in Austria."@en ,
                     "En Verbindung för gymnasieelever, utformad efter Studentenverbindungen och med egna förbund, till exempel Mittelschüler-Kartell-Verband (MKV) i Österrike."@sv ,
                     "Eine Verbindung von Schülern höherer Schulen nach dem Vorbild der Studentenverbindungen, mit eigenen Dachverbänden, etwa dem Mittelschüler-Kartell-Verband (MKV) in Österreich."@de ,
-                    "Una Verbindung di alunni delle scuole secondarie, modellata sulle Studentenverbindungen e con federazioni proprie, per esempio il Mittelschüler-Kartell-Verband (MKV) in Austria."@it .
+                    "Una Verbindung di alunni delle scuole secondarie, modellata sulle Studentenverbindungen e con federazioni proprie, per esempio il Mittelschüler-Kartell-Verband (MKV) in Austria."@it ,
+                    "Verbindung d'élèves de l'enseignement secondaire, calquée sur les Studentenverbindungen et dotée de fédérations propres, par exemple le Mittelschüler-Kartell-Verband (MKV) en Autriche."@fr .
 
 fraternalc:studentenverbindungDachverband a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
-    skos:prefLabel "Federation of Studentenverbindungen"@en , "Förbund av studentkorporationer"@sv , "Dachverband von Studentenverbindungen"@de , "Federazione di Studentenverbindungen"@it ;
+    skos:prefLabel "Federation of Studentenverbindungen"@en , "Förbund av studentkorporationer"@sv , "Dachverband von Studentenverbindungen"@de , "Federazione di Studentenverbindungen"@it , "Fédération de Studentenverbindungen"@fr ;
     skos:altLabel "Verband"@de ;
     skos:definition "An umbrella federation of Studentenverbindungen of one tradition, such as the Kösener Senioren-Convents-Verband for Corps, the Deutsche Burschenschaft or the Cartellverband for Catholic Verbindungen. The member Verbindungen stay independent."@en ,
                     "Ett paraplyförbund för Studentenverbindungen av en tradition, till exempel Kösener Senioren-Convents-Verband för Corps, Deutsche Burschenschaft eller Cartellverband för katolska Verbindungen. Medlemsförbindelserna förblir självständiga."@sv ,
                     "Ein Zusammenschluss von Studentenverbindungen einer Tradition, etwa der Kösener Senioren-Convents-Verband für Corps, die Deutsche Burschenschaft oder der Cartellverband für katholische Verbindungen. Die Mitgliedsverbindungen bleiben selbstständig."@de ,
-                    "Una federazione ombrello di Studentenverbindungen di una tradizione, come il Kösener Senioren-Convents-Verband per i Corps, la Deutsche Burschenschaft o il Cartellverband per le Verbindungen cattoliche. Le Verbindungen che ne fanno parte restano indipendenti."@it .
+                    "Una federazione ombrello di Studentenverbindungen di una tradizione, come il Kösener Senioren-Convents-Verband per i Corps, la Deutsche Burschenschaft o il Cartellverband per le Verbindungen cattoliche. Le Verbindungen che ne fanno parte restano indipendenti."@it ,
+                    "Fédération faîtière de Studentenverbindungen d'une même tradition, comme le Kösener Senioren-Convents-Verband pour les Corps, la Deutsche Burschenschaft ou le Cartellverband pour les Verbindungen catholiques. Les Verbindungen membres restent indépendantes."@fr .
 
 ##############################################################################
 # 2. GENERIC DEGREE LADDERS  (hubs; also usable directly as degree systems)
@@ -357,14 +372,14 @@ fraternalc:entryDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
     fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:intermediateDegree ;
     skos:prefLabel "Entry Degree"@en , "Inträdesgrad"@sv , "Degré d'entrée"@fr , "Eingangsgrad"@de , "Grado d'ingresso"@it ;
-    skos:altLabel "Apprentice"@en , "Lärling"@sv , "Apprenti"@fr ;
+    skos:altLabel "Apprentice"@en , "Lärling"@sv , "Apprenti"@fr , "Apprendista"@it ;
     skos:definition "The first degree, conferred at initiation."@en , "Den första graden, som tilldelas vid initieringen."@sv , "Le premier degré, conféré lors de l'initiation."@fr , "Der erste Grad, bei der Initiation verliehen."@de , "Il primo grado, conferito all'iniziazione."@it .
 
 fraternalc:intermediateDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
     fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:fullDegree ;
     skos:prefLabel "Intermediate Degree"@en , "Mellangrad"@sv , "Degré intermédiaire"@fr , "Mittelgrad"@de , "Grado intermedio"@it ;
-    skos:altLabel "Fellow"@en , "Gesäll"@sv , "Compagnon"@fr ;
+    skos:altLabel "Fellow"@en , "Gesäll"@sv , "Compagnon"@fr , "Compagno"@it , "Compagno d'arte"@it ;
     skos:definition "A degree between entry and full membership."@en , "En grad mellan inträde och fullt medlemskap."@sv , "Degré entre l'entrée et le plein statut de membre."@fr , "Ein Grad zwischen Eintritt und Vollmitgliedschaft."@de , "Un grado tra l'ingresso e la piena appartenenza."@it ;
     skos:scopeNote "In freemasonry the fellow (compagnon) is the second degree. In French compagnonnage the compagnon is instead the full status reached after the masterpiece; map that to fraternalc:fullDegree."@en ,
                    "I frimureriet är gesällen (compagnon) den andra graden. I det franska compagnonnage är compagnon i stället den fulla ställning man når efter mästerstycket; koppla den till fraternalc:fullDegree."@sv ,
@@ -376,7 +391,7 @@ fraternalc:fullDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CraftDegrees ; skos:topConceptOf fraternalc:CraftDegrees ;
     fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:higherDegree ;
     skos:prefLabel "Full Degree"@en , "Fullgrad"@sv , "Degré plein"@fr , "Vollgrad"@de , "Grado pieno"@it ;
-    skos:altLabel "Master"@en , "Mästare"@sv , "Maître"@fr ;
+    skos:altLabel "Master"@en , "Mästare"@sv , "Maître"@fr , "Maestro"@it ;
     skos:definition "The degree that gives full membership."@en , "Den grad som ger fullt medlemskap."@sv , "Le degré qui donne le plein statut de membre."@fr , "Der Grad, der die Vollmitgliedschaft gibt."@de , "Il grado che dà la piena appartenenza."@it .
 
 fraternalc:higherDegree a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
@@ -434,14 +449,14 @@ fraternalc:commanderFirstClassGrade a fraternal:Degree , skos:Concept , owl:Name
     skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
     fraternal:degreeRank 5 ; fraternal:nextDegree fraternalc:grandCrossGrade ;
     skos:prefLabel "Commander First Class"@en , "Kommendör av första klassen"@sv , "Commandeur de première classe"@fr , "Kommandeur 1. Klasse"@de , "Commendatore di prima classe"@it ;
-    skos:altLabel "Grand Officer"@en , "Grand officier"@fr ;
+    skos:altLabel "Grand Officer"@en , "Grand officier"@fr , "Grande Ufficiale"@it ;
     skos:definition "The grade between commander and grand cross."@en , "Graden mellan kommendör och storkors."@sv , "Le grade entre commandeur et grand-croix."@fr , "Die Stufe zwischen Kommandeur und Großkreuz."@de , "Il grado tra commendatore e gran croce."@it .
 
 fraternalc:grandCrossGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
     fraternal:degreeRank 6 ;
     skos:prefLabel "Grand Cross"@en , "Storkors"@sv , "Grand-croix"@fr , "Großkreuz"@de , "Gran croce"@it ;
-    skos:altLabel "Kommendör med stora korset"@sv , "Kommendör med storkors"@sv , "Stora korset"@sv , "Grand'croix"@fr ;
+    skos:altLabel "Kommendör med stora korset"@sv , "Kommendör med storkors"@sv , "Stora korset"@sv , "Grand'croix"@fr , "Cavaliere di Gran Croce"@it ;
     skos:definition "The highest grade of an order."@en , "En ordens högsta grad."@sv , "Le grade le plus élevé d'un ordre."@fr , "Die höchste Stufe eines Ordens."@de , "Il grado più alto di un ordine."@it .
 
 ##############################################################################
@@ -479,7 +494,7 @@ fraternalc:officeDegree a skos:Concept , owl:NamedIndividual ;
 fraternalc:sideDegree a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:DegreeKinds ; skos:topConceptOf fraternalc:DegreeKinds ;
     skos:prefLabel "Side Degree"@en , "Tilläggsgrad"@sv , "Degré annexe"@fr , "Nebengrad"@de , "Grado laterale"@it ;
-    skos:altLabel "Additional Degree"@en , "Sidograd"@sv , "Degré complémentaire"@fr ;
+    skos:altLabel "Additional Degree"@en , "Sidograd"@sv , "Degré complémentaire"@fr , "Grado aggiuntivo"@it ;
     skos:definition "A degree worked alongside the main sequence rather than as a step in it."@en ,
                     "En grad som arbetas vid sidan av huvudföljden i stället för som ett steg i den."@sv ,
                     "Degré pratiqué à côté de la suite principale et non comme une étape de celle-ci."@fr ,
@@ -489,7 +504,7 @@ fraternalc:sideDegree a skos:Concept , owl:NamedIndividual ;
 fraternalc:probationaryDegree a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:DegreeKinds ; skos:topConceptOf fraternalc:DegreeKinds ;
     skos:prefLabel "Probationary Degree"@en , "Prövograd"@sv , "Degré probatoire"@fr , "Probegrad"@de , "Grado di prova"@it ;
-    skos:altLabel "Novice Degree"@en , "Novisgrad"@sv , "Degré de novice"@fr ;
+    skos:altLabel "Novice Degree"@en , "Novisgrad"@sv , "Degré de novice"@fr , "Grado di novizio"@it ;
     skos:definition "A trial degree before full membership. It may be the first step of the sequence or stand before it."@en ,
                     "En prövograd före fullvärdigt medlemskap. Den kan vara följdens första steg eller stå före den."@sv ,
                     "Degré d'épreuve avant le plein statut de membre. Il peut être la première étape de la suite ou la précéder."@fr ,
@@ -509,7 +524,7 @@ fraternalc:associateDegree a skos:Concept , owl:NamedIndividual ;
 fraternalc:emeritusDegree a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:DegreeKinds ; skos:topConceptOf fraternalc:DegreeKinds ;
     skos:prefLabel "Emeritus Degree"@en , "Seniorgrad"@sv , "Degré émérite"@fr , "Emeritusgrad"@de , "Grado emerito"@it ;
-    skos:altLabel "Seniority Degree"@en , "Emeritusgrad"@sv , "Degré d'ancienneté"@fr ;
+    skos:altLabel "Seniority Degree"@en , "Emeritusgrad"@sv , "Degré d'ancienneté"@fr , "Grado di anzianità"@it ;
     skos:definition "A degree for former office holders or members of long standing."@en ,
                     "En grad för tidigare ämbetsinnehavare eller medlemmar med lång tjänstetid."@sv ,
                     "Degré pour d'anciens titulaires de fonctions ou des membres de longue date."@fr ,
@@ -557,36 +572,40 @@ fraternalc:sororInSpe a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:bundesbruder a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
-    skos:prefLabel "Bundesbruder"@en , "Bundesbruder"@sv , "Bundesbruder"@de , "Bundesbruder"@it ;
+    skos:prefLabel "Bundesbruder"@en , "Bundesbruder"@sv , "Bundesbruder"@de , "Bundesbruder"@it , "Bundesbruder"@fr ;
     skos:definition "How members of a Studentenverbindung address one another (Bund: the union)."@en ,
                     "Hur medlemmar i en Studentenverbindung tilltalar varandra (Bund: förbundet)."@sv ,
                     "Wie Mitglieder einer Studentenverbindung einander anreden (Bund: der Zusammenschluss)."@de ,
-                    "Come si rivolgono l'uno all'altro i soci di una Studentenverbindung (Bund: l'unione)."@it .
+                    "Come si rivolgono l'uno all'altro i soci di una Studentenverbindung (Bund: l'unione)."@it ,
+                    "Façon dont les membres d'une Studentenverbindung s'appellent entre eux (Bund : l'union)."@fr .
 
 fraternalc:bundesschwester a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
-    skos:prefLabel "Bundesschwester"@en , "Bundesschwester"@sv , "Bundesschwester"@de , "Bundesschwester"@it ;
+    skos:prefLabel "Bundesschwester"@en , "Bundesschwester"@sv , "Bundesschwester"@de , "Bundesschwester"@it , "Bundesschwester"@fr ;
     skos:definition "How members of a Damenverbindung or a mixed Verbindung address one another."@en ,
                     "Hur medlemmar i en Damenverbindung eller en blandad Verbindung tilltalar varandra."@sv ,
                     "Wie Mitglieder einer Damenverbindung oder gemischten Verbindung einander anreden."@de ,
-                    "Come si rivolgono l'una all'altra i soci di una Damenverbindung o di una Verbindung mista."@it .
+                    "Come si rivolgono l'una all'altra i soci di una Damenverbindung o di una Verbindung mista."@it ,
+                    "Façon dont les membres d'une Damenverbindung ou d'une Verbindung mixte s'appellent entre elles."@fr .
 
 fraternalc:corpsbruder a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
-    skos:prefLabel "Corpsbruder"@en , "Corpsbruder"@sv , "Corpsbruder"@de , "Corpsbruder"@it ;
+    skos:prefLabel "Corpsbruder"@en , "Corpsbruder"@sv , "Corpsbruder"@de , "Corpsbruder"@it , "Corpsbruder"@fr ;
     skos:altLabel "Corpsbursch"@de ;
     skos:definition "How members of a Corps address one another."@en ,
                     "Hur medlemmar i ett Corps tilltalar varandra."@sv ,
                     "Wie Mitglieder eines Corps einander anreden."@de ,
-                    "Come si rivolgono l'uno all'altro i soci di un Corps."@it .
+                    "Come si rivolgono l'uno all'altro i soci di un Corps."@it ,
+                    "Façon dont les membres d'un Corps s'appellent entre eux."@fr .
 
 fraternalc:cartellbruder a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
-    skos:prefLabel "Cartellbruder"@en , "Cartellbruder"@sv , "Cartellbruder"@de , "Cartellbruder"@it ;
+    skos:prefLabel "Cartellbruder"@en , "Cartellbruder"@sv , "Cartellbruder"@de , "Cartellbruder"@it , "Cartellbruder"@fr ;
     skos:definition "How members of Verbindungen in the Cartellverband (CV) address one another across Verbindungen."@en ,
                     "Hur medlemmar i Verbindungen inom Cartellverband (CV) tilltalar varandra över Verbindungsgränserna."@sv ,
                     "Wie Mitglieder von Verbindungen im Cartellverband (CV) einander über die Verbindungen hinweg anreden."@de ,
-                    "Come si rivolgono l'uno all'altro, da una Verbindung all'altra, i soci delle Verbindungen del Cartellverband (CV)."@it .
+                    "Come si rivolgono l'uno all'altro, da una Verbindung all'altra, i soci delle Verbindungen del Cartellverband (CV)."@it ,
+                    "Façon dont les membres des Verbindungen du Cartellverband (CV) s'appellent entre eux d'une Verbindung à l'autre."@fr .
 
 ##############################################################################
 # 4. CHARACTERISTICS
@@ -641,7 +660,7 @@ fraternalc:religiousRequirement a skos:Concept , owl:NamedIndividual ;
 fraternalc:supremeBeingRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:religiousRequirement ;
     skos:prefLabel "Belief in a Supreme Being"@en , "Tro på ett högsta väsen"@sv , "Croyance en un Être suprême"@fr , "Glaube an ein höchstes Wesen"@de , "Fede in un Essere supremo"@it ;
-    skos:altLabel "Great Architect of the Universe"@en , "Grand Architecte de l'Univers"@fr ;
+    skos:altLabel "Great Architect of the Universe"@en , "Grand Architecte de l'Univers"@fr , "Grande Architetto dell'Universo"@it ;
     skos:definition "Members must profess belief in a supreme being, called the Great Architect of the Universe in masonic orders."@en ,
                     "Medlemmar måste bekänna tro på ett högsta väsen, som i frimurarordnar kallas Världsalltets store byggmästare."@sv ,
                     "Les membres doivent professer la croyance en un être suprême, appelé Grand Architecte de l'Univers dans les ordres maçonniques."@fr ,
@@ -651,13 +670,13 @@ fraternalc:supremeBeingRequirement a skos:Concept , owl:NamedIndividual ;
 fraternalc:noDogmaticRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
     skos:prefLabel "No Dogmatic Requirement"@en , "Inget trosbekännelsekrav"@sv , "Adogmatique"@fr , "Keine dogmatische Anforderung"@de , "Nessun requisito dogmatico"@it ;
-    skos:altLabel "Non-dogmatic"@en , "Adogmatic"@en ;
+    skos:altLabel "Non-dogmatic"@en , "Adogmatic"@en , "Adogmatico"@it ;
     skos:definition "Members are not required to profess any belief or disbelief. In French masonry, the adogmatic obediences, such as the Grand Orient de France, which removed the requirement in 1877, take this position."@en ,
                     "Medlemmar behöver inte bekänna någon tro eller icke-tro. Inom fransk frimureri intar de adogmatiska obedienserna, som Grand Orient de France, som slopade kravet 1877, denna hållning."@sv ,
                     "Les membres n'ont à professer aucune croyance ni aucune incroyance. En franc-maçonnerie française, les obédiences adogmatiques, comme le Grand Orient de France qui a supprimé cette exigence en 1877, adoptent cette position."@fr ,
                     "Von den Mitgliedern wird kein Bekenntnis zu Glauben oder Unglauben verlangt. In der französischen Freimaurerei vertreten die adogmatischen Obedienzen diese Haltung, etwa der Grand Orient de France, der die Anforderung 1877 abschaffte."@de ,
                     "Ai soci non si chiede di professare alcuna credenza né incredulità. Nella massoneria francese questa posizione è propria delle obbedienze adogmatiche, come il Grande Oriente di Francia, che tolse il requisito nel 1877."@it ;
-    skos:scopeNote "The opposite of fraternalc:supremeBeingRequirement, which is a kind of fraternalc:religiousRequirement."@en , "L'inverse de fraternalc:supremeBeingRequirement, qui est une sorte de fraternalc:religiousRequirement."@fr , "Das Gegenteil von fraternalc:supremeBeingRequirement, einer Art von fraternalc:religiousRequirement."@de , "L'opposto di fraternalc:supremeBeingRequirement, che è una forma di fraternalc:religiousRequirement."@it .
+    skos:scopeNote "The opposite of fraternalc:supremeBeingRequirement, which is a kind of fraternalc:religiousRequirement."@en , "L'inverse de fraternalc:supremeBeingRequirement, qui est une sorte de fraternalc:religiousRequirement."@fr , "Das Gegenteil von fraternalc:supremeBeingRequirement, einer Art von fraternalc:religiousRequirement."@de , "L'opposto di fraternalc:supremeBeingRequirement, che è una forma di fraternalc:religiousRequirement."@it , "Motsatsen till fraternalc:supremeBeingRequirement, som är en form av fraternalc:religiousRequirement."@sv .
 
 fraternalc:itinerantTraining a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -668,7 +687,7 @@ fraternalc:itinerantTraining a skos:Concept , owl:NamedIndividual ;
                     "Les membres en formation voyagent d'un lieu de travail et d'une ville à l'autre, souvent pendant des années, pour apprendre leur métier, comme le font les compagnons français lors de leur Tour de France."@fr ,
                     "Mitglieder in Ausbildung ziehen, oft jahrelang, zwischen Werkstätten und Orten umher, um ihr Gewerbe zu erlernen, wie es die französischen Compagnons auf ihrer Tour de France tun."@de ,
                     "I soci in formazione viaggiano tra botteghe e luoghi, spesso per anni, per imparare il mestiere, come fanno i compagnons francesi nel loro Tour de France."@it ;
-    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en , "Le Tour de France des compagnons n'est pas la course cycliste."@fr , "Die Tour de France der Compagnons ist nicht das Radrennen."@de , "Il Tour de France dei compagnons non è la corsa ciclistica."@it .
+    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en , "Le Tour de France des compagnons n'est pas la course cycliste."@fr , "Die Tour de France der Compagnons ist nicht das Radrennen."@de , "Il Tour de France dei compagnons non è la corsa ciclistica."@it , "Compagnonernas Tour de France är inte cykelloppet."@sv .
 
 fraternalc:masterpieceRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -688,13 +707,13 @@ fraternalc:masonicRite a skos:Concept , owl:NamedIndividual ;
                     "Tradition rituelle selon laquelle travaille une loge ou un corps maçonnique, avec sa propre rédaction des cérémonies et sa propre suite de hauts grades."@fr ,
                     "Die rituelle Tradition, nach der eine Loge oder freimaurerische Körperschaft arbeitet, mit eigenem Wortlaut der Zeremonien und einer eigenen Reihe höherer Grade."@de ,
                     "La tradizione rituale che una loggia o un corpo massonico pratica, con una propria formulazione delle cerimonie e una propria serie di gradi superiori."@it ;
-    skos:scopeNote "A rite is not a degree system: give the lodge's ladder with fraternal:degreeSystem and its rite with fraternal:characteristic."@en , "Un rite n'est pas un système de degrés : indiquer l'échelle de la loge avec fraternal:degreeSystem et son rite avec fraternal:characteristic."@fr , "Ein Ritus ist kein Gradsystem: Die Stufenfolge der Loge wird mit fraternal:degreeSystem angegeben und ihr Ritus mit fraternal:characteristic."@de , "Un rito non è un sistema di gradi: la scala della loggia si indica con fraternal:degreeSystem e il suo rito con fraternal:characteristic."@it ;
+    skos:scopeNote "A rite is not a degree system: give the lodge's ladder with fraternal:degreeSystem and its rite with fraternal:characteristic."@en , "Un rite n'est pas un système de degrés : indiquer l'échelle de la loge avec fraternal:degreeSystem et son rite avec fraternal:characteristic."@fr , "Ein Ritus ist kein Gradsystem: Die Stufenfolge der Loge wird mit fraternal:degreeSystem angegeben und ihr Ritus mit fraternal:characteristic."@de , "Un rito non è un sistema di gradi: la scala della loggia si indica con fraternal:degreeSystem e il suo rito con fraternal:characteristic."@it , "En rit är inte ett gradsystem: logens gradstege anges med fraternal:degreeSystem och dess rit med fraternal:characteristic."@sv ;
     skos:narrower fraternalc:ancientAndAcceptedScottishRite , fraternalc:frenchRite , fraternalc:rectifiedScottishRite .
 
 fraternalc:ancientAndAcceptedScottishRite a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:masonicRite ;
     skos:prefLabel "Ancient and Accepted Scottish Rite"@en , "Antika och accepterade skotska riten"@sv , "Rite écossais ancien et accepté"@fr , "Alter und Angenommener Schottischer Ritus"@de , "Rito Scozzese Antico ed Accettato"@it ;
-    skos:altLabel "AASR"@en , "REAA"@fr ;
+    skos:altLabel "AASR"@en , "REAA"@fr , "R.S.A.A."@it ;
     skos:definition "A masonic rite of thirty-three degrees, worked in France and in many other countries."@en ,
                     "En frimurarrit med trettiotre grader, som används i Frankrike och i många andra länder."@sv ,
                     "Rite maçonnique de trente-trois degrés, pratiqué en France et dans de nombreux autres pays."@fr ,
@@ -704,7 +723,7 @@ fraternalc:ancientAndAcceptedScottishRite a skos:Concept , owl:NamedIndividual ;
 fraternalc:frenchRite a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:broader fraternalc:masonicRite ;
     skos:prefLabel "French Rite"@en , "Franska riten"@sv , "Rite français"@fr , "Französischer Ritus"@de , "Rito Francese"@it ;
-    skos:altLabel "Modern Rite"@en , "Rite moderne"@fr , "RF"@fr ;
+    skos:altLabel "Modern Rite"@en , "Rite moderne"@fr , "RF"@fr , "Rito Moderno"@it ;
     skos:definition "The rite of the Grand Orient de France: the three craft degrees followed by a short series of higher orders."@en ,
                     "Den rit som Grand Orient de France arbetar efter: de tre symboliska graderna följda av en kort följd av högre ordnar."@sv ,
                     "Rite du Grand Orient de France : les trois degrés symboliques suivis d'une courte série d'ordres supérieurs."@fr ,
@@ -723,77 +742,86 @@ fraternalc:rectifiedScottishRite a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:lifelongBond a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Lifelong Bond"@en , "Livslångt förbund"@sv , "Lebensbund"@de , "Vincolo per la vita"@it ;
+    skos:prefLabel "Lifelong Bond"@en , "Livslångt förbund"@sv , "Lebensbund"@de , "Vincolo per la vita"@it , "Lien à vie"@fr ;
     skos:altLabel "Lebensbundprinzip"@de ;
     skos:definition "Membership lasts for life: the active member stays on as an alumnus (Alter Herr) and remains bound to the organisation and to the other members."@en ,
                     "Medlemskapet varar hela livet: den aktive medlemmen blir kvar som alumn (Alter Herr) och förblir knuten till organisationen och de andra medlemmarna."@sv ,
                     "Die Mitgliedschaft gilt auf Lebenszeit: Das aktive Mitglied bleibt als Alter Herr und bleibt der Organisation und den anderen Mitgliedern verbunden."@de ,
-                    "L'appartenenza dura per tutta la vita: il socio attivo resta come ex alunno (Alter Herr) e rimane legato all'organizzazione e agli altri soci."@it .
+                    "L'appartenenza dura per tutta la vita: il socio attivo resta come ex alunno (Alter Herr) e rimane legato all'organizzazione e agli altri soci."@it ,
+                    "L'appartenance dure toute la vie : le membre actif reste comme ancien (Alter Herr) et demeure lié à l'organisation et aux autres membres."@fr .
 
 fraternalc:conventPrinciple a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Convent Principle"@en , "Konventsprincipen"@sv , "Conventsprinzip"@de , "Principio del convent"@it ;
+    skos:prefLabel "Convent Principle"@en , "Konventsprincipen"@sv , "Conventsprinzip"@de , "Principio del convent"@it , "Principe du convent"@fr ;
     skos:definition "The organisation governs itself: the convent of its members decides its affairs, and each member has one vote."@en ,
                     "Organisationen styr sig själv: medlemmarnas konvent beslutar i dess angelägenheter, och varje medlem har en röst."@sv ,
                     "Die Organisation verwaltet sich selbst: Der Convent ihrer Mitglieder entscheidet über ihre Angelegenheiten, und jedes Mitglied hat eine Stimme."@de ,
-                    "L'organizzazione si governa da sé: il convent dei suoi soci decide i suoi affari e ogni socio ha un voto."@it .
+                    "L'organizzazione si governa da sé: il convent dei suoi soci decide i suoi affari e ogni socio ha un voto."@it ,
+                    "L'organisation se gouverne elle-même : le convent de ses membres décide de ses affaires, et chaque membre a une voix."@fr .
 
 fraternalc:tolerancePrinciple a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Principle of Tolerance"@en , "Toleransprincipen"@sv , "Toleranzprinzip"@de , "Principio di tolleranza"@it ;
+    skos:prefLabel "Principle of Tolerance"@en , "Toleransprincipen"@sv , "Toleranzprinzip"@de , "Principio di tolleranza"@it , "Principe de tolérance"@fr ;
     skos:definition "The organisation takes no common political or religious position and admits members of differing views."@en ,
                     "Organisationen intar ingen gemensam politisk eller religiös ståndpunkt och tar emot medlemmar med olika åsikter."@sv ,
                     "Die Organisation nimmt keine gemeinsame politische oder religiöse Haltung ein und nimmt Mitglieder unterschiedlicher Anschauung auf."@de ,
-                    "L'organizzazione non assume una posizione politica o religiosa comune e ammette soci di opinioni diverse."@it .
+                    "L'organizzazione non assume una posizione politica o religiosa comune e ammette soci di opinioni diverse."@it ,
+                    "L'organisation ne prend aucune position politique ou religieuse commune et admet des membres d'opinions différentes."@fr .
 
 fraternalc:compulsoryFencing a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Compulsory Fencing"@en , "Obligatorisk mensur"@sv , "Pflichtschlagend"@de , "Scherma obbligatoria"@it ;
+    skos:prefLabel "Compulsory Fencing"@en , "Obligatorisk mensur"@sv , "Pflichtschlagend"@de , "Scherma obbligatoria"@it , "Escrime obligatoire"@fr ;
     skos:altLabel "Schlagend"@de ;
     skos:definition "Members must fight a number of Mensuren as a condition of full membership (see fraternalc:mensur)."@en ,
                     "Medlemmar måste utkämpa ett antal mensurer som villkor för fullt medlemskap (se fraternalc:mensur)."@sv ,
                     "Mitglieder müssen als Bedingung der Vollmitgliedschaft eine Anzahl von Mensuren fechten (siehe fraternalc:mensur)."@de ,
-                    "I soci devono sostenere un certo numero di Mensuren come condizione della piena appartenenza (vedi fraternalc:mensur)."@it .
+                    "I soci devono sostenere un certo numero di Mensuren come condizione della piena appartenenza (vedi fraternalc:mensur)."@it ,
+                    "Les membres doivent livrer un certain nombre de Mensuren comme condition du plein statut de membre (voir fraternalc:mensur)."@fr .
 
 fraternalc:optionalFencing a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Optional Fencing"@en , "Frivillig mensur"@sv , "Fakultativ schlagend"@de , "Scherma facoltativa"@it ;
+    skos:prefLabel "Optional Fencing"@en , "Frivillig mensur"@sv , "Fakultativ schlagend"@de , "Scherma facoltativa"@it , "Escrime facultative"@fr ;
     skos:definition "The Mensur is practised and permitted but not required of members (see fraternalc:mensur)."@en ,
                     "Mensur utövas och är tillåten men krävs inte av medlemmarna (se fraternalc:mensur)."@sv ,
                     "Die Mensur wird ausgeübt und ist erlaubt, aber von den Mitgliedern nicht verlangt (siehe fraternalc:mensur)."@de ,
-                    "La Mensur è praticata e consentita ma non richiesta ai soci (vedi fraternalc:mensur)."@it .
+                    "La Mensur è praticata e consentita ma non richiesta ai soci (vedi fraternalc:mensur)."@it ,
+                    "La Mensur est pratiquée et permise mais n'est pas exigée des membres (voir fraternalc:mensur)."@fr .
 
 fraternalc:nonFencing a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "No Fencing"@en , "Ingen mensur"@sv , "Nichtschlagend"@de , "Nessuna scherma"@it ;
+    skos:prefLabel "No Fencing"@en , "Ingen mensur"@sv , "Nichtschlagend"@de , "Nessuna scherma"@it , "Pas d'escrime"@fr ;
     skos:definition "The organisation rejects the Mensur (see fraternalc:mensur)."@en ,
                     "Organisationen avvisar mensur (se fraternalc:mensur)."@sv ,
                     "Die Organisation lehnt die Mensur ab (siehe fraternalc:mensur)."@de ,
-                    "L'organizzazione rifiuta la Mensur (vedi fraternalc:mensur)."@it .
+                    "L'organizzazione rifiuta la Mensur (vedi fraternalc:mensur)."@it ,
+                    "L'organisation rejette la Mensur (voir fraternalc:mensur)."@fr .
 
 fraternalc:satisfactionPrinciple a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Satisfaction Principle"@en , "Satisfaktionsprincipen"@sv , "Satisfaktionsprinzip"@de , "Principio della soddisfazione"@it ;
+    skos:prefLabel "Satisfaction Principle"@en , "Satisfaktionsprincipen"@sv , "Satisfaktionsprinzip"@de , "Principio della soddisfazione"@it , "Principe de satisfaction"@fr ;
     skos:definition "Members may be required to answer for their honour in a duel or by academic fencing; the obligation may be unconditional (unbedingte Satisfaktion) or limited."@en ,
                     "Medlemmar kan vara skyldiga att stå till svars för sin ära i en duell eller genom akademisk fäktning; skyldigheten kan vara ovillkorlig (unbedingte Satisfaktion) eller begränsad."@sv ,
                     "Mitglieder können verpflichtet sein, für ihre Ehre im Zweikampf oder durch akademisches Fechten einzustehen; die Verpflichtung kann unbedingt (unbedingte Satisfaktion) oder eingeschränkt sein."@de ,
-                    "Ai soci si può chiedere di rispondere del proprio onore in un duello o con la scherma accademica; l'obbligo può essere incondizionato (unbedingte Satisfaktion) o limitato."@it .
+                    "Ai soci si può chiedere di rispondere del proprio onore in un duello o con la scherma accademica; l'obbligo può essere incondizionato (unbedingte Satisfaktion) o limitato."@it ,
+                    "Les membres peuvent être tenus de répondre de leur honneur par un duel ou par l'escrime académique ; l'obligation peut être inconditionnelle (unbedingte Satisfaktion) ou limitée."@fr .
 
 fraternalc:colourWearing a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Colour-wearing"@en , "Bär färger"@sv , "Farbentragend"@de , "Colori portati"@it ;
+    skos:prefLabel "Colour-wearing"@en , "Bär färger"@sv , "Farbentragend"@de , "Colori portati"@it , "Port des couleurs"@fr ;
     skos:definition "Members wear the organisation's colours (colour band and cap) in public on festive occasions."@en ,
                     "Medlemmar bär organisationens färger (färgband och mössa) offentligt vid festliga tillfällen."@sv ,
                     "Die Mitglieder tragen die Farben der Organisation (Band und Mütze) bei festlichen Anlässen öffentlich."@de ,
-                    "I soci portano in pubblico, nelle occasioni festive, i colori dell'organizzazione (nastro e berretto)."@it .
+                    "I soci portano in pubblico, nelle occasioni festive, i colori dell'organizzazione (nastro e berretto)."@it ,
+                    "Les membres portent en public, dans les occasions festives, les couleurs de l'organisation (bande et calotte)."@fr .
 
 fraternalc:colourCarrying a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Colour-carrying"@en , "För färger"@sv , "Farbenführend"@de , "Colori posseduti"@it ;
+    skos:prefLabel "Colour-carrying"@en , "För färger"@sv , "Farbenführend"@de , "Colori posseduti"@it , "Possession des couleurs"@fr ;
     skos:definition "The organisation has colours but its members do not wear them in public."@en ,
                     "Organisationen har färger men medlemmarna bär dem inte offentligt."@sv ,
                     "Die Organisation führt Farben, ihre Mitglieder tragen sie aber nicht öffentlich."@de ,
-                    "L'organizzazione ha dei colori ma i suoi soci non li portano in pubblico."@it .
+                    "L'organizzazione ha dei colori ma i suoi soci non li portano in pubblico."@it ,
+                    "L'organisation a des couleurs mais ses membres ne les portent pas en public."@fr .
 
 ##############################################################################
 # 5. CEREMONY TYPES  (values for mbr:gatheringType on fraternal:Ceremony)
@@ -810,12 +838,12 @@ fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
 fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
     skos:prefLabel "Initiation Ceremony"@en , "Initieringsceremoni"@sv , "Cérémonie d'initiation"@fr , "Initiationszeremonie"@de , "Cerimonia d'iniziazione"@it ;
-    skos:altLabel "Recipiering"@sv , "Intronisation"@fr .
+    skos:altLabel "Recipiering"@sv , "Intronisation"@fr , "Iniziazione"@it .
 
 fraternalc:degreeCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
     skos:prefLabel "Degree Ceremony"@en , "Gradceremoni"@sv , "Cérémonie de passage de degré"@fr , "Gradzeremonie"@de , "Cerimonia di grado"@it ;
-    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv , "Passage"@fr , "Élévation"@fr .
+    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv , "Passage"@fr , "Élévation"@fr , "Passaggio di grado"@it , "Innalzamento"@it .
 
 fraternalc:installation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
@@ -848,83 +876,92 @@ fraternalc:openMeeting a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:convent a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Convent"@en , "Konvent"@sv , "Convent"@de , "Convent"@it ;
+    skos:prefLabel "Convent"@en , "Konvent"@sv , "Convent"@de , "Convent"@it , "Convent"@fr ;
     skos:altLabel "Konvent"@de ;
     skos:definition "The assembly of the members of a Studentenverbindung, held under formal rules, which decides its affairs: the Aktivenconvent (Corpsconvent) of the active members and the Philisterconvent (Altherrenconvent) of the alumni."@en ,
                     "Sammankomsten för en Studentenverbindungs medlemmar, hållen enligt formella regler, som beslutar i dess angelägenheter: Aktivenconvent (Corpsconvent) för de aktiva och Philisterconvent (Altherrenconvent) för alumnerna."@sv ,
                     "Die Versammlung der Mitglieder einer Studentenverbindung nach förmlichen Regeln, die über ihre Angelegenheiten entscheidet: der Aktivenconvent (Corpsconvent) der Aktiven und der Philisterconvent (Altherrenconvent) der Alten Herren."@de ,
-                    "L'assemblea dei soci di una Studentenverbindung, tenuta secondo regole formali, che decide i suoi affari: l'Aktivenconvent (Corpsconvent) dei soci attivi e il Philisterconvent (Altherrenconvent) degli ex alunni."@it .
+                    "L'assemblea dei soci di una Studentenverbindung, tenuta secondo regole formali, che decide i suoi affari: l'Aktivenconvent (Corpsconvent) dei soci attivi e il Philisterconvent (Altherrenconvent) degli ex alunni."@it ,
+                    "L'assemblée des membres d'une Studentenverbindung, tenue selon des règles formelles, qui décide de ses affaires : l'Aktivenconvent (Corpsconvent) des membres actifs et le Philisterconvent (Altherrenconvent) des anciens."@fr .
 
 fraternalc:kneipe a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Kneipe"@en , "Kneipe"@sv , "Kneipe"@de , "Kneipe"@it ;
+    skos:prefLabel "Kneipe"@en , "Kneipe"@sv , "Kneipe"@de , "Kneipe"@it , "Kneipe"@fr ;
     skos:altLabel "Kneipabend"@de ;
     skos:definition "A formal gathering of a Studentenverbindung with communal singing and drinking, held under the rules of the Kneipcomment and led by a presiding officer (Präses)."@en ,
                     "En formell sammankomst i en Studentenverbindung med allsång och dryckeslag, hållen enligt Kneipcomment och ledd av en ordförande (Präses)."@sv ,
                     "Eine förmliche Zusammenkunft einer Studentenverbindung mit gemeinsamem Singen und Trinken nach dem Kneipkomment unter der Leitung eines Präses."@de ,
-                    "Un ritrovo formale di una Studentenverbindung con canto e bevute in comune, tenuto secondo le regole del Kneipcomment e guidato da un presidente (Präses)."@it .
+                    "Un ritrovo formale di una Studentenverbindung con canto e bevute in comune, tenuto secondo le regole del Kneipcomment e guidato da un presidente (Präses)."@it ,
+                    "Réunion formelle d'une Studentenverbindung avec chants et libations en commun, tenue selon les règles du Kneipcomment et dirigée par un président de séance (Präses)."@fr .
 
 fraternalc:kommers a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Kommers"@en , "Kommers"@sv , "Kommers"@de , "Kommers"@it ;
+    skos:prefLabel "Kommers"@en , "Kommers"@sv , "Kommers"@de , "Kommers"@it , "Kommers"@fr ;
     skos:altLabel "Festkommers"@de ;
     skos:definition "A festive and more ceremonial form of the Kneipe, with speeches, guests and traditional songs, held on occasions such as a Stiftungsfest."@en ,
                     "En festlig och mer ceremoniell form av Kneipe, med tal, gäster och traditionella sånger, hållen vid tillfällen som ett Stiftungsfest."@sv ,
                     "Eine festliche und feierlichere Form der Kneipe mit Reden, Gästen und traditionellen Liedern, abgehalten zu Anlässen wie einem Stiftungsfest."@de ,
-                    "Una forma festiva e più cerimoniale della Kneipe, con discorsi, ospiti e canti tradizionali, tenuta in occasioni come uno Stiftungsfest."@it .
+                    "Una forma festiva e più cerimoniale della Kneipe, con discorsi, ospiti e canti tradizionali, tenuta in occasioni come uno Stiftungsfest."@it ,
+                    "Forme festive et plus cérémonielle de la Kneipe, avec discours, invités et chants traditionnels, tenue à des occasions comme un Stiftungsfest."@fr .
 
 fraternalc:stiftungsfest a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Stiftungsfest"@en , "Stiftungsfest"@sv , "Stiftungsfest"@de , "Stiftungsfest"@it ;
+    skos:prefLabel "Stiftungsfest"@en , "Stiftungsfest"@sv , "Stiftungsfest"@de , "Stiftungsfest"@it , "Stiftungsfest"@fr ;
     skos:altLabel "Foundation Festival"@en , "Stiftelsefest"@sv ;
     skos:definition "The yearly celebration of the foundation of a Studentenverbindung, usually with a Festkommers and often a service and a ball."@en ,
                     "Den årliga högtiden för grundandet av en Studentenverbindung, vanligen med en Festkommers och ofta en gudstjänst och en bal."@sv ,
                     "Die jährliche Feier der Gründung einer Studentenverbindung, meist mit einem Festkommers und oft mit Gottesdienst und Ball."@de ,
-                    "La celebrazione annuale della fondazione di una Studentenverbindung, di solito con un Festkommers e spesso con una funzione religiosa e un ballo."@it .
+                    "La celebrazione annuale della fondazione di una Studentenverbindung, di solito con un Festkommers e spesso con una funzione religiosa e un ballo."@it ,
+                    "La célébration annuelle de la fondation d'une Studentenverbindung, en général avec un Festkommers et souvent un office et un bal."@fr .
 
 fraternalc:mensur a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Mensur"@en , "Mensur"@sv , "Mensur"@de , "Mensur"@it ;
+    skos:prefLabel "Mensur"@en , "Mensur"@sv , "Mensur"@de , "Mensur"@it , "Mensur"@fr ;
     skos:altLabel "Academic Fencing Bout"@en , "Akademisk fäktning"@sv , "Partie"@de , "Bestimmungsmensur"@de ;
     skos:definition "A regulated academic fencing bout between members of two Studentenverbindungen, fought with sharp weapons (Schläger) and protective gear under strict rules, as a test of composure. Required in some traditions (see fraternalc:compulsoryFencing), rejected in others (see fraternalc:nonFencing)."@en ,
                     "En reglerad akademisk fäktning mellan medlemmar i två Studentenverbindungen, utkämpad med skarpa vapen (Schläger) och skyddsutrustning enligt stränga regler, som prov på behärskning. Krävs i vissa traditioner (se fraternalc:compulsoryFencing), avvisas i andra (se fraternalc:nonFencing)."@sv ,
                     "Eine geregelte akademische Fechtpartie zwischen Mitgliedern zweier Studentenverbindungen, mit scharfen Waffen (Schlägern) und Schutzausrüstung nach strengen Regeln als Probe der Selbstbeherrschung. In manchen Traditionen verlangt (siehe fraternalc:compulsoryFencing), in anderen abgelehnt (siehe fraternalc:nonFencing)."@de ,
-                    "Un incontro regolato di scherma accademica tra soci di due Studentenverbindungen, combattuto con armi affilate (Schläger) e protezioni sotto regole rigorose, come prova di autocontrollo. Richiesta in alcune tradizioni (vedi fraternalc:compulsoryFencing), rifiutata in altre (vedi fraternalc:nonFencing)."@it .
+                    "Un incontro regolato di scherma accademica tra soci di due Studentenverbindungen, combattuto con armi affilate (Schläger) e protezioni sotto regole rigorose, come prova di autocontrollo. Richiesta in alcune tradizioni (vedi fraternalc:compulsoryFencing), rifiutata in altre (vedi fraternalc:nonFencing)."@it ,
+                    "Combat d'escrime académique réglementé entre membres de deux Studentenverbindungen, mené avec des armes tranchantes (Schläger) et des protections sous des règles strictes, comme épreuve de sang-froid. Exigée dans certaines traditions (voir fraternalc:compulsoryFencing), rejetée dans d'autres (voir fraternalc:nonFencing)."@fr .
 
 fraternalc:rezeption a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Reception"@en , "Rezeption"@sv , "Rezeption"@de , "Ricezione"@it ;
+    skos:prefLabel "Reception"@en , "Rezeption"@sv , "Rezeption"@de , "Ricezione"@it , "Réception"@fr ;
     skos:altLabel "Rezeption als Fuchs"@de ;
     skos:definition "The ceremony in which a candidate is received into a Studentenverbindung as a Fuchs (see fraternalc:fuchs)."@en ,
                     "Ceremonin där en kandidat tas emot i en Studentenverbindung som Fuchs (se fraternalc:fuchs)."@sv ,
                     "Die Zeremonie, in der ein Kandidat als Fuchs in eine Studentenverbindung aufgenommen wird (siehe fraternalc:fuchs)."@de ,
-                    "La cerimonia in cui un candidato è ricevuto in una Studentenverbindung come Fuchs (vedi fraternalc:fuchs)."@it .
+                    "La cerimonia in cui un candidato è ricevuto in una Studentenverbindung come Fuchs (vedi fraternalc:fuchs)."@it ,
+                    "La cérémonie par laquelle un candidat est reçu dans une Studentenverbindung comme Fuchs (voir fraternalc:fuchs)."@fr .
 
 fraternalc:burschung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Burschung"@en , "Burschung"@sv , "Burschung"@de , "Burschung"@it ;
+    skos:prefLabel "Burschung"@en , "Burschung"@sv , "Burschung"@de , "Burschung"@it , "Burschung"@fr ;
     skos:altLabel "Burschenprüfung"@de ;
     skos:definition "The ceremony in which a Fuchs, after the probationary period (Fuchsenzeit) and the Burschenprüfung, becomes a Bursch with full rights (see fraternalc:bursch)."@en ,
                     "Ceremonin där en Fuchs, efter prövotiden (Fuchsenzeit) och Burschenprüfung, blir Bursch med fulla rättigheter (se fraternalc:bursch)."@sv ,
                     "Die Zeremonie, in der ein Fuchs nach der Probezeit (Fuchsenzeit) und der Burschenprüfung zum Burschen mit vollen Rechten wird (siehe fraternalc:bursch)."@de ,
-                    "La cerimonia in cui un Fuchs, dopo il periodo di prova (Fuchsenzeit) e la Burschenprüfung, diventa Bursch con pieni diritti (vedi fraternalc:bursch)."@it .
+                    "La cerimonia in cui un Fuchs, dopo il periodo di prova (Fuchsenzeit) e la Burschenprüfung, diventa Bursch con pieni diritti (vedi fraternalc:bursch)."@it ,
+                    "La cérémonie par laquelle un Fuchs, après la période probatoire (Fuchsenzeit) et la Burschenprüfung, devient Bursch à part entière (voir fraternalc:bursch)."@fr .
 
 fraternalc:philistrierung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Philistration"@en , "Philistrering"@sv , "Philistrierung"@de , "Philistrierung"@it ;
+    skos:prefLabel "Philistration"@en , "Philistrering"@sv , "Philistrierung"@de , "Philistrierung"@it , "Philistration"@fr ;
     skos:altLabel "Philistration"@de ;
     skos:definition "The ceremony in which a Bursch becomes an Alter Herr (Philister), usually on leaving the active branch after his studies (see fraternalc:alterHerr)."@en ,
                     "Ceremonin där en Bursch blir Alter Herr (Philister), vanligen när han lämnar aktivitas efter sina studier (se fraternalc:alterHerr)."@sv ,
                     "Die Zeremonie, in der ein Bursch zum Alten Herrn (Philister) wird, meist beim Ausscheiden aus der Aktivitas nach dem Studium (siehe fraternalc:alterHerr)."@de ,
-                    "La cerimonia in cui un Bursch diventa Alter Herr (Philister), di solito quando lascia il ramo attivo dopo gli studi (vedi fraternalc:alterHerr)."@it .
+                    "La cerimonia in cui un Bursch diventa Alter Herr (Philister), di solito quando lascia il ramo attivo dopo gli studi (vedi fraternalc:alterHerr)."@it ,
+                    "La cérémonie par laquelle un Bursch devient Alter Herr (Philister), en général en quittant la branche active après ses études (voir fraternalc:alterHerr)."@fr .
 
 fraternalc:fackelzug a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Torchlight Procession"@en , "Fackeltåg"@sv , "Fackelzug"@de , "Fiaccolata"@it ;
+    skos:prefLabel "Torchlight Procession"@en , "Fackeltåg"@sv , "Fackelzug"@de , "Fiaccolata"@it , "Cortège aux flambeaux"@fr ;
     skos:definition "A torchlit procession of a Studentenverbindung, held on festive occasions such as a Stiftungsfest or a university anniversary."@en ,
                     "Ett fackeltåg för en Studentenverbindung, hållet vid festliga tillfällen som ett Stiftungsfest eller ett universitetsjubileum."@sv ,
                     "Ein Umzug einer Studentenverbindung mit Fackeln zu festlichen Anlässen wie einem Stiftungsfest oder einem Universitätsjubiläum."@de ,
-                    "Un corteo con le fiaccole di una Studentenverbindung, tenuto in occasioni festive come uno Stiftungsfest o un anniversario dell'università."@it .
+                    "Un corteo con le fiaccole di una Studentenverbindung, tenuto in occasioni festive come uno Stiftungsfest o un anniversario dell'università."@it ,
+                    "Cortège aux flambeaux d'une Studentenverbindung, organisé à des occasions festives comme un Stiftungsfest ou un anniversaire de l'université."@fr .
 
 ##############################################################################
 # 6. INSIGNIA TYPES  (mapped to Getty AAT in mappings/fraternal-aat.sssom.tsv)
@@ -949,7 +986,7 @@ fraternalc:apron a skos:Concept , owl:NamedIndividual ;
 fraternalc:collar a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
     skos:prefLabel "Collar"@en , "Ordenskedja"@sv , "Collier"@fr , "Kollane"@de , "Collare"@it ;
-    skos:altLabel "Chain"@en , "Krage"@sv , "Chaîne"@fr ;
+    skos:altLabel "Chain"@en , "Krage"@sv , "Chaîne"@fr , "Catena"@it ;
     skos:definition "A chain or collar of links worn over the shoulders with the badge hanging from it: the highest form of an order's insignia, also used as a chain of office."@en ,
                     "En kedja av länkar som bärs över axlarna med ordenstecknet hängande i den: den förnämsta formen av ordenstecken, även använd som ämbetskedja."@sv ,
                     "Chaîne ou collier de maillons porté sur les épaules, d'où pend l'insigne : la forme la plus haute des insignes d'un ordre, aussi utilisée comme chaîne de fonction."@fr ,
@@ -959,7 +996,7 @@ fraternalc:collar a skos:Concept , owl:NamedIndividual ;
 fraternalc:sash a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
     skos:prefLabel "Sash"@en , "Storkorsband"@sv , "Écharpe"@fr , "Schärpe"@de , "Banda"@it ;
-    skos:altLabel "Riband"@en , "Gradband"@sv , "Band en écharpe"@sv , "Grand cordon"@fr ;
+    skos:altLabel "Riband"@en , "Gradband"@sv , "Band en écharpe"@sv , "Grand cordon"@fr , "Fascia"@it ;
     skos:definition "A wide ribbon worn over one shoulder and across the chest to the opposite hip, where the badge rests: the grand cross sash of an order of chivalry, or the degree sash of an order society."@en ,
                     "Ett brett band som bärs över ena axeln och diagonalt över bröstet till motsatt höft, där ordenstecknet vilar: en riddarordens storkorsband eller ett ordenssällskaps gradband."@sv ,
                     "Large ruban porté sur une épaule et en travers de la poitrine jusqu'à la hanche opposée, où repose l'insigne : l'écharpe de grand-croix d'un ordre de chevalerie, ou l'écharpe de degré d'une société d'ordre."@fr ,
@@ -969,7 +1006,7 @@ fraternalc:sash a skos:Concept , owl:NamedIndividual ;
 fraternalc:jewel a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
     skos:prefLabel "Jewel"@en , "Juvel"@sv , "Bijou"@fr , "Juwel"@de , "Gioiello"@it ;
-    skos:altLabel "Pendant"@en , "Hängsmycke"@sv , "Pendentif"@fr ;
+    skos:altLabel "Pendant"@en , "Hängsmycke"@sv , "Pendentif"@fr , "Pendente"@it ;
     skos:definition "A badge or pendant of a degree or office, usually worn on a collar or ribbon."@en ,
                     "Ett tecken eller hängsmycke för en grad eller ett ämbete, vanligen buret i kedja eller band."@sv ,
                     "Insigne ou pendentif d'un degré ou d'une fonction, porté en général à un collier ou à un ruban."@fr ,
@@ -998,7 +1035,7 @@ fraternalc:ring a skos:Concept , owl:NamedIndividual ;
 fraternalc:pin a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
     skos:prefLabel "Lapel Pin"@en , "Ordensnål"@sv , "Épinglette"@fr , "Anstecknadel"@de , "Spilla da bavero"@it ;
-    skos:altLabel "Pin"@en , "Föreningsnål"@sv , "Pin"@sv , "Pin's"@fr ;
+    skos:altLabel "Pin"@en , "Föreningsnål"@sv , "Pin"@sv , "Pin's"@fr , "Pin"@it ;
     skos:definition "A small badge fixed to the lapel, worn inside and outside the order as a sign of membership."@en ,
                     "Ett litet märke som fästs på kavajslaget och bärs både inom och utanför orden som tecken på medlemskap."@sv ,
                     "Petit insigne fixé au revers du veston, porté dans l'ordre et en dehors comme signe d'appartenance."@fr ,
@@ -1026,7 +1063,7 @@ fraternalc:sword a skos:Concept , owl:NamedIndividual ;
 fraternalc:breastStar a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
     skos:prefLabel "Breast Star"@en , "Kraschan"@sv , "Plaque"@fr , "Bruststern"@de , "Placca"@it ;
-    skos:altLabel "Plaque"@en , "Étoile de poitrine"@fr ;
+    skos:altLabel "Plaque"@en , "Étoile de poitrine"@fr , "Stella"@it ;
     skos:definition "A star-shaped badge worn on the breast, usually the left, by the higher grades of an order."@en ,
                     "Ett stjärnformat ordenstecken som bärs på bröstet, vanligen det vänstra, av en ordens högre grader."@sv ,
                     "Insigne en forme d'étoile porté sur la poitrine, en général à gauche, par les grades supérieurs d'un ordre."@fr ,
@@ -1063,48 +1100,53 @@ fraternalc:staff a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:couleurband a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:broader fraternalc:ribbon ;
-    skos:prefLabel "Colour Band"@en , "Färgband"@sv , "Couleurband"@de , "Nastro dei colori"@it ;
+    skos:prefLabel "Colour Band"@en , "Färgband"@sv , "Couleurband"@de , "Nastro dei colori"@it , "Bande aux couleurs"@fr ;
     skos:altLabel "Band"@de , "Burschenband"@de , "Couleur Ribbon"@en ;
     skos:definition "The ribbon in the colours (Farben) of a Studentenverbindung, worn across the chest as the sign of membership. Usually in three colours, with a narrow Fuchsenband for a Fuchs."@en ,
                     "Bandet i en Studentenverbindungs färger (Farben), som bärs diagonalt över bröstet som tecken på medlemskap. Vanligen i tre färger, med ett smalare Fuchsenband för en Fuchs."@sv ,
                     "Das Band in den Farben einer Studentenverbindung, quer über die Brust getragen als Zeichen der Mitgliedschaft. Meist dreifarbig, für einen Fuchs ein schmaleres Fuchsenband."@de ,
-                    "Il nastro nei colori (Farben) di una Studentenverbindung, portato attraverso il petto come segno di appartenenza. Di solito di tre colori, con uno stretto Fuchsenband per un Fuchs."@it .
+                    "Il nastro nei colori (Farben) di una Studentenverbindung, portato attraverso il petto come segno di appartenenza. Di solito di tre colori, con uno stretto Fuchsenband per un Fuchs."@it ,
+                    "Le ruban aux couleurs (Farben) d'une Studentenverbindung, porté en travers de la poitrine comme signe d'appartenance. En général de trois couleurs, avec un étroit Fuchsenband pour un Fuchs."@fr .
 
 fraternalc:cerevis a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:broader fraternalc:hat ;
-    skos:prefLabel "Cerevis"@en , "Cerevis"@sv , "Cerevis"@de , "Cerevis"@it ;
+    skos:prefLabel "Cerevis"@en , "Cerevis"@sv , "Cerevis"@de , "Cerevis"@it , "Cerevis"@fr ;
     skos:altLabel "Student Cap"@en , "Studentenmütze"@de , "Mütze"@de , "Kappe"@de ;
     skos:definition "The small round cap in the colours of a Studentenverbindung, worn together with the colour band."@en ,
                     "Den lilla runda mössan i en Studentenverbindungs färger, som bärs tillsammans med färgbandet."@sv ,
                     "Die kleine runde Mütze in den Farben einer Studentenverbindung, zusammen mit dem Band getragen."@de ,
-                    "Il piccolo berretto rotondo nei colori di una Studentenverbindung, portato insieme al nastro dei colori."@it .
+                    "Il piccolo berretto rotondo nei colori di una Studentenverbindung, portato insieme al nastro dei colori."@it ,
+                    "La petite calotte ronde aux couleurs d'une Studentenverbindung, portée avec la bande aux couleurs."@fr .
 
 fraternalc:schlaeger a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:broader fraternalc:sword ;
-    skos:prefLabel "Schläger"@en , "Schläger"@sv , "Schläger"@de , "Schläger"@it ;
+    skos:prefLabel "Schläger"@en , "Schläger"@sv , "Schläger"@de , "Schläger"@it , "Schläger"@fr ;
     skos:altLabel "Fencing Weapon"@en , "Korbschläger"@de , "Glockenschläger"@de ;
     skos:definition "The straight-bladed fencing weapon used in the Mensur, also worn with the full dress of a Studentenverbindung."@en ,
                     "Det raka fäktvapnet som används vid mensur och som även bärs till en Studentenverbindungs högtidsdräkt."@sv ,
                     "Die gerade Fechtwaffe der Mensur, die auch zur Festkleidung einer Studentenverbindung getragen wird."@de ,
-                    "L'arma da scherma a lama dritta usata nella Mensur, portata anche con l'abito di gala di una Studentenverbindung."@it .
+                    "L'arma da scherma a lama dritta usata nella Mensur, portata anche con l'abito di gala di una Studentenverbindung."@it ,
+                    "L'arme d'escrime à lame droite employée dans la Mensur, portée aussi avec la grande tenue d'une Studentenverbindung."@fr .
 
 fraternalc:wichs a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
-    skos:prefLabel "Wichs"@en , "Wichs"@sv , "Wichs"@de , "Wichs"@it ;
+    skos:prefLabel "Wichs"@en , "Wichs"@sv , "Wichs"@de , "Wichs"@it , "Wichs"@fr ;
     skos:altLabel "Vollwichs"@de , "Full Dress of a Studentenverbindung"@en ;
     skos:definition "The full ceremonial dress of a member of a Studentenverbindung, with jacket, cap, colour band and Schläger, worn at the Kommers and other festive occasions."@en ,
                     "Högtidsdräkten för en medlem i en Studentenverbindung, med jacka, mössa, färgband och Schläger, som bärs vid Kommers och andra festliga tillfällen."@sv ,
                     "Die Festkleidung eines Mitglieds einer Studentenverbindung mit Jacke, Mütze, Band und Schläger, getragen beim Kommers und bei anderen festlichen Anlässen."@de ,
-                    "L'abito completo di gala di un socio di una Studentenverbindung, con giacca, berretto, nastro dei colori e Schläger, portato al Kommers e in altre occasioni festive."@it .
+                    "L'abito completo di gala di un socio di una Studentenverbindung, con giacca, berretto, nastro dei colori e Schläger, portato al Kommers e in altre occasioni festive."@it ,
+                    "La grande tenue de cérémonie d'un membre d'une Studentenverbindung, avec veste, calotte, bande aux couleurs et Schläger, portée au Kommers et à d'autres occasions festives."@fr .
 
 fraternalc:zipfel a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
-    skos:prefLabel "Zipfel"@en , "Zipfel"@sv , "Zipfel"@de , "Zipfel"@it ;
+    skos:prefLabel "Zipfel"@en , "Zipfel"@sv , "Zipfel"@de , "Zipfel"@it , "Zipfel"@fr ;
     skos:altLabel "Bierzipfel"@de , "Friendship Token"@en ;
     skos:definition "A small token in the colours of a Studentenverbindung on a chain or cord, exchanged as a sign of friendship between members of different Verbindungen."@en ,
                     "Ett litet tecken i en Studentenverbindungs färger på en kedja eller ett band, utbytt som vänskapstecken mellan medlemmar i olika Verbindungen."@sv ,
                     "Ein kleines Zeichen in den Farben einer Studentenverbindung an einer Kette oder Schnur, das als Freundschaftszeichen zwischen Mitgliedern verschiedener Verbindungen getauscht wird."@de ,
-                    "Un piccolo segno nei colori di una Studentenverbindung su una catenella o un cordoncino, scambiato come segno di amicizia tra soci di Verbindungen diverse."@it .
+                    "Un piccolo segno nei colori di una Studentenverbindung su una catenella o un cordoncino, scambiato come segno di amicizia tra soci di Verbindungen diverse."@it ,
+                    "Petit insigne aux couleurs d'une Studentenverbindung, sur une chaînette ou un cordon, échangé en signe d'amitié entre membres de Verbindungen différentes."@fr .
 
 ##############################################################################
 # 7. ASSESSMENT OUTCOMES  (values of fraternal:assessmentOutcome)
@@ -1190,7 +1232,7 @@ fraternalc:FrenchOffices a skos:ConceptScheme , owl:NamedIndividual ;
 fraternalc:venerableMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
     skos:prefLabel "Venerable Master"@en , "Vördnadsvärd mästare"@sv , "Vénérable Maître"@fr , "Meister vom Stuhl"@de , "Venerabile Maestro"@it ;
-    skos:altLabel "Worshipful Master"@en , "Vénérable"@fr ;
+    skos:altLabel "Worshipful Master"@en , "Vénérable"@fr , "Venerabile"@it ;
     skos:definition "The officer who presides over a lodge, elected for a fixed term."@en ,
                     "Den ämbetsman som leder en loge, vald för en bestämd tid."@sv ,
                     "Officier qui préside une loge, élu pour une durée déterminée."@fr ,
@@ -1223,7 +1265,7 @@ fraternalc:orator a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Officier garant des constitutions et des règlements de la loge, qui donne ses conclusions sur les travaux présentés."@fr ,
                     "Der Amtsträger, der die Verfassung und die Regeln einer Loge hütet und zu den vorgetragenen Arbeiten Schlussfolgerungen gibt."@de ,
                     "Il titolare di carica che custodisce la costituzione e le regole di una loggia e dà le conclusioni sui lavori presentati."@it ;
-    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it .
+    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it , "Inget generiskt ämbete ligger nära, så det är inte mappat."@sv .
 
 fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -1233,7 +1275,7 @@ fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Officier qui recueille et distribue les secours de bienfaisance de la loge et veille sur les membres dans le besoin."@fr ,
                     "Der Amtsträger, der die wohltätigen Gaben der Loge sammelt und verteilt und sich um bedürftige Mitglieder kümmert."@de ,
                     "Il titolare di carica che raccoglie e distribuisce i soccorsi di beneficenza della loggia e si cura dei soci bisognosi."@it ;
-    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it .
+    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it , "Inget generiskt ämbete ligger nära, så det är inte mappat."@sv .
 
 fraternalc:expert a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -1261,7 +1303,7 @@ fraternalc:housePrevot a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Responsable d'une maison de compagnons (cayenne), où les compagnons et aspirants d'une ville logent et se réunissent."@fr ,
                     "Der Amtsträger, der ein Haus der Compagnons (cayenne) leitet, in dem die Compagnons und Aspiranten einer Stadt wohnen und sich treffen."@de ,
                     "Il titolare di carica a capo di una casa dei compagnons (cayenne), dove i compagnons e gli aspiranti di una città abitano e si riuniscono."@it ;
-    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en , "À ne pas confondre avec mbrc:provost, qui maintient l'ordre lors des réunions."@fr , "Nicht mbrc:provost, der bei Zusammenkünften für Ordnung sorgt."@de , "Non è mbrc:provost, che mantiene l'ordine negli incontri."@it .
+    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en , "À ne pas confondre avec mbrc:provost, qui maintient l'ordre lors des réunions."@fr , "Nicht mbrc:provost, der bei Zusammenkünften für Ordnung sorgt."@de , "Non è mbrc:provost, che mantiene l'ordine negli incontri."@it , "Inte mbrc:provost, som håller ordning vid sammankomster."@sv .
 
 fraternalc:rolleur a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -1290,146 +1332,162 @@ fraternalc:houseMother a mbr:Office , skos:Concept , owl:NamedIndividual ;
 ##############################################################################
 
 fraternalc:StudentenverbindungDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
-    skos:prefLabel "Stages of a Studentenverbindung"@en , "Stadier i en Studentenverbindung"@sv , "Stufen einer Studentenverbindung"@de , "Stadi di una Studentenverbindung"@it ;
+    skos:prefLabel "Stages of a Studentenverbindung"@en , "Stadier i en Studentenverbindung"@sv , "Stufen einer Studentenverbindung"@de , "Stadi di una Studentenverbindung"@it , "Étapes d'une Studentenverbindung"@fr ;
     skos:definition "The three stages through which a member of a Studentenverbindung passes: Fuchs, Bursch, Alter Herr. Each is entered by a ceremony (Rezeption, Burschung, Philistrierung)."@en ,
                     "De tre stadier en medlem i en Studentenverbindung genomgår: Fuchs, Bursch, Alter Herr. Varje stadium inleds med en ceremoni (Rezeption, Burschung, Philistrierung)."@sv ,
                     "Die drei Stufen, die ein Mitglied einer Studentenverbindung durchläuft: Fuchs, Bursch, Alter Herr. Jede beginnt mit einer Zeremonie (Rezeption, Burschung, Philistrierung)."@de ,
-                    "I tre stadi che un socio di una Studentenverbindung percorre: Fuchs, Bursch, Alter Herr. Ciascuno si raggiunge con una cerimonia (Rezeption, Burschung, Philistrierung)."@it ;
+                    "I tre stadi che un socio di una Studentenverbindung percorre: Fuchs, Bursch, Alter Herr. Ciascuno si raggiunge con una cerimonia (Rezeption, Burschung, Philistrierung)."@it ,
+                    "Les trois étapes que parcourt un membre d'une Studentenverbindung : Fuchs, Bursch, Alter Herr. On entre dans chacune par une cérémonie (Rezeption, Burschung, Philistrierung)."@fr ;
     skos:hasTopConcept fraternalc:fuchs , fraternalc:bursch , fraternalc:alterHerr .
 
 fraternalc:fuchs a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungDegrees ; skos:topConceptOf fraternalc:StudentenverbindungDegrees ;
     fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:bursch ; fraternal:degreeKind fraternalc:probationaryDegree ;
-    skos:prefLabel "Fuchs"@en , "Fux"@sv , "Fuchs"@de , "Fuchs"@it ;
+    skos:prefLabel "Fuchs"@en , "Fux"@sv , "Fuchs"@de , "Fuchs"@it , "Fuchs"@fr ;
     skos:altLabel "Fux"@de , "Probationary Member"@en , "Fox"@en ;
     skos:definition "The first stage: the probationary member, received at the Rezeption and trained during the Fuchsenzeit by the Fuchsmajor and a personal mentor (Leibbursch), until the Burschenprüfung."@en ,
                     "Det första stadiet: provmedlemmen, mottagen vid Rezeption och utbildad under Fuchsenzeit av Fuchsmajor och en personlig mentor (Leibbursch), fram till Burschenprüfung."@sv ,
                     "Die erste Stufe: das Probemitglied, bei der Rezeption aufgenommen und während der Fuchsenzeit vom Fuchsmajor und einem persönlichen Betreuer (Leibbursch) ausgebildet, bis zur Burschenprüfung."@de ,
-                    "Il primo stadio: il socio in prova, ricevuto alla Rezeption e formato durante la Fuchsenzeit dal Fuchsmajor e da un tutore personale (Leibbursch), fino alla Burschenprüfung."@it .
+                    "Il primo stadio: il socio in prova, ricevuto alla Rezeption e formato durante la Fuchsenzeit dal Fuchsmajor e da un tutore personale (Leibbursch), fino alla Burschenprüfung."@it ,
+                    "La première étape : le membre à l'essai, reçu à la Rezeption et formé pendant la Fuchsenzeit par le Fuchsmajor et un parrain personnel (Leibbursch), jusqu'à la Burschenprüfung."@fr .
 
 fraternalc:bursch a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungDegrees ; skos:topConceptOf fraternalc:StudentenverbindungDegrees ;
     fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:alterHerr ;
-    skos:prefLabel "Bursch"@en , "Bursch"@sv , "Bursch"@de , "Bursch"@it ;
+    skos:prefLabel "Bursch"@en , "Bursch"@sv , "Bursch"@de , "Bursch"@it , "Bursch"@fr ;
     skos:altLabel "Bursche"@de , "Full Member"@en ;
     skos:definition "The second stage: the full member with a vote in the convent, who may hold offices and fight the Mensur."@en ,
                     "Det andra stadiet: den fulla medlemmen med rösträtt i konventet, som kan inneha ämbeten och utkämpa mensur."@sv ,
                     "Die zweite Stufe: das Vollmitglied mit Stimmrecht im Convent, das Ämter bekleiden und die Mensur fechten kann."@de ,
-                    "Il secondo stadio: il socio pieno con voto nel convent, che può ricoprire cariche e battersi nella Mensur."@it .
+                    "Il secondo stadio: il socio pieno con voto nel convent, che può ricoprire cariche e battersi nella Mensur."@it ,
+                    "La deuxième étape : le membre à part entière, avec voix au convent, qui peut tenir des fonctions et livrer la Mensur."@fr .
 
 fraternalc:alterHerr a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungDegrees ; skos:topConceptOf fraternalc:StudentenverbindungDegrees ;
     fraternal:degreeRank 3 ;
-    skos:prefLabel "Alter Herr"@en , "Alter Herr"@sv , "Alter Herr"@de , "Alter Herr"@it ;
+    skos:prefLabel "Alter Herr"@en , "Alter Herr"@sv , "Alter Herr"@de , "Alter Herr"@it , "Alter Herr"@fr ;
     skos:altLabel "Philister"@de , "Alumnus"@en , "AH"@de ;
     skos:definition "The third stage: the alumnus, who has left the active branch after his studies and belongs to the Altherrenschaft for life."@en ,
                     "Det tredje stadiet: alumnen, som lämnat aktivitas efter sina studier och tillhör Altherrenschaft livet ut."@sv ,
                     "Die dritte Stufe: der Ehemalige, der nach dem Studium aus der Aktivitas ausgeschieden ist und der Altherrenschaft auf Lebenszeit angehört."@de ,
-                    "Il terzo stadio: l'ex alunno, che ha lasciato il ramo attivo dopo gli studi e appartiene per la vita all'Altherrenschaft."@it .
+                    "Il terzo stadio: l'ex alunno, che ha lasciato il ramo attivo dopo gli studi e appartiene per la vita all'Altherrenschaft."@it ,
+                    "La troisième étape : l'ancien, qui a quitté la branche active après ses études et appartient à vie à l'Altherrenschaft."@fr .
 
 fraternalc:StudentenverbindungCategories a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Membership Forms of a Studentenverbindung"@en , "Medlemsformer i en Studentenverbindung"@sv , "Mitgliedschaftsformen einer Studentenverbindung"@de , "Forme di appartenenza a una Studentenverbindung"@it ;
+    skos:prefLabel "Membership Forms of a Studentenverbindung"@en , "Medlemsformer i en Studentenverbindung"@sv , "Mitgliedschaftsformen einer Studentenverbindung"@de , "Forme di appartenenza a una Studentenverbindung"@it , "Formes d'appartenance à une Studentenverbindung"@fr ;
     skos:definition "Forms of belonging to a Studentenverbindung beside the stages of fraternalc:StudentenverbindungDegrees, used with mbr:membershipCategory."@en ,
                     "Former av tillhörighet till en Studentenverbindung vid sidan av stadierna i fraternalc:StudentenverbindungDegrees, används med mbr:membershipCategory."@sv ,
                     "Formen der Zugehörigkeit zu einer Studentenverbindung neben den Stufen von fraternalc:StudentenverbindungDegrees, verwendet mit mbr:membershipCategory."@de ,
-                    "Forme di appartenenza a una Studentenverbindung accanto agli stadi di fraternalc:StudentenverbindungDegrees, usate con mbr:membershipCategory."@it ;
+                    "Forme di appartenenza a una Studentenverbindung accanto agli stadi di fraternalc:StudentenverbindungDegrees, usate con mbr:membershipCategory."@it ,
+                    "Formes d'appartenance à une Studentenverbindung à côté des étapes de fraternalc:StudentenverbindungDegrees, utilisées avec mbr:membershipCategory."@fr ;
     skos:hasTopConcept fraternalc:aktiver , fraternalc:inaktiver , fraternalc:konkneipant .
 
 fraternalc:aktiver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungCategories ; skos:topConceptOf fraternalc:StudentenverbindungCategories ;
-    skos:prefLabel "Aktiver"@en , "Aktiv"@sv , "Aktiver"@de , "Aktiver"@it ;
+    skos:prefLabel "Aktiver"@en , "Aktiv"@sv , "Aktiver"@de , "Aktiver"@it , "Aktiver"@fr ;
     skos:altLabel "Active Member"@en , "Aktivitas"@de ;
     skos:definition "A Fuchs or Bursch who takes part in the life of the Verbindung while studying and shares its duties, offices and costs."@en ,
                     "En Fuchs eller Bursch som deltar i Verbindungens liv under sina studier och delar dess plikter, ämbeten och kostnader."@sv ,
                     "Ein Fuchs oder Bursch, der während des Studiums am Leben der Verbindung teilnimmt und ihre Pflichten, Ämter und Kosten teilt."@de ,
-                    "Un Fuchs o un Bursch che partecipa alla vita della Verbindung durante gli studi e ne condivide doveri, cariche e costi."@it .
+                    "Un Fuchs o un Bursch che partecipa alla vita della Verbindung durante gli studi e ne condivide doveri, cariche e costi."@it ,
+                    "Un Fuchs ou un Bursch qui participe à la vie de la Verbindung pendant ses études et en partage les devoirs, les fonctions et les frais."@fr .
 
 fraternalc:inaktiver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungCategories ; skos:topConceptOf fraternalc:StudentenverbindungCategories ;
-    skos:prefLabel "Inaktiver"@en , "Inaktiv"@sv , "Inaktiver"@de , "Inaktiver"@it ;
+    skos:prefLabel "Inaktiver"@en , "Inaktiv"@sv , "Inaktiver"@de , "Inaktiver"@it , "Inaktiver"@fr ;
     skos:altLabel "Inactive Member"@en , "Inaktiv"@de ;
     skos:definition "A Bursch released from the duties of an active member, for example while finishing his studies or staying abroad, who keeps his membership and his vote."@en ,
                     "En Bursch som befriats från en aktiv medlems skyldigheter, till exempel under slutförandet av studier eller utlandsvistelse, och som behåller sitt medlemskap och sin rösträtt."@sv ,
                     "Ein von den Pflichten eines Aktiven entbundener Bursch, etwa während des Studienabschlusses oder eines Auslandsaufenthalts, der seine Mitgliedschaft und sein Stimmrecht behält."@de ,
-                    "Un Bursch esonerato dai doveri di socio attivo, per esempio mentre termina gli studi o soggiorna all'estero, che conserva l'appartenenza e il voto."@it .
+                    "Un Bursch esonerato dai doveri di socio attivo, per esempio mentre termina gli studi o soggiorna all'estero, che conserva l'appartenenza e il voto."@it ,
+                    "Un Bursch dispensé des devoirs d'un membre actif, par exemple en finissant ses études ou en séjour à l'étranger, qui garde son appartenance et sa voix."@fr .
 
 fraternalc:konkneipant a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungCategories ; skos:topConceptOf fraternalc:StudentenverbindungCategories ;
-    skos:prefLabel "Konkneipant"@en , "Konkneipant"@sv , "Konkneipant"@de , "Konkneipant"@it ;
+    skos:prefLabel "Konkneipant"@en , "Konkneipant"@sv , "Konkneipant"@de , "Konkneipant"@it , "Konkneipant"@fr ;
     skos:altLabel "Guest Member"@en , "Kneipgast"@de ;
     skos:definition "A student or alumnus who takes part in the gatherings of a Verbindung, for example the Kneipe, without being a member."@en ,
                     "En student eller alumn som deltar i en Verbindungs sammankomster, till exempel Kneipe, utan att vara medlem."@sv ,
                     "Ein Student oder Ehemaliger, der an den Zusammenkünften einer Verbindung, etwa der Kneipe, teilnimmt, ohne Mitglied zu sein."@de ,
-                    "Uno studente o ex alunno che partecipa agli incontri di una Verbindung, per esempio alla Kneipe, senza esserne socio."@it .
+                    "Uno studente o ex alunno che partecipa agli incontri di una Verbindung, per esempio alla Kneipe, senza esserne socio."@it ,
+                    "Un étudiant ou un ancien qui prend part aux réunions d'une Verbindung, par exemple à la Kneipe, sans en être membre."@fr .
 
 fraternalc:StudentenverbindungOffices a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Offices of a Studentenverbindung"@en , "Ämbeten i en Studentenverbindung"@sv , "Chargen einer Studentenverbindung"@de , "Cariche di una Studentenverbindung"@it ;
+    skos:prefLabel "Offices of a Studentenverbindung"@en , "Ämbeten i en Studentenverbindung"@sv , "Chargen einer Studentenverbindung"@de , "Cariche di una Studentenverbindung"@it , "Fonctions d'une Studentenverbindung"@fr ;
     skos:definition "The offices (Chargen) common to Studentenverbindungen. Each is placed under a generic office in mappings/fraternal-offices.sssom.tsv; a Verbindung may use its own names."@en ,
                     "De ämbeten (Chargen) som är gemensamma för Studentenverbindungen. Varje ämbete placeras under ett generiskt ämbete i mappings/fraternal-offices.sssom.tsv; en Verbindung kan använda egna namn."@sv ,
                     "Die Chargen, die Studentenverbindungen gemeinsam sind. Jede ist in mappings/fraternal-offices.sssom.tsv einem allgemeinen Amt zugeordnet; eine Verbindung kann eigene Bezeichnungen verwenden."@de ,
-                    "Le cariche (Chargen) comuni alle Studentenverbindungen. Ciascuna è collocata sotto una carica generica in mappings/fraternal-offices.sssom.tsv; una Verbindung può usare nomi propri."@it ;
+                    "Le cariche (Chargen) comuni alle Studentenverbindungen. Ciascuna è collocata sotto una carica generica in mappings/fraternal-offices.sssom.tsv; una Verbindung può usare nomi propri."@it ,
+                    "Les fonctions (Chargen) communes aux Studentenverbindungen. Chacune est placée sous une fonction générique dans mappings/fraternal-offices.sssom.tsv ; une Verbindung peut employer ses propres noms."@fr ;
     skos:hasTopConcept fraternalc:senior , fraternalc:consenior , fraternalc:scriptor , fraternalc:kassenwart ,
                        fraternalc:fuchsmajor , fraternalc:fechtwart , fraternalc:philistersenior .
 
 fraternalc:senior a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Senior"@en , "Senior"@sv , "Senior"@de , "Senior"@it ;
+    skos:prefLabel "Senior"@en , "Senior"@sv , "Senior"@de , "Senior"@it , "Senior"@fr ;
     skos:altLabel "Sprecher"@de , "Erstchargierter"@de ;
     skos:definition "The head of the active branch of a Studentenverbindung, who chairs the convent and represents the Verbindung. Called Sprecher in a Burschenschaft."@en ,
                     "Chefen för en Studentenverbindungs aktivitas, som leder konventet och företräder Verbindungen. Kallas Sprecher i en Burschenschaft."@sv ,
                     "Der Leiter der Aktivitas einer Studentenverbindung, der den Convent leitet und die Verbindung vertritt. In einer Burschenschaft Sprecher genannt."@de ,
-                    "Il capo del ramo attivo di una Studentenverbindung, che presiede il convent e rappresenta la Verbindung. Si chiama Sprecher in una Burschenschaft."@it .
+                    "Il capo del ramo attivo di una Studentenverbindung, che presiede il convent e rappresenta la Verbindung. Si chiama Sprecher in una Burschenschaft."@it ,
+                    "Le chef de la branche active d'une Studentenverbindung, qui préside le convent et représente la Verbindung. Appelé Sprecher dans une Burschenschaft."@fr .
 
 fraternalc:consenior a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Consenior"@en , "Konsenior"@sv , "Consenior"@de , "Consenior"@it ;
+    skos:prefLabel "Consenior"@en , "Konsenior"@sv , "Consenior"@de , "Consenior"@it , "Consenior"@fr ;
     skos:altLabel "Zweitchargierter"@de , "Vorsitzender-Stellvertreter"@de ;
     skos:definition "The deputy of the Senior."@en ,
                     "Seniorens ställföreträdare."@sv ,
                     "Der Stellvertreter des Seniors."@de ,
-                    "Il vice del Senior."@it .
+                    "Il vice del Senior."@it ,
+                    "L'adjoint du Senior."@fr .
 
 fraternalc:scriptor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Scriptor"@en , "Skriptor"@sv , "Schriftführer"@de , "Scriptor"@it ;
+    skos:prefLabel "Scriptor"@en , "Skriptor"@sv , "Schriftführer"@de , "Scriptor"@it , "Scriptor"@fr ;
     skos:altLabel "Schriftwart"@de , "Scriptor"@de ;
     skos:definition "Keeps the minutes of the convent and the correspondence of the active branch."@en ,
                     "För konventets protokoll och aktivitasens korrespondens."@sv ,
                     "Führt die Protokolle des Conventes und die Korrespondenz der Aktivitas."@de ,
-                    "Tiene il verbale del convent e la corrispondenza del ramo attivo."@it .
+                    "Tiene il verbale del convent e la corrispondenza del ramo attivo."@it ,
+                    "Tient les procès-verbaux du convent et la correspondance de la branche active."@fr .
 
 fraternalc:kassenwart a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Kassenwart"@en , "Kassör"@sv , "Kassenwart"@de , "Kassenwart"@it ;
+    skos:prefLabel "Kassenwart"@en , "Kassör"@sv , "Kassenwart"@de , "Kassenwart"@it , "Kassenwart"@fr ;
     skos:altLabel "Treasurer"@en , "Kassier"@de , "Kassierer"@de , "Quästor"@de ;
     skos:definition "Manages the finances of the active branch."@en ,
                     "Förvaltar aktivitasens ekonomi."@sv ,
                     "Verwaltet die Finanzen der Aktivitas."@de ,
-                    "Gestisce le finanze del ramo attivo."@it .
+                    "Gestisce le finanze del ramo attivo."@it ,
+                    "Gère les finances de la branche active."@fr .
 
 fraternalc:fuchsmajor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Fuchsmajor"@en , "Fuxmajor"@sv , "Fuchsmajor"@de , "Fuchsmajor"@it ;
+    skos:prefLabel "Fuchsmajor"@en , "Fuxmajor"@sv , "Fuchsmajor"@de , "Fuchsmajor"@it , "Fuchsmajor"@fr ;
     skos:altLabel "Fuxmajor"@de , "Fuchswart"@de , "Master of Novices"@en ;
     skos:definition "Trains and examines the Füchse during the Fuchsenzeit and prepares them for the Burschenprüfung."@en ,
                     "Utbildar och examinerar Füchse under Fuchsenzeit och förbereder dem för Burschenprüfung."@sv ,
                     "Bildet die Füchse während der Fuchsenzeit aus, prüft sie und bereitet sie auf die Burschenprüfung vor."@de ,
-                    "Forma ed esamina i Füchse durante la Fuchsenzeit e li prepara alla Burschenprüfung."@it .
+                    "Forma ed esamina i Füchse durante la Fuchsenzeit e li prepara alla Burschenprüfung."@it ,
+                    "Forme et examine les Füchse pendant la Fuchsenzeit et les prépare à la Burschenprüfung."@fr .
 
 fraternalc:fechtwart a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Fencing Officer"@en , "Fäktansvarig"@sv , "Fechtwart"@de , "Responsabile della scherma"@it ;
+    skos:prefLabel "Fencing Officer"@en , "Fäktansvarig"@sv , "Fechtwart"@de , "Responsabile della scherma"@it , "Responsable de l'escrime"@fr ;
     skos:altLabel "Fechtchargierter"@de , "Fechtchargen"@de ;
     skos:definition "Arranges the fencing practice and the Mensuren of the Verbindung."@en ,
                     "Ordnar Verbindungens fäktövningar och mensurer."@sv ,
                     "Organisiert den Fechtbetrieb und die Mensuren der Verbindung."@de ,
-                    "Organizza gli allenamenti di scherma e le Mensuren della Verbindung."@it .
+                    "Organizza gli allenamenti di scherma e le Mensuren della Verbindung."@it ,
+                    "Organise l'entraînement à l'escrime et les Mensuren de la Verbindung."@fr .
 
 fraternalc:philistersenior a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Philistersenior"@en , "Philistersenior"@sv , "Philistersenior"@de , "Philistersenior"@it ;
+    skos:prefLabel "Philistersenior"@en , "Philistersenior"@sv , "Philistersenior"@de , "Philistersenior"@it , "Philistersenior"@fr ;
     skos:altLabel "Altherrenvorsitzender"@de , "Vorsitzender der Altherrenschaft"@de ;
     skos:definition "The head of the alumni branch (Altherrenschaft) of a Studentenverbindung."@en ,
                     "Chefen för en Studentenverbindungs gammalherrarförening (Altherrenschaft)."@sv ,
                     "Der Vorsitzende der Altherrenschaft einer Studentenverbindung."@de ,
-                    "Il capo del ramo degli ex alunni (Altherrenschaft) di una Studentenverbindung."@it .
+                    "Il capo del ramo degli ex alunni (Altherrenschaft) di una Studentenverbindung."@it ,
+                    "Le chef de la branche des anciens (Altherrenschaft) d'une Studentenverbindung."@fr .

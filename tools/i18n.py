@@ -44,7 +44,7 @@ TEXT_PROPERTIES = (RDFS.label, RDFS.comment, SKOS.prefLabel, SKOS.definition,
                    DCTERMS.title, DCTERMS.description)
 
 # What a translator is asked to translate (`missing`).
-TRANSLATED_PROPERTIES = (RDFS.label, SKOS.prefLabel, SKOS.definition, SKOS.scopeNote,
+TRANSLATED_PROPERTIES = (RDFS.label, SKOS.prefLabel, SKOS.definition, SKOS.scopeNote, SKOS.note,
                          RDFS.comment, DCTERMS.title, DCTERMS.description)
 
 

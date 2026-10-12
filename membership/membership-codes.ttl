@@ -60,7 +60,7 @@ mbrc:OrganizationTypes a skos:ConceptScheme , owl:NamedIndividual ;
 mbrc:voluntaryAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:topConceptOf mbrc:OrganizationTypes ;
     skos:prefLabel "Voluntary Association"@en , "Frivillig sammanslutning"@sv , "Association volontaire"@fr , "Freiwillige Vereinigung"@de , "Associazione volontaria"@it ;
-    skos:altLabel "ideell förening"@sv ;
+    skos:altLabel "ideell förening"@sv , "Associazione senza scopo di lucro"@it ;
     skos:definition "A group of people who join together voluntarily for a shared purpose."@en ,
                     "En grupp människor som frivilligt går samman för ett gemensamt syfte."@sv ,
                     "Groupe de personnes qui se réunissent volontairement dans un but commun."@fr ,
@@ -73,7 +73,9 @@ mbrc:informalCircle a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
     skos:prefLabel "Informal Circle"@en , "Kotteri"@sv , "Cercle informel"@fr , "Informeller Kreis"@de , "Cerchia informale"@it ;
     skos:altLabel "Coterie"@en , "Circle of Friends"@en , "Vänkrets"@sv , "Umgängeskrets"@sv ,
-                  "Coterie"@fr , "Cercle d'amis"@fr , "Freundeskreis"@de ;
+                  "Coterie"@fr , "Cercle d'amis"@fr , "Freundeskreis"@de ,
+                  "Cerchia di amici"@it ,
+                  "Consorteria"@it ;
     skos:definition "A relatively closed company of friends or associates without legal status or registration, held together by friendship or invitation rather than formal admission. It may be a temporary group that keeps together at a larger gathering, or a more lasting circle of friends, often formed to arrange or take part in an occasion such as a ball, a banquet or a student celebration."@en ,
                     "Ett relativt slutet sällskap av vänner eller bekanta utan rättslig status eller registrering, som hålls samman av vänskap eller inbjudan snarare än av formellt upptagande. Det kan vara en tillfällig grupp som håller ihop vid ett större samkväm, eller en mer varaktig vänkrets, ofta bildad för att ordna eller delta i en tillställning som en bal, en bankett eller ett studentfirande."@sv ,
                     "Compagnie relativement fermée d'amis ou de relations, sans statut juridique ni enregistrement, unie par l'amitié ou l'invitation plutôt que par une admission formelle. Ce peut être un groupe provisoire qui reste ensemble lors d'une réunion plus large, ou un cercle d'amis plus durable, souvent formé pour organiser ou prendre part à une occasion comme un bal, un banquet ou une fête étudiante."@fr ,
@@ -120,7 +122,7 @@ mbrc:gentlemensClub a skos:Concept , owl:NamedIndividual ;
 mbrc:ladiesClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:privateClub ;
     skos:prefLabel "Ladies' Club"@en , "Damklubb"@sv , "Club pour femmes"@fr , "Damenclub"@de , "Circolo femminile"@it ;
-    skos:altLabel "Women's Club"@en , "Club féminin"@fr ;
+    skos:altLabel "Women's Club"@en , "Club féminin"@fr , "Club femminile"@it ;
     skos:definition "A private social club for women."@en ,
                     "En privat sällskapsklubb för kvinnor."@sv ,
                     "Club social privé pour femmes."@fr ,
@@ -190,7 +192,7 @@ mbrc:countryClub a skos:Concept , owl:NamedIndividual ;
 mbrc:armedForcesClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
     skos:prefLabel "Armed Forces Club"@en , "Försvarsklubb"@sv , "Club des armées"@fr , "Club der Streitkräfte"@de , "Circolo delle forze armate"@it ;
-    skos:altLabel "Service Club (military)"@en , "Cercle militaire"@fr ;
+    skos:altLabel "Service Club (military)"@en , "Cercle militaire"@fr , "Circolo militare"@it ;
     skos:definition "A club for serving and former members of the armed forces."@en ,
                     "En klubb för tjänstgörande och tidigare medlemmar av försvarsmakten."@sv ,
                     "Club pour les membres actuels et anciens des forces armées."@fr ,
@@ -267,7 +269,7 @@ mbrc:hobbyClub a skos:Concept , owl:NamedIndividual ;
 mbrc:supportersClub a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:club ;
     skos:prefLabel "Supporters' Club"@en , "Supporterklubb"@sv , "Club de supporters"@fr , "Fanclub"@de , "Club di tifosi"@it ;
-    skos:altLabel "Supporters' Association"@en , "Supporterförening"@sv , "Association de supporters"@fr ;
+    skos:altLabel "Supporters' Association"@en , "Supporterförening"@sv , "Association de supporters"@fr , "Associazione di tifosi"@it ;
     skos:definition "A club for supporters of a sports team, most often a football club. It may be independent of the team or affiliated with it."@en ,
                     "En klubb för supportrar till ett idrottslag, oftast en fotbollsklubb. Den kan vara fristående från laget eller knuten till det."@sv ,
                     "Club de supporters d'une équipe sportive, le plus souvent de football. Il peut être indépendant de l'équipe ou lui être rattaché."@fr ,
@@ -303,18 +305,18 @@ mbrc:academy a skos:Concept , owl:NamedIndividual ;
                     "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ,
                     "Eine gelehrte Gesellschaft, deren Mitglieder von den bisherigen Mitgliedern gewählt werden, meist auf Lebenszeit und oft auf eine feste Zahl nummerierter Sitze, wie bei der Académie française oder der Schwedischen Akademie."@de ,
                     "Una società dotta i cui membri sono eletti dai membri già in carica, di solito a vita e spesso per un numero fisso di seggi numerati, come nell'Académie française o nell'Accademia svedese."@it ;
-    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en , "Les fauteuils numérotés eux-mêmes ne sont pas modélisés ; le modèle enregistre qui est membre et quand."@fr , "Die nummerierten Sitze selbst (fauteuils, stolar) werden nicht modelliert; das Modell hält fest, wer Mitglied ist und seit wann."@de , "I seggi numerati stessi (fauteuils, stolar) non sono modellati; il modello registra chi è socio e da quando."@it .
+    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en , "Les fauteuils numérotés eux-mêmes ne sont pas modélisés ; le modèle enregistre qui est membre et quand."@fr , "Die nummerierten Sitze selbst (fauteuils, stolar) werden nicht modelliert; das Modell hält fest, wer Mitglied ist und seit wann."@de , "I seggi numerati stessi (fauteuils, stolar) non sono modellati; il modello registra chi è socio e da quando."@it , "De numrerade stolarna själva (fauteuils, stolar) modelleras inte; modellen anger vem som är ledamot och när."@sv .
 
 mbrc:alumniAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
     skos:prefLabel "Alumni Association"@en , "Alumniförening"@sv , "Association d'anciens"@fr , "Ehemaligenvereinigung"@de , "Associazione ex alunni"@it ;
-    skos:altLabel "Old Pupils' Association"@en , "Amicale"@fr ;
+    skos:altLabel "Old Pupils' Association"@en , "Amicale"@fr , "Associazione ex allievi"@it ;
     skos:definition "An association of former pupils, students or members of one school, university or institution, kept up for fellowship and mutual support."@en ,
                     "En förening för tidigare elever, studenter eller medlemmar vid en skola, ett universitet eller en institution, som hålls vid liv för gemenskap och ömsesidigt stöd."@sv ,
                     "Association d'anciens élèves, étudiants ou membres d'une école, d'une université ou d'une institution, entretenue pour la convivialité et l'entraide."@fr ,
                     "Eine Vereinigung ehemaliger Schüler, Studenten oder Mitglieder einer Schule, Universität oder Einrichtung, die der Geselligkeit und gegenseitigen Unterstützung dient."@de ,
                     "Un'associazione di ex alunni, ex studenti o ex membri di una scuola, università o istituzione, mantenuta per la convivialità e il sostegno reciproco."@it ;
-    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en , "Comparer mbrc:studentSociety, dont les membres sont des étudiants ou d'anciens étudiants et qui existe dans l'établissement même."@fr , "Vgl. mbrc:studentSociety, deren Mitglieder Studenten oder ehemalige Studenten sind und die an der Einrichtung selbst besteht."@de , "Si confronti mbrc:studentSociety, i cui soci sono studenti o ex studenti e che esiste presso l'istituzione stessa."@it .
+    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en , "Comparer mbrc:studentSociety, dont les membres sont des étudiants ou d'anciens étudiants et qui existe dans l'établissement même."@fr , "Vgl. mbrc:studentSociety, deren Mitglieder Studenten oder ehemalige Studenten sind und die an der Einrichtung selbst besteht."@de , "Si confronti mbrc:studentSociety, i cui soci sono studenti o ex studenti e che esiste presso l'istituzione stessa."@it , "Jämför mbrc:studentSociety, vars medlemmar är studenter eller före detta studenter och som finns vid själva institutionen."@sv .
 
 mbrc:decorationHoldersAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
@@ -324,7 +326,7 @@ mbrc:decorationHoldersAssociation a skos:Concept , owl:NamedIndividual ;
                     "Association de personnes titulaires d'un ordre ou d'une décoration de l'État, distincte de l'ordre lui-même, qu'elle ne dirige pas : elle entretient la convivialité et soutient les buts de l'ordre."@fr ,
                     "Eine Vereinigung von Personen, die einen staatlichen Orden oder eine Auszeichnung tragen, getrennt vom Orden selbst, den sie nicht leitet: Sie pflegt die Geselligkeit und unterstützt die Ziele des Ordens."@de ,
                     "Un'associazione di persone che detengono un ordine o una decorazione di Stato, distinta dall'ordine stesso, che non dirige: cura la convivialità e sostiene gli scopi dell'ordine."@it ;
-    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en , "L'ordre lui-même est un fraternalc:orderOfChivalry, ou une mbr:Distinction s'il n'a pas de corps de membres. Exemple : la Société des membres de la Légion d'honneur, qui n'est pas la Légion d'honneur."@fr , "Der Orden selbst ist fraternalc:orderOfChivalry oder, wo er keinen Mitgliederkreis hat, eine mbr:Distinction. Beispiel: die Société des membres de la Légion d'honneur, die nicht die Ehrenlegion ist."@de , "L'ordine stesso è fraternalc:orderOfChivalry, oppure un mbr:Distinction se non ha un corpo di soci. Esempio: la Société des membres de la Légion d'honneur, che non è la Legion d'onore."@it .
+    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en , "L'ordre lui-même est un fraternalc:orderOfChivalry, ou une mbr:Distinction s'il n'a pas de corps de membres. Exemple : la Société des membres de la Légion d'honneur, qui n'est pas la Légion d'honneur."@fr , "Der Orden selbst ist fraternalc:orderOfChivalry oder, wo er keinen Mitgliederkreis hat, eine mbr:Distinction. Beispiel: die Société des membres de la Légion d'honneur, die nicht die Ehrenlegion ist."@de , "L'ordine stesso è fraternalc:orderOfChivalry, oppure un mbr:Distinction se non ha un corpo di soci. Esempio: la Société des membres de la Légion d'honneur, che non è la Legion d'onore."@it , "Själva orden är fraternalc:orderOfChivalry, eller en mbr:Distinction om den saknar medlemskrets. Exempel: Société des membres de la Légion d'honneur, som inte är Hederslegionen."@sv .
 
 mbrc:charitableSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
@@ -355,30 +357,38 @@ mbrc:studentSociety a skos:Concept , owl:NamedIndividual ;
 
 mbrc:guild a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Guild"@en , "Skrå"@sv , "Corporazione di mestiere"@it ;
+    skos:prefLabel "Guild"@en , "Skrå"@sv , "Corporazione di mestiere"@it , "Corporation de métier"@fr , "Zunft"@de ;
     skos:altLabel "Arte"@it , "Gille"@sv ;
     skos:definition "An association of the practitioners of one trade or craft in a town, founded to regulate the trade and look after its members: a medieval guild, a livery company, a Zunft, an Italian arte."@en ,
                     "En sammanslutning av utövarna av ett hantverk eller yrke i en stad, bildad för att reglera yrket och ta hand om sina medlemmar: ett medeltida skrå, en livery company, en Zunft, en italiensk arte."@sv ,
-                    "Associazione dei praticanti di un mestiere o di un'arte in una città, nata per regolare il mestiere e provvedere ai propri membri: una gilda medievale, una livery company, una Zunft, un'arte italiana."@it ;
+                    "Associazione dei praticanti di un mestiere o di un'arte in una città, nata per regolare il mestiere e provvedere ai propri membri: una gilda medievale, una livery company, una Zunft, un'arte italiana."@it ,
+                    "Association des praticiens d'un métier ou d'un art dans une ville, fondée pour réglementer le métier et veiller sur ses membres : une guilde médiévale, une livery company, une Zunft, une arte italienne."@fr ,
+                    "Ein Zusammenschluss der Ausübenden eines Handwerks oder Gewerbes in einer Stadt, gegründet, um das Gewerbe zu regeln und für seine Mitglieder zu sorgen: eine mittelalterliche Gilde, eine Livery Company, eine Zunft, eine italienische Arte."@de ;
     skos:scopeNote "A brotherhood that passes a trade on through initiation, ritual and stages of membership is fraternalc:craftBrotherhood. A body that only represents a trade today is a mbrc:professionalClub or a mbrc:tradeUnion, not a guild; use this type for organisations that call themselves guilds or continue a historic one."@en ,
                    "Ett brödraskap som för ett yrke vidare genom initiering, ritual och medlemsstadier är fraternalc:craftBrotherhood. Ett organ som i dag bara företräder ett yrke är en mbrc:professionalClub eller en mbrc:tradeUnion, inte ett skrå; använd typen för organisationer som kallar sig skrå eller för ett historiskt skrå vidare."@sv ,
-                   "Una confraternita che trasmette un mestiere con iniziazione, rituale e stadi di appartenenza è fraternalc:craftBrotherhood. Un organismo che oggi si limita a rappresentare un mestiere è un mbrc:professionalClub o un mbrc:tradeUnion, non una corporazione; questo tipo vale per le organizzazioni che si dicono corporazioni o che ne proseguono una storica."@it .
+                   "Una confraternita che trasmette un mestiere con iniziazione, rituale e stadi di appartenenza è fraternalc:craftBrotherhood. Un organismo che oggi si limita a rappresentare un mestiere è un mbrc:professionalClub o un mbrc:tradeUnion, non una corporazione; questo tipo vale per le organizzazioni che si dicono corporazioni o che ne proseguono una storica."@it ,
+                   "Une fraternité qui transmet un métier par l'initiation, le rituel et des étapes d'appartenance est un fraternalc:craftBrotherhood. Un organisme qui ne fait aujourd'hui que représenter un métier est un mbrc:professionalClub ou un mbrc:tradeUnion, non une corporation de métier ; ce type vaut pour les organisations qui se disent corporations de métier ou qui en poursuivent une historique."@fr ,
+                   "Eine Bruderschaft, die ein Gewerbe durch Aufnahme, Ritual und Mitgliedschaftsstufen weitergibt, ist fraternalc:craftBrotherhood. Eine Einrichtung, die heute nur ein Gewerbe vertritt, ist ein mbrc:professionalClub oder eine mbrc:tradeUnion, keine Zunft; dieser Typ gilt für Organisationen, die sich Zunft oder Gilde nennen oder eine historische fortführen."@de .
 
 mbrc:contrada a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Contrada"@en , "Contrada"@sv , "Contrada"@it ;
+    skos:prefLabel "Contrada"@en , "Contrada"@sv , "Contrada"@it , "Contrada"@fr , "Contrada"@de ;
     skos:altLabel "Neighbourhood society"@en , "Kvartersförening"@sv ;
     skos:definition "A society tied to a district of a town, whose members, the contradaioli, belong to it from birth or baptism and which carries its district's colours and traditions into a civic festival, as the seventeen contrade of Siena do in the Palio."@en ,
                     "Ett sällskap knutet till en stadsdel, vars medlemmar, contradaioli, hör till det från födseln eller dopet och som för sin stadsdels färger och traditioner in i en stadsfest, som Sienas sjutton contrade gör i Palio."@sv ,
-                    "Società legata a un rione della città, i cui membri, i contradaioli, ne fanno parte dalla nascita o dal battesimo e che porta i colori e le tradizioni del proprio rione in una festa civica, come le diciassette contrade di Siena nel Palio."@it ;
+                    "Società legata a un rione della città, i cui membri, i contradaioli, ne fanno parte dalla nascita o dal battesimo e che porta i colori e le tradizioni del proprio rione in una festa civica, come le diciassette contrade di Siena nel Palio."@it ,
+                    "Société liée à un quartier d'une ville, dont les membres, les contradaioli, lui appartiennent dès la naissance ou le baptême et qui porte les couleurs et les traditions de son quartier dans une fête civique, comme les dix-sept contrade de Sienne dans le Palio."@fr ,
+                    "Eine an einen Stadtteil gebundene Gesellschaft, deren Mitglieder, die Contradaioli, ihr von Geburt oder Taufe an angehören und die die Farben und Traditionen ihres Stadtteils in ein Stadtfest trägt, wie die siebzehn Contrade von Siena beim Palio."@de ;
     skos:scopeNote "Membership by birth and baptism has no value of its own in mbrc:AdmissionModes; the closest is mbrc:hereditary. The head of a contrada, the priore, is recorded as mbrc:president with the local title as label; the capitano, who leads the contrada in the contest, is a local office."@en ,
                    "Medlemskap genom födelse och dop har inget eget värde i mbrc:AdmissionModes; närmast är mbrc:hereditary. En contradas chef, priore, anges som mbrc:president med den lokala titeln som etikett; capitano, som leder contradan i tävlingen, är ett lokalt ämbete."@sv ,
-                   "L'appartenenza per nascita e battesimo non ha un valore proprio in mbrc:AdmissionModes; il più vicino è mbrc:hereditary. Il capo di una contrada, il priore, si registra come mbrc:president con il titolo locale come etichetta; il capitano, che guida la contrada nella gara, è un ufficio locale."@it .
+                   "L'appartenenza per nascita e battesimo non ha un valore proprio in mbrc:AdmissionModes; il più vicino è mbrc:hereditary. Il capo di una contrada, il priore, si registra come mbrc:president con il titolo locale come etichetta; il capitano, che guida la contrada nella gara, è un ufficio locale."@it ,
+                   "L'appartenance par la naissance et le baptême n'a pas de valeur propre dans mbrc:AdmissionModes ; le plus proche est mbrc:hereditary. Le chef d'une contrada, le priore, est consigné comme mbrc:president avec le titre local pour libellé ; le capitano, qui conduit la contrada dans la course, est une fonction locale."@fr ,
+                   "Die Mitgliedschaft durch Geburt und Taufe hat in mbrc:AdmissionModes keinen eigenen Wert; am nächsten liegt mbrc:hereditary. Das Oberhaupt einer Contrada, der Priore, wird als mbrc:president mit dem örtlichen Titel als Bezeichnung erfasst; der Capitano, der die Contrada im Wettkampf führt, ist ein örtliches Amt."@de .
 
 mbrc:fraternalOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
     skos:prefLabel "Fraternal Organisation"@en , "Ordenssällskap"@sv , "Organisation fraternelle"@fr , "Ordensgesellschaft"@de , "Organizzazione fraternale"@it ;
-    skos:altLabel "Fraternal Order"@en , "brödraskap"@sv , "Ordre fraternel"@fr ;
+    skos:altLabel "Fraternal Order"@en , "brödraskap"@sv , "Ordre fraternel"@fr , "Ordine fraternale"@it ;
     skos:definition "An organisation whose members are bound together by initiation, ritual and usually graded degrees. Refined by the fraternal codelists."@en ,
                     "En organisation vars medlemmar är förenade genom initiering, ritual och vanligen graderade grader. Förfinas av kodlistorna i fraternal."@sv ,
                     "Organisation dont les membres sont liés par l'initiation, le rituel et en général des degrés gradués. Précisée par les listes de codes de fraternal."@fr ,
@@ -402,7 +412,7 @@ mbrc:politicalParty a skos:Concept , owl:NamedIndividual ;
 mbrc:tradeUnion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
     skos:prefLabel "Trade Union"@en , "Fackförening"@sv , "Syndicat"@fr , "Gewerkschaft"@de , "Sindacato"@it ;
-    skos:altLabel "Labour Union"@en , "Labor Union"@en , "Fackförbund"@sv , "Syndicat de salariés"@fr ;
+    skos:altLabel "Labour Union"@en , "Labor Union"@en , "Fackförbund"@sv , "Syndicat de salariés"@fr , "Organizzazione sindacale"@it ;
     skos:definition "An organisation of employees that represents its members' interests towards employers, for example in collective bargaining."@en ,
                     "En organisation av arbetstagare som företräder medlemmarnas intressen gentemot arbetsgivare, t.ex. i förhandlingar om kollektivavtal."@sv ,
                     "Organisation de salariés qui défend les intérêts de ses membres face aux employeurs, par exemple dans les négociations collectives."@fr ,
@@ -451,7 +461,7 @@ mbrc:proposed a skos:Concept , owl:NamedIndividual ;
 mbrc:candidate a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
     skos:prefLabel "Candidate"@en , "Kandidat"@sv , "Candidat"@fr , "Kandidat"@de , "Candidato"@it ;
-    skos:altLabel "Applicant"@en , "Sökande"@sv , "Postulant"@fr ;
+    skos:altLabel "Applicant"@en , "Sökande"@sv , "Postulant"@fr , "Richiedente"@it ;
     skos:definition "Accepted as a candidate, or has applied, and awaiting election, an admission decision or initiation."@en ,
                     "Antagen som kandidat, eller har ansökt, och i väntan på val, beslut om upptagning eller initiering."@sv ,
                     "Accepté comme candidat, ou ayant fait une demande, dans l'attente d'une élection, d'une décision d'admission ou d'une initiation."@fr ,
@@ -622,7 +632,7 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
 mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
     skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr , "Fördermitglied"@de , "Socio sostenitore"@it ;
-    skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv ;
+    skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv , "Socio benefattore"@it ;
     skos:definition "A member who supports the organisation with a contribution above the ordinary fee. Whether the category carries a vote depends on the statutes."@en ,
                     "En medlem som stöder organisationen med ett bidrag utöver den ordinarie avgiften. Om kategorin har rösträtt avgörs av stadgarna."@sv ,
                     "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr ,
@@ -792,7 +802,7 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "President"@en , "Ordförande"@sv , "Président"@fr , "Präsident"@de , "Presidente"@it ;
-    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv , "Grand Maître"@fr ;
+    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv , "Grand Maître"@fr , "Gran Maestro"@it ;
     skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv , "Le premier responsable exécutif de l'organisation."@fr , "Der höchste Amtsträger der Organisation."@de , "Il più alto titolare di carica esecutiva dell'organizzazione."@it ;
     skos:scopeNote "Whatever the head is called locally (grand master, chancellor, governor …), map the head's office here and keep the local title as its label."@en ,
                    "Vad den högste ämbetsmannen än kallas lokalt (stormästare, kansler, guvernör …) mappas ämbetet hit och den lokala titeln behålls som dess etikett."@sv ,
@@ -808,7 +818,7 @@ mbrc:vicePresident a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:chancellor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Chancellor"@en , "Kansler"@sv , "Chancelier"@fr , "Kanzler"@de , "Cancelliere"@it ;
-    skos:altLabel "Grand Chancellor"@en , "Ordenskansler"@sv , "Storkansler"@sv , "Grand chancelier"@fr ;
+    skos:altLabel "Grand Chancellor"@en , "Ordenskansler"@sv , "Storkansler"@sv , "Grand chancelier"@fr , "Gran Cancelliere"@it ;
     skos:definition "The officer who keeps an order's seal, statutes and records of admissions and conferrals, usually second to the head."@en ,
                     "Den ämbetsman som förvarar en ordens sigill, stadgar och förteckningar över upptagningar och tilldelningar, vanligen närmast under den högste ämbetsmannen."@sv ,
                     "Officier qui garde le sceau, les statuts et les registres d'admission et de remise des distinctions d'un ordre, en général le second après le chef."@fr ,
@@ -828,7 +838,7 @@ mbrc:secretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:treasurer a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Treasurer"@en , "Skattmästare"@sv , "Trésorier"@fr , "Schatzmeister"@de , "Tesoriere"@it ;
-    skos:altLabel "Kassör"@sv ;
+    skos:altLabel "Kassör"@sv , "Cassiere"@it ;
     skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv , "Gère les finances de l'organisation."@fr , "Verwaltet die Finanzen der Organisation."@de , "Gestisce le finanze dell'organizzazione."@it .
 
 mbrc:archivist a mbr:Office , skos:Concept , owl:NamedIndividual ;
@@ -859,7 +869,7 @@ mbrc:herald a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:provost a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Provost"@en , "Profoss"@sv , "Prévôt"@fr , "Profos"@de , "Prevosto"@it ;
-    skos:altLabel "Sergeant-at-Arms"@en , "Tyler"@en , "Couvreur"@fr , "Sergent d'armes"@fr ;
+    skos:altLabel "Sergeant-at-Arms"@en , "Tyler"@en , "Couvreur"@fr , "Sergent d'armes"@fr , "Copritore"@it , "Sergente d'armi"@it ;
     skos:definition "Keeps order and discipline at gatherings."@en , "Upprätthåller ordning och disciplin vid sammankomster."@sv , "Maintient l'ordre et la discipline lors des réunions."@fr , "Wahrt Ordnung und Disziplin bei Zusammenkünften."@de , "Mantiene l'ordine e la disciplina negli incontri."@it .
 
 mbrc:introducer a mbr:Office , skos:Concept , owl:NamedIndividual ;
@@ -876,7 +886,7 @@ mbrc:steward a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:cellarMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Cellar Master"@en , "Källarmästare"@sv , "Maître de chai"@fr , "Kellermeister"@de , "Maestro di cantina"@it ;
-    skos:altLabel "Wine Steward"@en ;
+    skos:altLabel "Wine Steward"@en , "Sommelier"@it ;
     skos:definition "Responsible for wines and spirits."@en , "Ansvarar för viner och spritdrycker."@sv , "Responsable des vins et des spiritueux."@fr , "Zuständig für Wein und Spirituosen."@de , "Responsabile di vini e liquori."@it .
 
 mbrc:kitchenMaster a mbr:Office , skos:Concept , owl:NamedIndividual ;
@@ -913,7 +923,7 @@ mbrc:custodian a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:seniorAdviser a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Senior Adviser"@en , "Senior rådgivare"@sv , "Conseiller senior"@fr , "Seniorberater"@de , "Consigliere anziano"@it ;
-    skos:altLabel "Elder"@en , "Äldste"@sv ;
+    skos:altLabel "Elder"@en , "Äldste"@sv , "Anziano"@it ;
     skos:definition "An experienced member with an advisory role."@en , "En erfaren medlem med rådgivande roll."@sv , "Membre expérimenté ayant un rôle consultatif."@fr , "Ein erfahrenes Mitglied mit beratender Rolle."@de , "Un socio esperto con un ruolo consultivo."@it .
 
 mbrc:regionalRepresentative a mbr:Office , skos:Concept , owl:NamedIndividual ;
@@ -928,10 +938,12 @@ mbrc:eventLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
 
 mbrc:auditor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
-    skos:prefLabel "Auditor"@en , "Revisor"@sv , "Revisore dei conti"@it ;
+    skos:prefLabel "Auditor"@en , "Revisor"@sv , "Revisore dei conti"@it , "Vérificateur aux comptes"@fr , "Rechnungsprüfer"@de ;
     skos:definition "Checks the organisation's accounts and the board's management of them, independently of the board, and reports to the members."@en ,
                     "Granskar organisationens räkenskaper och styrelsens förvaltning av dem, oberoende av styrelsen, och rapporterar till medlemmarna."@sv ,
-                    "Controlla i conti dell'organizzazione e la gestione che ne fa il direttivo, in modo indipendente da questo, e riferisce ai soci."@it .
+                    "Controlla i conti dell'organizzazione e la gestione che ne fa il direttivo, in modo indipendente da questo, e riferisce ai soci."@it ,
+                    "Contrôle les comptes de l'organisation et la gestion qu'en fait le bureau, indépendamment de celui-ci, et rend compte aux membres."@fr ,
+                    "Prüft die Rechnungsführung der Organisation und die Verwaltung durch den Vorstand, unabhängig von diesem, und berichtet den Mitgliedern."@de .
 
 ##############################################################################
 # 6. GATHERING TYPES
@@ -952,7 +964,7 @@ mbrc:meeting a skos:Concept , owl:NamedIndividual ;
 mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:meeting ;
     skos:prefLabel "General Meeting"@en , "Stämma"@sv , "Assemblée générale"@fr , "Mitgliederversammlung"@de , "Assemblea generale"@it ;
-    skos:altLabel "Annual General Meeting"@en , "Congress"@en , "Årsmöte"@sv , "Kongress"@sv ;
+    skos:altLabel "Annual General Meeting"@en , "Congress"@en , "Årsmöte"@sv , "Kongress"@sv , "Assemblea dei soci"@it , "Assemblea ordinaria"@it , "Congresso"@it ;
     skos:definition "A meeting of all members, or of delegates elected by them, with decision-making power."@en ,
                     "Ett möte med alla medlemmar, eller med ombud valda av dem, som har beslutanderätt."@sv ,
                     "Réunion de tous les membres, ou de délégués élus par eux, dotée du pouvoir de décision."@fr ,
@@ -963,18 +975,18 @@ mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
 mbrc:extraordinaryGeneralMeeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:generalMeeting ;
     skos:prefLabel "Extraordinary General Meeting"@en , "Extra stämma"@sv , "Assemblée générale extraordinaire"@fr , "Außerordentliche Mitgliederversammlung"@de , "Assemblea generale straordinaria"@it ;
-    skos:altLabel "Extra årsmöte"@sv , "Extra föreningsstämma"@sv ;
+    skos:altLabel "Extra årsmöte"@sv , "Extra föreningsstämma"@sv , "Assemblea straordinaria"@it ;
     skos:definition "A general meeting called outside the regular yearly cycle to decide a particular matter, such as a change of statutes or the dissolution of the organisation."@en ,
                     "En stämma som kallas utanför den ordinarie årliga cykeln för att avgöra en bestämd fråga, t.ex. ändring av stadgarna eller organisationens upplösning."@sv ,
                     "Assemblée générale convoquée en dehors du cycle annuel ordinaire pour décider d'une question précise, comme la modification des statuts ou la dissolution de l'association."@fr ,
                     "Eine Mitgliederversammlung, die außerhalb des regelmäßigen Jahreszyklus einberufen wird, um eine bestimmte Angelegenheit zu entscheiden, etwa eine Satzungsänderung oder die Auflösung der Organisation."@de ,
                     "Un'assemblea generale convocata fuori dal ciclo annuale regolare per decidere una questione particolare, come una modifica dello statuto o lo scioglimento dell'organizzazione."@it ;
-    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en , "L'assemblée annuelle ordinaire est mbrc:generalMeeting."@fr , "Die ordentliche Jahresversammlung ist mbrc:generalMeeting."@de , "La riunione annuale ordinaria è mbrc:generalMeeting."@it .
+    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en , "L'assemblée annuelle ordinaire est mbrc:generalMeeting."@fr , "Die ordentliche Jahresversammlung ist mbrc:generalMeeting."@de , "La riunione annuale ordinaria è mbrc:generalMeeting."@it , "Det ordinarie årliga mötet är mbrc:generalMeeting."@sv .
 
 mbrc:formalDinner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
     skos:prefLabel "Formal Dinner"@en , "Högtidsmiddag"@sv , "Dîner de gala"@fr , "Festessen"@de , "Cena formale"@it ;
-    skos:altLabel "Banquet"@en , "Bankett"@sv ;
+    skos:altLabel "Banquet"@en , "Bankett"@sv , "Banchetto"@it ;
     skos:definition "A formal dinner with a prescribed dress code and ceremonial elements."@en , "En formell middag med föreskriven klädkod och ceremoniella inslag."@sv , "Dîner solennel avec un code vestimentaire prescrit et des éléments cérémoniels."@fr , "Ein förmliches Essen mit vorgeschriebener Kleiderordnung und zeremoniellen Elementen."@de , "Una cena formale con un codice di abbigliamento prescritto ed elementi cerimoniali."@it .
 
 mbrc:informalDinner a skos:Concept , owl:NamedIndividual ;
@@ -990,7 +1002,7 @@ mbrc:ball a skos:Concept , owl:NamedIndividual ;
 mbrc:excursion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
     skos:prefLabel "Excursion"@en , "Utflykt"@sv , "Excursion"@fr , "Ausflug"@de , "Escursione"@it ;
-    skos:altLabel "Trip"@en , "Resa"@sv ;
+    skos:altLabel "Trip"@en , "Resa"@sv , "Gita"@it ;
     skos:definition "A trip made together by members."@en , "En resa som medlemmarna gör tillsammans."@sv , "Voyage fait ensemble par les membres."@fr , "Eine gemeinsame Fahrt der Mitglieder."@de , "Un viaggio fatto insieme dai soci."@it .
 
 mbrc:lecture a skos:Concept , owl:NamedIndividual ;
@@ -1090,13 +1102,13 @@ mbrc:whiteTie a skos:Concept , owl:NamedIndividual ;
 mbrc:blackTie a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
     skos:prefLabel "Black Tie"@en , "Smoking"@sv , "Cravate noire"@fr , "Smoking (schwarze Fliege)"@de , "Cravatta nera"@it ;
-    skos:altLabel "Tuxedo"@en ;
+    skos:altLabel "Tuxedo"@en , "Smoking"@it ;
     skos:definition "Dinner jacket with black bow tie, or the equivalent."@en , "Smoking med svart fluga, eller motsvarande."@sv , "Smoking avec nœud papillon noir, ou l'équivalent."@fr , "Smoking mit schwarzer Fliege oder das Entsprechende."@de , "Smoking con cravatta nera, o l'equivalente."@it .
 
 mbrc:loungeSuit a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
     skos:prefLabel "Lounge Suit"@en , "Mörk kostym"@sv , "Costume sombre"@fr , "Dunkler Anzug"@de , "Abito scuro"@it ;
-    skos:altLabel "Dark Suit"@en , "Kavaj"@sv ;
+    skos:altLabel "Dark Suit"@en , "Kavaj"@sv , "Giacca e cravatta"@it ;
     skos:definition "Dark suit and tie, or the equivalent."@en , "Mörk kostym och slips, eller motsvarande."@sv , "Costume sombre et cravate, ou l'équivalent."@fr , "Dunkler Anzug mit Krawatte oder das Entsprechende."@de , "Abito scuro e cravatta, o l'equivalente."@it ;
     skos:scopeNote "Swedish invitations sometimes distinguish \"mörk kostym\" from the slightly less formal \"kavaj\"; both are recorded with this code."@en ,
                    "Svenska inbjudningar skiljer ibland mellan \"mörk kostym\" och den något mindre formella \"kavaj\"; båda anges med denna kod."@sv ,
@@ -1127,7 +1139,7 @@ mbrc:nationalCostume a skos:Concept , owl:NamedIndividual ;
 mbrc:insigniaWorn a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:DressCodes ; skos:topConceptOf mbrc:DressCodes ;
     skos:prefLabel "Insignia to Be Worn"@en , "Ordenstecken bäres"@sv , "Décorations à porter"@fr , "Ordenszeichen werden getragen"@de , "Con le insegne"@it ;
-    skos:altLabel "Decorations"@en , "Med ordnar"@sv ;
+    skos:altLabel "Decorations"@en , "Med ordnar"@sv , "Con le decorazioni"@it ;
     skos:definition "Orders, medals and insignia are to be worn. Combined with another dress code."@en , "Ordnar, medaljer och tecken ska bäras. Kombineras med en annan klädkod."@sv , "Les ordres, médailles et insignes doivent être portés. Se combine avec un autre code vestimentaire."@fr , "Orden, Medaillen und Insignien sind zu tragen. Wird mit einer anderen Kleiderordnung kombiniert."@de , "Si devono portare ordini, medaglie e insegne. Si combina con un altro codice di abbigliamento."@it .
 
 ##############################################################################
@@ -1208,7 +1220,7 @@ mbrc:openApplication a skos:Concept , owl:NamedIndividual ;
 mbrc:openEnrolment a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
     skos:prefLabel "Open Enrolment"@en , "Inträde genom anmälan"@sv , "Adhésion libre"@fr , "Offener Beitritt"@de , "Iscrizione libera"@it ;
-    skos:altLabel "Open Membership"@en , "Open Enrollment"@en , "Öppet medlemskap"@sv ;
+    skos:altLabel "Open Membership"@en , "Open Enrollment"@en , "Öppet medlemskap"@sv , "Adesione aperta"@it ;
     skos:definition "Anyone who accepts the organisation's purpose and rules may join by registering and, where required, paying the fee. No admission decision is made."@en ,
                     "Var och en som godtar organisationens ändamål och stadgar kan bli medlem genom att anmäla sig och i förekommande fall betala avgiften. Inget beslut om upptagning fattas."@sv ,
                     "Toute personne qui accepte le but et les statuts de l'organisation peut adhérer en s'inscrivant et, le cas échéant, en payant la cotisation. Aucune décision d'admission n'est prise."@fr ,
@@ -1344,7 +1356,7 @@ mbrc:mergedOrganization a skos:Concept , owl:NamedIndividual ;
 mbrc:closedOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationStatuses ; skos:topConceptOf mbrc:OrganizationStatuses ;
     skos:prefLabel "Closed"@en , "Nedlagd"@sv , "Dissoute"@fr , "Aufgelöst"@de , "Chiusa"@it ;
-    skos:altLabel "Defunct"@en , "Upplöst"@sv ;
+    skos:altLabel "Defunct"@en , "Upplöst"@sv , "Sciolta"@it ;
     skos:definition "The organisation has been wound up."@en , "Organisationen har upplösts."@sv , "L'organisation a été liquidée."@fr , "Die Organisation wurde abgewickelt."@de , "L'organizzazione è stata messa in liquidazione."@it .
 
 ##############################################################################
@@ -1399,13 +1411,13 @@ mbrc:FeeTypes a skos:ConceptScheme , owl:NamedIndividual ;
 mbrc:entranceFee a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
     skos:prefLabel "Entrance Fee"@en , "Inträdesavgift"@sv , "Droit d'entrée"@fr , "Aufnahmegebühr"@de , "Quota d'ingresso"@it ;
-    skos:altLabel "Joining Fee"@en , "Anslutningsavgift"@sv ;
+    skos:altLabel "Joining Fee"@en , "Anslutningsavgift"@sv , "Quota di iscrizione"@it ;
     skos:definition "A one-off fee paid on admission."@en , "En engångsavgift som betalas vid upptagningen."@sv , "Somme unique payée lors de l'admission."@fr , "Eine einmalige Gebühr bei der Aufnahme."@de , "Una quota una tantum pagata all'ammissione."@it .
 
 mbrc:annualFee a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:FeeTypes ; skos:topConceptOf mbrc:FeeTypes ;
     skos:prefLabel "Annual Fee"@en , "Årsavgift"@sv , "Cotisation annuelle"@fr , "Jahresbeitrag"@de , "Quota annuale"@it ;
-    skos:altLabel "Annual Subscription"@en , "Annual Dues"@en ;
+    skos:altLabel "Annual Subscription"@en , "Annual Dues"@en , "Quota annua"@it ;
     skos:definition "A fee paid every year to remain a member."@en , "En avgift som betalas varje år för att förbli medlem."@sv , "Somme payée chaque année pour rester membre."@fr , "Ein Beitrag, der jedes Jahr zu zahlen ist, um Mitglied zu bleiben."@de , "Una quota pagata ogni anno per restare socio."@it .
 
 mbrc:monthlyFee a skos:Concept , owl:NamedIndividual ;
@@ -1448,13 +1460,13 @@ mbrc:LegalForms a skos:ConceptScheme , owl:NamedIndividual ;
 mbrc:unincorporated a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
     skos:prefLabel "Unincorporated"@en , "Utan juridisk person"@sv , "Sans personnalité morale"@fr , "Nicht rechtsfähig"@de , "Senza personalità giuridica"@it ;
-    skos:altLabel "Informal"@en , "Unincorporated association"@en , "Oregistrerad sammanslutning"@sv ;
+    skos:altLabel "Informal"@en , "Unincorporated association"@en , "Oregistrerad sammanslutning"@sv , "Associazione non riconosciuta"@it , "Informale"@it ;
     skos:definition "A group that is not a legal person of its own: it cannot hold property or sign contracts in its own name, and its members or officers act in their own names. Includes informal circles (mbrc:informalCircle) and associations that have not completed the steps their law requires for legal personality."@en ,
                     "En grupp som inte är en egen juridisk person: den kan inte äga egendom eller ingå avtal i eget namn, och medlemmarna eller funktionärerna agerar i eget namn. Hit hör informella sällskap (mbrc:informalCircle) och föreningar som inte tagit de steg som lagen kräver för att bli juridisk person."@sv ,
                     "Groupe qui n'est pas une personne morale : il ne peut pas posséder de biens ni conclure de contrats en son propre nom, et ses membres ou responsables agissent en leur nom propre. Comprend les cercles informels (mbrc:informalCircle) et les associations qui n'ont pas accompli les formalités que leur droit exige pour la personnalité morale."@fr ,
                     "Eine Gruppe, die keine eigene juristische Person ist: Sie kann nicht in eigenem Namen Eigentum halten oder Verträge schließen, und ihre Mitglieder oder Amtsträger handeln in eigenem Namen. Dazu gehören informelle Kreise (mbrc:informalCircle) und Vereinigungen, die die nach ihrem Recht für die Rechtsfähigkeit nötigen Schritte nicht vollzogen haben."@de ,
                     "Un gruppo che non è una persona giuridica a sé: non può possedere beni né firmare contratti a proprio nome, e i suoi soci o titolari di cariche agiscono a nome proprio. Comprende le cerchie informali (mbrc:informalCircle) e le associazioni che non hanno compiuto i passi che la loro legge richiede per la personalità giuridica."@it ;
-    skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri. The Italian associazione non riconosciuta (Codice civile art. 36-38) is only a loose fit: it has no legal personality but a common fund, and the persons who acted in its name also answer personally for its debts."@en ;
+    skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri. The Italian associazione non riconosciuta (Codice civile art. 36-38) is only a loose fit: it has no legal personality but a common fund, and the persons who acted in its name also answer personally for its debts."@en , "Exempel: en fransk association non déclarée (ISO 20275 ELF 491H), en tysk nicht rechtsfähiger Verein, ett kotteri. Den italienska associazione non riconosciuta (Codice civile art. 36–38) passar bara löst: den är ingen juridisk person men har en gemensam fond, och de som handlat i dess namn svarar även personligen för dess skulder."@sv , "Exemples : une association non déclarée française (ISO 20275 ELF 491H) ; un nicht rechtsfähiger Verein allemand ; un kotteri. L'associazione non riconosciuta italienne (Codice civile art. 36-38) ne convient que de loin : elle n'a pas la personnalité juridique mais un fonds commun, et les personnes qui ont agi en son nom répondent aussi personnellement de ses dettes."@fr , "Beispiele: eine französische association non déclarée (ISO 20275 ELF 491H); ein deutscher nicht rechtsfähiger Verein; ein kotteri. Die italienische associazione non riconosciuta (Codice civile Art. 36–38) passt nur bedingt: Sie hat keine Rechtspersönlichkeit, aber ein gemeinsames Vermögen, und die in ihrem Namen Handelnden haften auch persönlich für ihre Schulden."@de , "Esempi: un'association non déclarée francese (ISO 20275 ELF 491H); un nicht rechtsfähiger Verein tedesco; un kotteri. L'associazione non riconosciuta italiana (Codice civile art. 36-38) vi rientra solo in modo approssimativo: non ha personalità giuridica ma ha un fondo comune, e le persone che hanno agito in suo nome rispondono anche personalmente dei suoi debiti."@it ;
     skos:related mbrc:informalCircle .
 
 mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
@@ -1465,7 +1477,7 @@ mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
                     "Association à but non lucratif qui est une personne morale, que ce statut résulte d'un enregistrement ou simplement de l'adoption de statuts et de la désignation d'un bureau."@fr ,
                     "Eine gemeinnützige Vereinigung, die eine eigene juristische Person ist, sei es durch Eintragung oder schlicht dadurch, dass sie sich eine Satzung gibt und einen Vorstand bestellt."@de ,
                     "Un'associazione senza scopo di lucro che è una persona giuridica a sé, sia che ottenga quella condizione con la registrazione, sia semplicemente adottando uno statuto e nominando un consiglio direttivo."@it ;
-    skos:note "Example without registration: a Swedish ideell förening."@en ;
+    skos:note "Example without registration: a Swedish ideell förening."@en , "Exempel utan registrering: en svensk ideell förening."@sv , "Exemple sans enregistrement : une ideell förening suédoise."@fr , "Beispiel ohne Eintragung: eine schwedische ideell förening."@de , "Esempio senza registrazione: una ideell förening svedese."@it ;
     skos:narrower mbrc:registeredAssociation .
 
 mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
@@ -1476,7 +1488,7 @@ mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
                     "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ,
                     "Eine rechtsfähige Vereinigung, die dadurch juristische Person wird, dass sie in ein öffentliches Register eingetragen oder bei ihm angemeldet wird. Der Registereintrag kann eine Kennung tragen (siehe rov:registration)."@de ,
                     "Un'associazione con personalità giuridica che diventa persona giuridica essendo iscritta in un registro pubblico, o dichiarata a esso. L'iscrizione al registro può portare un identificativo (vedi rov:registration)."@it ;
-    skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L); an Italian associazione riconosciuta, entered in the register of legal persons (D.P.R. 361/2000) or, for a Terzo settore entity, in the RUNTS."@en .
+    skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L); an Italian associazione riconosciuta, entered in the register of legal persons (D.P.R. 361/2000) or, for a Terzo settore entity, in the RUNTS."@en , "Exempel: en tysk eingetragener Verein (ISO 20275 ELF QZ3L), en fransk association déclarée (ELF BEWI) med dess lokala form i Alsace-Moselle (ELF HF2L), en italiensk associazione riconosciuta, införd i registret över juridiska personer (D.P.R. 361/2000) eller, för en enhet inom tredje sektorn, i RUNTS."@sv , "Exemples : un eingetragener Verein allemand (ISO 20275 ELF QZ3L) ; une association déclarée française (ELF BEWI), y compris sa forme de droit local d'Alsace-Moselle (ELF HF2L) ; une associazione riconosciuta italienne, inscrite au registre des personnes morales (D.P.R. 361/2000) ou, pour une entité du tiers secteur, au RUNTS."@fr , "Beispiele: ein deutscher eingetragener Verein (ISO 20275 ELF QZ3L); eine französische association déclarée (ELF BEWI), einschließlich ihrer Form des Lokalrechts in Elsass-Lothringen (ELF HF2L); eine italienische associazione riconosciuta, eingetragen im Register der juristischen Personen (D.P.R. 361/2000) oder, bei einer Einrichtung des Dritten Sektors, im RUNTS."@de , "Esempi: un eingetragener Verein tedesco (ISO 20275 ELF QZ3L); un'association déclarée francese (ELF BEWI), compresa la sua forma di diritto locale in Alsazia-Mosella (ELF HF2L); un'associazione riconosciuta italiana, iscritta nel registro delle persone giuridiche (D.P.R. 361/2000) o, per un ente del Terzo settore, nel RUNTS."@it .
 
 mbrc:foundation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
@@ -1486,7 +1498,7 @@ mbrc:foundation a skos:Concept , owl:NamedIndividual ;
                     "Personne morale constituée par l'affectation de biens à un but, sans membres propres. Une organisation de membres peut être dirigée ou financée par une fondation."@fr ,
                     "Eine juristische Person, die durch die Widmung von Vermögen für einen Zweck entsteht und keine eigenen Mitglieder hat. Eine Mitgliederorganisation kann von einer Stiftung geführt oder finanziert werden."@de ,
                     "Una persona giuridica formata destinando un patrimonio a uno scopo, senza soci propri. Un'organizzazione associativa può essere gestita o finanziata da una fondazione."@it ;
-    skos:note "Examples: a French fondation (ISO 20275 ELF 9T5S); a German Stiftung des privaten Rechts (ELF V2YH)."@en .
+    skos:note "Examples: a French fondation (ISO 20275 ELF 9T5S); a German Stiftung des privaten Rechts (ELF V2YH)."@en , "Exempel: en fransk fondation (ISO 20275 ELF 9T5S), en tysk Stiftung des privaten Rechts (ELF V2YH)."@sv , "Exemples : une fondation française (ISO 20275 ELF 9T5S) ; une Stiftung des privaten Rechts allemande (ELF V2YH)."@fr , "Beispiele: eine französische fondation (ISO 20275 ELF 9T5S); eine deutsche Stiftung des privaten Rechts (ELF V2YH)."@de , "Esempi: una fondation francese (ISO 20275 ELF 9T5S); una Stiftung des privaten Rechts tedesca (ELF V2YH)."@it .
 
 mbrc:company a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
@@ -1505,4 +1517,4 @@ mbrc:publicLawBody a skos:Concept , owl:NamedIndividual ;
                     "Personne morale créée ou reconnue par le droit public, comme une institution d'État ou une corporation de droit public, par opposition à celle formée par accord privé."@fr ,
                     "Eine juristische Person, die durch öffentliches Recht geschaffen oder anerkannt ist, etwa eine staatliche Einrichtung oder eine Körperschaft des öffentlichen Rechts, im Gegensatz zu einer durch private Vereinbarung gebildeten."@de ,
                     "Una persona giuridica creata o riconosciuta dal diritto pubblico, come un'istituzione statale o una corporazione di diritto pubblico, in contrapposizione a una formata per accordo privato."@it ;
-    skos:note "Example: a German Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@en .
+    skos:note "Example: a German Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@en , "Exempel: en tysk Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@sv , "Exemple : une Körperschaft des öffentlichen Rechts allemande (ISO 20275 ELF SQKS)."@fr , "Beispiel: eine deutsche Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@de , "Esempio: una Körperschaft des öffentlichen Rechts tedesca (ISO 20275 ELF SQKS)."@it .
