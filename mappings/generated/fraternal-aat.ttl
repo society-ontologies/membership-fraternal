@@ -69,10 +69,10 @@
   <https://w3id.org/sssom/subject_label> "Secret Society" ;
   <https://w3id.org/sssom/object_label> "secret societies" ] .
 
-<https://w3id.org/fraternal/code/apron> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425977> .
+<https://w3id.org/fraternal/code/apron> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300425977> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/apron> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425977> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.85"^^<http://www.w3.org/2001/XMLSchema#double> ;
@@ -99,30 +99,30 @@
   <https://w3id.org/sssom/subject_label> "Ribbon" ;
   <https://w3id.org/sssom/object_label> "fraternal ribbons" ] .
 
-<https://w3id.org/fraternal/code/ring> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425987> .
+<https://w3id.org/fraternal/code/ring> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300425987> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/ring> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425987> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Ring" ;
   <https://w3id.org/sssom/object_label> "fraternal rings" ] .
 
-<https://w3id.org/fraternal/code/pin> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425985> .
+<https://w3id.org/fraternal/code/pin> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300425985> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/pin> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425985> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Lapel Pin" ;
   <https://w3id.org/sssom/object_label> "fraternal pins" ] .
 
-<https://w3id.org/fraternal/code/hat> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300425979> .
+<https://w3id.org/fraternal/code/hat> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300425979> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/hat> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300425979> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;

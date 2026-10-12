@@ -91,20 +91,20 @@
   <https://w3id.org/sssom/object_label> "faculty clubs (built works)" ;
   <https://w3id.org/sssom/comment> "AAT concept is the building." ] .
 
-<https://w3id.org/membership/code/medal> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300046025> .
+<https://w3id.org/membership/code/medal> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300046025> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/medal> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300046025> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Medal" ;
   <https://w3id.org/sssom/object_label> "medals" ] .
 
-<https://w3id.org/membership/code/badge> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocab.getty.edu/aat/300193994> .
+<https://w3id.org/membership/code/badge> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://vocab.getty.edu/aat/300193994> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/badge> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://vocab.getty.edu/aat/300193994> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;

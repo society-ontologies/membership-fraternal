@@ -412,7 +412,7 @@ mbrc:politicalParty a skos:Concept , owl:NamedIndividual ;
 mbrc:tradeUnion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
     skos:prefLabel "Trade Union"@en , "Fackförening"@sv , "Syndicat"@fr , "Gewerkschaft"@de , "Sindacato"@it ;
-    skos:altLabel "Labour Union"@en , "Labor Union"@en , "Fackförbund"@sv , "Syndicat de salariés"@fr , "Organizzazione sindacale"@it ;
+    skos:altLabel "Labour Union"@en , "Labor Union"@en-US , "Fackförbund"@sv , "Syndicat de salariés"@fr , "Organizzazione sindacale"@it ;
     skos:definition "An organisation of employees that represents its members' interests towards employers, for example in collective bargaining."@en ,
                     "En organisation av arbetstagare som företräder medlemmarnas intressen gentemot arbetsgivare, t.ex. i förhandlingar om kollektivavtal."@sv ,
                     "Organisation de salariés qui défend les intérêts de ses membres face aux employeurs, par exemple dans les négociations collectives."@fr ,
@@ -502,7 +502,7 @@ mbrc:active a skos:Concept , owl:NamedIndividual ;
 
 mbrc:dormant a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipStatuses ; skos:topConceptOf mbrc:MembershipStatuses ;
-    skos:prefLabel "Dormant"@en , "Vilande"@sv , "En sommeil"@fr , "Ruhend"@de , "Dormiente"@it ;
+    skos:prefLabel "Dormant Member"@en , "Vilande medlem"@sv , "Membre en sommeil"@fr , "Ruhendes Mitglied"@de , "Socio dormiente"@it ;
     skos:definition "A member who has, by agreement, paused participation."@en ,
                     "En medlem som efter överenskommelse gjort uppehåll i deltagandet."@sv ,
                     "Membre qui a, d'un commun accord, suspendu sa participation."@fr ,
@@ -574,11 +574,11 @@ mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
                     "Catégories d'adhésion aux droits ou cotisations différents."@fr ,
                     "Kategorien der Mitgliedschaft mit unterschiedlichen Rechten oder Beiträgen."@de ,
                     "Categorie di appartenenza con diritti o quote diversi."@it ;
-    skos:scopeNote "The categories can be combined: a membership may be both life and founding, or junior and overseas. They are grouped in seven sub-schemes by what they say (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); every category is also in this scheme. The list is open, not an exhaustive division, and a membership without a category is not thereby ordinary. No combination is ruled out unless a category's definition says so."@en ,
-                   "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i sju underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ,
-                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en sept sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ,
-                   "Die Kategorien lassen sich kombinieren: Eine Mitgliedschaft kann zugleich auf Lebenszeit und Gründungsmitgliedschaft sein, oder jugendlich und im Ausland. Sie sind in sieben Unterschemata danach gruppiert, was sie aussagen (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); jede Kategorie gehört auch zu diesem Schema. Die Liste ist offen, keine erschöpfende Einteilung, und eine Mitgliedschaft ohne Kategorie ist dadurch nicht gewöhnlich. Keine Kombination ist ausgeschlossen, es sei denn, die Definition einer Kategorie sagt es."@de ,
-                   "Le categorie si possono combinare: un'appartenenza può essere insieme a vita e fondatore, o giovane e d'oltremare. Sono raggruppate in sette sottoschemi secondo ciò che dicono (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); ogni categoria è anche in questo schema. L'elenco è aperto, non una ripartizione esaustiva, e un'appartenenza senza categoria non è per questo ordinaria. Nessuna combinazione è esclusa, a meno che la definizione di una categoria non lo dica."@it ;
+    skos:scopeNote "The categories can be combined: a membership may be both life and founding, or junior and overseas. They are grouped in eight sub-schemes by what they say (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation, mbrc:CategoryContribution); every category is also in this scheme. The list is open, not an exhaustive division, and a membership without a category is not thereby ordinary. No combination is ruled out unless a category's definition says so."@en ,
+                   "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i åtta underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation, mbrc:CategoryContribution); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ,
+                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en huit sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation, mbrc:CategoryContribution) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ,
+                   "Die Kategorien lassen sich kombinieren: Eine Mitgliedschaft kann zugleich auf Lebenszeit und Gründungsmitgliedschaft sein, oder jugendlich und im Ausland. Sie sind in acht Unterschemata danach gruppiert, was sie aussagen (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation, mbrc:CategoryContribution); jede Kategorie gehört auch zu diesem Schema. Die Liste ist offen, keine erschöpfende Einteilung, und eine Mitgliedschaft ohne Kategorie ist dadurch nicht gewöhnlich. Keine Kombination ist ausgeschlossen, es sei denn, die Definition einer Kategorie sagt es."@de ,
+                   "Le categorie si possono combinare: un'appartenenza può essere insieme a vita e fondatore, o giovane e d'oltremare. Sono raggruppate in otto sottoschemi secondo ciò che dicono (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation, mbrc:CategoryContribution); ogni categoria è anche in questo schema. L'elenco è aperto, non una ripartizione esaustiva, e un'appartenenza senza categoria non è per questo ordinaria. Nessuna combinazione è esclusa, a meno che la definizione di una categoria non lo dica."@it ;
     skos:hasTopConcept mbrc:ordinary , mbrc:life , mbrc:honorary , mbrc:associate ,
                        mbrc:junior , mbrc:nonResident , mbrc:overseas , mbrc:partnerMember ,
                        mbrc:founding , mbrc:benefactorMember .
@@ -630,7 +630,7 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
     skos:definition "A member who took part in founding the organisation."@en , "En medlem som deltog i organisationens grundande."@sv , "Membre qui a pris part à la fondation de l'organisation."@fr , "Ein Mitglied, das an der Gründung der Organisation beteiligt war."@de , "Un socio che ha preso parte alla fondazione dell'organizzazione."@it .
 
 mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
-    skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
+    skos:inScheme mbrc:MembershipCategories , mbrc:CategoryContribution ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryContribution ;
     skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr , "Fördermitglied"@de , "Socio sostenitore"@it ;
     skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv , "Socio benefattore"@it ;
     skos:definition "A member who supports the organisation with a contribution above the ordinary fee. Whether the category carries a vote depends on the statutes."@en ,
@@ -638,6 +638,7 @@ mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
                     "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr ,
                     "Ein Mitglied, das die Organisation mit einem Beitrag über dem gewöhnlichen Beitrag unterstützt. Ob die Kategorie ein Stimmrecht trägt, hängt von der Satzung ab."@de ,
                     "Un socio che sostiene l'organizzazione con un contributo superiore alla quota ordinaria. Se la categoria dia diritto al voto dipende dallo statuto."@it .
+
 mbrc:CategoryRights a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
     skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv , "Catégorie : droits"@fr , "Kategorie: Rechte"@de , "Categoria: diritti"@it ;
@@ -708,12 +709,27 @@ mbrc:CategoryFoundation a skos:ConceptScheme , owl:NamedIndividual ;
                     "Categorie che dicono che il socio ha preso parte alla fondazione dell'organizzazione. Un sottoschema di mbrc:MembershipCategories: le sue categorie si possono combinare con quelle degli altri sottoschemi."@it ;
     skos:hasTopConcept mbrc:founding .
 
+mbrc:CategoryContribution a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:MembershipCategories ;
+    skos:prefLabel "Category: Contribution"@en , "Kategori: bidrag"@sv , "Catégorie : contribution"@fr , "Kategorie: Beitrag"@de , "Categoria: contributo"@it ;
+    skos:definition "Categories that say the member supports the organisation with a contribution beyond the ordinary fee. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
+                    "Kategorier som anger att medlemmen stöder organisationen med ett bidrag utöver den ordinarie avgiften. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui disent que le membre soutient l'organisation par une contribution supérieure à la cotisation ordinaire. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, dass das Mitglied die Organisation mit einem Beitrag über dem gewöhnlichen Beitrag unterstützt. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ,
+                    "Categorie che dicono che il socio sostiene l'organizzazione con un contributo superiore alla quota ordinaria. Un sottoschema di mbrc:MembershipCategories: le sue categorie si possono combinare con quelle degli altri sottoschemi."@it ;
+    skos:hasTopConcept mbrc:benefactorMember .
+
 ##############################################################################
 # 4. MEMBERSHIP EVENT TYPES
 ##############################################################################
 
 mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv , "Types d'événements d'adhésion"@fr , "Arten von Mitgliedschaftsereignissen"@de , "Tipi di evento di appartenenza"@it ;
+    skos:definition "Kinds of event in the life of a membership, from application and admission to resignation, expulsion and death. Used with mbr:membershipEventType."@en ,
+                    "Slag av händelser i ett medlemskaps liv, från ansökan och upptagning till utträde, uteslutning och död. Används med mbr:membershipEventType."@sv ,
+                    "Types d'événements dans la vie d'une adhésion, de la candidature et de l'admission à la démission, l'exclusion et le décès. S'utilise avec mbr:membershipEventType."@fr ,
+                    "Arten von Ereignissen im Verlauf einer Mitgliedschaft, von Antrag und Aufnahme bis zu Austritt, Ausschluss und Tod. Wird mit mbr:membershipEventType verwendet."@de ,
+                    "Tipi di eventi nella vita di un'appartenenza, dalla domanda e dall'ammissione alle dimissioni, all'espulsione e alla morte. Si usa con mbr:membershipEventType."@it ;
     skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:ballot , mbrc:rejection ,
                        mbrc:admission , mbrc:statusChange , mbrc:resignation , mbrc:lapse ,
                        mbrc:expulsion , mbrc:reinstatement , mbrc:death .
@@ -980,9 +996,15 @@ mbrc:activityLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
 
 mbrc:GatheringTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Gathering Types"@en , "Typer av sammankomster"@sv , "Types de réunions"@fr , "Arten von Zusammenkünften"@de , "Tipi di incontro"@it ;
+    skos:definition "Kinds of gathering that an organisation holds, such as meetings, dinners, balls and ceremonies. Used with mbr:gatheringType."@en ,
+                    "Slag av sammankomster som en organisation håller, till exempel möten, middagar, baler och ceremonier. Används med mbr:gatheringType."@sv ,
+                    "Types de réunions qu'une organisation tient, comme assemblées, dîners, bals et cérémonies. S'utilise avec mbr:gatheringType."@fr ,
+                    "Arten von Zusammenkünften, die eine Organisation abhält, etwa Sitzungen, Essen, Bälle und Zeremonien. Wird mit mbr:gatheringType verwendet."@de ,
+                    "Tipi di riunioni che un'organizzazione tiene, come assemblee, cene, balli e cerimonie. Si usa con mbr:gatheringType."@it ;
     skos:hasTopConcept mbrc:meeting , mbrc:formalDinner , mbrc:informalDinner , mbrc:ball ,
                        mbrc:excursion , mbrc:lecture , mbrc:guestNight , mbrc:anniversary ,
-                       mbrc:commemoration , mbrc:ceremony .
+                       mbrc:commemoration , mbrc:ceremony , mbrc:socialEvening , mbrc:procession ,
+                       mbrc:contest .
 
 mbrc:meeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
@@ -1069,12 +1091,44 @@ mbrc:ceremony a skos:Concept , owl:NamedIndividual ;
                    "Der Oberbegriff für die Zeremonienarten der fraternalen Codelisten (fraternalc:CeremonyTypes), die mit skos:broadMatch auf ihn abgebildet werden."@de ,
                    "L'hub per i tipi di cerimonia delle liste di codici fraternali (fraternalc:CeremonyTypes), che vi si associano con skos:broadMatch."@it .
 
+mbrc:socialEvening a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Social Evening"@en , "Sällskapsafton"@sv , "Soirée conviviale"@fr , "Geselliger Abend"@de , "Serata conviviale"@it ;
+    skos:definition "A social gathering for conversation, drink and often song, less formal than a dinner and without a prescribed ritual, such as a Stammtisch or a Kneipe."@en ,
+                    "En social sammankomst med samtal, dryck och ofta sång, mindre formell än en middag och utan föreskriven ritual, till exempel ett Stammtisch eller en Kneipe."@sv ,
+                    "Réunion conviviale pour converser, boire et souvent chanter, moins formelle qu'un dîner et sans rituel prescrit, comme un Stammtisch ou une Kneipe."@fr ,
+                    "Eine gesellige Zusammenkunft zu Gespräch, Trunk und oft Gesang, weniger förmlich als ein Essen und ohne vorgeschriebenes Ritual, etwa ein Stammtisch oder eine Kneipe."@de ,
+                    "Un incontro conviviale per conversare, bere e spesso cantare, meno formale di una cena e senza rituale prescritto, come uno Stammtisch o una Kneipe."@it .
+
+mbrc:procession a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Procession"@en , "Procession"@sv , "Procession"@fr , "Umzug"@de , "Processione"@it ;
+    skos:definition "An orderly march of members together through the streets or to a place, for example with torches, banners or insignia."@en ,
+                    "Ett ordnat tåg av medlemmar tillsammans genom gatorna eller till en plats, till exempel med facklor, fanor eller insignier."@sv ,
+                    "Cortège ordonné de membres qui se déplacent ensemble dans les rues ou vers un lieu, par exemple avec des torches, des bannières ou des insignes."@fr ,
+                    "Ein geordneter gemeinsamer Zug von Mitgliedern durch die Straßen oder zu einem Ort, etwa mit Fackeln, Bannern oder Insignien."@de ,
+                    "Un corteo ordinato di soci che si muove insieme per le strade o verso un luogo, per esempio con torce, stendardi o insegne."@it .
+
+mbrc:contest a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
+    skos:prefLabel "Contest"@en , "Tävling"@sv , "Épreuve"@fr , "Wettkampf"@de , "Gara"@it ;
+    skos:definition "A gathering at which members or teams measure themselves against one another under fixed rules, such as a sports match, a regulated fencing bout or a traditional race."@en ,
+                    "En sammankomst där medlemmar eller lag mäter sig mot varandra enligt fasta regler, till exempel en idrottstävling, en reglerad fäktning eller ett traditionellt lopp."@sv ,
+                    "Réunion où des membres ou des équipes se mesurent selon des règles fixes, comme un match sportif, un assaut d'escrime réglementé ou une course traditionnelle."@fr ,
+                    "Eine Zusammenkunft, bei der sich Mitglieder oder Mannschaften nach festen Regeln miteinander messen, etwa ein sportlicher Wettkampf, eine geregelte Fechtpartie oder ein traditionelles Rennen."@de ,
+                    "Una riunione in cui soci o squadre si misurano secondo regole fisse, come una gara sportiva, un incontro di scherma regolamentato o una corsa tradizionale."@it .
+
 ##############################################################################
 # 7. PARTICIPATION ROLES
 ##############################################################################
 
 mbrc:ParticipationRoles a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Participation Roles"@en , "Deltagarroller"@sv , "Rôles de participation"@fr , "Teilnahmerollen"@de , "Ruoli di partecipazione"@it ;
+    skos:definition "The part a person takes in a gathering, such as member, guest, host or speaker. Used with mbr:participationRole."@en ,
+                    "Den roll en person har vid en sammankomst, till exempel medlem, gäst, värd eller talare. Används med mbr:participationRole."@sv ,
+                    "Le rôle d'une personne lors d'une réunion, comme membre, invité, hôte ou orateur. S'utilise avec mbr:participationRole."@fr ,
+                    "Die Rolle, die eine Person bei einer Zusammenkunft einnimmt, etwa Mitglied, Gast, Gastgeber oder Redner. Wird mit mbr:participationRole verwendet."@de ,
+                    "Il ruolo di una persona a una riunione, come socio, ospite, anfitrione o relatore. Si usa con mbr:participationRole."@it ;
     skos:hasTopConcept mbrc:member , mbrc:guest , mbrc:host , mbrc:partner , mbrc:speaker ,
                        mbrc:officiant , mbrc:reciprocalVisitor .
 
@@ -1120,6 +1174,11 @@ mbrc:reciprocalVisitor a skos:Concept , owl:NamedIndividual ;
 
 mbrc:DressCodes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Dress Codes"@en , "Klädkoder"@sv , "Codes vestimentaires"@fr , "Kleiderordnungen"@de , "Codici di abbigliamento"@it ;
+    skos:definition "The dress required or expected at a gathering, from evening dress to uniform or the wearing of insignia. Used with mbr:dressCode."@en ,
+                    "Den klädsel som krävs eller förväntas vid en sammankomst, från högtidsdräkt till uniform eller bärande av insignier. Används med mbr:dressCode."@sv ,
+                    "La tenue exigée ou attendue lors d'une réunion, de la tenue de soirée à l'uniforme ou au port des insignes. S'utilise avec mbr:dressCode."@fr ,
+                    "Die bei einer Zusammenkunft verlangte oder erwartete Kleidung, von der Abendgarderobe bis zur Uniform oder zum Tragen von Insignien. Wird mit mbr:dressCode verwendet."@de ,
+                    "L'abbigliamento richiesto o previsto a una riunione, dall'abito da sera all'uniforme o all'uso delle insegne. Si usa con mbr:dressCode."@it ;
     skos:hasTopConcept mbrc:whiteTie , mbrc:blackTie , mbrc:loungeSuit , mbrc:morningDress ,
                        mbrc:academicDress , mbrc:uniform , mbrc:nationalCostume , mbrc:insigniaWorn .
 
@@ -1177,6 +1236,11 @@ mbrc:insigniaWorn a skos:Concept , owl:NamedIndividual ;
 
 mbrc:GenderPolicies a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Gender Policies"@en , "Könspolicyer"@sv , "Règles de mixité"@fr , "Geschlechterregelungen"@de , "Politiche di genere"@it ;
+    skos:definition "Whether an organisation admits men, women or both and, if both, whether in the same branch or in separate ones. Used with mbr:genderPolicy."@en ,
+                    "Om en organisation tar in män, kvinnor eller båda och, om båda, i samma gren eller i skilda grenar. Används med mbr:genderPolicy."@sv ,
+                    "Si une organisation admet des hommes, des femmes ou les deux et, dans ce dernier cas, dans la même section ou dans des sections distinctes. S'utilise avec mbr:genderPolicy."@fr ,
+                    "Ob eine Organisation Männer, Frauen oder beide aufnimmt und, wenn beide, in derselben oder in getrennten Gliederungen. Wird mit mbr:genderPolicy verwendet."@de ,
+                    "Se un'organizzazione ammette uomini, donne o entrambi e, in tal caso, nella stessa sezione o in sezioni separate. Si usa con mbr:genderPolicy."@it ;
     skos:hasTopConcept mbrc:menOnly , mbrc:womenOnly , mbrc:mixed , mbrc:mixedSeparateBranches .
 
 mbrc:menOnly a skos:Concept , owl:NamedIndividual ;
@@ -1205,6 +1269,11 @@ mbrc:mixedSeparateBranches a skos:Concept , owl:NamedIndividual ;
 
 mbrc:AdmissionModes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Admission Modes"@en , "Upptagningsformer"@sv , "Modes d'admission"@fr , "Aufnahmeverfahren"@de , "Modalità di ammissione"@it ;
+    skos:definition "The ways in which a person is admitted to an organisation, such as by invitation, by proposal and ballot, or by open application. Used with mbr:admissionMode."@en ,
+                    "De sätt på vilka en person tas in i en organisation, till exempel genom inbjudan, genom förslag och omröstning eller genom öppen ansökan. Används med mbr:admissionMode."@sv ,
+                    "Les manières dont une personne est admise dans une organisation, comme sur invitation, sur proposition et scrutin, ou sur candidature ouverte. S'utilise avec mbr:admissionMode."@fr ,
+                    "Die Wege, auf denen eine Person in eine Organisation aufgenommen wird, etwa auf Einladung, durch Vorschlag und Abstimmung oder durch offene Bewerbung. Wird mit mbr:admissionMode verwendet."@de ,
+                    "I modi in cui una persona viene ammessa in un'organizzazione, come su invito, per proposta e votazione, o per domanda aperta. Si usa con mbr:admissionMode."@it ;
     skos:hasTopConcept mbrc:byInvitation , mbrc:proposalAndBallot , mbrc:proposalAndObjectionPeriod ,
                        mbrc:openApplication , mbrc:openEnrolment , mbrc:hereditary , mbrc:exOfficio .
 
@@ -1249,7 +1318,7 @@ mbrc:openApplication a skos:Concept , owl:NamedIndividual ;
 mbrc:openEnrolment a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:AdmissionModes ; skos:topConceptOf mbrc:AdmissionModes ;
     skos:prefLabel "Open Enrolment"@en , "Inträde genom anmälan"@sv , "Adhésion libre"@fr , "Offener Beitritt"@de , "Iscrizione libera"@it ;
-    skos:altLabel "Open Membership"@en , "Open Enrollment"@en , "Öppet medlemskap"@sv , "Adesione aperta"@it ;
+    skos:altLabel "Open Membership"@en , "Open Enrollment"@en-US , "Öppet medlemskap"@sv , "Adesione aperta"@it ;
     skos:definition "Anyone who accepts the organisation's purpose and rules may join by registering and, where required, paying the fee. No admission decision is made."@en ,
                     "Var och en som godtar organisationens ändamål och stadgar kan bli medlem genom att anmäla sig och i förekommande fall betala avgiften. Inget beslut om upptagning fattas."@sv ,
                     "Toute personne qui accepte le but et les statuts de l'organisation peut adhérer en s'inscrivant et, le cas échéant, en payant la cotisation. Aucune décision d'admission n'est prise."@fr ,
@@ -1272,6 +1341,11 @@ mbrc:exOfficio a skos:Concept , owl:NamedIndividual ;
 
 mbrc:DistinctionTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Distinction Types"@en , "Typer av utmärkelser"@sv , "Types de distinctions"@fr , "Arten von Auszeichnungen"@de , "Tipi di riconoscimento"@it ;
+    skos:definition "Kinds of award or honour that an organisation can confer, such as a medal, a badge or an honorary title. Used with mbr:distinctionType."@en ,
+                    "Slag av utmärkelser som en organisation kan tilldela, till exempel en medalj, ett märke eller en hederstitel. Används med mbr:distinctionType."@sv ,
+                    "Types de distinctions qu'une organisation peut conférer, comme une médaille, un insigne ou un titre honorifique. S'utilise avec mbr:distinctionType."@fr ,
+                    "Arten von Auszeichnungen, die eine Organisation verleihen kann, etwa eine Medaille, ein Abzeichen oder ein Ehrentitel. Wird mit mbr:distinctionType verwendet."@de ,
+                    "Tipi di riconoscimenti che un'organizzazione può conferire, come una medaglia, un distintivo o un titolo onorifico. Si usa con mbr:distinctionType."@it ;
     skos:hasTopConcept mbrc:medal , mbrc:badge , mbrc:honoraryTitle , mbrc:honoraryMembership ,
                        mbrc:trophy , mbrc:diploma .
 
@@ -1318,19 +1392,39 @@ mbrc:Materials a skos:ConceptScheme , owl:NamedIndividual ;
 
 mbrc:gold a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Gold"@en , "Guld"@sv , "Or"@fr , "Gold"@de , "Oro"@it .
+    skos:prefLabel "Gold"@en , "Guld"@sv , "Or"@fr , "Gold"@de , "Oro"@it ;
+    skos:definition "The metal gold, used for medals, badges and insignia."@en ,
+                    "Metallen guld, som används till medaljer, märken och insignier."@sv ,
+                    "Le métal or, utilisé pour les médailles, les insignes et les décorations."@fr ,
+                    "Das Metall Gold, verwendet für Medaillen, Abzeichen und Insignien."@de ,
+                    "Il metallo oro, usato per medaglie, distintivi e insegne."@it .
 
 mbrc:silver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Silver"@en , "Silver"@sv , "Argent"@fr , "Silber"@de , "Argento"@it .
+    skos:prefLabel "Silver"@en , "Silver"@sv , "Argent"@fr , "Silber"@de , "Argento"@it ;
+    skos:definition "The metal silver, used for medals, badges and insignia."@en ,
+                    "Metallen silver, som används till medaljer, märken och insignier."@sv ,
+                    "Le métal argent, utilisé pour les médailles, les insignes et les décorations."@fr ,
+                    "Das Metall Silber, verwendet für Medaillen, Abzeichen und Insignien."@de ,
+                    "Il metallo argento, usato per medaglie, distintivi e insegne."@it .
 
 mbrc:giltSilver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Silver-gilt"@en , "Förgyllt silver"@sv , "Vermeil"@fr , "Vergoldetes Silber"@de , "Argento dorato"@it .
+    skos:prefLabel "Silver-gilt"@en , "Förgyllt silver"@sv , "Vermeil"@fr , "Vergoldetes Silber"@de , "Argento dorato"@it ;
+    skos:definition "Silver covered with a thin layer of gold (vermeil)."@en ,
+                    "Silver täckt med ett tunt lager guld (förgyllt silver)."@sv ,
+                    "Argent recouvert d'une fine couche d'or (vermeil)."@fr ,
+                    "Mit einer dünnen Goldschicht überzogenes Silber (Vermeil)."@de ,
+                    "Argento ricoperto da un sottile strato d'oro (vermeil)."@it .
 
 mbrc:bronze a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Bronze"@en , "Brons"@sv , "Bronze"@fr , "Bronze"@de , "Bronzo"@it .
+    skos:prefLabel "Bronze"@en , "Brons"@sv , "Bronze"@fr , "Bronze"@de , "Bronzo"@it ;
+    skos:definition "The alloy of copper and tin, used for medals and badges."@en ,
+                    "Legeringen av koppar och tenn, som används till medaljer och märken."@sv ,
+                    "L'alliage de cuivre et d'étain, utilisé pour les médailles et les insignes."@fr ,
+                    "Die Legierung aus Kupfer und Zinn, verwendet für Medaillen und Abzeichen."@de ,
+                    "La lega di rame e stagno, usata per medaglie e distintivi."@it .
 
 mbrc:pewter a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
@@ -1339,11 +1433,21 @@ mbrc:pewter a skos:Concept , owl:NamedIndividual ;
                    "Den tennbaserade legeringen (tenn i hantverksbemärkelse), inte grundämnet."@sv ,
                    "L'alliage à base d'étain (le suédois « tenn » au sens artisanal), et non l'élément étain."@fr ,
                    "Die Legierung auf Zinnbasis (schwedisch 'tenn' im handwerklichen Sinn), nicht das Element Zinn."@de ,
-                   "La lega a base di stagno (lo svedese 'tenn' in senso artigianale), non l'elemento stagno."@it .
+                   "La lega a base di stagno (lo svedese 'tenn' in senso artigianale), non l'elemento stagno."@it ;
+    skos:definition "A soft alloy consisting mostly of tin, used for badges, tankards and other keepsakes."@en ,
+                    "En mjuk legering som mest består av tenn, och som används till märken, sejdlar och andra minnessaker."@sv ,
+                    "Alliage mou composé surtout d'étain, utilisé pour des insignes, des chopes et d'autres souvenirs."@fr ,
+                    "Eine weiche Legierung, die überwiegend aus Zinn besteht und für Abzeichen, Humpen und andere Erinnerungsstücke verwendet wird."@de ,
+                    "Una lega morbida composta soprattutto di stagno, usata per distintivi, boccali e altri ricordi."@it .
 
 mbrc:enamel a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:Materials ; skos:topConceptOf mbrc:Materials ;
-    skos:prefLabel "Enamel"@en , "Emalj"@sv , "Émail"@fr , "Email"@de , "Smalto"@it .
+    skos:prefLabel "Enamel"@en , "Emalj"@sv , "Émail"@fr , "Email"@de , "Smalto"@it ;
+    skos:definition "A glassy coating fused onto metal, used to colour badges and insignia."@en ,
+                    "Ett glasartat skikt som smälts fast på metall och används för att färga märken och insignier."@sv ,
+                    "Revêtement vitreux fondu sur le métal, utilisé pour colorer les insignes et les décorations."@fr ,
+                    "Eine glasartige, auf Metall aufgeschmolzene Schicht, mit der Abzeichen und Insignien farbig gestaltet werden."@de ,
+                    "Un rivestimento vetroso fuso sul metallo, usato per colorare distintivi e insegne."@it .
 
 ##############################################################################
 # 13. ORGANISATION STATUSES  (values of mbr:organizationStatus)
@@ -1500,7 +1604,7 @@ mbrc:unincorporated a skos:Concept , owl:NamedIndividual ;
 
 mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Incorporated association"@en , "Förening som juridisk person"@sv , "Association dotée de la personnalité morale"@fr , "Rechtsfähige Vereinigung"@de , "Associazione con personalità giuridica"@it ;
+    skos:prefLabel "Incorporated Association"@en , "Förening som juridisk person"@sv , "Association dotée de la personnalité morale"@fr , "Rechtsfähige Vereinigung"@de , "Associazione con personalità giuridica"@it ;
     skos:definition "A non-profit association that is a legal person of its own, whether it gets that status by registration or simply by adopting statutes and appointing a board."@en ,
                     "En ideell sammanslutning som är en egen juridisk person, oavsett om den får den ställningen genom registrering eller bara genom att anta stadgar och utse en styrelse."@sv ,
                     "Association à but non lucratif qui est une personne morale, que ce statut résulte d'un enregistrement ou simplement de l'adoption de statuts et de la désignation d'un bureau."@fr ,
@@ -1511,7 +1615,7 @@ mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
 
 mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:broader mbrc:incorporatedAssociation ;
-    skos:prefLabel "Registered association"@en , "Registrerad förening"@sv , "Association déclarée ou enregistrée"@fr , "Eingetragene Vereinigung"@de , "Associazione registrata"@it ;
+    skos:prefLabel "Registered Association"@en , "Registrerad förening"@sv , "Association déclarée ou enregistrée"@fr , "Eingetragene Vereinigung"@de , "Associazione registrata"@it ;
     skos:definition "An incorporated association that becomes a legal person by being entered in, or declared to, a public register. The register entry can carry an identifier (see rov:registration)."@en ,
                     "En förening som blir juridisk person genom att föras in i eller anmälas till ett offentligt register. Registerposten kan ha ett identifierande nummer (se rov:registration)."@sv ,
                     "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ,
@@ -1540,7 +1644,7 @@ mbrc:company a skos:Concept , owl:NamedIndividual ;
 
 mbrc:publicLawBody a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Public-law body"@en , "Offentligrättslig juridisk person"@sv , "Personne morale de droit public"@fr , "Öffentlich-rechtliche Körperschaft"@de , "Ente di diritto pubblico"@it ;
+    skos:prefLabel "Public-Law Body"@en , "Offentligrättslig juridisk person"@sv , "Personne morale de droit public"@fr , "Öffentlich-rechtliche Körperschaft"@de , "Ente di diritto pubblico"@it ;
     skos:definition "A legal person created or recognised by public law, such as a state institution or a corporation of public law, as opposed to one formed by private agreement."@en ,
                     "En juridisk person som skapats eller erkänns genom offentlig rätt, som en statlig institution eller en offentligrättslig korporation, till skillnad från en som bildats genom privat avtal."@sv ,
                     "Personne morale créée ou reconnue par le droit public, comme une institution d'État ou une corporation de droit public, par opposition à celle formée par accord privé."@fr ,

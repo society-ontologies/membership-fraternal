@@ -132,14 +132,14 @@
   <https://w3id.org/sssom/object_label> "order of chivalry" ;
   <https://w3id.org/sssom/comment> "Imitates, but is not, an order of chivalry." ] .
 
-<https://w3id.org/fraternal/code/memberGrade> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://www.wikidata.org/entity/Q59820617> .
+<https://w3id.org/fraternal/code/memberGrade> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q59820617> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/memberGrade> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <http://www.wikidata.org/entity/Q59820617> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
-  <https://w3id.org/sssom/subject_label> "Member" ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Member Grade" ;
   <https://w3id.org/sssom/object_label> "member" ] .
 
 <https://w3id.org/fraternal/code/knightGrade> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.wikidata.org/entity/Q2261440> .

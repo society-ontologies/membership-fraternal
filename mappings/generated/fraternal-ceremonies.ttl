@@ -46,26 +46,26 @@
   <https://w3id.org/sssom/subject_label> "Installation of Officers" ;
   <https://w3id.org/sssom/object_label> "Ceremony" ] .
 
-<https://w3id.org/fraternal/code/memorialCeremony> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+<https://w3id.org/fraternal/code/memorialCeremony> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/commemoration> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/memorialCeremony> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/commemoration> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Memorial Ceremony" ;
-  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+  <https://w3id.org/sssom/object_label> "Commemoration" ] .
 
-<https://w3id.org/fraternal/code/festiveBoard> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+<https://w3id.org/fraternal/code/festiveBoard> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/formalDinner> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/festiveBoard> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/formalDinner> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Festive Board" ;
-  <https://w3id.org/sssom/object_label> "Ceremony" ;
-  <https://w3id.org/sssom/comment> "The ritual meal that follows a ceremony; fraternalc:CeremonyTypes counts it as a kind of ceremony." ] .
+  <https://w3id.org/sssom/object_label> "Formal Dinner" ;
+  <https://w3id.org/sssom/comment> "The meal with toasts that follows a lodge meeting; a kind of formal dinner, not of ceremony." ] .
 
 <https://w3id.org/fraternal/code/patronsFeast> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
@@ -100,27 +100,27 @@
   <https://w3id.org/sssom/object_label> "General Meeting" ;
   <https://w3id.org/sssom/comment> "The assembly of the members, which decides the affairs of the Verbindung." ] .
 
-<https://w3id.org/fraternal/code/kneipe> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/formalDinner> .
+<https://w3id.org/fraternal/code/kneipe> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/socialEvening> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/kneipe> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/formalDinner> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/socialEvening> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Kneipe" ;
-  <https://w3id.org/sssom/object_label> "Formal Dinner" ;
-  <https://w3id.org/sssom/comment> "A formal gathering with communal singing and drinking rather than a dinner; the nearest hub concept." ] .
+  <https://w3id.org/sssom/object_label> "Social Evening" ;
+  <https://w3id.org/sssom/comment> "A gathering with communal singing and drinking, governed by fixed rules of conduct." ] .
 
-<https://w3id.org/fraternal/code/kommers> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/formalDinner> .
+<https://w3id.org/fraternal/code/kommers> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/socialEvening> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/kommers> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/formalDinner> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/socialEvening> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Kommers" ;
-  <https://w3id.org/sssom/object_label> "Formal Dinner" ;
-  <https://w3id.org/sssom/comment> "A ceremonial form of the Kneipe; the nearest hub concept." ] .
+  <https://w3id.org/sssom/object_label> "Social Evening" ;
+  <https://w3id.org/sssom/comment> "A ceremonial form of the Kneipe, more formal than a social evening." ] .
 
 <https://w3id.org/fraternal/code/stiftungsfest> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/anniversary> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
@@ -133,16 +133,16 @@
   <https://w3id.org/sssom/object_label> "Anniversary" ;
   <https://w3id.org/sssom/comment> "The yearly celebration of the foundation." ] .
 
-<https://w3id.org/fraternal/code/mensur> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+<https://w3id.org/fraternal/code/mensur> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/contest> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/mensur> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/contest> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Mensur" ;
-  <https://w3id.org/sssom/object_label> "Ceremony" ;
-  <https://w3id.org/sssom/comment> "A regulated bout under fixed rules rather than a ritual of admission; the nearest hub concept." ] .
+  <https://w3id.org/sssom/object_label> "Contest" ;
+  <https://w3id.org/sssom/comment> "A regulated fencing bout under fixed rules; nobody wins or loses it, so only a loose kind of contest." ] .
 
 <https://w3id.org/fraternal/code/rezeption> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
@@ -174,14 +174,13 @@
   <https://w3id.org/sssom/subject_label> "Philistration" ;
   <https://w3id.org/sssom/object_label> "Ceremony" ] .
 
-<https://w3id.org/fraternal/code/fackelzug> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+<https://w3id.org/fraternal/code/fackelzug> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/procession> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/fackelzug> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/procession> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Torchlight Procession" ;
-  <https://w3id.org/sssom/object_label> "Ceremony" ;
-  <https://w3id.org/sssom/comment> "A torchlit procession rather than a ritual; the nearest hub concept." ] .
+  <https://w3id.org/sssom/object_label> "Procession" ] .
 

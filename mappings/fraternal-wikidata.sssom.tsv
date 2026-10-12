@@ -21,7 +21,7 @@ fraternalc:sorority	Sorority	skos:exactMatch	wd:Q18811583	sorority	semapv:Manual
 fraternalc:secretSociety	Secret Society	skos:exactMatch	wd:Q276548	secret society	semapv:ManualMappingCuration	0.9
 fraternalc:confraternity	Confraternity	skos:exactMatch	wd:Q992253	confraternity	semapv:ManualMappingCuration	0.9
 fraternalc:chivalricStyleOrder	Order in the Chivalric Style	skos:relatedMatch	wd:Q2003221	order of chivalry	semapv:ManualMappingCuration	0.7	Imitates, but is not, an order of chivalry.
-fraternalc:memberGrade	Member	skos:exactMatch	wd:Q59820617	member	semapv:ManualMappingCuration	0.9
+fraternalc:memberGrade	Member Grade	skos:closeMatch	wd:Q59820617	member	semapv:ManualMappingCuration	0.6
 fraternalc:knightGrade	Knight	skos:closeMatch	wd:Q2261440	Knight	semapv:ManualMappingCuration	0.8
 fraternalc:commanderGrade	Commander	skos:exactMatch	wd:Q524980	Commander	semapv:ManualMappingCuration	0.9
 fraternalc:grandCrossGrade	Grand Cross	skos:exactMatch	wd:Q1549416	grand cross	semapv:ManualMappingCuration	0.9

@@ -231,6 +231,10 @@ fraternalc:craftBrotherhood a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:studentenverbindung a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:narrower fraternalc:corps , fraternalc:burschenschaft , fraternalc:landsmannschaft , fraternalc:turnerschaft ,
+                  fraternalc:saengerschaft , fraternalc:catholicStudentenverbindung , fraternalc:christianStudentenverbindung ,
+                  fraternalc:turnverbindung , fraternalc:wissenschaftlicheVerbindung , fraternalc:damenverbindung ,
+                  fraternalc:schuelerverbindung ;
     skos:prefLabel "Studentenverbindung"@en , "Tysk studentkorporation"@sv , "Studentenverbindung"@de , "Studentenverbindung"@it , "Studentenverbindung"@fr ;
     skos:altLabel "German Student Fraternity"@en , "Student Corporation"@en , "Korporation"@de , "Verbindung"@de , "Studentenverbindning"@sv , "Corporazione studentesca"@it ;
     skos:definition "A student fraternity of the German-speaking countries (Germany, Austria, Switzerland), also called a Korporation: a lifelong union of students and alumni with its own house, colours, customs and a rule book (the Comment), usually organised in an active branch of current students (Aktivitas) and an alumni branch (Altherrenschaft). The traditions below refine it."@en ,
@@ -418,7 +422,7 @@ fraternalc:ChivalricGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:N
 fraternalc:memberGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
     fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:knightGrade ;
-    skos:prefLabel "Member"@en , "Ledamot"@sv , "Membre"@fr , "Mitglied"@de , "Membro"@it ;
+    skos:prefLabel "Member Grade"@en , "Ledamot"@sv , "Membre (grade)"@fr , "Mitglied (Stufe)"@de , "Membro (grado)"@it ;
     skos:definition "The lowest grade of an order."@en , "En ordens lägsta grad."@sv , "Le grade le plus bas d'un ordre."@fr , "Die niedrigste Stufe eines Ordens."@de , "Il grado più basso di un ordine."@it ;
     skos:scopeNote "In older Swedish order nomenclature \"ledamot\" (abbreviated L) also denoted the women's counterpart of a knight; here it means the entry grade."@en ,
                    "I äldre svensk ordensterminologi betecknade \"ledamot\" (förkortat L) även kvinnors motsvarighet till riddare; här avses inträdesgraden."@sv ,
@@ -537,6 +541,11 @@ fraternalc:emeritusDegree a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:MemberTitles a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Member Titles"@en , "Medlemstitlar"@sv , "Titres des membres"@fr , "Mitgliedsanreden"@de , "Appellativi dei soci"@it ;
+    skos:definition "The forms of address that members of an order use for one another and by which they are called, such as brother, sister or companion. Used with fraternal:memberTitle."@en ,
+                    "De tilltalsformer som medlemmar i en orden använder om varandra och kallas, till exempel broder, syster eller kompanjon. Används med fraternal:memberTitle."@sv ,
+                    "Les formes d'appellation que les membres d'un ordre emploient entre eux et par lesquelles on les désigne, comme frère, sœur ou compagnon. S'utilise avec fraternal:memberTitle."@fr ,
+                    "Die Anreden, mit denen sich die Mitglieder eines Ordens untereinander ansprechen und bezeichnet werden, etwa Bruder, Schwester oder Gefährte. Wird mit fraternal:memberTitle verwendet."@de ,
+                    "Gli appellativi con cui i membri di un ordine si rivolgono l'uno all'altro e sono chiamati, come fratello, sorella o compagno. Si usa con fraternal:memberTitle."@it ;
     skos:hasTopConcept fraternalc:brother , fraternalc:sister , fraternalc:sibling , fraternalc:companion ,
                        fraternalc:fraterInSpe , fraternalc:sororInSpe ,
                        fraternalc:bundesbruder , fraternalc:bundesschwester , fraternalc:corpsbruder , fraternalc:cartellbruder .
@@ -544,12 +553,22 @@ fraternalc:MemberTitles a skos:ConceptScheme , owl:NamedIndividual ;
 fraternalc:brother a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
     skos:prefLabel "Brother"@en , "Broder"@sv , "Frère"@fr , "Bruder"@de , "Fratello"@it ;
-    skos:altLabel "Frater"@la .
+    skos:altLabel "Frater"@la ;
+    skos:definition "The title by which a male member of an order or lodge is addressed and called."@en ,
+                    "Den titel varmed en manlig medlem av en orden eller loge tilltalas och kallas."@sv ,
+                    "Le titre par lequel on s'adresse à un membre masculin d'un ordre ou d'une loge et on le désigne."@fr ,
+                    "Die Anrede, mit der ein männliches Mitglied eines Ordens oder einer Loge angesprochen und bezeichnet wird."@de ,
+                    "L'appellativo con cui ci si rivolge a un membro maschio di un ordine o di una loggia e lo si chiama."@it .
 
 fraternalc:sister a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
     skos:prefLabel "Sister"@en , "Syster"@sv , "Sœur"@fr , "Schwester"@de , "Sorella"@it ;
-    skos:altLabel "Soror"@la .
+    skos:altLabel "Soror"@la ;
+    skos:definition "The title by which a female member of an order or lodge is addressed and called."@en ,
+                    "Den titel varmed en kvinnlig medlem av en orden eller loge tilltalas och kallas."@sv ,
+                    "Le titre par lequel on s'adresse à un membre féminin d'un ordre ou d'une loge et on la désigne."@fr ,
+                    "Die Anrede, mit der ein weibliches Mitglied eines Ordens oder einer Loge angesprochen und bezeichnet wird."@de ,
+                    "L'appellativo con cui ci si rivolge a una socia di un ordine o di una loggia e la si chiama."@it .
 
 fraternalc:sibling a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
@@ -558,7 +577,12 @@ fraternalc:sibling a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:companion a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
-    skos:prefLabel "Companion"@en , "Kompanjon"@sv , "Compagnon"@fr , "Gefährte"@de , "Compagno"@it .
+    skos:prefLabel "Companion"@en , "Kompanjon"@sv , "Compagnon"@fr , "Gefährte"@de , "Compagno"@it ;
+    skos:definition "A title of address for a member of certain orders and craft brotherhoods, for example a compagnon in the French compagnonnage or a Companion in a Royal Arch chapter."@en ,
+                    "En tilltalstitel för en medlem av vissa ordnar och hantverksbrödraskap, till exempel en compagnon i det franska compagnonnage eller en Companion i ett Royal Arch-kapitel."@sv ,
+                    "Titre d'appellation d'un membre de certains ordres et confréries de métier, par exemple un compagnon du compagnonnage français ou un Companion d'un chapitre du Royal Arch."@fr ,
+                    "Eine Anrede für ein Mitglied bestimmter Orden und Handwerksbruderschaften, etwa einen Compagnon im französischen Compagnonnage oder einen Companion in einem Royal-Arch-Kapitel."@de ,
+                    "Un appellativo per un membro di certi ordini e confraternite di mestiere, per esempio un compagnon del compagnonnage francese o un Companion di un capitolo del Royal Arch."@it .
 
 fraternalc:fraterInSpe a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MemberTitles ; skos:topConceptOf fraternalc:MemberTitles ;
@@ -613,6 +637,11 @@ fraternalc:cartellbruder a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:Characteristics a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Characteristics of Orders"@en , "Ordensdrag"@sv , "Caractéristiques des ordres"@fr , "Merkmale von Orden"@de , "Caratteristiche degli ordini"@it ;
+    skos:definition "Features by which orders and lodges differ from or resemble one another: rituals, degrees, oaths, rites, principles and requirements. Used with fraternal:characteristic."@en ,
+                    "Drag som skiljer ordnar och loger åt eller gör dem lika: ritualer, grader, eder, riter, principer och krav. Används med fraternal:characteristic."@sv ,
+                    "Traits par lesquels les ordres et les loges se distinguent ou se ressemblent : rituels, degrés, serments, rites, principes et exigences. S'utilise avec fraternal:characteristic."@fr ,
+                    "Merkmale, in denen sich Orden und Logen unterscheiden oder gleichen: Rituale, Grade, Eide, Riten, Grundsätze und Anforderungen. Wird mit fraternal:characteristic verwendet."@de ,
+                    "Tratti in cui gli ordini e le logge differiscono o si somigliano: rituali, gradi, giuramenti, riti, principi e requisiti. Si usa con fraternal:characteristic."@it ;
     skos:hasTopConcept fraternalc:initiationRitual , fraternalc:gradedDegrees , fraternalc:oathOfObligation ,
                        fraternalc:secrecy , fraternalc:regalia , fraternalc:mutualAid , fraternalc:charity ,
                        fraternalc:religiousRequirement , fraternalc:noDogmaticRequirement ,
@@ -625,31 +654,66 @@ fraternalc:Characteristics a skos:ConceptScheme , owl:NamedIndividual ;
 
 fraternalc:initiationRitual a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Initiation Ritual"@en , "Initieringsritual"@sv , "Rituel d'initiation"@fr , "Initiationsritual"@de , "Rituale d'iniziazione"@it .
+    skos:prefLabel "Initiation Ritual"@en , "Initieringsritual"@sv , "Rituel d'initiation"@fr , "Initiationsritual"@de , "Rituale d'iniziazione"@it ;
+    skos:definition "A new member is admitted through a ritual of initiation."@en ,
+                    "En ny medlem upptas genom en initieringsritual."@sv ,
+                    "Un nouveau membre est admis par un rituel d'initiation."@fr ,
+                    "Ein neues Mitglied wird durch ein Aufnahmeritual aufgenommen."@de ,
+                    "Un nuovo socio viene ammesso mediante un rituale di iniziazione."@it .
 
 fraternalc:gradedDegrees a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Graded Degrees"@en , "Gradsystem"@sv , "Système de degrés"@fr , "Gestufte Grade"@de , "Gradi successivi"@it .
+    skos:prefLabel "Graded Degrees"@en , "Gradsystem"@sv , "Système de degrés"@fr , "Gestufte Grade"@de , "Gradi successivi"@it ;
+    skos:definition "Membership is arranged in successive degrees or grades through which a member advances."@en ,
+                    "Medlemskapet är ordnat i på varandra följande grader som medlemmen avancerar genom."@sv ,
+                    "L'appartenance est organisée en degrés ou grades successifs que le membre franchit."@fr ,
+                    "Die Mitgliedschaft ist in aufeinanderfolgende Grade oder Stufen gegliedert, die ein Mitglied durchläuft."@de ,
+                    "L'appartenenza è articolata in gradi successivi che il socio percorre."@it .
 
 fraternalc:oathOfObligation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Oath or Obligation"@en , "Ed eller förpliktelse"@sv , "Serment ou engagement"@fr , "Eid oder Verpflichtung"@de , "Giuramento o obbligazione"@it .
+    skos:prefLabel "Oath or Obligation"@en , "Ed eller förpliktelse"@sv , "Serment ou engagement"@fr , "Eid oder Verpflichtung"@de , "Giuramento o obbligazione"@it ;
+    skos:definition "A member takes an oath or obligation on admission or on advancing to a degree."@en ,
+                    "En medlem avlägger en ed eller förpliktelse vid upptagning eller vid avancemang till en grad."@sv ,
+                    "Un membre prête un serment ou un engagement à son admission ou en passant à un degré."@fr ,
+                    "Ein Mitglied legt bei der Aufnahme oder beim Aufstieg in einen Grad einen Eid oder eine Verpflichtung ab."@de ,
+                    "Un socio presta un giuramento o un'obbligazione all'ammissione o al passaggio a un grado."@it .
 
 fraternalc:secrecy a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Secrecy"@en , "Tystnadsplikt"@sv , "Obligation de secret"@fr , "Verschwiegenheit"@de , "Segretezza"@it .
+    skos:prefLabel "Secrecy"@en , "Tystnadsplikt"@sv , "Obligation de secret"@fr , "Verschwiegenheit"@de , "Segretezza"@it ;
+    skos:definition "Members are bound to keep certain matters, such as rituals, signs or the membership itself, secret from outsiders."@en ,
+                    "Medlemmarna är bundna att hålla vissa saker, till exempel ritualer, tecken eller själva medlemskapet, hemliga för utomstående."@sv ,
+                    "Les membres sont tenus de garder secrètes pour les non-membres certaines choses, comme les rituels, les signes ou l'appartenance elle-même."@fr ,
+                    "Die Mitglieder sind verpflichtet, bestimmte Dinge, etwa Rituale, Zeichen oder die Mitgliedschaft selbst, Außenstehenden gegenüber geheim zu halten."@de ,
+                    "I soci sono tenuti a mantenere segrete agli estranei certe cose, come rituali, segni o la stessa appartenenza."@it .
 
 fraternalc:regalia a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Regalia and Insignia"@en , "Ordensdräkt och insignier"@sv , "Tenue et insignes"@fr , "Ordenskleidung und Insignien"@de , "Paramenti e insegne"@it .
+    skos:prefLabel "Regalia and Insignia"@en , "Ordensdräkt och insignier"@sv , "Tenue et insignes"@fr , "Ordenskleidung und Insignien"@de , "Paramenti e insegne"@it ;
+    skos:definition "Members wear regalia or insignia at the order's meetings, as a sign of membership, degree or office."@en ,
+                    "Medlemmarna bär ordensdräkt eller insignier vid ordens sammankomster, som tecken på medlemskap, grad eller ämbete."@sv ,
+                    "Les membres portent une tenue ou des insignes aux réunions de l'ordre, comme signe d'appartenance, de degré ou de fonction."@fr ,
+                    "Die Mitglieder tragen bei den Zusammenkünften des Ordens Ordenskleidung oder Insignien als Zeichen der Mitgliedschaft, eines Grades oder eines Amtes."@de ,
+                    "I soci portano paramenti o insegne alle riunioni dell'ordine, come segno di appartenenza, di grado o di carica."@it .
 
 fraternalc:mutualAid a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Mutual Aid"@en , "Ömsesidig hjälp"@sv , "Entraide"@fr , "Gegenseitige Hilfe"@de , "Mutuo soccorso"@it .
+    skos:prefLabel "Mutual Aid"@en , "Ömsesidig hjälp"@sv , "Entraide"@fr , "Gegenseitige Hilfe"@de , "Mutuo soccorso"@it ;
+    skos:definition "Members support one another in need, for example through relief funds, sick pay or burial benefit."@en ,
+                    "Medlemmarna stöder varandra i nöd, till exempel genom understödskassor, sjukpenning eller begravningshjälp."@sv ,
+                    "Les membres se soutiennent mutuellement dans le besoin, par exemple par des caisses de secours, des indemnités de maladie ou une aide aux obsèques."@fr ,
+                    "Die Mitglieder unterstützen einander in Not, etwa durch Hilfskassen, Krankengeld oder Sterbegeld."@de ,
+                    "I soci si sostengono a vicenda nel bisogno, per esempio con casse di soccorso, indennità di malattia o sussidi funerari."@it .
 
 fraternalc:charity a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
-    skos:prefLabel "Charity"@en , "Välgörenhet"@sv , "Bienfaisance"@fr , "Wohltätigkeit"@de , "Beneficenza"@it .
+    skos:prefLabel "Charity"@en , "Välgörenhet"@sv , "Bienfaisance"@fr , "Wohltätigkeit"@de , "Beneficenza"@it ;
+    skos:definition "Giving to charity or relief is one of the aims of the order."@en ,
+                    "Välgörenhet eller understöd är ett av ordens syften."@sv ,
+                    "La bienfaisance ou le secours est l'un des buts de l'ordre."@fr ,
+                    "Wohltätigkeit oder Unterstützung ist eines der Ziele des Ordens."@de ,
+                    "La beneficenza o il soccorso è uno degli scopi dell'ordine."@it .
 
 fraternalc:religiousRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -829,6 +893,11 @@ fraternalc:colourCarrying a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Ceremony Types"@en , "Ceremonityper"@sv , "Types de cérémonies"@fr , "Zeremonienarten"@de , "Tipi di cerimonia"@it ;
+    skos:definition "Kinds of ceremony and ritual gathering held by orders and societies, from initiation and the conferral of degrees to festive meals and student customs. Each is mapped to a gathering type in mbrc:GatheringTypes."@en ,
+                    "Slag av ceremonier och rituella sammankomster i ordnar och sällskap, från initiering och gradtilldelning till festmåltider och studentseder. Varje typ mappas till en sammankomsttyp i mbrc:GatheringTypes."@sv ,
+                    "Types de cérémonies et de réunions rituelles des ordres et des sociétés, de l'initiation et de la collation des degrés aux repas festifs et aux usages étudiants. Chacun est associé à un type de réunion de mbrc:GatheringTypes."@fr ,
+                    "Arten von Zeremonien und rituellen Zusammenkünften von Orden und Gesellschaften, von Aufnahme und Gradverleihung bis zu Festmählern und studentischen Bräuchen. Jede ist einer Versammlungsart in mbrc:GatheringTypes zugeordnet."@de ,
+                    "Tipi di cerimonie e di riunioni rituali di ordini e società, dall'iniziazione e dal conferimento dei gradi ai banchetti rituali e agli usi studenteschi. Ciascuno è associato a un tipo di riunione di mbrc:GatheringTypes."@it ;
     skos:hasTopConcept fraternalc:initiationCeremony , fraternalc:degreeCeremony , fraternalc:installation ,
                        fraternalc:memorialCeremony , fraternalc:festiveBoard , fraternalc:patronsFeast ,
                        fraternalc:openMeeting , fraternalc:convent , fraternalc:kneipe , fraternalc:kommers ,
@@ -838,16 +907,31 @@ fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
 fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
     skos:prefLabel "Initiation Ceremony"@en , "Initieringsceremoni"@sv , "Cérémonie d'initiation"@fr , "Initiationszeremonie"@de , "Cerimonia d'iniziazione"@it ;
-    skos:altLabel "Recipiering"@sv , "Intronisation"@fr , "Iniziazione"@it .
+    skos:altLabel "Recipiering"@sv , "Intronisation"@fr , "Iniziazione"@it ;
+    skos:definition "The ceremony in which a new member is admitted to the order."@en ,
+                    "Ceremonin där en ny medlem upptas i ordern."@sv ,
+                    "La cérémonie où un nouveau membre est admis dans l'ordre."@fr ,
+                    "Die Zeremonie, in der ein neues Mitglied in den Orden aufgenommen wird."@de ,
+                    "La cerimonia in cui un nuovo socio viene ammesso nell'ordine."@it .
 
 fraternalc:degreeCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
     skos:prefLabel "Degree Ceremony"@en , "Gradceremoni"@sv , "Cérémonie de passage de degré"@fr , "Gradzeremonie"@de , "Cerimonia di grado"@it ;
-    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv , "Passage"@fr , "Élévation"@fr , "Passaggio di grado"@it , "Innalzamento"@it .
+    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv , "Passage"@fr , "Élévation"@fr , "Passaggio di grado"@it , "Innalzamento"@it ;
+    skos:definition "The ceremony in which a member is advanced to the next degree."@en ,
+                    "Ceremonin där en medlem avancerar till nästa grad."@sv ,
+                    "La cérémonie où un membre passe au degré suivant."@fr ,
+                    "Die Zeremonie, in der ein Mitglied in den nächsten Grad aufsteigt."@de ,
+                    "La cerimonia in cui un socio passa al grado successivo."@it .
 
 fraternalc:installation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Installation of Officers"@en , "Installation av ämbetsmän"@sv , "Installation des officiers"@fr , "Amtseinsetzung"@de , "Insediamento dei titolari di carica"@it .
+    skos:prefLabel "Installation of Officers"@en , "Installation av ämbetsmän"@sv , "Installation des officiers"@fr , "Amtseinsetzung"@de , "Insediamento dei titolari di carica"@it ;
+    skos:definition "The ceremony in which newly elected or appointed officers take up their offices."@en ,
+                    "Ceremonin där nyvalda eller utsedda ämbetsmän tillträder sina ämbeten."@sv ,
+                    "La cérémonie où les officiers nouvellement élus ou nommés prennent leurs fonctions."@fr ,
+                    "Die Zeremonie, in der neu gewählte oder ernannte Amtsträger ihr Amt antreten."@de ,
+                    "La cerimonia in cui i titolari di carica appena eletti o nominati assumono le loro cariche."@it .
 
 fraternalc:memorialCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
@@ -969,6 +1053,11 @@ fraternalc:fackelzug a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:InsigniaTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Insignia Types"@en , "Insignietyper"@sv , "Types d'insignes"@fr , "Insignienarten"@de , "Tipi di insegne"@it ;
+    skos:definition "Kinds of badge, garment and other object worn or carried as a sign of membership, degree or office. Used with fraternal:insigniaType."@en ,
+                    "Slag av märken, plagg och andra föremål som bärs som tecken på medlemskap, grad eller ämbete. Används med fraternal:insigniaType."@sv ,
+                    "Types d'insignes, de vêtements et d'autres objets portés comme signe d'appartenance, de degré ou de fonction. S'utilise avec fraternal:insigniaType."@fr ,
+                    "Arten von Abzeichen, Kleidungsstücken und anderen Gegenständen, die als Zeichen der Mitgliedschaft, eines Grades oder eines Amtes getragen werden. Wird mit fraternal:insigniaType verwendet."@de ,
+                    "Tipi di insegne, indumenti e altri oggetti portati come segno di appartenenza, di grado o di carica. Si usa con fraternal:insigniaType."@it ;
     skos:hasTopConcept fraternalc:apron , fraternalc:collar , fraternalc:sash , fraternalc:jewel , fraternalc:ribbon ,
                        fraternalc:ring , fraternalc:pin , fraternalc:hat , fraternalc:sword , fraternalc:breastStar ,
                        fraternalc:cross , fraternalc:rosette , fraternalc:staff , fraternalc:wichs ,
@@ -1015,6 +1104,7 @@ fraternalc:jewel a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:ribbon a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:narrower fraternalc:couleurband ;
     skos:prefLabel "Ribbon"@en , "Band"@sv , "Ruban"@fr , "Band"@de , "Nastro"@it ;
     skos:altLabel "Ordensband"@sv ;
     skos:definition "A ribbon in an order's colours on which a badge or medal is worn at the neck or on the breast; also worn on its own as a sign of membership."@en ,
@@ -1044,6 +1134,7 @@ fraternalc:pin a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:hat a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:narrower fraternalc:cerevis ;
     skos:prefLabel "Hat"@en , "Hatt"@sv , "Chapeau"@fr , "Hut"@de , "Cappello"@it ;
     skos:definition "A hat or other headwear worn as regalia."@en ,
                     "En hatt eller annan huvudbonad som bärs som ordensdräkt."@sv ,
@@ -1053,6 +1144,7 @@ fraternalc:hat a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:sword a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:narrower fraternalc:schlaeger ;
     skos:prefLabel "Sword"@en , "Svärd"@sv , "Épée"@fr , "Schwert"@de , "Spada"@it ;
     skos:definition "A sword worn or carried as regalia, or used in ceremonies such as dubbing."@en ,
                     "Ett svärd som bärs som ordensdräkt eller används vid ceremonier, t.ex. dubbning."@sv ,
@@ -1101,7 +1193,7 @@ fraternalc:staff a skos:Concept , owl:NamedIndividual ;
 fraternalc:couleurband a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:broader fraternalc:ribbon ;
     skos:prefLabel "Colour Band"@en , "Färgband"@sv , "Couleurband"@de , "Nastro dei colori"@it , "Bande aux couleurs"@fr ;
-    skos:altLabel "Band"@de , "Burschenband"@de , "Couleur Ribbon"@en ;
+    skos:altLabel "Burschenband"@de , "Couleur Ribbon"@en ;
     skos:definition "The ribbon in the colours (Farben) of a Studentenverbindung, worn across the chest as the sign of membership. Usually in three colours, with a narrow Fuchsenband for a Fuchs."@en ,
                     "Bandet i en Studentenverbindungs färger (Farben), som bärs diagonalt över bröstet som tecken på medlemskap. Vanligen i tre färger, med ett smalare Fuchsenband för en Fuchs."@sv ,
                     "Das Band in den Farben einer Studentenverbindung, quer über die Brust getragen als Zeichen der Mitgliedschaft. Meist dreifarbig, für einen Fuchs ein schmaleres Fuchsenband."@de ,
@@ -1295,7 +1387,7 @@ fraternalc:perpetualSecretary a mbr:Office , skos:Concept , owl:NamedIndividual 
 
 fraternalc:housePrevot a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
-    skos:prefLabel "House Provost"@en , "Husföreståndare"@sv , "Prévôt"@fr , "Hausprevot"@de , "Prevosto della casa"@it ;
+    skos:prefLabel "House Provost"@en , "Husföreståndare"@sv , "Prévôt de maison"@fr , "Hausprevot"@de , "Prevosto della casa"@it ;
     skos:definition "The officer in charge of a compagnons' house (cayenne), where the compagnons and aspirants of a town live and meet."@en ,
                     "Den ämbetsman som ansvarar för ett compagnons hus (cayenne), där compagnons och aspiranter i en stad bor och möts."@sv ,
                     "Responsable d'une maison de compagnons (cayenne), où les compagnons et aspirants d'une ville logent et se réunissent."@fr ,
@@ -1378,12 +1470,12 @@ fraternalc:StudentenverbindungCategories a skos:ConceptScheme , owl:NamedIndivid
                     "Formen der Zugehörigkeit zu einer Studentenverbindung neben den Stufen von fraternalc:StudentenverbindungDegrees, verwendet mit mbr:membershipCategory."@de ,
                     "Forme di appartenenza a una Studentenverbindung accanto agli stadi di fraternalc:StudentenverbindungDegrees, usate con mbr:membershipCategory."@it ,
                     "Formes d'appartenance à une Studentenverbindung à côté des étapes de fraternalc:StudentenverbindungDegrees, utilisées avec mbr:membershipCategory."@fr ;
-    skos:hasTopConcept fraternalc:aktiver , fraternalc:inaktiver , fraternalc:konkneipant .
+    skos:hasTopConcept fraternalc:aktiver , fraternalc:inaktiver .
 
 fraternalc:aktiver a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungCategories ; skos:topConceptOf fraternalc:StudentenverbindungCategories ;
     skos:prefLabel "Aktiver"@en , "Aktiv"@sv , "Aktiver"@de , "Aktiver"@it , "Aktiver"@fr ;
-    skos:altLabel "Active Member"@en , "Aktivitas"@de ;
+    skos:altLabel "Aktivitas"@de ;
     skos:definition "A Fuchs or Bursch who takes part in the life of the Verbindung while studying and shares its duties, offices and costs."@en ,
                     "En Fuchs eller Bursch som deltar i Verbindungens liv under sina studier och delar dess plikter, ämbeten och kostnader."@sv ,
                     "Ein Fuchs oder Bursch, der während des Studiums am Leben der Verbindung teilnimmt und ihre Pflichten, Ämter und Kosten teilt."@de ,
@@ -1400,10 +1492,19 @@ fraternalc:inaktiver a skos:Concept , owl:NamedIndividual ;
                     "Un Bursch esonerato dai doveri di socio attivo, per esempio mentre termina gli studi o soggiorna all'estero, che conserva l'appartenenza e il voto."@it ,
                     "Un Bursch dispensé des devoirs d'un membre actif, par exemple en finissant ses études ou en séjour à l'étranger, qui garde son appartenance et sa voix."@fr .
 
+fraternalc:StudentenverbindungParticipationRoles a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Roles at Gatherings of a Studentenverbindung"@en , "Roller vid en Studentenverbindungs sammankomster"@sv , "Rollen bei Zusammenkünften einer Studentenverbindung"@de , "Ruoli alle riunioni di una Studentenverbindung"@it , "Rôles aux réunions d'une Studentenverbindung"@fr ;
+    skos:definition "Roles that non-members can take at the gatherings of a Studentenverbindung, used with mbr:participationRole."@en ,
+                    "Roller som icke-medlemmar kan ha vid en Studentenverbindungs sammankomster, används med mbr:participationRole."@sv ,
+                    "Rollen, die Nichtmitglieder bei den Zusammenkünften einer Studentenverbindung einnehmen können, verwendet mit mbr:participationRole."@de ,
+                    "Ruoli che i non soci possono avere alle riunioni di una Studentenverbindung, usati con mbr:participationRole."@it ,
+                    "Rôles que des non-membres peuvent tenir aux réunions d'une Studentenverbindung, utilisés avec mbr:participationRole."@fr ;
+    skos:hasTopConcept fraternalc:konkneipant .
+
 fraternalc:konkneipant a skos:Concept , owl:NamedIndividual ;
-    skos:inScheme fraternalc:StudentenverbindungCategories ; skos:topConceptOf fraternalc:StudentenverbindungCategories ;
+    skos:inScheme fraternalc:StudentenverbindungParticipationRoles ; skos:topConceptOf fraternalc:StudentenverbindungParticipationRoles ;
     skos:prefLabel "Konkneipant"@en , "Konkneipant"@sv , "Konkneipant"@de , "Konkneipant"@it , "Konkneipant"@fr ;
-    skos:altLabel "Guest Member"@en , "Kneipgast"@de ;
+    skos:altLabel "Kneipgast"@de ;
     skos:definition "A student or alumnus who takes part in the gatherings of a Verbindung, for example the Kneipe, without being a member."@en ,
                     "En student eller alumn som deltar i en Verbindungs sammankomster, till exempel Kneipe, utan att vara medlem."@sv ,
                     "Ein Student oder Ehemaliger, der an den Zusammenkünften einer Verbindung, etwa der Kneipe, teilnimmt, ohne Mitglied zu sein."@de ,
@@ -1442,8 +1543,8 @@ fraternalc:consenior a mbr:Office , skos:Concept , owl:NamedIndividual ;
 
 fraternalc:scriptor a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
-    skos:prefLabel "Scriptor"@en , "Skriptor"@sv , "Schriftführer"@de , "Scriptor"@it , "Scriptor"@fr ;
-    skos:altLabel "Schriftwart"@de , "Scriptor"@de ;
+    skos:prefLabel "Scriptor"@en , "Skriptor"@sv , "Scriptor"@de , "Scriptor"@it , "Scriptor"@fr ;
+    skos:altLabel "Schriftwart"@de ;
     skos:definition "Keeps the minutes of the convent and the correspondence of the active branch."@en ,
                     "För konventets protokoll och aktivitasens korrespondens."@sv ,
                     "Führt die Protokolle des Conventes und die Korrespondenz der Aktivitas."@de ,
@@ -1453,7 +1554,7 @@ fraternalc:scriptor a mbr:Office , skos:Concept , owl:NamedIndividual ;
 fraternalc:kassenwart a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungOffices ; skos:topConceptOf fraternalc:StudentenverbindungOffices ;
     skos:prefLabel "Kassenwart"@en , "Kassör"@sv , "Kassenwart"@de , "Kassenwart"@it , "Kassenwart"@fr ;
-    skos:altLabel "Treasurer"@en , "Kassier"@de , "Kassierer"@de , "Quästor"@de ;
+    skos:altLabel "Kassier"@de , "Kassierer"@de , "Quästor"@de ;
     skos:definition "Manages the finances of the active branch."@en ,
                     "Förvaltar aktivitasens ekonomi."@sv ,
                     "Verwaltet die Finanzen der Aktivitas."@de ,

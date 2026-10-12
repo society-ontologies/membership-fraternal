@@ -12,16 +12,16 @@ subject_id	subject_label	predicate_id	object_id	object_label	mapping_justificati
 fraternalc:initiationCeremony	Initiation Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
 fraternalc:degreeCeremony	Degree Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
 fraternalc:installation	Installation of Officers	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
-fraternalc:memorialCeremony	Memorial Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
-fraternalc:festiveBoard	Festive Board	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	The ritual meal that follows a ceremony; fraternalc:CeremonyTypes counts it as a kind of ceremony.
+fraternalc:memorialCeremony	Memorial Ceremony	skos:broadMatch	mbrc:commemoration	Commemoration	semapv:ManualMappingCuration	0.9
+fraternalc:festiveBoard	Festive Board	skos:broadMatch	mbrc:formalDinner	Formal Dinner	semapv:ManualMappingCuration	0.8	The meal with toasts that follows a lodge meeting; a kind of formal dinner, not of ceremony.
 fraternalc:patronsFeast	Patron's Feast	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	A feast in honour of the order's patron; fraternalc:CeremonyTypes counts it as a kind of ceremony.
 fraternalc:openMeeting	Open Meeting	skos:broadMatch	mbrc:meeting	Meeting	semapv:ManualMappingCuration	0.8	No ritual is worked, so it is a kind of meeting and not of mbrc:ceremony.
 fraternalc:convent	Convent	skos:broadMatch	mbrc:generalMeeting	General Meeting	semapv:ManualMappingCuration	0.8	The assembly of the members, which decides the affairs of the Verbindung.
-fraternalc:kneipe	Kneipe	skos:broadMatch	mbrc:formalDinner	Formal Dinner	semapv:ManualMappingCuration	0.5	A formal gathering with communal singing and drinking rather than a dinner; the nearest hub concept.
-fraternalc:kommers	Kommers	skos:broadMatch	mbrc:formalDinner	Formal Dinner	semapv:ManualMappingCuration	0.5	A ceremonial form of the Kneipe; the nearest hub concept.
+fraternalc:kneipe	Kneipe	skos:broadMatch	mbrc:socialEvening	Social Evening	semapv:ManualMappingCuration	0.8	A gathering with communal singing and drinking, governed by fixed rules of conduct.
+fraternalc:kommers	Kommers	skos:broadMatch	mbrc:socialEvening	Social Evening	semapv:ManualMappingCuration	0.6	A ceremonial form of the Kneipe, more formal than a social evening.
 fraternalc:stiftungsfest	Stiftungsfest	skos:broadMatch	mbrc:anniversary	Anniversary	semapv:ManualMappingCuration	0.9	The yearly celebration of the foundation.
-fraternalc:mensur	Mensur	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.5	A regulated bout under fixed rules rather than a ritual of admission; the nearest hub concept.
+fraternalc:mensur	Mensur	skos:broadMatch	mbrc:contest	Contest	semapv:ManualMappingCuration	0.6	A regulated fencing bout under fixed rules; nobody wins or loses it, so only a loose kind of contest.
 fraternalc:rezeption	Reception	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	
 fraternalc:burschung	Burschung	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	
 fraternalc:philistrierung	Philistration	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	
-fraternalc:fackelzug	Torchlight Procession	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.5	A torchlit procession rather than a ritual; the nearest hub concept.
+fraternalc:fackelzug	Torchlight Procession	skos:broadMatch	mbrc:procession	Procession	semapv:ManualMappingCuration	0.9
