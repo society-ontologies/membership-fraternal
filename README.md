@@ -137,7 +137,7 @@ make cq              # competency questions (tests/cq/)
 make mappings        # SSSOM TSV → mappings/generated/*.ttl
 make wikidata-check  # every wd: link exists and is not a redirect (network)
 make dl              # OWL 2 DL profile (ROBOT)
-make reason          # HermiT: consistency + expected/forbidden inferences (ROBOT)
+make reason          # HermiT: consistency + expected/forbidden inferences + a canary that must be inconsistent (ROBOT)
 make reuse           # every file has a license (REUSE)
 make i18n            # translations: registered, well-formed language tags and English text behind each (tests/i18n/)
 make docs            # regenerate docs/ with pyLODE (pinned to 3.2.1), one page per language; commit the result
@@ -181,6 +181,9 @@ The aim is that no single person or service is a point of failure:
 Questions and proposals: [GitHub issues](https://github.com/society-ontologies/membership-fraternal/issues).
 
 ## Changelog
+
+**Unreleased.** Tests only.
+- Reasoning tests: `make reason` now also runs a canary (`tests/reasoning/canary/`) that must be reported inconsistent, which shows that property domains are applied to the sample data. The `query --update` step in the reasoning run is documented: besides dropping dates, it makes ROBOT read the properties a sample uses as object and datatype properties, which the stack declares; without it domains, ranges and `owl:hasValue` do nothing and six expected inferences are missing. New expected inference: `th:Thistledown` is an `mbr:GentlemensClub` although its gender policy is now mixed. New forbidden inferences: a period is not an organisation.
 
 **Unreleased.** Additions only.
 - History of an organisation's gender policy, admission mode, ownership model and status: new class `mbr:OrganizationPeriod`, linked from the organisation with `mbr:hasPeriod`, with the existing value properties, `mbr:startDate` and `mbr:endDate`, and the new `mbr:decisionDate` for when a change was decided. The properties on the organisation itself keep their meaning and become the registered current picture; nothing is removed, renamed or made stricter for existing data. Shapes check that a period has a value, belongs to one organisation, uses the right codelists, and does not certainly overlap another period with a different value of the same single-valued property. Example in `tests/data/organisationsperioder-exempel.ttl`, query in `tests/cq/12`. Not covered: `org:classification` over time, and a check that the current picture agrees with the periods.

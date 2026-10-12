@@ -15,8 +15,9 @@ VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/da
          tests/data/forening-exempel.ttl tests/data/medlemskap-exempel.ttl \
          tests/data/organisationsperioder-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
+CANARY := $(wildcard tests/reasoning/canary/*.ttl)
 
-.PHONY: all validate shacl shacl-invalid skos cq i18n mappings wikidata-check dl reason reuse docs freeze clean
+.PHONY: all validate shacl shacl-invalid skos cq i18n mappings wikidata-check dl reason reason-canary reuse docs freeze clean
 
 all: validate shacl shacl-invalid skos cq i18n
 
@@ -26,7 +27,7 @@ $(BUILD):
 # --- Syntax ---------------------------------------------------------------
 
 validate:
-	@for f in $(ONT) $(SHAPES) $(MAPPINGS_TTL) tests/data/*.ttl $(INVALID); do \
+	@for f in $(ONT) $(SHAPES) $(MAPPINGS_TTL) tests/data/*.ttl $(INVALID) $(CANARY); do \
 	  riot --validate "$$f" || { echo "syntax error in $$f"; exit 1; }; \
 	done; echo "syntax OK"
 
@@ -109,7 +110,14 @@ dl: | $(BUILD)
 	      --input fraternal/fraternal-codes.ttl --output $(BUILD)/dl-report.txt
 
 # Consistency + no unsatisfiable classes (robot reason fails otherwise), then the
-# expected / forbidden inferences in tests/reasoning/ (robot verify fails on any row).
+# expected / forbidden inferences in tests/reasoning/ (robot verify fails on any row),
+# then the canary.
+#
+# The `query --update` step is not only for dates. A sample file is read on its own, where
+# the properties it uses are not declared, and ROBOT then reads them as annotations that no
+# reasoner looks at. The update round-trips the merged graph through RDF, and after that
+# the declared properties are object properties and datatype properties again. Without it
+# domains, ranges and owl:hasValue silently do nothing (mbr:GentlemensClub is not inferred).
 reason: | $(BUILD)
 	robot --catalog catalog-v001.xml \
 	  merge --input fraternal/fraternal-codes.ttl $(foreach d,$(VALID),--input $(d)) \
@@ -117,6 +125,24 @@ reason: | $(BUILD)
 	  reason --reasoner HermiT --axiom-generators "ClassAssertion" --include-indirect true \
 	  --output $(BUILD)/reasoned.ttl
 	robot verify --input $(BUILD)/reasoned.ttl --queries tests/reasoning/*.rq --output-dir $(BUILD)
+	@$(MAKE) --no-print-directory reason-canary
+
+# Each canary in tests/reasoning/canary/ must make the reasoner report an inconsistency,
+# which shows that domains are applied to the data. A canary that is consistent means the
+# pipeline has stopped applying them; one that fails for another reason is also an error.
+reason-canary: | $(BUILD)
+	@for c in $(CANARY); do \
+	  if robot --catalog catalog-v001.xml \
+	       merge --input fraternal/fraternal-codes.ttl --input "$$c" \
+	       query --update tests/reasoning/00-ta-bort-datum.ru \
+	       reason --reasoner HermiT --output $(BUILD)/canary.ttl > $(BUILD)/canary.log 2>&1; then \
+	    echo "FAIL  $$c is consistent, but should not be"; exit 1; \
+	  elif grep -q 'inconsistent' $(BUILD)/canary.log; then \
+	    echo "PASS  $$c (inconsistent, as intended)"; \
+	  else \
+	    echo "FAIL  $$c failed for another reason"; cat $(BUILD)/canary.log; exit 1; \
+	  fi; \
+	done
 
 # --- Licensing (REUSE.toml + LICENSES/) --------------------------------------
 
