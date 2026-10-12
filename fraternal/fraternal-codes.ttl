@@ -674,7 +674,7 @@ fraternalc:noDogmaticRequirement a skos:Concept , owl:NamedIndividual ;
                     "Les membres n'ont à professer aucune croyance ni aucune incroyance. En franc-maçonnerie française, les obédiences adogmatiques, comme le Grand Orient de France qui a supprimé cette exigence en 1877, adoptent cette position."@fr ,
                     "Von den Mitgliedern wird kein Bekenntnis zu Glauben oder Unglauben verlangt. In der französischen Freimaurerei vertreten die adogmatischen Obedienzen diese Haltung, etwa der Grand Orient de France, der die Anforderung 1877 abschaffte."@de ,
                     "Ai soci non si chiede di professare alcuna credenza né incredulità. Nella massoneria francese questa posizione è propria delle obbedienze adogmatiche, come il Grande Oriente di Francia, che tolse il requisito nel 1877."@it ;
-    skos:scopeNote "The opposite of fraternalc:supremeBeingRequirement, which is a kind of fraternalc:religiousRequirement."@en , "L'inverse de fraternalc:supremeBeingRequirement, qui est une sorte de fraternalc:religiousRequirement."@fr , "Das Gegenteil von fraternalc:supremeBeingRequirement, einer Art von fraternalc:religiousRequirement."@de , "L'opposto di fraternalc:supremeBeingRequirement, che è una forma di fraternalc:religiousRequirement."@it .
+    skos:scopeNote "The opposite of fraternalc:supremeBeingRequirement, which is a kind of fraternalc:religiousRequirement."@en , "L'inverse de fraternalc:supremeBeingRequirement, qui est une sorte de fraternalc:religiousRequirement."@fr , "Das Gegenteil von fraternalc:supremeBeingRequirement, einer Art von fraternalc:religiousRequirement."@de , "L'opposto di fraternalc:supremeBeingRequirement, che è una forma di fraternalc:religiousRequirement."@it , "Motsatsen till fraternalc:supremeBeingRequirement, som är en form av fraternalc:religiousRequirement."@sv .
 
 fraternalc:itinerantTraining a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -685,7 +685,7 @@ fraternalc:itinerantTraining a skos:Concept , owl:NamedIndividual ;
                     "Les membres en formation voyagent d'un lieu de travail et d'une ville à l'autre, souvent pendant des années, pour apprendre leur métier, comme le font les compagnons français lors de leur Tour de France."@fr ,
                     "Mitglieder in Ausbildung ziehen, oft jahrelang, zwischen Werkstätten und Orten umher, um ihr Gewerbe zu erlernen, wie es die französischen Compagnons auf ihrer Tour de France tun."@de ,
                     "I soci in formazione viaggiano tra botteghe e luoghi, spesso per anni, per imparare il mestiere, come fanno i compagnons francesi nel loro Tour de France."@it ;
-    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en , "Le Tour de France des compagnons n'est pas la course cycliste."@fr , "Die Tour de France der Compagnons ist nicht das Radrennen."@de , "Il Tour de France dei compagnons non è la corsa ciclistica."@it .
+    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en , "Le Tour de France des compagnons n'est pas la course cycliste."@fr , "Die Tour de France der Compagnons ist nicht das Radrennen."@de , "Il Tour de France dei compagnons non è la corsa ciclistica."@it , "Compagnonernas Tour de France är inte cykelloppet."@sv .
 
 fraternalc:masterpieceRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -705,7 +705,7 @@ fraternalc:masonicRite a skos:Concept , owl:NamedIndividual ;
                     "Tradition rituelle selon laquelle travaille une loge ou un corps maçonnique, avec sa propre rédaction des cérémonies et sa propre suite de hauts grades."@fr ,
                     "Die rituelle Tradition, nach der eine Loge oder freimaurerische Körperschaft arbeitet, mit eigenem Wortlaut der Zeremonien und einer eigenen Reihe höherer Grade."@de ,
                     "La tradizione rituale che una loggia o un corpo massonico pratica, con una propria formulazione delle cerimonie e una propria serie di gradi superiori."@it ;
-    skos:scopeNote "A rite is not a degree system: give the lodge's ladder with fraternal:degreeSystem and its rite with fraternal:characteristic."@en , "Un rite n'est pas un système de degrés : indiquer l'échelle de la loge avec fraternal:degreeSystem et son rite avec fraternal:characteristic."@fr , "Ein Ritus ist kein Gradsystem: Die Stufenfolge der Loge wird mit fraternal:degreeSystem angegeben und ihr Ritus mit fraternal:characteristic."@de , "Un rito non è un sistema di gradi: la scala della loggia si indica con fraternal:degreeSystem e il suo rito con fraternal:characteristic."@it ;
+    skos:scopeNote "A rite is not a degree system: give the lodge's ladder with fraternal:degreeSystem and its rite with fraternal:characteristic."@en , "Un rite n'est pas un système de degrés : indiquer l'échelle de la loge avec fraternal:degreeSystem et son rite avec fraternal:characteristic."@fr , "Ein Ritus ist kein Gradsystem: Die Stufenfolge der Loge wird mit fraternal:degreeSystem angegeben und ihr Ritus mit fraternal:characteristic."@de , "Un rito non è un sistema di gradi: la scala della loggia si indica con fraternal:degreeSystem e il suo rito con fraternal:characteristic."@it , "En rit är inte ett gradsystem: logens gradstege anges med fraternal:degreeSystem och dess rit med fraternal:characteristic."@sv ;
     skos:narrower fraternalc:ancientAndAcceptedScottishRite , fraternalc:frenchRite , fraternalc:rectifiedScottishRite .
 
 fraternalc:ancientAndAcceptedScottishRite a skos:Concept , owl:NamedIndividual ;
@@ -1263,7 +1263,7 @@ fraternalc:orator a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Officier garant des constitutions et des règlements de la loge, qui donne ses conclusions sur les travaux présentés."@fr ,
                     "Der Amtsträger, der die Verfassung und die Regeln einer Loge hütet und zu den vorgetragenen Arbeiten Schlussfolgerungen gibt."@de ,
                     "Il titolare di carica che custodisce la costituzione e le regole di una loggia e dà le conclusioni sui lavori presentati."@it ;
-    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it .
+    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it , "Inget generiskt ämbete ligger nära, så det är inte mappat."@sv .
 
 fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -1273,7 +1273,7 @@ fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Officier qui recueille et distribue les secours de bienfaisance de la loge et veille sur les membres dans le besoin."@fr ,
                     "Der Amtsträger, der die wohltätigen Gaben der Loge sammelt und verteilt und sich um bedürftige Mitglieder kümmert."@de ,
                     "Il titolare di carica che raccoglie e distribuisce i soccorsi di beneficenza della loggia e si cura dei soci bisognosi."@it ;
-    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it .
+    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it , "Inget generiskt ämbete ligger nära, så det är inte mappat."@sv .
 
 fraternalc:expert a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -1301,7 +1301,7 @@ fraternalc:housePrevot a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Responsable d'une maison de compagnons (cayenne), où les compagnons et aspirants d'une ville logent et se réunissent."@fr ,
                     "Der Amtsträger, der ein Haus der Compagnons (cayenne) leitet, in dem die Compagnons und Aspiranten einer Stadt wohnen und sich treffen."@de ,
                     "Il titolare di carica a capo di una casa dei compagnons (cayenne), dove i compagnons e gli aspiranti di una città abitano e si riuniscono."@it ;
-    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en , "À ne pas confondre avec mbrc:provost, qui maintient l'ordre lors des réunions."@fr , "Nicht mbrc:provost, der bei Zusammenkünften für Ordnung sorgt."@de , "Non è mbrc:provost, che mantiene l'ordine negli incontri."@it .
+    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en , "À ne pas confondre avec mbrc:provost, qui maintient l'ordre lors des réunions."@fr , "Nicht mbrc:provost, der bei Zusammenkünften für Ordnung sorgt."@de , "Non è mbrc:provost, che mantiene l'ordine negli incontri."@it , "Inte mbrc:provost, som håller ordning vid sammankomster."@sv .
 
 fraternalc:rolleur a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
