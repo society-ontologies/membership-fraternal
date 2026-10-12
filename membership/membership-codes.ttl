@@ -257,7 +257,7 @@ mbrc:society a skos:Concept , owl:NamedIndividual ;
                     "Association de personnes unies par un intérêt, un but ou une profession communs."@fr ,
                     "Ein Zusammenschluss von Menschen, die ein gemeinsames Interesse, ein gemeinsamer Zweck oder ein gemeinsamer Beruf verbindet."@de ;
     skos:narrower mbrc:learnedSociety , mbrc:charitableSociety , mbrc:studentNation , mbrc:studentSociety ,
-                  mbrc:alumniAssociation , mbrc:decorationHoldersAssociation .
+                  mbrc:alumniAssociation , mbrc:decorationHoldersAssociation , mbrc:guild , mbrc:contrada .
 
 mbrc:learnedSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
@@ -319,6 +319,28 @@ mbrc:studentSociety a skos:Concept , owl:NamedIndividual ;
                     "En förening vars medlemmar är studenter eller före detta studenter."@sv ,
                     "Société dont les membres sont des étudiants ou d'anciens étudiants."@fr ,
                     "Eine Gesellschaft, deren Mitglieder Studierende oder ehemalige Studierende sind."@de .
+
+mbrc:guild a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Guild"@en , "Skrå"@sv , "Corporazione di mestiere"@it ;
+    skos:altLabel "Arte"@it , "Gille"@sv ;
+    skos:definition "An association of the practitioners of one trade or craft in a town, founded to regulate the trade and look after its members: a medieval guild, a livery company, a Zunft, an Italian arte."@en ,
+                    "En sammanslutning av utövarna av ett hantverk eller yrke i en stad, bildad för att reglera yrket och ta hand om sina medlemmar: ett medeltida skrå, en livery company, en Zunft, en italiensk arte."@sv ,
+                    "Associazione dei praticanti di un mestiere o di un'arte in una città, nata per regolare il mestiere e provvedere ai propri membri: una gilda medievale, una livery company, una Zunft, un'arte italiana."@it ;
+    skos:scopeNote "A brotherhood that passes a trade on through initiation, ritual and stages of membership is fraternalc:craftBrotherhood. A body that only represents a trade today is a mbrc:professionalClub or a mbrc:tradeUnion, not a guild; use this type for organisations that call themselves guilds or continue a historic one."@en ,
+                   "Ett brödraskap som för ett yrke vidare genom initiering, ritual och medlemsstadier är fraternalc:craftBrotherhood. Ett organ som i dag bara företräder ett yrke är en mbrc:professionalClub eller en mbrc:tradeUnion, inte ett skrå; använd typen för organisationer som kallar sig skrå eller för ett historiskt skrå vidare."@sv ,
+                   "Una confraternita che trasmette un mestiere con iniziazione, rituale e stadi di appartenenza è fraternalc:craftBrotherhood. Un organismo che oggi si limita a rappresentare un mestiere è un mbrc:professionalClub o un mbrc:tradeUnion, non una corporazione; questo tipo vale per le organizzazioni che si dicono corporazioni o che ne proseguono una storica."@it .
+
+mbrc:contrada a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
+    skos:prefLabel "Contrada"@en , "Contrada"@sv , "Contrada"@it ;
+    skos:altLabel "Neighbourhood society"@en , "Kvartersförening"@sv ;
+    skos:definition "A society tied to a district of a town, whose members, the contradaioli, belong to it from birth or baptism and which carries its district's colours and traditions into a civic festival, as the seventeen contrade of Siena do in the Palio."@en ,
+                    "Ett sällskap knutet till en stadsdel, vars medlemmar, contradaioli, hör till det från födseln eller dopet och som för sin stadsdels färger och traditioner in i en stadsfest, som Sienas sjutton contrade gör i Palio."@sv ,
+                    "Società legata a un rione della città, i cui membri, i contradaioli, ne fanno parte dalla nascita o dal battesimo e che porta i colori e le tradizioni del proprio rione in una festa civica, come le diciassette contrade di Siena nel Palio."@it ;
+    skos:scopeNote "Membership by birth and baptism has no value of its own in mbrc:AdmissionModes; the closest is mbrc:hereditary. The head of a contrada, the priore, is recorded as mbrc:president with the local title as label; the capitano, who leads the contrada in the contest, is a local office."@en ,
+                   "Medlemskap genom födelse och dop har inget eget värde i mbrc:AdmissionModes; närmast är mbrc:hereditary. En contradas chef, priore, anges som mbrc:president med den lokala titeln som etikett; capitano, som leder contradan i tävlingen, är ett lokalt ämbete."@sv ,
+                   "L'appartenenza per nascita e battesimo non ha un valore proprio in mbrc:AdmissionModes; il più vicino è mbrc:hereditary. Il capo di una contrada, il priore, si registra come mbrc:president con il titolo locale come etichetta; il capitano, che guida la contrada nella gara, è un ufficio locale."@it .
 
 mbrc:fraternalOrganization a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
@@ -699,7 +721,7 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
                        mbrc:herald , mbrc:provost , mbrc:introducer , mbrc:steward ,
                        mbrc:cellarMaster , mbrc:kitchenMaster , mbrc:songLeader ,
                        mbrc:directorOfMusic , mbrc:chronicler , mbrc:webmaster , mbrc:custodian ,
-                       mbrc:seniorAdviser , mbrc:regionalRepresentative , mbrc:eventLeader .
+                       mbrc:seniorAdviser , mbrc:regionalRepresentative , mbrc:eventLeader , mbrc:auditor .
 
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
@@ -834,6 +856,13 @@ mbrc:eventLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Event Leader"@en , "Arrangemangsansvarig"@sv , "Responsable d'événement"@fr , "Veranstaltungsleiter"@de ;
     skos:definition "Leads a particular event, trip or project, often temporarily."@en , "Leder ett visst arrangemang, en resa eller ett projekt, ofta tillfälligt."@sv , "Dirige une manifestation, un voyage ou un projet donné, souvent à titre temporaire."@fr , "Leitet eine bestimmte Veranstaltung, Reise oder ein Projekt, oft vorübergehend."@de .
+
+mbrc:auditor a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Auditor"@en , "Revisor"@sv , "Revisore dei conti"@it ;
+    skos:definition "Checks the organisation's accounts and the board's management of them, independently of the board, and reports to the members."@en ,
+                    "Granskar organisationens räkenskaper och styrelsens förvaltning av dem, oberoende av styrelsen, och rapporterar till medlemmarna."@sv ,
+                    "Controlla i conti dell'organizzazione e la gestione che ne fa il direttivo, in modo indipendente da questo, e riferisce ai soci."@it .
 
 ##############################################################################
 # 6. GATHERING TYPES
@@ -1333,7 +1362,7 @@ mbrc:unincorporated a skos:Concept , owl:NamedIndividual ;
                     "En grupp som inte är en egen juridisk person: den kan inte äga egendom eller ingå avtal i eget namn, och medlemmarna eller funktionärerna agerar i eget namn. Hit hör informella sällskap (mbrc:informalCircle) och föreningar som inte tagit de steg som lagen kräver för att bli juridisk person."@sv ,
                     "Groupe qui n'est pas une personne morale : il ne peut pas posséder de biens ni conclure de contrats en son propre nom, et ses membres ou responsables agissent en leur nom propre. Comprend les cercles informels (mbrc:informalCircle) et les associations qui n'ont pas accompli les formalités que leur droit exige pour la personnalité morale."@fr ,
                     "Eine Gruppe, die keine eigene juristische Person ist: Sie kann nicht in eigenem Namen Eigentum halten oder Verträge schließen, und ihre Mitglieder oder Amtsträger handeln in eigenem Namen. Dazu gehören informelle Kreise (mbrc:informalCircle) und Vereinigungen, die die nach ihrem Recht für die Rechtsfähigkeit nötigen Schritte nicht vollzogen haben."@de ;
-    skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri."@en ;
+    skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri. The Italian associazione non riconosciuta (Codice civile art. 36-38) is only a loose fit: it has no legal personality but a common fund, and the persons who acted in its name also answer personally for its debts."@en ;
     skos:related mbrc:informalCircle .
 
 mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
@@ -1353,7 +1382,7 @@ mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
                     "En förening som blir juridisk person genom att föras in i eller anmälas till ett offentligt register. Registerposten kan ha ett identifierande nummer (se rov:registration)."@sv ,
                     "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ,
                     "Eine rechtsfähige Vereinigung, die dadurch juristische Person wird, dass sie in ein öffentliches Register eingetragen oder bei ihm angemeldet wird. Der Registereintrag kann eine Kennung tragen (siehe rov:registration)."@de ;
-    skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L)."@en .
+    skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L); an Italian associazione riconosciuta, entered in the register of legal persons (D.P.R. 361/2000) or, for a Terzo settore entity, in the RUNTS."@en .
 
 mbrc:foundation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
