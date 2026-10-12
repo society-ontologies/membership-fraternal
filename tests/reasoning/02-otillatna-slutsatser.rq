@@ -6,6 +6,8 @@ PREFIX mbr:  <https://w3id.org/membership#>
 PREFIX fraternal:  <https://w3id.org/fraternal#>
 PREFIX club:  <https://example.org/lanternmere/>
 PREFIX sor:   <https://example.org/soror-exemplum/>
+PREFIX org:   <http://www.w3.org/ns/org#>
+PREFIX th:    <https://example.org/thistledown/>
 
 SELECT ?wrong WHERE {
     VALUES (?s ?type) {
@@ -14,6 +16,10 @@ SELECT ?wrong WHERE {
         (club:Lanternmere   fraternal:FraternalOrder)   # a club is not an order
         (sor:FraterExemplum fraternal:Sorority)
         (club:guest1        mbr:MembershipOrganization)
+        # a period is not an organisation (the property domains must not leak onto it)
+        (th:policy-menonly  org:Organization)
+        (th:policy-mixed    org:Organization)
+        (th:policy-mixed    mbr:MembershipOrganization)
     }
     ?s rdf:type ?type .
     BIND (CONCAT(STR(?s), " must not be a ", STR(?type)) AS ?wrong)

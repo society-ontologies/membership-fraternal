@@ -1,0 +1,26 @@
+# Canary for `make reason`: this graph MUST be inconsistent.
+#
+# org:classification has the domain org:Organization, so a node that uses it is an
+# organisation. Here the node is an mbr:OrganizationPeriod, which the extra axiom below
+# says is not one, so the reasoner has to report a contradiction. If it does not, the
+# pipeline has stopped applying domains (and ranges and owl:hasValue) to the data, and
+# the "expected inferences" in tests/reasoning/ cannot be trusted. This is also why
+# mbr:organizationType and mbr:legalForm exist instead of using org:classification and
+# rov:orgType on a period.
+#
+# The disjointness axiom is only here, not in the ontology.
+
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/canary/> .
+
+mbr:OrganizationPeriod owl:disjointWith org:Organization .
+
+ex:Club a mbr:MembershipOrganization ;
+    org:classification mbrc:privateClub ;
+    mbr:hasPeriod ex:period .
+
+ex:period a mbr:OrganizationPeriod ;
+    org:classification mbrc:diningClub .
