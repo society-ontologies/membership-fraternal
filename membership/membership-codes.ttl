@@ -797,7 +797,8 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
                        mbrc:herald , mbrc:provost , mbrc:introducer , mbrc:steward ,
                        mbrc:cellarMaster , mbrc:kitchenMaster , mbrc:songLeader ,
                        mbrc:directorOfMusic , mbrc:chronicler , mbrc:webmaster , mbrc:custodian ,
-                       mbrc:seniorAdviser , mbrc:regionalRepresentative , mbrc:eventLeader , mbrc:auditor .
+                       mbrc:seniorAdviser , mbrc:regionalRepresentative , mbrc:eventLeader , mbrc:auditor ,
+                       mbrc:orator , mbrc:almoner , mbrc:activityLeader .
 
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
@@ -944,6 +945,34 @@ mbrc:auditor a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Controlla i conti dell'organizzazione e la gestione che ne fa il direttivo, in modo indipendente da questo, e riferisce ai soci."@it ,
                     "Contrôle les comptes de l'organisation et la gestion qu'en fait le bureau, indépendamment de celui-ci, et rend compte aux membres."@fr ,
                     "Prüft die Rechnungsführung der Organisation und die Verwaltung durch den Vorstand, unabhängig von diesem, und berichtet den Mitgliedern."@de .
+
+mbrc:orator a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Orator"@en , "Orator"@sv , "Orateur"@fr , "Redner"@de , "Oratore"@it ;
+    skos:altLabel "Talare"@sv ;
+    skos:definition "Guards the constitution and rules of the organisation and gives conclusions on the work presented at its meetings. Mostly found in lodges and learned societies."@en ,
+                    "Vaktar organisationens stadgar och regler och framför slutsatser om det arbete som läggs fram vid dess sammankomster. Förekommer mest i loger och lärda sällskap."@sv ,
+                    "Garant des statuts et des règlements de l'organisation, il donne ses conclusions sur les travaux présentés lors de ses réunions. On le trouve surtout dans les loges et les sociétés savantes."@fr ,
+                    "Hütet die Satzung und die Regeln der Organisation und gibt zu den bei ihren Zusammenkünften vorgetragenen Arbeiten Schlussfolgerungen. Findet sich vor allem in Logen und gelehrten Gesellschaften."@de ,
+                    "Custodisce lo statuto e le regole dell'organizzazione e dà le conclusioni sui lavori presentati alle sue riunioni. Si trova soprattutto nelle logge e nelle società dotte."@it .
+
+mbrc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Almoner"@en , "Allmosegivare"@sv , "Hospitalier"@fr , "Almosenier"@de , "Elemosiniere"@it ;
+    skos:definition "Collects and distributes the organisation's charitable relief and looks after members in need."@en ,
+                    "Samlar in och delar ut organisationens understöd och tar hand om medlemmar i nöd."@sv ,
+                    "Recueille et distribue les secours de bienfaisance de l'organisation et veille sur les membres dans le besoin."@fr ,
+                    "Sammelt und verteilt die wohltätigen Gaben der Organisation und kümmert sich um bedürftige Mitglieder."@de ,
+                    "Raccoglie e distribuisce i soccorsi di beneficenza dell'organizzazione e si cura dei soci bisognosi."@it .
+
+mbrc:activityLeader a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
+    skos:prefLabel "Activity Leader"@en , "Aktivitetsansvarig"@sv , "Responsable d'activité"@fr , "Aktivitätsverantwortlicher"@de , "Responsabile di attività"@it ;
+    skos:definition "Leads a regular activity of the organisation, such as a sports section, a choir or fencing practice, as distinct from a single event."@en ,
+                    "Leder en regelbunden verksamhet inom organisationen, till exempel en idrottssektion, en kör eller fäktövningar, till skillnad från ett enskilt arrangemang."@sv ,
+                    "Dirige une activité régulière de l'organisation, comme une section sportive, une chorale ou l'entraînement à l'escrime, à la différence d'une manifestation isolée."@fr ,
+                    "Leitet eine regelmäßige Tätigkeit der Organisation, etwa eine Sportabteilung, einen Chor oder den Fechtbetrieb, im Unterschied zu einer einzelnen Veranstaltung."@de ,
+                    "Dirige un'attività regolare dell'organizzazione, come una sezione sportiva, un coro o gli allenamenti di scherma, a differenza di un singolo evento."@it .
 
 ##############################################################################
 # 6. GATHERING TYPES

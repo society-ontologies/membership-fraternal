@@ -67,7 +67,7 @@ A directory or inventory of clubs or associations needs no extra ontology. Each 
 |---|---|
 | Name, former names | `rdfs:label`; former names as `skos:altLabel`, or a renaming as an `org:ChangeEvent` |
 | Type of organisation | `org:classification`, a value from `mbrc:OrganizationTypes` (gentlemen's, ladies', political, university, professional, arts, armed forces, yacht, service, hobby, supporters' club; political party, trade union …), or from your own list mapped to it |
-| Legal form | `rov:orgType` ([W3C Registered Organization Vocabulary](https://www.w3.org/TR/vocab-regorg/)), a value from `mbrc:LegalForms`: unincorporated, incorporated association (registered or not), foundation, company, public-law body. Map a national list such as ISO 20275 to these values with SKOS mappings. |
+| Legal form | `rov:orgType` ([W3C Registered Organization Vocabulary](https://www.w3.org/TR/vocab-regorg/)), a value from `mbrc:LegalForms`: unincorporated, incorporated association (registered or not), foundation, company, public-law body. Map a national list such as ISO 20275 to these values with SKOS mappings. Note that `rov:orgType` is declared a sub-property of `org:classification`: a reasoner will also read a legal form as a classification. The shapes run on the asserted data without entailment, so they keep the two apart. |
 | Register number | `rov:registration` → `adms:Identifier` (`skos:notation` for the number, `adms:schemaAgency` for the register) |
 | How members are admitted | `mbr:admissionMode`: by invitation, proposal and ballot, open application (the board decides), open enrolment (anyone may join), hereditary, ex officio |
 | Membership fees | `mbr:membershipFee` → `mbr:MembershipFee` (`mbr:feeType`: entrance, annual, monthly or life-membership fee; `schema:price`; ISO 4217 currency in `schema:priceCurrency`; `mbr:appliesToCategory` when the fee is for, say, junior members only; start and end dates). A fee change is a new fee, and the old one gets an end date. |
@@ -195,11 +195,14 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
   - `mbr:count` accepts `"42"^^xsd:nonNegativeInteger`, which the shape used to reject although the OWL range already was `xsd:nonNegativeInteger`. A plain `42` (an `xsd:integer`) still passes when it is zero or more.
   - A membership number may be reused when the periods certainly do not overlap.
   - Partial dates that may overlap are no longer ordered by year.
+  - `fraternal:degreeRank` accepts `"2"^^xsd:positiveInteger`, which the shape used to reject although the OWL range already was `xsd:positiveInteger`. A plain `2` still passes when it is one or more.
 - Stricter (data that passed before can fail):
+  - The same rule (design rule 3) now covers `fraternal:memberTitle`, `characteristic`, `degreeKind`, `insigniaType`, `assessmentOutcome` and the office in `org:role` of a term of office (`mbrc:OfficeTypes`). Add the mapping, or use a concept in the scheme.
+  - A `fraternal:Lodge` is checked too: its `org:classification` and `fraternal:characteristic` values, and that `recognizes`, `inAmityWith` and `warrantedBy` point to organisations. A lodge is a `mbr:Branch`, so the organisation shapes never reached it.
   - A codelist value must be in the hub scheme for its property or mapped to it (see design rule 3). A value from a wrong scheme, or a local concept with no mapping, is now a violation. Add the mapping, or use the hub concept.
   - `mbr:membershipNumber` must be `xsd:string`; an integer such as `1207` is now a violation. Write `"1207"`.
   - An end date in the same year as the start, but certainly earlier (`2000-01-01` before `2000-06-01`), is now an error. It passed before because only the years were compared.
-- New: `mbr:resultingCategory` on membership events (the whole category set after the event); `mbrc:ceremony` in `mbrc:GatheringTypes`, the hub for the fraternal ceremony types, which map to it in `mappings/fraternal-ceremonies.sssom.tsv`; a warning for dates outside the supported years.
+- New: generic offices `mbrc:orator`, `mbrc:almoner` and `mbrc:activityLeader` in `mbrc:OfficeTypes` (the lodge orator and almoner and the fencing officer map to them); `mbr:resultingCategory` on membership events (the whole category set after the event); `mbrc:ceremony` in `mbrc:GatheringTypes`, the hub for the fraternal ceremony types, which map to it in `mappings/fraternal-ceremonies.sssom.tsv`; a warning for dates outside the supported years.
 - Checks: `make shacl` and `make shacl-invalid` now merge the mappings into the data graph. New sample `tests/data/medlemskap-exempel.ttl` and seven new invalid fixtures.
 - Not covered: a mapped local concept is accepted by SHACL but does not make an organisation a `mbr:GentlemensClub`; no normalisation rule exists yet.
 

@@ -190,6 +190,10 @@ mbrsh:FeeTypeValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:FeeTypes ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:FeeTypes ] ) .
 
+mbrsh:OfficeTypeValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:OfficeTypes ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:OfficeTypes ] ) .
+
 mbrsh:LegalFormValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:LegalForms ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:LegalForms ] ) .
@@ -352,7 +356,9 @@ mbrsh:TenureShape a sh:NodeShape ;
     sh:property [ sh:path org:member ; sh:minCount 1 ; sh:maxCount 1 ; sh:class foaf:Agent ] ,
                 [ sh:path org:organization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ] ,
                 [ sh:path org:role ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mbr:Office ;
-                  sh:message "A term of office needs exactly one org:role that is a mbr:Office. | En ämbetsperiod behöver exakt en org:role som är ett mbr:Office. | Un mandat a besoin d'exactement un org:role qui est un mbr:Office. | Eine Amtszeit braucht genau eine org:role, die ein mbr:Office ist. | Un mandato richiede esattamente un org:role che sia un mbr:Office." ] .
+                  sh:message "A term of office needs exactly one org:role that is a mbr:Office. | En ämbetsperiod behöver exakt en org:role som är ett mbr:Office. | Un mandat a besoin d'exactement un org:role qui est un mbr:Office. | Eine Amtszeit braucht genau eine org:role, die ein mbr:Office ist. | Un mandato richiede esattamente un org:role che sia un mbr:Office." ] ,
+                [ sh:path org:role ; sh:node mbrsh:OfficeTypeValue ;
+                  sh:message "org:role must be a concept in mbrc:OfficeTypes, or one mapped to it. | org:role ska vara ett begrepp i mbrc:OfficeTypes, eller ett som är mappat dit. | org:role doit être un concept de mbrc:OfficeTypes, ou un concept qui y est associé. | org:role muss ein Konzept aus mbrc:OfficeTypes sein oder eines, das darauf abgebildet ist. | org:role deve essere un concetto di mbrc:OfficeTypes, o uno associato a esso." ] .
 
 ##############################################################################
 # Gatherings and participation

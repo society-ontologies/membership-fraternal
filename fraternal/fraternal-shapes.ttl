@@ -14,6 +14,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fraternal:    <https://w3id.org/fraternal#> .
 @prefix fraternalsh:  <https://w3id.org/fraternal/shapes#> .
+@prefix fraternalc:   <https://w3id.org/fraternal/code/> .
+@prefix mbrsh:   <https://w3id.org/membership/shapes#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
 
 <https://w3id.org/fraternal/shapes>
     a owl:Ontology ;
@@ -31,6 +34,39 @@
 <https://github.com/society-ontologies> a foaf:Organization ;
     foaf:name "Society Ontologies" .
 
+##############################################################################
+# Codelist values
+#
+# Same rule as in membership-shapes.ttl: a value is a concept in the scheme for
+# its property, or a local concept with a direct skos:exactMatch, skos:closeMatch
+# or skos:broadMatch to a concept in that scheme.
+##############################################################################
+
+fraternalsh:MemberTitleValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:MemberTitles ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:MemberTitles ] ) .
+
+fraternalsh:CharacteristicValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:Characteristics ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:Characteristics ] ) .
+
+fraternalsh:DegreeKindValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:DegreeKinds ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:DegreeKinds ] ) .
+
+fraternalsh:InsigniaTypeValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:InsigniaTypes ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:InsigniaTypes ] ) .
+
+fraternalsh:AssessmentOutcomeValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:AssessmentOutcomes ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:AssessmentOutcomes ] ) .
+
+# The OWL range of fraternal:degreeRank is xsd:positiveInteger. A plain Turtle 3 is an
+# xsd:integer with the same value, which the range also admits, so it passes when it is one or more.
+fraternalsh:RankList
+    sh:or ( [ sh:datatype xsd:positiveInteger ] [ sh:datatype xsd:integer ; sh:minInclusive 1 ] ) .
+
 fraternalsh:DegreeShape a sh:NodeShape ;
     sh:targetClass fraternal:Degree ;
     sh:property [ sh:path skos:inScheme ; sh:minCount 1 ;
@@ -38,9 +74,11 @@ fraternalsh:DegreeShape a sh:NodeShape ;
                   sh:qualifiedMinCount 1 ;
                   sh:message "A degree must be in at least one fraternal:DegreeSystem. | En grad måste ingå i minst ett fraternal:DegreeSystem. | Un degré doit figurer dans au moins un fraternal:DegreeSystem. | Ein Grad muss in mindestens einem fraternal:DegreeSystem enthalten sein. | Un grado deve far parte di almeno un fraternal:DegreeSystem." ] ,
                 [ sh:path fraternal:degreeRank ; sh:maxCount 1 ;
-                  sh:datatype xsd:integer ; sh:minInclusive 1 ] ,
+                  sh:node fraternalsh:RankList ;
+                  sh:message "fraternal:degreeRank must be one positive integer (xsd:positiveInteger, or xsd:integer of one or more). | fraternal:degreeRank ska vara ett enda positivt heltal (xsd:positiveInteger, eller xsd:integer som är ett eller större). | fraternal:degreeRank doit être un seul entier positif (xsd:positiveInteger, ou xsd:integer supérieur ou égal à un). | fraternal:degreeRank muss eine einzelne positive ganze Zahl sein (xsd:positiveInteger oder xsd:integer von eins oder mehr). | fraternal:degreeRank deve essere un solo intero positivo (xsd:positiveInteger, o xsd:integer pari o superiore a uno)." ] ,
                 [ sh:path fraternal:nextDegree ; sh:maxCount 1 ; sh:class fraternal:Degree ] ,
-                [ sh:path fraternal:degreeKind ; sh:class skos:Concept ] ;
+                [ sh:path fraternal:degreeKind ; sh:class skos:Concept ; sh:node fraternalsh:DegreeKindValue ;
+                  sh:message "fraternal:degreeKind must be a concept in fraternalc:DegreeKinds, or one mapped to it. | fraternal:degreeKind ska vara ett begrepp i fraternalc:DegreeKinds, eller ett som är mappat dit. | fraternal:degreeKind doit être un concept de fraternalc:DegreeKinds, ou un concept qui y est associé. | fraternal:degreeKind muss ein Konzept aus fraternalc:DegreeKinds sein oder eines, das darauf abgebildet ist. | fraternal:degreeKind deve essere un concetto di fraternalc:DegreeKinds, o uno associato a esso." ] ;
     sh:sparql [
         a sh:SPARQLConstraint ;
         sh:message "The next degree must be in the same degree system and have rank one higher. | Nästa grad måste ingå i samma gradsystem och ha ett gradnummer som är ett högre. | Le degré suivant doit figurer dans le même système de degrés et avoir un rang supérieur d'une unité. | Der nächste Grad muss im selben Gradsystem sein und einen um eins höheren Rang haben. | Il grado successivo deve far parte dello stesso sistema di gradi e avere una posizione superiore di uno." ;
@@ -73,11 +111,25 @@ fraternalsh:DegreeConferralShape a sh:NodeShape ;
 fraternalsh:FraternalOrderShape a sh:NodeShape ;
     sh:targetClass fraternal:FraternalOrder ;
     sh:property [ sh:path fraternal:degreeSystem ; sh:class fraternal:DegreeSystem ] ,
-                [ sh:path fraternal:memberTitle ; sh:class skos:Concept ] ,
-                [ sh:path fraternal:characteristic ; sh:class skos:Concept ] ,
+                [ sh:path fraternal:memberTitle ; sh:class skos:Concept ; sh:node fraternalsh:MemberTitleValue ;
+                  sh:message "fraternal:memberTitle must be a concept in fraternalc:MemberTitles, or one mapped to it. | fraternal:memberTitle ska vara ett begrepp i fraternalc:MemberTitles, eller ett som är mappat dit. | fraternal:memberTitle doit être un concept de fraternalc:MemberTitles, ou un concept qui y est associé. | fraternal:memberTitle muss ein Konzept aus fraternalc:MemberTitles sein oder eines, das darauf abgebildet ist. | fraternal:memberTitle deve essere un concetto di fraternalc:MemberTitles, o uno associato a esso." ] ,
+                [ sh:path fraternal:characteristic ; sh:class skos:Concept ; sh:node fraternalsh:CharacteristicValue ;
+                  sh:message "fraternal:characteristic must be a concept in fraternalc:Characteristics, or one mapped to it. | fraternal:characteristic ska vara ett begrepp i fraternalc:Characteristics, eller ett som är mappat dit. | fraternal:characteristic doit être un concept de fraternalc:Characteristics, ou un concept qui y est associé. | fraternal:characteristic muss ein Konzept aus fraternalc:Characteristics sein oder eines, das darauf abgebildet ist. | fraternal:characteristic deve essere un concetto di fraternalc:Characteristics, o uno associato a esso." ] ,
                 [ sh:path fraternal:recognizes ; sh:class org:Organization ] ,
                 [ sh:path fraternal:inAmityWith ; sh:class org:Organization ] ,
                 [ sh:path fraternal:fonsHonorum ; sh:class foaf:Agent ] .
+
+# A lodge is a mbr:Branch, not a mbr:MembershipOrganization, so neither the organisation
+# shape nor the fraternal order shape reach it. It carries its own rite, characteristics and recognition.
+fraternalsh:LodgeShape a sh:NodeShape ;
+    sh:targetClass fraternal:Lodge ;
+    sh:property [ sh:path org:classification ; sh:class skos:Concept ; sh:node mbrsh:OrganizationTypeValue ;
+                  sh:message "org:classification must be a concept in mbrc:OrganizationTypes, or one mapped to it. | org:classification ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit. | org:classification doit être un concept de mbrc:OrganizationTypes, ou un concept qui y est associé. | org:classification muss ein Konzept aus mbrc:OrganizationTypes sein oder eines, das darauf abgebildet ist. | org:classification deve essere un concetto di mbrc:OrganizationTypes, o uno associato a esso." ] ,
+                [ sh:path fraternal:characteristic ; sh:class skos:Concept ; sh:node fraternalsh:CharacteristicValue ;
+                  sh:message "fraternal:characteristic must be a concept in fraternalc:Characteristics, or one mapped to it. | fraternal:characteristic ska vara ett begrepp i fraternalc:Characteristics, eller ett som är mappat dit. | fraternal:characteristic doit être un concept de fraternalc:Characteristics, ou un concept qui y est associé. | fraternal:characteristic muss ein Konzept aus fraternalc:Characteristics sein oder eines, das darauf abgebildet ist. | fraternal:characteristic deve essere un concetto di fraternalc:Characteristics, o uno associato a esso." ] ,
+                [ sh:path fraternal:recognizes ; sh:class org:Organization ] ,
+                [ sh:path fraternal:inAmityWith ; sh:class org:Organization ] ,
+                [ sh:path fraternal:warrantedBy ; sh:class org:Organization ] .
 
 fraternalsh:LegitimacyAssessmentShape a sh:NodeShape ;
     sh:targetClass fraternal:LegitimacyAssessment ;
@@ -85,11 +137,15 @@ fraternalsh:LegitimacyAssessmentShape a sh:NodeShape ;
                   sh:message "An assessment needs exactly one assessed order. | En bedömning behöver exakt en bedömd orden. | Une évaluation a besoin d'exactement un ordre évalué. | Eine Beurteilung braucht genau einen beurteilten Orden. | Una valutazione richiede esattamente un ordine valutato." ] ,
                 [ sh:path fraternal:assessedBy ; sh:minCount 1 ; sh:class foaf:Agent ;
                   sh:message "An assessment needs the agent that made it (fraternal:assessedBy). | En bedömning behöver den agent som gjorde den (fraternal:assessedBy). | Une évaluation a besoin de l'agent qui l'a faite (fraternal:assessedBy). | Eine Beurteilung braucht den Akteur, der sie abgegeben hat (fraternal:assessedBy). | Una valutazione richiede l'agente che l'ha fatta (fraternal:assessedBy)." ] ,
-                [ sh:path fraternal:assessmentOutcome ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ] ,
+                [ sh:path fraternal:assessmentOutcome ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node fraternalsh:AssessmentOutcomeValue ;
+                  sh:message "fraternal:assessmentOutcome must be a concept in fraternalc:AssessmentOutcomes, or one mapped to it. | fraternal:assessmentOutcome ska vara ett begrepp i fraternalc:AssessmentOutcomes, eller ett som är mappat dit. | fraternal:assessmentOutcome doit être un concept de fraternalc:AssessmentOutcomes, ou un concept qui y est associé. | fraternal:assessmentOutcome muss ein Konzept aus fraternalc:AssessmentOutcomes sein oder eines, das darauf abgebildet ist. | fraternal:assessmentOutcome deve essere un concetto di fraternalc:AssessmentOutcomes, o uno associato a esso." ] ,
                 [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ] ,
                 [ sh:path dcterms:source ; sh:minCount 1 ; sh:severity sh:Warning ] .
 
 fraternalsh:InsigniaShape a sh:NodeShape ;
     sh:targetClass fraternal:Insignia ;
     sh:property [ sh:path fraternal:insigniaOf ; sh:minCount 1 ; sh:class skos:Concept ] ,
-                [ sh:path fraternal:insigniaType ; sh:maxCount 1 ; sh:class skos:Concept ] .
+                [ sh:path fraternal:insigniaType ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node fraternalsh:InsigniaTypeValue ;
+                  sh:message "fraternal:insigniaType must be a concept in fraternalc:InsigniaTypes, or one mapped to it. | fraternal:insigniaType ska vara ett begrepp i fraternalc:InsigniaTypes, eller ett som är mappat dit. | fraternal:insigniaType doit être un concept de fraternalc:InsigniaTypes, ou un concept qui y est associé. | fraternal:insigniaType muss ein Konzept aus fraternalc:InsigniaTypes sein oder eines, das darauf abgebildet ist. | fraternal:insigniaType deve essere un concetto di fraternalc:InsigniaTypes, o uno associato a esso." ] .

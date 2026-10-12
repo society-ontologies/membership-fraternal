@@ -1264,8 +1264,7 @@ fraternalc:orator a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Den ämbetsman som vaktar logens stadgar och regler och framför slutsatser om det arbete som läggs fram."@sv ,
                     "Officier garant des constitutions et des règlements de la loge, qui donne ses conclusions sur les travaux présentés."@fr ,
                     "Der Amtsträger, der die Verfassung und die Regeln einer Loge hütet und zu den vorgetragenen Arbeiten Schlussfolgerungen gibt."@de ,
-                    "Il titolare di carica che custodisce la costituzione e le regole di una loggia e dà le conclusioni sui lavori presentati."@it ;
-    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it , "Inget generiskt ämbete ligger nära, så det är inte mappat."@sv .
+                    "Il titolare di carica che custodisce la costituzione e le regole di una loggia e dà le conclusioni sui lavori presentati."@it .
 
 fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;
@@ -1274,8 +1273,7 @@ fraternalc:almoner a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Den ämbetsman som samlar in och delar ut logens understöd och tar hand om medlemmar i nöd."@sv ,
                     "Officier qui recueille et distribue les secours de bienfaisance de la loge et veille sur les membres dans le besoin."@fr ,
                     "Der Amtsträger, der die wohltätigen Gaben der Loge sammelt und verteilt und sich um bedürftige Mitglieder kümmert."@de ,
-                    "Il titolare di carica che raccoglie e distribuisce i soccorsi di beneficenza della loggia e si cura dei soci bisognosi."@it ;
-    skos:scopeNote "No generic office comes close, so it is not mapped."@en , "Aucune fonction générique n'est assez proche ; elle n'est donc pas associée."@fr , "Kein allgemeines Amt kommt ihm nahe, daher wird er nicht abgebildet."@de , "Nessuna carica generica gli si avvicina, quindi non è associato."@it , "Inget generiskt ämbete ligger nära, så det är inte mappat."@sv .
+                    "Il titolare di carica che raccoglie e distribuisce i soccorsi di beneficenza della loggia e si cura dei soci bisognosi."@it .
 
 fraternalc:expert a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;

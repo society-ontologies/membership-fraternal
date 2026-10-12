@@ -1,0 +1,11 @@
+# EXPECT: an order with a characteristic that is a local concept with no mapping to fraternalc:Characteristics
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Drag a skos:ConceptScheme ; skos:prefLabel "Egna kännetecken"@sv .
+ex:hemligt a skos:Concept ; skos:inScheme ex:Drag ; skos:prefLabel "Hemlig handskakning"@sv .
+ex:SomeOrder a fraternal:FraternalOrder ; rdfs:label "Some order"@en ;
+    fraternal:characteristic fraternalc:gradedDegrees , ex:hemligt .
