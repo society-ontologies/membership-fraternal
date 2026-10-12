@@ -1,0 +1,11 @@
+# EXPECT: insignia whose type is a local concept with no mapping to fraternalc:InsigniaTypes
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Typer a skos:ConceptScheme ; skos:prefLabel "Egna insignier"@sv .
+ex:slips a skos:Concept ; skos:inScheme ex:Typer ; skos:prefLabel "Slips"@sv .
+ex:tie a fraternal:Insignia , skos:Concept ; skos:prefLabel "Order tie"@en ;
+    fraternal:insigniaOf fraternalc:brother ;
+    fraternal:insigniaType ex:slips .

@@ -1,0 +1,10 @@
+# EXPECT: a degree kind that is a local concept with no mapping to fraternalc:DegreeKinds
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fraternal: <https://w3id.org/fraternal#> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Arter a skos:ConceptScheme ; skos:prefLabel "Egna gradarter"@sv .
+ex:hederstitel a skos:Concept ; skos:inScheme ex:Arter ; skos:prefLabel "Hederstitel"@sv .
+ex:S a skos:ConceptScheme , fraternal:DegreeSystem ; skos:prefLabel "Ladder"@en .
+ex:side a fraternal:Degree ; skos:inScheme ex:S ; skos:prefLabel "Side degree"@en ;
+    fraternal:degreeKind ex:hederstitel .

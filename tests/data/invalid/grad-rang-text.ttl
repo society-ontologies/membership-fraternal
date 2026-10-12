@@ -1,0 +1,8 @@
+# EXPECT: a degree whose fraternal:degreeRank is text, not a positive integer
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fraternal: <https://w3id.org/fraternal#> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:S a skos:ConceptScheme , fraternal:DegreeSystem ; skos:prefLabel "Ladder"@en .
+ex:d1 a fraternal:Degree ; skos:inScheme ex:S ; skos:prefLabel "One"@en ;
+    fraternal:degreeRank "first" .

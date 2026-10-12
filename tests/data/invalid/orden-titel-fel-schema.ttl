@@ -1,0 +1,10 @@
+# EXPECT: an order with a member title that is a local concept with no mapping to fraternalc:MemberTitles
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Titlar a skos:ConceptScheme ; skos:prefLabel "Egna titlar"@sv .
+ex:kamrat a skos:Concept ; skos:inScheme ex:Titlar ; skos:prefLabel "Kamrat"@sv .
+ex:SomeOrder a fraternal:FraternalOrder ; rdfs:label "Some order"@en ;
+    fraternal:memberTitle ex:kamrat .
