@@ -7,6 +7,7 @@
     <http://purl.org/dc/terms/created> "2026-09-30" .
 
 <http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -170,7 +171,7 @@
   <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Studentenverbindung" ;
   <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
-  <https://w3id.org/sssom/comment> "Lifelong union with ritual, colours and stages; narrower types such as fraternalc:corps follow skos:broader in the scheme." ] .
+  <https://w3id.org/sssom/comment> "Lifelong union with ritual, colours and stages; its narrower types are mapped below." ] .
 
 <https://w3id.org/fraternal/code/studentenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
@@ -192,4 +193,268 @@
   <https://w3id.org/sssom/subject_label> "Federation of Studentenverbindungen" ;
   <https://w3id.org/sssom/object_label> "Voluntary Association" ;
   <https://w3id.org/sssom/comment> "An association of associations." ] .
+
+<https://w3id.org/fraternal/code/corps> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/corps> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Corps" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/corps> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/corps> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Corps" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/burschenschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/burschenschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Burschenschaft" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/burschenschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/burschenschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Burschenschaft" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/landsmannschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/landsmannschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Landsmannschaft" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/landsmannschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/landsmannschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Landsmannschaft" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/turnerschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/turnerschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Turnerschaft" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/turnerschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/turnerschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Turnerschaft" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/saengerschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/saengerschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Sängerschaft" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/saengerschaft> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/saengerschaft> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Sängerschaft" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/catholicStudentenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/catholicStudentenverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Catholic Studentenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/catholicStudentenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/catholicStudentenverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Catholic Studentenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/christianStudentenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/christianStudentenverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Protestant Studentenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/christianStudentenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/christianStudentenverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Protestant Studentenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/turnverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/turnverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Akademische Turnverbindung" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/turnverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/turnverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Akademische Turnverbindung" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/wissenschaftlicheVerbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/wissenschaftlicheVerbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Scientific Studentenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/wissenschaftlicheVerbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/wissenschaftlicheVerbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Scientific Studentenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/damenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/damenverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Damenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/damenverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/studentSociety> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/damenverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/studentSociety> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Damenverbindung" ;
+  <https://w3id.org/sssom/object_label> "Student Society" ;
+  <https://w3id.org/sssom/comment> "Its members are students and alumni." ] .
+
+<https://w3id.org/fraternal/code/schuelerverbindung> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/schuelerverbindung> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Schülerverbindung" ;
+  <https://w3id.org/sssom/object_label> "Fraternal Organisation" ;
+  <https://w3id.org/sssom/comment> "Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings." ] .
+
+<https://w3id.org/fraternal/code/aktiver> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/membership/code/ordinary> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/aktiver> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ordinary> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Aktiver" ;
+  <https://w3id.org/sssom/object_label> "Ordinary Member" ;
+  <https://w3id.org/sssom/comment> "Full member with the duties, offices and costs of the Verbindung." ] .
+
+<https://w3id.org/fraternal/code/inaktiver> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ordinary> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/inaktiver> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ordinary> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Inaktiver" ;
+  <https://w3id.org/sssom/object_label> "Ordinary Member" ;
+  <https://w3id.org/sssom/comment> "Released from the duties of an active member, but keeps the membership and the vote." ] .
+
+<https://w3id.org/fraternal/code/konkneipant> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/associate> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/konkneipant> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/associate> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.4"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Konkneipant" ;
+  <https://w3id.org/sssom/object_label> "Associate Member" ;
+  <https://w3id.org/sssom/comment> "Not a member: takes part in gatherings only. Use only where such participants are recorded with a membership category." ] .
 
