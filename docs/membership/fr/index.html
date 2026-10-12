@@ -701,6 +701,50 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="OrganisationPeriod">
+          <h3>Organisation Period
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#OrganizationPeriod</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A period during which a membership organisation had a given gender policy, admission mode, ownership model, status, organisation type or legal form. The values are given on the period with mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm, and the period carries the dates: mbr:startDate and mbr:endDate for when they applied and mbr:decisionDate for when they were decided. Linked from the organisation with mbr:hasPeriod.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Give only the properties a period concerns: a club that begins to admit women gets a new period with mbr:genderPolicy and leaves its ownership model alone. Periods for different properties may overlap in time. The start is when the value began to apply, which may be earlier or later than the decision (a vote taken in one year, in force from the next, or a decision with retroactive effect). A period without an end date has no stated end; that does not say it still applies. The registered current picture stays on the organisation itself; it is not derived from the periods, and the two are not compared except in a profile whose history is complete. A change of policy does not change org:classification: a club classified as mbrc:gentlemensClub stays so, and so stays an mbr:GentlemensClub, until its classification is changed. When it is, the registered current classification changes on the organisation and the earlier one is kept as a period with mbr:organizationType. The convenience classes follow the current org:classification on the organisation, never the periods.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#hasPeriod">has period</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="Accordderciprocit">
           <h3>Accord de réciprocité
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -770,11 +814,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Organisationdemembres">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -787,6 +826,11 @@ td {
                       </span>
                     </span><br>
                   </span>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#Organisationdemembres">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -823,11 +867,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Organisationdemembres">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -840,6 +879,11 @@ td {
                       </span>
                     </span><br>
                   </span>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#Organisationdemembres">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -990,6 +1034,12 @@ td {
                   <li>
                     <span>
                       <a href="#resultingStatus">statut résultant</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#resultingCategory">resulting category</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1583,6 +1633,12 @@ td {
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td>
@@ -1618,6 +1674,138 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>Qui possède et dirige l'organisation : ses membres, un propriétaire ou une institution mère (voir mbrc:OwnershipModels).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hasPeriod">
+          <h3>has period
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#hasPeriod</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Links an organisation to a period (mbr:OrganizationPeriod) in which it had a gender policy, admission mode, ownership model, status, organisation type or legal form. An organisation may have many.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#OrganisationPeriod">Organisation Period</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="organisationtype">
+          <h3>organisation type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#organizationType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The kind of organisation it was during a period (see mbrc:OrganizationTypes). Used on an mbr:OrganizationPeriod; the same values as org:classification gives on the organisation.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>A separate property because org:classification has the domain org:Organization: used on a period, it would make the period an organisation. An organisation may have several types at once, so periods with different types may overlap. The registered current classification stays on the organisation with org:classification.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="legalform">
+          <h3>legal form
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#legalForm</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The legal form the organisation had during a period (see mbrc:LegalForms). Used on an mbr:OrganizationPeriod; the same values as rov:orgType gives on the organisation.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>A separate property because rov:orgType, a sub-property of org:classification, has the domain org:Organization: used on a period, it would make the period an organisation. The registered current legal form stays on the organisation with rov:orgType. A change of legal form is a change in the organisation's form, not a new organisation; if the organisation is replaced by another, record it as an org:ChangeEvent.</p></td>
             </tr>
             <tr>
               <th>
@@ -1693,7 +1881,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>La catégorie d'une adhésion, comme ordinaire, à vie ou d'honneur (voir mbrc:MembershipCategories).</p></td>
+              <td><p>A category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories). A membership may have several, for example life and founding.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>The categories are properties that can be combined, not an exhaustive division: they are grouped by what they say (rights, duration, honour, age, residence, affiliation, founding), and a membership with no category is not thereby ordinary. No combination is ruled out unless a category's definition says so. Changes to the set are recorded with mbr:resultingCategory on membership events.</p></td>
             </tr>
             <tr>
               <th>
@@ -1948,6 +2142,61 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>Le statut d'adhésion qui s'applique après l'événement.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#vnementd'adhsion">Événement d'adhésion</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="resultingCategory">
+          <h3>resulting category
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#resultingCategory</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A membership category that applies after the event (see mbrc:MembershipCategories). Give one value for each category in the complete set after the event.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>The values are the whole set of categories after the event, not an addition to the earlier set. An event that makes a life member also a founding member gives both, mbrc:life and mbrc:founding; giving only mbrc:founding says the membership then has only that category. An event that leaves the categories unchanged leaves mbr:resultingCategory out.</p></td>
             </tr>
             <tr>
               <th>
@@ -2781,6 +3030,12 @@ td {
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods. A club that changed from men only to mixed has the earlier policy and the later one as two periods.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td>
@@ -2816,6 +3071,12 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>Comment les nouveaux membres sont admis (voir mbrc:AdmissionModes).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods.</p></td>
             </tr>
             <tr>
               <th>
@@ -3080,7 +3341,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Le numéro sous lequel une adhésion est inscrite au registre de l'organisation. Unique au sein d'une organisation (vérifié en SHACL).</p></td>
+              <td><p>The number under which a membership is recorded in the organisation's register, written as an xsd:string because registers use numbers such as L-0042 and 0042. A number identifies one membership in one organisation at a time; a later membership may reuse it when the periods certainly do not overlap (checked in SHACL).</p></td>
             </tr>
             <tr>
               <th>
@@ -3088,6 +3349,14 @@ td {
               </th>
               <td>
                 <a href="http://schema.org/membershipNumber">http://schema.org/membershipNumber</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
             </tr>
           </table>
@@ -3154,11 +3423,50 @@ td {
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
               </th>
               <td>
                 <a href="http://schema.org/endDate">http://schema.org/endDate</a>
               </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="decisiondate">
+          <h3>decision date
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#decisionDate</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>When a decision was taken, such as the date of a members' vote. Value is xsd:date, xsd:gYearMonth or xsd:gYear. The date the decision began to apply is mbr:startDate.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>A decision may come before or after it takes effect, so SHACL does not compare it with mbr:startDate.</p></td>
             </tr>
           </table>
         </div>
@@ -3305,6 +3613,9 @@ td {
               <a href="#Effectif">Effectif</a>
             </li>
             <li>
+              <a href="#OrganisationPeriod">Organisation Period</a>
+            </li>
+            <li>
               <a href="#Accordderciprocit">Accord de réciprocité</a>
             </li>
             <li>
@@ -3372,6 +3683,15 @@ td {
               <a href="#modedeproprit">mode de propriété</a>
             </li>
             <li>
+              <a href="#hasPeriod">has period</a>
+            </li>
+            <li>
+              <a href="#organisationtype">organisation type</a>
+            </li>
+            <li>
+              <a href="#legalform">legal form</a>
+            </li>
+            <li>
               <a href="#statutd'adhsion">statut d'adhésion</a>
             </li>
             <li>
@@ -3394,6 +3714,9 @@ td {
             </li>
             <li>
               <a href="#resultingStatus">statut résultant</a>
+            </li>
+            <li>
+              <a href="#resultingCategory">resulting category</a>
             </li>
             <li>
               <a href="#membershipFee">cotisation</a>
@@ -3488,6 +3811,9 @@ td {
             </li>
             <li>
               <a href="#datedefin">date de fin</a>
+            </li>
+            <li>
+              <a href="#decisiondate">decision date</a>
             </li>
           </ul>
         </li>
