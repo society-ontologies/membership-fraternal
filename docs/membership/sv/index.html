@@ -993,6 +993,12 @@ td {
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
+                  <li>
+                    <span>
+                      <a href="#resultingCategory">resulterande kategori</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
                 </ul>
               </td>
             </tr>
@@ -1693,7 +1699,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Medlemskapets kategori, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories).</p></td>
+              <td><p>En kategori som ett medlemskap tillhör, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories). Ett medlemskap kan ha flera, till exempel ständigt och stiftande.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Kategorierna är egenskaper som kan kombineras, inte en uttömmande indelning: de är grupperade efter vad de anger (rättigheter, varaktighet, hedersställning, ålder, bosättning, anknytning, grundande), och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det. Ändringar av uppsättningen anges med mbr:resultingCategory på medlemskapshändelser.</p></td>
             </tr>
             <tr>
               <th>
@@ -1948,6 +1960,61 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>Den medlemskapsstatus som gäller efter händelsen.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Medlemskapshndelse">Medlemskapshändelse</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="resultingCategory">
+          <h3>resulterande kategori
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#resultingCategory</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologi för medlemsorganisationer</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>En medlemskategori som gäller efter händelsen (se mbrc:MembershipCategories). Ange ett värde för varje kategori i hela uppsättningen efter händelsen.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Värdena är hela uppsättningen kategorier efter händelsen, inte ett tillägg till den tidigare. En händelse som gör en ständig medlem också stiftande ger båda, mbrc:life och mbrc:founding; anges bara mbrc:founding betyder det att medlemskapet då bara har den kategorin. En händelse som lämnar kategorierna oförändrade utelämnar mbr:resultingCategory.</p></td>
             </tr>
             <tr>
               <th>
@@ -3080,7 +3147,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Det nummer under vilket ett medlemskap förs i organisationens matrikel. Unikt inom en organisation (kontrolleras i SHACL).</p></td>
+              <td><p>Det nummer under vilket ett medlemskap förs i organisationens matrikel, skrivet som xsd:string eftersom matriklar har nummer som L-0042 och 0042. Ett nummer identifierar ett medlemskap i en organisation åt gången; ett senare medlemskap får återanvända det när perioderna säkert inte överlappar (kontrolleras i SHACL).</p></td>
             </tr>
             <tr>
               <th>
@@ -3088,6 +3155,14 @@ td {
               </th>
               <td>
                 <a href="http://schema.org/membershipNumber">http://schema.org/membershipNumber</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
             </tr>
           </table>
@@ -3151,6 +3226,12 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>När något upphörde. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate.</p></td>
             </tr>
             <tr>
               <th>
@@ -3394,6 +3475,9 @@ td {
             </li>
             <li>
               <a href="#resultingStatus">resulterande status</a>
+            </li>
+            <li>
+              <a href="#resultingCategory">resulterande kategori</a>
             </li>
             <li>
               <a href="#membershipFee">medlemsavgift</a>

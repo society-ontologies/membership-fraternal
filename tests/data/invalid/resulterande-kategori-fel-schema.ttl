@@ -1,0 +1,14 @@
+# EXPECT: mbr:resultingCategory takes a membership status, not a category
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:a a foaf:Person .
+ex:m a mbr:Membership ; org:member ex:a ; org:organization ex:Club .
+ex:e a mbr:MembershipEvent ; mbr:concernsMembership ex:m ;
+    mbr:membershipEventType mbrc:statusChange ; mbr:resultingCategory mbrc:active .

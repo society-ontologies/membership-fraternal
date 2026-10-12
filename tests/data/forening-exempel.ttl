@@ -92,7 +92,7 @@ fore:karin a foaf:Person ; schema:name "Karin Exempel" .
 fore:karin-membership a mbr:Membership ;
     org:member fore:karin ; org:organization fore:GulaVagen ;
     mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
-    mbr:membershipNumber 1207 ; mbr:startDate "2025-03-01"^^xsd:date .
+    mbr:membershipNumber "1207" ; mbr:startDate "2025-03-01"^^xsd:date .
 
 fore:karin-joins a mbr:MembershipEvent ;
     mbr:concernsMembership fore:karin-membership ;

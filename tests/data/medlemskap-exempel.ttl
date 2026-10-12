@@ -1,0 +1,113 @@
+# Fictional club (all names and numbers invented for testing). Shows:
+#   * a membership with several categories at once (life, founding, overseas), and
+#     an event that gives the whole category set after it (mbr:resultingCategory);
+#   * a member count written as xsd:nonNegativeInteger;
+#   * partial dates that may overlap, which are not an ordering error;
+#   * a membership number reused by a later membership whose period certainly
+#     begins after the first one ended;
+#   * local codelist concepts that are accepted because they are mapped to the
+#     hub scheme (skos:exactMatch, skos:closeMatch, skos:broadMatch).
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix mk:      <https://example.org/medlemskap/> .
+
+# --- The club, classified with a local concept mapped to the hub ---
+
+mk:Sallskapet a mbr:MembershipOrganization ;
+    rdfs:label "Sällskapet Exemplum"@sv ;
+    org:classification mk:herrklubb ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1900"^^xsd:gYear ;
+    mbr:hasMemberCount mk:count-2025 .
+
+mk:count-2025 a mbr:MemberCount ;
+    mbr:count "42"^^xsd:nonNegativeInteger ;
+    mbr:asOf "2025"^^xsd:gYear .
+
+# --- The club's own codelist, mapped to the hubs ---
+
+mk:Typer a skos:ConceptScheme ; skos:prefLabel "Sällskapets typer"@sv .
+mk:herrklubb a skos:Concept ;
+    skos:inScheme mk:Typer ;
+    skos:prefLabel "Herrklubb"@sv ;
+    skos:exactMatch mbrc:gentlemensClub .
+
+mk:Status a skos:ConceptScheme ; skos:prefLabel "Sällskapets statusar"@sv .
+mk:provtid a skos:Concept ;
+    skos:inScheme mk:Status ;
+    skos:prefLabel "Provtid"@sv ;
+    skos:closeMatch mbrc:candidate .
+
+mk:Kategorier a skos:ConceptScheme ; skos:prefLabel "Sällskapets kategorier"@sv .
+mk:utlandsfodd a skos:Concept ;
+    skos:inScheme mk:Kategorier ;
+    skos:prefLabel "Utlandsbosatt stiftare"@sv ;
+    skos:broadMatch mbrc:overseas .
+
+# --- Several categories at once, and the set after an event ---
+
+mk:erik a foaf:Person ; schema:name "Erik Exempel" .
+
+mk:erik-membership a mbr:Membership ;
+    org:member mk:erik ; org:organization mk:Sallskapet ;
+    mbr:membershipStatus mbrc:active ;
+    mbr:membershipCategory mbrc:life , mbrc:founding , mbrc:overseas ;
+    mbr:membershipNumber "L-0001" ;
+    mbr:startDate "1900"^^xsd:gYear .
+
+# Erik was founding and overseas; the event makes him life member as well. The values
+# are the whole set after the event, not just the addition.
+mk:erik-life a mbr:MembershipEvent ;
+    mbr:concernsMembership mk:erik-membership ;
+    mbr:membershipEventType mbrc:statusChange ;
+    mbr:resultingCategory mbrc:life , mbrc:founding , mbrc:overseas ;
+    mbr:startDate "1950-06-01"^^xsd:date .
+
+# A local category, mapped to the hub, combined with a hub category.
+mk:filip a foaf:Person ; schema:name "Filip Exempel" .
+
+mk:filip-membership a mbr:Membership ;
+    org:member mk:filip ; org:organization mk:Sallskapet ;
+    mbr:membershipStatus mk:provtid ;
+    mbr:membershipCategory mk:utlandsfodd , mbrc:junior ;
+    mbr:membershipNumber "L-0002" ;
+    mbr:startDate "2024-01-10"^^xsd:date .
+
+# --- Partial dates that may overlap are not an error ---
+# Start 2000 could be 2000-06, end 2000-03 could be 2000-09: the order is not known.
+
+mk:gustav a foaf:Person ; schema:name "Gustav Exempel" .
+
+mk:gustav-membership a mbr:Membership ;
+    org:member mk:gustav ; org:organization mk:Sallskapet ;
+    mbr:membershipStatus mbrc:resigned ;
+    mbr:membershipNumber "L-0100" ;
+    mbr:startDate "2000"^^xsd:gYear ;
+    mbr:endDate "2000-03"^^xsd:gYearMonth .
+
+# --- A membership number reused after the earlier membership ended ---
+# Hjalmar left in 1999-12 at the latest; Ivar joined in 2005-01 at the earliest.
+
+mk:hjalmar a foaf:Person ; schema:name "Hjalmar Exempel" .
+mk:ivar a foaf:Person ; schema:name "Ivar Exempel" .
+
+mk:hjalmar-membership a mbr:Membership ;
+    org:member mk:hjalmar ; org:organization mk:Sallskapet ;
+    mbr:membershipStatus mbrc:resigned ;
+    mbr:membershipNumber "L-0200" ;
+    mbr:startDate "1980"^^xsd:gYear ;
+    mbr:endDate "1999-12"^^xsd:gYearMonth .
+
+mk:ivar-membership a mbr:Membership ;
+    org:member mk:ivar ; org:organization mk:Sallskapet ;
+    mbr:membershipStatus mbrc:active ;
+    mbr:membershipNumber "L-0200" ;
+    mbr:startDate "2005-01"^^xsd:gYearMonth .
