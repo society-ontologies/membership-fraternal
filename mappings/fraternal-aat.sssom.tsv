@@ -15,10 +15,10 @@ fraternal:Lodge	Lodge	skos:relatedMatch	aat:300007071	fraternal lodges	semapv:Ma
 fraternalc:collegeFraternity	College Fraternity	skos:closeMatch	aat:300386371	fraternities (associations)	semapv:ManualMappingCuration	0.8
 fraternalc:sorority	Sorority	skos:exactMatch	aat:300386372	sororities	semapv:ManualMappingCuration	0.9
 fraternalc:secretSociety	Secret Society	skos:exactMatch	aat:300026020	secret societies	semapv:ManualMappingCuration	0.9
-fraternalc:apron	Apron	skos:exactMatch	aat:300425977	fraternal aprons	semapv:ManualMappingCuration	0.85
+fraternalc:apron	Apron	skos:closeMatch	aat:300425977	fraternal aprons	semapv:ManualMappingCuration	0.85
 fraternalc:jewel	Jewel	skos:closeMatch	aat:300425984	fraternal pendants	semapv:ManualMappingCuration	0.7
 fraternalc:ribbon	Ribbon	skos:closeMatch	aat:300425986	fraternal ribbons	semapv:ManualMappingCuration	0.7
-fraternalc:ring	Ring	skos:exactMatch	aat:300425987	fraternal rings	semapv:ManualMappingCuration	0.8
-fraternalc:pin	Lapel Pin	skos:exactMatch	aat:300425985	fraternal pins	semapv:ManualMappingCuration	0.8
-fraternalc:hat	Hat	skos:exactMatch	aat:300425979	fraternal hats	semapv:ManualMappingCuration	0.8
+fraternalc:ring	Ring	skos:closeMatch	aat:300425987	fraternal rings	semapv:ManualMappingCuration	0.8
+fraternalc:pin	Lapel Pin	skos:closeMatch	aat:300425985	fraternal pins	semapv:ManualMappingCuration	0.8
+fraternalc:hat	Hat	skos:closeMatch	aat:300425979	fraternal hats	semapv:ManualMappingCuration	0.8
 fraternalc:breastStar	Breast Star	skos:closeMatch	aat:300426512	insignia plaques	semapv:ManualMappingCuration	0.6

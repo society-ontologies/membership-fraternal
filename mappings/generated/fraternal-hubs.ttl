@@ -3,7 +3,7 @@
 <https://w3id.org/fraternal/mappings/fraternal-hubs> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "fraternal order types placed under the membership organisation-type hub." ;
+    <http://purl.org/dc/terms/description> "fraternal order types, Studentenverbindung membership forms and gathering roles placed under the membership hubs." ;
     <http://purl.org/dc/terms/created> "2026-09-30" .
 
 <http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -24,7 +24,7 @@
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
   <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/fraternalOrganization> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Fraternal Order" ;
   <https://w3id.org/sssom/object_label> "Fraternal Organisation" ] .
 
@@ -447,14 +447,14 @@
   <https://w3id.org/sssom/object_label> "Ordinary Member" ;
   <https://w3id.org/sssom/comment> "Released from the duties of an active member, but keeps the membership and the vote." ] .
 
-<https://w3id.org/fraternal/code/konkneipant> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/associate> .
+<https://w3id.org/fraternal/code/konkneipant> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/guest> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/konkneipant> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/associate> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/guest> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.4"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Konkneipant" ;
-  <https://w3id.org/sssom/object_label> "Associate Member" ;
-  <https://w3id.org/sssom/comment> "Not a member: takes part in gatherings only. Use only where such participants are recorded with a membership category." ] .
+  <https://w3id.org/sssom/object_label> "Guest" ;
+  <https://w3id.org/sssom/comment> "Not a member: takes part in gatherings only, as a kind of guest." ] .
 

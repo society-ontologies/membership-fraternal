@@ -17,7 +17,7 @@ mbrc:diningClub	Dining Club	skos:closeMatch	aat:300445687	eating clubs	semapv:Ma
 mbrc:countryClub	Country Club	skos:closeMatch	aat:300000545	country clubs	semapv:ManualMappingCuration	0.6	AAT concept may denote the built complex.
 mbrc:officersClub	Officers' Club	skos:closeMatch	aat:300006936	officers' clubs	semapv:ManualMappingCuration	0.6	AAT concept may denote the building.
 mbrc:facultyClub	Faculty Club	skos:relatedMatch	aat:300006636	faculty clubs (built works)	semapv:ManualMappingCuration	0.6	AAT concept is the building.
-mbrc:medal	Medal	skos:exactMatch	aat:300046025	medals	semapv:ManualMappingCuration	0.8
-mbrc:badge	Badge	skos:exactMatch	aat:300193994	badges	semapv:ManualMappingCuration	0.8
+mbrc:medal	Medal	skos:closeMatch	aat:300046025	medals	semapv:ManualMappingCuration	0.8
+mbrc:badge	Badge	skos:closeMatch	aat:300193994	badges	semapv:ManualMappingCuration	0.8
 mbr:Premises	Premises	skos:closeMatch	aat:300134512	clubhouses	semapv:ManualMappingCuration	0.6
 mbrc:yachtClub	Yacht Club	skos:relatedMatch	aat:300000544	yacht clubs (building complexes)	semapv:ManualMappingCuration	0.6	AAT concept is the building.

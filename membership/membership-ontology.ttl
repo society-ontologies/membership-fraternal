@@ -771,11 +771,11 @@ mbr:ribbonColour a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:label "ribbon colour"@en , "bandfärg"@sv , "couleur du ruban"@fr , "Bandfarbe"@de , "colore del nastro"@it ;
     rdfs:range skos:Concept ;
-    skos:definition "The ribbon on which a medal or badge is worn."@en ,
-                    "Det band i vilket en medalj eller ett tecken bärs."@sv ,
-                    "Le ruban auquel est portée une médaille ou un insigne."@fr ,
-                    "Das Band, an dem eine Medaille oder ein Abzeichen getragen wird."@de ,
-                    "Il nastro con cui si porta una medaglia o un distintivo."@it .
+    skos:definition "The colour of the ribbon on which a medal or badge is worn, given as a concept. No codelist of colours is supplied."@en ,
+                    "Färgen på det band i vilket en medalj eller ett tecken bärs, angiven som ett begrepp. Ingen kodlista för färger tillhandahålls."@sv ,
+                    "La couleur du ruban auquel est portée une médaille ou un insigne, donnée sous forme de concept. Aucune liste de codes de couleurs n'est fournie."@fr ,
+                    "Die Farbe des Bandes, an dem eine Medaille oder ein Abzeichen getragen wird, als Konzept angegeben. Eine Codeliste der Farben wird nicht mitgeliefert."@de ,
+                    "Il colore del nastro con cui si porta una medaglia o un distintivo, indicato come concetto. Non viene fornita alcuna lista di codici dei colori."@it .
 
 mbr:Conferral a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;

@@ -5,11 +5,11 @@
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-hubs
 # mapping_set_version: 1.0.0
-# mapping_set_description: fraternal order types placed under the membership organisation-type hub.
+# mapping_set_description: fraternal order types, Studentenverbindung membership forms and gathering roles placed under the membership hubs.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 # mapping_date: 2026-09-30
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
-fraternalc:fraternalOrder	Fraternal Order	skos:exactMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.9
+fraternalc:fraternalOrder	Fraternal Order	skos:exactMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	1.0
 fraternalc:collegeFraternity	College Fraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
 fraternalc:sorority	Sorority	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
 fraternalc:coedFraternity	Co-ed Fraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95
@@ -49,4 +49,4 @@ fraternalc:damenverbindung	Damenverbindung	skos:broadMatch	mbrc:studentSociety	S
 fraternalc:schuelerverbindung	Schülerverbindung	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings.
 fraternalc:aktiver	Aktiver	skos:closeMatch	mbrc:ordinary	Ordinary Member	semapv:ManualMappingCuration	0.8	Full member with the duties, offices and costs of the Verbindung.
 fraternalc:inaktiver	Inaktiver	skos:broadMatch	mbrc:ordinary	Ordinary Member	semapv:ManualMappingCuration	0.7	Released from the duties of an active member, but keeps the membership and the vote.
-fraternalc:konkneipant	Konkneipant	skos:broadMatch	mbrc:associate	Associate Member	semapv:ManualMappingCuration	0.4	Not a member: takes part in gatherings only. Use only where such participants are recorded with a membership category.
+fraternalc:konkneipant	Konkneipant	skos:broadMatch	mbrc:guest	Guest	semapv:ManualMappingCuration	0.8	Not a member: takes part in gatherings only, as a kind of guest.

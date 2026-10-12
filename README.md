@@ -191,7 +191,7 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 
 **Unreleased.** Corrections to the SHACL shapes and the membership codelists. Nothing is removed or renamed; some checks are stricter and some are looser, as listed.
 - Looser:
-  - `mbr:membershipCategory` has no `sh:maxCount 1`: a membership may be life and founding. Seven sub-schemes group the categories (`mbrc:CategoryRights`, `CategoryDuration`, `CategoryHonour`, `CategoryAge`, `CategoryResidence`, `CategoryAffiliation`, `CategoryFoundation`); each category is still in `mbrc:MembershipCategories` and keeps its IRI.
+  - `mbr:membershipCategory` has no `sh:maxCount 1`: a membership may be life and founding. Eight sub-schemes group the categories (`mbrc:CategoryRights`, `CategoryDuration`, `CategoryHonour`, `CategoryAge`, `CategoryResidence`, `CategoryAffiliation`, `CategoryFoundation`, `CategoryContribution`); each category is still in `mbrc:MembershipCategories` and keeps its IRI.
   - `mbr:count` accepts `"42"^^xsd:nonNegativeInteger`, which the shape used to reject although the OWL range already was `xsd:nonNegativeInteger`. A plain `42` (an `xsd:integer`) still passes when it is zero or more.
   - A membership number may be reused when the periods certainly do not overlap.
   - Partial dates that may overlap are no longer ordered by year.
@@ -202,6 +202,15 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - New: `mbr:resultingCategory` on membership events (the whole category set after the event); `mbrc:ceremony` in `mbrc:GatheringTypes`, the hub for the fraternal ceremony types, which map to it in `mappings/fraternal-ceremonies.sssom.tsv`; a warning for dates outside the supported years.
 - Checks: `make shacl` and `make shacl-invalid` now merge the mappings into the data graph. New sample `tests/data/medlemskap-exempel.ttl` and seven new invalid fixtures.
 - Not covered: a mapped local concept is accepted by SHACL but does not make an organisation a `mbr:GentlemensClub`; no normalisation rule exists yet.
+
+**Unreleased.** Codelist and mapping housekeeping. No IRI is removed. Changes to terms that are in 1.1.0:
+- Labels: `mbrc:dormant` is now "Dormant Member" (it shared "Dormant" with `mbrc:dormantOrganization`); `fraternalc:memberGrade` is now "Member Grade" (it shared "Member" with `mbrc:member`). The English altLabels "Labor Union" and "Open Enrollment" are tagged `@en-US` instead of `@en`.
+- Definition: `mbr:ribbonColour` now defines the colour of the ribbon, not the ribbon, and says that no colour codelist is supplied.
+- Mappings: `fraternalc:festiveBoard` now maps to `mbrc:formalDinner` and `fraternalc:memorialCeremony` to `mbrc:commemoration` (both were `mbrc:ceremony`). AAT matches with confidence below 0.9 are `skos:closeMatch` instead of `skos:exactMatch` (apron, ring, lapel pin, hat, medal, badge), and `fraternalc:memberGrade` is a `closeMatch` of the generic Wikidata item "member", not an `exactMatch`.
+- New: generic gathering types `mbrc:socialEvening`, `mbrc:procession` and `mbrc:contest`; the Kneipe, Kommers, Mensur and torchlight procession now map to them instead of to `mbrc:formalDinner` and `mbrc:ceremony`, which they were only loosely a kind of. Category sub-scheme `mbrc:CategoryContribution` for `mbrc:benefactorMember`, so every category is in a sub-scheme.
+- Definitions added where they were missing, in all five languages: seven membership schemes, six `mbrc:Materials`, four fraternal schemes and thirteen fraternal concepts. Missing `skos:narrower` added in the fraternal codelist.
+- Unreleased terms: `fraternalc:konkneipant` is no longer a membership form (he is not a member) but a role at gatherings, in the new scheme `fraternalc:StudentenverbindungParticipationRoles`, mapped to `mbrc:guest`. Title Case for three legal-form labels; distinct labels for `fraternalc:housePrevot` (French) and `fraternalc:scriptor` (German); duplicate altLabels removed.
+- Left as they are: `fraternalc:fraternalOrder` and `mbrc:fraternalOrganization` share their labels because they are `exactMatch` (now confidence 1.0), and `mbrc:speaker` (role at a gathering) and the lodge orator share "Redner" and "Talare".
 
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
