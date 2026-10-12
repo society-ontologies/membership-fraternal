@@ -78,3 +78,14 @@
   <https://w3id.org/sssom/object_label> "Ceremony" ;
   <https://w3id.org/sssom/comment> "A feast in honour of the order's patron; fraternalc:CeremonyTypes counts it as a kind of ceremony." ] .
 
+<https://w3id.org/fraternal/code/openMeeting> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/meeting> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/openMeeting> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/meeting> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Open Meeting" ;
+  <https://w3id.org/sssom/object_label> "Meeting" ;
+  <https://w3id.org/sssom/comment> "No ritual is worked, so it is a kind of meeting and not of mbrc:ceremony." ] .
+

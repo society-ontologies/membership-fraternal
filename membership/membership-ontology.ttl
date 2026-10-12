@@ -47,9 +47,11 @@
     owl:backwardCompatibleWith <https://w3id.org/membership/1.0.0> ;
     owl:imports <https://w3id.org/membership/external> ;
     dcterms:title "Membership Organisations Ontology"@en ,
-                  "Ontologi för medlemsorganisationer"@sv ;
+                  "Ontologi för medlemsorganisationer"@sv ,
+                  "Ontologie des organisations de membres"@fr ;
     dcterms:description "Generic ontology for membership organisations of every kind, closed or open — from private clubs, societies, student nations and (through the fraternal extension) fraternal orders to hobby and supporters' clubs, associations, political parties and trade unions: memberships and their lifecycle, admission and fees, offices and terms of office, gatherings and participation, distinctions and their conferral, premises and reciprocity between organisations."@en ,
-                        "Generisk ontologi för medlemsorganisationer av alla slag, med slutet eller öppet medlemskap — från privata klubbar, sällskap, studentnationer och (via tillägget fraternal) ordenssällskap till hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar: medlemskap och dess livscykel, upptagning och avgifter, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."@sv ;
+                        "Generisk ontologi för medlemsorganisationer av alla slag, med slutet eller öppet medlemskap — från privata klubbar, sällskap, studentnationer och (via tillägget fraternal) ordenssällskap till hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar: medlemskap och dess livscykel, upptagning och avgifter, ämbeten och ämbetsperioder, sammankomster och deltagande, utmärkelser och deras tilldelning, lokaler och ömsesidighet mellan organisationer."@sv ,
+                        "Ontologie générique des organisations de membres de toute sorte, à adhésion fermée ou ouverte — des clubs privés, sociétés, nations étudiantes et (par l'extension fraternal) ordres fraternels aux clubs de loisirs et de supporters, associations, partis politiques et syndicats : les adhésions et leur cycle de vie, l'admission et les cotisations, les fonctions et leurs mandats, les réunions et la participation, les distinctions et leur attribution, les locaux et la réciprocité entre organisations."@fr ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
     dcterms:modified "2026-10-09"^^xsd:date ;
@@ -77,74 +79,85 @@
 mbr:MembershipOrganization a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf org:FormalOrganization ;
-    rdfs:label "Membership Organisation"@en , "Medlemsorganisation"@sv ;
+    rdfs:label "Membership Organisation"@en , "Medlemsorganisation"@sv , "Organisation de membres"@fr ;
     skos:definition "An organisation whose participants are admitted as members and which exists for those members as a body: they share its purpose, premises or activities, and usually govern it themselves. Some clubs are instead owned by a proprietor or an institution (see mbr:ownershipModel). The kind of organisation is given with org:classification (see mbrc:OrganizationTypes). Its legal form is given with rov:orgType (see mbrc:LegalForms)."@en ,
-                    "En organisation vars deltagare upptas som medlemmar och som finns till för medlemmarna som grupp: de delar dess syfte, lokaler eller verksamhet och styr den vanligen själva. Vissa klubbar ägs i stället av en ägare eller en institution (se mbr:ownershipModel). Organisationstypen anges med org:classification (se mbrc:OrganizationTypes). Dess associationsform anges med rov:orgType (se mbrc:LegalForms)."@sv ;
-    skos:scopeNote "Covers organisations with closed membership, such as private clubs and order societies, and open ones, such as hobby and supporters' clubs, associations, political parties and trade unions (see mbr:admissionMode). Not covered: customer loyalty schemes and commercial subscriptions such as most gym memberships, where membership means no more than buying the service."@en ,
-                   "Omfattar organisationer med slutet medlemskap, som privata klubbar och ordenssällskap, och med öppet, som hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar (se mbr:admissionMode). Omfattas inte: kundklubbar och kommersiella abonnemang som de flesta gymkort, där medlemskapet inte är mer än köpet av tjänsten."@sv .
+                    "En organisation vars deltagare upptas som medlemmar och som finns till för medlemmarna som grupp: de delar dess syfte, lokaler eller verksamhet och styr den vanligen själva. Vissa klubbar ägs i stället av en ägare eller en institution (se mbr:ownershipModel). Organisationstypen anges med org:classification (se mbrc:OrganizationTypes). Dess associationsform anges med rov:orgType (se mbrc:LegalForms)."@sv ,
+                    "Organisation dont les participants sont admis comme membres et qui existe pour eux en tant que corps : ils partagent son but, ses locaux ou ses activités, et la dirigent en général eux-mêmes. Certains clubs appartiennent plutôt à un propriétaire ou à une institution (voir mbr:ownershipModel). Le genre d'organisation est indiqué avec org:classification (voir mbrc:OrganizationTypes). Sa forme juridique est indiquée avec rov:orgType (voir mbrc:LegalForms)."@fr ;
+    skos:scopeNote "Covers organisations with closed membership, such as private clubs and order societies, and open ones, such as hobby and supporters' clubs, associations, political parties and trade unions (see mbr:admissionMode). Not covered: customer loyalty schemes and commercial subscriptions such as most gym memberships, where membership means no more than buying the service. Nor is compulsory membership, as in professional chambers and the professional bodies that French calls an ordre (ordre des médecins), or membership that gives an economic benefit, as in mutual insurers and cooperatives whose members are their customers."@en ,
+                   "Omfattar organisationer med slutet medlemskap, som privata klubbar och ordenssällskap, och med öppet, som hobby- och supporterklubbar, föreningar, politiska partier och fackföreningar (se mbr:admissionMode). Omfattas inte: kundklubbar och kommersiella abonnemang som de flesta gymkort, där medlemskapet inte är mer än köpet av tjänsten. Inte heller obligatoriskt medlemskap, som i yrkeskammare och de yrkesorgan som på franska kallas ordre (ordre des médecins), eller medlemskap som ger ekonomisk nytta, som i ömsesidiga försäkringsbolag och kooperativ vars medlemmar är kunderna."@sv ,
+                   "Couvre les organisations à adhésion fermée, comme les clubs privés et les sociétés d'ordre, et à adhésion ouverte, comme les clubs de loisirs et de supporters, les associations, les partis politiques et les syndicats (voir mbr:admissionMode). Non couverts : les programmes de fidélité et les abonnements commerciaux, comme la plupart des cartes de salle de sport, où l'adhésion n'est rien de plus que l'achat du service. Ne le sont pas non plus l'adhésion obligatoire, comme dans les chambres professionnelles et les organismes professionnels que le français appelle un ordre (ordre des médecins), ni l'adhésion qui procure un avantage économique, comme dans les mutuelles d'assurance et les coopératives dont les membres sont les clients."@fr .
 
 mbr:Branch a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf org:OrganizationalUnit ;
-    rdfs:label "Branch"@en , "Avdelning"@sv ;
+    rdfs:label "Branch"@en , "Avdelning"@sv , "Section"@fr ;
     skos:definition "A local or regional section of a membership organisation, linked to it with org:unitOf."@en ,
-                    "En lokal eller regional avdelning av en medlemsorganisation, kopplad till den med org:unitOf."@sv .
+                    "En lokal eller regional avdelning av en medlemsorganisation, kopplad till den med org:unitOf."@sv ,
+                    "Section locale ou régionale d'une organisation de membres, rattachée à elle par org:unitOf."@fr .
 
 mbr:Premises a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf org:Site ;
-    rdfs:label "Premises"@en , "Lokal"@sv ;
+    rdfs:label "Premises"@en , "Lokal"@sv , "Locaux"@fr ;
     skos:definition "A clubhouse, lodge building or other premises used by a membership organisation. org:hasSite links an organisation to its current premises; mbr:Occupancy records which premises it used when. Give the location with schema:address (a schema:PostalAddress), schema:geo (a schema:GeoCoordinates) and schema:containedInPlace (the city, as a Wikidata IRI). If the building's address changed while the building stayed the same (a street renamed or renumbered), give each address with its own mbr:startDate and mbr:endDate; the current address is the one without an end date."@en ,
-                    "Ett klubbhus, en ordenslokal eller annan lokal som används av en medlemsorganisation. org:hasSite kopplar en organisation till dess nuvarande lokal; mbr:Occupancy anger vilka lokaler den använt och när. Platsen anges med schema:address (en schema:PostalAddress), schema:geo (en schema:GeoCoordinates) och schema:containedInPlace (orten, som Wikidata-IRI). Om byggnadens adress ändrats medan byggnaden är densamma (en gata som bytt namn eller numrering), anges varje adress med egna mbr:startDate och mbr:endDate; den nuvarande adressen är den utan slutdatum."@sv .
+                    "Ett klubbhus, en ordenslokal eller annan lokal som används av en medlemsorganisation. org:hasSite kopplar en organisation till dess nuvarande lokal; mbr:Occupancy anger vilka lokaler den använt och när. Platsen anges med schema:address (en schema:PostalAddress), schema:geo (en schema:GeoCoordinates) och schema:containedInPlace (orten, som Wikidata-IRI). Om byggnadens adress ändrats medan byggnaden är densamma (en gata som bytt namn eller numrering), anges varje adress med egna mbr:startDate och mbr:endDate; den nuvarande adressen är den utan slutdatum."@sv ,
+                    "Siège de club, bâtiment de loge ou autres locaux utilisés par une organisation de membres. org:hasSite relie une organisation à ses locaux actuels ; mbr:Occupancy consigne quels locaux elle a utilisés et quand. Indiquer le lieu avec schema:address (un schema:PostalAddress), schema:geo (un schema:GeoCoordinates) et schema:containedInPlace (la ville, comme IRI Wikidata). Si l'adresse du bâtiment a changé alors que le bâtiment est resté le même (rue rebaptisée ou renumérotée), indiquer chaque adresse avec ses propres mbr:startDate et mbr:endDate ; l'adresse actuelle est celle sans date de fin."@fr .
 
 mbr:Occupancy a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "Occupancy"@en , "Lokalinnehav"@sv ;
+    rdfs:label "Occupancy"@en , "Lokalinnehav"@sv , "Occupation de locaux"@fr ;
     skos:definition "The period during which an organisation (mbr:occupant) used a set of premises (mbr:occupiedPremises), with mbr:startDate and mbr:endDate. Records a club's moves between clubhouses."@en ,
-                    "Den period under vilken en organisation (mbr:occupant) använde en lokal (mbr:occupiedPremises), med mbr:startDate och mbr:endDate. Beskriver t.ex. en klubbs flyttar mellan klubbhus."@sv .
+                    "Den period under vilken en organisation (mbr:occupant) använde en lokal (mbr:occupiedPremises), med mbr:startDate och mbr:endDate. Beskriver t.ex. en klubbs flyttar mellan klubbhus."@sv ,
+                    "La période pendant laquelle une organisation (mbr:occupant) a utilisé des locaux (mbr:occupiedPremises), avec mbr:startDate et mbr:endDate. Consigne les déménagements d'un club."@fr .
 
 mbr:occupant a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "occupant"@en , "innehavare"@sv ;
+    rdfs:label "occupant"@en , "innehavare"@sv , "occupant"@fr ;
     skos:definition "The organisation that used the premises during an occupancy."@en ,
-                    "Den organisation som använde lokalen under lokalinnehavet."@sv ;
+                    "Den organisation som använde lokalen under lokalinnehavet."@sv ,
+                    "L'organisation qui a utilisé les locaux pendant une occupation."@fr ;
     rdfs:domain mbr:Occupancy ;
     rdfs:range org:Organization .
 
 mbr:occupiedPremises a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "occupied premises"@en , "använd lokal"@sv ;
+    rdfs:label "occupied premises"@en , "använd lokal"@sv , "locaux occupés"@fr ;
     skos:definition "The premises an organisation used during an occupancy."@en ,
-                    "Den lokal som en organisation använde under lokalinnehavet."@sv ;
+                    "Den lokal som en organisation använde under lokalinnehavet."@sv ,
+                    "Les locaux qu'une organisation a utilisés pendant une occupation."@fr ;
     rdfs:domain mbr:Occupancy ;
     rdfs:range org:Site .
 
 mbr:MemberCount a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "Member Count"@en , "Medlemsantal"@sv ;
+    rdfs:label "Member Count"@en , "Medlemsantal"@sv , "Effectif"@fr ;
     skos:definition "The number of members an organisation had at a given date (mbr:count, mbr:asOf). Linked from the organisation with mbr:hasMemberCount; several counts over time are allowed."@en ,
-                    "Antalet medlemmar en organisation hade vid ett visst datum (mbr:count, mbr:asOf). Kopplas från organisationen med mbr:hasMemberCount; flera värden över tid är tillåtna."@sv .
+                    "Antalet medlemmar en organisation hade vid ett visst datum (mbr:count, mbr:asOf). Kopplas från organisationen med mbr:hasMemberCount; flera värden över tid är tillåtna."@sv ,
+                    "Le nombre de membres d'une organisation à une date donnée (mbr:count, mbr:asOf). Relié à l'organisation par mbr:hasMemberCount ; plusieurs effectifs dans le temps sont permis."@fr .
 
 mbr:hasMemberCount a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "has member count"@en , "har medlemsantal"@sv ;
+    rdfs:label "has member count"@en , "har medlemsantal"@sv , "a pour effectif"@fr ;
     skos:definition "Links an organisation to a member count (mbr:MemberCount) recorded at a given date. An organisation may have several, one for each date."@en ,
-                    "Kopplar en organisation till ett medlemsantal (mbr:MemberCount) som registrerats vid ett visst datum. En organisation kan ha flera, ett för varje datum."@sv ;
+                    "Kopplar en organisation till ett medlemsantal (mbr:MemberCount) som registrerats vid ett visst datum. En organisation kan ha flera, ett för varje datum."@sv ,
+                    "Relie une organisation à un effectif (mbr:MemberCount) relevé à une date donnée. Une organisation peut en avoir plusieurs, un par date."@fr ;
     rdfs:range mbr:MemberCount .
 
 mbr:count a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "count"@en , "antal"@sv ;
+    rdfs:label "count"@en , "antal"@sv , "nombre"@fr ;
     skos:definition "The number of members recorded in a member count, as a non-negative integer."@en ,
-                    "Det antal medlemmar som anges i ett medlemsantal, som ett icke-negativt heltal."@sv ;
+                    "Det antal medlemmar som anges i ett medlemsantal, som ett icke-negativt heltal."@sv ,
+                    "Le nombre de membres consigné dans un effectif, sous forme d'entier non négatif."@fr ;
     rdfs:domain mbr:MemberCount ;
     rdfs:range xsd:nonNegativeInteger .
 
 mbr:asOf a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "as of"@en , "per datum"@sv ;
+    rdfs:label "as of"@en , "per datum"@sv , "à la date du"@fr ;
     skos:definition "The date a figure refers to. Value is xsd:date, xsd:gYearMonth or xsd:gYear."@en ,
-                    "Det datum en uppgift avser. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv .
+                    "Det datum en uppgift avser. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ,
+                    "La date à laquelle se rapporte un chiffre. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear."@fr .
 
 ##############################################################################
 # ORGANISATION LIFECYCLE AND CATALOGUE FACTS
@@ -153,73 +166,87 @@ mbr:asOf a owl:DatatypeProperty ;
 mbr:foundingDate a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:foundingDate ;
-    rdfs:label "founding date"@en , "grundningsdatum"@sv ;
+    rdfs:label "founding date"@en , "grundningsdatum"@sv , "date de fondation"@fr ;
     skos:definition "When the organisation was founded. Value is xsd:date, xsd:gYearMonth or xsd:gYear."@en ,
-                    "När organisationen grundades. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv .
+                    "När organisationen grundades. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ,
+                    "Quand l'organisation a été fondée. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear."@fr .
 
 mbr:dissolutionDate a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:dissolutionDate ;
-    rdfs:label "dissolution date"@en , "upplösningsdatum"@sv ;
+    rdfs:label "dissolution date"@en , "upplösningsdatum"@sv , "date de dissolution"@fr ;
     skos:definition "When the organisation closed or ceased to exist as itself (including by merger). Value is xsd:date, xsd:gYearMonth or xsd:gYear. Record a merger itself as an org:ChangeEvent."@en ,
-                    "När organisationen upphörde eller slutade finnas som sig själv (även genom sammanslagning). Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Själva sammanslagningen registreras som en org:ChangeEvent."@sv .
+                    "När organisationen upphörde eller slutade finnas som sig själv (även genom sammanslagning). Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Själva sammanslagningen registreras som en org:ChangeEvent."@sv ,
+                    "Quand l'organisation a fermé ou a cessé d'exister en tant que telle (y compris par fusion). La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear. Consigner la fusion elle-même comme une org:ChangeEvent."@fr .
 
 mbr:organizationStatus a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "organisation status"@en , "organisationsstatus"@sv ;
+    rdfs:label "organisation status"@en , "organisationsstatus"@sv , "statut de l'organisation"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "Whether the organisation is active, dormant, merged or closed (see mbrc:OrganizationStatuses)."@en ,
-                    "Om organisationen är verksam, vilande, sammanslagen eller nedlagd (se mbrc:OrganizationStatuses)."@sv ;
+                    "Om organisationen är verksam, vilande, sammanslagen eller nedlagd (se mbrc:OrganizationStatuses)."@sv ,
+                    "Indique si l'organisation est en activité, en sommeil, fusionnée ou dissoute (voir mbrc:OrganizationStatuses)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes."@fr .
 
 mbr:ownershipModel a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "ownership model"@en , "ägarform"@sv ;
+    rdfs:label "ownership model"@en , "ägarform"@sv , "mode de propriété"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "Who owns and runs the organisation: its members, a proprietor, or a parent institution (see mbrc:OwnershipModels)."@en ,
-                    "Vem som äger och driver organisationen: medlemmarna, en ägare eller en moderinstitution (se mbrc:OwnershipModels)."@sv ;
+                    "Vem som äger och driver organisationen: medlemmarna, en ägare eller en moderinstitution (se mbrc:OwnershipModels)."@sv ,
+                    "Qui possède et dirige l'organisation : ses membres, un propriétaire ou une institution mère (voir mbrc:OwnershipModels)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes."@fr .
 
 mbr:OrganizationPeriod a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "Organisation Period"@en , "Organisationsperiod"@sv ;
+    rdfs:label "Organisation Period"@en , "Organisationsperiod"@sv , "Période d'organisation"@fr ;
     skos:definition "A period during which a membership organisation had a given gender policy, admission mode, ownership model, status, organisation type or legal form. The values are given on the period with mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm, and the period carries the dates: mbr:startDate and mbr:endDate for when they applied and mbr:decisionDate for when they were decided. Linked from the organisation with mbr:hasPeriod."@en ,
-                    "En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod."@sv ;
+                    "En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod."@sv ,
+                    "Période pendant laquelle une organisation de membres avait une règle de mixité, un mode d'admission, un mode de propriété, un statut, un type d'organisation ou une forme juridique donnés. Les valeurs sont indiquées sur la période avec mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType et mbr:legalForm, et la période porte les dates : mbr:startDate et mbr:endDate pour le moment où elles s'appliquaient, et mbr:decisionDate pour le moment où elles ont été décidées. Reliée à l'organisation par mbr:hasPeriod."@fr ;
     skos:scopeNote "Give only the properties a period concerns: a club that begins to admit women gets a new period with mbr:genderPolicy and leaves its ownership model alone. Periods for different properties may overlap in time. The start is when the value began to apply, which may be earlier or later than the decision (a vote taken in one year, in force from the next, or a decision with retroactive effect). A period without an end date has no stated end; that does not say it still applies. The registered current picture stays on the organisation itself; it is not derived from the periods, and the two are not compared except in a profile whose history is complete. A change of policy does not change org:classification: a club classified as mbrc:gentlemensClub stays so, and so stays an mbr:GentlemensClub, until its classification is changed. When it is, the registered current classification changes on the organisation and the earlier one is kept as a period with mbr:organizationType. The convenience classes follow the current org:classification on the organisation, never the periods."@en ,
-                   "Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras. När den ändras byts den registrerade aktuella klassificeringen på organisationen och den tidigare behålls som en period med mbr:organizationType. Bekvämlighetsklasserna följer den aktuella org:classification på organisationen, aldrig perioderna."@sv .
+                   "Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras. När den ändras byts den registrerade aktuella klassificeringen på organisationen och den tidigare behålls som en period med mbr:organizationType. Bekvämlighetsklasserna följer den aktuella org:classification på organisationen, aldrig perioderna."@sv ,
+                   "N'indiquez que les propriétés qu'une période concerne : un club qui commence à admettre des femmes reçoit une nouvelle période avec mbr:genderPolicy et laisse son mode de propriété tel quel. Des périodes portant sur des propriétés différentes peuvent se chevaucher dans le temps. Le début est le moment où la valeur a commencé à s'appliquer, qui peut précéder ou suivre la décision (un vote pris une année et en vigueur l'année suivante, ou une décision à effet rétroactif). Une période sans date de fin n'a pas de fin indiquée ; cela ne dit pas qu'elle s'applique encore. L'image actuelle enregistrée reste sur l'organisation elle-même ; elle n'est pas déduite des périodes, et les deux ne sont comparées que dans un profil dont l'historique est complet. Un changement de règle ne change pas org:classification : un club classé comme mbrc:gentlemensClub le reste, et reste donc un mbr:GentlemensClub, jusqu'à ce que sa classification soit changée. Quand elle l'est, la classification actuelle enregistrée change sur l'organisation et la précédente est conservée comme période avec mbr:organizationType. Les classes de commodité suivent l'org:classification actuelle de l'organisation, jamais les périodes."@fr .
 
 mbr:hasPeriod a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "has period"@en , "har period"@sv ;
+    rdfs:label "has period"@en , "har period"@sv , "a pour période"@fr ;
     rdfs:range mbr:OrganizationPeriod ;
     skos:definition "Links an organisation to a period (mbr:OrganizationPeriod) in which it had a gender policy, admission mode, ownership model, status, organisation type or legal form. An organisation may have many."@en ,
-                    "Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. En organisation kan ha många."@sv .
+                    "Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. En organisation kan ha många."@sv ,
+                    "Relie une organisation à une période (mbr:OrganizationPeriod) pendant laquelle elle avait une règle de mixité, un mode d'admission, un mode de propriété, un statut, un type d'organisation ou une forme juridique. Une organisation peut en avoir plusieurs."@fr .
 
 mbr:organizationType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "organisation type"@en , "organisationstyp"@sv ;
+    rdfs:label "organisation type"@en , "organisationstyp"@sv , "type d'organisation"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The kind of organisation it was during a period (see mbrc:OrganizationTypes). Used on an mbr:OrganizationPeriod; the same values as org:classification gives on the organisation."@en ,
-                    "Vilken sorts organisation den var under en period (se mbrc:OrganizationTypes). Används på en mbr:OrganizationPeriod; samma värden som org:classification anger på organisationen."@sv ;
+                    "Vilken sorts organisation den var under en period (se mbrc:OrganizationTypes). Används på en mbr:OrganizationPeriod; samma värden som org:classification anger på organisationen."@sv ,
+                    "Le genre d'organisation qu'elle était pendant une période (voir mbrc:OrganizationTypes). Utilisé sur une mbr:OrganizationPeriod ; les mêmes valeurs que celles données par org:classification sur l'organisation."@fr ;
     skos:scopeNote "A separate property because org:classification has the domain org:Organization: used on a period, it would make the period an organisation. An organisation may have several types at once, so periods with different types may overlap. The registered current classification stays on the organisation with org:classification."@en ,
-                   "En egen egenskap eftersom org:classification har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. En organisation kan ha flera typer samtidigt, så perioder med olika typer får överlappa. Den registrerade aktuella klassificeringen finns kvar på organisationen med org:classification."@sv .
+                   "En egen egenskap eftersom org:classification har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. En organisation kan ha flera typer samtidigt, så perioder med olika typer får överlappa. Den registrerade aktuella klassificeringen finns kvar på organisationen med org:classification."@sv ,
+                   "Propriété distincte parce que org:classification a pour domaine org:Organization : utilisée sur une période, elle ferait de la période une organisation. Une organisation peut avoir plusieurs types à la fois, de sorte que des périodes de types différents peuvent se chevaucher. La classification actuelle enregistrée reste sur l'organisation avec org:classification."@fr .
 
 mbr:legalForm a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "legal form"@en , "associationsform"@sv ;
+    rdfs:label "legal form"@en , "associationsform"@sv , "forme juridique"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The legal form the organisation had during a period (see mbrc:LegalForms). Used on an mbr:OrganizationPeriod; the same values as rov:orgType gives on the organisation."@en ,
-                    "Den associationsform organisationen hade under en period (se mbrc:LegalForms). Används på en mbr:OrganizationPeriod; samma värden som rov:orgType anger på organisationen."@sv ;
+                    "Den associationsform organisationen hade under en period (se mbrc:LegalForms). Används på en mbr:OrganizationPeriod; samma värden som rov:orgType anger på organisationen."@sv ,
+                    "La forme juridique que l'organisation avait pendant une période (voir mbrc:LegalForms). Utilisé sur une mbr:OrganizationPeriod ; les mêmes valeurs que celles données par rov:orgType sur l'organisation."@fr ;
     skos:scopeNote "A separate property because rov:orgType, a sub-property of org:classification, has the domain org:Organization: used on a period, it would make the period an organisation. The registered current legal form stays on the organisation with rov:orgType. A change of legal form is a change in the organisation's form, not a new organisation; if the organisation is replaced by another, record it as an org:ChangeEvent."@en ,
-                   "En egen egenskap eftersom rov:orgType, en underegenskap till org:classification, har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. Den registrerade aktuella associationsformen finns kvar på organisationen med rov:orgType. En ändrad associationsform är en ändring av organisationens form, inte en ny organisation; ersätts organisationen av en annan, registrera det som en org:ChangeEvent."@sv .
+                   "En egen egenskap eftersom rov:orgType, en underegenskap till org:classification, har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. Den registrerade aktuella associationsformen finns kvar på organisationen med rov:orgType. En ändrad associationsform är en ändring av organisationens form, inte en ny organisation; ersätts organisationen av en annan, registrera det som en org:ChangeEvent."@sv ,
+                   "Propriété distincte parce que rov:orgType, sous-propriété de org:classification, a pour domaine org:Organization : utilisée sur une période, elle ferait de la période une organisation. La forme juridique actuelle enregistrée reste sur l'organisation avec rov:orgType. Un changement de forme juridique est un changement de forme de l'organisation, non une nouvelle organisation ; si l'organisation est remplacée par une autre, enregistrez-le comme un org:ChangeEvent."@fr .
 
 mbr:ReciprocityAgreement a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "Reciprocity Agreement"@en , "Ömsesidighetsavtal"@sv ;
+    rdfs:label "Reciprocity Agreement"@en , "Ömsesidighetsavtal"@sv , "Accord de réciprocité"@fr ;
     skos:definition "An agreement under which members of each party may use the other party's premises or attend its gatherings. The qualified form of mbr:reciprocalWith."@en ,
-                    "Ett avtal enligt vilket medlemmar i vardera parten får använda den andra partens lokaler eller delta i dess sammankomster. Kvalificerad form av mbr:reciprocalWith."@sv .
+                    "Ett avtal enligt vilket medlemmar i vardera parten får använda den andra partens lokaler eller delta i dess sammankomster. Kvalificerad form av mbr:reciprocalWith."@sv ,
+                    "Accord en vertu duquel les membres de chaque partie peuvent utiliser les locaux de l'autre ou assister à ses réunions. La forme qualifiée de mbr:reciprocalWith."@fr .
 
 # Convenience classes defined by classification (pattern P2). A reasoner puts an
 # organisation here when it is classified with exactly this concept.
@@ -238,9 +265,10 @@ mbr:GentlemensClub a owl:Class ;
                                owl:onProperty org:classification ;
                                owl:hasValue mbrc:gentlemensClub ] )
     ] ;
-    rdfs:label "Gentlemen's Club"@en , "Herrklubb"@sv ;
+    rdfs:label "Gentlemen's Club"@en , "Herrklubb"@sv , "Club pour hommes"@fr ;
     skos:definition "A membership organisation classified as a gentlemen's club."@en ,
-                    "En medlemsorganisation klassificerad som herrklubb."@sv .
+                    "En medlemsorganisation klassificerad som herrklubb."@sv ,
+                    "Organisation de membres classée comme club pour hommes."@fr .
 
 mbr:LadiesClub a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -251,9 +279,10 @@ mbr:LadiesClub a owl:Class ;
                                owl:onProperty org:classification ;
                                owl:hasValue mbrc:ladiesClub ] )
     ] ;
-    rdfs:label "Ladies' Club"@en , "Damklubb"@sv ;
+    rdfs:label "Ladies' Club"@en , "Damklubb"@sv , "Club pour femmes"@fr ;
     skos:definition "A membership organisation classified as a ladies' club."@en ,
-                    "En medlemsorganisation klassificerad som damklubb."@sv .
+                    "En medlemsorganisation klassificerad som damklubb."@sv ,
+                    "Organisation de membres classée comme club pour femmes."@fr .
 
 mbr:StudentNation a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -264,9 +293,10 @@ mbr:StudentNation a owl:Class ;
                                owl:onProperty org:classification ;
                                owl:hasValue mbrc:studentNation ] )
     ] ;
-    rdfs:label "Student Nation"@en , "Studentnation"@sv ;
+    rdfs:label "Student Nation"@en , "Studentnation"@sv , "Nation étudiante"@fr ;
     skos:definition "A membership organisation classified as a student nation."@en ,
-                    "En medlemsorganisation klassificerad som studentnation."@sv .
+                    "En medlemsorganisation klassificerad som studentnation."@sv ,
+                    "Organisation de membres classée comme nation étudiante."@fr .
 
 ##############################################################################
 # MEMBERSHIP
@@ -275,96 +305,111 @@ mbr:StudentNation a owl:Class ;
 mbr:Membership a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf org:Membership ;
-    rdfs:label "Membership"@en , "Medlemskap"@sv ;
+    rdfs:label "Membership"@en , "Medlemskap"@sv , "Adhésion"@fr ;
     skos:definition "The qualified relationship between an agent (org:member) and a membership organisation (org:organization), carrying status, category, membership number, sponsors and dates. A person's path from prospect to full member is recorded as status changes on one Membership, not as changes of the person's type."@en ,
-                    "Den kvalificerade relationen mellan en agent (org:member) och en medlemsorganisation (org:organization), med status, kategori, medlemsnummer, rekommendatörer och datum. En persons väg från påtänkt till fullvärdig medlem registreras som statusändringar på ett och samma medlemskap, inte som ändringar av personens typ."@sv ;
+                    "Den kvalificerade relationen mellan en agent (org:member) och en medlemsorganisation (org:organization), med status, kategori, medlemsnummer, rekommendatörer och datum. En persons väg från påtänkt till fullvärdig medlem registreras som statusändringar på ett och samma medlemskap, inte som ändringar av personens typ."@sv ,
+                    "La relation qualifiée entre un agent (org:member) et une organisation de membres (org:organization), portant statut, catégorie, numéro d'adhérent, parrains et dates. Le parcours d'une personne, de la candidature au plein statut de membre, est consigné comme des changements de statut d'une seule Adhésion et non comme des changements du type de la personne."@fr ;
     skos:scopeNote "Data about who belongs to a political party, a trade union, or an organisation with a religious or philosophical aim (which can include fraternal orders) is special-category personal data under Article 9 of the EU General Data Protection Regulation (GDPR). The organisation itself may keep a register of its members and former members (Art. 9(2)(d)), but may not disclose it outside the organisation without their consent. Anyone else needs another exception in Art. 9(2) to process such data, for example explicit consent, or that the person has made the membership public, as elected representatives do. GDPR does not apply to deceased persons."@en ,
-                   "Uppgifter om vem som tillhör ett politiskt parti, en fackförening eller en organisation med religiöst eller filosofiskt syfte (vilket kan omfatta ordenssällskap) är känsliga personuppgifter enligt artikel 9 i EU:s dataskyddsförordning (GDPR). Organisationen själv får föra register över sina nuvarande och tidigare medlemmar (art. 9.2 d) men inte lämna ut det utanför organisationen utan deras samtycke. Andra behöver ett annat undantag i art. 9.2 för att behandla sådana uppgifter, t.ex. uttryckligt samtycke eller att personen själv har offentliggjort medlemskapet, som förtroendevalda gör. GDPR gäller inte avlidna personer."@sv .
+                   "Uppgifter om vem som tillhör ett politiskt parti, en fackförening eller en organisation med religiöst eller filosofiskt syfte (vilket kan omfatta ordenssällskap) är känsliga personuppgifter enligt artikel 9 i EU:s dataskyddsförordning (GDPR). Organisationen själv får föra register över sina nuvarande och tidigare medlemmar (art. 9.2 d) men inte lämna ut det utanför organisationen utan deras samtycke. Andra behöver ett annat undantag i art. 9.2 för att behandla sådana uppgifter, t.ex. uttryckligt samtycke eller att personen själv har offentliggjort medlemskapet, som förtroendevalda gör. GDPR gäller inte avlidna personer."@sv ,
+                   "Les données sur l'appartenance à un parti politique, à un syndicat ou à une organisation à but religieux ou philosophique (ce qui peut inclure des ordres fraternels) sont des données personnelles de catégorie particulière au sens de l'article 9 du règlement général de l'UE sur la protection des données (RGPD). L'organisation elle-même peut tenir un registre de ses membres actuels et anciens (art. 9, par. 2, point d), mais ne peut le communiquer hors de l'organisation sans leur consentement. Toute autre personne a besoin d'une autre exception de l'art. 9, par. 2, pour traiter ces données, par exemple le consentement explicite, ou le fait que la personne ait rendu son adhésion publique, comme le font les élus. Le RGPD ne s'applique pas aux personnes décédées."@fr .
 
 mbr:MembershipEvent a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf prov:Activity ;
-    rdfs:label "Membership Event"@en , "Medlemskapshändelse"@sv ;
+    rdfs:label "Membership Event"@en , "Medlemskapshändelse"@sv , "Événement d'adhésion"@fr ;
     skos:definition "An event in the life of a membership, such as proposal, ballot, admission, resignation or expulsion. The kind of event is given with mbr:membershipEventType."@en ,
-                    "En händelse i ett medlemskaps livscykel, t.ex. förslag, ballotering, inval, utträde eller uteslutning. Händelsetypen anges med mbr:membershipEventType."@sv .
+                    "En händelse i ett medlemskaps livscykel, t.ex. förslag, ballotering, inval, utträde eller uteslutning. Händelsetypen anges med mbr:membershipEventType."@sv ,
+                    "Événement de la vie d'une adhésion, comme la proposition, le scrutin, l'admission, la démission ou l'exclusion. Le genre d'événement est indiqué avec mbr:membershipEventType."@fr .
 
 mbr:membershipStatus a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "membership status"@en , "medlemskapsstatus"@sv ;
+    rdfs:label "membership status"@en , "medlemskapsstatus"@sv , "statut d'adhésion"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The current status of a membership (see mbrc:MembershipStatuses)."@en ,
-                    "Ett medlemskaps aktuella status (se mbrc:MembershipStatuses)."@sv .
+                    "Ett medlemskaps aktuella status (se mbrc:MembershipStatuses)."@sv ,
+                    "Le statut actuel d'une adhésion (voir mbrc:MembershipStatuses)."@fr .
 
 mbr:membershipCategory a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "membership category"@en , "medlemskategori"@sv ;
+    rdfs:label "membership category"@en , "medlemskategori"@sv , "catégorie d'adhésion"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "A category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories). A membership may have several, for example life and founding."@en ,
-                    "En kategori som ett medlemskap tillhör, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories). Ett medlemskap kan ha flera, till exempel ständigt och stiftande."@sv ;
+                    "En kategori som ett medlemskap tillhör, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories). Ett medlemskap kan ha flera, till exempel ständigt och stiftande."@sv ,
+                    "Une catégorie d'une adhésion, comme ordinaire, à vie ou d'honneur (voir mbrc:MembershipCategories). Une adhésion peut en avoir plusieurs, par exemple à vie et fondateur."@fr ;
     skos:scopeNote "The categories are properties that can be combined, not an exhaustive division: they are grouped by what they say (rights, duration, honour, age, residence, affiliation, founding), and a membership with no category is not thereby ordinary. No combination is ruled out unless a category's definition says so. Changes to the set are recorded with mbr:resultingCategory on membership events."@en ,
-                   "Kategorierna är egenskaper som kan kombineras, inte en uttömmande indelning: de är grupperade efter vad de anger (rättigheter, varaktighet, hedersställning, ålder, bosättning, anknytning, grundande), och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det. Ändringar av uppsättningen anges med mbr:resultingCategory på medlemskapshändelser."@sv .
+                   "Kategorierna är egenskaper som kan kombineras, inte en uttömmande indelning: de är grupperade efter vad de anger (rättigheter, varaktighet, hedersställning, ålder, bosättning, anknytning, grundande), och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det. Ändringar av uppsättningen anges med mbr:resultingCategory på medlemskapshändelser."@sv ,
+                   "Les catégories sont des propriétés combinables, non une répartition exhaustive : elles sont regroupées selon ce qu'elles disent (droits, durée, honneur, âge, résidence, rattachement, fondation), et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit. Les changements de l'ensemble sont enregistrés avec mbr:resultingCategory sur les événements d'adhésion."@fr .
 
 mbr:membershipNumber a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:membershipNumber ;
-    rdfs:label "membership number"@en , "medlemsnummer"@sv ;
+    rdfs:label "membership number"@en , "medlemsnummer"@sv , "numéro d'adhérent"@fr ;
     rdfs:range xsd:string ;
     skos:definition "The number under which a membership is recorded in the organisation's register, written as an xsd:string because registers use numbers such as L-0042 and 0042. A number identifies one membership in one organisation at a time; a later membership may reuse it when the periods certainly do not overlap (checked in SHACL)."@en ,
-                    "Det nummer under vilket ett medlemskap förs i organisationens matrikel, skrivet som xsd:string eftersom matriklar har nummer som L-0042 och 0042. Ett nummer identifierar ett medlemskap i en organisation åt gången; ett senare medlemskap får återanvända det när perioderna säkert inte överlappar (kontrolleras i SHACL)."@sv .
+                    "Det nummer under vilket ett medlemskap förs i organisationens matrikel, skrivet som xsd:string eftersom matriklar har nummer som L-0042 och 0042. Ett nummer identifierar ett medlemskap i en organisation åt gången; ett senare medlemskap får återanvända det när perioderna säkert inte överlappar (kontrolleras i SHACL)."@sv ,
+                    "Le numéro sous lequel une adhésion est inscrite au registre de l'organisation, écrit en xsd:string parce que les registres utilisent des numéros comme L-0042 et 0042. Un numéro identifie une adhésion dans une organisation à la fois ; une adhésion ultérieure peut le réutiliser lorsque les périodes ne se chevauchent certainement pas (vérifié en SHACL)."@fr .
 
 mbr:sponsor a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "sponsor"@en , "rekommendatör"@sv ;
+    rdfs:label "sponsor"@en , "rekommendatör"@sv , "parrain"@fr ;
     rdfs:range foaf:Agent ;
     skos:definition "An agent who sponsored the admission of the member."@en ,
-                    "En agent som rekommenderade medlemmens upptagning."@sv .
+                    "En agent som rekommenderade medlemmens upptagning."@sv ,
+                    "Agent qui a parrainé l'admission du membre."@fr .
 
 mbr:proposer a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf mbr:sponsor ;
-    rdfs:label "proposer"@en , "förslagsställare"@sv ;
+    rdfs:label "proposer"@en , "förslagsställare"@sv , "proposant"@fr ;
     skos:definition "The member who formally proposed the candidate."@en ,
-                    "Den medlem som formellt föreslog kandidaten."@sv .
+                    "Den medlem som formellt föreslog kandidaten."@sv ,
+                    "Le membre qui a formellement proposé le candidat."@fr .
 
 mbr:seconder a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf mbr:sponsor ;
-    rdfs:label "seconder"@en , "understödjare"@sv ;
+    rdfs:label "seconder"@en , "understödjare"@sv , "second"@fr ;
     skos:definition "A member who seconded the proposal."@en ,
-                    "En medlem som understödde förslaget."@sv .
+                    "En medlem som understödde förslaget."@sv ,
+                    "Membre qui a appuyé la proposition."@fr .
 
 mbr:concernsMembership a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "concerns membership"@en , "avser medlemskap"@sv ;
+    rdfs:label "concerns membership"@en , "avser medlemskap"@sv , "concerne l'adhésion"@fr ;
     rdfs:domain mbr:MembershipEvent ;
     rdfs:range org:Membership ;
     skos:definition "The membership a membership event belongs to."@en ,
-                    "Det medlemskap som en medlemskapshändelse hör till."@sv .
+                    "Det medlemskap som en medlemskapshändelse hör till."@sv ,
+                    "L'adhésion à laquelle appartient un événement d'adhésion."@fr .
 
 mbr:membershipEventType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "membership event type"@en , "typ av medlemskapshändelse"@sv ;
+    rdfs:label "membership event type"@en , "typ av medlemskapshändelse"@sv , "type d'événement d'adhésion"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The kind of membership event (see mbrc:MembershipEventTypes)."@en ,
-                    "Typen av medlemskapshändelse (se mbrc:MembershipEventTypes)."@sv .
+                    "Typen av medlemskapshändelse (se mbrc:MembershipEventTypes)."@sv ,
+                    "Le genre d'événement d'adhésion (voir mbrc:MembershipEventTypes)."@fr .
 
 mbr:resultingStatus a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "resulting status"@en , "resulterande status"@sv ;
+    rdfs:label "resulting status"@en , "resulterande status"@sv , "statut résultant"@fr ;
     rdfs:domain mbr:MembershipEvent ;
     rdfs:range skos:Concept ;
     skos:definition "The membership status that applies after the event."@en ,
-                    "Den medlemskapsstatus som gäller efter händelsen."@sv .
+                    "Den medlemskapsstatus som gäller efter händelsen."@sv ,
+                    "Le statut d'adhésion qui s'applique après l'événement."@fr .
 
 mbr:resultingCategory a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "resulting category"@en , "resulterande kategori"@sv ;
+    rdfs:label "resulting category"@en , "resulterande kategori"@sv , "catégorie résultante"@fr ;
     rdfs:domain mbr:MembershipEvent ;
     rdfs:range skos:Concept ;
     skos:definition "A membership category that applies after the event (see mbrc:MembershipCategories). Give one value for each category in the complete set after the event."@en ,
-                    "En medlemskategori som gäller efter händelsen (se mbrc:MembershipCategories). Ange ett värde för varje kategori i hela uppsättningen efter händelsen."@sv ;
+                    "En medlemskategori som gäller efter händelsen (se mbrc:MembershipCategories). Ange ett värde för varje kategori i hela uppsättningen efter händelsen."@sv ,
+                    "Une catégorie d'adhésion qui s'applique après l'événement (voir mbrc:MembershipCategories). Indiquez une valeur pour chaque catégorie de l'ensemble complet après l'événement."@fr ;
     skos:scopeNote "The values are the whole set of categories after the event, not an addition to the earlier set. An event that makes a life member also a founding member gives both, mbrc:life and mbrc:founding; giving only mbrc:founding says the membership then has only that category. An event that leaves the categories unchanged leaves mbr:resultingCategory out."@en ,
-                   "Värdena är hela uppsättningen kategorier efter händelsen, inte ett tillägg till den tidigare. En händelse som gör en ständig medlem också stiftande ger båda, mbrc:life och mbrc:founding; anges bara mbrc:founding betyder det att medlemskapet då bara har den kategorin. En händelse som lämnar kategorierna oförändrade utelämnar mbr:resultingCategory."@sv .
+                   "Värdena är hela uppsättningen kategorier efter händelsen, inte ett tillägg till den tidigare. En händelse som gör en ständig medlem också stiftande ger båda, mbrc:life och mbrc:founding; anges bara mbrc:founding betyder det att medlemskapet då bara har den kategorin. En händelse som lämnar kategorierna oförändrade utelämnar mbr:resultingCategory."@sv ,
+                   "Les valeurs sont l'ensemble complet des catégories après l'événement, non un ajout à l'ensemble précédent. Un événement qui fait d'un membre à vie aussi un membre fondateur donne les deux, mbrc:life et mbrc:founding ; ne donner que mbrc:founding dit que l'adhésion n'a alors que cette catégorie. Un événement qui laisse les catégories inchangées omet mbr:resultingCategory."@fr .
 
 ##############################################################################
 # MEMBERSHIP FEES
@@ -373,32 +418,36 @@ mbr:resultingCategory a owl:ObjectProperty ;
 mbr:MembershipFee a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf schema:PriceSpecification ;
-    rdfs:label "Membership Fee"@en , "Medlemsavgift"@sv ;
+    rdfs:label "Membership Fee"@en , "Medlemsavgift"@sv , "Cotisation"@fr ;
     skos:definition "A fee an organisation charges for membership: the kind of fee (mbr:feeType), the amount (schema:price) in a currency (schema:priceCurrency, an ISO 4217 code such as SEK), the membership categories it applies to (mbr:appliesToCategory; left out when it applies to all members) and when it was in force (mbr:startDate, mbr:endDate). Linked from the organisation or branch with mbr:membershipFee. When a fee changes, add a new fee and give the old one an end date."@en ,
-                    "En avgift som en organisation tar ut för medlemskap: avgiftens typ (mbr:feeType), beloppet (schema:price) i en valuta (schema:priceCurrency, en kod enligt ISO 4217, t.ex. SEK), de medlemskategorier den gäller (mbr:appliesToCategory; utelämnas när den gäller alla medlemmar) och när den gällde (mbr:startDate, mbr:endDate). Kopplas från organisationen eller avdelningen med mbr:membershipFee. När en avgift ändras läggs en ny avgift till och den gamla får ett slutdatum."@sv .
+                    "En avgift som en organisation tar ut för medlemskap: avgiftens typ (mbr:feeType), beloppet (schema:price) i en valuta (schema:priceCurrency, en kod enligt ISO 4217, t.ex. SEK), de medlemskategorier den gäller (mbr:appliesToCategory; utelämnas när den gäller alla medlemmar) och när den gällde (mbr:startDate, mbr:endDate). Kopplas från organisationen eller avdelningen med mbr:membershipFee. När en avgift ändras läggs en ny avgift till och den gamla får ett slutdatum."@sv ,
+                    "Somme qu'une organisation demande pour l'adhésion : le type de cotisation (mbr:feeType), le montant (schema:price) dans une monnaie (schema:priceCurrency, un code ISO 4217 comme SEK), les catégories de membres concernées (mbr:appliesToCategory ; omis lorsqu'elle s'applique à tous les membres) et la période où elle était en vigueur (mbr:startDate, mbr:endDate). Reliée à l'organisation ou à la section par mbr:membershipFee. Quand une cotisation change, ajouter une nouvelle cotisation et donner une date de fin à l'ancienne."@fr .
 
 mbr:membershipFee a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "membership fee"@en , "medlemsavgift"@sv ;
+    rdfs:label "membership fee"@en , "medlemsavgift"@sv , "cotisation"@fr ;
     rdfs:range mbr:MembershipFee ;
     skos:definition "A fee the organisation or branch charges for membership, now or in the past."@en ,
-                    "En avgift som organisationen eller avdelningen tar eller har tagit ut för medlemskap."@sv .
+                    "En avgift som organisationen eller avdelningen tar eller har tagit ut för medlemskap."@sv ,
+                    "Somme que l'organisation ou la section demande pour l'adhésion, aujourd'hui ou par le passé."@fr .
 
 mbr:feeType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "fee type"@en , "avgiftstyp"@sv ;
+    rdfs:label "fee type"@en , "avgiftstyp"@sv , "type de cotisation"@fr ;
     rdfs:domain mbr:MembershipFee ;
     rdfs:range skos:Concept ;
     skos:definition "When and how often the fee is paid: on joining, every year, every month or once for life (see mbrc:FeeTypes)."@en ,
-                    "När och hur ofta avgiften betalas: vid inträdet, varje år, varje månad eller en gång för livet (se mbrc:FeeTypes)."@sv .
+                    "När och hur ofta avgiften betalas: vid inträdet, varje år, varje månad eller en gång för livet (se mbrc:FeeTypes)."@sv ,
+                    "Quand et à quelle fréquence la cotisation est payée : à l'entrée, chaque année, chaque mois ou une fois pour la vie (voir mbrc:FeeTypes)."@fr .
 
 mbr:appliesToCategory a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "applies to category"@en , "gäller kategori"@sv ;
+    rdfs:label "applies to category"@en , "gäller kategori"@sv , "s'applique à la catégorie"@fr ;
     rdfs:domain mbr:MembershipFee ;
     rdfs:range skos:Concept ;
     skos:definition "A membership category the fee applies to, such as junior or overseas members (see mbrc:MembershipCategories). Left out when the fee applies to all members."@en ,
-                    "En medlemskategori som avgiften gäller, t.ex. junior- eller utlandsmedlemmar (se mbrc:MembershipCategories). Utelämnas när avgiften gäller alla medlemmar."@sv .
+                    "En medlemskategori som avgiften gäller, t.ex. junior- eller utlandsmedlemmar (se mbrc:MembershipCategories). Utelämnas när avgiften gäller alla medlemmar."@sv ,
+                    "Catégorie d'adhésion à laquelle la cotisation s'applique, comme les membres juniors ou à l'étranger (voir mbrc:MembershipCategories). Omis lorsque la cotisation s'applique à tous les membres."@fr .
 
 ##############################################################################
 # OFFICES AND TERMS OF OFFICE
@@ -407,16 +456,18 @@ mbr:appliesToCategory a owl:ObjectProperty ;
 mbr:Office a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf org:Role ;
-    rdfs:label "Office"@en , "Ämbete"@sv ;
+    rdfs:label "Office"@en , "Ämbete"@sv , "Fonction"@fr ;
     skos:definition "A kind of office in a membership organisation, such as treasurer or master of ceremonies. Offices are org:Role and therefore SKOS concepts: they live in codelists (mbrc:OfficeTypes is the generic hub)."@en ,
-                    "En typ av ämbete i en medlemsorganisation, t.ex. skattmästare eller ceremonimästare. Ämbeten är org:Role och därmed SKOS-begrepp: de förs i kodlistor (mbrc:OfficeTypes är det generiska navet)."@sv .
+                    "En typ av ämbete i en medlemsorganisation, t.ex. skattmästare eller ceremonimästare. Ämbeten är org:Role och därmed SKOS-begrepp: de förs i kodlistor (mbrc:OfficeTypes är det generiska navet)."@sv ,
+                    "Sorte de fonction dans une organisation de membres, comme trésorier ou maître des cérémonies. Les fonctions sont des org:Role et donc des concepts SKOS : elles vivent dans des listes de codes (mbrc:OfficeTypes est le pivot générique)."@fr .
 
 mbr:Tenure a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf org:Membership ;
-    rdfs:label "Term of Office"@en , "Ämbetsperiod"@sv ;
+    rdfs:label "Term of Office"@en , "Ämbetsperiod"@sv , "Mandat"@fr ;
     skos:definition "A period during which an agent (org:member) holds an office (org:role) in an organisation (org:organization)."@en ,
-                    "En period under vilken en agent (org:member) innehar ett ämbete (org:role) i en organisation (org:organization)."@sv .
+                    "En period under vilken en agent (org:member) innehar ett ämbete (org:role) i en organisation (org:organization)."@sv ,
+                    "Période pendant laquelle un agent (org:member) exerce une fonction (org:role) dans une organisation (org:organization)."@fr .
 
 ##############################################################################
 # DATES (shared by memberships, tenures, gatherings, conferrals, events)
@@ -425,26 +476,31 @@ mbr:Tenure a owl:Class ;
 mbr:startDate a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:startDate ;
-    rdfs:label "start date"@en , "startdatum"@sv ;
+    rdfs:label "start date"@en , "startdatum"@sv , "date de début"@fr ;
     skos:definition "When something began or took place. Value is xsd:date, xsd:gYearMonth or xsd:gYear."@en ,
-                    "När något började eller ägde rum. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv .
+                    "När något började eller ägde rum. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ,
+                    "Quand quelque chose a commencé ou a eu lieu. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear."@fr .
 
 mbr:endDate a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:endDate ;
-    rdfs:label "end date"@en , "slutdatum"@sv ;
+    rdfs:label "end date"@en , "slutdatum"@sv , "date de fin"@fr ;
     skos:definition "When something ended. Value is xsd:date, xsd:gYearMonth or xsd:gYear."@en ,
-                    "När något upphörde. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ;
+                    "När något upphörde. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ,
+                    "Quand quelque chose a pris fin. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear."@fr ;
     skos:scopeNote "SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate."@en ,
-                   "SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate."@sv .
+                   "SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate."@sv ,
+                   "SHACL ne signale une fin antérieure à un début que lorsque c'est certain : le dernier jour que la fin peut désigner précède le premier jour que le début peut désigner ; 2000 et 2000-03 peuvent donc se chevaucher et ne sont pas une erreur. Les années 0001-9999 écrites avec quatre chiffres sont prises en charge ; un fuseau horaire est ignoré et la date calendaire telle qu'écrite est comparée. Les autres dates ne sont pas ordonnées et donnent un avertissement. La même règle s'applique à mbr:foundingDate et mbr:dissolutionDate."@fr .
 
 mbr:decisionDate a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "decision date"@en , "beslutsdatum"@sv ;
+    rdfs:label "decision date"@en , "beslutsdatum"@sv , "date de décision"@fr ;
     skos:definition "When a decision was taken, such as the date of a members' vote. Value is xsd:date, xsd:gYearMonth or xsd:gYear. The date the decision began to apply is mbr:startDate."@en ,
-                    "När ett beslut fattades, till exempel dagen för en medlemsomröstning. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Det datum beslutet började gälla är mbr:startDate."@sv ;
+                    "När ett beslut fattades, till exempel dagen för en medlemsomröstning. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Det datum beslutet började gälla är mbr:startDate."@sv ,
+                    "Quand une décision a été prise, par exemple la date d'un vote des membres. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear. La date à laquelle la décision a commencé à s'appliquer est mbr:startDate."@fr ;
     skos:scopeNote "A decision may come before or after it takes effect, so SHACL does not compare it with mbr:startDate."@en ,
-                   "Ett beslut kan komma före eller efter att det träder i kraft, så SHACL jämför det inte med mbr:startDate."@sv .
+                   "Ett beslut kan komma före eller efter att det träder i kraft, så SHACL jämför det inte med mbr:startDate."@sv ,
+                   "Une décision peut précéder ou suivre son entrée en vigueur ; SHACL ne la compare donc pas à mbr:startDate."@fr .
 
 ##############################################################################
 # GATHERINGS AND PARTICIPATION
@@ -453,84 +509,95 @@ mbr:decisionDate a owl:DatatypeProperty ;
 mbr:Gathering a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf schema:Event ;
-    rdfs:label "Gathering"@en , "Sammankomst"@sv ;
+    rdfs:label "Gathering"@en , "Sammankomst"@sv , "Réunion"@fr ;
     skos:definition "An occasion on which members (and possibly guests) come together: a meeting, dinner, ball, excursion and so on. The kind of gathering is given with mbr:gatheringType."@en ,
-                    "Ett tillfälle då medlemmar (och eventuellt gäster) samlas: möte, middag, bal, utflykt osv. Typen av sammankomst anges med mbr:gatheringType."@sv .
+                    "Ett tillfälle då medlemmar (och eventuellt gäster) samlas: möte, middag, bal, utflykt osv. Typen av sammankomst anges med mbr:gatheringType."@sv ,
+                    "Occasion où des membres (et éventuellement des invités) se retrouvent : réunion, dîner, bal, excursion, etc. Le genre de réunion est indiqué avec mbr:gatheringType."@fr .
 
 mbr:GatheringSeries a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf schema:EventSeries ;
-    rdfs:label "Gathering Series"@en , "Återkommande sammankomst"@sv ;
+    rdfs:label "Gathering Series"@en , "Återkommande sammankomst"@sv , "Série de réunions"@fr ;
     skos:definition "A recurring gathering, such as an annual feast. Each occurrence is a mbr:Gathering linked to the series with schema:superEvent."@en ,
-                    "En återkommande sammankomst, t.ex. en årlig högtid. Varje tillfälle är en mbr:Gathering kopplad till serien med schema:superEvent."@sv .
+                    "En återkommande sammankomst, t.ex. en årlig högtid. Varje tillfälle är en mbr:Gathering kopplad till serien med schema:superEvent."@sv ,
+                    "Réunion récurrente, comme un banquet annuel. Chaque occurrence est une mbr:Gathering reliée à la série par schema:superEvent."@fr .
 
 mbr:gatheringType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "gathering type"@en , "typ av sammankomst"@sv ;
+    rdfs:label "gathering type"@en , "typ av sammankomst"@sv , "type de réunion"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The kind of gathering (see mbrc:GatheringTypes)."@en ,
-                    "Typen av sammankomst (se mbrc:GatheringTypes)."@sv .
+                    "Typen av sammankomst (se mbrc:GatheringTypes)."@sv ,
+                    "Le genre de réunion (voir mbrc:GatheringTypes)."@fr .
 
 mbr:organizer a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:organizer ;
-    rdfs:label "organiser"@en , "arrangör"@sv ;
+    rdfs:label "organiser"@en , "arrangör"@sv , "organisateur"@fr ;
     rdfs:range foaf:Agent ;
     skos:definition "The organisation or agent that arranges a gathering."@en ,
-                    "Den organisation eller agent som anordnar en sammankomst."@sv .
+                    "Den organisation eller agent som anordnar en sammankomst."@sv ,
+                    "L'organisation ou l'agent qui organise une réunion."@fr .
 
 mbr:dressCode a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "dress code"@en , "klädkod"@sv ;
+    rdfs:label "dress code"@en , "klädkod"@sv , "code vestimentaire"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The dress code prescribed for a gathering, or — used on an organisation or its premises — the house dress code that applies day to day (see mbrc:DressCodes)."@en ,
-                    "Den klädkod som gäller för en sammankomst, eller — använd på en organisation eller dess lokal — den klädkod som gäller i huset till vardags (se mbrc:DressCodes)."@sv .
+                    "Den klädkod som gäller för en sammankomst, eller — använd på en organisation eller dess lokal — den klädkod som gäller i huset till vardags (se mbrc:DressCodes)."@sv ,
+                    "Le code vestimentaire prescrit pour une réunion ou — employé pour une organisation ou ses locaux — le code vestimentaire de la maison qui s'applique au quotidien (voir mbrc:DressCodes)."@fr .
 
 mbr:Participation a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "Participation"@en , "Deltagande"@sv ;
+    rdfs:label "Participation"@en , "Deltagande"@sv , "Participation"@fr ;
     skos:definition "The qualified relationship between an agent and a gathering, carrying the role in which the agent took part (member, guest, partner, speaker …) and who introduced a guest."@en ,
-                    "Den kvalificerade relationen mellan en agent och en sammankomst, med den roll agenten deltog i (medlem, gäst, moatjé, talare …) och vem som introducerade en gäst."@sv .
+                    "Den kvalificerade relationen mellan en agent och en sammankomst, med den roll agenten deltog i (medlem, gäst, moatjé, talare …) och vem som introducerade en gäst."@sv ,
+                    "La relation qualifiée entre un agent et une réunion, portant le rôle dans lequel l'agent a pris part (membre, invité, accompagnant, orateur …) et qui a présenté un invité."@fr .
 
 mbr:participant a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "participant"@en , "deltagare"@sv ;
+    rdfs:label "participant"@en , "deltagare"@sv , "participant"@fr ;
     skos:definition "The agent who took part in a gathering, as recorded in a participation."@en ,
-                    "Den agent som deltog i en sammankomst, så som det anges i ett deltagande."@sv ;
+                    "Den agent som deltog i en sammankomst, så som det anges i ett deltagande."@sv ,
+                    "L'agent qui a pris part à une réunion, tel que consigné dans une participation."@fr ;
     rdfs:domain mbr:Participation ;
     rdfs:range foaf:Agent .
 
 mbr:participationIn a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "participation in"@en , "deltagande i"@sv ;
+    rdfs:label "participation in"@en , "deltagande i"@sv , "participation à"@fr ;
     skos:definition "The gathering or other event that a participation concerns."@en ,
-                    "Den sammankomst eller annan händelse som ett deltagande avser."@sv ;
+                    "Den sammankomst eller annan händelse som ett deltagande avser."@sv ,
+                    "La réunion ou autre événement qu'une participation concerne."@fr ;
     rdfs:domain mbr:Participation ;
     rdfs:range schema:Event .
 
 mbr:participationRole a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "participation role"@en , "deltagarroll"@sv ;
+    rdfs:label "participation role"@en , "deltagarroll"@sv , "rôle de participation"@fr ;
     rdfs:domain mbr:Participation ;
     rdfs:range skos:Concept ;
     skos:definition "The role in which the agent took part (see mbrc:ParticipationRoles)."@en ,
-                    "Den roll i vilken agenten deltog (se mbrc:ParticipationRoles)."@sv .
+                    "Den roll i vilken agenten deltog (se mbrc:ParticipationRoles)."@sv ,
+                    "Le rôle dans lequel l'agent a pris part (voir mbrc:ParticipationRoles)."@fr .
 
 mbr:introducedBy a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "introduced by"@en , "introducerad av"@sv ;
+    rdfs:label "introduced by"@en , "introducerad av"@sv , "présenté par"@fr ;
     rdfs:domain mbr:Participation ;
     rdfs:range foaf:Agent ;
     skos:definition "The member who introduced a guest to the gathering."@en ,
-                    "Den medlem som introducerade en gäst vid sammankomsten."@sv .
+                    "Den medlem som introducerade en gäst vid sammankomsten."@sv ,
+                    "Le membre qui a présenté un invité à la réunion."@fr .
 
 mbr:attended a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     owl:inverseOf schema:attendee ;
-    rdfs:label "attended"@en , "har deltagit i"@sv ;
+    rdfs:label "attended"@en , "har deltagit i"@sv , "a assisté à"@fr ;
     rdfs:range schema:Event ;
     skos:definition "Shortcut from an agent to a gathering it attended, when the role does not need to be recorded. Inverse of schema:attendee."@en ,
-                    "Genväg från en agent till en sammankomst den deltog i, när rollen inte behöver anges. Invers till schema:attendee."@sv .
+                    "Genväg från en agent till en sammankomst den deltog i, när rollen inte behöver anges. Invers till schema:attendee."@sv ,
+                    "Raccourci d'un agent vers une réunion à laquelle il a assisté, lorsque le rôle n'a pas à être consigné. Inverse de schema:attendee."@fr .
 
 ##############################################################################
 # DISTINCTIONS AND CONFERRALS
@@ -539,76 +606,86 @@ mbr:attended a owl:ObjectProperty ;
 mbr:Distinction a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "Distinction"@en , "Utmärkelse"@sv ;
+    rdfs:label "Distinction"@en , "Utmärkelse"@sv , "Distinction"@fr ;
     skos:definition "A kind of honour an organisation can confer: a medal, badge, honorary title, honorary membership and so on. Distinctions are SKOS concepts kept in the organisation's codelist; the individual award is a mbr:DistinctionConferral."@en ,
-                    "En typ av hedersbetygelse som en organisation kan tilldela: medalj, tecken, hederstitel, hedersledamotskap osv. Utmärkelser är SKOS-begrepp i organisationens kodlista; själva tilldelningen är en mbr:DistinctionConferral."@sv .
+                    "En typ av hedersbetygelse som en organisation kan tilldela: medalj, tecken, hederstitel, hedersledamotskap osv. Utmärkelser är SKOS-begrepp i organisationens kodlista; själva tilldelningen är en mbr:DistinctionConferral."@sv ,
+                    "Sorte d'honneur qu'une organisation peut conférer : médaille, insigne, titre honorifique, adhésion honoraire, etc. Les distinctions sont des concepts SKOS tenus dans la liste de codes de l'organisation ; l'attribution individuelle est une mbr:DistinctionConferral."@fr .
 
 mbr:distinctionType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "distinction type"@en , "typ av utmärkelse"@sv ;
+    rdfs:label "distinction type"@en , "typ av utmärkelse"@sv , "type de distinction"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The generic kind of a distinction (see mbrc:DistinctionTypes)."@en ,
-                    "Utmärkelsens generiska typ (se mbrc:DistinctionTypes)."@sv .
+                    "Utmärkelsens generiska typ (se mbrc:DistinctionTypes)."@sv ,
+                    "Le genre générique d'une distinction (voir mbrc:DistinctionTypes)."@fr .
 
 mbr:material a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "material"@en , "material"@sv ;
+    rdfs:label "material"@en , "material"@sv , "matériau"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The material a medal, badge or insignia is made of (see mbrc:Materials)."@en ,
-                    "Det material en medalj, ett tecken eller en insignie är tillverkad av (se mbrc:Materials)."@sv .
+                    "Det material en medalj, ett tecken eller en insignie är tillverkad av (se mbrc:Materials)."@sv ,
+                    "Le matériau dont est faite une médaille, un insigne ou une décoration (voir mbrc:Materials)."@fr .
 
 mbr:ribbonColour a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "ribbon colour"@en , "bandfärg"@sv ;
+    rdfs:label "ribbon colour"@en , "bandfärg"@sv , "couleur du ruban"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The ribbon on which a medal or badge is worn."@en ,
-                    "Det band i vilket en medalj eller ett tecken bärs."@sv .
+                    "Det band i vilket en medalj eller ett tecken bärs."@sv ,
+                    "Le ruban auquel est portée une médaille ou un insigne."@fr .
 
 mbr:Conferral a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf prov:Activity ;
-    rdfs:label "Conferral"@en , "Tilldelning"@sv ;
+    rdfs:label "Conferral"@en , "Tilldelning"@sv , "Attribution"@fr ;
     skos:definition "The act of conferring something (a distinction, a degree) on a recipient. The recipient may be any agent, member or not."@en ,
-                    "Handlingen att tilldela någon något (en utmärkelse, en grad). Mottagaren kan vara vilken agent som helst, medlem eller inte."@sv .
+                    "Handlingen att tilldela någon något (en utmärkelse, en grad). Mottagaren kan vara vilken agent som helst, medlem eller inte."@sv ,
+                    "L'acte de conférer quelque chose (une distinction, un degré) à un bénéficiaire. Le bénéficiaire peut être n'importe quel agent, membre ou non."@fr .
 
 mbr:DistinctionConferral a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf mbr:Conferral ;
-    rdfs:label "Distinction Conferral"@en , "Utmärkelsetilldelning"@sv ;
+    rdfs:label "Distinction Conferral"@en , "Utmärkelsetilldelning"@sv , "Attribution de distinction"@fr ;
     skos:definition "The conferral of a distinction. The same agent may receive the same distinction more than once."@en ,
-                    "Tilldelningen av en utmärkelse. Samma agent kan motta samma utmärkelse flera gånger."@sv .
+                    "Tilldelningen av en utmärkelse. Samma agent kan motta samma utmärkelse flera gånger."@sv ,
+                    "L'attribution d'une distinction. Le même agent peut recevoir plusieurs fois la même distinction."@fr .
 
 mbr:recipient a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "recipient"@en , "mottagare"@sv ;
+    rdfs:label "recipient"@en , "mottagare"@sv , "bénéficiaire"@fr ;
     skos:definition "The agent on whom something is conferred, member or not."@en ,
-                    "Den agent som något tilldelas, medlem eller inte."@sv ;
+                    "Den agent som något tilldelas, medlem eller inte."@sv ,
+                    "L'agent à qui quelque chose est conféré, membre ou non."@fr ;
     rdfs:domain mbr:Conferral ;
     rdfs:range foaf:Agent .
 
 mbr:conferred a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "conferred"@en , "tilldelat"@sv ;
+    rdfs:label "conferred"@en , "tilldelat"@sv , "conféré"@fr ;
     rdfs:domain mbr:Conferral ;
     rdfs:range skos:Concept ;
     skos:definition "What was conferred: a distinction, a degree or another concept."@en ,
-                    "Vad som tilldelades: en utmärkelse, en grad eller annat begrepp."@sv .
+                    "Vad som tilldelades: en utmärkelse, en grad eller annat begrepp."@sv ,
+                    "Ce qui a été conféré : une distinction, un degré ou un autre concept."@fr .
 
 mbr:conferredAt a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "conferred at"@en , "tilldelat vid"@sv ;
+    rdfs:label "conferred at"@en , "tilldelat vid"@sv , "conféré lors de"@fr ;
     rdfs:domain mbr:Conferral ;
     rdfs:range schema:Event ;
     skos:definition "The gathering at which the conferral took place."@en ,
-                    "Den sammankomst vid vilken tilldelningen skedde."@sv .
+                    "Den sammankomst vid vilken tilldelningen skedde."@sv ,
+                    "La réunion au cours de laquelle l'attribution a eu lieu."@fr .
 
 mbr:conferredBy a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf prov:wasAssociatedWith ;
-    rdfs:label "conferred by"@en , "tilldelat av"@sv ;
+    rdfs:label "conferred by"@en , "tilldelat av"@sv , "conféré par"@fr ;
     rdfs:domain mbr:Conferral ;
     skos:definition "The organisation (or officer) that made the conferral."@en ,
-                    "Den organisation (eller ämbetsman) som gjorde tilldelningen."@sv .
+                    "Den organisation (eller ämbetsman) som gjorde tilldelningen."@sv ,
+                    "L'organisation (ou le responsable) qui a fait l'attribution."@fr .
 
 ##############################################################################
 # ORGANISATION-LEVEL PROPERTIES AND RELATIONS BETWEEN ORGANISATIONS
@@ -616,33 +693,39 @@ mbr:conferredBy a owl:ObjectProperty ;
 
 mbr:genderPolicy a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "gender policy"@en , "könspolicy"@sv ;
+    rdfs:label "gender policy"@en , "könspolicy"@sv , "règle de mixité"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "Who may be admitted, by gender (see mbrc:GenderPolicies)."@en ,
-                    "Vilka som kan upptas, efter kön (se mbrc:GenderPolicies)."@sv ;
+                    "Vilka som kan upptas, efter kön (se mbrc:GenderPolicies)."@sv ,
+                    "Qui peut être admis, selon le genre (voir mbrc:GenderPolicies)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods. A club that changed from men only to mixed has the earlier policy and the later one as two periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna. En klubb som gick från endast män till blandat har den tidigare och den senare policyn som två perioder."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna. En klubb som gick från endast män till blandat har den tidigare och den senare policyn som två perioder."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes. Un club passé d'hommes seulement à mixte a la règle antérieure et la règle postérieure sous forme de deux périodes."@fr .
 
 mbr:admissionMode a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "admission mode"@en , "upptagningsform"@sv ;
+    rdfs:label "admission mode"@en , "upptagningsform"@sv , "mode d'admission"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "How new members are admitted (see mbrc:AdmissionModes)."@en ,
-                    "Hur nya medlemmar upptas (se mbrc:AdmissionModes)."@sv ;
+                    "Hur nya medlemmar upptas (se mbrc:AdmissionModes)."@sv ,
+                    "Comment les nouveaux membres sont admis (voir mbrc:AdmissionModes)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes."@fr .
 
 mbr:reciprocalWith a owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf org:linkedTo ;
-    rdfs:label "reciprocal with"@en , "ömsesidighet med"@sv ;
+    rdfs:label "reciprocal with"@en , "ömsesidighet med"@sv , "réciproque avec"@fr ;
     skos:definition "The two organisations grant each other's members reciprocal access. Use mbr:ReciprocityAgreement for dates and terms."@en ,
-                    "De två organisationerna ger varandras medlemmar ömsesidigt tillträde. Använd mbr:ReciprocityAgreement för datum och villkor."@sv .
+                    "De två organisationerna ger varandras medlemmar ömsesidigt tillträde. Använd mbr:ReciprocityAgreement för datum och villkor."@sv ,
+                    "Les deux organisations accordent à leurs membres respectifs un accès réciproque. Utiliser mbr:ReciprocityAgreement pour les dates et les conditions."@fr .
 
 mbr:party a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "party"@en , "part"@sv ;
+    rdfs:label "party"@en , "part"@sv , "partie"@fr ;
     skos:definition "An organisation that is a party to a reciprocity agreement. An agreement has two or more parties."@en ,
-                    "En organisation som är part i ett ömsesidighetsavtal. Ett avtal har två eller flera parter."@sv ;
+                    "En organisation som är part i ett ömsesidighetsavtal. Ett avtal har två eller flera parter."@sv ,
+                    "Organisation partie à un accord de réciprocité. Un accord a deux parties ou plus."@fr ;
     rdfs:domain mbr:ReciprocityAgreement ;
     rdfs:range org:Organization .

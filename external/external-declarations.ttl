@@ -33,9 +33,11 @@
     owl:priorVersion <https://w3id.org/membership/external/1.0.0> ;
     owl:backwardCompatibleWith <https://w3id.org/membership/external/1.0.0> ;
     rdfs:label "External declarations for the membership/fraternal ontology stack"@en ,
-               "Externa deklarationer för ontologistacken membership/fraternal"@sv ;
+               "Externa deklarationer för ontologistacken membership/fraternal"@sv ,
+               "Déclarations externes pour la pile d'ontologies membership/fraternal"@fr ;
     rdfs:comment "OWL 2 DL declarations of the FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O and DCTERMS terms used by membership, fraternal and ontologies built on them."@en ,
-                 "OWL 2 DL-deklarationer av de FOAF-, ORG-, ROV-, ADMS-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ;
+                 "OWL 2 DL-deklarationer av de FOAF-, ORG-, ROV-, ADMS-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ,
+                 "Déclarations OWL 2 DL des termes FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O et DCTERMS utilisés par membership, fraternal et les ontologies qui s'appuient sur eux."@fr ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
