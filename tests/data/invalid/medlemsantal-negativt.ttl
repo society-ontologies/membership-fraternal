@@ -1,0 +1,10 @@
+# EXPECT: member count of minus five
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:c a mbr:MemberCount ; mbr:count -5 ; mbr:asOf "2025"^^xsd:gYear .

@@ -12,7 +12,7 @@ SHAPES := membership/membership-shapes.ttl fraternal/fraternal-shapes.ttl
 MAPPINGS_TSV := $(wildcard mappings/*.sssom.tsv)
 MAPPINGS_TTL := $(patsubst mappings/%.sssom.tsv,mappings/generated/%.ttl,$(MAPPINGS_TSV))
 VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/data/riddarorden-exempel.ttl \
-         tests/data/forening-exempel.ttl
+         tests/data/forening-exempel.ttl tests/data/medlemskap-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 
 .PHONY: all validate shacl shacl-invalid skos cq i18n mappings wikidata-check dl reason reuse docs freeze clean
@@ -49,19 +49,22 @@ $(BUILD)/skos-dataset.nt: $(BUILD)/stack.nt $(BUILD)/mappings.nt
 
 # --- SHACL -----------------------------------------------------------------
 
+# The data graph is the stack, the mappings and one sample. The shapes check codelist
+# values against the hub schemes, and a mapping is how a local concept gets in.
+
 # Valid samples must produce no validation results (not even warnings).
-shacl: $(BUILD)/shapes.nt $(BUILD)/stack.nt
+shacl: $(BUILD)/shapes.nt $(BUILD)/stack.nt $(BUILD)/mappings.nt
 	@for d in $(VALID); do \
-	  riot --output=nt $(BUILD)/stack.nt "$$d" > $(BUILD)/data.nt; \
+	  riot --output=nt $(BUILD)/stack.nt $(BUILD)/mappings.nt "$$d" > $(BUILD)/data.nt; \
 	  shacl validate --shapes=$(BUILD)/shapes.nt --data=$(BUILD)/data.nt > $(BUILD)/report.ttl; \
 	  if grep -q 'sh:conforms *true' $(BUILD)/report.ttl; then echo "PASS  $$d"; \
 	  else echo "FAIL  $$d"; cat $(BUILD)/report.ttl; exit 1; fi; \
 	done
 
 # Each invalid fixture must produce at least one sh:Violation.
-shacl-invalid: $(BUILD)/shapes.nt $(BUILD)/stack.nt
+shacl-invalid: $(BUILD)/shapes.nt $(BUILD)/stack.nt $(BUILD)/mappings.nt
 	@for d in $(INVALID); do \
-	  riot --output=nt $(BUILD)/stack.nt "$$d" > $(BUILD)/data.nt; \
+	  riot --output=nt $(BUILD)/stack.nt $(BUILD)/mappings.nt "$$d" > $(BUILD)/data.nt; \
 	  shacl validate --shapes=$(BUILD)/shapes.nt --data=$(BUILD)/data.nt > $(BUILD)/report.ttl; \
 	  n=$$(grep -c 'sh:Violation' $(BUILD)/report.ttl); \
 	  if [ "$$n" -gt 0 ]; then echo "PASS  $$d  ($$n violation(s))"; \

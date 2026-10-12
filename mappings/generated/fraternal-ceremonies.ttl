@@ -1,0 +1,80 @@
+# Generated from fraternal-ceremonies.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/fraternal/mappings/fraternal-ceremonies> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "fraternal ceremony types placed under the membership gathering-type hub." ;
+    <http://purl.org/dc/terms/created> "2026-10-12" .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/fraternal/code/initiationCeremony> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/initiationCeremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Initiation Ceremony" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+
+<https://w3id.org/fraternal/code/degreeCeremony> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/degreeCeremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Degree Ceremony" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+
+<https://w3id.org/fraternal/code/installation> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/installation> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Installation of Officers" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+
+<https://w3id.org/fraternal/code/memorialCeremony> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/memorialCeremony> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Memorial Ceremony" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+
+<https://w3id.org/fraternal/code/festiveBoard> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/festiveBoard> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Festive Board" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ;
+  <https://w3id.org/sssom/comment> "The ritual meal that follows a ceremony; fraternalc:CeremonyTypes counts it as a kind of ceremony." ] .
+
+<https://w3id.org/fraternal/code/patronsFeast> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/patronsFeast> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Patron's Feast" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ;
+  <https://w3id.org/sssom/comment> "A feast in honour of the order's patron; fraternalc:CeremonyTypes counts it as a kind of ceremony." ] .
+

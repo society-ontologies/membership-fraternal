@@ -1,0 +1,16 @@
+# EXPECT: membership number 7 reused while the periods may overlap (start 2000 vs end 2000-03)
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:a a foaf:Person .
+ex:b a foaf:Person .
+ex:ma a mbr:Membership ; org:member ex:a ; org:organization ex:Club ;
+    mbr:membershipNumber "7" ; mbr:startDate "1990"^^xsd:gYear ; mbr:endDate "2000-03"^^xsd:gYearMonth .
+ex:mb a mbr:Membership ; org:member ex:b ; org:organization ex:Club ;
+    mbr:membershipNumber "7" ; mbr:startDate "2000"^^xsd:gYear .

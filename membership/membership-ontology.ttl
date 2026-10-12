@@ -262,15 +262,18 @@ mbr:membershipCategory a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:label "membership category"@en , "medlemskategori"@sv ;
     rdfs:range skos:Concept ;
-    skos:definition "The category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories)."@en ,
-                    "Medlemskapets kategori, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories)."@sv .
+    skos:definition "A category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories). A membership may have several, for example life and founding."@en ,
+                    "En kategori som ett medlemskap tillhör, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories). Ett medlemskap kan ha flera, till exempel ständigt och stiftande."@sv ;
+    skos:scopeNote "The categories are properties that can be combined, not an exhaustive division: they are grouped by what they say (rights, duration, honour, age, residence, affiliation, founding), and a membership with no category is not thereby ordinary. No combination is ruled out unless a category's definition says so. Changes to the set are recorded with mbr:resultingCategory on membership events."@en ,
+                   "Kategorierna är egenskaper som kan kombineras, inte en uttömmande indelning: de är grupperade efter vad de anger (rättigheter, varaktighet, hedersställning, ålder, bosättning, anknytning, grundande), och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det. Ändringar av uppsättningen anges med mbr:resultingCategory på medlemskapshändelser."@sv .
 
 mbr:membershipNumber a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subPropertyOf schema:membershipNumber ;
     rdfs:label "membership number"@en , "medlemsnummer"@sv ;
-    skos:definition "The number under which a membership is recorded in the organisation's register. Unique within one organisation (checked in SHACL)."@en ,
-                    "Det nummer under vilket ett medlemskap förs i organisationens matrikel. Unikt inom en organisation (kontrolleras i SHACL)."@sv .
+    rdfs:range xsd:string ;
+    skos:definition "The number under which a membership is recorded in the organisation's register, written as an xsd:string because registers use numbers such as L-0042 and 0042. A number identifies one membership in one organisation at a time; a later membership may reuse it when the periods certainly do not overlap (checked in SHACL)."@en ,
+                    "Det nummer under vilket ett medlemskap förs i organisationens matrikel, skrivet som xsd:string eftersom matriklar har nummer som L-0042 och 0042. Ett nummer identifierar ett medlemskap i en organisation åt gången; ett senare medlemskap får återanvända det när perioderna säkert inte överlappar (kontrolleras i SHACL)."@sv .
 
 mbr:sponsor a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -315,6 +318,16 @@ mbr:resultingStatus a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:definition "The membership status that applies after the event."@en ,
                     "Den medlemskapsstatus som gäller efter händelsen."@sv .
+
+mbr:resultingCategory a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "resulting category"@en , "resulterande kategori"@sv ;
+    rdfs:domain mbr:MembershipEvent ;
+    rdfs:range skos:Concept ;
+    skos:definition "A membership category that applies after the event (see mbrc:MembershipCategories). Give one value for each category in the complete set after the event."@en ,
+                    "En medlemskategori som gäller efter händelsen (se mbrc:MembershipCategories). Ange ett värde för varje kategori i hela uppsättningen efter händelsen."@sv ;
+    skos:scopeNote "The values are the whole set of categories after the event, not an addition to the earlier set. An event that makes a life member also a founding member gives both, mbrc:life and mbrc:founding; giving only mbrc:founding says the membership then has only that category. An event that leaves the categories unchanged leaves mbr:resultingCategory out."@en ,
+                   "Värdena är hela uppsättningen kategorier efter händelsen, inte ett tillägg till den tidigare. En händelse som gör en ständig medlem också stiftande ger båda, mbrc:life och mbrc:founding; anges bara mbrc:founding betyder det att medlemskapet då bara har den kategorin. En händelse som lämnar kategorierna oförändrade utelämnar mbr:resultingCategory."@sv .
 
 ##############################################################################
 # MEMBERSHIP FEES
@@ -384,7 +397,9 @@ mbr:endDate a owl:DatatypeProperty ;
     rdfs:subPropertyOf schema:endDate ;
     rdfs:label "end date"@en , "slutdatum"@sv ;
     skos:definition "When something ended. Value is xsd:date, xsd:gYearMonth or xsd:gYear."@en ,
-                    "När något upphörde. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv .
+                    "När något upphörde. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ;
+    skos:scopeNote "SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate."@en ,
+                   "SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate."@sv .
 
 ##############################################################################
 # GATHERINGS AND PARTICIPATION

@@ -1,0 +1,13 @@
+# EXPECT: end date 2000-01-01 is certainly before start date 2000-06-01, in the same year
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:m a mbr:Membership ; org:member ex:a ; org:organization ex:Club ;
+    mbr:startDate "2000-06-01"^^xsd:date ; mbr:endDate "2000-01-01"^^xsd:date .
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:a a foaf:Person .

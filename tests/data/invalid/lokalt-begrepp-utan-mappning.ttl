@@ -1,0 +1,13 @@
+# EXPECT: a local concept with only skos:relatedMatch to the hub is not accepted as an organisation type
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Typer a skos:ConceptScheme ; skos:prefLabel "Egna typer"@sv .
+ex:grannar a skos:Concept ; skos:inScheme ex:Typer ; skos:prefLabel "Grannar"@sv ;
+    skos:relatedMatch mbrc:gentlemensClub .
+ex:Club a mbr:MembershipOrganization ; org:classification ex:grannar .

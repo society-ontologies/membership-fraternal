@@ -993,6 +993,12 @@ td {
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
+                  <li>
+                    <span>
+                      <a href="#resultingCategory">resulting category</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
                 </ul>
               </td>
             </tr>
@@ -1693,7 +1699,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories).</p></td>
+              <td><p>A category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories). A membership may have several, for example life and founding.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>The categories are properties that can be combined, not an exhaustive division: they are grouped by what they say (rights, duration, honour, age, residence, affiliation, founding), and a membership with no category is not thereby ordinary. No combination is ruled out unless a category's definition says so. Changes to the set are recorded with mbr:resultingCategory on membership events.</p></td>
             </tr>
             <tr>
               <th>
@@ -1948,6 +1960,61 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>The membership status that applies after the event.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#MembershipEvent">Membership Event</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="resultingCategory">
+          <h3>resulting category
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#resultingCategory</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Membership Organisations Ontology</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A membership category that applies after the event (see mbrc:MembershipCategories). Give one value for each category in the complete set after the event.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>The values are the whole set of categories after the event, not an addition to the earlier set. An event that makes a life member also a founding member gives both, mbrc:life and mbrc:founding; giving only mbrc:founding says the membership then has only that category. An event that leaves the categories unchanged leaves mbr:resultingCategory out.</p></td>
             </tr>
             <tr>
               <th>
@@ -3080,7 +3147,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The number under which a membership is recorded in the organisation's register. Unique within one organisation (checked in SHACL).</p></td>
+              <td><p>The number under which a membership is recorded in the organisation's register, written as an xsd:string because registers use numbers such as L-0042 and 0042. A number identifies one membership in one organisation at a time; a later membership may reuse it when the periods certainly do not overlap (checked in SHACL).</p></td>
             </tr>
             <tr>
               <th>
@@ -3088,6 +3155,14 @@ td {
               </th>
               <td>
                 <a href="http://schema.org/membershipNumber">http://schema.org/membershipNumber</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
             </tr>
           </table>
@@ -3151,6 +3226,12 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>When something ended. Value is xsd:date, xsd:gYearMonth or xsd:gYear.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate.</p></td>
             </tr>
             <tr>
               <th>
@@ -3394,6 +3475,9 @@ td {
             </li>
             <li>
               <a href="#resultingStatus">resulting status</a>
+            </li>
+            <li>
+              <a href="#resultingCategory">resulting category</a>
             </li>
             <li>
               <a href="#membershipFee">membership fee</a>

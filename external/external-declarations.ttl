@@ -55,6 +55,7 @@ dcterms:description a owl:AnnotationProperty .
 dcterms:created a owl:AnnotationProperty .
 dcterms:modified a owl:AnnotationProperty .
 dcterms:issued a owl:AnnotationProperty .
+dcterms:isPartOf a owl:AnnotationProperty .
 dcterms:creator a owl:AnnotationProperty .
 dcterms:publisher a owl:AnnotationProperty .
 dcterms:identifier a owl:AnnotationProperty .

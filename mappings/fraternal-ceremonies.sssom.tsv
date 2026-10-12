@@ -1,0 +1,17 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-ceremonies
+# mapping_set_version: 1.0.0
+# mapping_set_description: fraternal ceremony types placed under the membership gathering-type hub.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-12
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:initiationCeremony	Initiation Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
+fraternalc:degreeCeremony	Degree Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
+fraternalc:installation	Installation of Officers	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
+fraternalc:memorialCeremony	Memorial Ceremony	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
+fraternalc:festiveBoard	Festive Board	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	The ritual meal that follows a ceremony; fraternalc:CeremonyTypes counts it as a kind of ceremony.
+fraternalc:patronsFeast	Patron's Feast	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	A feast in honour of the order's patron; fraternalc:CeremonyTypes counts it as a kind of ceremony.

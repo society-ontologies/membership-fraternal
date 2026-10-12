@@ -43,10 +43,12 @@ side-car, not imported:  mappings/*.sssom.tsv → mappings/generated/*.ttl
 
 1. **Qualified relations.** Anything with a time span or a role is a node: `mbr:Membership`, `mbr:Tenure`, `mbr:Conferral`, `mbr:Participation`. A person's path from prospect to full member is a status on *one* membership, not a change of the person's class.
 2. **Class or concept.** Use an OWL class only when the thing has its own properties or constraints. A "value from a list" is a SKOS concept: organisation types, statuses, offices, gathering types, degrees, distinctions. Named classes such as `mbr:GentlemensClub` or `fraternal:Sorority` are *defined* from those values, so a reasoner classifies them and nobody asserts them.
-3. **Hub-and-spoke codelists.** An organisation's own list maps to the membership/fraternal hubs, never pairwise to other organisations. Two clubs' treasurers are equivalent because both `skos:exactMatch mbrc:treasurer`.
+3. **Hub-and-spoke codelists.** An organisation's own list maps to the membership/fraternal hubs, never pairwise to other organisations. Two clubs' treasurers are equivalent because both `skos:exactMatch mbrc:treasurer`. SHACL enforces it: a codelist property takes a concept in its hub scheme, or a local concept with `skos:exactMatch`, `skos:closeMatch` or `skos:broadMatch` to one (not `relatedMatch`, not `narrowMatch`; none of them is `owl:sameAs`). A mapping does not classify an organisation as `mbr:GentlemensClub`: that class needs `org:classification` to be the hub concept itself.
 4. **Reuse IRIs for things you don't own.** Refer to universities, regiments or historical persons by their Wikidata IRIs. A codelist entry that stands for a real thing can point to it with `foaf:focus`.
 5. **Validation in SHACL.** OWL domains would *infer* that anyone who receives a distinction is a member. SHACL *checks* instead, so guests and partners can receive distinctions without becoming members.
-6. **Dates** accept `xsd:date`, `xsd:gYearMonth` or `xsd:gYear`, enforced in SHACL, since registers often record only a year. OWL ranges are left open because these types are not in the OWL 2 datatype map.
+6. **Dates** accept `xsd:date`, `xsd:gYearMonth` or `xsd:gYear`, enforced in SHACL, since registers often record only a year. OWL ranges are left open because these types are not in the OWL 2 datatype map. A partial date means a span (`2000` is 2000-01-01 to 2000-12-31), and an end is reported as before its start only when it certainly is: its latest day is before the start's earliest day. Years 0001-9999 with four digits are supported, and a timezone is ignored. Other dates are not ordered and give a warning, never a silent pass.
+7. **Several categories.** A membership may have several `mbr:membershipCategory` values (life and founding, junior and overseas); the categories are combinable properties in seven sub-schemes, not an exhaustive division. `mbr:resultingCategory` on an event gives the whole set after the event, not an addition.
+8. **Membership numbers** are `xsd:string`, unique per organisation. A number may be reused by a later membership only when the periods certainly do not overlap; without dates, a shared number is reported.
 
 ## Using it for your own organisation
 
@@ -55,7 +57,7 @@ side-car, not imported:  mappings/*.sssom.tsv → mappings/generated/*.ttl
 3. Put its own offices, degrees and distinctions in SKOS schemes. Type them `mbr:Office`, `fraternal:Degree` (in a `fraternal:DegreeSystem`) or `mbr:Distinction`.
 4. Keep only what is truly specific to you in your own namespace. If you need names such as "Brother", define them as classes from membership status rather than asserting them.
 5. Map your codelists to the hubs in your own SSSOM file, and generate Turtle with `mappings/sssom2ttl.py`.
-6. Validate your data with `membership-shapes.ttl`, `fraternal-shapes.ttl` and your own additional shapes.
+6. Validate your data with `membership-shapes.ttl`, `fraternal-shapes.ttl` and your own additional shapes. Merge your generated mappings into the data graph, as `make shacl` does: a local codelist value is accepted only when a mapping places it in the hub scheme.
 
 ## Describing clubs and associations as catalogue entries
 
@@ -178,6 +180,20 @@ The aim is that no single person or service is a point of failure:
 Questions and proposals: [GitHub issues](https://github.com/society-ontologies/membership-fraternal/issues).
 
 ## Changelog
+
+**Unreleased.** Corrections to the SHACL shapes and the membership codelists. Nothing is removed or renamed; some checks are stricter and some are looser, as listed.
+- Looser:
+  - `mbr:membershipCategory` has no `sh:maxCount 1`: a membership may be life and founding. Seven sub-schemes group the categories (`mbrc:CategoryRights`, `CategoryDuration`, `CategoryHonour`, `CategoryAge`, `CategoryResidence`, `CategoryAffiliation`, `CategoryFoundation`); each category is still in `mbrc:MembershipCategories` and keeps its IRI.
+  - `mbr:count` accepts `"42"^^xsd:nonNegativeInteger`, which the shape used to reject although the OWL range already was `xsd:nonNegativeInteger`. A plain `42` (an `xsd:integer`) still passes when it is zero or more.
+  - A membership number may be reused when the periods certainly do not overlap.
+  - Partial dates that may overlap are no longer ordered by year.
+- Stricter (data that passed before can fail):
+  - A codelist value must be in the hub scheme for its property or mapped to it (see design rule 3). A value from a wrong scheme, or a local concept with no mapping, is now a violation. Add the mapping, or use the hub concept.
+  - `mbr:membershipNumber` must be `xsd:string`; an integer such as `1207` is now a violation. Write `"1207"`.
+  - An end date in the same year as the start, but certainly earlier (`2000-01-01` before `2000-06-01`), is now an error. It passed before because only the years were compared.
+- New: `mbr:resultingCategory` on membership events (the whole category set after the event); `mbrc:ceremony` in `mbrc:GatheringTypes`, the hub for the fraternal ceremony types, which map to it in `mappings/fraternal-ceremonies.sssom.tsv`; a warning for dates outside the supported years.
+- Checks: `make shacl` and `make shacl-invalid` now merge the mappings into the data graph. New sample `tests/data/medlemskap-exempel.ttl` and seven new invalid fixtures.
+- Not covered: a mapped local concept is accepted by SHACL but does not make an organisation a `mbr:GentlemensClub`; no normalisation rule exists yet.
 
 **Unreleased.** Additions only.
 - Legal form: new codelist `mbrc:LegalForms` (unincorporated, incorporated association, registered association, foundation, company, public-law body), used with `rov:orgType` from the W3C Registered Organization Vocabulary, and registry numbers with `rov:registration` and `adms:Identifier`. No new property: the ROV and ADMS terms are declared in the external declarations, and a shape requires a `skos:notation` on every identifier. Informal circles such as the *kotteri* are `mbrc:unincorporated`.
