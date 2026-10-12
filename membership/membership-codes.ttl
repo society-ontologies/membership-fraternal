@@ -270,28 +270,31 @@ mbrc:learnedSociety a skos:Concept , owl:NamedIndividual ;
 
 mbrc:academy a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:learnedSociety ;
-    skos:prefLabel "Academy"@en , "Akademi"@sv , "Académie"@fr ;
+    skos:prefLabel "Academy"@en , "Akademi"@sv , "Académie"@fr , "Akademie"@de ;
     skos:definition "A learned society whose members are elected by its existing members, usually for life and often to a fixed number of numbered seats, as in the Académie française or the Swedish Academy."@en ,
                     "Ett lärt sällskap vars ledamöter väljs av de sittande ledamöterna, vanligen på livstid och ofta till ett fast antal numrerade stolar, som i Académie française eller Svenska Akademien."@sv ,
-                    "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ;
-    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en , "Les fauteuils numérotés eux-mêmes ne sont pas modélisés ; le modèle enregistre qui est membre et quand."@fr .
+                    "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ,
+                    "Eine gelehrte Gesellschaft, deren Mitglieder von den bisherigen Mitgliedern gewählt werden, meist auf Lebenszeit und oft auf eine feste Zahl nummerierter Sitze, wie bei der Académie française oder der Schwedischen Akademie."@de ;
+    skos:scopeNote "The numbered seats themselves (fauteuils, stolar) are not modelled; the model records who is a member and when."@en , "Les fauteuils numérotés eux-mêmes ne sont pas modélisés ; le modèle enregistre qui est membre et quand."@fr , "Die nummerierten Sitze selbst (fauteuils, stolar) werden nicht modelliert; das Modell hält fest, wer Mitglied ist und seit wann."@de .
 
 mbrc:alumniAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Alumni Association"@en , "Alumniförening"@sv , "Association d'anciens"@fr ;
+    skos:prefLabel "Alumni Association"@en , "Alumniförening"@sv , "Association d'anciens"@fr , "Ehemaligenvereinigung"@de ;
     skos:altLabel "Old Pupils' Association"@en , "Amicale"@fr ;
     skos:definition "An association of former pupils, students or members of one school, university or institution, kept up for fellowship and mutual support."@en ,
                     "En förening för tidigare elever, studenter eller medlemmar vid en skola, ett universitet eller en institution, som hålls vid liv för gemenskap och ömsesidigt stöd."@sv ,
-                    "Association d'anciens élèves, étudiants ou membres d'une école, d'une université ou d'une institution, entretenue pour la convivialité et l'entraide."@fr ;
-    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en , "Comparer mbrc:studentSociety, dont les membres sont des étudiants ou d'anciens étudiants et qui existe dans l'établissement même."@fr .
+                    "Association d'anciens élèves, étudiants ou membres d'une école, d'une université ou d'une institution, entretenue pour la convivialité et l'entraide."@fr ,
+                    "Eine Vereinigung ehemaliger Schüler, Studenten oder Mitglieder einer Schule, Universität oder Einrichtung, die der Geselligkeit und gegenseitigen Unterstützung dient."@de ;
+    skos:scopeNote "Compare mbrc:studentSociety, whose members are students or former students and which exists at the institution itself."@en , "Comparer mbrc:studentSociety, dont les membres sont des étudiants ou d'anciens étudiants et qui existe dans l'établissement même."@fr , "Vgl. mbrc:studentSociety, deren Mitglieder Studenten oder ehemalige Studenten sind und die an der Einrichtung selbst besteht."@de .
 
 mbrc:decorationHoldersAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
-    skos:prefLabel "Association of Decoration Holders"@en , "Förening för utmärkelsemottagare"@sv , "Association de décorés"@fr ;
+    skos:prefLabel "Association of Decoration Holders"@en , "Förening för utmärkelsemottagare"@sv , "Association de décorés"@fr , "Vereinigung von Ordensträgern"@de ;
     skos:definition "An association of people who hold a state order or decoration, separate from the order itself, which they do not run: it keeps up fellowship and supports the order's aims."@en ,
                     "En förening för personer som innehar en statlig orden eller utmärkelse, skild från själva orden, som den inte driver: den vårdar gemenskapen och stöder ordens syften."@sv ,
-                    "Association de personnes titulaires d'un ordre ou d'une décoration de l'État, distincte de l'ordre lui-même, qu'elle ne dirige pas : elle entretient la convivialité et soutient les buts de l'ordre."@fr ;
-    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en , "L'ordre lui-même est un fraternalc:orderOfChivalry, ou une mbr:Distinction s'il n'a pas de corps de membres. Exemple : la Société des membres de la Légion d'honneur, qui n'est pas la Légion d'honneur."@fr .
+                    "Association de personnes titulaires d'un ordre ou d'une décoration de l'État, distincte de l'ordre lui-même, qu'elle ne dirige pas : elle entretient la convivialité et soutient les buts de l'ordre."@fr ,
+                    "Eine Vereinigung von Personen, die einen staatlichen Orden oder eine Auszeichnung tragen, getrennt vom Orden selbst, den sie nicht leitet: Sie pflegt die Geselligkeit und unterstützt die Ziele des Ordens."@de ;
+    skos:scopeNote "The order itself is fraternalc:orderOfChivalry, or a mbr:Distinction where it has no body of members. Example: the Société des membres de la Légion d'honneur, which is not the Legion of Honour."@en , "L'ordre lui-même est un fraternalc:orderOfChivalry, ou une mbr:Distinction s'il n'a pas de corps de membres. Exemple : la Société des membres de la Légion d'honneur, qui n'est pas la Légion d'honneur."@fr , "Der Orden selbst ist fraternalc:orderOfChivalry oder, wo er keinen Mitgliederkreis hat, eine mbr:Distinction. Beispiel: die Société des membres de la Légion d'honneur, die nicht die Ehrenlegion ist."@de .
 
 mbrc:charitableSociety a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:society ;
@@ -487,7 +490,8 @@ mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
                     "Kategorien der Mitgliedschaft mit unterschiedlichen Rechten oder Beiträgen."@de ;
     skos:scopeNote "The categories can be combined: a membership may be both life and founding, or junior and overseas. They are grouped in seven sub-schemes by what they say (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); every category is also in this scheme. The list is open, not an exhaustive division, and a membership without a category is not thereby ordinary. No combination is ruled out unless a category's definition says so."@en ,
                    "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i sju underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ,
-                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en sept sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ;
+                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en sept sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ,
+                   "Die Kategorien lassen sich kombinieren: Eine Mitgliedschaft kann zugleich auf Lebenszeit und Gründungsmitgliedschaft sein, oder jugendlich und im Ausland. Sie sind in sieben Unterschemata danach gruppiert, was sie aussagen (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); jede Kategorie gehört auch zu diesem Schema. Die Liste ist offen, keine erschöpfende Einteilung, und eine Mitgliedschaft ohne Kategorie ist dadurch nicht gewöhnlich. Keine Kombination ist ausgeschlossen, es sei denn, die Definition einer Kategorie sagt es."@de ;
     skos:hasTopConcept mbrc:ordinary , mbrc:life , mbrc:honorary , mbrc:associate ,
                        mbrc:junior , mbrc:nonResident , mbrc:overseas , mbrc:partnerMember ,
                        mbrc:founding , mbrc:benefactorMember .
@@ -540,65 +544,73 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
 
 mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories ; skos:topConceptOf mbrc:MembershipCategories ;
-    skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr ;
+    skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr , "Fördermitglied"@de ;
     skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv ;
     skos:definition "A member who supports the organisation with a contribution above the ordinary fee. Whether the category carries a vote depends on the statutes."@en ,
                     "En medlem som stöder organisationen med ett bidrag utöver den ordinarie avgiften. Om kategorin har rösträtt avgörs av stadgarna."@sv ,
-                    "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr .
+                    "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr ,
+                    "Ein Mitglied, das die Organisation mit einem Beitrag über dem gewöhnlichen Beitrag unterstützt. Ob die Kategorie ein Stimmrecht trägt, hängt von der Satzung ab."@de .
 mbrc:CategoryRights a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv , "Catégorie : droits"@fr ;
+    skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv , "Catégorie : droits"@fr , "Kategorie: Rechte"@de ;
     skos:definition "Categories that say what rights a membership carries. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger vilka rättigheter ett medlemskap ger. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent quels droits comporte une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent quels droits comporte une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, welche Rechte eine Mitgliedschaft mit sich bringt. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:ordinary , mbrc:associate .
 
 mbrc:CategoryDuration a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Duration"@en , "Kategori: varaktighet"@sv , "Catégorie : durée"@fr ;
+    skos:prefLabel "Category: Duration"@en , "Kategori: varaktighet"@sv , "Catégorie : durée"@fr , "Kategorie: Dauer"@de ;
     skos:definition "Categories that say how long a membership lasts. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger hur länge ett medlemskap varar. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent combien de temps dure une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent combien de temps dure une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, wie lange eine Mitgliedschaft dauert. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:life .
 
 mbrc:CategoryHonour a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Honour"@en , "Kategori: hedersställning"@sv , "Catégorie : honneur"@fr ;
+    skos:prefLabel "Category: Honour"@en , "Kategori: hedersställning"@sv , "Catégorie : honneur"@fr , "Kategorie: Ehrung"@de ;
     skos:definition "Categories that say a membership is held as an honour. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger att ett medlemskap innehas som en hedersbetygelse. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent qu'une adhésion est détenue à titre d'honneur. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent qu'une adhésion est détenue à titre d'honneur. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, dass eine Mitgliedschaft als Ehre gehalten wird. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:honorary .
 
 mbrc:CategoryAge a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Age"@en , "Kategori: ålder"@sv , "Catégorie : âge"@fr ;
+    skos:prefLabel "Category: Age"@en , "Kategori: ålder"@sv , "Catégorie : âge"@fr , "Kategorie: Alter"@de ;
     skos:definition "Categories that depend on the age of the member. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som beror på medlemmens ålder. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui dépendent de l'âge du membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui dépendent de l'âge du membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die vom Alter des Mitglieds abhängen. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:junior .
 
 mbrc:CategoryResidence a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Residence"@en , "Kategori: bosättning"@sv , "Catégorie : résidence"@fr ;
+    skos:prefLabel "Category: Residence"@en , "Kategori: bosättning"@sv , "Catégorie : résidence"@fr , "Kategorie: Wohnsitz"@de ;
     skos:definition "Categories that depend on where the member lives. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som beror på var medlemmen bor. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui dépendent du lieu où vit le membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui dépendent du lieu où vit le membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die davon abhängen, wo das Mitglied wohnt. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:nonResident , mbrc:overseas .
 
 mbrc:CategoryAffiliation a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Affiliation"@en , "Kategori: anknytning"@sv , "Catégorie : rattachement"@fr ;
+    skos:prefLabel "Category: Affiliation"@en , "Kategori: anknytning"@sv , "Catégorie : rattachement"@fr , "Kategorie: Zugehörigkeit"@de ;
     skos:definition "Categories that depend on the member's tie to another member. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som beror på medlemmens anknytning till en annan medlem. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui dépendent du lien du membre avec un autre membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui dépendent du lien du membre avec un autre membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die von der Verbindung des Mitglieds zu einem anderen Mitglied abhängen. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:partnerMember .
 
 mbrc:CategoryFoundation a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Founding"@en , "Kategori: grundande"@sv , "Catégorie : fondation"@fr ;
+    skos:prefLabel "Category: Founding"@en , "Kategori: grundande"@sv , "Catégorie : fondation"@fr , "Kategorie: Gründung"@de ;
     skos:definition "Categories that say the member took part in founding the organisation. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
                     "Kategorier som anger att medlemmen deltog i organisationens grundande. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
-                    "Catégories qui disent que le membre a pris part à la fondation de l'organisation. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
+                    "Catégories qui disent que le membre a pris part à la fondation de l'organisation. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ,
+                    "Kategorien, die sagen, dass das Mitglied an der Gründung der Organisation beteiligt war. Ein Unterschema von mbrc:MembershipCategories: Seine Kategorien lassen sich mit denen der anderen Unterschemata kombinieren."@de ;
     skos:hasTopConcept mbrc:founding .
 
 ##############################################################################
@@ -851,12 +863,13 @@ mbrc:generalMeeting a skos:Concept , owl:NamedIndividual ;
 
 mbrc:extraordinaryGeneralMeeting a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:broader mbrc:generalMeeting ;
-    skos:prefLabel "Extraordinary General Meeting"@en , "Extra stämma"@sv , "Assemblée générale extraordinaire"@fr ;
+    skos:prefLabel "Extraordinary General Meeting"@en , "Extra stämma"@sv , "Assemblée générale extraordinaire"@fr , "Außerordentliche Mitgliederversammlung"@de ;
     skos:altLabel "Extra årsmöte"@sv , "Extra föreningsstämma"@sv ;
     skos:definition "A general meeting called outside the regular yearly cycle to decide a particular matter, such as a change of statutes or the dissolution of the organisation."@en ,
                     "En stämma som kallas utanför den ordinarie årliga cykeln för att avgöra en bestämd fråga, t.ex. ändring av stadgarna eller organisationens upplösning."@sv ,
-                    "Assemblée générale convoquée en dehors du cycle annuel ordinaire pour décider d'une question précise, comme la modification des statuts ou la dissolution de l'association."@fr ;
-    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en , "L'assemblée annuelle ordinaire est mbrc:generalMeeting."@fr .
+                    "Assemblée générale convoquée en dehors du cycle annuel ordinaire pour décider d'une question précise, comme la modification des statuts ou la dissolution de l'association."@fr ,
+                    "Eine Mitgliederversammlung, die außerhalb des regelmäßigen Jahreszyklus einberufen wird, um eine bestimmte Angelegenheit zu entscheiden, etwa eine Satzungsänderung oder die Auflösung der Organisation."@de ;
+    skos:scopeNote "The ordinary yearly meeting is mbrc:generalMeeting."@en , "L'assemblée annuelle ordinaire est mbrc:generalMeeting."@fr , "Die ordentliche Jahresversammlung ist mbrc:generalMeeting."@de .
 
 mbrc:formalDinner a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
@@ -903,13 +916,15 @@ mbrc:commemoration a skos:Concept , owl:NamedIndividual ;
 
 mbrc:ceremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr ;
+    skos:prefLabel "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr , "Zeremonie"@de ;
     skos:definition "A gathering at which a prescribed ritual is performed, such as an initiation, an installation of officers or a conferral of degrees."@en ,
                     "En sammankomst där en föreskriven ritual utförs, till exempel en upptagning, en installation av ämbetsmän eller en tilldelning av grader."@sv ,
-                    "Réunion au cours de laquelle un rituel prescrit est accompli, comme une initiation, une installation des officiers ou une collation de grades."@fr ;
+                    "Réunion au cours de laquelle un rituel prescrit est accompli, comme une initiation, une installation des officiers ou une collation de grades."@fr ,
+                    "Eine Zusammenkunft, bei der ein vorgeschriebenes Ritual vollzogen wird, etwa eine Aufnahme, eine Einsetzung von Amtsträgern oder eine Verleihung von Graden."@de ;
     skos:scopeNote "The hub for the ceremony types of the fraternal codelists (fraternalc:CeremonyTypes), which map to it with skos:broadMatch."@en ,
                    "Navet för ceremonityperna i fraternals kodlistor (fraternalc:CeremonyTypes), som mappas hit med skos:broadMatch."@sv ,
-                   "Le pivot des types de cérémonies des listes de codes fraternal (fraternalc:CeremonyTypes), qui y sont reliés par skos:broadMatch."@fr .
+                   "Le pivot des types de cérémonies des listes de codes fraternal (fraternalc:CeremonyTypes), qui y sont reliés par skos:broadMatch."@fr ,
+                   "Der Oberbegriff für die Zeremonienarten der fraternalen Codelisten (fraternalc:CeremonyTypes), die mit skos:broadMatch auf ihn abgebildet werden."@de .
 
 ##############################################################################
 # 7. PARTICIPATION ROLES
@@ -1298,62 +1313,70 @@ mbrc:lifeMembershipFee a skos:Concept , owl:NamedIndividual ;
 ##############################################################################
 
 mbrc:LegalForms a skos:ConceptScheme , owl:NamedIndividual ;
-    skos:prefLabel "Legal Forms"@en , "Associationsformer"@sv , "Formes juridiques"@fr ;
+    skos:prefLabel "Legal Forms"@en , "Associationsformer"@sv , "Formes juridiques"@fr , "Rechtsformen"@de ;
     skos:definition "Nation-neutral kinds of legal form for membership organisations, used with rov:orgType from the W3C Registered Organization Vocabulary. They say whether and how an organisation is a legal person of its own, not which national statute it falls under. Where a jurisdiction has its own list (such as the ISO 20275 entity legal forms), map that list to these values with SKOS mapping properties."@en ,
                     "Nationsneutrala slag av associationsform för medlemsorganisationer, används med rov:orgType från W3C:s Registered Organization Vocabulary. De anger om och hur en organisation är en egen juridisk person, inte under vilken nationell lag den faller. Där en jurisdiktion har en egen lista (som ISO 20275 för juridiska former) kopplas den listan till dessa värden med SKOS-kopplingar."@sv ,
-                    "Sortes de formes juridiques, neutres quant au pays, pour les organisations de membres, utilisées avec rov:orgType du vocabulaire W3C des organisations enregistrées. Elles disent si et comment une organisation est une personne morale, et non de quelle loi nationale elle relève. Lorsqu'une juridiction a sa propre liste (comme les formes juridiques de l'ISO 20275), associer cette liste à ces valeurs avec les propriétés de correspondance SKOS."@fr ;
+                    "Sortes de formes juridiques, neutres quant au pays, pour les organisations de membres, utilisées avec rov:orgType du vocabulaire W3C des organisations enregistrées. Elles disent si et comment une organisation est une personne morale, et non de quelle loi nationale elle relève. Lorsqu'une juridiction a sa propre liste (comme les formes juridiques de l'ISO 20275), associer cette liste à ces valeurs avec les propriétés de correspondance SKOS."@fr ,
+                    "Länderneutrale Arten der Rechtsform für Mitgliederorganisationen, verwendet mit rov:orgType aus dem W3C Registered Organization Vocabulary. Sie sagen, ob und wie eine Organisation eine eigene juristische Person ist, nicht unter welches nationale Gesetz sie fällt. Wo eine Rechtsordnung eine eigene Liste hat (etwa die Rechtsformen nach ISO 20275), ist diese Liste mit SKOS-Abbildungseigenschaften auf diese Werte abzubilden."@de ;
     skos:scopeNote "Compulsory memberships and economic-benefit memberships, such as professional chambers, mutual insurers and cooperatives whose members are customers, are outside the scope of the membership model and so of this list (compare the scope note on mbr:MembershipOrganization)."@en ,
                    "Obligatoriska medlemskap och medlemskap för ekonomisk nytta, som yrkeskårer, ömsesidiga försäkringsbolag och kooperativ vars medlemmar är kunder, ligger utanför medlemsmodellen och därmed utanför den här listan (jämför omfattningsanmärkningen vid mbr:MembershipOrganization)."@sv ,
-                   "Les adhésions obligatoires et les adhésions procurant un avantage économique, comme les chambres professionnelles, les mutuelles d'assurance et les coopératives dont les membres sont des clients, sortent du champ du modèle d'adhésion et donc de cette liste (voir la note d'application de mbr:MembershipOrganization)."@fr ;
+                   "Les adhésions obligatoires et les adhésions procurant un avantage économique, comme les chambres professionnelles, les mutuelles d'assurance et les coopératives dont les membres sont des clients, sortent du champ du modèle d'adhésion et donc de cette liste (voir la note d'application de mbr:MembershipOrganization)."@fr ,
+                   "Pflichtmitgliedschaften und Mitgliedschaften mit wirtschaftlichem Nutzen, etwa berufsständische Kammern, Versicherungsvereine auf Gegenseitigkeit und Genossenschaften, deren Mitglieder Kunden sind, liegen außerhalb des Mitgliedschaftsmodells und damit dieser Liste (vgl. die Anmerkung zu mbr:MembershipOrganization)."@de ;
     skos:hasTopConcept mbrc:unincorporated , mbrc:incorporatedAssociation ,
                        mbrc:foundation , mbrc:company , mbrc:publicLawBody .
 
 mbrc:unincorporated a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Unincorporated"@en , "Utan juridisk person"@sv , "Sans personnalité morale"@fr ;
+    skos:prefLabel "Unincorporated"@en , "Utan juridisk person"@sv , "Sans personnalité morale"@fr , "Nicht rechtsfähig"@de ;
     skos:altLabel "Informal"@en , "Unincorporated association"@en , "Oregistrerad sammanslutning"@sv ;
     skos:definition "A group that is not a legal person of its own: it cannot hold property or sign contracts in its own name, and its members or officers act in their own names. Includes informal circles (mbrc:informalCircle) and associations that have not completed the steps their law requires for legal personality."@en ,
                     "En grupp som inte är en egen juridisk person: den kan inte äga egendom eller ingå avtal i eget namn, och medlemmarna eller funktionärerna agerar i eget namn. Hit hör informella sällskap (mbrc:informalCircle) och föreningar som inte tagit de steg som lagen kräver för att bli juridisk person."@sv ,
-                    "Groupe qui n'est pas une personne morale : il ne peut pas posséder de biens ni conclure de contrats en son propre nom, et ses membres ou responsables agissent en leur nom propre. Comprend les cercles informels (mbrc:informalCircle) et les associations qui n'ont pas accompli les formalités que leur droit exige pour la personnalité morale."@fr ;
+                    "Groupe qui n'est pas une personne morale : il ne peut pas posséder de biens ni conclure de contrats en son propre nom, et ses membres ou responsables agissent en leur nom propre. Comprend les cercles informels (mbrc:informalCircle) et les associations qui n'ont pas accompli les formalités que leur droit exige pour la personnalité morale."@fr ,
+                    "Eine Gruppe, die keine eigene juristische Person ist: Sie kann nicht in eigenem Namen Eigentum halten oder Verträge schließen, und ihre Mitglieder oder Amtsträger handeln in eigenem Namen. Dazu gehören informelle Kreise (mbrc:informalCircle) und Vereinigungen, die die nach ihrem Recht für die Rechtsfähigkeit nötigen Schritte nicht vollzogen haben."@de ;
     skos:note "Examples: a French association non déclarée (ISO 20275 ELF 491H); a German nicht rechtsfähiger Verein; a kotteri."@en ;
     skos:related mbrc:informalCircle .
 
 mbrc:incorporatedAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Incorporated association"@en , "Förening som juridisk person"@sv , "Association dotée de la personnalité morale"@fr ;
+    skos:prefLabel "Incorporated association"@en , "Förening som juridisk person"@sv , "Association dotée de la personnalité morale"@fr , "Rechtsfähige Vereinigung"@de ;
     skos:definition "A non-profit association that is a legal person of its own, whether it gets that status by registration or simply by adopting statutes and appointing a board."@en ,
                     "En ideell sammanslutning som är en egen juridisk person, oavsett om den får den ställningen genom registrering eller bara genom att anta stadgar och utse en styrelse."@sv ,
-                    "Association à but non lucratif qui est une personne morale, que ce statut résulte d'un enregistrement ou simplement de l'adoption de statuts et de la désignation d'un bureau."@fr ;
+                    "Association à but non lucratif qui est une personne morale, que ce statut résulte d'un enregistrement ou simplement de l'adoption de statuts et de la désignation d'un bureau."@fr ,
+                    "Eine gemeinnützige Vereinigung, die eine eigene juristische Person ist, sei es durch Eintragung oder schlicht dadurch, dass sie sich eine Satzung gibt und einen Vorstand bestellt."@de ;
     skos:note "Example without registration: a Swedish ideell förening."@en ;
     skos:narrower mbrc:registeredAssociation .
 
 mbrc:registeredAssociation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:broader mbrc:incorporatedAssociation ;
-    skos:prefLabel "Registered association"@en , "Registrerad förening"@sv , "Association déclarée ou enregistrée"@fr ;
+    skos:prefLabel "Registered association"@en , "Registrerad förening"@sv , "Association déclarée ou enregistrée"@fr , "Eingetragene Vereinigung"@de ;
     skos:definition "An incorporated association that becomes a legal person by being entered in, or declared to, a public register. The register entry can carry an identifier (see rov:registration)."@en ,
                     "En förening som blir juridisk person genom att föras in i eller anmälas till ett offentligt register. Registerposten kan ha ett identifierande nummer (se rov:registration)."@sv ,
-                    "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ;
+                    "Association dotée de la personnalité morale qui l'acquiert par son inscription, ou sa déclaration, à un registre public. L'inscription au registre peut porter un identifiant (voir rov:registration)."@fr ,
+                    "Eine rechtsfähige Vereinigung, die dadurch juristische Person wird, dass sie in ein öffentliches Register eingetragen oder bei ihm angemeldet wird. Der Registereintrag kann eine Kennung tragen (siehe rov:registration)."@de ;
     skos:note "Examples: a German eingetragener Verein (ISO 20275 ELF QZ3L); a French association déclarée (ELF BEWI), including its Alsace-Moselle local-law form (ELF HF2L)."@en .
 
 mbrc:foundation a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Foundation"@en , "Stiftelse"@sv , "Fondation"@fr ;
+    skos:prefLabel "Foundation"@en , "Stiftelse"@sv , "Fondation"@fr , "Stiftung"@de ;
     skos:definition "A legal person formed by dedicating assets to a purpose, with no members of its own. A membership organisation can be run or funded by a foundation."@en ,
                     "En juridisk person som bildas genom att egendom avsätts för ett ändamål, utan egna medlemmar. En medlemsorganisation kan drivas eller finansieras av en stiftelse."@sv ,
-                    "Personne morale constituée par l'affectation de biens à un but, sans membres propres. Une organisation de membres peut être dirigée ou financée par une fondation."@fr ;
+                    "Personne morale constituée par l'affectation de biens à un but, sans membres propres. Une organisation de membres peut être dirigée ou financée par une fondation."@fr ,
+                    "Eine juristische Person, die durch die Widmung von Vermögen für einen Zweck entsteht und keine eigenen Mitglieder hat. Eine Mitgliederorganisation kann von einer Stiftung geführt oder finanziert werden."@de ;
     skos:note "Examples: a French fondation (ISO 20275 ELF 9T5S); a German Stiftung des privaten Rechts (ELF V2YH)."@en .
 
 mbrc:company a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Company"@en , "Bolag"@sv , "Société commerciale"@fr ;
+    skos:prefLabel "Company"@en , "Bolag"@sv , "Société commerciale"@fr , "Handelsgesellschaft"@de ;
     skos:definition "A legal person with owners or shareholders, used by proprietary clubs (see mbrc:proprietaryClub) and by clubs that are limited by guarantee."@en ,
                     "En juridisk person med ägare eller aktieägare, som används av ägarklubbar (se mbrc:proprietaryClub) och av klubbar som är garantibegränsade."@sv ,
-                    "Personne morale à propriétaires ou actionnaires, utilisée par les clubs à propriétaire (voir mbrc:proprietaryClub) et par les clubs à responsabilité limitée par garantie."@fr .
+                    "Personne morale à propriétaires ou actionnaires, utilisée par les clubs à propriétaire (voir mbrc:proprietaryClub) et par les clubs à responsabilité limitée par garantie."@fr ,
+                    "Eine juristische Person mit Eigentümern oder Gesellschaftern, verwendet von Eigentümerclubs (siehe mbrc:proprietaryClub) und von Clubs, deren Haftung begrenzt ist."@de .
 
 mbrc:publicLawBody a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:LegalForms ; skos:topConceptOf mbrc:LegalForms ;
-    skos:prefLabel "Public-law body"@en , "Offentligrättslig juridisk person"@sv , "Personne morale de droit public"@fr ;
+    skos:prefLabel "Public-law body"@en , "Offentligrättslig juridisk person"@sv , "Personne morale de droit public"@fr , "Öffentlich-rechtliche Körperschaft"@de ;
     skos:definition "A legal person created or recognised by public law, such as a state institution or a corporation of public law, as opposed to one formed by private agreement."@en ,
                     "En juridisk person som skapats eller erkänns genom offentlig rätt, som en statlig institution eller en offentligrättslig korporation, till skillnad från en som bildats genom privat avtal."@sv ,
-                    "Personne morale créée ou reconnue par le droit public, comme une institution d'État ou une corporation de droit public, par opposition à celle formée par accord privé."@fr ;
+                    "Personne morale créée ou reconnue par le droit public, comme une institution d'État ou une corporation de droit public, par opposition à celle formée par accord privé."@fr ,
+                    "Eine juristische Person, die durch öffentliches Recht geschaffen oder anerkannt ist, etwa eine staatliche Einrichtung oder eine Körperschaft des öffentlichen Rechts, im Gegensatz zu einer durch private Vereinbarung gebildeten."@de ;
     skos:note "Example: a German Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@en .
