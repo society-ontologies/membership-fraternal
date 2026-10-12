@@ -493,7 +493,7 @@ td {
       </div>
       <div class="section" id="classes">
         <h2>Classes</h2>
-        <div class="property entity" id="Ordinefraternale">
+        <div class="property entity" id="FraternalOrder">
           <h3>Ordine fraternale
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -576,7 +576,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Ordinefraternale">Ordine fraternale</a>
+                  <a href="#FraternalOrder">Ordine fraternale</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -594,7 +594,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Loggia">
+        <div class="property entity" id="Lodge">
           <h3>Loggia
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -629,7 +629,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Sororit">
+        <div class="property entity" id="Sorority">
           <h3>Sororità
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -660,11 +660,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Ordinefraternale">Ordine fraternale</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -678,11 +673,16 @@ td {
                     </span><br>
                   </span>
                 </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#FraternalOrder">Ordine fraternale</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Fraternityuniversitaria">
+        <div class="property entity" id="CollegeFraternity">
           <h3>Fraternity universitaria
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -728,14 +728,14 @@ td {
                 </span>
                 <span class="cardinality">and</span>
                 <span>
-                  <a href="#Ordinefraternale">Ordine fraternale</a>
+                  <a href="#FraternalOrder">Ordine fraternale</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Sistemadigradi">
+        <div class="property entity" id="DegreeSystem">
           <h3>Sistema di gradi
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -784,7 +784,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Grado">
+        <div class="property entity" id="Degree">
           <h3>Grado
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -866,7 +866,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Conferimentodiungrado">
+        <div class="property entity" id="DegreeConferral">
           <h3>Conferimento di un grado
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -943,14 +943,14 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Conferimentodiungrado">Conferimento di un grado</a>
+                  <a href="#DegreeConferral">Conferimento di un grado</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Cerimonia">
+        <div class="property entity" id="Ceremony">
           <h3>Cerimonia
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -985,7 +985,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Insegne">
+        <div class="property entity" id="Insignia">
           <h3>Insegne
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1044,7 +1044,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Valutazionedilegittimit">
+        <div class="property entity" id="LegitimacyAssessment">
           <h3>Valutazione di legittimità
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1112,7 +1112,7 @@ td {
       </div>
       <div class="section" id="objectproperties">
         <h2>Object Properties</h2>
-        <div class="property entity" id="gradosuccessivo">
+        <div class="property entity" id="nextDegree">
           <h3>grado successivo
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1181,7 +1181,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Grado">Grado</a>
+                  <a href="#Degree">Grado</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1230,7 +1230,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#gradosuccessivo">grado successivo</a>
+                  <a href="#nextDegree">grado successivo</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -1241,7 +1241,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Grado">Grado</a>
+                  <a href="#Degree">Grado</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1252,7 +1252,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Grado">Grado</a>
+                  <a href="#Degree">Grado</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1290,7 +1290,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Sistemadigradi">Sistema di gradi</a>
+                  <a href="#DegreeSystem">Sistema di gradi</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1328,7 +1328,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Insegne">Insegne</a>
+                  <a href="#Insignia">Insegne</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1377,7 +1377,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Insegne">Insegne</a>
+                  <a href="#Insignia">Insegne</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1395,7 +1395,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="appellativodeisoci">
+        <div class="property entity" id="memberTitle">
           <h3>appellativo dei soci
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1433,7 +1433,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="caratteristica">
+        <div class="property entity" id="characteristic">
           <h3>caratteristica
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1471,7 +1471,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="intitolatoa">
+        <div class="property entity" id="namedAfter">
           <h3>intitolato a
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1498,7 +1498,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="modellatosu">
+        <div class="property entity" id="modelledOn">
           <h3>modellato su
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1571,7 +1571,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="patentatada">
+        <div class="property entity" id="warrantedBy">
           <h3>patentata da
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1606,7 +1606,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="riconosce">
+        <div class="property entity" id="recognizes">
           <h3>riconosce
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1647,7 +1647,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="inamiciziacon">
+        <div class="property entity" id="inAmityWith">
           <h3>in amicizia con
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1682,7 +1682,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="fonshonorum">
+        <div class="property entity" id="fonsHonorum">
           <h3>fons honorum
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1754,7 +1754,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Valutazionedilegittimit">Valutazione di legittimità</a>
+                  <a href="#LegitimacyAssessment">Valutazione di legittimità</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1811,7 +1811,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Valutazionedilegittimit">Valutazione di legittimità</a>
+                  <a href="#LegitimacyAssessment">Valutazione di legittimità</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1857,7 +1857,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Valutazionedilegittimit">Valutazione di legittimità</a>
+                  <a href="#LegitimacyAssessment">Valutazione di legittimità</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1909,7 +1909,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Grado">Grado</a>
+                  <a href="#Degree">Grado</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1958,7 +1958,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Grado">Grado</a>
+                  <a href="#Degree">Grado</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1973,7 +1973,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="gradosuccessivo">
+        <div class="property entity" id="nextDegree">
           <h3>grado successivo
             <sup class="sup-fp" title="OWL Functional Property">fp</sup>
           </h3>
@@ -2090,40 +2090,40 @@ td {
           </h4>
           <ul class="second">
             <li>
-              <a href="#Ordinefraternale">Ordine fraternale</a>
+              <a href="#FraternalOrder">Ordine fraternale</a>
             </li>
             <li>
               <a href="#GrandBody">Organismo di governo</a>
             </li>
             <li>
-              <a href="#Loggia">Loggia</a>
+              <a href="#Lodge">Loggia</a>
             </li>
             <li>
-              <a href="#Sororit">Sororità</a>
+              <a href="#Sorority">Sororità</a>
             </li>
             <li>
-              <a href="#Fraternityuniversitaria">Fraternity universitaria</a>
+              <a href="#CollegeFraternity">Fraternity universitaria</a>
             </li>
             <li>
-              <a href="#Sistemadigradi">Sistema di gradi</a>
+              <a href="#DegreeSystem">Sistema di gradi</a>
             </li>
             <li>
-              <a href="#Grado">Grado</a>
+              <a href="#Degree">Grado</a>
             </li>
             <li>
-              <a href="#Conferimentodiungrado">Conferimento di un grado</a>
+              <a href="#DegreeConferral">Conferimento di un grado</a>
             </li>
             <li>
               <a href="#Initiation">Iniziazione</a>
             </li>
             <li>
-              <a href="#Cerimonia">Cerimonia</a>
+              <a href="#Ceremony">Cerimonia</a>
             </li>
             <li>
-              <a href="#Insegne">Insegne</a>
+              <a href="#Insignia">Insegne</a>
             </li>
             <li>
-              <a href="#Valutazionedilegittimit">Valutazione di legittimità</a>
+              <a href="#LegitimacyAssessment">Valutazione di legittimità</a>
             </li>
           </ul>
         </li>
@@ -2133,7 +2133,7 @@ td {
           </h4>
           <ul class="second">
             <li>
-              <a href="#gradosuccessivo">grado successivo</a>
+              <a href="#nextDegree">grado successivo</a>
             </li>
             <li>
               <a href="#degreeKind">tipo di grado</a>
@@ -2151,31 +2151,31 @@ td {
               <a href="#insigniaType">tipo di insegne</a>
             </li>
             <li>
-              <a href="#appellativodeisoci">appellativo dei soci</a>
+              <a href="#memberTitle">appellativo dei soci</a>
             </li>
             <li>
-              <a href="#caratteristica">caratteristica</a>
+              <a href="#characteristic">caratteristica</a>
             </li>
             <li>
-              <a href="#intitolatoa">intitolato a</a>
+              <a href="#namedAfter">intitolato a</a>
             </li>
             <li>
-              <a href="#modellatosu">modellato su</a>
+              <a href="#modelledOn">modellato su</a>
             </li>
             <li>
               <a href="#hasJurisdictionOver">ha giurisdizione su</a>
             </li>
             <li>
-              <a href="#patentatada">patentata da</a>
+              <a href="#warrantedBy">patentata da</a>
             </li>
             <li>
-              <a href="#riconosce">riconosce</a>
+              <a href="#recognizes">riconosce</a>
             </li>
             <li>
-              <a href="#inamiciziacon">in amicizia con</a>
+              <a href="#inAmityWith">in amicizia con</a>
             </li>
             <li>
-              <a href="#fonshonorum">fons honorum</a>
+              <a href="#fonsHonorum">fons honorum</a>
             </li>
             <li>
               <a href="#assessedOrder">ordine valutato</a>
@@ -2207,7 +2207,7 @@ td {
               <a href="#degreeRank">posizione del grado</a>
             </li>
             <li>
-              <a href="#gradosuccessivo">grado successivo</a>
+              <a href="#nextDegree">grado successivo</a>
             </li>
           </ul>
         </li>

@@ -13,7 +13,7 @@ The order matters: each published step depends on the one before it.
    - `make all dl reason reuse` (`all` includes the competency questions, which must equal `tests/cq/expected/`)
    - if the mappings changed: `make mappings wikidata-check`
    - compare with the last release: no subject or codelist triple removed, no shape made stricter without a changelog line (`git diff v<old version> -- membership fraternal external`)
-   - `make docs`, and commit the regenerated HTML
+   - `make docs` (it checks the anchors), and commit the regenerated HTML. pyLODE's output has a rare nondeterminism: one "and" block of a page can swap places. If `git diff docs` shows only that on a page you did not change, run `make docs` again, or restore the page.
 3. **Freeze:** `make freeze` copies the release files to `versions/<version>/`. Commit the copy. A released version is never changed afterwards.
 4. **Publish:** merge to `main`, then push `main` and an annotated tag `v<version>`. GitHub Pages deploys within a minute.
    - The w3id rules send every version IRI (`https://w3id.org/membership/<version>`, `…/code/<version>`, `…/external/<version>`, `…/shapes/<version>`) to `versions/<version>/`. A release therefore needs no w3id pull request.

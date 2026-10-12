@@ -493,7 +493,7 @@ td {
       </div>
       <div class="section" id="classes">
         <h2>Classes</h2>
-        <div class="property entity" id="Organisationdemembres">
+        <div class="property entity" id="MembershipOrganization">
           <h3>Organisation de membres
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -534,7 +534,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Section">
+        <div class="property entity" id="Branch">
           <h3>Section
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -569,7 +569,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Locaux">
+        <div class="property entity" id="Premises">
           <h3>Locaux
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -604,7 +604,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Occupationdelocaux">
+        <div class="property entity" id="Occupancy">
           <h3>Occupation de locaux
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -652,7 +652,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Effectif">
+        <div class="property entity" id="MemberCount">
           <h3>Effectif
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -701,7 +701,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Prioded'organisation">
+        <div class="property entity" id="OrganizationPeriod">
           <h3>Période d'organisation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -745,7 +745,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Accordderciprocit">
+        <div class="property entity" id="ReciprocityAgreement">
           <h3>Accord de réciprocité
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -783,7 +783,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Clubpourhommes">
+        <div class="property entity" id="GentlemensClub">
           <h3>Club pour hommes
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -814,11 +814,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Organisationdemembres">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -832,11 +827,16 @@ td {
                     </span><br>
                   </span>
                 </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#MembershipOrganization">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Clubpourfemmes">
+        <div class="property entity" id="LadiesClub">
           <h3>Club pour femmes
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -867,6 +867,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#MembershipOrganization">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -880,16 +885,11 @@ td {
                     </span><br>
                   </span>
                 </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#Organisationdemembres">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Nationtudiante">
+        <div class="property entity" id="StudentNation">
           <h3>Nation étudiante
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -935,14 +935,14 @@ td {
                 </span>
                 <span class="cardinality">and</span>
                 <span>
-                  <a href="#Organisationdemembres">Organisation de membres</a>
+                  <a href="#MembershipOrganization">Organisation de membres</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Adhsion">
+        <div class="property entity" id="Membership">
           <h3>Adhésion
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -983,7 +983,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="vnementd'adhsion">
+        <div class="property entity" id="MembershipEvent">
           <h3>Événement d'adhésion
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1048,7 +1048,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Cotisation">
+        <div class="property entity" id="MembershipFee">
           <h3>Cotisation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1115,7 +1115,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Fonction">
+        <div class="property entity" id="Office">
           <h3>Fonction
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1150,7 +1150,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Mandat">
+        <div class="property entity" id="Tenure">
           <h3>Mandat
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1185,7 +1185,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Runion">
+        <div class="property entity" id="Gathering">
           <h3>Réunion
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1220,7 +1220,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Sriederunions">
+        <div class="property entity" id="GatheringSeries">
           <h3>Série de réunions
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1353,7 +1353,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Attribution">
+        <div class="property entity" id="Conferral">
           <h3>Attribution
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1466,7 +1466,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Attribution">Attribution</a>
+                  <a href="#Conferral">Attribution</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1507,7 +1507,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Occupationdelocaux">Occupation de locaux</a>
+                  <a href="#Occupancy">Occupation de locaux</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1553,7 +1553,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Occupationdelocaux">Occupation de locaux</a>
+                  <a href="#Occupancy">Occupation de locaux</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1599,14 +1599,14 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Effectif">Effectif</a>
+                  <a href="#MemberCount">Effectif</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="statutdel'organisation">
+        <div class="property entity" id="organizationStatus">
           <h3>statut de l'organisation
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1650,7 +1650,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="modedeproprit">
+        <div class="property entity" id="ownershipModel">
           <h3>mode de propriété
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1725,14 +1725,14 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Prioded'organisation">Période d'organisation</a>
+                  <a href="#OrganizationPeriod">Période d'organisation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="typed'organisation">
+        <div class="property entity" id="organizationType">
           <h3>type d'organisation
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1776,7 +1776,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="formejuridique">
+        <div class="property entity" id="legalForm">
           <h3>forme juridique
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1820,7 +1820,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="statutd'adhsion">
+        <div class="property entity" id="membershipStatus">
           <h3>statut d'adhésion
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1858,7 +1858,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="catgoried'adhsion">
+        <div class="property entity" id="membershipCategory">
           <h3>catégorie d'adhésion
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1902,7 +1902,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="parrain">
+        <div class="property entity" id="sponsor">
           <h3>parrain
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -1989,7 +1989,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#parrain">parrain</a>
+                  <a href="#sponsor">parrain</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -2027,7 +2027,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#parrain">parrain</a>
+                  <a href="#sponsor">parrain</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -2065,7 +2065,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#vnementd'adhsion">Événement d'adhésion</a>
+                  <a href="#MembershipEvent">Événement d'adhésion</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2080,7 +2080,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="typed'vnementd'adhsion">
+        <div class="property entity" id="membershipEventType">
           <h3>type d'événement d'adhésion
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2149,7 +2149,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#vnementd'adhsion">Événement d'adhésion</a>
+                  <a href="#MembershipEvent">Événement d'adhésion</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2204,7 +2204,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#vnementd'adhsion">Événement d'adhésion</a>
+                  <a href="#MembershipEvent">Événement d'adhésion</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2253,7 +2253,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Cotisation">Cotisation</a>
+                  <a href="#MembershipFee">Cotisation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2291,7 +2291,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Cotisation">Cotisation</a>
+                  <a href="#MembershipFee">Cotisation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2340,7 +2340,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Cotisation">Cotisation</a>
+                  <a href="#MembershipFee">Cotisation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2358,7 +2358,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="typederunion">
+        <div class="property entity" id="gatheringType">
           <h3>type de réunion
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2396,7 +2396,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="organisateur">
+        <div class="property entity" id="organizer">
           <h3>organisateur
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2439,7 +2439,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="codevestimentaire">
+        <div class="property entity" id="dressCode">
           <h3>code vestimentaire
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2664,7 +2664,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="aassist">
+        <div class="property entity" id="attended">
           <h3>a assisté à
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2699,7 +2699,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="typededistinction">
+        <div class="property entity" id="distinctionType">
           <h3>type de distinction
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2737,7 +2737,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="matriau">
+        <div class="property entity" id="material">
           <h3>matériau
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2775,7 +2775,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="couleurduruban">
+        <div class="property entity" id="ribbonColour">
           <h3>couleur du ruban
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -2844,7 +2844,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Attribution">Attribution</a>
+                  <a href="#Conferral">Attribution</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2890,7 +2890,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Attribution">Attribution</a>
+                  <a href="#Conferral">Attribution</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2939,7 +2939,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Attribution">Attribution</a>
+                  <a href="#Conferral">Attribution</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2996,14 +2996,14 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Attribution">Attribution</a>
+                  <a href="#Conferral">Attribution</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="rgledemixit">
+        <div class="property entity" id="genderPolicy">
           <h3>règle de mixité
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -3047,7 +3047,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="moded'admission">
+        <div class="property entity" id="admissionMode">
           <h3>mode d'admission
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -3091,7 +3091,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="rciproqueavec">
+        <div class="property entity" id="reciprocalWith">
           <h3>réciproque avec
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -3157,7 +3157,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Accordderciprocit">Accord de réciprocité</a>
+                  <a href="#ReciprocityAgreement">Accord de réciprocité</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -3206,7 +3206,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Effectif">Effectif</a>
+                  <a href="#MemberCount">Effectif</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -3221,7 +3221,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="ladatedu">
+        <div class="property entity" id="asOf">
           <h3>à la date du
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3248,7 +3248,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="datedefondation">
+        <div class="property entity" id="foundingDate">
           <h3>date de fondation
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3283,7 +3283,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="datededissolution">
+        <div class="property entity" id="dissolutionDate">
           <h3>date de dissolution
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3318,7 +3318,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="numrod'adhrent">
+        <div class="property entity" id="membershipNumber">
           <h3>numéro d'adhérent
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3361,7 +3361,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="datededbut">
+        <div class="property entity" id="startDate">
           <h3>date de début
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3396,7 +3396,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="datedefin">
+        <div class="property entity" id="endDate">
           <h3>date de fin
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3437,7 +3437,7 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="datededcision">
+        <div class="property entity" id="decisionDate">
           <h3>date de décision
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -3504,7 +3504,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#Effectif">Effectif</a>
+                  <a href="#MemberCount">Effectif</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -3598,55 +3598,55 @@ td {
           </h4>
           <ul class="second">
             <li>
-              <a href="#Organisationdemembres">Organisation de membres</a>
+              <a href="#MembershipOrganization">Organisation de membres</a>
             </li>
             <li>
-              <a href="#Section">Section</a>
+              <a href="#Branch">Section</a>
             </li>
             <li>
-              <a href="#Locaux">Locaux</a>
+              <a href="#Premises">Locaux</a>
             </li>
             <li>
-              <a href="#Occupationdelocaux">Occupation de locaux</a>
+              <a href="#Occupancy">Occupation de locaux</a>
             </li>
             <li>
-              <a href="#Effectif">Effectif</a>
+              <a href="#MemberCount">Effectif</a>
             </li>
             <li>
-              <a href="#Prioded'organisation">Période d'organisation</a>
+              <a href="#OrganizationPeriod">Période d'organisation</a>
             </li>
             <li>
-              <a href="#Accordderciprocit">Accord de réciprocité</a>
+              <a href="#ReciprocityAgreement">Accord de réciprocité</a>
             </li>
             <li>
-              <a href="#Clubpourhommes">Club pour hommes</a>
+              <a href="#GentlemensClub">Club pour hommes</a>
             </li>
             <li>
-              <a href="#Clubpourfemmes">Club pour femmes</a>
+              <a href="#LadiesClub">Club pour femmes</a>
             </li>
             <li>
-              <a href="#Nationtudiante">Nation étudiante</a>
+              <a href="#StudentNation">Nation étudiante</a>
             </li>
             <li>
-              <a href="#Adhsion">Adhésion</a>
+              <a href="#Membership">Adhésion</a>
             </li>
             <li>
-              <a href="#vnementd'adhsion">Événement d'adhésion</a>
+              <a href="#MembershipEvent">Événement d'adhésion</a>
             </li>
             <li>
-              <a href="#Cotisation">Cotisation</a>
+              <a href="#MembershipFee">Cotisation</a>
             </li>
             <li>
-              <a href="#Fonction">Fonction</a>
+              <a href="#Office">Fonction</a>
             </li>
             <li>
-              <a href="#Mandat">Mandat</a>
+              <a href="#Tenure">Mandat</a>
             </li>
             <li>
-              <a href="#Runion">Réunion</a>
+              <a href="#Gathering">Réunion</a>
             </li>
             <li>
-              <a href="#Sriederunions">Série de réunions</a>
+              <a href="#GatheringSeries">Série de réunions</a>
             </li>
             <li>
               <a href="#Participation">Participation</a>
@@ -3655,7 +3655,7 @@ td {
               <a href="#Distinction">Distinction</a>
             </li>
             <li>
-              <a href="#Attribution">Attribution</a>
+              <a href="#Conferral">Attribution</a>
             </li>
             <li>
               <a href="#DistinctionConferral">Attribution de distinction</a>
@@ -3677,28 +3677,28 @@ td {
               <a href="#hasMemberCount">a pour effectif</a>
             </li>
             <li>
-              <a href="#statutdel'organisation">statut de l'organisation</a>
+              <a href="#organizationStatus">statut de l'organisation</a>
             </li>
             <li>
-              <a href="#modedeproprit">mode de propriété</a>
+              <a href="#ownershipModel">mode de propriété</a>
             </li>
             <li>
               <a href="#hasPeriod">a pour période</a>
             </li>
             <li>
-              <a href="#typed'organisation">type d'organisation</a>
+              <a href="#organizationType">type d'organisation</a>
             </li>
             <li>
-              <a href="#formejuridique">forme juridique</a>
+              <a href="#legalForm">forme juridique</a>
             </li>
             <li>
-              <a href="#statutd'adhsion">statut d'adhésion</a>
+              <a href="#membershipStatus">statut d'adhésion</a>
             </li>
             <li>
-              <a href="#catgoried'adhsion">catégorie d'adhésion</a>
+              <a href="#membershipCategory">catégorie d'adhésion</a>
             </li>
             <li>
-              <a href="#parrain">parrain</a>
+              <a href="#sponsor">parrain</a>
             </li>
             <li>
               <a href="#proposer">proposant</a>
@@ -3710,7 +3710,7 @@ td {
               <a href="#concernsMembership">concerne l'adhésion</a>
             </li>
             <li>
-              <a href="#typed'vnementd'adhsion">type d'événement d'adhésion</a>
+              <a href="#membershipEventType">type d'événement d'adhésion</a>
             </li>
             <li>
               <a href="#resultingStatus">statut résultant</a>
@@ -3728,13 +3728,13 @@ td {
               <a href="#appliesToCategory">s'applique à la catégorie</a>
             </li>
             <li>
-              <a href="#typederunion">type de réunion</a>
+              <a href="#gatheringType">type de réunion</a>
             </li>
             <li>
-              <a href="#organisateur">organisateur</a>
+              <a href="#organizer">organisateur</a>
             </li>
             <li>
-              <a href="#codevestimentaire">code vestimentaire</a>
+              <a href="#dressCode">code vestimentaire</a>
             </li>
             <li>
               <a href="#participant">participant</a>
@@ -3749,16 +3749,16 @@ td {
               <a href="#introducedBy">présenté par</a>
             </li>
             <li>
-              <a href="#aassist">a assisté à</a>
+              <a href="#attended">a assisté à</a>
             </li>
             <li>
-              <a href="#typededistinction">type de distinction</a>
+              <a href="#distinctionType">type de distinction</a>
             </li>
             <li>
-              <a href="#matriau">matériau</a>
+              <a href="#material">matériau</a>
             </li>
             <li>
-              <a href="#couleurduruban">couleur du ruban</a>
+              <a href="#ribbonColour">couleur du ruban</a>
             </li>
             <li>
               <a href="#recipient">bénéficiaire</a>
@@ -3773,13 +3773,13 @@ td {
               <a href="#conferredBy">conféré par</a>
             </li>
             <li>
-              <a href="#rgledemixit">règle de mixité</a>
+              <a href="#genderPolicy">règle de mixité</a>
             </li>
             <li>
-              <a href="#moded'admission">mode d'admission</a>
+              <a href="#admissionMode">mode d'admission</a>
             </li>
             <li>
-              <a href="#rciproqueavec">réciproque avec</a>
+              <a href="#reciprocalWith">réciproque avec</a>
             </li>
             <li>
               <a href="#party">partie</a>
@@ -3795,25 +3795,25 @@ td {
               <a href="#count">nombre</a>
             </li>
             <li>
-              <a href="#ladatedu">à la date du</a>
+              <a href="#asOf">à la date du</a>
             </li>
             <li>
-              <a href="#datedefondation">date de fondation</a>
+              <a href="#foundingDate">date de fondation</a>
             </li>
             <li>
-              <a href="#datededissolution">date de dissolution</a>
+              <a href="#dissolutionDate">date de dissolution</a>
             </li>
             <li>
-              <a href="#numrod'adhrent">numéro d'adhérent</a>
+              <a href="#membershipNumber">numéro d'adhérent</a>
             </li>
             <li>
-              <a href="#datededbut">date de début</a>
+              <a href="#startDate">date de début</a>
             </li>
             <li>
-              <a href="#datedefin">date de fin</a>
+              <a href="#endDate">date de fin</a>
             </li>
             <li>
-              <a href="#datededcision">date de décision</a>
+              <a href="#decisionDate">date de décision</a>
             </li>
           </ul>
         </li>
