@@ -1,0 +1,173 @@
+# Fictional Italian organisations (all names, numbers and people invented for
+# testing): an obedience with a lodge, a state order of merit, a lay confraternity,
+# a contrada, a guild, a recognised association with an auditor and an unrecognised
+# one. Shows that Italian forms fit the generic model: the grades of a state order on
+# the generic chivalric ladder, lodge offices from the French office scheme, legal
+# form with rov:orgType, and a local head's title kept as the label of mbrc:president.
+#
+# A draft from general knowledge; the Italian wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix it:      <https://example.org/esempio/> .
+
+# --- An obedience and a lodge --------------------------------------------------
+
+it:GrandeOrienteEsemplare a fraternal:GrandBody ;
+    rdfs:label "Grande Oriente Esemplare d'Italia"@it ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:incorporatedAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:ancientAndAcceptedScottishRite ;
+    fraternal:hasJurisdictionOver it:LoggiaLaFenice .
+
+it:LoggiaLaFenice a fraternal:Lodge ;
+    rdfs:label "Loggia La Fenice"@it ;
+    org:unitOf it:GrandeOrienteEsemplare ;
+    fraternal:warrantedBy it:GrandeOrienteEsemplare .
+
+it:marco a foaf:Person ; schema:name "Marco Immaginario" .
+
+it:marco-venerabile a mbr:Tenure ;
+    org:member it:marco ; org:organization it:LoggiaLaFenice ;
+    org:role fraternalc:venerableMaster ;
+    mbr:startDate "2025-12"^^xsd:gYearMonth .
+
+# --- A state order of merit ----------------------------------------------------
+
+it:RepubblicaEsemplare a org:Organization ;
+    rdfs:label "Repubblica esemplare"@it .
+
+it:OrdineAlMeritoEsemplare a fraternal:FraternalOrder ;
+    rdfs:label "Ordine al Merito esemplare"@it ;
+    org:classification fraternalc:orderOfChivalry ;
+    rov:orgType mbrc:publicLawBody ;
+    fraternal:fonsHonorum it:RepubblicaEsemplare ;
+    fraternal:degreeSystem it:ClassiMerito .
+
+# Five classes, taken from the generic chivalric ladder.
+it:ClassiMerito a skos:ConceptScheme , fraternal:DegreeSystem ;
+    skos:prefLabel "Classi dell'Ordine al Merito esemplare"@it ;
+    skos:hasTopConcept it:cavaliere , it:ufficiale , it:commendatore ,
+                       it:grandeUfficiale , it:cavaliereDiGranCroce .
+
+it:cavaliere a fraternal:Degree ;
+    skos:inScheme it:ClassiMerito ; skos:topConceptOf it:ClassiMerito ;
+    skos:prefLabel "Cavaliere"@it ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree it:ufficiale ;
+    skos:broadMatch fraternalc:knightGrade .
+
+it:ufficiale a fraternal:Degree ;
+    skos:inScheme it:ClassiMerito ; skos:topConceptOf it:ClassiMerito ;
+    skos:prefLabel "Ufficiale"@it ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree it:commendatore ;
+    skos:broadMatch fraternalc:officerGrade .
+
+it:commendatore a fraternal:Degree ;
+    skos:inScheme it:ClassiMerito ; skos:topConceptOf it:ClassiMerito ;
+    skos:prefLabel "Commendatore"@it ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree it:grandeUfficiale ;
+    skos:broadMatch fraternalc:commanderGrade .
+
+it:grandeUfficiale a fraternal:Degree ;
+    skos:inScheme it:ClassiMerito ; skos:topConceptOf it:ClassiMerito ;
+    skos:prefLabel "Grande Ufficiale"@it ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree it:cavaliereDiGranCroce ;
+    skos:broadMatch fraternalc:commanderFirstClassGrade .
+
+it:cavaliereDiGranCroce a fraternal:Degree ;
+    skos:inScheme it:ClassiMerito ; skos:topConceptOf it:ClassiMerito ;
+    skos:prefLabel "Cavaliere di Gran Croce"@it ;
+    fraternal:degreeRank 5 ;
+    skos:broadMatch fraternalc:grandCrossGrade .
+
+# --- A lay confraternity ---------------------------------------------------------
+
+it:ConfraternitaSanRocco a fraternal:FraternalOrder ;
+    rdfs:label "Confraternita di San Rocco"@it ;
+    org:classification fraternalc:confraternity ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed .
+
+it:giulia a foaf:Person ; schema:name "Giulia Fittizia" .
+
+# The head of a confraternity is the priore: mbrc:president with the local title.
+it:giulia-priora a mbr:Tenure ;
+    org:member it:giulia ; org:organization it:ConfraternitaSanRocco ;
+    org:role mbrc:president ;
+    rdfs:label "Priora"@it ;
+    mbr:startDate "2024-01-01"^^xsd:date .
+
+# --- A contrada ---------------------------------------------------------------------
+
+it:ContradaDelFalco a mbr:MembershipOrganization ;
+    rdfs:label "Contrada del Falco"@it ;
+    org:classification mbrc:contrada ;
+    rov:orgType mbrc:incorporatedAssociation ;
+    mbr:admissionMode mbrc:hereditary ;
+    mbr:genderPolicy mbrc:mixed .
+
+# --- A guild --------------------------------------------------------------------------
+
+it:ArteDeiTessitori a mbr:MembershipOrganization ;
+    rdfs:label "Arte dei Tessitori"@it ;
+    org:classification mbrc:guild ;
+    rov:orgType mbrc:incorporatedAssociation ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:genderPolicy mbrc:mixed .
+
+# --- A recognised and an unrecognised association -----------------------------------------
+
+it:CircoloDelleArti a mbr:MembershipOrganization ;
+    rdfs:label "Circolo delle Arti"@it ;
+    org:classification mbrc:artsClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1987"^^xsd:gYear .
+
+it:paolo a foaf:Person ; schema:name "Paolo Inventato" .
+it:chiara a foaf:Person ; schema:name "Chiara Supposta" .
+
+# socio ordinario, socio sostenitore
+it:paolo-socio a mbr:Membership ;
+    org:member it:paolo ; org:organization it:CircoloDelleArti ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2016-09-10"^^xsd:date .
+
+it:chiara-socia a mbr:Membership ;
+    org:member it:chiara ; org:organization it:CircoloDelleArti ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:benefactorMember ;
+    mbr:startDate "2020-01-15"^^xsd:date .
+
+# revisore dei conti
+it:chiara-revisore a mbr:Tenure ;
+    org:member it:chiara ; org:organization it:CircoloDelleArti ;
+    org:role mbrc:auditor ;
+    mbr:startDate "2023-03-01"^^xsd:date .
+
+it:assemblea-2026 a mbr:Gathering ;
+    rdfs:label "Assemblea ordinaria dei soci 2026"@it ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer it:CircoloDelleArti ;
+    mbr:startDate "2026-04-18"^^xsd:date .
+
+it:AmiciDelBorgo a mbr:MembershipOrganization ;
+    rdfs:label "Associazione Amici del Borgo"@it ;
+    org:classification mbrc:hobbyClub ;
+    rov:orgType mbrc:unincorporated ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    mbr:genderPolicy mbrc:mixed .
