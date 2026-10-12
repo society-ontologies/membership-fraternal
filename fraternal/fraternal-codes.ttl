@@ -442,7 +442,7 @@ fraternalc:itinerantTraining a skos:Concept , owl:NamedIndividual ;
     skos:definition "Members in training travel between workplaces and places, often for years, to learn their trade, as the French compagnons do on their Tour de France."@en ,
                     "Medlemmar under utbildning vandrar mellan arbetsplatser och orter, ofta i flera år, för att lära sitt yrke, som de franska compagnons gör på sin Tour de France."@sv ,
                     "Les membres en formation voyagent d'un lieu de travail et d'une ville à l'autre, souvent pendant des années, pour apprendre leur métier, comme le font les compagnons français lors de leur Tour de France."@fr ;
-    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en .
+    skos:scopeNote "The Tour de France of the compagnons is not the cycling race."@en , "Le Tour de France des compagnons n'est pas la course cycliste."@fr .
 
 fraternalc:masterpieceRequirement a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:Characteristics ; skos:topConceptOf fraternalc:Characteristics ;
@@ -765,7 +765,7 @@ fraternalc:housePrevot a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:definition "The officer in charge of a compagnons' house (cayenne), where the compagnons and aspirants of a town live and meet."@en ,
                     "Den ämbetsman som ansvarar för ett compagnons hus (cayenne), där compagnons och aspiranter i en stad bor och möts."@sv ,
                     "Responsable d'une maison de compagnons (cayenne), où les compagnons et aspirants d'une ville logent et se réunissent."@fr ;
-    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en .
+    skos:scopeNote "Not mbrc:provost, who keeps order at gatherings."@en , "À ne pas confondre avec mbrc:provost, qui maintient l'ordre lors des réunions."@fr .
 
 fraternalc:rolleur a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:FrenchOffices ; skos:topConceptOf fraternalc:FrenchOffices ;

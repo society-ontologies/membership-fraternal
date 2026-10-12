@@ -110,7 +110,7 @@ mbrsh:SupportedDateFormShape a sh:NodeShape ;
     sh:severity sh:Warning ;
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "The date {?value} is not a year 0001-9999 written with four digits, so its order against other dates is not checked. | Datumet {?value} är inte ett år 0001-9999 skrivet med fyra siffror, så dess ordning mot andra datum kontrolleras inte." ;
+        sh:message "The date {?value} is not a year 0001-9999 written with four digits, so its order against other dates is not checked. | Datumet {?value} är inte ett år 0001-9999 skrivet med fyra siffror, så dess ordning mot andra datum kontrolleras inte. | La date {?value} n'est pas une année de 0001 à 9999 écrite avec quatre chiffres ; son ordre par rapport aux autres dates n'est donc pas vérifié." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this ?value WHERE {
@@ -219,7 +219,7 @@ mbrsh:DecisionDateShape a sh:NodeShape ;
         sh:path mbr:decisionDate ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
-        sh:message "mbr:decisionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:decisionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+        sh:message "mbr:decisionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:decisionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear. | mbr:decisionDate doit être un seul xsd:date, xsd:gYearMonth ou xsd:gYear."
     ] .
 
 mbrsh:AsOfShape a sh:NodeShape ;
@@ -241,18 +241,18 @@ mbrsh:MembershipShape a sh:NodeShape ;
                 [ sh:path org:organization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ] ,
                 [ sh:path mbr:membershipStatus ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipStatusValue ;
-                  sh:message "mbr:membershipStatus must be a concept in mbrc:MembershipStatuses, or one mapped to it. | mbr:membershipStatus ska vara ett begrepp i mbrc:MembershipStatuses, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:membershipStatus must be a concept in mbrc:MembershipStatuses, or one mapped to it. | mbr:membershipStatus ska vara ett begrepp i mbrc:MembershipStatuses, eller ett som är mappat dit. | mbr:membershipStatus doit être un concept de mbrc:MembershipStatuses, ou un concept qui y est mappé." ] ,
                 # A membership may have several categories at once (life and founding, junior
                 # and overseas): no maxCount, and no incompatibility rule beyond what a
                 # category's own definition says.
                 [ sh:path mbr:membershipCategory ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipCategoryValue ;
-                  sh:message "mbr:membershipCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:membershipCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:membershipCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:membershipCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit. | mbr:membershipCategory doit être un concept de mbrc:MembershipCategories, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:sponsor ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:proposer ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:seconder ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:membershipNumber ; sh:maxCount 1 ; sh:datatype xsd:string ;
-                  sh:message "mbr:membershipNumber must be one xsd:string, such as \"1207\" or \"L-0042\". | mbr:membershipNumber ska vara en enda xsd:string, t.ex. \"1207\" eller \"L-0042\"." ] ;
+                  sh:message "mbr:membershipNumber must be one xsd:string, such as \"1207\" or \"L-0042\". | mbr:membershipNumber ska vara en enda xsd:string, t.ex. \"1207\" eller \"L-0042\". | mbr:membershipNumber doit être un seul xsd:string, comme \"1207\" ou \"L-0042\"." ] ;
     # Register policy: a number identifies one membership in one organisation at a time.
     # The same number may be reused by a later membership, but only when the two periods
     # certainly do not overlap: one ends (latest possible day) before the other begins
@@ -306,14 +306,14 @@ mbrsh:MembershipEventShape a sh:NodeShape ;
     sh:property [ sh:path mbr:concernsMembership ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Membership ] ,
                 [ sh:path mbr:membershipEventType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipEventTypeValue ;
-                  sh:message "mbr:membershipEventType must be a concept in mbrc:MembershipEventTypes, or one mapped to it. | mbr:membershipEventType ska vara ett begrepp i mbrc:MembershipEventTypes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:membershipEventType must be a concept in mbrc:MembershipEventTypes, or one mapped to it. | mbr:membershipEventType ska vara ett begrepp i mbrc:MembershipEventTypes, eller ett som är mappat dit. | mbr:membershipEventType doit être un concept de mbrc:MembershipEventTypes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:resultingStatus ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipStatusValue ;
-                  sh:message "mbr:resultingStatus must be a concept in mbrc:MembershipStatuses, or one mapped to it. | mbr:resultingStatus ska vara ett begrepp i mbrc:MembershipStatuses, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:resultingStatus must be a concept in mbrc:MembershipStatuses, or one mapped to it. | mbr:resultingStatus ska vara ett begrepp i mbrc:MembershipStatuses, eller ett som är mappat dit. | mbr:resultingStatus doit être un concept de mbrc:MembershipStatuses, ou un concept qui y est mappé." ] ,
                 # The whole set of categories after the event, not an addition to the earlier set.
                 [ sh:path mbr:resultingCategory ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipCategoryValue ;
-                  sh:message "mbr:resultingCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:resultingCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit." ] .
+                  sh:message "mbr:resultingCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:resultingCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit. | mbr:resultingCategory doit être un concept de mbrc:MembershipCategories, ou un concept qui y est mappé." ] .
 
 ##############################################################################
 # Membership fees
@@ -363,11 +363,11 @@ mbrsh:GatheringShape a sh:NodeShape ;
     sh:property [ sh:path mbr:gatheringType ; sh:minCount 1 ; sh:class skos:Concept ;
                   sh:severity sh:Warning ] ,
                 [ sh:path mbr:gatheringType ; sh:node mbrsh:GatheringTypeValue ;
-                  sh:message "mbr:gatheringType must be a concept in mbrc:GatheringTypes, or one mapped to it. | mbr:gatheringType ska vara ett begrepp i mbrc:GatheringTypes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:gatheringType must be a concept in mbrc:GatheringTypes, or one mapped to it. | mbr:gatheringType ska vara ett begrepp i mbrc:GatheringTypes, eller ett som är mappat dit. | mbr:gatheringType doit être un concept de mbrc:GatheringTypes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ] ,
                 [ sh:path mbr:organizer ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:dressCode ; sh:class skos:Concept ; sh:node mbrsh:DressCodeValue ;
-                  sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit. | mbr:dressCode doit être un concept de mbrc:DressCodes, ou un concept qui y est mappé." ] ,
                 [ sh:path schema:superEvent ; sh:maxCount 1 ; sh:class schema:Event ] .
 
 mbrsh:ParticipationShape a sh:NodeShape ;
@@ -376,7 +376,7 @@ mbrsh:ParticipationShape a sh:NodeShape ;
                 [ sh:path mbr:participationIn ; sh:minCount 1 ; sh:maxCount 1 ; sh:class schema:Event ] ,
                 [ sh:path mbr:participationRole ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:ParticipationRoleValue ;
-                  sh:message "mbr:participationRole must be a concept in mbrc:ParticipationRoles, or one mapped to it. | mbr:participationRole ska vara ett begrepp i mbrc:ParticipationRoles, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:participationRole must be a concept in mbrc:ParticipationRoles, or one mapped to it. | mbr:participationRole ska vara ett begrepp i mbrc:ParticipationRoles, eller ett som är mappat dit. | mbr:participationRole doit être un concept de mbrc:ParticipationRoles, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:introducedBy ; sh:maxCount 1 ; sh:class foaf:Agent ] .
 
 ##############################################################################
@@ -388,10 +388,10 @@ mbrsh:DistinctionShape a sh:NodeShape ;
     sh:property [ sh:path skos:inScheme ; sh:minCount 1 ] ,
                 [ sh:path mbr:distinctionType ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:DistinctionTypeValue ;
-                  sh:message "mbr:distinctionType must be a concept in mbrc:DistinctionTypes, or one mapped to it. | mbr:distinctionType ska vara ett begrepp i mbrc:DistinctionTypes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:distinctionType must be a concept in mbrc:DistinctionTypes, or one mapped to it. | mbr:distinctionType ska vara ett begrepp i mbrc:DistinctionTypes, eller ett som är mappat dit. | mbr:distinctionType doit être un concept de mbrc:DistinctionTypes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:material ; sh:class skos:Concept ;
                   sh:node mbrsh:MaterialValue ;
-                  sh:message "mbr:material must be a concept in mbrc:Materials, or one mapped to it. | mbr:material ska vara ett begrepp i mbrc:Materials, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:material must be a concept in mbrc:Materials, or one mapped to it. | mbr:material ska vara ett begrepp i mbrc:Materials, eller ett som är mappat dit. | mbr:material doit être un concept de mbrc:Materials, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:ribbonColour ; sh:maxCount 1 ; sh:class skos:Concept ] .
 
 mbrsh:ConferralShape a sh:NodeShape ;
@@ -415,27 +415,27 @@ mbrsh:OrganizationShape a sh:NodeShape ;
     sh:property [ sh:path org:classification ; sh:minCount 1 ; sh:class skos:Concept ;
                   sh:severity sh:Warning ] ,
                 [ sh:path org:classification ; sh:node mbrsh:OrganizationTypeValue ;
-                  sh:message "org:classification must be a concept in mbrc:OrganizationTypes, or one mapped to it. | org:classification ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit." ] ,
+                  sh:message "org:classification must be a concept in mbrc:OrganizationTypes, or one mapped to it. | org:classification ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit. | org:classification doit être un concept de mbrc:OrganizationTypes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:genderPolicy ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:GenderPolicyValue ;
-                  sh:message "mbr:genderPolicy must be a concept in mbrc:GenderPolicies, or one mapped to it. | mbr:genderPolicy ska vara ett begrepp i mbrc:GenderPolicies, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:genderPolicy must be a concept in mbrc:GenderPolicies, or one mapped to it. | mbr:genderPolicy ska vara ett begrepp i mbrc:GenderPolicies, eller ett som är mappat dit. | mbr:genderPolicy doit être un concept de mbrc:GenderPolicies, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:admissionMode ; sh:class skos:Concept ;
                   sh:node mbrsh:AdmissionModeValue ;
-                  sh:message "mbr:admissionMode must be a concept in mbrc:AdmissionModes, or one mapped to it. | mbr:admissionMode ska vara ett begrepp i mbrc:AdmissionModes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:admissionMode must be a concept in mbrc:AdmissionModes, or one mapped to it. | mbr:admissionMode ska vara ett begrepp i mbrc:AdmissionModes, eller ett som är mappat dit. | mbr:admissionMode doit être un concept de mbrc:AdmissionModes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:reciprocalWith ; sh:class org:Organization ] ,
                 [ sh:path mbr:organizationStatus ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:OrganizationStatusValue ;
-                  sh:message "mbr:organizationStatus must be a concept in mbrc:OrganizationStatuses, or one mapped to it. | mbr:organizationStatus ska vara ett begrepp i mbrc:OrganizationStatuses, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:organizationStatus must be a concept in mbrc:OrganizationStatuses, or one mapped to it. | mbr:organizationStatus ska vara ett begrepp i mbrc:OrganizationStatuses, eller ett som är mappat dit. | mbr:organizationStatus doit être un concept de mbrc:OrganizationStatuses, ou un concept qui y est mappé." ] ,
                 [ sh:path rov:orgType ; sh:class skos:Concept ;
                   sh:node mbrsh:LegalFormValue ;
-                  sh:message "rov:orgType must be a concept in mbrc:LegalForms, or one mapped to it. | rov:orgType ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit." ] ,
+                  sh:message "rov:orgType must be a concept in mbrc:LegalForms, or one mapped to it. | rov:orgType ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit. | rov:orgType doit être un concept de mbrc:LegalForms, ou un concept qui y est mappé." ] ,
                 [ sh:path rov:registration ; sh:class adms:Identifier ] ,
                 [ sh:path mbr:ownershipModel ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:OwnershipModelValue ;
-                  sh:message "mbr:ownershipModel must be a concept in mbrc:OwnershipModels, or one mapped to it. | mbr:ownershipModel ska vara ett begrepp i mbrc:OwnershipModels, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:ownershipModel must be a concept in mbrc:OwnershipModels, or one mapped to it. | mbr:ownershipModel ska vara ett begrepp i mbrc:OwnershipModels, eller ett som är mappat dit. | mbr:ownershipModel doit être un concept de mbrc:OwnershipModels, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:hasMemberCount ; sh:class mbr:MemberCount ] ,
                 [ sh:path mbr:dressCode ; sh:class skos:Concept ; sh:node mbrsh:DressCodeValue ;
-                  sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit. | mbr:dressCode doit être un concept de mbrc:DressCodes, ou un concept qui y est mappé." ] ,
                 [ sh:path schema:url ; sh:nodeKind sh:IRI ;
                   sh:message "schema:url must be an IRI, e.g. <https://example.org/>. | schema:url ska vara en IRI, t.ex. <https://example.org/>. | schema:url doit être une IRI, par ex. <https://example.org/>." ] ,
                 [ sh:path schema:email ; sh:datatype xsd:string ; sh:pattern "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$" ;
@@ -487,7 +487,7 @@ mbrsh:HasPeriodShape a sh:NodeShape ;
     sh:targetSubjectsOf mbr:hasPeriod ;
     sh:class org:Organization ;
     sh:property [ sh:path mbr:hasPeriod ; sh:class mbr:OrganizationPeriod ;
-                  sh:message "mbr:hasPeriod must lead to an mbr:OrganizationPeriod. | mbr:hasPeriod ska leda till en mbr:OrganizationPeriod." ] .
+                  sh:message "mbr:hasPeriod must lead to an mbr:OrganizationPeriod. | mbr:hasPeriod ska leda till en mbr:OrganizationPeriod. | mbr:hasPeriod doit mener à une mbr:OrganizationPeriod." ] .
 
 # Kept apart from the shape below: a sh:message on a shape replaces the messages of the
 # SPARQL constraint in that shape.
@@ -500,33 +500,33 @@ mbrsh:OrganizationPeriodContentShape a sh:NodeShape ;
             [ sh:path mbr:organizationStatus ; sh:minCount 1 ]
             [ sh:path mbr:organizationType ; sh:minCount 1 ]
             [ sh:path mbr:legalForm ; sh:minCount 1 ] ) ;
-    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm." .
+    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm. | Une période a besoin d'au moins l'un de mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType et mbr:legalForm." .
 
 mbrsh:OrganizationPeriodShape a sh:NodeShape ;
     sh:targetClass mbr:OrganizationPeriod ;
     sh:targetObjectsOf mbr:hasPeriod ;
     sh:property [ sh:path [ sh:inversePath mbr:hasPeriod ] ; sh:minCount 1 ; sh:maxCount 1 ;
-                  sh:message "A period belongs to exactly one organisation, linked with mbr:hasPeriod. | En period hör till exakt en organisation, kopplad med mbr:hasPeriod." ] ,
+                  sh:message "A period belongs to exactly one organisation, linked with mbr:hasPeriod. | En period hör till exakt en organisation, kopplad med mbr:hasPeriod. | Une période appartient à exactement une organisation, reliée par mbr:hasPeriod." ] ,
                 [ sh:path mbr:genderPolicy ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:GenderPolicyValue ;
-                  sh:message "mbr:genderPolicy must be one concept in mbrc:GenderPolicies, or one mapped to it. | mbr:genderPolicy ska vara ett begrepp i mbrc:GenderPolicies, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:genderPolicy must be one concept in mbrc:GenderPolicies, or one mapped to it. | mbr:genderPolicy ska vara ett begrepp i mbrc:GenderPolicies, eller ett som är mappat dit. | mbr:genderPolicy doit être un seul concept de mbrc:GenderPolicies, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:admissionMode ; sh:class skos:Concept ;
                   sh:node mbrsh:AdmissionModeValue ;
-                  sh:message "mbr:admissionMode must be a concept in mbrc:AdmissionModes, or one mapped to it. | mbr:admissionMode ska vara ett begrepp i mbrc:AdmissionModes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:admissionMode must be a concept in mbrc:AdmissionModes, or one mapped to it. | mbr:admissionMode ska vara ett begrepp i mbrc:AdmissionModes, eller ett som är mappat dit. | mbr:admissionMode doit être un concept de mbrc:AdmissionModes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:ownershipModel ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:OwnershipModelValue ;
-                  sh:message "mbr:ownershipModel must be one concept in mbrc:OwnershipModels, or one mapped to it. | mbr:ownershipModel ska vara ett begrepp i mbrc:OwnershipModels, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:ownershipModel must be one concept in mbrc:OwnershipModels, or one mapped to it. | mbr:ownershipModel ska vara ett begrepp i mbrc:OwnershipModels, eller ett som är mappat dit. | mbr:ownershipModel doit être un seul concept de mbrc:OwnershipModels, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:organizationStatus ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:OrganizationStatusValue ;
-                  sh:message "mbr:organizationStatus must be one concept in mbrc:OrganizationStatuses, or one mapped to it. | mbr:organizationStatus ska vara ett begrepp i mbrc:OrganizationStatuses, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:organizationStatus must be one concept in mbrc:OrganizationStatuses, or one mapped to it. | mbr:organizationStatus ska vara ett begrepp i mbrc:OrganizationStatuses, eller ett som är mappat dit. | mbr:organizationStatus doit être un seul concept de mbrc:OrganizationStatuses, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:organizationType ; sh:class skos:Concept ;
                   sh:node mbrsh:OrganizationTypeValue ;
-                  sh:message "mbr:organizationType must be a concept in mbrc:OrganizationTypes, or one mapped to it. | mbr:organizationType ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:organizationType must be a concept in mbrc:OrganizationTypes, or one mapped to it. | mbr:organizationType ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit. | mbr:organizationType doit être un concept de mbrc:OrganizationTypes, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:legalForm ; sh:class skos:Concept ;
                   sh:node mbrsh:LegalFormValue ;
-                  sh:message "mbr:legalForm must be a concept in mbrc:LegalForms, or one mapped to it. | mbr:legalForm ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit." ] ,
+                  sh:message "mbr:legalForm must be a concept in mbrc:LegalForms, or one mapped to it. | mbr:legalForm ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit. | mbr:legalForm doit être un concept de mbrc:LegalForms, ou un concept qui y est mappé." ] ,
                 [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ;
-                  sh:message "Give the date from which the period applies (mbr:startDate). | Ange från vilket datum perioden gäller (mbr:startDate)." ] ;
+                  sh:message "Give the date from which the period applies (mbr:startDate). | Ange från vilket datum perioden gäller (mbr:startDate). | Indiquez la date à partir de laquelle la période s'applique (mbr:startDate)." ] ;
 
     # One organisation cannot have two different values of the same single-valued property
     # at once. Reported only when two periods certainly overlap: both have a start and an end,
@@ -537,7 +537,7 @@ mbrsh:OrganizationPeriodShape a sh:NodeShape ;
     # types and, in some jurisdictions, more than one legal form at once.
     sh:sparql [
         a sh:SPARQLConstraint ;
-        sh:message "The organisation has two different values of {?p} in periods that certainly overlap ({?other}). | Organisationen har två olika värden på {?p} i perioder som säkert överlappar ({?other})." ;
+        sh:message "The organisation has two different values of {?p} in periods that certainly overlap ({?other}). | Organisationen har två olika värden på {?p} i perioder som säkert överlappar ({?other}). | L'organisation a deux valeurs différentes de {?p} dans des périodes qui se chevauchent certainement ({?other})." ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this ?other ?p WHERE {
@@ -592,7 +592,7 @@ mbrsh:PremisesShape a sh:NodeShape ;
                 [ sh:path schema:geo ; sh:maxCount 1 ; sh:class schema:GeoCoordinates ] ,
                 [ sh:path schema:containedInPlace ; sh:nodeKind sh:IRI ] ,
                 [ sh:path mbr:dressCode ; sh:class skos:Concept ; sh:node mbrsh:DressCodeValue ;
-                  sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit." ] ;
+                  sh:message "mbr:dressCode must be a concept in mbrc:DressCodes, or one mapped to it. | mbr:dressCode ska vara ett begrepp i mbrc:DressCodes, eller ett som är mappat dit. | mbr:dressCode doit être un concept de mbrc:DressCodes, ou un concept qui y est mappé." ] ;
     # A building may have had several addresses over time, but only one current one.
     sh:sparql [
         a sh:SPARQLConstraint ;
@@ -645,7 +645,7 @@ mbrsh:MemberCountShape a sh:NodeShape ;
     sh:targetClass mbr:MemberCount ;
     sh:property [ sh:path mbr:count ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:node mbrsh:CountList ;
-                  sh:message "mbr:count must be one non-negative integer (xsd:nonNegativeInteger, or xsd:integer of zero or more). | mbr:count ska vara ett enda icke-negativt heltal (xsd:nonNegativeInteger, eller xsd:integer som är noll eller större)." ] ,
+                  sh:message "mbr:count must be one non-negative integer (xsd:nonNegativeInteger, or xsd:integer of zero or more). | mbr:count ska vara ett enda icke-negativt heltal (xsd:nonNegativeInteger, eller xsd:integer som är noll eller större). | mbr:count doit être un seul entier non négatif (xsd:nonNegativeInteger, ou xsd:integer égal ou supérieur à zéro)." ] ,
                 [ sh:path mbr:asOf ; sh:minCount 1 ;
                   sh:message "A member count needs the date it refers to (mbr:asOf). | Ett medlemsantal behöver det datum det avser (mbr:asOf). | Un effectif a besoin de la date à laquelle il se rapporte (mbr:asOf)." ] .
 

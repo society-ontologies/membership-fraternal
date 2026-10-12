@@ -701,8 +701,8 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="OrganisationPeriod">
-          <h3>Organisation Period
+        <div class="property entity" id="Prioded'organisation">
+          <h3>Période d'organisation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
@@ -724,13 +724,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A period during which a membership organisation had a given gender policy, admission mode, ownership model, status, organisation type or legal form. The values are given on the period with mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm, and the period carries the dates: mbr:startDate and mbr:endDate for when they applied and mbr:decisionDate for when they were decided. Linked from the organisation with mbr:hasPeriod.</p></td>
+              <td><p>Période pendant laquelle une organisation de membres avait une règle de mixité, un mode d'admission, un mode de propriété, un statut, un type d'organisation ou une forme juridique donnés. Les valeurs sont indiquées sur la période avec mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType et mbr:legalForm, et la période porte les dates : mbr:startDate et mbr:endDate pour le moment où elles s'appliquaient, et mbr:decisionDate pour le moment où elles ont été décidées. Reliée à l'organisation par mbr:hasPeriod.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>Give only the properties a period concerns: a club that begins to admit women gets a new period with mbr:genderPolicy and leaves its ownership model alone. Periods for different properties may overlap in time. The start is when the value began to apply, which may be earlier or later than the decision (a vote taken in one year, in force from the next, or a decision with retroactive effect). A period without an end date has no stated end; that does not say it still applies. The registered current picture stays on the organisation itself; it is not derived from the periods, and the two are not compared except in a profile whose history is complete. A change of policy does not change org:classification: a club classified as mbrc:gentlemensClub stays so, and so stays an mbr:GentlemensClub, until its classification is changed. When it is, the registered current classification changes on the organisation and the earlier one is kept as a period with mbr:organizationType. The convenience classes follow the current org:classification on the organisation, never the periods.</p></td>
+              <td><p>N'indiquez que les propriétés qu'une période concerne : un club qui commence à admettre des femmes reçoit une nouvelle période avec mbr:genderPolicy et laisse son mode de propriété tel quel. Des périodes portant sur des propriétés différentes peuvent se chevaucher dans le temps. Le début est le moment où la valeur a commencé à s'appliquer, qui peut précéder ou suivre la décision (un vote pris une année et en vigueur l'année suivante, ou une décision à effet rétroactif). Une période sans date de fin n'a pas de fin indiquée ; cela ne dit pas qu'elle s'applique encore. L'image actuelle enregistrée reste sur l'organisation elle-même ; elle n'est pas déduite des périodes, et les deux ne sont comparées que dans un profil dont l'historique est complet. Un changement de règle ne change pas org:classification : un club classé comme mbrc:gentlemensClub le reste, et reste donc un mbr:GentlemensClub, jusqu'à ce que sa classification soit changée. Quand elle l'est, la classification actuelle enregistrée change sur l'organisation et la précédente est conservée comme période avec mbr:organizationType. Les classes de commodité suivent l'org:classification actuelle de l'organisation, jamais les périodes.</p></td>
             </tr>
             <tr>
               <th>
@@ -738,7 +738,7 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#hasPeriod">has period</a>
+                  <a href="#hasPeriod">a pour période</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -814,6 +814,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#Organisationdemembres">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -826,11 +831,6 @@ td {
                       </span>
                     </span><br>
                   </span>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#Organisationdemembres">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -1039,7 +1039,7 @@ td {
                   </li>
                   <li>
                     <span>
-                      <a href="#resultingCategory">resulting category</a>
+                      <a href="#resultingCategory">catégorie résultante</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1635,7 +1635,7 @@ td {
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods.</p></td>
+              <td><p>Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes.</p></td>
             </tr>
             <tr>
               <th>
@@ -1679,7 +1679,7 @@ td {
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods.</p></td>
+              <td><p>Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes.</p></td>
             </tr>
             <tr>
               <th>
@@ -1695,7 +1695,7 @@ td {
           </table>
         </div>
         <div class="property entity" id="hasPeriod">
-          <h3>has period
+          <h3>a pour période
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
@@ -1717,7 +1717,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Links an organisation to a period (mbr:OrganizationPeriod) in which it had a gender policy, admission mode, ownership model, status, organisation type or legal form. An organisation may have many.</p></td>
+              <td><p>Relie une organisation à une période (mbr:OrganizationPeriod) pendant laquelle elle avait une règle de mixité, un mode d'admission, un mode de propriété, un statut, un type d'organisation ou une forme juridique. Une organisation peut en avoir plusieurs.</p></td>
             </tr>
             <tr>
               <th>
@@ -1725,15 +1725,15 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#OrganisationPeriod">Organisation Period</a>
+                  <a href="#Prioded'organisation">Période d'organisation</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="organisationtype">
-          <h3>organisation type
+        <div class="property entity" id="typed'organisation">
+          <h3>type d'organisation
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
@@ -1755,13 +1755,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The kind of organisation it was during a period (see mbrc:OrganizationTypes). Used on an mbr:OrganizationPeriod; the same values as org:classification gives on the organisation.</p></td>
+              <td><p>Le genre d'organisation qu'elle était pendant une période (voir mbrc:OrganizationTypes). Utilisé sur une mbr:OrganizationPeriod ; les mêmes valeurs que celles données par org:classification sur l'organisation.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>A separate property because org:classification has the domain org:Organization: used on a period, it would make the period an organisation. An organisation may have several types at once, so periods with different types may overlap. The registered current classification stays on the organisation with org:classification.</p></td>
+              <td><p>Propriété distincte parce que org:classification a pour domaine org:Organization : utilisée sur une période, elle ferait de la période une organisation. Une organisation peut avoir plusieurs types à la fois, de sorte que des périodes de types différents peuvent se chevaucher. La classification actuelle enregistrée reste sur l'organisation avec org:classification.</p></td>
             </tr>
             <tr>
               <th>
@@ -1776,8 +1776,8 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="legalform">
-          <h3>legal form
+        <div class="property entity" id="formejuridique">
+          <h3>forme juridique
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
@@ -1799,13 +1799,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The legal form the organisation had during a period (see mbrc:LegalForms). Used on an mbr:OrganizationPeriod; the same values as rov:orgType gives on the organisation.</p></td>
+              <td><p>La forme juridique que l'organisation avait pendant une période (voir mbrc:LegalForms). Utilisé sur une mbr:OrganizationPeriod ; les mêmes valeurs que celles données par rov:orgType sur l'organisation.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>A separate property because rov:orgType, a sub-property of org:classification, has the domain org:Organization: used on a period, it would make the period an organisation. The registered current legal form stays on the organisation with rov:orgType. A change of legal form is a change in the organisation's form, not a new organisation; if the organisation is replaced by another, record it as an org:ChangeEvent.</p></td>
+              <td><p>Propriété distincte parce que rov:orgType, sous-propriété de org:classification, a pour domaine org:Organization : utilisée sur une période, elle ferait de la période une organisation. La forme juridique actuelle enregistrée reste sur l'organisation avec rov:orgType. Un changement de forme juridique est un changement de forme de l'organisation, non une nouvelle organisation ; si l'organisation est remplacée par une autre, enregistrez-le comme un org:ChangeEvent.</p></td>
             </tr>
             <tr>
               <th>
@@ -1881,13 +1881,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories). A membership may have several, for example life and founding.</p></td>
+              <td><p>Une catégorie d'une adhésion, comme ordinaire, à vie ou d'honneur (voir mbrc:MembershipCategories). Une adhésion peut en avoir plusieurs, par exemple à vie et fondateur.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>The categories are properties that can be combined, not an exhaustive division: they are grouped by what they say (rights, duration, honour, age, residence, affiliation, founding), and a membership with no category is not thereby ordinary. No combination is ruled out unless a category's definition says so. Changes to the set are recorded with mbr:resultingCategory on membership events.</p></td>
+              <td><p>Les catégories sont des propriétés combinables, non une répartition exhaustive : elles sont regroupées selon ce qu'elles disent (droits, durée, honneur, âge, résidence, rattachement, fondation), et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit. Les changements de l'ensemble sont enregistrés avec mbr:resultingCategory sur les événements d'adhésion.</p></td>
             </tr>
             <tr>
               <th>
@@ -2168,7 +2168,7 @@ td {
           </table>
         </div>
         <div class="property entity" id="resultingCategory">
-          <h3>resulting category
+          <h3>catégorie résultante
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
           <table>
@@ -2190,13 +2190,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A membership category that applies after the event (see mbrc:MembershipCategories). Give one value for each category in the complete set after the event.</p></td>
+              <td><p>Une catégorie d'adhésion qui s'applique après l'événement (voir mbrc:MembershipCategories). Indiquez une valeur pour chaque catégorie de l'ensemble complet après l'événement.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>The values are the whole set of categories after the event, not an addition to the earlier set. An event that makes a life member also a founding member gives both, mbrc:life and mbrc:founding; giving only mbrc:founding says the membership then has only that category. An event that leaves the categories unchanged leaves mbr:resultingCategory out.</p></td>
+              <td><p>Les valeurs sont l'ensemble complet des catégories après l'événement, non un ajout à l'ensemble précédent. Un événement qui fait d'un membre à vie aussi un membre fondateur donne les deux, mbrc:life et mbrc:founding ; ne donner que mbrc:founding dit que l'adhésion n'a alors que cette catégorie. Un événement qui laisse les catégories inchangées omet mbr:resultingCategory.</p></td>
             </tr>
             <tr>
               <th>
@@ -3032,7 +3032,7 @@ td {
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods. A club that changed from men only to mixed has the earlier policy and the later one as two periods.</p></td>
+              <td><p>Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes. Un club passé d'hommes seulement à mixte a la règle antérieure et la règle postérieure sous forme de deux périodes.</p></td>
             </tr>
             <tr>
               <th>
@@ -3076,7 +3076,7 @@ td {
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods.</p></td>
+              <td><p>Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes.</p></td>
             </tr>
             <tr>
               <th>
@@ -3341,7 +3341,7 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>The number under which a membership is recorded in the organisation's register, written as an xsd:string because registers use numbers such as L-0042 and 0042. A number identifies one membership in one organisation at a time; a later membership may reuse it when the periods certainly do not overlap (checked in SHACL).</p></td>
+              <td><p>Le numéro sous lequel une adhésion est inscrite au registre de l'organisation, écrit en xsd:string parce que les registres utilisent des numéros comme L-0042 et 0042. Un numéro identifie une adhésion dans une organisation à la fois ; une adhésion ultérieure peut le réutiliser lorsque les périodes ne se chevauchent certainement pas (vérifié en SHACL).</p></td>
             </tr>
             <tr>
               <th>
@@ -3425,7 +3425,7 @@ td {
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate.</p></td>
+              <td><p>SHACL ne signale une fin antérieure à un début que lorsque c'est certain : le dernier jour que la fin peut désigner précède le premier jour que le début peut désigner ; 2000 et 2000-03 peuvent donc se chevaucher et ne sont pas une erreur. Les années 0001-9999 écrites avec quatre chiffres sont prises en charge ; un fuseau horaire est ignoré et la date calendaire telle qu'écrite est comparée. Les autres dates ne sont pas ordonnées et donnent un avertissement. La même règle s'applique à mbr:foundingDate et mbr:dissolutionDate.</p></td>
             </tr>
             <tr>
               <th>
@@ -3437,8 +3437,8 @@ td {
             </tr>
           </table>
         </div>
-        <div class="property entity" id="decisiondate">
-          <h3>decision date
+        <div class="property entity" id="datededcision">
+          <h3>date de décision
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
@@ -3460,13 +3460,13 @@ td {
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>When a decision was taken, such as the date of a members' vote. Value is xsd:date, xsd:gYearMonth or xsd:gYear. The date the decision began to apply is mbr:startDate.</p></td>
+              <td><p>Quand une décision a été prise, par exemple la date d'un vote des membres. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear. La date à laquelle la décision a commencé à s'appliquer est mbr:startDate.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>A decision may come before or after it takes effect, so SHACL does not compare it with mbr:startDate.</p></td>
+              <td><p>Une décision peut précéder ou suivre son entrée en vigueur ; SHACL ne la compare donc pas à mbr:startDate.</p></td>
             </tr>
           </table>
         </div>
@@ -3613,7 +3613,7 @@ td {
               <a href="#Effectif">Effectif</a>
             </li>
             <li>
-              <a href="#OrganisationPeriod">Organisation Period</a>
+              <a href="#Prioded'organisation">Période d'organisation</a>
             </li>
             <li>
               <a href="#Accordderciprocit">Accord de réciprocité</a>
@@ -3683,13 +3683,13 @@ td {
               <a href="#modedeproprit">mode de propriété</a>
             </li>
             <li>
-              <a href="#hasPeriod">has period</a>
+              <a href="#hasPeriod">a pour période</a>
             </li>
             <li>
-              <a href="#organisationtype">organisation type</a>
+              <a href="#typed'organisation">type d'organisation</a>
             </li>
             <li>
-              <a href="#legalform">legal form</a>
+              <a href="#formejuridique">forme juridique</a>
             </li>
             <li>
               <a href="#statutd'adhsion">statut d'adhésion</a>
@@ -3716,7 +3716,7 @@ td {
               <a href="#resultingStatus">statut résultant</a>
             </li>
             <li>
-              <a href="#resultingCategory">resulting category</a>
+              <a href="#resultingCategory">catégorie résultante</a>
             </li>
             <li>
               <a href="#membershipFee">cotisation</a>
@@ -3813,7 +3813,7 @@ td {
               <a href="#datedefin">date de fin</a>
             </li>
             <li>
-              <a href="#decisiondate">decision date</a>
+              <a href="#datededcision">date de décision</a>
             </li>
           </ul>
         </li>

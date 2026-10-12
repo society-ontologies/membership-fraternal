@@ -435,7 +435,8 @@ mbrc:MembershipCategories a skos:ConceptScheme , owl:NamedIndividual ;
                     "Medlemskategorier med olika rättigheter eller avgifter."@sv ,
                     "Catégories d'adhésion aux droits ou cotisations différents."@fr ;
     skos:scopeNote "The categories can be combined: a membership may be both life and founding, or junior and overseas. They are grouped in seven sub-schemes by what they say (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); every category is also in this scheme. The list is open, not an exhaustive division, and a membership without a category is not thereby ordinary. No combination is ruled out unless a category's definition says so."@en ,
-                   "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i sju underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ;
+                   "Kategorierna kan kombineras: ett medlemskap kan vara både ständigt och stiftande, eller junior och utlands-. De är grupperade i sju underscheman efter vad de anger (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation); varje kategori finns också i detta schema. Listan är öppen och inte en uttömmande indelning, och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det."@sv ,
+                   "Les catégories peuvent se combiner : une adhésion peut être à la fois à vie et fondatrice, ou junior et résidant à l'étranger. Elles sont regroupées en sept sous-schémas selon ce qu'elles disent (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour, mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation, mbrc:CategoryFoundation) ; chaque catégorie figure aussi dans ce schéma. La liste est ouverte, non une répartition exhaustive, et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit."@fr ;
     skos:hasTopConcept mbrc:ordinary , mbrc:life , mbrc:honorary , mbrc:associate ,
                        mbrc:junior , mbrc:nonResident , mbrc:overseas , mbrc:partnerMember ,
                        mbrc:founding , mbrc:benefactorMember .
@@ -495,51 +496,58 @@ mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
                     "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr .
 mbrc:CategoryRights a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv ;
+    skos:prefLabel "Category: Rights"@en , "Kategori: rättigheter"@sv , "Catégorie : droits"@fr ;
     skos:definition "Categories that say what rights a membership carries. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som anger vilka rättigheter ett medlemskap ger. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som anger vilka rättigheter ett medlemskap ger. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui disent quels droits comporte une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:ordinary , mbrc:associate .
 
 mbrc:CategoryDuration a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Duration"@en , "Kategori: varaktighet"@sv ;
+    skos:prefLabel "Category: Duration"@en , "Kategori: varaktighet"@sv , "Catégorie : durée"@fr ;
     skos:definition "Categories that say how long a membership lasts. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som anger hur länge ett medlemskap varar. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som anger hur länge ett medlemskap varar. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui disent combien de temps dure une adhésion. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:life .
 
 mbrc:CategoryHonour a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Honour"@en , "Kategori: hedersställning"@sv ;
+    skos:prefLabel "Category: Honour"@en , "Kategori: hedersställning"@sv , "Catégorie : honneur"@fr ;
     skos:definition "Categories that say a membership is held as an honour. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som anger att ett medlemskap innehas som en hedersbetygelse. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som anger att ett medlemskap innehas som en hedersbetygelse. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui disent qu'une adhésion est détenue à titre d'honneur. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:honorary .
 
 mbrc:CategoryAge a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Age"@en , "Kategori: ålder"@sv ;
+    skos:prefLabel "Category: Age"@en , "Kategori: ålder"@sv , "Catégorie : âge"@fr ;
     skos:definition "Categories that depend on the age of the member. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som beror på medlemmens ålder. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som beror på medlemmens ålder. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui dépendent de l'âge du membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:junior .
 
 mbrc:CategoryResidence a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Residence"@en , "Kategori: bosättning"@sv ;
+    skos:prefLabel "Category: Residence"@en , "Kategori: bosättning"@sv , "Catégorie : résidence"@fr ;
     skos:definition "Categories that depend on where the member lives. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som beror på var medlemmen bor. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som beror på var medlemmen bor. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui dépendent du lieu où vit le membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:nonResident , mbrc:overseas .
 
 mbrc:CategoryAffiliation a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Affiliation"@en , "Kategori: anknytning"@sv ;
+    skos:prefLabel "Category: Affiliation"@en , "Kategori: anknytning"@sv , "Catégorie : rattachement"@fr ;
     skos:definition "Categories that depend on the member's tie to another member. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som beror på medlemmens anknytning till en annan medlem. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som beror på medlemmens anknytning till en annan medlem. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui dépendent du lien du membre avec un autre membre. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:partnerMember .
 
 mbrc:CategoryFoundation a skos:ConceptScheme , owl:NamedIndividual ;
     dcterms:isPartOf mbrc:MembershipCategories ;
-    skos:prefLabel "Category: Founding"@en , "Kategori: grundande"@sv ;
+    skos:prefLabel "Category: Founding"@en , "Kategori: grundande"@sv , "Catégorie : fondation"@fr ;
     skos:definition "Categories that say the member took part in founding the organisation. A sub-scheme of mbrc:MembershipCategories: its categories can be combined with those of the other sub-schemes."@en ,
-                    "Kategorier som anger att medlemmen deltog i organisationens grundande. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ;
+                    "Kategorier som anger att medlemmen deltog i organisationens grundande. Ett underschema till mbrc:MembershipCategories: dess kategorier kan kombineras med de i de andra underschemana."@sv ,
+                    "Catégories qui disent que le membre a pris part à la fondation de l'organisation. Sous-schéma de mbrc:MembershipCategories : ses catégories peuvent se combiner avec celles des autres sous-schémas."@fr ;
     skos:hasTopConcept mbrc:founding .
 
 ##############################################################################
@@ -837,11 +845,13 @@ mbrc:commemoration a skos:Concept , owl:NamedIndividual ;
 
 mbrc:ceremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:GatheringTypes ; skos:topConceptOf mbrc:GatheringTypes ;
-    skos:prefLabel "Ceremony"@en , "Ceremoni"@sv ;
+    skos:prefLabel "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr ;
     skos:definition "A gathering at which a prescribed ritual is performed, such as an initiation, an installation of officers or a conferral of degrees."@en ,
-                    "En sammankomst där en föreskriven ritual utförs, till exempel en upptagning, en installation av ämbetsmän eller en tilldelning av grader."@sv ;
+                    "En sammankomst där en föreskriven ritual utförs, till exempel en upptagning, en installation av ämbetsmän eller en tilldelning av grader."@sv ,
+                    "Réunion au cours de laquelle un rituel prescrit est accompli, comme une initiation, une installation des officiers ou une collation de grades."@fr ;
     skos:scopeNote "The hub for the ceremony types of the fraternal codelists (fraternalc:CeremonyTypes), which map to it with skos:broadMatch."@en ,
-                   "Navet för ceremonityperna i fraternals kodlistor (fraternalc:CeremonyTypes), som mappas hit med skos:broadMatch."@sv .
+                   "Navet för ceremonityperna i fraternals kodlistor (fraternalc:CeremonyTypes), som mappas hit med skos:broadMatch."@sv ,
+                   "Le pivot des types de cérémonies des listes de codes fraternal (fraternalc:CeremonyTypes), qui y sont reliés par skos:broadMatch."@fr .
 
 ##############################################################################
 # 7. PARTICIPATION ROLES

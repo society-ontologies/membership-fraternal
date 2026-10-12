@@ -187,7 +187,8 @@ mbr:organizationStatus a owl:ObjectProperty ;
                     "Om organisationen är verksam, vilande, sammanslagen eller nedlagd (se mbrc:OrganizationStatuses)."@sv ,
                     "Indique si l'organisation est en activité, en sommeil, fusionnée ou dissoute (voir mbrc:OrganizationStatuses)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes."@fr .
 
 mbr:ownershipModel a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -197,40 +198,48 @@ mbr:ownershipModel a owl:ObjectProperty ;
                     "Vem som äger och driver organisationen: medlemmarna, en ägare eller en moderinstitution (se mbrc:OwnershipModels)."@sv ,
                     "Qui possède et dirige l'organisation : ses membres, un propriétaire ou une institution mère (voir mbrc:OwnershipModels)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes."@fr .
 
 mbr:OrganizationPeriod a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "Organisation Period"@en , "Organisationsperiod"@sv ;
+    rdfs:label "Organisation Period"@en , "Organisationsperiod"@sv , "Période d'organisation"@fr ;
     skos:definition "A period during which a membership organisation had a given gender policy, admission mode, ownership model, status, organisation type or legal form. The values are given on the period with mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm, and the period carries the dates: mbr:startDate and mbr:endDate for when they applied and mbr:decisionDate for when they were decided. Linked from the organisation with mbr:hasPeriod."@en ,
-                    "En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod."@sv ;
+                    "En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod."@sv ,
+                    "Période pendant laquelle une organisation de membres avait une règle de mixité, un mode d'admission, un mode de propriété, un statut, un type d'organisation ou une forme juridique donnés. Les valeurs sont indiquées sur la période avec mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType et mbr:legalForm, et la période porte les dates : mbr:startDate et mbr:endDate pour le moment où elles s'appliquaient, et mbr:decisionDate pour le moment où elles ont été décidées. Reliée à l'organisation par mbr:hasPeriod."@fr ;
     skos:scopeNote "Give only the properties a period concerns: a club that begins to admit women gets a new period with mbr:genderPolicy and leaves its ownership model alone. Periods for different properties may overlap in time. The start is when the value began to apply, which may be earlier or later than the decision (a vote taken in one year, in force from the next, or a decision with retroactive effect). A period without an end date has no stated end; that does not say it still applies. The registered current picture stays on the organisation itself; it is not derived from the periods, and the two are not compared except in a profile whose history is complete. A change of policy does not change org:classification: a club classified as mbrc:gentlemensClub stays so, and so stays an mbr:GentlemensClub, until its classification is changed. When it is, the registered current classification changes on the organisation and the earlier one is kept as a period with mbr:organizationType. The convenience classes follow the current org:classification on the organisation, never the periods."@en ,
-                   "Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras. När den ändras byts den registrerade aktuella klassificeringen på organisationen och den tidigare behålls som en period med mbr:organizationType. Bekvämlighetsklasserna följer den aktuella org:classification på organisationen, aldrig perioderna."@sv .
+                   "Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras. När den ändras byts den registrerade aktuella klassificeringen på organisationen och den tidigare behålls som en period med mbr:organizationType. Bekvämlighetsklasserna följer den aktuella org:classification på organisationen, aldrig perioderna."@sv ,
+                   "N'indiquez que les propriétés qu'une période concerne : un club qui commence à admettre des femmes reçoit une nouvelle période avec mbr:genderPolicy et laisse son mode de propriété tel quel. Des périodes portant sur des propriétés différentes peuvent se chevaucher dans le temps. Le début est le moment où la valeur a commencé à s'appliquer, qui peut précéder ou suivre la décision (un vote pris une année et en vigueur l'année suivante, ou une décision à effet rétroactif). Une période sans date de fin n'a pas de fin indiquée ; cela ne dit pas qu'elle s'applique encore. L'image actuelle enregistrée reste sur l'organisation elle-même ; elle n'est pas déduite des périodes, et les deux ne sont comparées que dans un profil dont l'historique est complet. Un changement de règle ne change pas org:classification : un club classé comme mbrc:gentlemensClub le reste, et reste donc un mbr:GentlemensClub, jusqu'à ce que sa classification soit changée. Quand elle l'est, la classification actuelle enregistrée change sur l'organisation et la précédente est conservée comme période avec mbr:organizationType. Les classes de commodité suivent l'org:classification actuelle de l'organisation, jamais les périodes."@fr .
 
 mbr:hasPeriod a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "has period"@en , "har period"@sv ;
+    rdfs:label "has period"@en , "har period"@sv , "a pour période"@fr ;
     rdfs:range mbr:OrganizationPeriod ;
     skos:definition "Links an organisation to a period (mbr:OrganizationPeriod) in which it had a gender policy, admission mode, ownership model, status, organisation type or legal form. An organisation may have many."@en ,
-                    "Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. En organisation kan ha många."@sv .
+                    "Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform, status, organisationstyp eller associationsform. En organisation kan ha många."@sv ,
+                    "Relie une organisation à une période (mbr:OrganizationPeriod) pendant laquelle elle avait une règle de mixité, un mode d'admission, un mode de propriété, un statut, un type d'organisation ou une forme juridique. Une organisation peut en avoir plusieurs."@fr .
 
 mbr:organizationType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "organisation type"@en , "organisationstyp"@sv ;
+    rdfs:label "organisation type"@en , "organisationstyp"@sv , "type d'organisation"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The kind of organisation it was during a period (see mbrc:OrganizationTypes). Used on an mbr:OrganizationPeriod; the same values as org:classification gives on the organisation."@en ,
-                    "Vilken sorts organisation den var under en period (se mbrc:OrganizationTypes). Används på en mbr:OrganizationPeriod; samma värden som org:classification anger på organisationen."@sv ;
+                    "Vilken sorts organisation den var under en period (se mbrc:OrganizationTypes). Används på en mbr:OrganizationPeriod; samma värden som org:classification anger på organisationen."@sv ,
+                    "Le genre d'organisation qu'elle était pendant une période (voir mbrc:OrganizationTypes). Utilisé sur une mbr:OrganizationPeriod ; les mêmes valeurs que celles données par org:classification sur l'organisation."@fr ;
     skos:scopeNote "A separate property because org:classification has the domain org:Organization: used on a period, it would make the period an organisation. An organisation may have several types at once, so periods with different types may overlap. The registered current classification stays on the organisation with org:classification."@en ,
-                   "En egen egenskap eftersom org:classification har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. En organisation kan ha flera typer samtidigt, så perioder med olika typer får överlappa. Den registrerade aktuella klassificeringen finns kvar på organisationen med org:classification."@sv .
+                   "En egen egenskap eftersom org:classification har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. En organisation kan ha flera typer samtidigt, så perioder med olika typer får överlappa. Den registrerade aktuella klassificeringen finns kvar på organisationen med org:classification."@sv ,
+                   "Propriété distincte parce que org:classification a pour domaine org:Organization : utilisée sur une période, elle ferait de la période une organisation. Une organisation peut avoir plusieurs types à la fois, de sorte que des périodes de types différents peuvent se chevaucher. La classification actuelle enregistrée reste sur l'organisation avec org:classification."@fr .
 
 mbr:legalForm a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "legal form"@en , "associationsform"@sv ;
+    rdfs:label "legal form"@en , "associationsform"@sv , "forme juridique"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "The legal form the organisation had during a period (see mbrc:LegalForms). Used on an mbr:OrganizationPeriod; the same values as rov:orgType gives on the organisation."@en ,
-                    "Den associationsform organisationen hade under en period (se mbrc:LegalForms). Används på en mbr:OrganizationPeriod; samma värden som rov:orgType anger på organisationen."@sv ;
+                    "Den associationsform organisationen hade under en period (se mbrc:LegalForms). Används på en mbr:OrganizationPeriod; samma värden som rov:orgType anger på organisationen."@sv ,
+                    "La forme juridique que l'organisation avait pendant une période (voir mbrc:LegalForms). Utilisé sur une mbr:OrganizationPeriod ; les mêmes valeurs que celles données par rov:orgType sur l'organisation."@fr ;
     skos:scopeNote "A separate property because rov:orgType, a sub-property of org:classification, has the domain org:Organization: used on a period, it would make the period an organisation. The registered current legal form stays on the organisation with rov:orgType. A change of legal form is a change in the organisation's form, not a new organisation; if the organisation is replaced by another, record it as an org:ChangeEvent."@en ,
-                   "En egen egenskap eftersom rov:orgType, en underegenskap till org:classification, har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. Den registrerade aktuella associationsformen finns kvar på organisationen med rov:orgType. En ändrad associationsform är en ändring av organisationens form, inte en ny organisation; ersätts organisationen av en annan, registrera det som en org:ChangeEvent."@sv .
+                   "En egen egenskap eftersom rov:orgType, en underegenskap till org:classification, har domänen org:Organization: använd på en period skulle den göra perioden till en organisation. Den registrerade aktuella associationsformen finns kvar på organisationen med rov:orgType. En ändrad associationsform är en ändring av organisationens form, inte en ny organisation; ersätts organisationen av en annan, registrera det som en org:ChangeEvent."@sv ,
+                   "Propriété distincte parce que rov:orgType, sous-propriété de org:classification, a pour domaine org:Organization : utilisée sur une période, elle ferait de la période une organisation. La forme juridique actuelle enregistrée reste sur l'organisation avec rov:orgType. Un changement de forme juridique est un changement de forme de l'organisation, non une nouvelle organisation ; si l'organisation est remplacée par une autre, enregistrez-le comme un org:ChangeEvent."@fr .
 
 mbr:ReciprocityAgreement a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -325,9 +334,11 @@ mbr:membershipCategory a owl:ObjectProperty ;
     rdfs:label "membership category"@en , "medlemskategori"@sv , "catégorie d'adhésion"@fr ;
     rdfs:range skos:Concept ;
     skos:definition "A category of a membership, such as ordinary, life or honorary (see mbrc:MembershipCategories). A membership may have several, for example life and founding."@en ,
-                    "En kategori som ett medlemskap tillhör, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories). Ett medlemskap kan ha flera, till exempel ständigt och stiftande."@sv ;
+                    "En kategori som ett medlemskap tillhör, t.ex. ordinarie, ständigt eller heders- (se mbrc:MembershipCategories). Ett medlemskap kan ha flera, till exempel ständigt och stiftande."@sv ,
+                    "Une catégorie d'une adhésion, comme ordinaire, à vie ou d'honneur (voir mbrc:MembershipCategories). Une adhésion peut en avoir plusieurs, par exemple à vie et fondateur."@fr ;
     skos:scopeNote "The categories are properties that can be combined, not an exhaustive division: they are grouped by what they say (rights, duration, honour, age, residence, affiliation, founding), and a membership with no category is not thereby ordinary. No combination is ruled out unless a category's definition says so. Changes to the set are recorded with mbr:resultingCategory on membership events."@en ,
-                   "Kategorierna är egenskaper som kan kombineras, inte en uttömmande indelning: de är grupperade efter vad de anger (rättigheter, varaktighet, hedersställning, ålder, bosättning, anknytning, grundande), och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det. Ändringar av uppsättningen anges med mbr:resultingCategory på medlemskapshändelser."@sv .
+                   "Kategorierna är egenskaper som kan kombineras, inte en uttömmande indelning: de är grupperade efter vad de anger (rättigheter, varaktighet, hedersställning, ålder, bosättning, anknytning, grundande), och ett medlemskap utan kategori är inte därmed ordinarie. Ingen kombination är utesluten om inte en kategoris definition säger det. Ändringar av uppsättningen anges med mbr:resultingCategory på medlemskapshändelser."@sv ,
+                   "Les catégories sont des propriétés combinables, non une répartition exhaustive : elles sont regroupées selon ce qu'elles disent (droits, durée, honneur, âge, résidence, rattachement, fondation), et une adhésion sans catégorie n'est pas pour autant ordinaire. Aucune combinaison n'est exclue, sauf si la définition d'une catégorie le dit. Les changements de l'ensemble sont enregistrés avec mbr:resultingCategory sur les événements d'adhésion."@fr .
 
 mbr:membershipNumber a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -335,7 +346,8 @@ mbr:membershipNumber a owl:DatatypeProperty ;
     rdfs:label "membership number"@en , "medlemsnummer"@sv , "numéro d'adhérent"@fr ;
     rdfs:range xsd:string ;
     skos:definition "The number under which a membership is recorded in the organisation's register, written as an xsd:string because registers use numbers such as L-0042 and 0042. A number identifies one membership in one organisation at a time; a later membership may reuse it when the periods certainly do not overlap (checked in SHACL)."@en ,
-                    "Det nummer under vilket ett medlemskap förs i organisationens matrikel, skrivet som xsd:string eftersom matriklar har nummer som L-0042 och 0042. Ett nummer identifierar ett medlemskap i en organisation åt gången; ett senare medlemskap får återanvända det när perioderna säkert inte överlappar (kontrolleras i SHACL)."@sv .
+                    "Det nummer under vilket ett medlemskap förs i organisationens matrikel, skrivet som xsd:string eftersom matriklar har nummer som L-0042 och 0042. Ett nummer identifierar ett medlemskap i en organisation åt gången; ett senare medlemskap får återanvända det när perioderna säkert inte överlappar (kontrolleras i SHACL)."@sv ,
+                    "Le numéro sous lequel une adhésion est inscrite au registre de l'organisation, écrit en xsd:string parce que les registres utilisent des numéros comme L-0042 et 0042. Un numéro identifie une adhésion dans une organisation à la fois ; une adhésion ultérieure peut le réutiliser lorsque les périodes ne se chevauchent certainement pas (vérifié en SHACL)."@fr .
 
 mbr:sponsor a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -389,13 +401,15 @@ mbr:resultingStatus a owl:ObjectProperty ;
 
 mbr:resultingCategory a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "resulting category"@en , "resulterande kategori"@sv ;
+    rdfs:label "resulting category"@en , "resulterande kategori"@sv , "catégorie résultante"@fr ;
     rdfs:domain mbr:MembershipEvent ;
     rdfs:range skos:Concept ;
     skos:definition "A membership category that applies after the event (see mbrc:MembershipCategories). Give one value for each category in the complete set after the event."@en ,
-                    "En medlemskategori som gäller efter händelsen (se mbrc:MembershipCategories). Ange ett värde för varje kategori i hela uppsättningen efter händelsen."@sv ;
+                    "En medlemskategori som gäller efter händelsen (se mbrc:MembershipCategories). Ange ett värde för varje kategori i hela uppsättningen efter händelsen."@sv ,
+                    "Une catégorie d'adhésion qui s'applique après l'événement (voir mbrc:MembershipCategories). Indiquez une valeur pour chaque catégorie de l'ensemble complet après l'événement."@fr ;
     skos:scopeNote "The values are the whole set of categories after the event, not an addition to the earlier set. An event that makes a life member also a founding member gives both, mbrc:life and mbrc:founding; giving only mbrc:founding says the membership then has only that category. An event that leaves the categories unchanged leaves mbr:resultingCategory out."@en ,
-                   "Värdena är hela uppsättningen kategorier efter händelsen, inte ett tillägg till den tidigare. En händelse som gör en ständig medlem också stiftande ger båda, mbrc:life och mbrc:founding; anges bara mbrc:founding betyder det att medlemskapet då bara har den kategorin. En händelse som lämnar kategorierna oförändrade utelämnar mbr:resultingCategory."@sv .
+                   "Värdena är hela uppsättningen kategorier efter händelsen, inte ett tillägg till den tidigare. En händelse som gör en ständig medlem också stiftande ger båda, mbrc:life och mbrc:founding; anges bara mbrc:founding betyder det att medlemskapet då bara har den kategorin. En händelse som lämnar kategorierna oförändrade utelämnar mbr:resultingCategory."@sv ,
+                   "Les valeurs sont l'ensemble complet des catégories après l'événement, non un ajout à l'ensemble précédent. Un événement qui fait d'un membre à vie aussi un membre fondateur donne les deux, mbrc:life et mbrc:founding ; ne donner que mbrc:founding dit que l'adhésion n'a alors que cette catégorie. Un événement qui laisse les catégories inchangées omet mbr:resultingCategory."@fr .
 
 ##############################################################################
 # MEMBERSHIP FEES
@@ -475,15 +489,18 @@ mbr:endDate a owl:DatatypeProperty ;
                     "När något upphörde. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear."@sv ,
                     "Quand quelque chose a pris fin. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear."@fr ;
     skos:scopeNote "SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate."@en ,
-                   "SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate."@sv .
+                   "SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate."@sv ,
+                   "SHACL ne signale une fin antérieure à un début que lorsque c'est certain : le dernier jour que la fin peut désigner précède le premier jour que le début peut désigner ; 2000 et 2000-03 peuvent donc se chevaucher et ne sont pas une erreur. Les années 0001-9999 écrites avec quatre chiffres sont prises en charge ; un fuseau horaire est ignoré et la date calendaire telle qu'écrite est comparée. Les autres dates ne sont pas ordonnées et donnent un avertissement. La même règle s'applique à mbr:foundingDate et mbr:dissolutionDate."@fr .
 
 mbr:decisionDate a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
-    rdfs:label "decision date"@en , "beslutsdatum"@sv ;
+    rdfs:label "decision date"@en , "beslutsdatum"@sv , "date de décision"@fr ;
     skos:definition "When a decision was taken, such as the date of a members' vote. Value is xsd:date, xsd:gYearMonth or xsd:gYear. The date the decision began to apply is mbr:startDate."@en ,
-                    "När ett beslut fattades, till exempel dagen för en medlemsomröstning. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Det datum beslutet började gälla är mbr:startDate."@sv ;
+                    "När ett beslut fattades, till exempel dagen för en medlemsomröstning. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Det datum beslutet började gälla är mbr:startDate."@sv ,
+                    "Quand une décision a été prise, par exemple la date d'un vote des membres. La valeur est de type xsd:date, xsd:gYearMonth ou xsd:gYear. La date à laquelle la décision a commencé à s'appliquer est mbr:startDate."@fr ;
     skos:scopeNote "A decision may come before or after it takes effect, so SHACL does not compare it with mbr:startDate."@en ,
-                   "Ett beslut kan komma före eller efter att det träder i kraft, så SHACL jämför det inte med mbr:startDate."@sv .
+                   "Ett beslut kan komma före eller efter att det träder i kraft, så SHACL jämför det inte med mbr:startDate."@sv ,
+                   "Une décision peut précéder ou suivre son entrée en vigueur ; SHACL ne la compare donc pas à mbr:startDate."@fr .
 
 ##############################################################################
 # GATHERINGS AND PARTICIPATION
@@ -682,7 +699,8 @@ mbr:genderPolicy a owl:ObjectProperty ;
                     "Vilka som kan upptas, efter kön (se mbrc:GenderPolicies)."@sv ,
                     "Qui peut être admis, selon le genre (voir mbrc:GenderPolicies)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods. A club that changed from men only to mixed has the earlier policy and the later one as two periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna. En klubb som gick från endast män till blandat har den tidigare och den senare policyn som två perioder."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna. En klubb som gick från endast män till blandat har den tidigare och den senare policyn som två perioder."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes. Un club passé d'hommes seulement à mixte a la règle antérieure et la règle postérieure sous forme de deux périodes."@fr .
 
 mbr:admissionMode a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -692,7 +710,8 @@ mbr:admissionMode a owl:ObjectProperty ;
                     "Hur nya medlemmar upptas (se mbrc:AdmissionModes)."@sv ,
                     "Comment les nouveaux membres sont admis (voir mbrc:AdmissionModes)."@fr ;
     skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
-                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv ,
+                   "Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes."@fr .
 
 mbr:reciprocalWith a owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
