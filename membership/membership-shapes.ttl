@@ -106,7 +106,7 @@ mbrsh:EndDateShape a sh:NodeShape ;
 
 # Dates that the ordering checks cannot compare are reported, not passed over.
 mbrsh:SupportedDateFormShape a sh:NodeShape ;
-    sh:targetSubjectsOf mbr:startDate , mbr:endDate , mbr:foundingDate , mbr:dissolutionDate ;
+    sh:targetSubjectsOf mbr:startDate , mbr:endDate , mbr:foundingDate , mbr:dissolutionDate , mbr:decisionDate ;
     sh:severity sh:Warning ;
     sh:sparql [
         a sh:SPARQLConstraint ;
@@ -114,7 +114,7 @@ mbrsh:SupportedDateFormShape a sh:NodeShape ;
         sh:prefixes <https://w3id.org/membership/shapes> ;
         sh:select """
             SELECT $this ?value WHERE {
-                $this mbr:startDate|mbr:endDate|mbr:foundingDate|mbr:dissolutionDate ?value .
+                $this mbr:startDate|mbr:endDate|mbr:foundingDate|mbr:dissolutionDate|mbr:decisionDate ?value .
                 FILTER (datatype(?value) IN (xsd:date, xsd:gYearMonth, xsd:gYear))
                 FILTER (!REGEX(STR(?value), "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?(Z|[+-][0-9]{2}:[0-9]{2})?$"))
             }
@@ -210,6 +210,16 @@ mbrsh:DissolutionDateShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:node mbrsh:DateList ;
         sh:message "mbr:dissolutionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:dissolutionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
+    ] .
+
+# A decision may come before or after it takes effect, so it is not ordered against mbr:startDate.
+mbrsh:DecisionDateShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:decisionDate ;
+    sh:property [
+        sh:path mbr:decisionDate ;
+        sh:maxCount 1 ;
+        sh:node mbrsh:DateList ;
+        sh:message "mbr:decisionDate must be a single xsd:date, xsd:gYearMonth or xsd:gYear. | mbr:decisionDate ska vara ett enda xsd:date, xsd:gYearMonth eller xsd:gYear."
     ] .
 
 mbrsh:AsOfShape a sh:NodeShape ;
@@ -465,6 +475,88 @@ mbrsh:OrganizationShape a sh:NodeShape ;
                       IF(datatype(?d) = xsd:gYearMonth, CONCAT(SUBSTR(STR(?d), 1, 7), "-31"),
                          CONCAT(SUBSTR(STR(?d), 1, 4), "-12-31"))) AS ?latestDissolution)
                 FILTER (?latestDissolution < ?earliestFounding)
+            }
+        """
+    ] .
+
+##############################################################################
+# Periods of gender policy, admission mode, ownership model and status
+##############################################################################
+
+mbrsh:HasPeriodShape a sh:NodeShape ;
+    sh:targetSubjectsOf mbr:hasPeriod ;
+    sh:class org:Organization ;
+    sh:property [ sh:path mbr:hasPeriod ; sh:class mbr:OrganizationPeriod ;
+                  sh:message "mbr:hasPeriod must lead to an mbr:OrganizationPeriod. | mbr:hasPeriod ska leda till en mbr:OrganizationPeriod." ] .
+
+# Kept apart from the shape below: a sh:message on a shape replaces the messages of the
+# SPARQL constraint in that shape.
+mbrsh:OrganizationPeriodContentShape a sh:NodeShape ;
+    sh:targetClass mbr:OrganizationPeriod ;
+    sh:targetObjectsOf mbr:hasPeriod ;
+    sh:or ( [ sh:path mbr:genderPolicy ; sh:minCount 1 ]
+            [ sh:path mbr:admissionMode ; sh:minCount 1 ]
+            [ sh:path mbr:ownershipModel ; sh:minCount 1 ]
+            [ sh:path mbr:organizationStatus ; sh:minCount 1 ] ) ;
+    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel and mbr:organizationStatus. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel och mbr:organizationStatus." .
+
+mbrsh:OrganizationPeriodShape a sh:NodeShape ;
+    sh:targetClass mbr:OrganizationPeriod ;
+    sh:targetObjectsOf mbr:hasPeriod ;
+    sh:property [ sh:path [ sh:inversePath mbr:hasPeriod ] ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:message "A period belongs to exactly one organisation, linked with mbr:hasPeriod. | En period hör till exakt en organisation, kopplad med mbr:hasPeriod." ] ,
+                [ sh:path mbr:genderPolicy ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node mbrsh:GenderPolicyValue ;
+                  sh:message "mbr:genderPolicy must be one concept in mbrc:GenderPolicies, or one mapped to it. | mbr:genderPolicy ska vara ett begrepp i mbrc:GenderPolicies, eller ett som är mappat dit." ] ,
+                [ sh:path mbr:admissionMode ; sh:class skos:Concept ;
+                  sh:node mbrsh:AdmissionModeValue ;
+                  sh:message "mbr:admissionMode must be a concept in mbrc:AdmissionModes, or one mapped to it. | mbr:admissionMode ska vara ett begrepp i mbrc:AdmissionModes, eller ett som är mappat dit." ] ,
+                [ sh:path mbr:ownershipModel ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node mbrsh:OwnershipModelValue ;
+                  sh:message "mbr:ownershipModel must be one concept in mbrc:OwnershipModels, or one mapped to it. | mbr:ownershipModel ska vara ett begrepp i mbrc:OwnershipModels, eller ett som är mappat dit." ] ,
+                [ sh:path mbr:organizationStatus ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node mbrsh:OrganizationStatusValue ;
+                  sh:message "mbr:organizationStatus must be one concept in mbrc:OrganizationStatuses, or one mapped to it. | mbr:organizationStatus ska vara ett begrepp i mbrc:OrganizationStatuses, eller ett som är mappat dit." ] ,
+                [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ;
+                  sh:message "Give the date from which the period applies (mbr:startDate). | Ange från vilket datum perioden gäller (mbr:startDate)." ] ;
+
+    # One organisation cannot have two different values of the same single-valued property
+    # at once. Reported only when two periods certainly overlap: both have a start and an end,
+    # and the latest each could start is before the earliest the other could end (dates
+    # compared as in mbrsh:EndDateShape). A period that ends on the day another starts, or
+    # that has no end date, is not reported. mbr:admissionMode is left out: an organisation
+    # may admit in several ways at once.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "The organisation has two different values of {?p} in periods that certainly overlap ({?other}). | Organisationen har två olika värden på {?p} i perioder som säkert överlappar ({?other})." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this ?other ?p WHERE {
+                ?org mbr:hasPeriod $this , ?other .
+                FILTER (?other != $this)
+                VALUES ?p { mbr:genderPolicy mbr:ownershipModel mbr:organizationStatus }
+                $this ?p ?v1 ; mbr:startDate ?s1 ; mbr:endDate ?e1 .
+                ?other ?p ?v2 ; mbr:startDate ?s2 ; mbr:endDate ?e2 .
+                FILTER (?v1 != ?v2)
+                FILTER (datatype(?s1) IN (xsd:date, xsd:gYearMonth, xsd:gYear) &&
+                        datatype(?e1) IN (xsd:date, xsd:gYearMonth, xsd:gYear) &&
+                        datatype(?s2) IN (xsd:date, xsd:gYearMonth, xsd:gYear) &&
+                        datatype(?e2) IN (xsd:date, xsd:gYearMonth, xsd:gYear))
+                FILTER (REGEX(STR(?s1), "^[0-9]{4}") && REGEX(STR(?e1), "^[0-9]{4}") &&
+                        REGEX(STR(?s2), "^[0-9]{4}") && REGEX(STR(?e2), "^[0-9]{4}"))
+                BIND (IF(datatype(?s1) = xsd:date, SUBSTR(STR(?s1), 1, 10),
+                      IF(datatype(?s1) = xsd:gYearMonth, CONCAT(SUBSTR(STR(?s1), 1, 7), "-31"),
+                         CONCAT(SUBSTR(STR(?s1), 1, 4), "-12-31"))) AS ?latestStart1)
+                BIND (IF(datatype(?s2) = xsd:date, SUBSTR(STR(?s2), 1, 10),
+                      IF(datatype(?s2) = xsd:gYearMonth, CONCAT(SUBSTR(STR(?s2), 1, 7), "-31"),
+                         CONCAT(SUBSTR(STR(?s2), 1, 4), "-12-31"))) AS ?latestStart2)
+                BIND (IF(datatype(?e1) = xsd:date, SUBSTR(STR(?e1), 1, 10),
+                      IF(datatype(?e1) = xsd:gYearMonth, CONCAT(SUBSTR(STR(?e1), 1, 7), "-01"),
+                         CONCAT(SUBSTR(STR(?e1), 1, 4), "-01-01"))) AS ?earliestEnd1)
+                BIND (IF(datatype(?e2) = xsd:date, SUBSTR(STR(?e2), 1, 10),
+                      IF(datatype(?e2) = xsd:gYearMonth, CONCAT(SUBSTR(STR(?e2), 1, 7), "-01"),
+                         CONCAT(SUBSTR(STR(?e2), 1, 4), "-01-01"))) AS ?earliestEnd2)
+                FILTER (?latestStart1 < ?earliestEnd2 && ?latestStart2 < ?earliestEnd1)
             }
         """
     ] .

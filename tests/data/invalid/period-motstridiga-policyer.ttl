@@ -1,0 +1,14 @@
+# EXPECT: two different gender policies in periods that certainly overlap (1990-2010 and 2000-2020)
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+
+ex:Club mbr:hasPeriod ex:p1 , ex:p2 .
+ex:p1 a mbr:OrganizationPeriod ; mbr:genderPolicy mbrc:menOnly ;
+    mbr:startDate "1990-01-01"^^xsd:date ; mbr:endDate "2010-01-01"^^xsd:date .
+ex:p2 a mbr:OrganizationPeriod ; mbr:genderPolicy mbrc:mixed ;
+    mbr:startDate "2000-01-01"^^xsd:date ; mbr:endDate "2020-01-01"^^xsd:date .

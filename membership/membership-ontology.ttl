@@ -169,14 +169,33 @@ mbr:organizationStatus a owl:ObjectProperty ;
     rdfs:label "organisation status"@en , "organisationsstatus"@sv ;
     rdfs:range skos:Concept ;
     skos:definition "Whether the organisation is active, dormant, merged or closed (see mbrc:OrganizationStatuses)."@en ,
-                    "Om organisationen är verksam, vilande, sammanslagen eller nedlagd (se mbrc:OrganizationStatuses)."@sv .
+                    "Om organisationen är verksam, vilande, sammanslagen eller nedlagd (se mbrc:OrganizationStatuses)."@sv ;
+    skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
 
 mbr:ownershipModel a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:label "ownership model"@en , "ägarform"@sv ;
     rdfs:range skos:Concept ;
     skos:definition "Who owns and runs the organisation: its members, a proprietor, or a parent institution (see mbrc:OwnershipModels)."@en ,
-                    "Vem som äger och driver organisationen: medlemmarna, en ägare eller en moderinstitution (se mbrc:OwnershipModels)."@sv .
+                    "Vem som äger och driver organisationen: medlemmarna, en ägare eller en moderinstitution (se mbrc:OwnershipModels)."@sv ;
+    skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
+
+mbr:OrganizationPeriod a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "Organisation Period"@en , "Organisationsperiod"@sv ;
+    skos:definition "A period during which a membership organisation had a given gender policy, admission mode, ownership model or status. The values are given on the period with mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel and mbr:organizationStatus, and the period carries the dates: mbr:startDate and mbr:endDate for when they applied and mbr:decisionDate for when they were decided. Linked from the organisation with mbr:hasPeriod."@en ,
+                    "En period under vilken en medlemsorganisation hade en viss könspolicy, upptagningsform, ägarform eller status. Värdena anges på perioden med mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel och mbr:organizationStatus, och perioden bär datumen: mbr:startDate och mbr:endDate för när de gällde och mbr:decisionDate för när de beslutades. Kopplas från organisationen med mbr:hasPeriod."@sv ;
+    skos:scopeNote "Give only the properties a period concerns: a club that begins to admit women gets a new period with mbr:genderPolicy and leaves its ownership model alone. Periods for different properties may overlap in time. The start is when the value began to apply, which may be earlier or later than the decision (a vote taken in one year, in force from the next, or a decision with retroactive effect). A period without an end date has no stated end; that does not say it still applies. The registered current picture stays on the organisation itself; it is not derived from the periods, and the two are not compared except in a profile whose history is complete. A change of policy does not change org:classification: a club classified as mbrc:gentlemensClub stays so, and so stays an mbr:GentlemensClub, until its classification is changed."@en ,
+                   "Ange bara de egenskaper en period gäller: en klubb som börjar upta kvinnor får en ny period med mbr:genderPolicy och lämnar sin ägarform ifred. Perioder för olika egenskaper får överlappa i tid. Starten är när värdet började gälla, vilket kan vara tidigare eller senare än beslutet (en omröstning ett år som gäller från nästa, eller ett beslut med retroaktiv verkan). En period utan slutdatum har inget angivet slut; det säger inte att den fortfarande gäller. Den registrerade aktuella bilden finns kvar på organisationen själv; den härleds inte ur perioderna, och de två jämförs inte utom i en profil med komplett historik. En ändrad policy ändrar inte org:classification: en klubb klassificerad som mbrc:gentlemensClub förblir det, och därmed en mbr:GentlemensClub, tills klassificeringen ändras."@sv .
+
+mbr:hasPeriod a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "has period"@en , "har period"@sv ;
+    rdfs:range mbr:OrganizationPeriod ;
+    skos:definition "Links an organisation to a period (mbr:OrganizationPeriod) in which it had a gender policy, admission mode, ownership model or status. An organisation may have many."@en ,
+                    "Kopplar en organisation till en period (mbr:OrganizationPeriod) under vilken den hade en könspolicy, upptagningsform, ägarform eller status. En organisation kan ha många."@sv .
 
 mbr:ReciprocityAgreement a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
@@ -401,6 +420,14 @@ mbr:endDate a owl:DatatypeProperty ;
     skos:scopeNote "SHACL reports an end before a start only when it is certain: the latest day the end could mean is before the earliest day the start could mean, so 2000 and 2000-03 may overlap and are not an error. Supported are years 0001-9999 written with four digits; a timezone is ignored and the calendar date as written is compared. Other dates are not ordered and give a warning. The same rule applies to mbr:foundingDate and mbr:dissolutionDate."@en ,
                    "SHACL anger ett slut före en start bara när det är säkert: den senaste dag slutet kan avse ligger före den tidigaste dag starten kan avse, så 2000 och 2000-03 kan överlappa och är inte ett fel. Stöd finns för år 0001-9999 skrivna med fyra siffror; tidszon ignoreras och kalenderdatumet så som det skrivits jämförs. Andra datum ordnas inte och ger en varning. Samma regel gäller mbr:foundingDate och mbr:dissolutionDate."@sv .
 
+mbr:decisionDate a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "decision date"@en , "beslutsdatum"@sv ;
+    skos:definition "When a decision was taken, such as the date of a members' vote. Value is xsd:date, xsd:gYearMonth or xsd:gYear. The date the decision began to apply is mbr:startDate."@en ,
+                    "När ett beslut fattades, till exempel dagen för en medlemsomröstning. Värdet är xsd:date, xsd:gYearMonth eller xsd:gYear. Det datum beslutet började gälla är mbr:startDate."@sv ;
+    skos:scopeNote "A decision may come before or after it takes effect, so SHACL does not compare it with mbr:startDate."@en ,
+                   "Ett beslut kan komma före eller efter att det träder i kraft, så SHACL jämför det inte med mbr:startDate."@sv .
+
 ##############################################################################
 # GATHERINGS AND PARTICIPATION
 ##############################################################################
@@ -574,14 +601,18 @@ mbr:genderPolicy a owl:ObjectProperty ;
     rdfs:label "gender policy"@en , "könspolicy"@sv ;
     rdfs:range skos:Concept ;
     skos:definition "Who may be admitted, by gender (see mbrc:GenderPolicies)."@en ,
-                    "Vilka som kan upptas, efter kön (se mbrc:GenderPolicies)."@sv .
+                    "Vilka som kan upptas, efter kön (se mbrc:GenderPolicies)."@sv ;
+    skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods. A club that changed from men only to mixed has the earlier policy and the later one as two periods."@en ,
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna. En klubb som gick från endast män till blandat har den tidigare och den senare policyn som två perioder."@sv .
 
 mbr:admissionMode a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:label "admission mode"@en , "upptagningsform"@sv ;
     rdfs:range skos:Concept ;
     skos:definition "How new members are admitted (see mbrc:AdmissionModes)."@en ,
-                    "Hur nya medlemmar upptas (se mbrc:AdmissionModes)."@sv .
+                    "Hur nya medlemmar upptas (se mbrc:AdmissionModes)."@sv ;
+    skos:scopeNote "On an organisation this is the registered current picture. Earlier and later values, with the dates they applied, are given with mbr:OrganizationPeriod; the current value is not derived from the periods."@en ,
+                   "På en organisation är detta den registrerade aktuella bilden. Tidigare och senare värden, med de datum de gällde, anges med mbr:OrganizationPeriod; det aktuella värdet härleds inte ur perioderna."@sv .
 
 mbr:reciprocalWith a owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;

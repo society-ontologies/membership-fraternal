@@ -74,7 +74,8 @@ A directory or inventory of clubs or associations needs no extra ontology. Each 
 | Founded / closed | `mbr:foundingDate` / `mbr:dissolutionDate` (a year is enough) |
 | Status | `mbr:organizationStatus`: active, dormant, merged or closed |
 | Members' or proprietary club | `mbr:ownershipModel` |
-| Men only, women only, mixed | `mbr:genderPolicy` |
+| Men only, women only, mixed | `mbr:genderPolicy`: the registered current picture |
+| A change of gender policy, admission mode, ownership model or status | an `mbr:OrganizationPeriod` linked with `mbr:hasPeriod`, carrying the value (`mbr:genderPolicy` etc.), `mbr:startDate` and `mbr:endDate` for when it applied and `mbr:decisionDate` for when it was decided (a members' vote may be taken one year and take effect the next). One period per change, with only the properties it concerns. The current value is not derived from the periods. A change of policy does not change `org:classification`. |
 | Address | `org:hasSite` → `mbr:Premises` → `schema:address` → `schema:PostalAddress` (`schema:streetAddress`, `schema:postalCode`, `schema:addressLocality`, ISO country code in `schema:addressCountry`) |
 | City as a linked place | `schema:containedInPlace` on the premises, with the city's Wikidata IRI |
 | Map position | `schema:geo` → `schema:GeoCoordinates` (`schema:latitude`, `schema:longitude`) |
@@ -88,7 +89,7 @@ A directory or inventory of clubs or associations needs no extra ontology. Each 
 | Reciprocal clubs | `mbr:reciprocalWith`; `mbr:ReciprocityAgreement` for dates and terms |
 | Wikidata item | an `owl:sameAs` linkset, or `schema:sameAs` for a looser link |
 
-Complete fictional examples are in `tests/data/klubb-exempel.ttl` (private clubs) and `tests/data/forening-exempel.ttl` (open-membership organisations). `tests/cq/09` and `tests/cq/10` show the inventory and history queries, and `tests/cq/11` the fees in force in a given year.
+Complete fictional examples are in `tests/data/klubb-exempel.ttl` (private clubs) and `tests/data/forening-exempel.ttl` (open-membership organisations). `tests/data/organisationsperioder-exempel.ttl` shows a change of gender policy and of ownership. `tests/cq/09` and `tests/cq/10` show the inventory and history queries, `tests/cq/11` the fees in force in a given year and `tests/cq/12` the organisations that had a given gender policy in a given year.
 
 Office-holders of existing clubs are living people, so their names are personal data. A public inventory can record the office with the name left out, or give names only where the club already publishes them. Who belongs to a political party, a trade union or an organisation with a religious or philosophical aim is *special-category* data under GDPR Article 9; see the scope note on `mbr:Membership`.
 
@@ -180,6 +181,9 @@ The aim is that no single person or service is a point of failure:
 Questions and proposals: [GitHub issues](https://github.com/society-ontologies/membership-fraternal/issues).
 
 ## Changelog
+
+**Unreleased.** Additions only.
+- History of an organisation's gender policy, admission mode, ownership model and status: new class `mbr:OrganizationPeriod`, linked from the organisation with `mbr:hasPeriod`, with the existing value properties, `mbr:startDate` and `mbr:endDate`, and the new `mbr:decisionDate` for when a change was decided. The properties on the organisation itself keep their meaning and become the registered current picture; nothing is removed, renamed or made stricter for existing data. Shapes check that a period has a value, belongs to one organisation, uses the right codelists, and does not certainly overlap another period with a different value of the same single-valued property. Example in `tests/data/organisationsperioder-exempel.ttl`, query in `tests/cq/12`. Not covered: `org:classification` over time, and a check that the current picture agrees with the periods.
 
 **Unreleased.** Corrections to the SHACL shapes and the membership codelists. Nothing is removed or renamed; some checks are stricter and some are looser, as listed.
 - Looser:

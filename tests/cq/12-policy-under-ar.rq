@@ -1,0 +1,25 @@
+# CQ12: Which organisations had a given gender policy in a given year, according
+# to their recorded periods? The year 1990 and the policy men only are set in
+# VALUES. A period without an end date has no stated end, so it is returned with
+# ?endStated false and should be read as "possibly still in force", not "certainly".
+# Years are compared on their first four characters, as dates may be partial.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX mbr:  <https://w3id.org/membership#>
+PREFIX mbrc: <https://w3id.org/membership/code/>
+
+SELECT ?club ?from ?until ?endStated ?decided
+WHERE {
+    VALUES (?year ?policy) { (1990 mbrc:menOnly) }
+    ?c mbr:hasPeriod ?p .
+    ?p mbr:genderPolicy ?policy ;
+       mbr:startDate ?from .
+    OPTIONAL { ?p mbr:endDate ?until }
+    OPTIONAL { ?p mbr:decisionDate ?decided }
+    ?c rdfs:label ?club .
+    FILTER (xsd:integer(SUBSTR(STR(?from), 1, 4)) <= ?year)
+    FILTER (!BOUND(?until) || xsd:integer(SUBSTR(STR(?until), 1, 4)) >= ?year)
+    BIND (BOUND(?until) AS ?endStated)
+}
+ORDER BY ?club ?from

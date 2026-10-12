@@ -1,0 +1,69 @@
+# Fictional gentlemen's club (all names and dates invented for testing). Shows how
+# an organisation's gender policy, ownership model and status change over time:
+#   * the club admitted men only from its founding and decided by a members' vote
+#     to admit women, in force from the following year (decision date and start
+#     date differ);
+#   * the club's ownership changed, and the later decision was made with
+#     retroactive effect (decision date after the start);
+#   * one period can carry several properties changed at once;
+#   * periods meet on a shared year or day without overlapping, and the open last
+#     period has no stated end.
+# The registered current picture stays on the organisation itself.
+# The classification mbrc:gentlemensClub is left as it is: a change of gender policy
+# does not change it.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix th:      <https://example.org/thistledown/> .
+
+th:Thistledown a mbr:MembershipOrganization ;
+    rdfs:label "The Thistledown Club"@en ;
+    org:classification mbrc:gentlemensClub ;
+    # the registered current picture
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:ownershipModel mbrc:membersClub ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:foundingDate "1831"^^xsd:gYear ;
+    mbr:hasPeriod th:policy-menonly , th:policy-mixed ,
+                  th:owner-proprietor , th:owner-members ,
+                  th:wartime-dormancy .
+
+# --- Gender policy ---
+
+th:policy-menonly a mbr:OrganizationPeriod ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:startDate "1831"^^xsd:gYear ;
+    mbr:endDate "2025-01-01"^^xsd:date .
+
+# The vote was in 2024; the change took effect on 1 January 2025.
+th:policy-mixed a mbr:OrganizationPeriod ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:decisionDate "2024-07-10"^^xsd:date ;
+    mbr:startDate "2025-01-01"^^xsd:date ;
+    dcterms:source "Minutes of the general meeting, 10 July 2024"@en .
+
+# --- Ownership, with a retroactive decision ---
+
+th:owner-proprietor a mbr:OrganizationPeriod ;
+    mbr:ownershipModel mbrc:proprietaryClub ;
+    mbr:startDate "1831"^^xsd:gYear ;
+    mbr:endDate "1962"^^xsd:gYear .
+
+# Decided in February 1963, in force from 1962 (the year the members bought the club).
+th:owner-members a mbr:OrganizationPeriod ;
+    mbr:ownershipModel mbrc:membersClub ;
+    mbr:decisionDate "1963-02"^^xsd:gYearMonth ;
+    mbr:startDate "1962"^^xsd:gYear .
+
+# --- Status, with a second property changed in the same period ---
+# The club went dormant and closed its doors to new members for the duration.
+
+th:wartime-dormancy a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:dormantOrganization ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:startDate "1940"^^xsd:gYear ;
+    mbr:endDate "1945"^^xsd:gYear .

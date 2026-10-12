@@ -1,0 +1,12 @@
+# EXPECT: decision date written as text, not as a date
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+
+ex:Club mbr:hasPeriod ex:p .
+ex:p a mbr:OrganizationPeriod ; mbr:genderPolicy mbrc:mixed ;
+    mbr:startDate "2025-01-01"^^xsd:date ; mbr:decisionDate "10 July 2024" .
