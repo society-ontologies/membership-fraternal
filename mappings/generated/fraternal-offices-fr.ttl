@@ -3,11 +3,10 @@
 <https://w3id.org/fraternal/mappings/fraternal-offices-fr> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "Offices of French lodges, learned societies and compagnonnage placed under the generic office types of the membership ontology. The orator and the almoner have no close generic office and are not mapped." ;
+    <http://purl.org/dc/terms/description> "Offices of French lodges, learned societies and compagnonnage (fraternalc:MasonicLodgeOffices, CompagnonnageOffices, AcademyOffices) placed under the generic office types of the membership ontology. The orator and the almoner of a lodge are the generic mbrc:orator and mbrc:almoner and have no concept of their own." ;
     <http://purl.org/dc/terms/created> "2026-10-11" .
 
 <http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -104,26 +103,4 @@
   <https://w3id.org/sssom/subject_label> "House Mother" ;
   <https://w3id.org/sssom/object_label> "Custodian of Premises" ;
   <https://w3id.org/sssom/comment> "Runs the house, lodging and meals." ] .
-
-<https://w3id.org/fraternal/code/orator> <http://www.w3.org/2004/02/skos/core#exactMatch> <https://w3id.org/membership/code/orator> .
-[ a <http://www.w3.org/2002/07/owl#Axiom> ;
-  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/orator> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/orator> ;
-  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
-  <https://w3id.org/sssom/subject_label> "Orator" ;
-  <https://w3id.org/sssom/object_label> "Orator" ;
-  <https://w3id.org/sssom/comment> "The same office; the hub concept is the generic one." ] .
-
-<https://w3id.org/fraternal/code/almoner> <http://www.w3.org/2004/02/skos/core#exactMatch> <https://w3id.org/membership/code/almoner> .
-[ a <http://www.w3.org/2002/07/owl#Axiom> ;
-  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/almoner> ;
-  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#exactMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/almoner> ;
-  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
-  <https://w3id.org/sssom/subject_label> "Almoner" ;
-  <https://w3id.org/sssom/object_label> "Almoner" ;
-  <https://w3id.org/sssom/comment> "The same office; the hub concept is the generic one." ] .
 

@@ -192,7 +192,8 @@ mbrsh:FeeTypeValue a sh:NodeShape ;
 
 mbrsh:OfficeTypeValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:OfficeTypes ]
-            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:OfficeTypes ] ) .
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:OfficeTypes ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue mbrc:OfficeTypes ] ) .
 
 mbrsh:LegalFormValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:LegalForms ]

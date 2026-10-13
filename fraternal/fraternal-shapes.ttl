@@ -39,28 +39,37 @@
 #
 # Same rule as in membership-shapes.ttl: a value is a concept in the scheme for
 # its property, or a local concept with a direct skos:exactMatch, skos:closeMatch
-# or skos:broadMatch to a concept in that scheme.
+# or skos:broadMatch to a concept in that scheme. A third way in: a concept in a
+# scheme that says dcterms:isPartOf the scheme for the property. That is how a
+# tradition scheme (the Studentenverbindung principles, the Masonic rites) is part
+# of the hub scheme without its concepts being in it, and without a mapping where
+# the hub has no counterpart.
 ##############################################################################
 
 fraternalsh:MemberTitleValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:MemberTitles ]
-            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:MemberTitles ] ) .
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:MemberTitles ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue fraternalc:MemberTitles ] ) .
 
 fraternalsh:CharacteristicValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:Characteristics ]
-            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:Characteristics ] ) .
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:Characteristics ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue fraternalc:Characteristics ] ) .
 
 fraternalsh:DegreeKindValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:DegreeKinds ]
-            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:DegreeKinds ] ) .
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:DegreeKinds ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue fraternalc:DegreeKinds ] ) .
 
 fraternalsh:InsigniaTypeValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:InsigniaTypes ]
-            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:InsigniaTypes ] ) .
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:InsigniaTypes ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue fraternalc:InsigniaTypes ] ) .
 
 fraternalsh:AssessmentOutcomeValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:AssessmentOutcomes ]
-            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:AssessmentOutcomes ] ) .
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:AssessmentOutcomes ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue fraternalc:AssessmentOutcomes ] ) .
 
 # The OWL range of fraternal:degreeRank is xsd:positiveInteger. A plain Turtle 3 is an
 # xsd:integer with the same value, which the range also admits, so it passes when it is one or more.
