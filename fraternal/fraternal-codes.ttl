@@ -2675,3 +2675,190 @@ fraternalc:provedor a mbr:Office , skos:Concept , owl:NamedIndividual ;
                     "Il capo di una Santa Casa da Misericórdia, una confraternita laica di carità: guida la sua Mesa Administrativa, il consiglio che gli Irmãos (i soci) eleggono."@it ,
                     "El jefe de una Santa Casa da Misericórdia, una cofradía laica de caridad: dirige su Mesa Administrativa, la junta que eligen los Irmãos (los miembros)."@es ,
                     "O chefe de uma Santa Casa da Misericórdia, irmandade leiga de caridade: dirige a sua Mesa Administrativa, o órgão que os Irmãos elegem."@pt .
+
+##############################################################################
+# 13. HUNGARY  (the Order of Merit, the Emericana, the student title bajtárs)
+# A first draft from general knowledge and Hungarian Wikipedia, for a Hungarian-speaking
+# reviewer to check against the primary sources (the Act CCII of 2011 on the state
+# decorations, the statutes of a federation). Each scheme is dcterms:isPartOf its hub scheme
+# and every concept is mapped in mappings/fraternal-hungary.sssom.tsv.
+##############################################################################
+
+fraternalc:HungarianOrderGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:ChivalricGrades ;
+    skos:prefLabel "Grades of the Hungarian Order of Merit"@en , "Grader i Ungerns förtjänstorden"@sv , "Grades de l'Ordre du Mérite hongrois"@fr , "Stufen des Ungarischen Verdienstordens"@de , "Gradi dell'Ordine al Merito ungherese"@it , "Grados de la Orden del Mérito de Hungría"@es , "Graus da Ordem do Mérito da Hungria"@pt , "A Magyar Érdemrend fokozatai"@hu ;
+    skos:definition "The six grades of the Hungarian Order of Merit, from the lowest to the highest: Knight's Cross, Officer's Cross, Commander's Cross, Commander's Cross with Star, Grand Cross, and Grand Cross with Collar and Golden Rayed Star, which is given only to heads of state. Placed one to one under the generic chivalric grades in mappings/fraternal-hungary.sssom.tsv."@en ,
+                    "De sex graderna i Ungerns förtjänstorden, från lägsta till högsta: Riddarkors, Officerskors, Kommendörskors, Kommendörskors med stjärna, Storkors, och Storkors med kedja och gyllene strålstjärna, som bara ges åt statschefer. Placeras ett till ett under de generiska riddarordensgraderna i mappings/fraternal-hungary.sssom.tsv."@sv ,
+                    "Les six grades de l'Ordre du Mérite hongrois, du plus bas au plus haut : croix de chevalier, croix d'officier, croix de commandeur, croix de commandeur avec étoile, grand-croix, et grand-croix avec collier et étoile rayonnante d'or, qui n'est donnée qu'aux chefs d'État. Placés un à un sous les grades génériques de style chevaleresque dans mappings/fraternal-hungary.sssom.tsv."@fr ,
+                    "Die sechs Stufen des Ungarischen Verdienstordens, von der niedrigsten bis zur höchsten: Ritterkreuz, Offizierskreuz, Kommandeurskreuz, Kommandeurskreuz mit Stern, Großkreuz und Großkreuz mit Kette und goldenem Strahlenstern, das nur Staatsoberhäuptern verliehen wird. Eins zu eins unter die allgemeinen Ritterordensstufen gestellt in mappings/fraternal-hungary.sssom.tsv."@de ,
+                    "I sei gradi dell'Ordine al Merito ungherese, dal più basso al più alto: croce di cavaliere, croce di ufficiale, croce di comandante, croce di comandante con stella, gran croce, e gran croce con collare e stella raggiata d'oro, che è conferita solo ai capi di Stato. Collocati uno a uno sotto i gradi cavallereschi generici in mappings/fraternal-hungary.sssom.tsv."@it ,
+                    "Los seis grados de la Orden del Mérito de Hungría, del más bajo al más alto: Cruz de Caballero, Cruz de Oficial, Cruz de Comendador, Cruz de Comendador con Estrella, Gran Cruz, y Gran Cruz con Collar y Estrella radiante de oro, que solo se concede a jefes de Estado. Colocados uno a uno bajo los grados caballerescos genéricos en mappings/fraternal-hungary.sssom.tsv."@es ,
+                    "Os seis graus da Ordem do Mérito da Hungria, do mais baixo ao mais alto: Cruz de Cavaleiro, Cruz de Oficial, Cruz de Comendador, Cruz de Comendador com Estrela, Grã-Cruz, e Grã-Cruz com Colar e Estrela radiante de ouro, que só é concedida a chefes de Estado. Colocados um a um sob os graus genéricos de estilo cavaleiresco em mappings/fraternal-hungary.sssom.tsv."@pt ,
+                    "A Magyar Érdemrend hat fokozata a legalacsonyabbtól a legmagasabbig: lovagkereszt, tisztikereszt, parancsnoki kereszt, parancsnoki kereszt a csillaggal, nagykereszt, valamint a nagykereszt a nyaklánccal és az arany sugaras csillaggal, amelyet csak államfők kaphatnak. Egy-egy megfeleltetéssel az általános lovagrendi fokozatok alá sorolva a mappings/fraternal-hungary.sssom.tsv fájlban."@hu ;
+    skos:hasTopConcept fraternalc:huLovagkereszt , fraternalc:huTisztikereszt , fraternalc:huParancsnokiKereszt ,
+                       fraternalc:huParancsnokiKeresztCsillaggal , fraternalc:huNagykereszt , fraternalc:huNagykeresztNyaklanccal .
+
+fraternalc:huLovagkereszt a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianOrderGrades ; skos:topConceptOf fraternalc:HungarianOrderGrades ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:huTisztikereszt ;
+    skos:prefLabel "Knight's Cross"@en , "Riddarkors"@sv , "Croix de chevalier"@fr , "Ritterkreuz"@de , "Croce di cavaliere"@it , "Cruz de Caballero"@es , "Cruz de Cavaleiro"@pt , "Lovagkereszt"@hu ;
+    skos:definition "The lowest grade of the Hungarian Order of Merit; the number of Hungarian citizens who may receive it is limited each year."@en ,
+                    "Den lägsta graden i Ungerns förtjänstorden; antalet ungerska medborgare som får den är begränsat varje år."@sv ,
+                    "Le grade le plus bas de l'Ordre du Mérite hongrois ; le nombre de citoyens hongrois qui peuvent le recevoir est limité chaque année."@fr ,
+                    "Die niedrigste Stufe des Ungarischen Verdienstordens; die Zahl der ungarischen Staatsbürger, die sie erhalten dürfen, ist jedes Jahr begrenzt."@de ,
+                    "Il grado più basso dell'Ordine al Merito ungherese; il numero di cittadini ungheresi che possono riceverlo è limitato ogni anno."@it ,
+                    "El grado más bajo de la Orden del Mérito de Hungría; el número de ciudadanos húngaros que pueden recibirlo está limitado cada año."@es ,
+                    "O grau mais baixo da Ordem do Mérito da Hungria; o número de cidadãos húngaros que o podem receber é limitado em cada ano."@pt ,
+                    "A Magyar Érdemrend legalacsonyabb fokozata; az évente kitüntethető magyar állampolgárok száma korlátozott."@hu .
+
+fraternalc:huTisztikereszt a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianOrderGrades ; skos:topConceptOf fraternalc:HungarianOrderGrades ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:huParancsnokiKereszt ;
+    skos:prefLabel "Officer's Cross"@en , "Officerskors"@sv , "Croix d'officier"@fr , "Offizierskreuz"@de , "Croce di ufficiale"@it , "Cruz de Oficial"@es , "Cruz de Oficial"@pt , "Tisztikereszt"@hu ;
+    skos:definition "The second grade of the Hungarian Order of Merit, above the Knight's Cross."@en ,
+                    "Den andra graden i Ungerns förtjänstorden, över Riddarkors."@sv ,
+                    "Le deuxième grade de l'Ordre du Mérite hongrois, au-dessus de la croix de chevalier."@fr ,
+                    "Die zweite Stufe des Ungarischen Verdienstordens, über dem Ritterkreuz."@de ,
+                    "Il secondo grado dell'Ordine al Merito ungherese, sopra la croce di cavaliere."@it ,
+                    "El segundo grado de la Orden del Mérito de Hungría, por encima de la Cruz de Caballero."@es ,
+                    "O segundo grau da Ordem do Mérito da Hungria, acima da Cruz de Cavaleiro."@pt ,
+                    "A Magyar Érdemrend második fokozata, a lovagkereszt felett."@hu .
+
+fraternalc:huParancsnokiKereszt a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianOrderGrades ; skos:topConceptOf fraternalc:HungarianOrderGrades ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:huParancsnokiKeresztCsillaggal ;
+    skos:prefLabel "Commander's Cross"@en , "Kommendörskors"@sv , "Croix de commandeur"@fr , "Kommandeurskreuz"@de , "Croce di comandante"@it , "Cruz de Comendador"@es , "Cruz de Comendador"@pt , "Parancsnoki kereszt"@hu ;
+    skos:definition "The third grade of the Hungarian Order of Merit, above the Officer's Cross."@en ,
+                    "Den tredje graden i Ungerns förtjänstorden, över Officerskors."@sv ,
+                    "Le troisième grade de l'Ordre du Mérite hongrois, au-dessus de la croix d'officier."@fr ,
+                    "Die dritte Stufe des Ungarischen Verdienstordens, über dem Offizierskreuz."@de ,
+                    "Il terzo grado dell'Ordine al Merito ungherese, sopra la croce di ufficiale."@it ,
+                    "El tercer grado de la Orden del Mérito de Hungría, por encima de la Cruz de Oficial."@es ,
+                    "O terceiro grau da Ordem do Mérito da Hungria, acima da Cruz de Oficial."@pt ,
+                    "A Magyar Érdemrend harmadik fokozata, a tisztikereszt felett."@hu .
+
+fraternalc:huParancsnokiKeresztCsillaggal a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianOrderGrades ; skos:topConceptOf fraternalc:HungarianOrderGrades ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree fraternalc:huNagykereszt ;
+    skos:prefLabel "Commander's Cross with Star"@en , "Kommendörskors med stjärna"@sv , "Croix de commandeur avec étoile"@fr , "Kommandeurskreuz mit Stern"@de , "Croce di comandante con stella"@it , "Cruz de Comendador con Estrella"@es , "Cruz de Comendador com Estrela"@pt , "Parancsnoki kereszt a csillaggal"@hu ;
+    skos:definition "The fourth grade of the Hungarian Order of Merit, above the Commander's Cross."@en ,
+                    "Den fjärde graden i Ungerns förtjänstorden, över Kommendörskors."@sv ,
+                    "Le quatrième grade de l'Ordre du Mérite hongrois, au-dessus de la croix de commandeur."@fr ,
+                    "Die vierte Stufe des Ungarischen Verdienstordens, über dem Kommandeurskreuz."@de ,
+                    "Il quarto grado dell'Ordine al Merito ungherese, sopra la croce di comandante."@it ,
+                    "El cuarto grado de la Orden del Mérito de Hungría, por encima de la Cruz de Comendador."@es ,
+                    "O quarto grau da Ordem do Mérito da Hungria, acima da Cruz de Comendador."@pt ,
+                    "A Magyar Érdemrend negyedik fokozata, a parancsnoki kereszt felett."@hu .
+
+fraternalc:huNagykereszt a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianOrderGrades ; skos:topConceptOf fraternalc:HungarianOrderGrades ;
+    fraternal:degreeRank 5 ; fraternal:nextDegree fraternalc:huNagykeresztNyaklanccal ;
+    skos:prefLabel "Grand Cross"@en , "Storkors"@sv , "Grand-croix"@fr , "Großkreuz"@de , "Gran croce"@it , "Gran Cruz"@es , "Grã-Cruz"@pt , "Nagykereszt"@hu ;
+    skos:definition "The fifth grade of the Hungarian Order of Merit, the highest that Hungarian citizens can receive."@en ,
+                    "Den femte graden i Ungerns förtjänstorden, den högsta som ungerska medborgare kan få."@sv ,
+                    "Le cinquième grade de l'Ordre du Mérite hongrois, le plus élevé que les citoyens hongrois puissent recevoir."@fr ,
+                    "Die fünfte Stufe des Ungarischen Verdienstordens, die höchste, die ungarische Staatsbürger erhalten können."@de ,
+                    "Il quinto grado dell'Ordine al Merito ungherese, il più alto che i cittadini ungheresi possano ricevere."@it ,
+                    "El quinto grado de la Orden del Mérito de Hungría, el más alto que pueden recibir los ciudadanos húngaros."@es ,
+                    "O quinto grau da Ordem do Mérito da Hungria, o mais alto que os cidadãos húngaros podem receber."@pt ,
+                    "A Magyar Érdemrend ötödik fokozata, a legmagasabb, amelyet magyar állampolgárok kaphatnak."@hu .
+
+fraternalc:huNagykeresztNyaklanccal a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianOrderGrades ; skos:topConceptOf fraternalc:HungarianOrderGrades ;
+    fraternal:degreeRank 6 ;
+    skos:prefLabel "Grand Cross with Collar and Golden Rayed Star"@en , "Storkors med kedja och gyllene strålstjärna"@sv , "Grand-croix avec collier et étoile rayonnante d'or"@fr , "Großkreuz mit Kette und goldenem Strahlenstern"@de , "Gran croce con collare e stella raggiata d'oro"@it , "Gran Cruz con Collar y Estrella radiante de oro"@es , "Grã-Cruz com Colar e Estrela radiante de ouro"@pt , "Nagykereszt a nyaklánccal és az arany sugaras csillaggal"@hu ;
+    skos:definition "The highest grade of the Hungarian Order of Merit, given only to heads of state; the President of Hungary holds it by virtue of the office."@en ,
+                    "Den högsta graden i Ungerns förtjänstorden, som bara ges åt statschefer; Ungerns president innehar den genom sitt ämbete."@sv ,
+                    "Le grade le plus élevé de l'Ordre du Mérite hongrois, qui n'est donné qu'aux chefs d'État ; le président de la Hongrie le détient de par sa fonction."@fr ,
+                    "Die höchste Stufe des Ungarischen Verdienstordens, die nur Staatsoberhäuptern verliehen wird; der Präsident Ungarns hat sie kraft seines Amtes."@de ,
+                    "Il grado più alto dell'Ordine al Merito ungherese, conferito solo ai capi di Stato; il Presidente dell'Ungheria lo detiene per la sua carica."@it ,
+                    "El grado más alto de la Orden del Mérito de Hungría, que solo se concede a jefes de Estado; el Presidente de Hungría lo posee por razón del cargo."@es ,
+                    "O grau mais alto da Ordem do Mérito da Hungria, concedido apenas a chefes de Estado; o Presidente da Hungria detém-no por inerência do cargo."@pt ,
+                    "A Magyar Érdemrend legmagasabb fokozata, amelyet csak államfők kaphatnak; Magyarország köztársasági elnöke hivatalánál fogva viseli."@hu .
+
+fraternalc:EmericanaOffices a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:OfficeTypes ;
+    skos:prefLabel "Offices of the Foederatio Emericana"@en , "Ämbeten i Foederatio Emericana"@sv , "Fonctions de la Foederatio Emericana"@fr , "Ämter der Foederatio Emericana"@de , "Cariche della Foederatio Emericana"@it , "Cargos de la Foederatio Emericana"@es , "Cargos da Foederatio Emericana"@pt , "A Foederatio Emericana tisztségei"@hu ;
+    skos:definition "The offices of the Vezérség, the leadership of the Hungarian Catholic student federation Foederatio Emericana (1921–1946): the Kommendátor (the head), the Praeceptor (his deputy), the Anonymus (the national secretary-general) and the Magister Magnus (the chief priest). Each is placed under a generic office in mappings/fraternal-hungary.sssom.tsv."@en ,
+                    "Ämbetena i Vezérség, ledningen för den ungerska katolska studentfederationen Foederatio Emericana (1921–1946): Kommendátor (chefen), Praeceptor (hans ställföreträdare), Anonymus (riksgeneralsekreteraren) och Magister Magnus (överprästen). Vart och ett placeras under ett generiskt ämbete i mappings/fraternal-hungary.sssom.tsv."@sv ,
+                    "Les fonctions de la Vezérség, la direction de la fédération étudiante catholique hongroise Foederatio Emericana (1921–1946) : le Kommendátor (le chef), le Praeceptor (son adjoint), l'Anonymus (le secrétaire général national) et le Magister Magnus (le grand prêtre). Chacune est placée sous une fonction générique dans mappings/fraternal-hungary.sssom.tsv."@fr ,
+                    "Die Ämter der Vezérség, der Leitung des ungarischen katholischen Studentenverbands Foederatio Emericana (1921–1946): der Kommendátor (das Oberhaupt), der Praeceptor (sein Stellvertreter), der Anonymus (der Landesgeneralsekretär) und der Magister Magnus (der oberste Priester). Jedes wird unter ein allgemeines Amt gestellt in mappings/fraternal-hungary.sssom.tsv."@de ,
+                    "Le cariche della Vezérség, la direzione della federazione studentesca cattolica ungherese Foederatio Emericana (1921–1946): il Kommendátor (il capo), il Praeceptor (il suo vice), l'Anonymus (il segretario generale nazionale) e il Magister Magnus (il sommo sacerdote). Ognuna è collocata sotto una carica generica in mappings/fraternal-hungary.sssom.tsv."@it ,
+                    "Los cargos de la Vezérség, la dirección de la federación estudiantil católica húngara Foederatio Emericana (1921–1946): el Kommendátor (el jefe), el Praeceptor (su adjunto), el Anonymus (el secretario general nacional) y el Magister Magnus (el sumo sacerdote). Cada uno se coloca bajo un cargo genérico en mappings/fraternal-hungary.sssom.tsv."@es ,
+                    "Os cargos da Vezérség, a direção da federação estudantil católica húngara Foederatio Emericana (1921–1946): o Kommendátor (o chefe), o Praeceptor (o seu adjunto), o Anonymus (o secretário-geral nacional) e o Magister Magnus (o sumo sacerdote). Cada um é colocado sob um cargo genérico em mappings/fraternal-hungary.sssom.tsv."@pt ,
+                    "A Vezérség, a Foederatio Emericana magyar katolikus diákszövetség (1921–1946) vezetésének tisztségei: a Kommendátor (a vezető), a Praeceptor (a helyettese), az Anonymus (az országos főtitkár) és a Magister Magnus (a főpap). Mindegyik általános tisztség alá van sorolva a mappings/fraternal-hungary.sssom.tsv fájlban."@hu ;
+    skos:hasTopConcept fraternalc:kommendator , fraternalc:praeceptor , fraternalc:anonymus , fraternalc:magisterMagnus .
+
+fraternalc:kommendator a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:EmericanaOffices ; skos:topConceptOf fraternalc:EmericanaOffices ;
+    skos:prefLabel "Kommendátor"@en , "Kommendátor"@sv , "Kommendátor"@fr , "Kommendátor"@de , "Kommendátor"@it , "Kommendátor"@es , "Kommendátor"@pt , "Kommendátor"@hu ;
+    skos:definition "The head of the Foederatio Emericana, who led its Vezérség."@en ,
+                    "Chefen för Foederatio Emericana, som ledde dess Vezérség."@sv ,
+                    "Le chef de la Foederatio Emericana, qui dirigeait sa Vezérség."@fr ,
+                    "Das Oberhaupt der Foederatio Emericana, das ihre Vezérség leitete."@de ,
+                    "Il capo della Foederatio Emericana, che guidava la sua Vezérség."@it ,
+                    "El jefe de la Foederatio Emericana, que dirigía su Vezérség."@es ,
+                    "O chefe da Foederatio Emericana, que dirigia a sua Vezérség."@pt ,
+                    "A Foederatio Emericana vezetője, aki a Vezérséget irányította."@hu .
+
+fraternalc:praeceptor a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:EmericanaOffices ; skos:topConceptOf fraternalc:EmericanaOffices ;
+    skos:prefLabel "Praeceptor"@en , "Praeceptor"@sv , "Praeceptor"@fr , "Praeceptor"@de , "Praeceptor"@it , "Praeceptor"@es , "Praeceptor"@pt , "Praeceptor"@hu ;
+    skos:definition "The deputy of the Kommendátor."@en ,
+                    "Kommendátors ställföreträdare."@sv ,
+                    "L'adjoint du Kommendátor."@fr ,
+                    "Der Stellvertreter des Kommendátor."@de ,
+                    "Il vice del Kommendátor."@it ,
+                    "El adjunto del Kommendátor."@es ,
+                    "O adjunto do Kommendátor."@pt ,
+                    "A kommendátor helyettese."@hu .
+
+fraternalc:anonymus a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:EmericanaOffices ; skos:topConceptOf fraternalc:EmericanaOffices ;
+    skos:prefLabel "Anonymus"@en , "Anonymus"@sv , "Anonymus"@fr , "Anonymus"@de , "Anonymus"@it , "Anonymus"@es , "Anonymus"@pt , "Anonymus"@hu ;
+    skos:definition "The national secretary-general of the Foederatio Emericana."@en ,
+                    "Riksgeneralsekreterare i Foederatio Emericana."@sv ,
+                    "Le secrétaire général national de la Foederatio Emericana."@fr ,
+                    "Der Landesgeneralsekretär der Foederatio Emericana."@de ,
+                    "Il segretario generale nazionale della Foederatio Emericana."@it ,
+                    "El secretario general nacional de la Foederatio Emericana."@es ,
+                    "O secretário-geral nacional da Foederatio Emericana."@pt ,
+                    "A Foederatio Emericana országos főtitkára."@hu .
+
+fraternalc:magisterMagnus a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:EmericanaOffices ; skos:topConceptOf fraternalc:EmericanaOffices ;
+    skos:prefLabel "Magister Magnus"@en , "Magister Magnus"@sv , "Magister Magnus"@fr , "Magister Magnus"@de , "Magister Magnus"@it , "Magister Magnus"@es , "Magister Magnus"@pt , "Magister Magnus"@hu ;
+    skos:definition "The chief priest of the Foederatio Emericana, who looked after its religious life."@en ,
+                    "Överprästen i Foederatio Emericana, som svarade för dess religiösa liv."@sv ,
+                    "Le grand prêtre de la Foederatio Emericana, qui veillait sur sa vie religieuse."@fr ,
+                    "Der oberste Priester der Foederatio Emericana, der ihr religiöses Leben betreute."@de ,
+                    "Il sommo sacerdote della Foederatio Emericana, che curava la sua vita religiosa."@it ,
+                    "El sumo sacerdote de la Foederatio Emericana, que cuidaba de su vida religiosa."@es ,
+                    "O sumo sacerdote da Foederatio Emericana, que cuidava da sua vida religiosa."@pt ,
+                    "A Foederatio Emericana főpapja, aki a vallási életéről gondoskodott."@hu .
+
+fraternalc:HungarianTitles a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:MemberTitles ;
+    skos:prefLabel "Member titles in Hungarian student federations"@en , "Medlemstitlar i ungerska studentförbund"@sv , "Titres des membres dans les fédérations étudiantes hongroises"@fr , "Mitgliedsanreden in ungarischen Studentenverbänden"@de , "Titoli dei soci nelle federazioni studentesche ungheresi"@it , "Tratamientos de los miembros en las federaciones estudiantiles húngaras"@es , "Tratamentos dos membros nas federações estudantis húngaras"@pt , "A tagok megszólítása a magyar diákszövetségekben"@hu ;
+    skos:definition "The form of address in Hungarian student federations such as the Foederatio Emericana: bajtárs, comrade. Placed under the generic companion in mappings/fraternal-hungary.sssom.tsv. Used with fraternal:memberTitle."@en ,
+                    "Tilltalsformen i ungerska studentförbund som Foederatio Emericana: bajtárs, kamrat. Placeras under den generiska kamraten i mappings/fraternal-hungary.sssom.tsv. Används med fraternal:memberTitle."@sv ,
+                    "La forme d'adresse dans les fédérations étudiantes hongroises comme la Foederatio Emericana : bajtárs, camarade. Placée sous le compagnon générique dans mappings/fraternal-hungary.sssom.tsv. S'utilise avec fraternal:memberTitle."@fr ,
+                    "Die Anrede in ungarischen Studentenverbänden wie der Foederatio Emericana: bajtárs, Kamerad. Unter den allgemeinen Gefährten gestellt in mappings/fraternal-hungary.sssom.tsv. Wird mit fraternal:memberTitle verwendet."@de ,
+                    "La forma di appellativo nelle federazioni studentesche ungheresi come la Foederatio Emericana: bajtárs, camerata. Collocata sotto il compagno generico in mappings/fraternal-hungary.sssom.tsv. Si usa con fraternal:memberTitle."@it ,
+                    "La forma de tratamiento en las federaciones estudiantiles húngaras como la Foederatio Emericana: bajtárs, camarada. Colocada bajo el compañero genérico en mappings/fraternal-hungary.sssom.tsv. Se usa con fraternal:memberTitle."@es ,
+                    "A forma de tratamento nas federações estudantis húngaras como a Foederatio Emericana: bajtárs, camarada. Colocada sob o companheiro genérico em mappings/fraternal-hungary.sssom.tsv. Usa-se com fraternal:memberTitle."@pt ,
+                    "A megszólítás a magyar diákszövetségekben, mint a Foederatio Emericana: bajtárs. Az általános társ alá van sorolva a mappings/fraternal-hungary.sssom.tsv fájlban. A fraternal:memberTitle-lel használatos."@hu ;
+    skos:hasTopConcept fraternalc:bajtars .
+
+fraternalc:bajtars a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:HungarianTitles ; skos:topConceptOf fraternalc:HungarianTitles ;
+    skos:prefLabel "Bajtárs"@en , "Bajtárs"@sv , "Bajtárs"@fr , "Bajtárs"@de , "Bajtárs"@it , "Bajtárs"@es , "Bajtárs"@pt , "Bajtárs"@hu ;
+    skos:altLabel "Comrade"@en , "Kamrat"@sv ;
+    skos:definition "How members of a Hungarian student federation address one another: comrade, for a man or a woman (bajtársi szövetség: a federation of comrades)."@en ,
+                    "Hur medlemmar i ett ungerskt studentförbund tilltalar varandra: kamrat, för man och kvinna (bajtársi szövetség: ett kamratförbund)."@sv ,
+                    "Comment les membres d'une fédération étudiante hongroise s'adressent les uns aux autres : camarade, pour un homme ou une femme (bajtársi szövetség : une fédération de camarades)."@fr ,
+                    "Wie sich die Mitglieder eines ungarischen Studentenverbands anreden: Kamerad, für Mann und Frau (bajtársi szövetség: ein Kameradenbund)."@de ,
+                    "Come si chiamano tra loro i membri di una federazione studentesca ungherese: camerata, per un uomo o una donna (bajtársi szövetség: una federazione di camerati)."@it ,
+                    "Cómo se tratan entre sí los miembros de una federación estudiantil húngara: camarada, para hombre o mujer (bajtársi szövetség: una federación de camaradas)."@es ,
+                    "Como se tratam entre si os membros de uma federação estudantil húngara: camarada, para homem ou mulher (bajtársi szövetség: uma federação de camaradas)."@pt ,
+                    "Ahogyan a magyar diákszövetség tagjai egymást megszólítják: bajtárs, férfira és nőre egyaránt (bajtársi szövetség)."@hu .
