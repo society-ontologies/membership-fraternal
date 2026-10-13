@@ -37,7 +37,7 @@ ch:HeronNordicDelegation a mbr:Branch ;
 
 ch:HeronClasses a skos:ConceptScheme , fraternal:DegreeSystem ;
     skos:prefLabel "Classes of the Order of the Silver Heron"@en ;
-    skos:hasTopConcept ch:heronKnight .
+    skos:hasTopConcept ch:heronKnight , ch:heronGrandCross , ch:heronCollar .
 
 ch:heronKnight a fraternal:Degree ;
     skos:inScheme ch:HeronClasses ; skos:topConceptOf ch:HeronClasses ;
@@ -48,8 +48,15 @@ ch:heronKnight a fraternal:Degree ;
 ch:heronGrandCross a fraternal:Degree ;
     skos:inScheme ch:HeronClasses ; skos:topConceptOf ch:HeronClasses ;
     skos:prefLabel "Grand Cross"@en ; skos:notation "GCSH" ;
-    fraternal:degreeRank 2 ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree ch:heronCollar ;
     skos:broadMatch fraternalc:grandCrossGrade .
+
+# The collar above the grand cross, reserved for heads of state.
+ch:heronCollar a fraternal:Degree ;
+    skos:inScheme ch:HeronClasses ; skos:topConceptOf ch:HeronClasses ;
+    skos:prefLabel "Collar"@en ; skos:notation "CSH" ;
+    fraternal:degreeRank 3 ;
+    skos:broadMatch fraternalc:collarGrade .
 
 ch:assessment-heron a fraternal:LegitimacyAssessment ;
     fraternal:assessedOrder ch:OrderOfTheSilverHeron ;

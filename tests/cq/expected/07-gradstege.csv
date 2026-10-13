@@ -1,9 +1,9 @@
 order,rank,degree,notation,hub
 Compagnons de l'Atelier exemplaire,1,Aspirant,,Entry Degree
 Compagnons de l'Atelier exemplaire,2,Compagnon,,Full Degree
-Corps Imaginaria at Exemplarburg,1,Fuchs,,
-Corps Imaginaria at Exemplarburg,2,Bursch,,
-Corps Imaginaria at Exemplarburg,3,Alter Herr,,
+Corps Imaginaria at Exemplarburg,1,Fuchs,,Novice Stage
+Corps Imaginaria at Exemplarburg,2,Bursch,,Active Stage
+Corps Imaginaria at Exemplarburg,3,Alter Herr,,Alumni Stage
 Grand Orient Exemplaire de France,1,Entry Degree,,
 Grand Orient Exemplaire de France,2,Intermediate Degree,,
 Grand Orient Exemplaire de France,3,Full Degree,,
@@ -18,6 +18,7 @@ Grande Oriente Esemplare d'Italia,3,Full Degree,,
 Grande Oriente Esemplare d'Italia,4,Higher Degree,,
 Order of the Silver Heron,1,Knight,KSH,Knight
 Order of the Silver Heron,2,Grand Cross,GCSH,Grand Cross
+Order of the Silver Heron,3,Collar,CSH,Grand Collar
 Ordine al Merito esemplare,1,Cavaliere,,Knight
 Ordine al Merito esemplare,2,Ufficiale,,Officer
 Ordine al Merito esemplare,3,Commendatore,,Commander

@@ -3,10 +3,11 @@
 <https://w3id.org/fraternal/mappings/fraternal-studentenverbindung> a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/description> "Member titles and insignia of a Studentenverbindung placed under the generic titles and insignia types of the fraternal codelists." ;
+    <http://purl.org/dc/terms/description> "Member titles, insignia and stages of a Studentenverbindung placed under the generic titles, insignia types and stages of the fraternal codelists." ;
     <http://purl.org/dc/terms/created> "2026-10-13" .
 
 <http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -92,4 +93,37 @@
   <https://w3id.org/sssom/subject_label> "Schläger" ;
   <https://w3id.org/sssom/object_label> "Sword" ;
   <https://w3id.org/sssom/comment> "The sabre or rapier used in academic fencing." ] .
+
+<https://w3id.org/fraternal/code/fuchs> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/noviceStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/fuchs> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/noviceStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.85"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Fuchs" ;
+  <https://w3id.org/sssom/object_label> "Novice Stage" ;
+  <https://w3id.org/sssom/comment> "The probationary first stage, before the Burschung." ] .
+
+<https://w3id.org/fraternal/code/bursch> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/activeStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/bursch> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/activeStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Bursch" ;
+  <https://w3id.org/sssom/object_label> "Active Stage" ;
+  <https://w3id.org/sssom/comment> "The full active member." ] .
+
+<https://w3id.org/fraternal/code/alterHerr> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/alumniStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/alterHerr> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/alumniStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Alter Herr" ;
+  <https://w3id.org/sssom/object_label> "Alumni Stage" ;
+  <https://w3id.org/sssom/comment> "The alumnus, a member for life." ] .
 

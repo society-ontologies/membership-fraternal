@@ -25,3 +25,5 @@ fraternalc:rezeption	Reception	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:Man
 fraternalc:burschung	Burschung	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	
 fraternalc:philistrierung	Philistration	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	
 fraternalc:fackelzug	Torchlight Procession	skos:broadMatch	mbrc:procession	Procession	semapv:ManualMappingCuration	0.9
+fraternalc:investiture	Investiture	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9
+fraternalc:consecration	Consecration	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9

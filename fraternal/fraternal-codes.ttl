@@ -422,7 +422,8 @@ fraternalc:ChivalricGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:N
                     "Eine allgemeine Stufenfolge von Graden im Stil der Ritterorden."@de ,
                     "Una scala generica di gradi nello stile degli ordini cavallereschi."@it ;
     skos:hasTopConcept fraternalc:memberGrade , fraternalc:knightGrade , fraternalc:officerGrade ,
-                       fraternalc:commanderGrade , fraternalc:commanderFirstClassGrade , fraternalc:grandCrossGrade .
+                       fraternalc:commanderGrade , fraternalc:commanderFirstClassGrade , fraternalc:grandCrossGrade ,
+                       fraternalc:collarGrade .
 
 fraternalc:memberGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
@@ -463,10 +464,60 @@ fraternalc:commanderFirstClassGrade a fraternal:Degree , skos:Concept , owl:Name
 
 fraternalc:grandCrossGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
-    fraternal:degreeRank 6 ;
+    fraternal:degreeRank 6 ; fraternal:nextDegree fraternalc:collarGrade ;
     skos:prefLabel "Grand Cross"@en , "Storkors"@sv , "Grand-croix"@fr , "Großkreuz"@de , "Gran croce"@it ;
     skos:altLabel "Kommendör med stora korset"@sv , "Kommendör med storkors"@sv , "Stora korset"@sv , "Grand'croix"@fr , "Cavaliere di Gran Croce"@it ;
-    skos:definition "The highest grade of an order."@en , "En ordens högsta grad."@sv , "Le grade le plus élevé d'un ordre."@fr , "Die höchste Stufe eines Ordens."@de , "Il grado più alto di un ordine."@it .
+    skos:definition "The highest regular grade of an order; in some orders a collar stands above it."@en , "En ordens högsta ordinarie grad; i vissa ordnar står en ordenskedja över den."@sv , "Le grade ordinaire le plus élevé d'un ordre ; dans certains ordres, un collier se place au-dessus."@fr , "Die höchste reguläre Stufe eines Ordens; in manchen Orden steht eine Kollane darüber."@de , "Il grado ordinario più alto di un ordine; in alcuni ordini un collare sta sopra di esso."@it .
+
+fraternalc:collarGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
+    fraternal:degreeRank 7 ;
+    skos:prefLabel "Grand Collar"@en , "Ordenskedja (grad)"@sv , "Grand collier"@fr , "Kollane (Stufe)"@de , "Gran collare"@it ;
+    skos:altLabel "Collar"@en ;
+    skos:definition "The grade above the grand cross in some orders, whose insignia is a collar; usually reserved for heads of state and a few others."@en ,
+                    "Graden över storkorset i vissa ordnar, vars insignier är en ordenskedja; vanligen förbehållen statsöverhuvuden och ett fåtal andra."@sv ,
+                    "Le grade au-dessus de la grand-croix dans certains ordres, dont l'insigne est un collier ; en général réservé aux chefs d'État et à quelques autres."@fr ,
+                    "Die Stufe über dem Großkreuz in manchen Orden, deren Insigne eine Kollane ist; meist Staatsoberhäuptern und wenigen anderen vorbehalten."@de ,
+                    "Il grado sopra la gran croce in alcuni ordini, la cui insegna è un collare; di solito riservato ai capi di Stato e a pochi altri."@it .
+
+fraternalc:MemberStages a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    skos:prefLabel "Generic Stages of Membership"@en , "Generiska medlemsstadier"@sv , "Étapes génériques de l'appartenance"@fr , "Allgemeine Mitgliedschaftsstufen"@de , "Fasi generiche dell'appartenenza"@it ;
+    skos:definition "A generic ladder of three stages through which a member of a student society or a similar body passes: novice, active member, alumnus. The stages of a tradition (Fuchs, Bursch and Alter Herr; novato, tuno and veterano) are placed under these in the mappings."@en ,
+                    "En generisk stege av tre stadier som en medlem i ett studentsällskap eller liknande organ genomgår: novis, aktiv medlem, alumn. En traditions egna stadier (Fuchs, Bursch och Alter Herr; novato, tuno och veterano) placeras under dessa i mappningarna."@sv ,
+                    "Échelle générique de trois étapes que traverse un membre d'une société étudiante ou d'un organe semblable : novice, membre actif, ancien. Les étapes d'une tradition (Fuchs, Bursch et Alter Herr ; novato, tuno et veterano) sont placées sous celles-ci dans les mappings."@fr ,
+                    "Eine allgemeine Folge von drei Stufen, die ein Mitglied einer studentischen Gesellschaft oder einer ähnlichen Einrichtung durchläuft: Neuling, aktives Mitglied, Ehemaliger. Die Stufen einer Tradition (Fuchs, Bursch und Alter Herr; novato, tuno und veterano) sind in den Mappings diesen zugeordnet."@de ,
+                    "Una scala generica di tre fasi che un socio di una società studentesca o di un organismo simile percorre: novizio, socio attivo, ex socio. Le fasi di una tradizione (Fuchs, Bursch e Alter Herr; novato, tuno e veterano) sono collocate sotto queste nei mapping."@it ;
+    skos:hasTopConcept fraternalc:noviceStage , fraternalc:activeStage , fraternalc:alumniStage .
+
+fraternalc:noviceStage a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberStages ; skos:topConceptOf fraternalc:MemberStages ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:activeStage ;
+    skos:prefLabel "Novice Stage"@en , "Novisstadiet"@sv , "Étape de novice"@fr , "Neulingsstufe"@de , "Stadio di novizio"@it ;
+    skos:definition "The first stage of membership, in which a new member is on probation and learns the customs of the society before being admitted in full."@en ,
+                    "Medlemskapets första stadium, då en ny medlem är på prov och lär sig sällskapets sedvänjor innan medlemmen tas upp fullt ut."@sv ,
+                    "La première étape de l'appartenance, où un nouveau membre est à l'essai et apprend les usages de la société avant d'être admis pleinement."@fr ,
+                    "Die erste Stufe der Mitgliedschaft, in der ein neues Mitglied auf Probe ist und die Bräuche der Gesellschaft lernt, bevor es voll aufgenommen wird."@de ,
+                    "La prima fase dell'appartenenza, in cui un nuovo socio è in prova e impara gli usi della società prima di essere ammesso a pieno titolo."@it .
+
+fraternalc:activeStage a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberStages ; skos:topConceptOf fraternalc:MemberStages ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:alumniStage ;
+    skos:prefLabel "Active Stage"@en , "Aktiva stadiet"@sv , "Étape active"@fr , "Aktivenstufe"@de , "Stadio attivo"@it ;
+    skos:definition "The stage in which a member takes full part in the life of the society, shares its duties and holds its offices."@en ,
+                    "Stadiet då en medlem deltar fullt ut i sällskapets liv, delar dess plikter och innehar dess ämbeten."@sv ,
+                    "L'étape où un membre prend pleinement part à la vie de la société, en partage les devoirs et en occupe les fonctions."@fr ,
+                    "Die Stufe, in der ein Mitglied voll am Leben der Gesellschaft teilnimmt, ihre Pflichten teilt und ihre Ämter innehat."@de ,
+                    "La fase in cui un socio partecipa pienamente alla vita della società, ne condivide i doveri e ne ricopre le cariche."@it .
+
+fraternalc:alumniStage a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MemberStages ; skos:topConceptOf fraternalc:MemberStages ;
+    fraternal:degreeRank 3 ;
+    skos:prefLabel "Alumni Stage"@en , "Alumnstadiet"@sv , "Étape d'ancien"@fr , "Stufe der Ehemaligen"@de , "Stadio degli ex soci"@it ;
+    skos:definition "The stage that follows the active one, for members who have left the active life, often after their studies, but remain members for life."@en ,
+                    "Stadiet efter det aktiva, för medlemmar som lämnat det aktiva livet, ofta efter sina studier, men förblir medlemmar för livet."@sv ,
+                    "L'étape qui suit l'étape active, pour les membres qui ont quitté la vie active, souvent après leurs études, mais restent membres à vie."@fr ,
+                    "Die Stufe nach der aktiven, für Mitglieder, die das aktive Leben verlassen haben, oft nach dem Studium, aber lebenslang Mitglieder bleiben."@de ,
+                    "La fase che segue quella attiva, per i soci che hanno lasciato la vita attiva, spesso dopo gli studi, ma restano soci a vita."@it .
 
 ##############################################################################
 # 2b. DEGREE KINDS  (values of fraternal:degreeKind)
@@ -898,7 +949,8 @@ fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
                     "Tipi di cerimonie e di riunioni rituali di ordini e società, dall'iniziazione e dal conferimento dei gradi ai banchetti rituali e agli usi studenteschi. Ciascuno è associato a un tipo di riunione di mbrc:GatheringTypes."@it ;
     skos:hasTopConcept fraternalc:initiationCeremony , fraternalc:degreeCeremony , fraternalc:installation ,
                        fraternalc:memorialCeremony , fraternalc:festiveBoard , fraternalc:patronsFeast ,
-                       fraternalc:openMeeting .
+                       fraternalc:openMeeting ,
+                       fraternalc:investiture , fraternalc:consecration .
 
 fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
@@ -1043,6 +1095,24 @@ fraternalc:fackelzug a skos:Concept , owl:NamedIndividual ;
                     "Un corteo con le fiaccole di una Studentenverbindung, tenuto in occasioni festive come uno Stiftungsfest o un anniversario dell'università."@it ,
                     "Cortège aux flambeaux d'une Studentenverbindung, organisé à des occasions festives comme un Stiftungsfest ou un anniversaire de l'université."@fr .
 
+fraternalc:investiture a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Investiture"@en , "Investitur"@sv , "Investiture"@fr , "Investitur"@de , "Investitura"@it ;
+    skos:definition "The ceremony in which a member is invested with the insignia and rank of an order, such as a knighting or the award of a grade."@en ,
+                    "Ceremonin där en medlem iklädes en ordens insignier och rang, till exempel ett riddarslag eller tilldelningen av en grad."@sv ,
+                    "La cérémonie où un membre est investi des insignes et du rang d'un ordre, comme un adoubement ou la remise d'un grade."@fr ,
+                    "Die Zeremonie, in der ein Mitglied mit den Insignien und dem Rang eines Ordens bekleidet wird, etwa ein Ritterschlag oder die Verleihung einer Stufe."@de ,
+                    "La cerimonia in cui un membro è investito delle insegne e del rango di un ordine, come un'investitura a cavaliere o il conferimento di un grado."@it .
+
+fraternalc:consecration a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Consecration"@en , "Invigning"@sv , "Consécration"@fr , "Weihe"@de , "Consacrazione"@it ;
+    skos:definition "The ceremony in which a lodge, a temple, a flag or another object of an order is dedicated, or a new lodge is constituted."@en ,
+                    "Ceremonin där en loge, ett tempel, en fana eller ett annat föremål tillhörande en orden invigs, eller en ny loge konstitueras."@sv ,
+                    "La cérémonie où une loge, un temple, un drapeau ou un autre objet d'un ordre est consacré, ou une nouvelle loge constituée."@fr ,
+                    "Die Zeremonie, in der eine Loge, ein Tempel, eine Fahne oder ein anderer Gegenstand eines Ordens geweiht oder eine neue Loge konstituiert wird."@de ,
+                    "La cerimonia in cui una loggia, un tempio, una bandiera o un altro oggetto di un ordine è consacrato, o una nuova loggia è costituita."@it .
+
 ##############################################################################
 # 6. INSIGNIA TYPES  (mapped to Getty AAT in mappings/fraternal-aat.sssom.tsv)
 ##############################################################################
@@ -1057,7 +1127,8 @@ fraternalc:InsigniaTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:hasTopConcept fraternalc:apron , fraternalc:collar , fraternalc:sash , fraternalc:jewel ,
                        fraternalc:ribbon , fraternalc:ring , fraternalc:pin , fraternalc:hat ,
                        fraternalc:sword , fraternalc:breastStar , fraternalc:cross , fraternalc:rosette ,
-                       fraternalc:staff .
+                       fraternalc:staff ,
+                       fraternalc:robe , fraternalc:banner , fraternalc:gavel .
 
 fraternalc:apron a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
@@ -1232,6 +1303,36 @@ fraternalc:zipfel a skos:Concept , owl:NamedIndividual ;
                     "Ein kleines Zeichen in den Farben einer Studentenverbindung an einer Kette oder Schnur, das als Freundschaftszeichen zwischen Mitgliedern verschiedener Verbindungen getauscht wird."@de ,
                     "Un piccolo segno nei colori di una Studentenverbindung su una catenella o un cordoncino, scambiato come segno di amicizia tra soci di Verbindungen diverse."@it ,
                     "Petit insigne aux couleurs d'une Studentenverbindung, sur une chaînette ou un cordon, échangé en signe d'amitié entre membres de Verbindungen différentes."@fr .
+
+fraternalc:robe a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Robe"@en , "Mantel"@sv , "Manteau"@fr , "Mantel"@de , "Manto"@it ;
+    skos:altLabel "Mantle"@en ;
+    skos:definition "A long outer garment worn at ceremonies as a sign of membership, grade or office, such as the mantle of a knightly order or an academic gown."@en ,
+                    "Ett långt ytterplagg som bärs vid ceremonier som tecken på medlemskap, grad eller ämbete, till exempel en riddarordens mantel eller en akademisk kappa."@sv ,
+                    "Long vêtement de dessus porté lors des cérémonies comme signe d'appartenance, de grade ou de fonction, comme le manteau d'un ordre de chevalerie ou une robe académique."@fr ,
+                    "Ein langes Obergewand, das bei Zeremonien als Zeichen der Mitgliedschaft, eines Grades oder eines Amtes getragen wird, etwa der Mantel eines Ritterordens oder ein akademischer Talar."@de ,
+                    "Un lungo indumento esterno portato alle cerimonie come segno di appartenenza, di grado o di carica, come il manto di un ordine cavalleresco o una toga accademica."@it .
+
+fraternalc:banner a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Banner"@en , "Banér"@sv , "Bannière"@fr , "Banner"@de , "Vessillo"@it ;
+    skos:altLabel "Standard"@en ;
+    skos:definition "The flag or standard of an organisation or of a body within it, carried at processions and ceremonies and kept at the meeting place."@en ,
+                    "En organisations eller en del av dess fana eller standar, som bärs vid tåg och ceremonier och förvaras på mötesplatsen."@sv ,
+                    "Le drapeau ou l'étendard d'une organisation ou d'un de ses organes, porté lors des cortèges et des cérémonies et conservé au lieu de réunion."@fr ,
+                    "Die Fahne oder das Banner einer Organisation oder eines ihrer Teile, das bei Umzügen und Zeremonien getragen und im Versammlungsort aufbewahrt wird."@de ,
+                    "La bandiera o lo stendardo di un'organizzazione o di una sua parte, portato nei cortei e nelle cerimonie e custodito nel luogo di riunione."@it .
+
+fraternalc:gavel a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:InsigniaTypes ; skos:topConceptOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Gavel"@en , "Klubba"@sv , "Maillet"@fr , "Hammer"@de , "Maglietto"@it ;
+    skos:altLabel "Mallet"@en ;
+    skos:definition "The mallet with which the presiding officer opens, directs and closes a meeting, a sign of that office."@en ,
+                    "Klubban med vilken ordföranden öppnar, leder och avslutar ett möte, ett tecken på ämbetet."@sv ,
+                    "Le maillet avec lequel le président ouvre, dirige et clôt une séance, signe de cette fonction."@fr ,
+                    "Der Hammer, mit dem der Vorsitzende eine Sitzung eröffnet, leitet und schließt, ein Zeichen dieses Amtes."@de ,
+                    "Il maglietto con cui il presidente apre, dirige e chiude una riunione, segno di quella carica."@it .
 
 ##############################################################################
 # 7. ASSESSMENT OUTCOMES  (values of fraternal:assessmentOutcome)
