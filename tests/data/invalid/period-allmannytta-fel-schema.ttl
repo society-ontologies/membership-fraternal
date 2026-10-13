@@ -1,0 +1,12 @@
+# EXPECT: a period gives a public-benefit status (mbrc:foundation is a legal form) from the wrong codelist
+# MESSAGE: mbr:publicBenefitStatus must be a concept in mbrc:PublicBenefitStatuses
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+
+ex:Club mbr:hasPeriod ex:p .
+ex:p a mbr:OrganizationPeriod ; mbr:publicBenefitStatus mbrc:foundation ; mbr:startDate "2000"^^xsd:gYear .

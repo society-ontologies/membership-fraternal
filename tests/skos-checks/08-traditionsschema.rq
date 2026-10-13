@@ -1,32 +1,44 @@
-# A scheme in the fraternal codelists is a hub scheme, a degree system, or a tradition
-# scheme. A tradition scheme says which hub scheme it is part of (dcterms:isPartOf), that
-# scheme exists, and no concept is in both: a concept belongs to its tradition scheme only.
-# A new hub scheme has to be added to the list below on purpose.
+# A scheme in the codelists is a hub scheme, a degree system, or a tradition scheme. A
+# tradition scheme says which hub scheme it is part of (dcterms:isPartOf), that scheme
+# exists, and no concept is in both: a concept belongs to its tradition scheme only.
+# A new hub scheme has to be added to the list below on purpose. The sub-schemes of
+# mbrc:MembershipCategories are the opposite case (their concepts are in both) and say
+# isPartOf as well, so they are listed apart.
 PREFIX skos:      <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms:   <http://purl.org/dc/terms/>
 PREFIX fraternal: <https://w3id.org/fraternal#>
 PREFIX fraternalc: <https://w3id.org/fraternal/code/>
+PREFIX mbrc:      <https://w3id.org/membership/code/>
 
 SELECT ?s ?problem WHERE {
     {
         ?s a skos:ConceptScheme .
-        FILTER (STRSTARTS(STR(?s), "https://w3id.org/fraternal/code/"))
+        FILTER (STRSTARTS(STR(?s), "https://w3id.org/fraternal/code/") || STRSTARTS(STR(?s), "https://w3id.org/membership/code/"))
         FILTER NOT EXISTS { ?s a fraternal:DegreeSystem }
         FILTER (?s NOT IN (fraternalc:OrderTypes, fraternalc:DegreeKinds, fraternalc:MemberTitles,
                            fraternalc:Characteristics, fraternalc:CeremonyTypes,
-                           fraternalc:InsigniaTypes, fraternalc:AssessmentOutcomes))
+                           fraternalc:InsigniaTypes, fraternalc:AssessmentOutcomes,
+                           mbrc:OrganizationTypes, mbrc:MembershipStatuses, mbrc:MembershipCategories,
+                           mbrc:MembershipEventTypes, mbrc:OfficeTypes, mbrc:GatheringTypes,
+                           mbrc:ParticipationRoles, mbrc:DressCodes, mbrc:GenderPolicies,
+                           mbrc:AdmissionModes, mbrc:DistinctionTypes, mbrc:Materials,
+                           mbrc:OrganizationStatuses, mbrc:OwnershipModels, mbrc:FeeTypes,
+                           mbrc:LegalForms, mbrc:PublicBenefitStatuses))
         FILTER NOT EXISTS { ?s dcterms:isPartOf ?any }
         BIND ("is neither a hub scheme nor part of one (dcterms:isPartOf)" AS ?problem)
     } UNION {
         ?s a skos:ConceptScheme ;
            dcterms:isPartOf ?hub .
-        FILTER (STRSTARTS(STR(?s), "https://w3id.org/fraternal/code/"))
+        FILTER (STRSTARTS(STR(?s), "https://w3id.org/fraternal/code/") || STRSTARTS(STR(?s), "https://w3id.org/membership/code/"))
         FILTER NOT EXISTS { ?hub a skos:ConceptScheme }
         BIND ("is part of something that is not a concept scheme" AS ?problem)
     } UNION {
         ?s a skos:ConceptScheme ;
            dcterms:isPartOf ?hub .
-        FILTER (STRSTARTS(STR(?s), "https://w3id.org/fraternal/code/"))
+        FILTER (STRSTARTS(STR(?s), "https://w3id.org/fraternal/code/") || STRSTARTS(STR(?s), "https://w3id.org/membership/code/"))
+        FILTER (?s NOT IN (mbrc:CategoryRights, mbrc:CategoryDuration, mbrc:CategoryHonour,
+                           mbrc:CategoryAge, mbrc:CategoryResidence, mbrc:CategoryAffiliation,
+                           mbrc:CategoryFoundation, mbrc:CategoryContribution))
         ?c skos:inScheme ?s , ?hub .
         BIND ("has a concept that is also in the scheme it is part of" AS ?problem)
     }

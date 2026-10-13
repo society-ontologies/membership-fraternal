@@ -1,0 +1,22 @@
+# CQ17: What public-benefit status did each organisation have, and when? One row per
+# period that records a status, with the start and the end (blank = no stated end). The
+# organisation can have several at once (here an Italian association is both a Third
+# Sector entity and a social promotion association), so there is no check for overlaps.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mbr:  <https://w3id.org/membership#>
+
+SELECT ?organisation ?status ?from ?until
+WHERE {
+    ?c mbr:hasPeriod ?p .
+    ?p mbr:publicBenefitStatus ?st ;
+       mbr:startDate ?from .
+    OPTIONAL { ?p mbr:endDate ?until }
+    OPTIONAL { { SELECT ?c (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+                 WHERE { ?c rdfs:label ?l } GROUP BY ?c } }
+    OPTIONAL { { SELECT ?st (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?status)
+                 WHERE { ?st skos:prefLabel ?l } GROUP BY ?st } }
+}
+ORDER BY ?organisation ?from

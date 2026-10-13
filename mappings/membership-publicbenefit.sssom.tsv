@@ -1,0 +1,14 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   schema: http://schema.org/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/membership/mappings/membership-publicbenefit
+# mapping_set_version: 1.0.0
+# mapping_set_description: Public-benefit statuses of a country placed under the generic public-benefit statuses of the membership codelists, and linked to the national non-profit types of schema.org where the names correspond. schema.org gives no definition of its members on the type pages, so those two links are matched on the names and on the Italian Third Sector Code, from which schema.org says most Italian categories are drawn.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+mbrc:thirdSectorEntity	Third Sector Entity	skos:broadMatch	mbrc:publicBenefit	Public Benefit	semapv:ManualMappingCuration	0.7	Entry in the national register (RUNTS) brings public-benefit duties and tax and other benefits; it is not itself a recognition of public utility.
+mbrc:voluntaryOrganization	Voluntary Organisation	skos:closeMatch	schema:ITVolunteerAssociationCharity	ITVolunteerAssociationCharity	semapv:ManualMappingCuration	0.7	Matched on the name and the Third Sector Code; the schema.org type also says charity.
+mbrc:socialPromotionAssociation	Social Promotion Association	skos:closeMatch	schema:ITSocialPromotionCharity	ITSocialPromotionCharity	semapv:ManualMappingCuration	0.7	Matched on the name and the Third Sector Code; the schema.org type also says charity.

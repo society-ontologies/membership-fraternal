@@ -1,0 +1,52 @@
+# Generated from membership-publicbenefit.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/membership/mappings/membership-publicbenefit> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "Public-benefit statuses of a country placed under the generic public-benefit statuses of the membership codelists, and linked to the national non-profit types of schema.org where the names correspond. schema.org gives no definition of its members on the type pages, so those two links are matched on the names and on the Italian Third Sector Code, from which schema.org says most Italian categories are drawn." ;
+    <http://purl.org/dc/terms/created> "2026-10-13" .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/membership/code/thirdSectorEntity> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/publicBenefit> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/thirdSectorEntity> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/publicBenefit> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Third Sector Entity" ;
+  <https://w3id.org/sssom/object_label> "Public Benefit" ;
+  <https://w3id.org/sssom/comment> "Entry in the national register (RUNTS) brings public-benefit duties and tax and other benefits; it is not itself a recognition of public utility." ] .
+
+<https://w3id.org/membership/code/voluntaryOrganization> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://schema.org/ITVolunteerAssociationCharity> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/voluntaryOrganization> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://schema.org/ITVolunteerAssociationCharity> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Voluntary Organisation" ;
+  <https://w3id.org/sssom/object_label> "ITVolunteerAssociationCharity" ;
+  <https://w3id.org/sssom/comment> "Matched on the name and the Third Sector Code; the schema.org type also says charity." ] .
+
+<https://w3id.org/membership/code/socialPromotionAssociation> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://schema.org/ITSocialPromotionCharity> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/membership/code/socialPromotionAssociation> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <http://schema.org/ITSocialPromotionCharity> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Social Promotion Association" ;
+  <https://w3id.org/sssom/object_label> "ITSocialPromotionCharity" ;
+  <https://w3id.org/sssom/comment> "Matched on the name and the Third Sector Code; the schema.org type also says charity." ] .
+

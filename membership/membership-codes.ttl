@@ -1875,3 +1875,80 @@ mbrc:publicLawBody a skos:Concept , owl:NamedIndividual ;
                     "Eine juristische Person, die durch öffentliches Recht geschaffen oder anerkannt ist, etwa eine staatliche Einrichtung oder eine Körperschaft des öffentlichen Rechts, im Gegensatz zu einer durch private Vereinbarung gebildeten."@de ,
                     "Una persona giuridica creata o riconosciuta dal diritto pubblico, come un'istituzione statale o una corporazione di diritto pubblico, in contrapposizione a una formata per accordo privato."@it ;
     skos:note "Example: a German Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@en , "Exempel: en tysk Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@sv , "Exemple : une Körperschaft des öffentlichen Rechts allemande (ISO 20275 ELF SQKS)."@fr , "Beispiel: eine deutsche Körperschaft des öffentlichen Rechts (ISO 20275 ELF SQKS)."@de , "Esempio: una Körperschaft des öffentlichen Rechts tedesca (ISO 20275 ELF SQKS)."@it .
+
+##############################################################################
+# 17. PUBLIC BENEFIT STATUSES  (values of mbr:publicBenefitStatus)
+##############################################################################
+
+mbrc:PublicBenefitStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Public Benefit Statuses"@en , "Allmännyttiga statusar"@sv , "Statuts d'utilité publique"@fr , "Gemeinnützigkeitsstatus"@de , "Status di pubblica utilità"@it ;
+    skos:definition "Public-benefit statuses that an organisation can have, such as recognition as serving the public good or relief from tax as a charity. Used with mbr:publicBenefitStatus."@en ,
+                    "Allmännyttiga statusar som en organisation kan ha, till exempel erkännande som tjänande det allmänna bästa eller skattelättnad som välgörenhetsorganisation. Används med mbr:publicBenefitStatus."@sv ,
+                    "Statuts d'utilité publique qu'une organisation peut avoir, comme la reconnaissance de servir l'intérêt général ou l'allègement fiscal d'un organisme caritatif. S'utilisent avec mbr:publicBenefitStatus."@fr ,
+                    "Gemeinnützigkeitsstatus, die eine Organisation haben kann, etwa die Anerkennung, dem Gemeinwohl zu dienen, oder die Steuererleichterung einer gemeinnützigen Körperschaft. Werden mit mbr:publicBenefitStatus verwendet."@de ,
+                    "Status di pubblica utilità che un'organizzazione può avere, come il riconoscimento di servire il bene comune o l'agevolazione fiscale di un ente benefico. Si usano con mbr:publicBenefitStatus."@it ;
+    skos:scopeNote "The statuses of one country are in schemes of their own that say dcterms:isPartOf this scheme (see mbrc:ItalianThirdSectorStatuses). A status of the country is mapped to a concept here where there is a counterpart."@en ,
+                   "Ett lands statusar finns i egna scheman som anger dcterms:isPartOf detta schema (se mbrc:ItalianThirdSectorStatuses). En status i landet mappas till ett begrepp här där det finns en motsvarighet."@sv ,
+                   "Les statuts d'un pays sont dans des schémas propres qui indiquent dcterms:isPartOf ce schéma (voir mbrc:ItalianThirdSectorStatuses). Un statut du pays est associé à un concept d'ici lorsqu'il existe un équivalent."@fr ,
+                   "Die Status eines Landes stehen in eigenen Schemata, die dcterms:isPartOf dieses Schema angeben (siehe mbrc:ItalianThirdSectorStatuses). Ein Status des Landes wird einem Konzept hier zugeordnet, wo es eine Entsprechung gibt."@de ,
+                   "Gli status di un paese sono in schemi propri che indicano dcterms:isPartOf questo schema (vedi mbrc:ItalianThirdSectorStatuses). Uno status del paese è associato a un concetto qui dove esiste un equivalente."@it ;
+    skos:hasTopConcept mbrc:publicBenefit , mbrc:taxExemptCharity .
+
+mbrc:publicBenefit a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:PublicBenefitStatuses ; skos:topConceptOf mbrc:PublicBenefitStatuses ;
+    skos:prefLabel "Public Benefit"@en , "Allmännytta"@sv , "Utilité publique"@fr , "Gemeinwohlanerkennung"@de , "Pubblica utilità"@it ;
+    skos:definition "Recognition by a public authority that the organisation serves the public good, usually with duties (such as reporting and openness) and privileges."@en ,
+                    "Erkännande från en myndighet att organisationen tjänar det allmänna bästa, vanligen med skyldigheter (som redovisning och öppenhet) och förmåner."@sv ,
+                    "Reconnaissance par une autorité publique que l'organisation sert l'intérêt général, en général avec des obligations (comme la reddition de comptes et la transparence) et des avantages."@fr ,
+                    "Anerkennung durch eine öffentliche Stelle, dass die Organisation dem Gemeinwohl dient, meist mit Pflichten (wie Berichtspflicht und Offenheit) und Vorteilen."@de ,
+                    "Riconoscimento da parte di un'autorità pubblica che l'organizzazione serve il bene comune, di solito con obblighi (come la rendicontazione e la trasparenza) e vantaggi."@it .
+
+mbrc:taxExemptCharity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:PublicBenefitStatuses ; skos:topConceptOf mbrc:PublicBenefitStatuses ;
+    skos:prefLabel "Tax-exempt Charity"@en , "Skattebefriad välgörenhetsorganisation"@sv , "Organisme caritatif exonéré d'impôt"@fr , "Steuerbegünstigte Gemeinnützigkeit"@de , "Ente benefico esente da imposte"@it ;
+    skos:definition "Recognition by the tax authority that the organisation pursues charitable purposes and is therefore relieved of tax in whole or in part."@en ,
+                    "Erkännande från skattemyndigheten att organisationen eftersträvar välgörande ändamål och därför helt eller delvis är befriad från skatt."@sv ,
+                    "Reconnaissance par l'administration fiscale que l'organisation poursuit des buts caritatifs et est de ce fait exonérée d'impôt en tout ou en partie."@fr ,
+                    "Anerkennung durch die Steuerbehörde, dass die Organisation gemeinnützige Zwecke verfolgt und deshalb ganz oder teilweise von Steuern befreit ist."@de ,
+                    "Riconoscimento da parte dell'amministrazione fiscale che l'organizzazione persegue scopi benefici ed è perciò esentata in tutto o in parte dalle imposte."@it .
+
+mbrc:ItalianThirdSectorStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:PublicBenefitStatuses ;
+    skos:prefLabel "Statuses under the Italian Third Sector Code"@en , "Statusar enligt den italienska lagen om tredje sektorn"@sv , "Statuts selon le Code du Troisième secteur italien"@fr , "Status nach dem italienischen Kodex des Dritten Sektors"@de , "Status secondo il Codice del Terzo settore"@it ;
+    skos:definition "The statuses of entities of the Third Sector under the Italian Third Sector Code (Legislative Decree 117 of 3 July 2017): the general status of a Third Sector entity and two of its kinds, the social promotion association and the voluntary organisation. The entities are entered in the national register, the RUNTS."@en ,
+                    "Statusarna för enheter i tredje sektorn enligt den italienska lagen om tredje sektorn (lagstiftande dekret 117 av den 3 juli 2017): den allmänna statusen som enhet i tredje sektorn och två av dess slag, föreningen för socialt främjande och frivilligorganisationen. Enheterna förs in i det nationella registret, RUNTS."@sv ,
+                    "Les statuts des entités du Troisième secteur selon le Code du Troisième secteur italien (décret législatif 117 du 3 juillet 2017) : le statut général d'entité du Troisième secteur et deux de ses sortes, l'association de promotion sociale et l'organisation de bénévoles. Les entités sont inscrites au registre national, le RUNTS."@fr ,
+                    "Die Status der Einrichtungen des Dritten Sektors nach dem italienischen Kodex des Dritten Sektors (Gesetzesdekret 117 vom 3. Juli 2017): der allgemeine Status einer Einrichtung des Dritten Sektors und zwei ihrer Arten, der Verein zur Förderung des Sozialen und die Freiwilligenorganisation. Die Einrichtungen sind im nationalen Register, dem RUNTS, eingetragen."@de ,
+                    "Gli status degli enti del Terzo settore secondo il Codice del Terzo settore (decreto legislativo 117 del 3 luglio 2017): lo status generale di ente del Terzo settore e due sue specie, l'associazione di promozione sociale e l'organizzazione di volontariato. Gli enti sono iscritti nel registro nazionale, il RUNTS."@it ;
+    skos:hasTopConcept mbrc:thirdSectorEntity .
+
+mbrc:thirdSectorEntity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ItalianThirdSectorStatuses ; skos:topConceptOf mbrc:ItalianThirdSectorStatuses ;
+    skos:narrower mbrc:socialPromotionAssociation , mbrc:voluntaryOrganization ;
+    skos:prefLabel "Third Sector Entity"@en , "Enhet i tredje sektorn"@sv , "Entité du Troisième secteur"@fr , "Einrichtung des Dritten Sektors"@de , "Ente del Terzo settore"@it ;
+    skos:altLabel "ETS"@en ;
+    skos:definition "An organisation entered in the national register of Third Sector entities (RUNTS) under the Italian Third Sector Code, with the duties and the tax and other benefits that follow."@en ,
+                    "En organisation som förts in i det nationella registret över enheter i tredje sektorn (RUNTS) enligt den italienska lagen om tredje sektorn, med de skyldigheter och de skatte- och andra förmåner som följer."@sv ,
+                    "Organisation inscrite au registre national des entités du Troisième secteur (RUNTS) selon le Code du Troisième secteur italien, avec les obligations et les avantages fiscaux et autres qui en découlent."@fr ,
+                    "Eine Organisation, die nach dem italienischen Kodex des Dritten Sektors im nationalen Register der Einrichtungen des Dritten Sektors (RUNTS) eingetragen ist, mit den daraus folgenden Pflichten sowie steuerlichen und anderen Vorteilen."@de ,
+                    "Un'organizzazione iscritta nel registro nazionale degli enti del Terzo settore (RUNTS) secondo il Codice del Terzo settore, con gli obblighi e i vantaggi fiscali e di altro genere che ne derivano."@it .
+
+mbrc:socialPromotionAssociation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ItalianThirdSectorStatuses ; skos:broader mbrc:thirdSectorEntity ;
+    skos:prefLabel "Social Promotion Association"@en , "Förening för socialt främjande"@sv , "Association de promotion sociale"@fr , "Verein zur Förderung des Sozialen"@de , "Associazione di promozione sociale"@it ;
+    skos:altLabel "APS"@en ;
+    skos:definition "A kind of Third Sector entity: an association for social promotion (associazione di promozione sociale) in the sense of the Italian Third Sector Code."@en ,
+                    "En sorts enhet i tredje sektorn: en förening för socialt främjande (associazione di promozione sociale) i den italienska lagens mening."@sv ,
+                    "Une sorte d'entité du Troisième secteur : une association de promotion sociale (associazione di promozione sociale) au sens du Code du Troisième secteur italien."@fr ,
+                    "Eine Art von Einrichtung des Dritten Sektors: ein Verein zur Förderung des Sozialen (associazione di promozione sociale) im Sinne des italienischen Kodex des Dritten Sektors."@de ,
+                    "Una specie di ente del Terzo settore: un'associazione di promozione sociale ai sensi del Codice del Terzo settore."@it .
+
+mbrc:voluntaryOrganization a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ItalianThirdSectorStatuses ; skos:broader mbrc:thirdSectorEntity ;
+    skos:prefLabel "Voluntary Organisation"@en , "Frivilligorganisation"@sv , "Organisation de bénévoles"@fr , "Freiwilligenorganisation"@de , "Organizzazione di volontariato"@it ;
+    skos:altLabel "ODV"@en ;
+    skos:definition "A kind of Third Sector entity: a voluntary organisation (organizzazione di volontariato) in the sense of the Italian Third Sector Code."@en ,
+                    "En sorts enhet i tredje sektorn: en frivilligorganisation (organizzazione di volontariato) i den italienska lagens mening."@sv ,
+                    "Une sorte d'entité du Troisième secteur : une organisation de bénévoles (organizzazione di volontariato) au sens du Code du Troisième secteur italien."@fr ,
+                    "Eine Art von Einrichtung des Dritten Sektors: eine Freiwilligenorganisation (organizzazione di volontariato) im Sinne des italienischen Kodex des Dritten Sektors."@de ,
+                    "Una specie di ente del Terzo settore: un'organizzazione di volontariato ai sensi del Codice del Terzo settore."@it .
