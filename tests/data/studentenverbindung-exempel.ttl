@@ -51,7 +51,7 @@ ci:fritz-membership a mbr:Membership ;
     org:member ci:fritz ; org:organization ci:CorpsImaginaria ;
     mbr:membershipStatus mbrc:active ; mbr:membershipCategory fraternalc:aktiver ;
     mbr:membershipNumber "2025-04" ;
-    mbr:sponsor ci:karl .
+    mbr:mentor ci:karl .   # his Leibbursch
 
 ci:karl-membership a mbr:Membership ;
     org:member ci:karl ; org:organization ci:CorpsImaginaria ;

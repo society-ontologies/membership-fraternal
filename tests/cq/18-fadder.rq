@@ -1,0 +1,23 @@
+# CQ18: Who is whose mentor, and in which organisation? One row per membership that has a
+# mentor (a Leibbursch, a big sister, a fadder). The relation is on the membership, so the
+# same two people can have it in one organisation and not in another. The sponsor, who
+# vouches for the candidate at the admission, is a different relation and is not listed.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX org:    <http://www.w3.org/ns/org#>
+PREFIX mbr:    <https://w3id.org/membership#>
+
+SELECT ?organisation ?member ?mentor
+WHERE {
+    ?m a mbr:Membership ;
+       mbr:mentor ?mp ;
+       org:member ?p ;
+       org:organization ?o .
+    ?p schema:name ?member .
+    ?mp schema:name ?mentor .
+    OPTIONAL { { SELECT ?o (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+                 WHERE { ?o rdfs:label ?l } GROUP BY ?o } }
+}
+ORDER BY ?organisation ?member

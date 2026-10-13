@@ -261,6 +261,7 @@ mbrsh:MembershipShape a sh:NodeShape ;
                 [ sh:path mbr:sponsor ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:proposer ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:seconder ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:mentor ; sh:class foaf:Agent ] ,
                 [ sh:path mbr:membershipNumber ; sh:maxCount 1 ; sh:datatype xsd:string ;
                   sh:message "mbr:membershipNumber must be one xsd:string, such as \"1207\" or \"L-0042\". | mbr:membershipNumber ska vara en enda xsd:string, t.ex. \"1207\" eller \"L-0042\". | mbr:membershipNumber doit être un seul xsd:string, comme \"1207\" ou \"L-0042\". | mbr:membershipNumber muss ein einzelner xsd:string sein, etwa \"1207\" oder \"L-0042\". | mbr:membershipNumber deve essere un unico xsd:string, come \"1207\" o \"L-0042\"." ] ;
     # Register policy: a number identifies one membership in one organisation at a time.
@@ -307,6 +308,18 @@ mbrsh:MembershipShape a sh:NodeShape ;
                              CONCAT(SUBSTR(STR(?s), 1, 4), "-01-01"))) AS ?earliestStart)
                     FILTER (?latestEnd < ?earliestStart)
                 }
+            }
+        """
+    ] ,
+    # A member is not their own mentor.
+    [
+        a sh:SPARQLConstraint ;
+        sh:message "A member cannot be their own mentor (mbr:mentor). | En medlem kan inte vara sin egen fadder (mbr:mentor). | Un membre ne peut pas être son propre mentor (mbr:mentor). | Ein Mitglied kann nicht sein eigener Mentor sein (mbr:mentor). | Un socio non può essere il proprio mentore (mbr:mentor)." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this ?m WHERE {
+                $this mbr:mentor ?m ;
+                      org:member ?m .
             }
         """
     ] .

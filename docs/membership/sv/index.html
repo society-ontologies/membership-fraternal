@@ -2078,6 +2078,47 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="mentor">
+          <h3>fadder
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#mentor</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologi för medlemsorganisationer</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>En agent som personligen vägleder och tar hand om medlemskapets innehavare i organisationen, vanligen en mer erfaren medlem: en Studentenverbindungs Leibbursch, en sororitys "big sister", en studentnations fadder. Relationen fortsätter efter upptagningen.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Inte mbr:sponsor, som går i god för kandidaten vid upptagningen. Relationship-vokabulären har rel:mentorOf, som länkar två personer utan organisation eller tid; den här egenskapen sitter på medlemskapet, så relationen hör till en organisation och en period.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="concernsMembership">
           <h3>avser medlemskap
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -3752,6 +3793,9 @@ td {
             </li>
             <li>
               <a href="#seconder">understödjare</a>
+            </li>
+            <li>
+              <a href="#mentor">fadder</a>
             </li>
             <li>
               <a href="#concernsMembership">avser medlemskap</a>
