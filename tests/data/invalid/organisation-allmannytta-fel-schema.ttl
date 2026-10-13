@@ -1,0 +1,14 @@
+# EXPECT: an organisation has a public-benefit status that is a local concept with no mapping and no family
+# MESSAGE: mbr:publicBenefitStatus must be a concept in mbrc:PublicBenefitStatuses
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:    <https://example.org/invalid/> .
+
+ex:Statusar a skos:ConceptScheme ; skos:prefLabel "Egna statusar"@sv .
+ex:hedersforening a skos:Concept ; skos:inScheme ex:Statusar ; skos:prefLabel "Hedersförening"@sv .
+
+ex:Club a mbr:MembershipOrganization ;
+    org:classification mbrc:privateClub ;
+    mbr:publicBenefitStatus ex:hedersforening .

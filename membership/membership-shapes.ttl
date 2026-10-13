@@ -199,6 +199,11 @@ mbrsh:LegalFormValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:LegalForms ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:LegalForms ] ) .
 
+mbrsh:PublicBenefitStatusValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:PublicBenefitStatuses ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:PublicBenefitStatuses ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue mbrc:PublicBenefitStatuses ] ) .
+
 mbrsh:FoundingDateShape a sh:NodeShape ;
     sh:targetSubjectsOf mbr:foundingDate ;
     sh:property [
@@ -436,6 +441,9 @@ mbrsh:OrganizationShape a sh:NodeShape ;
                 [ sh:path rov:orgType ; sh:class skos:Concept ;
                   sh:node mbrsh:LegalFormValue ;
                   sh:message "rov:orgType must be a concept in mbrc:LegalForms, or one mapped to it. | rov:orgType ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit. | rov:orgType doit être un concept de mbrc:LegalForms, ou un concept qui y est mappé. | rov:orgType muss ein Konzept aus mbrc:LegalForms sein oder eines, das darauf abgebildet ist. | rov:orgType deve essere un concetto di mbrc:LegalForms, o uno associato a esso." ] ,
+                [ sh:path mbr:publicBenefitStatus ; sh:class skos:Concept ;
+                  sh:node mbrsh:PublicBenefitStatusValue ;
+                  sh:message "mbr:publicBenefitStatus must be a concept in mbrc:PublicBenefitStatuses, or one mapped to it. | mbr:publicBenefitStatus ska vara ett begrepp i mbrc:PublicBenefitStatuses, eller ett som är mappat dit. | mbr:publicBenefitStatus doit être un concept de mbrc:PublicBenefitStatuses, ou un concept qui y est associé. | mbr:publicBenefitStatus muss ein Konzept aus mbrc:PublicBenefitStatuses sein oder eines, das darauf abgebildet ist. | mbr:publicBenefitStatus deve essere un concetto di mbrc:PublicBenefitStatuses, o uno associato a esso." ] ,
                 [ sh:path rov:registration ; sh:class adms:Identifier ] ,
                 [ sh:path mbr:ownershipModel ; sh:maxCount 1 ; sh:class skos:Concept ;
                   sh:node mbrsh:OwnershipModelValue ;
@@ -506,8 +514,9 @@ mbrsh:OrganizationPeriodContentShape a sh:NodeShape ;
             [ sh:path mbr:ownershipModel ; sh:minCount 1 ]
             [ sh:path mbr:organizationStatus ; sh:minCount 1 ]
             [ sh:path mbr:organizationType ; sh:minCount 1 ]
-            [ sh:path mbr:legalForm ; sh:minCount 1 ] ) ;
-    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType and mbr:legalForm. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType och mbr:legalForm. | Une période a besoin d'au moins l'un de mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType et mbr:legalForm. | Ein Zeitraum braucht mindestens eines von mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType und mbr:legalForm. | Un periodo richiede almeno una tra mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType e mbr:legalForm." .
+            [ sh:path mbr:legalForm ; sh:minCount 1 ]
+            [ sh:path mbr:publicBenefitStatus ; sh:minCount 1 ] ) ;
+    sh:message "A period needs at least one of mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType, mbr:legalForm and mbr:publicBenefitStatus. | En period behöver minst en av mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType, mbr:legalForm och mbr:publicBenefitStatus. | Une période a besoin d'au moins l'un de mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType, mbr:legalForm et mbr:publicBenefitStatus. | Ein Zeitraum braucht mindestens eines von mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType, mbr:legalForm und mbr:publicBenefitStatus. | Un periodo richiede almeno una tra mbr:genderPolicy, mbr:admissionMode, mbr:ownershipModel, mbr:organizationStatus, mbr:organizationType, mbr:legalForm e mbr:publicBenefitStatus." .
 
 mbrsh:OrganizationPeriodShape a sh:NodeShape ;
     sh:targetClass mbr:OrganizationPeriod ;
@@ -529,6 +538,9 @@ mbrsh:OrganizationPeriodShape a sh:NodeShape ;
                 [ sh:path mbr:organizationType ; sh:class skos:Concept ;
                   sh:node mbrsh:OrganizationTypeValue ;
                   sh:message "mbr:organizationType must be a concept in mbrc:OrganizationTypes, or one mapped to it. | mbr:organizationType ska vara ett begrepp i mbrc:OrganizationTypes, eller ett som är mappat dit. | mbr:organizationType doit être un concept de mbrc:OrganizationTypes, ou un concept qui y est mappé. | mbr:organizationType muss ein Konzept aus mbrc:OrganizationTypes sein oder eines, das darauf abgebildet ist. | mbr:organizationType deve essere un concetto di mbrc:OrganizationTypes, o uno associato a esso." ] ,
+                [ sh:path mbr:publicBenefitStatus ; sh:class skos:Concept ;
+                  sh:node mbrsh:PublicBenefitStatusValue ;
+                  sh:message "mbr:publicBenefitStatus must be a concept in mbrc:PublicBenefitStatuses, or one mapped to it. | mbr:publicBenefitStatus ska vara ett begrepp i mbrc:PublicBenefitStatuses, eller ett som är mappat dit. | mbr:publicBenefitStatus doit être un concept de mbrc:PublicBenefitStatuses, ou un concept qui y est associé. | mbr:publicBenefitStatus muss ein Konzept aus mbrc:PublicBenefitStatuses sein oder eines, das darauf abgebildet ist. | mbr:publicBenefitStatus deve essere un concetto di mbrc:PublicBenefitStatuses, o uno associato a esso." ] ,
                 [ sh:path mbr:legalForm ; sh:class skos:Concept ;
                   sh:node mbrsh:LegalFormValue ;
                   sh:message "mbr:legalForm must be a concept in mbrc:LegalForms, or one mapped to it. | mbr:legalForm ska vara ett begrepp i mbrc:LegalForms, eller ett som är mappat dit. | mbr:legalForm doit être un concept de mbrc:LegalForms, ou un concept qui y est mappé. | mbr:legalForm muss ein Konzept aus mbrc:LegalForms sein oder eines, das darauf abgebildet ist. | mbr:legalForm deve essere un concetto di mbrc:LegalForms, o uno associato a esso." ] ,
@@ -539,9 +551,11 @@ mbrsh:OrganizationPeriodShape a sh:NodeShape ;
     # at once. Reported only when two periods certainly overlap: both have a start and an end,
     # and the latest each could start is before the earliest the other could end (dates
     # compared as in mbrsh:EndDateShape). A period that ends on the day another starts, or
-    # that has no end date, is not reported. mbr:admissionMode, mbr:organizationType and
-    # mbr:legalForm are left out: an organisation may admit in several ways, have several
-    # types and, in some jurisdictions, more than one legal form at once.
+    # that has no end date, is not reported. mbr:admissionMode, mbr:organizationType,
+    # mbr:legalForm and mbr:publicBenefitStatus are left out: an organisation may admit in
+    # several ways, have several types, in some jurisdictions more than one legal form at
+    # once, and several public-benefit statuses (an Italian association is both a
+    # Third Sector entity and a social promotion association).
     sh:sparql [
         a sh:SPARQLConstraint ;
         sh:message "The organisation has two different values of {?p} in periods that certainly overlap ({?other}). | Organisationen har två olika värden på {?p} i perioder som säkert överlappar ({?other}). | L'organisation a deux valeurs différentes de {?p} dans des périodes qui se chevauchent certainement ({?other}). | Die Organisation hat zwei verschiedene Werte von {?p} in Zeiträumen, die sich sicher überschneiden ({?other}). | L'organizzazione ha due valori diversi di {?p} in periodi che certamente si sovrappongono ({?other})." ;

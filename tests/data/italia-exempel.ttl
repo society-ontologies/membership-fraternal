@@ -137,7 +137,19 @@ it:CircoloDelleArti a mbr:MembershipOrganization ;
     rov:orgType mbrc:registeredAssociation ;
     mbr:admissionMode mbrc:openApplication ;
     mbr:genderPolicy mbrc:mixed ;
-    mbr:foundingDate "1987"^^xsd:gYear .
+    mbr:foundingDate "1987"^^xsd:gYear ;
+    # entered in the register of Third Sector entities, as a social promotion association
+    mbr:publicBenefitStatus mbrc:thirdSectorEntity , mbrc:socialPromotionAssociation ;
+    mbr:hasPeriod it:circolo-aps , it:circolo-ets .
+
+# The statuses came one after the other, and both are still in force.
+it:circolo-aps a mbr:OrganizationPeriod ;
+    mbr:publicBenefitStatus mbrc:socialPromotionAssociation ;
+    mbr:startDate "2019"^^xsd:gYear .
+
+it:circolo-ets a mbr:OrganizationPeriod ;
+    mbr:publicBenefitStatus mbrc:thirdSectorEntity ;
+    mbr:startDate "2022"^^xsd:gYear .
 
 it:paolo a foaf:Person ; schema:name "Paolo Inventato" .
 it:chiara a foaf:Person ; schema:name "Chiara Supposta" .

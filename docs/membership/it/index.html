@@ -1820,6 +1820,50 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="publicBenefitStatus">
+          <h3>status di pubblica utilità
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#publicBenefitStatus</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologia delle organizzazioni associative</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Uno status di pubblica utilità che l'organizzazione ha, o aveva durante un periodo (vedi mbrc:PublicBenefitStatuses): il riconoscimento da parte di un'autorità pubblica che essa serve il bene comune, di solito con obblighi e vantaggi come l'agevolazione fiscale. Si usa su un'organizzazione e su un mbr:OrganizationPeriod; un'organizzazione può averne più di uno.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>schema:nonprofitStatus ha uno scopo simile, ma il suo intervallo sono i tipi nazionali di cinque paesi (Germania, Italia, Paesi Bassi, Regno Unito e Stati Uniti), che mescolano forma giuridica e status di ente benefico, quindi non può contenere gli status di altri paesi. Gli status qui sono concetti SKOS; dove un tipo di schema.org corrisponde a uno di essi, l'insieme di mapping li collega.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="membershipStatus">
           <h3>stato dell'appartenenza
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -3690,6 +3734,9 @@ td {
             </li>
             <li>
               <a href="#legalForm">forma giuridica</a>
+            </li>
+            <li>
+              <a href="#publicBenefitStatus">status di pubblica utilità</a>
             </li>
             <li>
               <a href="#membershipStatus">stato dell'appartenenza</a>
