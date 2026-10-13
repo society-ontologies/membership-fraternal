@@ -25,7 +25,7 @@ fraternalc:gastronomicBrotherhood	Food and Wine Brotherhood	skos:broadMatch	mbrc
 fraternalc:craftBrotherhood	Craft Brotherhood	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Initiation, ritual and stages of membership, tied to the transmission of a trade.
 fraternalc:studentenverbindung	Studentenverbindung	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Lifelong union with ritual, colours and stages; its narrower types are mapped below.
 fraternalc:studentenverbindung	Studentenverbindung	skos:broadMatch	mbrc:studentSociety	Student Society	semapv:ManualMappingCuration	0.9	
-fraternalc:studentenverbindungDachverband	Federation of Studentenverbindungen	skos:broadMatch	mbrc:voluntaryAssociation	Voluntary Association	semapv:ManualMappingCuration	0.6	An association of associations.
+fraternalc:studentenverbindungDachverband	Federation of Studentenverbindungen	skos:broadMatch	mbrc:federation	Federation	semapv:ManualMappingCuration	0.95	An association of associations.
 fraternalc:corps	Corps	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings.
 fraternalc:corps	Corps	skos:broadMatch	mbrc:studentSociety	Student Society	semapv:ManualMappingCuration	0.9	Its members are students and alumni.
 fraternalc:burschenschaft	Burschenschaft	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.8	Narrower than fraternalc:studentenverbindung; mapped on its own because the shapes accept only direct mappings.

@@ -68,16 +68,16 @@
   <https://w3id.org/sssom/object_label> "President" ;
   <https://w3id.org/sssom/comment> "Head of the alumni branch, not of the Verbindung as a whole." ] .
 
-<https://w3id.org/fraternal/code/fuchsmajor> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/introducer> .
+<https://w3id.org/fraternal/code/fuchsmajor> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/noviceMaster> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/fuchsmajor> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/introducer> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/noviceMaster> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Fuchsmajor" ;
-  <https://w3id.org/sssom/object_label> "Introducer" ;
-  <https://w3id.org/sssom/comment> "Trains new members; there is no closer generic office." ] .
+  <https://w3id.org/sssom/object_label> "Novice Master" ;
+  <https://w3id.org/sssom/comment> "Trains the new members (Füchse) until they are admitted in full." ] .
 
 <https://w3id.org/fraternal/code/fechtwart> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/activityLeader> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;

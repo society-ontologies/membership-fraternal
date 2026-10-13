@@ -239,6 +239,14 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - Removed (unreleased): `fraternalc:FrenchOffices`, and `fraternalc:orator` and `fraternalc:almoner`, which were exact duplicates of the generic offices `mbrc:orator` and `mbrc:almoner`. A lodge's orator and almoner are those.
 - Kept in the hubs on purpose: `fraternalc:craftBrotherhood` and `gastronomicBrotherhood` (the kind exists in several countries), the insignia `staff` and `rosette`, and `openMeeting`. Not done here: Membership hub concepts of one country (`mbrc:studentNation`, `mbrc:contrada`), and the Studentenverbindung stages, which have no hub ladder yet.
 
+**Unreleased.** Generic membership concepts that more than one country needs. Additions only; every text in English, Swedish, French, German and Italian.
+- Organisation types: `mbrc:federation` (an association of associations; the Studentenverbindung federation is mapped to it instead of to `voluntaryAssociation`), `mbrc:choralSociety`, `mbrc:carnivalSociety`, `mbrc:shootingSociety` (under `sportsClub`) and `mbrc:veteransAssociation`.
+- Categories: `mbrc:correspondingMember` and `mbrc:foreignMember` (in the sub-scheme `CategoryResidence`), `mbrc:familyMember` (`CategoryAffiliation`).
+- Offices: `mbrc:boardMember`, `honoraryPresident`, `patron`, `standardBearer`, `noviceMaster` (the Fuchsmajor is mapped to it instead of to `introducer`) and `courtOfHonourMember`.
+- Membership statuses `mbrc:inArrears` and `transferred`; organisation statuses `mbrc:suppressedOrganization` (banned or dissolved by the state) and `inExileOrganization`; event types `mbrc:suspension`, `transfer` and `officeElection`; admission modes `mbrc:byConferral` and `byExamination`.
+- Left out on purpose: a mutual-aid society (an economic-benefit membership, which the model leaves out), a registrar, co-optation and a provisional member (they overlap `introducer`/`secretary`, `byInvitation` and `candidate`), and a birthright mode (`mbrc:hereditary` is that). No Wikidata or Getty AAT mapping is added: I have not looked up and checked an item for each, and an unmapped hub concept is accepted.
+- Example: an academy with a corresponding and a foreign member and an honorary president in `tests/data/frankrike-exempel.ttl`.
+
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).
