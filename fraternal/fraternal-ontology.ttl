@@ -582,7 +582,7 @@ fraternal:requiresMembershipIn a owl:ObjectProperty ;
                     "L'appartenenza a questo organismo è condizione per entrare nell'ordine o nel grado per cui è indicata: il Royal Arch è aperto solo ai maestri muratori."@it ,
                     "Pertenecer a este organismo es condición de entrada en la orden o el grado para el que se indica: el Arco Real está abierto solo a maestros masones."@es ,
                     "Pertencer a este organismo é condição de entrada na ordem ou no grau para que se indica: o Arco Real está aberto apenas a mestres maçons."@pt ,
-                    "E testület tagsága feltétele a belépésnek abba a rendbe vagy fokozatba, amelyre megadták: a Royal Arch csak mestermunkát végzett szabadkőműveseknek nyitott."@hu .
+                    "E testület tagsága feltétele a belépésnek abba a rendbe vagy fokozatba, amelyre megadták: a Royal Arch csak mester fokozatú szabadkőműveseknek nyitott."@hu .
 
 fraternal:requiresDegree a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
