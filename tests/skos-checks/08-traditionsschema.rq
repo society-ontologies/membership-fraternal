@@ -23,7 +23,8 @@ SELECT ?s ?problem WHERE {
                            mbrc:ParticipationRoles, mbrc:DressCodes, mbrc:GenderPolicies,
                            mbrc:AdmissionModes, mbrc:DistinctionTypes, mbrc:Materials,
                            mbrc:OrganizationStatuses, mbrc:OwnershipModels, mbrc:FeeTypes,
-                           mbrc:LegalForms, mbrc:PublicBenefitStatuses))
+                           mbrc:LegalForms, mbrc:PublicBenefitStatuses,
+                           mbrc:ApplicationStatuses))
         FILTER NOT EXISTS { ?s dcterms:isPartOf ?any }
         BIND ("is neither a hub scheme nor part of one (dcterms:isPartOf)" AS ?problem)
     } UNION {

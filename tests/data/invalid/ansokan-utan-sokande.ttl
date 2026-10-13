@@ -1,0 +1,9 @@
+# EXPECT: an application with no applicant
+# MESSAGE: A membership application needs exactly one applicant
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:app a mbr:MembershipApplication ; mbr:appliedTo ex:Club ; mbr:applicationStatus mbrc:received .

@@ -171,6 +171,28 @@ club:edmund-rejection a mbr:MembershipEvent ;
     mbr:resultingStatus mbrc:notAdmitted ;
     mbr:startDate "2025-05-13"^^xsd:date .
 
+# The same candidacy as an application with its ballot: the club's rule is that
+# two black balls reject, and Edmund got three. The applicant is not yet a member,
+# so the application has mbr:applicant and not org:member.
+club:edmund-application a mbr:MembershipApplication ;
+    mbr:applicant club:edmund ; mbr:appliedTo club:Lanternmere ;
+    mbr:proposer club:william ; mbr:seconder club:henry ;
+    mbr:applicationStatus mbrc:rejected ;
+    mbr:startDate "2025-03-04"^^xsd:date ; mbr:decisionDate "2025-05-13"^^xsd:date .
+
+club:edmund-ballot a mbr:Ballot ;
+    mbr:ballotOn club:edmund-application ;
+    mbr:votesFor 41 ; mbr:votesAgainst 3 ;
+    mbr:startDate "2025-05-13"^^xsd:date .
+
+# An application that was accepted: it points to the membership it led to.
+club:henry-application a mbr:MembershipApplication ;
+    mbr:applicant club:henry ; mbr:appliedTo club:Lanternmere ;
+    mbr:proposer club:william ;
+    mbr:applicationStatus mbrc:accepted ;
+    mbr:resultingMembership club:henry-membership ;
+    mbr:startDate "2019-01-15"^^xsd:date ; mbr:decisionDate "2019-02-12"^^xsd:date .
+
 # "The club has a secretary": a term of office. No end date = current secretary.
 club:william-secretary a mbr:Tenure ;
     org:member club:william ; org:organization club:Lanternmere ;

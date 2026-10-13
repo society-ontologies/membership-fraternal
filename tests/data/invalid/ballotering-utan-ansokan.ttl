@@ -1,0 +1,6 @@
+# EXPECT: a ballot that is not on any application
+# MESSAGE: A ballot needs exactly one application it is held on
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:ballot a mbr:Ballot ; mbr:votesFor 5 ; mbr:votesAgainst 1 .

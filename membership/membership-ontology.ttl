@@ -392,6 +392,34 @@ mbr:Membership a owl:Class ;
                    "Daten darüber, wer einer politischen Partei, einer Gewerkschaft oder einer Organisation mit religiöser oder weltanschaulicher Ausrichtung (dazu können Ordensgemeinschaften gehören) angehört, sind besondere Kategorien personenbezogener Daten nach Artikel 9 der Datenschutz-Grundverordnung (DSGVO). Die Organisation selbst darf ein Verzeichnis ihrer Mitglieder und ehemaligen Mitglieder führen (Art. 9 Abs. 2 Buchst. d), es aber ohne deren Einwilligung nicht außerhalb der Organisation offenlegen. Wer sonst solche Daten verarbeiten will, braucht eine andere Ausnahme nach Art. 9 Abs. 2, etwa eine ausdrückliche Einwilligung oder dass die Person die Mitgliedschaft öffentlich gemacht hat, wie es gewählte Vertreter tun. Die DSGVO gilt nicht für Verstorbene."@de ,
                    "I dati su chi appartiene a un partito politico, a un sindacato o a un'organizzazione con finalità religiose o filosofiche (tra cui possono rientrare gli ordini fraternali) sono dati personali di categoria particolare ai sensi dell'articolo 9 del Regolamento generale dell'UE sulla protezione dei dati (GDPR). L'organizzazione stessa può tenere un registro dei propri soci e dei soci passati (art. 9, par. 2, lett. d), ma non può comunicarlo all'esterno senza il loro consenso. Chiunque altro ha bisogno di un'altra eccezione dell'art. 9, par. 2 per trattare tali dati, per esempio il consenso esplicito, o che la persona abbia reso pubblica la propria appartenenza, come fanno i rappresentanti eletti. Il GDPR non si applica alle persone defunte."@it .
 
+mbr:MembershipApplication a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "Membership Application"@en , "Medlemsansökan"@sv , "Demande d'adhésion"@fr , "Mitgliedschaftsantrag"@de , "Domanda di ammissione"@it ;
+    skos:definition "A request to be admitted to a membership organisation, with its decision. It exists before there is a membership and may never lead to one. The applicant is given with mbr:applicant, the organisation with mbr:appliedTo, where it stands with mbr:applicationStatus, and an accepted application points to the membership it led to with mbr:resultingMembership. Proposers and seconders are given with mbr:proposer and mbr:seconder, the date of the application with mbr:startDate and the date of the decision with mbr:decisionDate."@en ,
+                    "En begäran om att tas upp i en medlemsorganisation, med beslutet om den. Den finns innan det finns något medlemskap och behöver aldrig leda till ett. Den sökande anges med mbr:applicant, organisationen med mbr:appliedTo, hur långt den har kommit med mbr:applicationStatus, och en antagen ansökan pekar på det medlemskap den ledde till med mbr:resultingMembership. Förslagsställare och understödjare anges med mbr:proposer och mbr:seconder, ansökans datum med mbr:startDate och beslutets datum med mbr:decisionDate."@sv ,
+                    "Une demande d'être admis dans une organisation de membres, avec la décision qui la concerne. Elle existe avant qu'il y ait une adhésion et peut ne jamais en produire. Le candidat est indiqué avec mbr:applicant, l'organisation avec mbr:appliedTo, l'état d'avancement avec mbr:applicationStatus, et une demande acceptée renvoie à l'adhésion qui en est issue avec mbr:resultingMembership. Les proposants et les seconds se donnent avec mbr:proposer et mbr:seconder, la date de la demande avec mbr:startDate et celle de la décision avec mbr:decisionDate."@fr ,
+                    "Ein Antrag, in eine Mitgliederorganisation aufgenommen zu werden, samt der Entscheidung darüber. Er besteht, bevor es eine Mitgliedschaft gibt, und muss nie zu einer führen. Der Antragsteller wird mit mbr:applicant angegeben, die Organisation mit mbr:appliedTo, der Stand mit mbr:applicationStatus, und ein angenommener Antrag verweist mit mbr:resultingMembership auf die Mitgliedschaft, zu der er geführt hat. Vorschlagende und Unterstützer werden mit mbr:proposer und mbr:seconder angegeben, das Datum des Antrags mit mbr:startDate und das Datum der Entscheidung mit mbr:decisionDate."@de ,
+                    "Una richiesta di essere ammessi in un'organizzazione associativa, con la relativa decisione. Esiste prima che ci sia un'appartenenza e può non portarne mai a una. Il richiedente si indica con mbr:applicant, l'organizzazione con mbr:appliedTo, lo stato di avanzamento con mbr:applicationStatus, e una domanda accolta rinvia all'appartenenza a cui ha portato con mbr:resultingMembership. Proponenti e secondi proponenti si indicano con mbr:proposer e mbr:seconder, la data della domanda con mbr:startDate e quella della decisione con mbr:decisionDate."@it ;
+    skos:scopeNote "Not an org:Membership: org:member has that class as its domain, so an application has mbr:applicant and never org:member. A membership with the status mbrc:proposed or mbrc:candidate, and its events (mbrc:MembershipEventTypes), is the lighter way to record a candidacy. Use an application when the request itself, its decision or its ballot is to be recorded."@en ,
+                   "Inte ett org:Membership: org:member har den klassen som domän, så en ansökan har mbr:applicant och aldrig org:member. Ett medlemskap med statusen mbrc:proposed eller mbrc:candidate, och dess händelser (mbrc:MembershipEventTypes), är det enklare sättet att registrera en kandidatur. Använd en ansökan när själva begäran, beslutet eller omröstningen ska registreras."@sv ,
+                   "Ce n'est pas un org:Membership : org:member a cette classe pour domaine, une demande a donc mbr:applicant et jamais org:member. Une adhésion avec le statut mbrc:proposed ou mbrc:candidate, et ses événements (mbrc:MembershipEventTypes), est la manière plus légère de consigner une candidature. Utilisez une demande lorsque la requête elle-même, sa décision ou son scrutin doit être consigné."@fr ,
+                   "Kein org:Membership: org:member hat diese Klasse als Definitionsbereich, ein Antrag hat daher mbr:applicant und nie org:member. Eine Mitgliedschaft mit dem Status mbrc:proposed oder mbrc:candidate samt ihren Ereignissen (mbrc:MembershipEventTypes) ist die leichtere Art, eine Kandidatur festzuhalten. Ein Antrag wird verwendet, wenn der Antrag selbst, seine Entscheidung oder seine Abstimmung festgehalten werden soll."@de ,
+                   "Non è un org:Membership: org:member ha quella classe come dominio, quindi una domanda ha mbr:applicant e mai org:member. Un'appartenenza con lo stato mbrc:proposed o mbrc:candidate, e i suoi eventi (mbrc:MembershipEventTypes), è il modo più leggero di registrare una candidatura. Si usa una domanda quando va registrata la richiesta stessa, la sua decisione o la sua votazione."@it .
+
+mbr:Ballot a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "Ballot"@en , "Ballotering"@sv , "Scrutin"@fr , "Abstimmung"@de , "Votazione"@it ;
+    skos:definition "A vote by the members on an application (mbr:ballotOn), with the number of votes for and against (mbr:votesFor, mbr:votesAgainst) and its date (mbr:startDate). An application can have more than one ballot, for example when it is put to the vote again."@en ,
+                    "En omröstning bland medlemmarna om en ansökan (mbr:ballotOn), med antalet röster för och emot (mbr:votesFor, mbr:votesAgainst) och dess datum (mbr:startDate). En ansökan kan ha fler än en ballotering, till exempel när den tas upp till omröstning på nytt."@sv ,
+                    "Un vote des membres sur une demande (mbr:ballotOn), avec le nombre de voix pour et contre (mbr:votesFor, mbr:votesAgainst) et sa date (mbr:startDate). Une demande peut avoir plusieurs scrutins, par exemple quand elle est de nouveau mise aux voix."@fr ,
+                    "Eine Abstimmung der Mitglieder über einen Antrag (mbr:ballotOn), mit der Zahl der Stimmen dafür und dagegen (mbr:votesFor, mbr:votesAgainst) und ihrem Datum (mbr:startDate). Ein Antrag kann mehr als eine Abstimmung haben, etwa wenn er erneut zur Abstimmung gestellt wird."@de ,
+                    "Una votazione dei soci su una domanda (mbr:ballotOn), con il numero di voti favorevoli e contrari (mbr:votesFor, mbr:votesAgainst) e la sua data (mbr:startDate). Una domanda può avere più di una votazione, per esempio quando viene rimessa ai voti."@it ;
+    skos:scopeNote "The rule that decides the vote, for example that a single black ball rejects or that two thirds must vote for, is the organisation's own and is not recorded here. The outcome is given by mbr:applicationStatus on the application."@en ,
+                   "Regeln som avgör omröstningen, till exempel att en enda svartkula avslår eller att två tredjedelar måste rösta för, är organisationens egen och registreras inte här. Utfallet anges med mbr:applicationStatus på ansökan."@sv ,
+                   "La règle qui décide du vote, par exemple qu'une seule boule noire rejette ou que deux tiers doivent voter pour, est propre à l'organisation et n'est pas consignée ici. Le résultat est indiqué par mbr:applicationStatus sur la demande."@fr ,
+                   "Die Regel, die über die Abstimmung entscheidet, etwa dass eine einzige schwarze Kugel ablehnt oder zwei Drittel dafür stimmen müssen, ist die der Organisation selbst und wird hier nicht festgehalten. Das Ergebnis wird mit mbr:applicationStatus am Antrag angegeben."@de ,
+                   "La regola che decide la votazione, per esempio che una sola pallina nera respinga o che servano due terzi di voti favorevoli, è propria dell'organizzazione e non si registra qui. L'esito si indica con mbr:applicationStatus sulla domanda."@it .
+
 mbr:MembershipEvent a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:subClassOf prov:Activity ;
@@ -482,6 +510,83 @@ mbr:mentor a owl:ObjectProperty ;
                    "Ce n'est pas mbr:sponsor, qui se porte garant du candidat lors de l'admission. Le vocabulaire Relationship a rel:mentorOf, qui relie deux personnes sans organisation ni durée ; cette propriété est portée par l'adhésion, la relation appartient donc à une organisation et à une période."@fr ,
                    "Nicht mbr:sponsor, der bei der Aufnahme für den Kandidaten bürgt. Das Vokabular Relationship hat rel:mentorOf, das zwei Personen ohne Organisation und Zeit verbindet; diese Eigenschaft hängt an der Mitgliedschaft, die Beziehung gehört also zu einer Organisation und einer Periode."@de ,
                    "Non mbr:sponsor, che garantisce per il candidato all'ammissione. Il vocabolario Relationship ha rel:mentorOf, che collega due persone senza organizzazione né tempo; questa proprietà è sull'appartenenza, quindi la relazione appartiene a un'organizzazione e a un periodo."@it .
+
+mbr:applicant a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "applicant"@en , "sökande"@sv , "candidat"@fr , "Antragsteller"@de , "richiedente"@it ;
+    rdfs:domain mbr:MembershipApplication ;
+    rdfs:range foaf:Agent ;
+    skos:definition "The person or other agent that applies for membership."@en ,
+                    "Den person eller annan agent som ansöker om medlemskap."@sv ,
+                    "La personne ou autre agent qui demande l'adhésion."@fr ,
+                    "Die Person oder der andere Akteur, die oder der die Mitgliedschaft beantragt."@de ,
+                    "La persona o altro agente che chiede l'ammissione."@it .
+
+mbr:appliedTo a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "applied to"@en , "sökt medlemskap i"@sv , "adhésion demandée à"@fr , "beantragt bei"@de , "richiesta a"@it ;
+    rdfs:domain mbr:MembershipApplication ;
+    rdfs:range mbr:MembershipOrganization ;
+    skos:definition "The membership organisation that an application is addressed to."@en ,
+                    "Den medlemsorganisation som en ansökan riktas till."@sv ,
+                    "L'organisation de membres à laquelle une demande est adressée."@fr ,
+                    "Die Mitgliederorganisation, an die ein Antrag gerichtet ist."@de ,
+                    "L'organizzazione associativa a cui è rivolta una domanda."@it .
+
+mbr:applicationStatus a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "application status"@en , "ansökningsstatus"@sv , "statut de la demande"@fr , "Antragsstatus"@de , "stato della domanda"@it ;
+    rdfs:domain mbr:MembershipApplication ;
+    rdfs:range skos:Concept ;
+    skos:definition "Where an application stands (see mbrc:ApplicationStatuses)."@en ,
+                    "Hur långt en ansökan har kommit (se mbrc:ApplicationStatuses)."@sv ,
+                    "L'état d'avancement d'une demande (voir mbrc:ApplicationStatuses)."@fr ,
+                    "Der Stand eines Antrags (siehe mbrc:ApplicationStatuses)."@de ,
+                    "A che punto è una domanda (vedi mbrc:ApplicationStatuses)."@it .
+
+mbr:resultingMembership a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "resulting membership"@en , "resulterande medlemskap"@sv , "adhésion résultante"@fr , "resultierende Mitgliedschaft"@de , "appartenenza risultante"@it ;
+    rdfs:domain mbr:MembershipApplication ;
+    rdfs:range org:Membership ;
+    skos:definition "The membership that an accepted application led to."@en ,
+                    "Det medlemskap som en antagen ansökan ledde till."@sv ,
+                    "L'adhésion à laquelle a abouti une demande acceptée."@fr ,
+                    "Die Mitgliedschaft, zu der ein angenommener Antrag geführt hat."@de ,
+                    "L'appartenenza a cui ha portato una domanda accolta."@it .
+
+mbr:ballotOn a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "ballot on"@en , "omröstning om"@sv , "scrutin sur"@fr , "Abstimmung über"@de , "votazione su"@it ;
+    rdfs:domain mbr:Ballot ;
+    rdfs:range mbr:MembershipApplication ;
+    skos:definition "The application that a ballot is held on."@en ,
+                    "Den ansökan som en ballotering gäller."@sv ,
+                    "La demande sur laquelle porte un scrutin."@fr ,
+                    "Der Antrag, über den eine Abstimmung stattfindet."@de ,
+                    "La domanda su cui si tiene una votazione."@it .
+
+mbr:votesFor a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "votes for"@en , "röster för"@sv , "voix pour"@fr , "Stimmen dafür"@de , "voti favorevoli"@it ;
+    rdfs:domain mbr:Ballot ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:definition "The number of votes for the application in a ballot, as a non-negative integer."@en ,
+                    "Antalet röster för ansökan i en ballotering, som ett icke-negativt heltal."@sv ,
+                    "Le nombre de voix pour la demande dans un scrutin, sous forme d'entier non négatif."@fr ,
+                    "Die Zahl der Stimmen für den Antrag in einer Abstimmung, als nichtnegative ganze Zahl."@de ,
+                    "Il numero di voti favorevoli alla domanda in una votazione, come intero non negativo."@it .
+
+mbr:votesAgainst a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "votes against"@en , "röster emot"@sv , "voix contre"@fr , "Gegenstimmen"@de , "voti contrari"@it ;
+    rdfs:domain mbr:Ballot ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:definition "The number of votes against the application in a ballot, such as black balls, as a non-negative integer."@en ,
+                    "Antalet röster emot ansökan i en ballotering, till exempel svartkulor, som ett icke-negativt heltal."@sv ,
+                    "Le nombre de voix contre la demande dans un scrutin, par exemple des boules noires, sous forme d'entier non négatif."@fr ,
+                    "Die Zahl der Stimmen gegen den Antrag in einer Abstimmung, etwa schwarze Kugeln, als nichtnegative ganze Zahl."@de ,
+                    "Il numero di voti contrari alla domanda in una votazione, per esempio palline nere, come intero non negativo."@it .
 
 mbr:concernsMembership a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;

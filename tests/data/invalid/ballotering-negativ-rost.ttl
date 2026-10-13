@@ -1,0 +1,13 @@
+# EXPECT: a ballot with a negative number of votes
+# MESSAGE: mbr:votesAgainst must be one non-negative integer
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:a a foaf:Person .
+ex:app a mbr:MembershipApplication ; mbr:applicant ex:a ; mbr:appliedTo ex:Club ;
+    mbr:applicationStatus mbrc:onBallot .
+ex:ballot a mbr:Ballot ; mbr:ballotOn ex:app ; mbr:votesFor 5 ; mbr:votesAgainst -1 .
