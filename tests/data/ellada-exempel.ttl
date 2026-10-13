@@ -1,0 +1,200 @@
+# Fictional Greek organisations (all names, numbers and people invented for testing): a σωματείο
+# with its registry number and officers, a club, an academy with five kinds of members, an order
+# of the same kind as the Order of the Redeemer, a secret society of 1814-1821 modelled on the Filiki
+# Etaireia, and a grand lodge from which another split in 1986.
+#
+# Most of Greece fits the generic model: a σωματείο is a registered association (an association of
+# at least twenty persons entered in the register of the court of first instance), a λέσχη a club,
+# and the academy's τακτικό, επίτιμο, πρόσεδρο, ξένος εταίρος and αντεπιστέλλον μέλος an ordinary,
+# an honorary, an associate, a foreign and a corresponding member. What is new is in section 14 of
+# fraternal-codes: the classes of the Order of the Redeemer and the degrees of the Filiki Etaireia.
+#
+# The IRIs are ASCII with English local names; the Greek names are the labels, in monotonic
+# orthography. "Greek-letter" sororities and fraternities (Alpha Beta Gamma and the like) are an
+# American tradition that only borrows the letters for its names; they are not Greek content and
+# belong with fraternalc:sorority and fraternalc:collegeFraternity.
+#
+# A draft from general knowledge; the Greek wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix gr:      <https://example.org/ellada/> .
+
+# --- A σωματείο ----------------------------------------------------------------------------------------
+
+gr:Somateio a mbr:MembershipOrganization ;
+    rdfs:label "Πολιτιστικός Σύλλογος Παραδείγματος"@el , "The Example Cultural Association"@en ;
+    org:classification mbrc:voluntaryAssociation ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration gr:somateio-registry ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1995"^^xsd:gYear ;
+    mbr:hasMemberCount gr:somateio-count .
+
+# The entry in the register of associations kept at the court of first instance (an invented number).
+gr:somateio-registry a adms:Identifier ;
+    skos:notation "1234/1995" ;
+    adms:schemaAgency "Βιβλίο Σωματείων Πρωτοδικείου Αθηνών" .
+
+# A σωματείο needs at least twenty persons.
+gr:somateio-count a mbr:MemberCount ;
+    mbr:count 25 ; mbr:asOf "2026-01-01"^^xsd:date .
+
+gr:eleni a foaf:Person ; schema:name "Ελένη Παπαδοπούλου" ; foaf:givenName "Ελένη" ; foaf:familyName "Παπαδοπούλου" .
+gr:nikos a foaf:Person ; schema:name "Νίκος Γεωργίου" ; foaf:givenName "Νίκος" ; foaf:familyName "Γεωργίου" .
+gr:maria a foaf:Person ; schema:name "Μαρία Δημητρίου" ; foaf:givenName "Μαρία" ; foaf:familyName "Δημητρίου" .
+
+# Πρόεδρος, γραμματέας and ταμίας of the board, all hub offices.
+gr:eleni-president a mbr:Tenure ;
+    org:member gr:eleni ; org:organization gr:Somateio ;
+    org:role mbrc:president ; mbr:startDate "2024-06-15"^^xsd:date .
+gr:nikos-secretary a mbr:Tenure ;
+    org:member gr:nikos ; org:organization gr:Somateio ;
+    org:role mbrc:secretary ; mbr:startDate "2024-06-15"^^xsd:date .
+gr:maria-treasurer a mbr:Tenure ;
+    org:member gr:maria ; org:organization gr:Somateio ;
+    org:role mbrc:treasurer ; mbr:startDate "2024-06-15"^^xsd:date .
+
+gr:assembly-2026 a mbr:Gathering ;
+    rdfs:label "Γενική Συνέλευση 2026"@el ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer gr:Somateio ;
+    mbr:startDate "2026-03-21"^^xsd:date .
+
+# --- A λέσχη -----------------------------------------------------------------------------------------------
+
+gr:Club a mbr:MembershipOrganization ;
+    rdfs:label "Λέσχη Παραδείγματος"@el , "The Example Club"@en ;
+    org:classification mbrc:privateClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1900"^^xsd:gYear .
+
+# --- An academy with five kinds of members -----------------------------------------------------------
+
+gr:Academy a mbr:MembershipOrganization ;
+    rdfs:label "Ακαδημία Παραδείγματος"@el , "The Example Academy"@en ;
+    org:classification mbrc:academy ;
+    rov:orgType mbrc:publicLawBody ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1926"^^xsd:gYear .
+
+gr:alexandra a foaf:Person ; schema:name "Αλεξάνδρα Κωνσταντίνου" ; foaf:givenName "Αλεξάνδρα" ; foaf:familyName "Κωνσταντίνου" .
+gr:vasilis a foaf:Person ; schema:name "Βασίλης Αναστασίου" ; foaf:givenName "Βασίλης" ; foaf:familyName "Αναστασίου" .
+gr:giorgos a foaf:Person ; schema:name "Γιώργος Ιωάννου" ; foaf:givenName "Γιώργος" ; foaf:familyName "Ιωάννου" .
+gr:dimitra a foaf:Person ; schema:name "Δήμητρα Νικολάου" ; foaf:givenName "Δήμητρα" ; foaf:familyName "Νικολάου" .
+gr:evangelos a foaf:Person ; schema:name "Ευάγγελος Παναγιώτου" ; foaf:givenName "Ευάγγελος" ; foaf:familyName "Παναγιώτου" .
+
+# τακτικό μέλος: ordinary; επίτιμο: honorary; πρόσεδρο: associate; ξένος εταίρος: foreign;
+# αντεπιστέλλον: corresponding.
+gr:alexandra-ordinary a mbr:Membership ;
+    org:member gr:alexandra ; org:organization gr:Academy ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2008"^^xsd:gYear .
+gr:vasilis-honorary a mbr:Membership ;
+    org:member gr:vasilis ; org:organization gr:Academy ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:honorary ;
+    mbr:startDate "2012"^^xsd:gYear .
+gr:giorgos-associate a mbr:Membership ;
+    org:member gr:giorgos ; org:organization gr:Academy ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:associate ;
+    mbr:startDate "2015"^^xsd:gYear .
+gr:dimitra-foreign a mbr:Membership ;
+    org:member gr:dimitra ; org:organization gr:Academy ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:foreignMember ;
+    mbr:startDate "2018"^^xsd:gYear .
+gr:evangelos-corresponding a mbr:Membership ;
+    org:member gr:evangelos ; org:organization gr:Academy ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:correspondingMember ;
+    mbr:startDate "2020"^^xsd:gYear .
+
+# --- An order of the same kind as the Order of the Redeemer ----------------------------------------------
+
+gr:State a org:Organization ;
+    rdfs:label "Το Κράτος"@el , "The State"@en .
+
+gr:Order a fraternal:FraternalOrder ;
+    rdfs:label "Τάγμα Αριστείας Παραδείγματος"@el , "The Example Order of Merit"@en ;
+    org:classification fraternalc:orderOfChivalry ;
+    fraternal:fonsHonorum gr:State ;
+    fraternal:degreeSystem fraternalc:RedeemerGrades ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+
+gr:foreign-head a foaf:Person ; schema:name "Foreign Head of State" .
+
+# In practice only the Grand Cross is given, to a foreign head of state.
+gr:grand-cross a fraternal:DegreeConferral ;
+    mbr:recipient gr:foreign-head ;
+    mbr:conferred fraternalc:elGrandCross ;
+    mbr:conferredBy gr:Order ;
+    mbr:startDate "2023-05-10"^^xsd:date .
+
+# --- A secret society of 1814-1821 modelled on the Filiki Etaireia -------------------------------------------
+
+gr:SecretSociety a fraternal:FraternalOrder ;
+    rdfs:label "Μυστική Εταιρεία Παραδείγματος"@el , "The Example Secret Society"@en ;
+    org:classification fraternalc:secretSociety ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:foundingDate "1814"^^xsd:gYear ;
+    mbr:dissolutionDate "1821"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:closedOrganization ;
+    fraternal:degreeSystem fraternalc:FilikiDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:oathOfObligation , fraternalc:secrecy .
+
+gr:andreas a foaf:Person ; schema:name "Ανδρέας Σταύρου" ; foaf:givenName "Ανδρέας" ; foaf:familyName "Σταύρου" .
+gr:petros a foaf:Person ; schema:name "Πέτρος Μιχαήλ" ; foaf:givenName "Πέτρος" ; foaf:familyName "Μιχαήλ" .
+
+gr:andreas-initiation a fraternal:DegreeConferral ;
+    mbr:recipient gr:andreas ;
+    mbr:conferred fraternalc:filikiSwornBrother ;
+    mbr:conferredBy gr:SecretSociety ;
+    mbr:startDate "1818"^^xsd:gYear .
+gr:petros-shepherd a fraternal:DegreeConferral ;
+    mbr:recipient gr:petros ;
+    mbr:conferred fraternalc:filikiShepherd ;
+    mbr:conferredBy gr:SecretSociety ;
+    mbr:startDate "1817"^^xsd:gYear .
+
+# --- A grand lodge, and another that split from it on 7 June 1986 ---------------------------------------------
+# (Before the split the grand lodge had been the Grand Orient and was renamed Grand Lodge.)
+
+gr:GrandLodge a fraternal:GrandBody ;
+    rdfs:label "Μεγάλη Στοά Παραδείγματος"@el , "The Example Grand Lodge"@en ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1867"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees .
+
+gr:NationalGrandLodge a fraternal:GrandBody ;
+    rdfs:label "Εθνική Μεγάλη Στοά Παραδείγματος"@el , "The Example National Grand Lodge"@en ;
+    org:classification fraternalc:fraternalOrder ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1986-06-07"^^xsd:date ;
+    mbr:organizationStatus mbrc:activeOrganization .
+
+gr:split-1986 a org:ChangeEvent ;
+    rdfs:label "Η διάσπαση του 1986"@el , "The split of 1986"@en ;
+    org:originalOrganization gr:GrandLodge ;
+    org:resultingOrganization gr:NationalGrandLodge ;
+    mbr:changeEventType mbrc:split ;
+    mbr:startDate "1986-06-07"^^xsd:date .

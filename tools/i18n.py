@@ -39,7 +39,7 @@ from rdflib.namespace import DCTERMS, OWL, RDFS, SKOS
 LANGUAGE_NAMES = {"en": "English", "sv": "Svenska", "de": "Deutsch", "fr": "Français",
                   "es": "Español", "it": "Italiano", "nl": "Nederlands", "da": "Dansk",
                   "nb": "Norsk bokmål", "fi": "Suomi", "pl": "Polski", "pt": "Português", "la": "Latina",
-                  "hu": "Magyar"}
+                  "hu": "Magyar", "el": "Ελληνικά"}
 
 # Well-formed BCP 47 tag, as written in Turtle: "de", "pt-BR", "zh-Hans".
 LANGUAGE_TAG = re.compile(r"^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$")
