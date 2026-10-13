@@ -1,0 +1,22 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-hungary
+# mapping_set_version: 1.0.0
+# mapping_set_description: Hungarian order-of-merit grades, the offices of the Foederatio Emericana and the student title bajtárs placed under the generic chivalric grades, office types and member titles.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:huLovagkereszt	Knight's Cross	skos:closeMatch	fraternalc:knightGrade	Knight	semapv:ManualMappingCuration	0.9	The lowest grade of the Order of Merit.
+fraternalc:huTisztikereszt	Officer's Cross	skos:closeMatch	fraternalc:officerGrade	Officer	semapv:ManualMappingCuration	0.95	The grade between the Knight's Cross and the Commander's Cross.
+fraternalc:huParancsnokiKereszt	Commander's Cross	skos:closeMatch	fraternalc:commanderGrade	Commander	semapv:ManualMappingCuration	0.95	The commander grade (parancsnoki kereszt).
+fraternalc:huParancsnokiKeresztCsillaggal	Commander's Cross with Star	skos:closeMatch	fraternalc:commanderFirstClassGrade	Commander First Class	semapv:ManualMappingCuration	0.85	The commander grade with a star, between the Commander's Cross and the Grand Cross.
+fraternalc:huNagykereszt	Grand Cross	skos:closeMatch	fraternalc:grandCrossGrade	Grand Cross	semapv:ManualMappingCuration	0.95	The grand cross.
+fraternalc:huNagykeresztNyaklanccal	Grand Cross with Collar and Golden Rayed Star	skos:closeMatch	fraternalc:collarGrade	Grand Collar	semapv:ManualMappingCuration	0.85	The highest grade, with a collar, given only to heads of state.
+fraternalc:kommendator	Kommendátor	skos:closeMatch	mbrc:president	President	semapv:ManualMappingCuration	0.8	The head of the Foederatio Emericana.
+fraternalc:praeceptor	Praeceptor	skos:closeMatch	mbrc:vicePresident	Vice President	semapv:ManualMappingCuration	0.8	The deputy of the Kommendátor.
+fraternalc:anonymus	Anonymus	skos:broadMatch	mbrc:secretary	Secretary	semapv:ManualMappingCuration	0.6	The national secretary-general; a senior form of secretary.
+fraternalc:magisterMagnus	Magister Magnus	skos:broadMatch	mbrc:chaplain	Chaplain	semapv:ManualMappingCuration	0.6	The chief priest of the federation, who looked after its religious life.
+fraternalc:bajtars	Bajtárs	skos:closeMatch	fraternalc:companion	Companion	semapv:ManualMappingCuration	0.7	Comrade, for a man or a woman.

@@ -1,0 +1,274 @@
+# Fictional Hungarian organisations (all names, numbers and people invented for testing): an
+# egyesület with its registry number, public-benefit status and officers; a foundation; a reading
+# circle, a choral society and a national casino; an academy with four kinds of members; the
+# Hungarian-style Catholic student federation Foederatio Imaginaria (1921-1946) with its offices;
+# an Order of Merit with a Knight's Cross; a Vitézi Rend that is claimed by two organisations; and
+# a grand lodge that was banned in 1920 and 1950 and refounded in 1989, with a reform lodge it
+# held irregular.
+#
+# Most of Hungary fits the generic model: an egyesület is a registered association (registered at
+# the court), a közhasznú status is the generic public-benefit status, a rendes tag an ordinary
+# member, a levelező tag a corresponding member, a tiszteleti tag an honorary member, a külső tag a
+# foreign member. What is new is in section 13 of fraternal-codes: the grades of the Order of
+# Merit, the offices of the Emericana and the title bajtárs.
+#
+# Hungarian names are written family name first; foaf:familyName and foaf:givenName say which is
+# which, so the order of schema:name does not have to be guessed.
+#
+# A draft from general knowledge; the Hungarian wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix hu:      <https://example.org/magyarorszag/> .
+
+# --- An egyesület with public-benefit status -----------------------------------------------------
+
+hu:KertbaratEgyesulet a mbr:MembershipOrganization ;
+    rdfs:label "Példavölgyi Kertbarát Egyesület"@hu , "The Példavölgy Garden Friends' Association"@en ;
+    org:classification mbrc:hobbyClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration hu:egyesulet-nyilvantartas ;
+    mbr:publicBenefitStatus mbrc:publicBenefit ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1998"^^xsd:gYear ;
+    mbr:hasMemberCount hu:egyesulet-letszam .
+
+# The registry number at the court (an invented number).
+hu:egyesulet-nyilvantartas a adms:Identifier ;
+    skos:notation "01-02-0000001" ;
+    adms:schemaAgency "Törvényszéki civil szervezeti nyilvántartás" .
+
+# An egyesület needs at least ten members.
+hu:egyesulet-letszam a mbr:MemberCount ;
+    mbr:count 12 ; mbr:asOf "2026-01-01"^^xsd:date .
+
+hu:anna a foaf:Person ; schema:name "Kovács Anna" ; foaf:familyName "Kovács" ; foaf:givenName "Anna" .
+hu:bela a foaf:Person ; schema:name "Szabó Béla" ; foaf:familyName "Szabó" ; foaf:givenName "Béla" .
+hu:csilla a foaf:Person ; schema:name "Tóth Csilla" ; foaf:familyName "Tóth" ; foaf:givenName "Csilla" .
+
+# Elnök, titkár and a member of the felügyelő bizottság (the supervisory board, a hub auditor).
+hu:anna-elnok a mbr:Tenure ;
+    org:member hu:anna ; org:organization hu:KertbaratEgyesulet ;
+    org:role mbrc:president ; mbr:startDate "2023-05-13"^^xsd:date .
+hu:bela-titkar a mbr:Tenure ;
+    org:member hu:bela ; org:organization hu:KertbaratEgyesulet ;
+    org:role mbrc:secretary ; mbr:startDate "2023-05-13"^^xsd:date .
+hu:csilla-fb a mbr:Tenure ;
+    org:member hu:csilla ; org:organization hu:KertbaratEgyesulet ;
+    org:role mbrc:auditor ; mbr:startDate "2023-05-13"^^xsd:date .
+
+hu:kozgyules-2026 a mbr:Gathering ;
+    rdfs:label "Közgyűlés 2026"@hu ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer hu:KertbaratEgyesulet ;
+    mbr:startDate "2026-03-14"^^xsd:date .
+
+# --- A foundation: no members, but a public-benefit status ----------------------------------------
+
+hu:PeldaAlapitvany a org:Organization ;
+    rdfs:label "Példa Alapítvány"@hu , "The Példa Foundation"@en ;
+    rov:orgType mbrc:foundation ;
+    mbr:publicBenefitStatus mbrc:publicBenefit ;
+    mbr:foundingDate "2005"^^xsd:gYear .
+
+# --- A reading circle, a choral society and a national casino ---------------------------------------------
+
+hu:Olvasokor a mbr:MembershipOrganization ;
+    rdfs:label "Példafalvi Olvasókör"@hu , "The Példafalva Reading Circle"@en ;
+    org:classification mbrc:literaryClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1894"^^xsd:gYear .
+
+hu:Dalarda a mbr:MembershipOrganization ;
+    rdfs:label "Példafalvi Dalárda"@hu , "The Példafalva Choral Society"@en ;
+    org:classification mbrc:choralSociety ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1872"^^xsd:gYear .
+
+hu:NemzetiKaszino a mbr:MembershipOrganization ;
+    rdfs:label "Képzelt Nemzeti Kaszinó"@hu , "The Imaginary National Casino"@en ;
+    org:classification mbrc:gentlemensClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1827"^^xsd:gYear .
+
+# --- An academy with four kinds of members ------------------------------------------------------------------
+
+hu:Akademia a mbr:MembershipOrganization ;
+    rdfs:label "Magyar Képzelt Tudományos Akadémia"@hu , "The Hungarian Imaginary Academy of Sciences"@en ;
+    org:classification mbrc:academy ;
+    rov:orgType mbrc:publicLawBody ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1830"^^xsd:gYear .
+
+hu:dora a foaf:Person ; schema:name "Nagy Dóra" ; foaf:familyName "Nagy" ; foaf:givenName "Dóra" .
+hu:endre a foaf:Person ; schema:name "Horváth Endre" ; foaf:familyName "Horváth" ; foaf:givenName "Endre" .
+hu:flora a foaf:Person ; schema:name "Varga Flóra" ; foaf:familyName "Varga" ; foaf:givenName "Flóra" .
+hu:gabor a foaf:Person ; schema:name "Kiss Gábor" ; foaf:familyName "Kiss" ; foaf:givenName "Gábor" .
+
+# A rendes tag is an ordinary member, a levelező tag a corresponding member, a külső tag a foreign
+# member and a tiszteleti tag an honorary member.
+hu:dora-rendes a mbr:Membership ;
+    org:member hu:dora ; org:organization hu:Akademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2010"^^xsd:gYear .
+hu:endre-levelezo a mbr:Membership ;
+    org:member hu:endre ; org:organization hu:Akademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:correspondingMember ;
+    mbr:startDate "2016"^^xsd:gYear .
+hu:flora-kulso a mbr:Membership ;
+    org:member hu:flora ; org:organization hu:Akademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:foreignMember ;
+    mbr:startDate "2019"^^xsd:gYear .
+hu:gabor-tiszteleti a mbr:Membership ;
+    org:member hu:gabor ; org:organization hu:Akademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:honorary ;
+    mbr:startDate "2021"^^xsd:gYear .
+
+# --- A Catholic student federation of 1921-1946 -------------------------------------------------------------------
+
+hu:FoederatioImaginaria a mbr:MembershipOrganization ;
+    rdfs:label "Foederatio Imaginaria"@hu , "Katolikus Magyar Képzelt Egyetemi Bajtársi Szövetség"@hu ;
+    org:classification fraternalc:studentenverbindungDachverband ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1921"^^xsd:gYear ;
+    mbr:dissolutionDate "1946"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:closedOrganization ;
+    fraternal:memberTitle fraternalc:bajtars .
+
+hu:istvan a foaf:Person ; schema:name "Molnár István" ; foaf:familyName "Molnár" ; foaf:givenName "István" .
+hu:janos a foaf:Person ; schema:name "Lakatos János" ; foaf:familyName "Lakatos" ; foaf:givenName "János" .
+
+# The Kommendátor heads the Vezérség; the Praeceptor is his deputy.
+hu:istvan-kommendator a mbr:Tenure ;
+    org:member hu:istvan ; org:organization hu:FoederatioImaginaria ;
+    org:role fraternalc:kommendator ;
+    mbr:startDate "1934"^^xsd:gYear ; mbr:endDate "1938"^^xsd:gYear .
+hu:janos-praeceptor a mbr:Tenure ;
+    org:member hu:janos ; org:organization hu:FoederatioImaginaria ;
+    org:role fraternalc:praeceptor ;
+    mbr:startDate "1934"^^xsd:gYear ; mbr:endDate "1938"^^xsd:gYear .
+
+# --- An Order of Merit with a Knight's Cross ------------------------------------------------------------------
+
+hu:Koztarsasag a org:Organization ;
+    rdfs:label "A Köztársaság"@hu , "The Republic"@en .
+
+hu:ErdemRend a fraternal:FraternalOrder ;
+    rdfs:label "Képzelt Érdemrend"@hu , "The Imaginary Order of Merit"@en ;
+    org:classification fraternalc:orderOfChivalry ;
+    fraternal:fonsHonorum hu:Koztarsasag ;
+    fraternal:degreeSystem fraternalc:HungarianOrderGrades ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+
+hu:katalin a foaf:Person ; schema:name "Fekete Katalin" ; foaf:familyName "Fekete" ; foaf:givenName "Katalin" .
+
+hu:katalin-lovagkereszt a fraternal:DegreeConferral ;
+    mbr:recipient hu:katalin ;
+    mbr:conferred fraternalc:huLovagkereszt ;
+    mbr:conferredBy hu:ErdemRend ;
+    mbr:startDate "2024-03-15"^^xsd:date .
+
+# --- A Vitézi Rend claimed by two organisations -----------------------------------------------------------------
+# The real order, founded in 1920, was banned in 1945; the use of the title was forbidden in 1947
+# and the prohibition upheld by the Constitutional Court. After 1989 more than one organisation
+# has claimed to continue it. The two here are invented.
+
+hu:VitezirendRegi a fraternal:FraternalOrder ;
+    rdfs:label "Képzelt Vitézi Rend (1920)"@hu ;
+    org:classification fraternalc:orderOfChivalry ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:byConferral ;
+    mbr:foundingDate "1920"^^xsd:gYear ;
+    mbr:dissolutionDate "1945"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:suppressedOrganization .
+
+hu:VitezirendA a fraternal:FraternalOrder ;
+    rdfs:label "Képzelt Vitézi Rend A. szervezete"@hu ;
+    org:classification fraternalc:selfStyledOrderOfChivalry ;
+    mbr:foundingDate "1992"^^xsd:gYear ;
+    fraternal:modelledOn hu:VitezirendRegi .
+
+hu:VitezirendB a fraternal:FraternalOrder ;
+    rdfs:label "Képzelt Vitézi Rend B. szervezete"@hu ;
+    org:classification fraternalc:selfStyledOrderOfChivalry ;
+    mbr:foundingDate "1996"^^xsd:gYear ;
+    fraternal:modelledOn hu:VitezirendRegi .
+
+hu:Alkotmanybirosag a org:Organization ;
+    rdfs:label "Alkotmánybíróság"@hu , "The Constitutional Court"@en .
+
+hu:vitezi-bizonyitas-2011 a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder hu:VitezirendA ;
+    fraternal:assessedBy hu:Alkotmanybirosag ;
+    fraternal:assessmentOutcome fraternalc:notRecognised ;
+    mbr:startDate "2011-10"^^xsd:gYearMonth ;
+    dcterms:source "1947. évi IV. törvény; Alkotmánybírósági határozat 2011 (an invented summary)" .
+
+# --- A grand lodge banned in 1920 and 1950 and refounded in 1989 ----------------------------------------------
+# After the Hungarian union of two grand lodges in 1886, the minister banned freemasonry on
+# 18 May 1920; it was allowed again in 1945, closed after five years, and refounded in 1989.
+
+hu:Nagypaholy a fraternal:GrandBody ;
+    rdfs:label "Magyarországi Képzelt Symbolikus Nagypáholy"@hu ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1886"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ;
+    mbr:hasPeriod hu:nagypaholy-elso , hu:nagypaholy-tiltas-1920 , hu:nagypaholy-1945 ,
+                  hu:nagypaholy-tiltas-1950 , hu:nagypaholy-ujra .
+
+hu:nagypaholy-elso a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1886"^^xsd:gYear ; mbr:endDate "1920-05-18"^^xsd:date .
+hu:nagypaholy-tiltas-1920 a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:suppressedOrganization ;
+    mbr:startDate "1920-05-18"^^xsd:date ; mbr:endDate "1945"^^xsd:gYear .
+hu:nagypaholy-1945 a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1945"^^xsd:gYear ; mbr:endDate "1950"^^xsd:gYear .
+hu:nagypaholy-tiltas-1950 a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:suppressedOrganization ;
+    mbr:startDate "1950"^^xsd:gYear ; mbr:endDate "1989"^^xsd:gYear .
+hu:nagypaholy-ujra a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1989"^^xsd:gYear .
+
+# A reform grand lodge of 1912 that went on working after the ban, and that the other held irregular.
+hu:ReformNagypaholy a fraternal:GrandBody ;
+    rdfs:label "Magyarországi Képzelt Reform Nagypáholy"@hu ;
+    org:classification fraternalc:fraternalOrder ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1912"^^xsd:gYear .
+
+hu:reform-bizonyitas a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder hu:ReformNagypaholy ;
+    fraternal:assessedBy hu:Nagypaholy ;
+    fraternal:assessmentOutcome fraternalc:irregular ;
+    mbr:startDate "1912"^^xsd:gYear ;
+    dcterms:source "A resolution of the Nagypáholy (an invented summary)" .
