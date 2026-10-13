@@ -945,7 +945,7 @@ mbrc:OfficeTypes a skos:ConceptScheme , owl:NamedIndividual ;
 mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "President"@en , "Ordförande"@sv , "Président"@fr , "Präsident"@de , "Presidente"@it ;
-    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv , "Grand Maître"@fr , "Gran Maestro"@it ;
+    skos:altLabel "Chair"@en , "Grand Master"@en , "Stormästare"@sv , "Grand Maître"@fr , "Obmann"@de-AT , "Obfrau"@de-AT , "Gran Maestro"@it ;
     skos:definition "The highest executive officer of the organisation."@en , "Organisationens högsta verkställande ämbetsman."@sv , "Le premier responsable exécutif de l'organisation."@fr , "Der höchste Amtsträger der Organisation."@de , "Il più alto titolare di carica esecutiva dell'organizzazione."@it ;
     skos:scopeNote "Whatever the head is called locally (grand master, chancellor, governor …), map the head's office here and keep the local title as its label."@en ,
                    "Vad den högste ämbetsmannen än kallas lokalt (stormästare, kansler, guvernör …) mappas ämbetet hit och den lokala titeln behålls som dess etikett."@sv ,
@@ -956,6 +956,7 @@ mbrc:president a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:vicePresident a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Vice President"@en , "Vice ordförande"@sv , "Vice-président"@fr , "Vizepräsident"@de , "Vicepresidente"@it ;
+    skos:altLabel "Obmann-Stellvertreter"@de-AT ;
     skos:definition "Deputy to the highest officer."@en , "Ställföreträdare för den högste ämbetsmannen."@sv , "Suppléant du premier responsable."@fr , "Stellvertreter des höchsten Amtsträgers."@de , "Sostituto del più alto titolare di carica."@it .
 
 mbrc:chancellor a mbr:Office , skos:Concept , owl:NamedIndividual ;
@@ -981,7 +982,7 @@ mbrc:secretary a mbr:Office , skos:Concept , owl:NamedIndividual ;
 mbrc:treasurer a mbr:Office , skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OfficeTypes ; skos:topConceptOf mbrc:OfficeTypes ;
     skos:prefLabel "Treasurer"@en , "Skattmästare"@sv , "Trésorier"@fr , "Schatzmeister"@de , "Tesoriere"@it ;
-    skos:altLabel "Kassör"@sv , "Cassiere"@it ;
+    skos:altLabel "Kassör"@sv , "Kassier"@de-AT , "Cassiere"@it ;
     skos:definition "Manages the organisation's finances."@en , "Förvaltar organisationens ekonomi."@sv , "Gère les finances de l'organisation."@fr , "Verwaltet die Finanzen der Organisation."@de , "Gestisce le finanze dell'organizzazione."@it .
 
 mbrc:archivist a mbr:Office , skos:Concept , owl:NamedIndividual ;
