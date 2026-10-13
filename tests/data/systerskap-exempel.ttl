@@ -54,6 +54,22 @@ sor:FraterExemplum a fraternal:FraternalOrder ;
     org:classification fraternalc:collegeFraternity ;
     mbr:genderPolicy mbrc:menOnly .
 
+# Conditions of entry. An alumnae circle takes initiated sisters only (a membership in the
+# sorority and the degree), and a ladies' auxiliary is open to women who are related to
+# a member of Frater Exemplum.
+sor:AlumnaeCircle a fraternal:FraternalOrder ;
+    rdfs:label "Soror Exemplum Alumnae Circle"@en ;
+    org:classification fraternalc:sorority ;
+    mbr:genderPolicy mbrc:womenOnly ;
+    fraternal:requiresMembershipIn sor:SororExemplum ;
+    fraternal:requiresDegree sor:Initiate .
+
+sor:Auxiliary a fraternal:FraternalOrder ;
+    rdfs:label "Frater Exemplum Auxiliary"@en ;
+    org:classification fraternalc:adoptiveOrder ;
+    mbr:genderPolicy mbrc:womenOnly ;
+    fraternal:requiresRelationToMembersOf sor:FraterExemplum .
+
 # --- Degrees, mapped to the generic craft-style ladder ---
 
 sor:Degrees a skos:ConceptScheme , fraternal:DegreeSystem ;

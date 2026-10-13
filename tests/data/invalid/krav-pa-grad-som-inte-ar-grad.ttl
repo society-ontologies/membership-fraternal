@@ -1,0 +1,10 @@
+# EXPECT: a degree requirement that points to something that is not a degree
+# MESSAGE: fraternal:requiresDegree must be a fraternal:Degree
+@prefix org:       <http://www.w3.org/ns/org#> .
+@prefix fraternal: <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix ex:        <https://example.org/invalid/> .
+
+ex:Order a fraternal:FraternalOrder ; org:classification fraternalc:fraternalOrder ;
+    fraternal:requiresDegree ex:Office .
+ex:Office a org:Role .

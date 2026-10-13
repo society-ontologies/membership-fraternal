@@ -1349,7 +1349,7 @@ fraternalc:gavel a skos:Concept , owl:NamedIndividual ;
                     "Il maglietto con cui il presidente apre, dirige e chiude una riunione, segno di quella carica."@it .
 
 ##############################################################################
-# 7. ASSESSMENT OUTCOMES  (values of fraternal:assessmentOutcome)
+# 7. ASSESSMENT OUTCOMES AND RECOGNITION TYPES  (values of fraternal:assessmentOutcome and fraternal:recognitionType)
 ##############################################################################
 
 fraternalc:AssessmentOutcomes a skos:ConceptScheme , owl:NamedIndividual ;
@@ -1360,7 +1360,8 @@ fraternalc:AssessmentOutcomes a skos:ConceptScheme , owl:NamedIndividual ;
                     "Zu welchem Ergebnis eine fraternal:LegitimacyAssessment über einen Orden kam."@de ,
                     "Ciò che una fraternal:LegitimacyAssessment ha concluso su un ordine."@it ;
     skos:hasTopConcept fraternalc:recognisedAsGenuine , fraternalc:notRecognised , fraternalc:declaredSelfStyled ,
-                       fraternalc:wearingPermitted , fraternalc:wearingProhibited .
+                       fraternalc:wearingPermitted , fraternalc:wearingProhibited ,
+                       fraternalc:regular , fraternalc:irregular , fraternalc:clandestine .
 
 fraternalc:recognisedAsGenuine a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:AssessmentOutcomes ; skos:topConceptOf fraternalc:AssessmentOutcomes ;
@@ -1409,6 +1410,74 @@ fraternalc:wearingProhibited a skos:Concept , owl:NamedIndividual ;
                     "Une autorité interdit le port des insignes de l'ordre en public ou dans un cadre donné."@fr ,
                     "Eine Stelle verbietet, die Insignien des Ordens in der Öffentlichkeit oder in einem bestimmten Rahmen zu tragen."@de ,
                     "Un'autorità vieta di portare le insegne dell'ordine in pubblico o in un dato contesto."@it .
+
+fraternalc:regular a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:AssessmentOutcomes ; skos:topConceptOf fraternalc:AssessmentOutcomes ;
+    skos:prefLabel "Regular"@en , "Reguljär"@sv , "Régulière"@fr , "Regulär"@de , "Regolare"@it ;
+    skos:definition "The assessing body holds the other to be regular: lawfully constituted and working on the principles the assessing body requires. Recognition normally follows."@en ,
+                    "Det bedömande organet anser det andra vara reguljärt: lagligen konstituerat och verksamt på de principer som det bedömande organet kräver. Erkännande följer normalt."@sv ,
+                    "L'organe qui évalue tient l'autre pour régulier : légalement constitué et travaillant selon les principes qu'il exige. La reconnaissance suit normalement."@fr ,
+                    "Das bewertende Organ hält das andere für regulär: rechtmäßig konstituiert und nach den Grundsätzen arbeitend, die es verlangt. Die Anerkennung folgt normalerweise."@de ,
+                    "L'organismo che valuta ritiene l'altro regolare: legittimamente costituito e operante secondo i principi che esso richiede. Di norma segue il riconoscimento."@it ;
+    skos:scopeNote "The terms regular, irregular and clandestine come from freemasonry, and their use differs between jurisdictions. The definitions here are the common core; a body that uses them differently should say how in its own assessment."@en ,
+                   "Termerna reguljär, irreguljär och klandestin kommer från frimureriet, och bruket skiljer sig mellan jurisdiktioner. Definitionerna här är den gemensamma kärnan; ett organ som använder dem annorlunda bör säga hur i sin egen bedömning."@sv ,
+                   "Les termes régulier, irrégulier et clandestin viennent de la franc-maçonnerie, et leur emploi diffère selon les juridictions. Les définitions données ici en sont le noyau commun ; un organe qui les emploie autrement devrait dire comment dans sa propre évaluation."@fr ,
+                   "Die Begriffe regulär, irregulär und klandestin stammen aus der Freimaurerei, und ihr Gebrauch unterscheidet sich zwischen Jurisdiktionen. Die Definitionen hier sind der gemeinsame Kern; ein Organ, das sie anders verwendet, sollte in seiner eigenen Bewertung sagen, wie."@de ,
+                   "I termini regolare, irregolare e clandestino vengono dalla massoneria, e il loro uso varia tra le giurisdizioni. Le definizioni qui date sono il nucleo comune; un organismo che li usa diversamente dovrebbe dire come nella propria valutazione."@it .
+
+fraternalc:irregular a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:AssessmentOutcomes ; skos:topConceptOf fraternalc:AssessmentOutcomes ;
+    skos:prefLabel "Irregular"@en , "Irreguljär"@sv , "Irrégulière"@fr , "Irregulär"@de , "Irregolare"@it ;
+    skos:definition "The assessing body holds the other not to meet its requirements, for example in whom it admits or what it asks of its members, although the other may be lawfully constituted. Recognition is withheld or withdrawn."@en ,
+                    "Det bedömande organet anser att det andra inte uppfyller dess krav, till exempel i fråga om vem det tar in eller vad det begär av sina medlemmar, även om det andra kan vara lagligen konstituerat. Erkännande nekas eller dras tillbaka."@sv ,
+                    "L'organe qui évalue tient l'autre pour ne pas remplir ses exigences, par exemple quant à qui il admet ou à ce qu'il demande à ses membres, même si l'autre peut être légalement constitué. La reconnaissance est refusée ou retirée."@fr ,
+                    "Das bewertende Organ hält das andere für nicht den eigenen Anforderungen entsprechend, etwa hinsichtlich der Aufnahme von Personen oder dessen, was es von seinen Mitgliedern verlangt, auch wenn das andere rechtmäßig konstituiert sein kann. Die Anerkennung wird verweigert oder entzogen."@de ,
+                    "L'organismo che valuta ritiene che l'altro non soddisfi i suoi requisiti, per esempio quanto a chi ammette o a ciò che chiede ai propri membri, anche se l'altro può essere legittimamente costituito. Il riconoscimento è negato o ritirato."@it .
+
+fraternalc:clandestine a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:AssessmentOutcomes ; skos:topConceptOf fraternalc:AssessmentOutcomes ;
+    skos:prefLabel "Clandestine"@en , "Klandestin"@sv , "Clandestine"@fr , "Klandestin"@de , "Clandestina"@it ;
+    skos:definition "The assessing body holds the other to work without lawful authority, for example a lodge founded without a warrant from a regular grand body."@en ,
+                    "Det bedömande organet anser att det andra verkar utan laglig auktoritet, till exempel en loge som grundats utan stiftelsebrev från ett reguljärt överordnat organ."@sv ,
+                    "L'organe qui évalue tient l'autre pour travailler sans autorité légitime, par exemple une loge fondée sans lettres patentes d'un organe dirigeant régulier."@fr ,
+                    "Das bewertende Organ hält das andere für ohne rechtmäßige Autorität arbeitend, etwa eine Loge, die ohne Patent eines regulären übergeordneten Organs gegründet wurde."@de ,
+                    "L'organismo che valuta ritiene che l'altro operi senza legittima autorità, per esempio una loggia fondata senza la patente di un organismo di governo regolare."@it .
+
+fraternalc:RecognitionTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Recognition Types"@en , "Typer av erkännande"@sv , "Types de reconnaissance"@fr , "Arten der Anerkennung"@de , "Tipi di riconoscimento"@it ;
+    skos:definition "The kinds of relation one body can formally have to another, recorded on a fraternal:Recognition. Used with fraternal:recognitionType."@en ,
+                    "De slag av förhållande ett organ formellt kan ha till ett annat, registrerade på en fraternal:Recognition. Används med fraternal:recognitionType."@sv ,
+                    "Les sortes de relation qu'un organe peut avoir formellement avec un autre, consignées sur une fraternal:Recognition. S'utilise avec fraternal:recognitionType."@fr ,
+                    "Die Arten von Beziehung, die ein Organ förmlich zu einem anderen haben kann, festgehalten an einer fraternal:Recognition. Wird mit fraternal:recognitionType verwendet."@de ,
+                    "I tipi di rapporto che un organismo può avere formalmente con un altro, registrati su una fraternal:Recognition. Si usa con fraternal:recognitionType."@it ;
+    skos:hasTopConcept fraternalc:regularRecognition , fraternalc:amity , fraternalc:intervisitation .
+
+fraternalc:regularRecognition a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RecognitionTypes ; skos:topConceptOf fraternalc:RecognitionTypes ;
+    skos:prefLabel "Recognition as Regular"@en , "Erkännande som reguljär"@sv , "Reconnaissance comme régulière"@fr , "Anerkennung als regulär"@de , "Riconoscimento come regolare"@it ;
+    skos:definition "The recognising body formally accepts the other as regular. It is directional: the other body may or may not recognise it in return."@en ,
+                    "Det erkännande organet godtar formellt det andra som reguljärt. Det är riktat: det andra organet kan eller kan inte erkänna det tillbaka."@sv ,
+                    "L'organe qui reconnaît accepte formellement l'autre comme régulier. Elle est orientée : l'autre organe peut ou non le reconnaître en retour."@fr ,
+                    "Das anerkennende Organ nimmt das andere förmlich als regulär an. Sie ist gerichtet: das andere Organ kann es erwidern oder nicht."@de ,
+                    "L'organismo che riconosce accetta formalmente l'altro come regolare. È orientato: l'altro organismo può o no riconoscerlo a sua volta."@it .
+
+fraternalc:amity a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RecognitionTypes ; skos:topConceptOf fraternalc:RecognitionTypes ;
+    skos:prefLabel "Amity"@en , "Vänskapsförbund"@sv , "Amitié"@fr , "Freundschaftsverhältnis"@de , "Amicizia"@it ;
+    skos:definition "Two orders agree to friendly relations and cooperation without either accepting the other as regular. It is mutual and is stated once."@en ,
+                    "Två ordnar enas om vänskapliga förbindelser och samarbete utan att någon av dem godtar den andra som reguljär. Den är ömsesidig och anges en gång."@sv ,
+                    "Deux ordres conviennent de relations amicales et de coopération sans que l'un accepte l'autre comme régulier. Elle est mutuelle et ne s'indique qu'une fois."@fr ,
+                    "Zwei Orden vereinbaren freundschaftliche Beziehungen und Zusammenarbeit, ohne dass einer den anderen als regulär annimmt. Sie ist gegenseitig und wird einmal angegeben."@de ,
+                    "Due ordini concordano rapporti amichevoli e di collaborazione senza che nessuno accetti l'altro come regolare. È reciproca e si indica una sola volta."@it .
+
+fraternalc:intervisitation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RecognitionTypes ; skos:topConceptOf fraternalc:RecognitionTypes ;
+    skos:prefLabel "Intervisitation"@en , "Besöksrätt"@sv , "Visite réciproque"@fr , "Besuchsrecht"@de , "Visita reciproca"@it ;
+    skos:definition "The members of the one body may attend the meetings of the other, usually on a card or letter of introduction. It may follow from recognition or be agreed on its own."@en ,
+                    "Medlemmarna i det ena organet får närvara vid det andras möten, vanligen mot ett kort eller ett introduktionsbrev. Den kan följa av erkännande eller avtalas för sig."@sv ,
+                    "Les membres de l'un des organes peuvent assister aux réunions de l'autre, d'ordinaire sur présentation d'une carte ou d'une lettre d'introduction. Elle peut découler de la reconnaissance ou être convenue séparément."@fr ,
+                    "Die Mitglieder des einen Organs dürfen an den Zusammenkünften des anderen teilnehmen, meist gegen eine Karte oder ein Empfehlungsschreiben. Es kann aus der Anerkennung folgen oder für sich vereinbart werden."@de ,
+                    "I membri di un organismo possono assistere alle riunioni dell'altro, di solito con una tessera o una lettera di presentazione. Può derivare dal riconoscimento o essere concordata a parte."@it .
 
 ##############################################################################
 # 8. OFFICES OF FRENCH LODGES, COMPAGNONNAGE AND ACADEMIES  (offices that have

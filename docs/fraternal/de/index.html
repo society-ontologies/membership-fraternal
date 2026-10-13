@@ -858,10 +858,20 @@ td {
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
               </th>
               <td>
-                <span>
-                  <a href="#higherDegree">höherer Grad</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#higherDegree">höherer Grad</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#requiresDegree">setzt Grad voraus</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
           </table>
@@ -1044,6 +1054,77 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="Recognition">
+          <h3>Anerkennung
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#Recognition</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Die förmliche Anerkennung eines Organs durch ein anderes über einen Zeitraum: eine Großloge, die eine andere als regulär anerkennt, zwei Orden im Freundschaftsverhältnis, zwei Organe, die den Mitgliedern des anderen Besuche erlauben. Sie gibt das anerkennende Organ (fraternal:recognizingBody), das anerkannte Organ (fraternal:recognizedBody), die Art (fraternal:recognitionType) und an, wann sie begann und, falls sie endete, wann (mbr:startDate, mbr:endDate).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>fraternal:recognizes und fraternal:inAmityWith geben den gegenwärtigen Stand in einer einzigen Aussage an und bleiben dafür bestehen. Eine Anerkennung wird verwendet, wenn die Daten oder das Ende der Beziehung wichtig sind. Anerkennung ist gerichtet: erkennen sich beide Organe an, werden zwei Anerkennungen angegeben; das Freundschaftsverhältnis ist gegenseitig und wird einmal angegeben. Eine entzogene Anerkennung hat ein Enddatum. Ob das andere Organ als regulär, irregulär oder klandestin befunden wurde, ist eine fraternal:LegitimacyAssessment.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/ns/prov#Activity">Activity</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#recognizingBody">anerkennendes Organ</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#recognizedBody">anerkanntes Organ</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#recognitionType">Art der Anerkennung</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="LegitimacyAssessment">
           <h3>Legitimitätsbewertung
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1068,6 +1149,12 @@ td {
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
               <td><p>Eine Aussage eines Akteurs – einer Kommission wie der ICOC, des Heiligen Stuhls, eines Staates oder eines anderen Ordens – darüber, ob ein Orden ein echter Ritterorden ist oder getragen werden darf, mit ihrem Ergebnis (fraternal:assessmentOutcome), Datum (mbr:startDate) und ihrer Quelle (dcterms:source).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>Wird auch für die Regularität eines freimaurerischen Organs verwendet, beurteilt von einem anderen übergeordneten Organ: das Ergebnis ist dann fraternalc:regular, fraternalc:irregular oder fraternalc:clandestine. Die darauf folgende Anerkennung ist eine fraternal:Recognition.</p></td>
             </tr>
             <tr>
               <th>
@@ -1729,6 +1816,255 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="recognizingBody">
+          <h3>anerkennendes Organ
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#recognizingBody</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Das Organ, das anerkennt. Beim Freundschaftsverhältnis eines der beiden.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Recognition">Anerkennung</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">http://www.w3.org/ns/org#Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="recognizedBody">
+          <h3>anerkanntes Organ
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#recognizedBody</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Das Organ, das anerkannt wird.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Recognition">Anerkennung</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">http://www.w3.org/ns/org#Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="recognitionType">
+          <h3>Art der Anerkennung
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#recognitionType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Die Art von Beziehung, die eine Anerkennung angibt (siehe fraternalc:RecognitionTypes).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Recognition">Anerkennung</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="requiresMembershipIn">
+          <h3>setzt Mitgliedschaft voraus in
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#requiresMembershipIn</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Die Mitgliedschaft in diesem Organ ist Voraussetzung für den Eintritt in den Orden oder den Grad, für den sie angegeben ist: der Royal Arch steht nur Meistermaurern offen.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">http://www.w3.org/ns/org#Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="requiresDegree">
+          <h3>setzt Grad voraus
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#requiresDegree</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Diesen Grad innezuhaben ist Voraussetzung für den Eintritt in den Orden oder den Grad, für den er angegeben ist. Wird verwendet, wo die Grade keine einzige Folge bilden: ein sich verzweigendes Gradsystem wird als getrennte fraternal:DegreeSystem geschrieben, jedes mit eigenem fraternal:nextDegree, und der erste Grad eines Zweigs setzt den Grad voraus, aus dem er hervorgeht.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Degree">Grad</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="requiresRelationToMembersOf">
+          <h3>setzt Verwandtschaft mit Mitgliedern voraus in
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/fraternal#requiresRelationToMembersOf</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/fraternal">Ontologie der Ordensgesellschaften und Schwesternschaften</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Ein Kandidat muss mit einem Mitglied dieses Organs verwandt sein, etwa als Ehepartner, Tochter oder Schwester, wie im Order of the Eastern Star, der Meistermaurern und mit ihnen verwandten Frauen offensteht. Die Art der Verwandtschaft regeln die eigenen Regeln des Ordens.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">http://www.w3.org/ns/org#Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="assessedOrder">
           <h3>bewerteter Orden
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -2129,6 +2465,9 @@ td {
               <a href="#Insignia">Insignien</a>
             </li>
             <li>
+              <a href="#Recognition">Anerkennung</a>
+            </li>
+            <li>
               <a href="#LegitimacyAssessment">Legitimitätsbewertung</a>
             </li>
           </ul>
@@ -2182,6 +2521,24 @@ td {
             </li>
             <li>
               <a href="#fonsHonorum">fons honorum</a>
+            </li>
+            <li>
+              <a href="#recognizingBody">anerkennendes Organ</a>
+            </li>
+            <li>
+              <a href="#recognizedBody">anerkanntes Organ</a>
+            </li>
+            <li>
+              <a href="#recognitionType">Art der Anerkennung</a>
+            </li>
+            <li>
+              <a href="#requiresMembershipIn">setzt Mitgliedschaft voraus in</a>
+            </li>
+            <li>
+              <a href="#requiresDegree">setzt Grad voraus</a>
+            </li>
+            <li>
+              <a href="#requiresRelationToMembersOf">setzt Verwandtschaft mit Mitgliedern voraus in</a>
             </li>
             <li>
               <a href="#assessedOrder">bewerteter Orden</a>

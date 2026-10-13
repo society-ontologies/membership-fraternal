@@ -15,6 +15,7 @@
 @prefix org:     <http://www.w3.org/ns/org#> .
 @prefix rov:     <http://www.w3.org/ns/regorg#> .
 @prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix mbr:     <https://w3id.org/membership#> .
 @prefix mbrc:    <https://w3id.org/membership/code/> .
 @prefix fraternal:  <https://w3id.org/fraternal#> .
@@ -61,6 +62,35 @@ fr:GrandeLogeDuSudExemplaire a fraternal:GrandBody ;
     mbr:admissionMode mbrc:proposalAndBallot ;
     fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
                              fraternalc:supremeBeingRequirement , fraternalc:ancientAndAcceptedScottishRite .
+
+# The same relations with their dates. The Grand Orient recognised the Grande Loge
+# Exemplaire from 2001, withdrew the recognition in 2010 after judging it irregular,
+# and recognised it again from 2016. The shortcut fraternal:recognizes above states
+# the present. Amity is mutual and is given once.
+fr:recognition-2001 a fraternal:Recognition ;
+    fraternal:recognizingBody fr:GrandOrientExemplaire ;
+    fraternal:recognizedBody fr:GrandeLogeExemplaire ;
+    fraternal:recognitionType fraternalc:regularRecognition ;
+    mbr:startDate "2001-03-10"^^xsd:date ; mbr:endDate "2010-11-20"^^xsd:date .
+
+fr:assessment-2010 a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder fr:GrandeLogeExemplaire ;
+    fraternal:assessedBy fr:GrandOrientExemplaire ;
+    fraternal:assessmentOutcome fraternalc:irregular ;
+    mbr:startDate "2010-11-20"^^xsd:date ;
+    dcterms:source "Resolution of the Convent of the Grand Orient Exemplaire, 2010 (invented)" .
+
+fr:recognition-2016 a fraternal:Recognition ;
+    fraternal:recognizingBody fr:GrandOrientExemplaire ;
+    fraternal:recognizedBody fr:GrandeLogeExemplaire ;
+    fraternal:recognitionType fraternalc:regularRecognition ;
+    mbr:startDate "2016-06-04"^^xsd:date .
+
+fr:amity-2012 a fraternal:Recognition ;
+    fraternal:recognizingBody fr:GrandOrientExemplaire ;
+    fraternal:recognizedBody fr:GrandeLogeDuSudExemplaire ;
+    fraternal:recognitionType fraternalc:amity ;
+    mbr:startDate "2012-09-22"^^xsd:date .
 
 fr:gle-rna a adms:Identifier ;
     skos:notation "W000000000" ;

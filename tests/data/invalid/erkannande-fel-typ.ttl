@@ -1,0 +1,13 @@
+# EXPECT: a recognition type from the wrong scheme
+# MESSAGE: fraternal:recognitionType must be exactly one concept in fraternalc:RecognitionTypes
+@prefix org:       <http://www.w3.org/ns/org#> .
+@prefix mbr:       <https://w3id.org/membership#> .
+@prefix fraternal: <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:        <https://example.org/invalid/> .
+
+ex:A a fraternal:GrandBody ; org:classification fraternalc:fraternalOrder .
+ex:B a fraternal:GrandBody ; org:classification fraternalc:fraternalOrder .
+ex:r a fraternal:Recognition ; fraternal:recognizingBody ex:A ; fraternal:recognizedBody ex:B ;
+    fraternal:recognitionType fraternalc:regular ; mbr:startDate "2020-01-01"^^xsd:date .

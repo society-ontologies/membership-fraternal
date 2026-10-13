@@ -140,6 +140,34 @@ fraternalsh:LodgeShape a sh:NodeShape ;
                 [ sh:path fraternal:inAmityWith ; sh:class org:Organization ] ,
                 [ sh:path fraternal:warrantedBy ; sh:class org:Organization ] .
 
+fraternalsh:RecognitionTypeValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue fraternalc:RecognitionTypes ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue fraternalc:RecognitionTypes ]
+            [ sh:path ( skos:inScheme dcterms:isPartOf ) ; sh:hasValue fraternalc:RecognitionTypes ] ) .
+
+fraternalsh:RecognitionShape a sh:NodeShape ;
+    sh:targetClass fraternal:Recognition ;
+    sh:property [ sh:path fraternal:recognizingBody ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
+                  sh:disjoint fraternal:recognizedBody ;
+                  sh:message "A recognition needs exactly one recognising body (fraternal:recognizingBody), and it cannot be the body that is recognised. | Ett erkännande behöver exakt ett erkännande organ (fraternal:recognizingBody), och det kan inte vara det organ som erkänns. | Une reconnaissance a besoin d'exactement un organe qui reconnaît (fraternal:recognizingBody), et ce ne peut pas être l'organe reconnu. | Eine Anerkennung braucht genau ein anerkennendes Organ (fraternal:recognizingBody), und es darf nicht das anerkannte Organ sein. | Un riconoscimento richiede esattamente un organismo che riconosce (fraternal:recognizingBody), e non può essere l'organismo riconosciuto." ] ,
+                [ sh:path fraternal:recognizedBody ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
+                  sh:message "A recognition needs exactly one recognised body (fraternal:recognizedBody). | Ett erkännande behöver exakt ett erkänt organ (fraternal:recognizedBody). | Une reconnaissance a besoin d'exactement un organe reconnu (fraternal:recognizedBody). | Eine Anerkennung braucht genau ein anerkanntes Organ (fraternal:recognizedBody). | Un riconoscimento richiede esattamente un organismo riconosciuto (fraternal:recognizedBody)." ] ,
+                [ sh:path fraternal:recognitionType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node fraternalsh:RecognitionTypeValue ;
+                  sh:message "fraternal:recognitionType must be exactly one concept in fraternalc:RecognitionTypes, or one mapped to it. | fraternal:recognitionType ska vara exakt ett begrepp i fraternalc:RecognitionTypes, eller ett som är mappat dit. | fraternal:recognitionType doit être exactement un concept de fraternalc:RecognitionTypes, ou un concept qui y est mis en correspondance. | fraternal:recognitionType muss genau ein Konzept in fraternalc:RecognitionTypes sein, oder eines, das darauf abgebildet ist. | fraternal:recognitionType deve essere esattamente un concetto di fraternalc:RecognitionTypes, o uno mappato su di esso." ] ,
+                [ sh:path mbr:startDate ; sh:minCount 1 ; sh:severity sh:Warning ;
+                  sh:message "A recognition should say when it began (mbr:startDate). | Ett erkännande bör ange när det började (mbr:startDate). | Une reconnaissance devrait indiquer quand elle a commencé (mbr:startDate). | Eine Anerkennung sollte angeben, wann sie begann (mbr:startDate). | Un riconoscimento dovrebbe indicare quando è iniziato (mbr:startDate)." ] .
+
+# Conditions of entry. The values are the bodies and degrees themselves.
+fraternalsh:EntryRequirementShape a sh:NodeShape ;
+    sh:targetSubjectsOf fraternal:requiresMembershipIn , fraternal:requiresDegree , fraternal:requiresRelationToMembersOf ;
+    sh:property [ sh:path fraternal:requiresMembershipIn ; sh:class org:Organization ;
+                  sh:message "fraternal:requiresMembershipIn must be an organisation. | fraternal:requiresMembershipIn ska vara en organisation. | fraternal:requiresMembershipIn doit être une organisation. | fraternal:requiresMembershipIn muss eine Organisation sein. | fraternal:requiresMembershipIn deve essere un'organizzazione." ] ,
+                [ sh:path fraternal:requiresDegree ; sh:class fraternal:Degree ;
+                  sh:message "fraternal:requiresDegree must be a fraternal:Degree. | fraternal:requiresDegree ska vara en fraternal:Degree. | fraternal:requiresDegree doit être un fraternal:Degree. | fraternal:requiresDegree muss ein fraternal:Degree sein. | fraternal:requiresDegree deve essere un fraternal:Degree." ] ,
+                [ sh:path fraternal:requiresRelationToMembersOf ; sh:class org:Organization ;
+                  sh:message "fraternal:requiresRelationToMembersOf must be an organisation. | fraternal:requiresRelationToMembersOf ska vara en organisation. | fraternal:requiresRelationToMembersOf doit être une organisation. | fraternal:requiresRelationToMembersOf muss eine Organisation sein. | fraternal:requiresRelationToMembersOf deve essere un'organizzazione." ] .
+
 fraternalsh:LegitimacyAssessmentShape a sh:NodeShape ;
     sh:targetClass fraternal:LegitimacyAssessment ;
     sh:property [ sh:path fraternal:assessedOrder ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
