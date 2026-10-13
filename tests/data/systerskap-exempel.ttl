@@ -8,6 +8,7 @@
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix schema:  <http://schema.org/> .
 @prefix org:     <http://www.w3.org/ns/org#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
 @prefix mbr:    <https://w3id.org/membership#> .
 @prefix mbrc:   <https://w3id.org/membership/code/> .
 @prefix fraternal:    <https://w3id.org/fraternal#> .
@@ -29,6 +30,24 @@ sor:AlphaChapter a fraternal:Lodge ;
     rdfs:label "Alpha Chapter"@en ;
     org:unitOf sor:SororExemplum ;
     fraternal:warrantedBy sor:SororExemplum .
+
+# Its number on the order's roll: a registry identifier, not part of the charter.
+sor:AlphaChapter adms:identifier sor:alpha-number .
+sor:alpha-number a adms:Identifier ;
+    skos:notation "No. 1" ;
+    adms:schemaAgency "Soror Exemplum roll of chapters" .
+
+# Its charter, which was surrendered when the chapter went dormant, and the new one
+# granted when it was refounded: two charters, each with its own dates.
+sor:alpha-charter-1998 a mbr:Charter ;
+    mbr:issuedBy sor:SororExemplum ; mbr:issuedTo sor:AlphaChapter ;
+    mbr:charterStatus mbrc:charterSurrendered ;
+    mbr:startDate "1998-05-02"^^xsd:date ; mbr:endDate "2004-06-30"^^xsd:date .
+
+sor:alpha-charter-2011 a mbr:Charter ;
+    mbr:issuedBy sor:SororExemplum ; mbr:issuedTo sor:AlphaChapter ;
+    mbr:charterStatus mbrc:charterGranted ;
+    mbr:startDate "2011-09-17"^^xsd:date .
 
 sor:FraterExemplum a fraternal:FraternalOrder ;
     rdfs:label "Frater Exemplum"@en ;

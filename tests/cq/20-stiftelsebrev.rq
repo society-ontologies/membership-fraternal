@@ -1,0 +1,25 @@
+# CQ20: Which charters has a body been given, by whom, and what is the state of each?
+# One row per charter, oldest first. A charter that was given back and later given again
+# is two rows, so the history of a lodge or chapter can be read off. The number the body
+# has on the issuing body's roll is not on the charter and is not listed.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mbr:  <https://w3id.org/membership#>
+
+SELECT ?holder ?issuer ?status ?granted
+WHERE {
+    ?c a mbr:Charter ;
+       mbr:issuedTo ?h ;
+       mbr:issuedBy ?i ;
+       mbr:charterStatus ?s ;
+       mbr:startDate ?granted .
+    ?s skos:prefLabel ?status .
+    FILTER (LANG(?status) = "en")
+    OPTIONAL { { SELECT ?h (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?holder)
+                 WHERE { ?h rdfs:label ?l } GROUP BY ?h } }
+    OPTIONAL { { SELECT ?i (STRAFTER(MIN(CONCAT(IF(LANG(?m) = "en", "0", "1"), LANG(?m), "|", STR(?m))), "|") AS ?issuer)
+                 WHERE { ?i rdfs:label ?m } GROUP BY ?i } }
+}
+ORDER BY ?holder ?granted

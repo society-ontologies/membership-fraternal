@@ -352,7 +352,12 @@ fraternal:warrantedBy a owl:ObjectProperty ;
                     "Det organ som utfärdade logens stiftelsebrev."@sv ,
                     "L'organe qui a délivré à la loge ses lettres patentes ou sa charte."@fr ,
                     "Die Stelle, die das Patent oder die Konstitution der Loge ausgestellt hat."@de ,
-                    "L'organismo che ha rilasciato la patente o la carta costitutiva della loggia."@it .
+                    "L'organismo che ha rilasciato la patente o la carta costitutiva della loggia."@it ;
+    skos:scopeNote "The shortcut for the current state. When the date or the state of the warrant matters, or it has a history, use an mbr:Charter."@en ,
+                   "Genvägen för det nuvarande läget. När stiftelsebrevets datum eller tillstånd har betydelse, eller det har en historia, används ett mbr:Charter."@sv ,
+                   "Le raccourci pour l'état actuel. Quand la date ou l'état des lettres patentes compte, ou qu'elles ont un historique, on utilise une mbr:Charter."@fr ,
+                   "Die Abkürzung für den aktuellen Stand. Wenn Datum oder Zustand des Patents wichtig sind oder es eine Geschichte hat, wird eine mbr:Charter verwendet."@de ,
+                   "La scorciatoia per lo stato attuale. Quando contano la data o lo stato della patente, o ha una storia, si usa una mbr:Charter."@it .
 
 fraternal:recognizes a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;

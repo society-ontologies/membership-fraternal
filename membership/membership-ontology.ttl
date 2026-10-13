@@ -239,6 +239,20 @@ mbr:ownershipModel a owl:ObjectProperty ;
                    "An einer Organisation ist dies das eingetragene aktuelle Bild. Frühere und spätere Werte mit den Daten, an denen sie galten, werden mit mbr:OrganizationPeriod angegeben; der aktuelle Wert wird nicht aus den Perioden abgeleitet."@de ,
                    "Su un'organizzazione è il quadro attuale registrato. I valori precedenti e successivi, con le date in cui valevano, si indicano con mbr:OrganizationPeriod; il valore attuale non è ricavato dai periodi."@it .
 
+mbr:Charter a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "Charter"@en , "Stiftelsebrev"@sv , "Charte"@fr , "Konstitutionsurkunde"@de , "Carta costitutiva"@it ;
+    skos:definition "The document or act by which a body grants another the right to exist and act as part of it: a lodge's warrant, a club's charter from Rotary International, a student corporation's charter from its federation. It is given by one organisation (mbr:issuedBy) to another (mbr:issuedTo), with the date it was granted (mbr:startDate), the date it ended, if it did (mbr:endDate), and its state (mbr:charterStatus)."@en ,
+                    "Det dokument eller den akt varigenom ett organ ger ett annat rätt att finnas och verka som en del av det: en loges stiftelsebrev, en klubbs charter från Rotary International, en studentkorporations charter från sitt förbund. Det ges av en organisation (mbr:issuedBy) till en annan (mbr:issuedTo), med dagen då det beviljades (mbr:startDate), dagen då det upphörde, om det gjorde det (mbr:endDate), och dess tillstånd (mbr:charterStatus)."@sv ,
+                    "Le document ou l'acte par lequel un organe accorde à un autre le droit d'exister et d'agir comme une partie de lui : les lettres patentes d'une loge, la charte d'un club accordée par Rotary International, la charte d'une corporation étudiante accordée par sa fédération. Elle est délivrée par une organisation (mbr:issuedBy) à une autre (mbr:issuedTo), avec la date de son octroi (mbr:startDate), la date de sa fin, s'il y en a une (mbr:endDate), et son état (mbr:charterStatus)."@fr ,
+                    "Die Urkunde oder der Akt, durch den ein Organ einem anderen das Recht gibt, als Teil von ihm zu bestehen und zu wirken: das Patent einer Loge, die Charter eines Clubs von Rotary International, die Charter einer studentischen Korporation von ihrem Verband. Sie wird von einer Organisation (mbr:issuedBy) an eine andere (mbr:issuedTo) erteilt, mit dem Tag der Erteilung (mbr:startDate), dem Tag ihres Endes, falls sie endete (mbr:endDate), und ihrem Zustand (mbr:charterStatus)."@de ,
+                    "Il documento o l'atto con cui un organismo concede a un altro il diritto di esistere e di agire come parte di esso: la patente di una loggia, la carta costitutiva di un club concessa da Rotary International, la carta di una corporazione studentesca concessa dalla sua federazione. È rilasciata da un'organizzazione (mbr:issuedBy) a un'altra (mbr:issuedTo), con la data di concessione (mbr:startDate), la data in cui è finita, se è finita (mbr:endDate), e il suo stato (mbr:charterStatus)."@it ;
+    skos:scopeNote "fraternal:warrantedBy is the shortcut for the current state: the body that issued the lodge's warrant. Use a charter when its date, its state or its history matters. A charter that is surrendered and later given again is two charters, the second one with its own dates. The number a lodge has in its grand lodge's roll is not on the charter: give it as an adms:Identifier with skos:notation and adms:schemaAgency, linked with adms:identifier."@en ,
+                   "fraternal:warrantedBy är genvägen för det nuvarande läget: det organ som utfärdade logens stiftelsebrev. Använd ett stiftelsebrev när dess datum, tillstånd eller historia har betydelse. Ett stiftelsebrev som lämnas tillbaka och senare ges på nytt är två stiftelsebrev, det andra med egna datum. Det nummer en loge har i sin storloges förteckning hör inte till stiftelsebrevet: ange det som en adms:Identifier med skos:notation och adms:schemaAgency, länkad med adms:identifier."@sv ,
+                   "fraternal:warrantedBy est le raccourci pour l'état actuel : l'organe qui a délivré les lettres patentes de la loge. Utilisez une charte lorsque sa date, son état ou son historique comptent. Une charte rendue puis accordée de nouveau fait deux chartes, la seconde avec ses propres dates. Le numéro qu'une loge porte au tableau de sa grande loge n'est pas sur la charte : indiquez-le comme un adms:Identifier avec skos:notation et adms:schemaAgency, relié par adms:identifier."@fr ,
+                   "fraternal:warrantedBy ist die Abkürzung für den aktuellen Stand: die Stelle, die das Patent der Loge ausgestellt hat. Eine Urkunde wird verwendet, wenn ihr Datum, ihr Zustand oder ihre Geschichte wichtig ist. Eine Charter, die zurückgegeben und später erneut erteilt wird, sind zwei Urkunden, die zweite mit eigenen Daten. Die Nummer, die eine Loge im Verzeichnis ihrer Großloge führt, gehört nicht zur Urkunde: Sie wird als adms:Identifier mit skos:notation und adms:schemaAgency angegeben, verknüpft mit adms:identifier."@de ,
+                   "fraternal:warrantedBy è la scorciatoia per lo stato attuale: l'organismo che ha rilasciato la patente della loggia. Si usa una carta quando contano la sua data, il suo stato o la sua storia. Una carta restituita e poi concessa di nuovo sono due carte, la seconda con date proprie. Il numero che una loggia ha nell'elenco della sua gran loggia non è sulla carta: si indica come adms:Identifier con skos:notation e adms:schemaAgency, collegato con adms:identifier."@it .
+
 mbr:OrganizationPeriod a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:label "Organisation Period"@en , "Organisationsperiod"@sv , "Période d'organisation"@fr , "Organisationsperiode"@de , "Periodo dell'organizzazione"@it ;
@@ -252,6 +266,50 @@ mbr:OrganizationPeriod a owl:Class ;
                    "N'indiquez que les propriétés qu'une période concerne : un club qui commence à admettre des femmes reçoit une nouvelle période avec mbr:genderPolicy et laisse son mode de propriété tel quel. Des périodes portant sur des propriétés différentes peuvent se chevaucher dans le temps. Le début est le moment où la valeur a commencé à s'appliquer, qui peut précéder ou suivre la décision (un vote pris une année et en vigueur l'année suivante, ou une décision à effet rétroactif). Une période sans date de fin n'a pas de fin indiquée ; cela ne dit pas qu'elle s'applique encore. L'image actuelle enregistrée reste sur l'organisation elle-même ; elle n'est pas déduite des périodes, et les deux ne sont comparées que dans un profil dont l'historique est complet. Un changement de règle ne change pas org:classification : un club classé comme mbrc:gentlemensClub le reste, et reste donc un mbr:GentlemensClub, jusqu'à ce que sa classification soit changée. Quand elle l'est, la classification actuelle enregistrée change sur l'organisation et la précédente est conservée comme période avec mbr:organizationType. Les classes de commodité suivent l'org:classification actuelle de l'organisation, jamais les périodes."@fr ,
                    "Es werden nur die Eigenschaften angegeben, die eine Periode betrifft: Ein Club, der beginnt, Frauen aufzunehmen, erhält eine neue Periode mit mbr:genderPolicy und lässt sein Eigentumsmodell unberührt. Perioden für verschiedene Eigenschaften dürfen sich zeitlich überschneiden. Der Beginn ist der Zeitpunkt, ab dem der Wert galt; er kann vor oder nach dem Beschluss liegen (eine Abstimmung in einem Jahr, in Kraft ab dem nächsten, oder ein Beschluss mit rückwirkender Kraft). Eine Periode ohne Enddatum hat kein angegebenes Ende; das sagt nicht, dass sie noch gilt. Das eingetragene aktuelle Bild bleibt an der Organisation selbst; es wird nicht aus den Perioden abgeleitet, und beide werden nicht verglichen, außer in einem Profil, dessen Verlauf vollständig ist. Eine Änderung der Regelung ändert org:classification nicht: Ein als mbrc:gentlemensClub eingeordneter Club bleibt es und damit ein mbr:GentlemensClub, bis seine Einordnung geändert wird. Geschieht das, ändert sich die eingetragene aktuelle Einordnung an der Organisation, und die frühere bleibt als Periode mit mbr:organizationType erhalten. Die Komfortklassen folgen der aktuellen org:classification der Organisation, nie den Perioden."@de ,
                    "Si indicano solo le proprietà a cui il periodo si riferisce: un club che comincia ad ammettere le donne ottiene un nuovo periodo con mbr:genderPolicy e lascia stare la forma di proprietà. I periodi di proprietà diverse possono sovrapporsi nel tempo. L'inizio è il momento in cui il valore ha cominciato a valere, che può essere precedente o successivo alla decisione (un voto preso in un anno e in vigore dall'anno seguente, o una decisione con effetto retroattivo). Un periodo senza data di fine non ha una fine dichiarata; ciò non dice che valga ancora. Il quadro attuale registrato resta sull'organizzazione stessa; non è ricavato dai periodi, e i due non vengono confrontati se non in un profilo la cui storia sia completa. Un cambiamento di politica non cambia org:classification: un club classificato come mbrc:gentlemensClub resta tale, e quindi resta un mbr:GentlemensClub, finché la sua classificazione non viene cambiata. Quando lo è, la classificazione attuale registrata cambia sull'organizzazione e quella precedente si conserva come periodo con mbr:organizationType. Le classi di comodo seguono la org:classification attuale dell'organizzazione, mai i periodi."@it .
+
+mbr:issuedBy a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "issued by"@en , "utfärdat av"@sv , "délivrée par"@fr , "ausgestellt von"@de , "rilasciata da"@it ;
+    rdfs:domain mbr:Charter ;
+    rdfs:range org:Organization ;
+    skos:definition "The organisation that granted a charter."@en ,
+                    "Den organisation som beviljade ett stiftelsebrev."@sv ,
+                    "L'organisation qui a accordé une charte."@fr ,
+                    "Die Organisation, die eine Urkunde erteilt hat."@de ,
+                    "L'organizzazione che ha concesso una carta."@it .
+
+mbr:issuedTo a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "issued to"@en , "utfärdat till"@sv , "délivrée à"@fr , "ausgestellt an"@de , "rilasciata a"@it ;
+    rdfs:domain mbr:Charter ;
+    rdfs:range org:Organization ;
+    skos:definition "The organisation that holds a charter."@en ,
+                    "Den organisation som innehar ett stiftelsebrev."@sv ,
+                    "L'organisation qui détient une charte."@fr ,
+                    "Die Organisation, die eine Urkunde innehat."@de ,
+                    "L'organizzazione che detiene una carta."@it .
+
+mbr:charterStatus a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "charter status"@en , "stiftelsebrevets tillstånd"@sv , "état de la charte"@fr , "Zustand der Urkunde"@de , "stato della carta"@it ;
+    rdfs:domain mbr:Charter ;
+    rdfs:range skos:Concept ;
+    skos:definition "Whether a charter is in force, suspended, given back or withdrawn (see mbrc:CharterStatuses)."@en ,
+                    "Om ett stiftelsebrev gäller, är avstängt, har lämnats tillbaka eller dragits in (se mbrc:CharterStatuses)."@sv ,
+                    "Si une charte est en vigueur, suspendue, rendue ou retirée (voir mbrc:CharterStatuses)."@fr ,
+                    "Ob eine Urkunde gilt, ruht, zurückgegeben oder entzogen ist (siehe mbrc:CharterStatuses)."@de ,
+                    "Se una carta è in vigore, sospesa, restituita o ritirata (vedi mbrc:CharterStatuses)."@it .
+
+mbr:changeEventType a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "change event type"@en , "typ av förändring"@sv , "type de changement"@fr , "Art der Veränderung"@de , "tipo di cambiamento"@it ;
+    rdfs:domain org:ChangeEvent ;
+    rdfs:range skos:Concept ;
+    skos:definition "The kind of change an org:ChangeEvent records, such as a merger, a split or a change of name (see mbrc:ChangeEventTypes)."@en ,
+                    "Slaget av förändring som en org:ChangeEvent registrerar, till exempel en sammanslagning, en delning eller ett namnbyte (se mbrc:ChangeEventTypes)."@sv ,
+                    "Le genre de changement qu'un org:ChangeEvent consigne, comme une fusion, une scission ou un changement de nom (voir mbrc:ChangeEventTypes)."@fr ,
+                    "Die Art der Veränderung, die ein org:ChangeEvent festhält, etwa eine Fusion, eine Spaltung oder eine Namensänderung (siehe mbrc:ChangeEventTypes)."@de ,
+                    "Il tipo di cambiamento che un org:ChangeEvent registra, come una fusione, una scissione o un cambio di nome (vedi mbrc:ChangeEventTypes)."@it .
 
 mbr:hasPeriod a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;

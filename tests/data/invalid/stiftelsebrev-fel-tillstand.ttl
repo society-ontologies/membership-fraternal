@@ -1,0 +1,10 @@
+# EXPECT: a charter status from the wrong scheme
+# MESSAGE: mbr:charterStatus must be exactly one concept in mbrc:CharterStatuses
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Grand a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:Lodge a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:c a mbr:Charter ; mbr:issuedBy ex:Grand ; mbr:issuedTo ex:Lodge ; mbr:charterStatus mbrc:suspended .

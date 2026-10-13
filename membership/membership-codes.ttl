@@ -2039,3 +2039,107 @@ mbrc:voluntaryOrganization a skos:Concept , owl:NamedIndividual ;
                     "Une sorte d'entité du Troisième secteur : une organisation de bénévoles (organizzazione di volontariato) au sens du Code du Troisième secteur italien."@fr ,
                     "Eine Art von Einrichtung des Dritten Sektors: eine Freiwilligenorganisation (organizzazione di volontariato) im Sinne des italienischen Kodex des Dritten Sektors."@de ,
                     "Una specie di ente del Terzo settore: un'organizzazione di volontariato ai sensi del Codice del Terzo settore."@it .
+
+##############################################################################
+# 18. CHARTER STATUSES  (values of mbr:charterStatus)
+##############################################################################
+
+mbrc:CharterStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Charter Statuses"@en , "Tillstånd för stiftelsebrev"@sv , "États de la charte"@fr , "Zustände der Urkunde"@de , "Stati della carta"@it ;
+    skos:definition "Whether a charter is in force or has been suspended, given back or withdrawn. Used with mbr:charterStatus."@en ,
+                    "Om ett stiftelsebrev gäller eller har stängts av, lämnats tillbaka eller dragits in. Används med mbr:charterStatus."@sv ,
+                    "Si une charte est en vigueur ou a été suspendue, rendue ou retirée. S'utilise avec mbr:charterStatus."@fr ,
+                    "Ob eine Urkunde gilt oder ruht, zurückgegeben oder entzogen wurde. Wird mit mbr:charterStatus verwendet."@de ,
+                    "Se una carta è in vigore o è stata sospesa, restituita o ritirata. Si usa con mbr:charterStatus."@it ;
+    skos:hasTopConcept mbrc:charterGranted , mbrc:charterSuspended , mbrc:charterSurrendered , mbrc:charterRevoked .
+
+mbrc:charterGranted a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:CharterStatuses ; skos:topConceptOf mbrc:CharterStatuses ;
+    skos:prefLabel "In Force"@en , "Gäller"@sv , "En vigueur"@fr , "In Kraft"@de , "In vigore"@it ;
+    skos:definition "The charter was granted and has not ended."@en ,
+                    "Stiftelsebrevet beviljades och har inte upphört."@sv ,
+                    "La charte a été accordée et n'a pas pris fin."@fr ,
+                    "Die Urkunde wurde erteilt und ist nicht beendet."@de ,
+                    "La carta è stata concessa e non è finita."@it .
+
+mbrc:charterSuspended a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:CharterStatuses ; skos:topConceptOf mbrc:CharterStatuses ;
+    skos:prefLabel "Suspended"@en , "Avstängt"@sv , "Suspendue"@fr , "Ruhend"@de , "Sospesa"@it ;
+    skos:definition "The issuing body has suspended the charter for a time; the body that holds it may not act under it meanwhile."@en ,
+                    "Det utfärdande organet har stängt av stiftelsebrevet för en tid; det organ som innehar det får under tiden inte verka med stöd av det."@sv ,
+                    "L'organe émetteur a suspendu la charte pour un temps ; l'organe qui la détient ne peut pas agir en vertu d'elle dans l'intervalle."@fr ,
+                    "Das ausstellende Organ hat die Urkunde für eine Zeit ruhen lassen; das Organ, das sie innehat, darf in dieser Zeit nicht aufgrund von ihr handeln."@de ,
+                    "L'organismo emittente ha sospeso la carta per un periodo; nel frattempo l'organismo che la detiene non può operare in base ad essa."@it .
+
+mbrc:charterSurrendered a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:CharterStatuses ; skos:topConceptOf mbrc:CharterStatuses ;
+    skos:prefLabel "Surrendered"@en , "Återlämnat"@sv , "Rendue"@fr , "Zurückgegeben"@de , "Restituita"@it ;
+    skos:definition "The body that held the charter gave it back to the issuing body, for example when it closed or went dormant."@en ,
+                    "Det organ som innehade stiftelsebrevet lämnade tillbaka det till det utfärdande organet, till exempel när det lades ned eller vilade."@sv ,
+                    "L'organe qui détenait la charte l'a rendue à l'organe émetteur, par exemple en se dissolvant ou en se mettant en sommeil."@fr ,
+                    "Das Organ, das die Urkunde innehatte, hat sie dem ausstellenden Organ zurückgegeben, etwa bei Auflösung oder wenn es ruhte."@de ,
+                    "L'organismo che deteneva la carta l'ha restituita all'organismo emittente, per esempio quando si è sciolto o è entrato in sonno."@it .
+
+mbrc:charterRevoked a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:CharterStatuses ; skos:topConceptOf mbrc:CharterStatuses ;
+    skos:prefLabel "Revoked"@en , "Indraget"@sv , "Retirée"@fr , "Entzogen"@de , "Ritirata"@it ;
+    skos:definition "The issuing body withdrew the charter against the will of the body that held it."@en ,
+                    "Det utfärdande organet drog in stiftelsebrevet mot det innehavande organets vilja."@sv ,
+                    "L'organe émetteur a retiré la charte contre la volonté de l'organe qui la détenait."@fr ,
+                    "Das ausstellende Organ hat die Urkunde gegen den Willen des Organs, das sie innehatte, entzogen."@de ,
+                    "L'organismo emittente ha ritirato la carta contro la volontà dell'organismo che la deteneva."@it .
+
+##############################################################################
+# 19. CHANGE EVENT TYPES  (values of mbr:changeEventType on an org:ChangeEvent)
+##############################################################################
+
+mbrc:ChangeEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Change Event Types"@en , "Typer av organisationsförändringar"@sv , "Types de changements d'organisation"@fr , "Arten von Organisationsveränderungen"@de , "Tipi di cambiamento dell'organizzazione"@it ;
+    skos:definition "Kinds of change in the existence of an organisation, recorded on an org:ChangeEvent. Used with mbr:changeEventType."@en ,
+                    "Slag av förändringar i en organisations existens, registrerade på en org:ChangeEvent. Används med mbr:changeEventType."@sv ,
+                    "Types de changements dans l'existence d'une organisation, consignés sur un org:ChangeEvent. S'utilise avec mbr:changeEventType."@fr ,
+                    "Arten von Veränderungen im Bestehen einer Organisation, festgehalten an einem org:ChangeEvent. Wird mit mbr:changeEventType verwendet."@de ,
+                    "Tipi di cambiamento nell'esistenza di un'organizzazione, registrati su un org:ChangeEvent. Si usa con mbr:changeEventType."@it ;
+    skos:hasTopConcept mbrc:merger , mbrc:split , mbrc:renaming , mbrc:refoundation .
+
+mbrc:merger a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ChangeEventTypes ; skos:topConceptOf mbrc:ChangeEventTypes ;
+    skos:prefLabel "Merger"@en , "Sammanslagning"@sv , "Fusion"@fr , "Fusion"@de , "Fusione"@it ;
+    skos:definition "Two or more organisations become one: the originals end or are absorbed, and the result carries on."@en ,
+                    "Två eller flera organisationer blir en: de ursprungliga upphör eller tas upp, och resultatet fortsätter."@sv ,
+                    "Deux organisations ou plus n'en font plus qu'une : les originales prennent fin ou sont absorbées, et le résultat continue."@fr ,
+                    "Zwei oder mehr Organisationen werden eine: die ursprünglichen enden oder gehen auf, und das Ergebnis besteht fort."@de ,
+                    "Due o più organizzazioni diventano una: le originarie finiscono o vengono assorbite, e il risultato prosegue."@it .
+
+mbrc:split a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ChangeEventTypes ; skos:topConceptOf mbrc:ChangeEventTypes ;
+    skos:prefLabel "Split"@en , "Delning"@sv , "Scission"@fr , "Spaltung"@de , "Scissione"@it ;
+    skos:definition "One organisation divides into two or more, for example when a group of members leaves to form a body of their own."@en ,
+                    "En organisation delas i två eller flera, till exempel när en grupp medlemmar lämnar för att bilda ett eget organ."@sv ,
+                    "Une organisation se divise en deux ou plus, par exemple quand un groupe de membres la quitte pour former un organe à part."@fr ,
+                    "Eine Organisation teilt sich in zwei oder mehr, etwa wenn eine Gruppe von Mitgliedern austritt, um ein eigenes Organ zu bilden."@de ,
+                    "Un'organizzazione si divide in due o più, per esempio quando un gruppo di soci se ne va per formare un organismo proprio."@it ;
+    skos:altLabel "Schism"@en , "Schisma"@sv , "Schisme"@fr , "Schisma"@de , "Scisma"@it .
+
+mbrc:renaming a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ChangeEventTypes ; skos:topConceptOf mbrc:ChangeEventTypes ;
+    skos:prefLabel "Renaming"@en , "Namnbyte"@sv , "Changement de nom"@fr , "Namensänderung"@de , "Cambio di nome"@it ;
+    skos:definition "The organisation continues as itself under a new name."@en ,
+                    "Organisationen fortsätter som sig själv under ett nytt namn."@sv ,
+                    "L'organisation continue d'exister sous un nouveau nom."@fr ,
+                    "Die Organisation besteht unter einem neuen Namen als sie selbst fort."@de ,
+                    "L'organizzazione continua a esistere come se stessa con un nuovo nome."@it .
+
+mbrc:refoundation a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ChangeEventTypes ; skos:topConceptOf mbrc:ChangeEventTypes ;
+    skos:prefLabel "Refoundation"@en , "Nystiftelse"@sv , "Refondation"@fr , "Neugründung"@de , "Rifondazione"@it ;
+    skos:definition "An organisation that had ended or lain dormant is founded again, often under the old name and with the same traditions."@en ,
+                    "En organisation som hade upphört eller vilat grundas på nytt, ofta under det gamla namnet och med samma traditioner."@sv ,
+                    "Une organisation qui avait cessé ou dormait est fondée à nouveau, souvent sous l'ancien nom et avec les mêmes traditions."@fr ,
+                    "Eine Organisation, die geendet hatte oder geruht hatte, wird neu gegründet, oft unter dem alten Namen und mit denselben Traditionen."@de ,
+                    "Un'organizzazione che era cessata o in sonno viene fondata di nuovo, spesso con il vecchio nome e le stesse tradizioni."@it ;
+    skos:scopeNote "Whether the new body is the old one continued or a new one is for the sources to say; record the old one as org:originalOrganization when it is treated as a predecessor."@en ,
+                   "Om det nya organet är det gamla som fortsätter eller ett nytt avgör källorna; ange det gamla som org:originalOrganization när det behandlas som föregångare."@sv ,
+                   "Aux sources de dire si le nouvel organe est l'ancien qui continue ou un nouveau ; indiquez l'ancien comme org:originalOrganization quand il est traité comme prédécesseur."@fr ,
+                   "Ob das neue Organ das alte in Fortführung oder ein neues ist, sagen die Quellen; das alte wird als org:originalOrganization angegeben, wenn es als Vorgänger behandelt wird."@de ,
+                   "Spetta alle fonti dire se il nuovo organismo è il vecchio che continua o uno nuovo; si indica il vecchio come org:originalOrganization quando è trattato come predecessore."@it .

@@ -279,6 +279,14 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - The lighter way, a membership with the status `mbrc:proposed` or `mbrc:candidate` and its events, stays as it was; the scope note of the class says when to use which.
 - SHACL: shapes for the application and the ballot (counts are non-negative integers). New competency question 19, five invalid fixtures, and an application with a ballot and one that was accepted in `tests/data/klubb-exempel.ttl`. SKOS check 08 knows the new hub scheme.
 
+**Unreleased.** Charters and changes of organisation. New classes, properties and codelists, additive; the texts are in English, Swedish, French, German and Italian.
+- `mbr:Charter`: the document or act by which one body grants another the right to exist as part of it (a lodge's warrant, a Rotary club's charter, a student corporation's charter from its federation). `mbr:issuedBy`, `mbr:issuedTo`, `mbr:charterStatus` (new hub codelist `mbrc:CharterStatuses`: in force, suspended, surrendered, revoked), and the dates with `mbr:startDate` and `mbr:endDate`. `fraternal:warrantedBy` stays as the shortcut for the current state; its scope note says when to use a charter. A charter that is given back and later granted again is two charters.
+- A lodge's number on its grand lodge's roll uses the identifier pattern that was already there: an `adms:Identifier` with `skos:notation` and `adms:schemaAgency`, linked with `adms:identifier` (the sorority sample shows it). It is not on the charter, because a body keeps its number across charters.
+- `mbr:changeEventType` on an `org:ChangeEvent`, with the new hub codelist `mbrc:ChangeEventTypes`: merger, split (altLabel schism), renaming, refoundation. The merger in the club sample now has its type.
+- A dormant lodge and a revived one need nothing new: `mbrc:dormantOrganization` as the organisation status over a period (`mbr:hasPeriod`), then a refoundation event, or a new charter.
+- `fraternalc:intermediateBody` in `fraternalc:OrderTypes` for provincial grand lodges, districts and priories. Link the levels with `org:subOrganizationOf`: lodge, intermediate body, grand body.
+- SHACL: shapes for the charter (one issuer, one holder, one status, not issued to itself) and for the change event type. New competency question 20, four invalid fixtures. SKOS check 08 knows the two new hub schemes.
+
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).

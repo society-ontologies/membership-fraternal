@@ -1,0 +1,9 @@
+# EXPECT: a charter issued by the body that holds it
+# MESSAGE: A charter cannot be issued by the organisation that holds it
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Lodge a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:c a mbr:Charter ; mbr:issuedBy ex:Lodge ; mbr:issuedTo ex:Lodge ; mbr:charterStatus mbrc:charterGranted .
