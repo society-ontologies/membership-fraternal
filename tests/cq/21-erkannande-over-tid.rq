@@ -1,0 +1,28 @@
+# CQ21: Which recognitions has a body given, of what kind, and when did each begin and end?
+# One row per recognition, oldest first. The shortcut fraternal:recognizes states the present;
+# a recognition has its dates, so a recognition that was withdrawn and later given again is two
+# rows, and a recognition that has not ended has no end date. The judgement that led to a
+# withdrawal is a fraternal:LegitimacyAssessment and is not listed here.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:      <http://www.w3.org/2004/02/skos/core#>
+PREFIX mbr:       <https://w3id.org/membership#>
+PREFIX fraternal: <https://w3id.org/fraternal#>
+
+SELECT ?body ?other ?type ?from ?until
+WHERE {
+    ?r a fraternal:Recognition ;
+       fraternal:recognizingBody ?a ;
+       fraternal:recognizedBody ?b ;
+       fraternal:recognitionType ?t ;
+       mbr:startDate ?from .
+    ?t skos:prefLabel ?type .
+    FILTER (LANG(?type) = "en")
+    OPTIONAL { ?r mbr:endDate ?until }
+    OPTIONAL { { SELECT ?a (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?body)
+                 WHERE { ?a rdfs:label ?l } GROUP BY ?a } }
+    OPTIONAL { { SELECT ?b (STRAFTER(MIN(CONCAT(IF(LANG(?m) = "en", "0", "1"), LANG(?m), "|", STR(?m))), "|") AS ?other)
+                 WHERE { ?b rdfs:label ?m } GROUP BY ?b } }
+}
+ORDER BY ?body ?other ?from

@@ -18,6 +18,7 @@ SELECT ?s ?problem WHERE {
         FILTER (?s NOT IN (fraternalc:OrderTypes, fraternalc:DegreeKinds, fraternalc:MemberTitles,
                            fraternalc:Characteristics, fraternalc:CeremonyTypes,
                            fraternalc:InsigniaTypes, fraternalc:AssessmentOutcomes,
+                           fraternalc:RecognitionTypes,
                            mbrc:OrganizationTypes, mbrc:MembershipStatuses, mbrc:MembershipCategories,
                            mbrc:MembershipEventTypes, mbrc:OfficeTypes, mbrc:GatheringTypes,
                            mbrc:ParticipationRoles, mbrc:DressCodes, mbrc:GenderPolicies,

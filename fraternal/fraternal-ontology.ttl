@@ -406,6 +406,84 @@ fraternal:fonsHonorum a owl:ObjectProperty ;
                    "Gibt den fons honorum an, den ein Orden für sich beansprucht oder mit dem er verzeichnet ist. Ob der Anspruch anerkannt wird, ist eine fraternal:LegitimacyAssessment."@de ,
                    "Indica la fons honorum che un ordine rivendica o con cui è registrato. Se la rivendicazione sia accolta è una fraternal:LegitimacyAssessment."@it .
 
+fraternal:Recognition a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Recognition"@en , "Erkännande"@sv , "Reconnaissance"@fr , "Anerkennung"@de , "Riconoscimento"@it ;
+    skos:definition "One body's formal recognition of another over a period: a grand lodge that recognises another as regular, two orders in amity, two bodies that allow each other's members to visit. It gives the recognising body (fraternal:recognizingBody), the recognised body (fraternal:recognizedBody), the kind (fraternal:recognitionType), and when it began and, if it ended, when (mbr:startDate, mbr:endDate)."@en ,
+                    "Ett organs formella erkännande av ett annat under en period: en storloge som erkänner en annan som reguljär, två ordnar i vänskapsförbund, två organ som låter varandras medlemmar besöka sig. Den anger det erkännande organet (fraternal:recognizingBody), det erkända organet (fraternal:recognizedBody), slaget (fraternal:recognitionType), och när det började och, om det upphörde, när (mbr:startDate, mbr:endDate)."@sv ,
+                    "La reconnaissance formelle d'un organe par un autre pendant une période : une grande loge qui en reconnaît une autre comme régulière, deux ordres en amitié, deux organes qui permettent aux membres de l'autre de leur rendre visite. Elle indique l'organe qui reconnaît (fraternal:recognizingBody), l'organe reconnu (fraternal:recognizedBody), la sorte (fraternal:recognitionType), et quand elle a commencé et, si elle a pris fin, quand (mbr:startDate, mbr:endDate)."@fr ,
+                    "Die förmliche Anerkennung eines Organs durch ein anderes über einen Zeitraum: eine Großloge, die eine andere als regulär anerkennt, zwei Orden im Freundschaftsverhältnis, zwei Organe, die den Mitgliedern des anderen Besuche erlauben. Sie gibt das anerkennende Organ (fraternal:recognizingBody), das anerkannte Organ (fraternal:recognizedBody), die Art (fraternal:recognitionType) und an, wann sie begann und, falls sie endete, wann (mbr:startDate, mbr:endDate)."@de ,
+                    "Il riconoscimento formale di un organismo da parte di un altro per un periodo: una gran loggia che ne riconosce un'altra come regolare, due ordini in amicizia, due organismi che permettono ai membri dell'altro di visitarli. Indica l'organismo che riconosce (fraternal:recognizingBody), l'organismo riconosciuto (fraternal:recognizedBody), il tipo (fraternal:recognitionType), e quando è iniziato e, se è finito, quando (mbr:startDate, mbr:endDate)."@it ;
+    skos:scopeNote "fraternal:recognizes and fraternal:inAmityWith state the present in one triple and stay for that. Use a recognition when the dates or the end of the relation matter. Recognition is directional: if both bodies recognise each other, give two recognitions; amity is mutual and is given once. A recognition that was withdrawn has an end date. Whether the other body was found regular, irregular or clandestine is a fraternal:LegitimacyAssessment."@en ,
+                   "fraternal:recognizes och fraternal:inAmityWith anger nuläget i ett enda påstående och finns kvar för det. Använd ett erkännande när datumen eller förhållandets slut har betydelse. Erkännande är riktat: erkänner båda organen varandra anges två erkännanden; vänskapsförbund är ömsesidigt och anges en gång. Ett erkännande som dragits tillbaka har ett slutdatum. Om det andra organet befunnits reguljärt, irreguljärt eller klandestint är en fraternal:LegitimacyAssessment."@sv ,
+                   "fraternal:recognizes et fraternal:inAmityWith énoncent le présent en un seul triplet et restent pour cela. Utilisez une reconnaissance lorsque les dates ou la fin de la relation comptent. La reconnaissance est orientée : si les deux organes se reconnaissent, indiquez deux reconnaissances ; l'amitié est mutuelle et ne s'indique qu'une fois. Une reconnaissance retirée a une date de fin. Que l'autre organe ait été jugé régulier, irrégulier ou clandestin relève d'une fraternal:LegitimacyAssessment."@fr ,
+                   "fraternal:recognizes und fraternal:inAmityWith geben den gegenwärtigen Stand in einer einzigen Aussage an und bleiben dafür bestehen. Eine Anerkennung wird verwendet, wenn die Daten oder das Ende der Beziehung wichtig sind. Anerkennung ist gerichtet: erkennen sich beide Organe an, werden zwei Anerkennungen angegeben; das Freundschaftsverhältnis ist gegenseitig und wird einmal angegeben. Eine entzogene Anerkennung hat ein Enddatum. Ob das andere Organ als regulär, irregulär oder klandestin befunden wurde, ist eine fraternal:LegitimacyAssessment."@de ,
+                   "fraternal:recognizes e fraternal:inAmityWith dicono lo stato presente in una sola affermazione e restano per questo. Si usa un riconoscimento quando contano le date o la fine del rapporto. Il riconoscimento è orientato: se i due organismi si riconoscono a vicenda, si indicano due riconoscimenti; l'amicizia è reciproca e si indica una sola volta. Un riconoscimento ritirato ha una data di fine. Se l'altro organismo sia stato giudicato regolare, irregolare o clandestino è una fraternal:LegitimacyAssessment."@it .
+
+fraternal:recognizingBody a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:label "recognising body"@en , "erkännande organ"@sv , "organe qui reconnaît"@fr , "anerkennendes Organ"@de , "organismo che riconosce"@it ;
+    rdfs:domain fraternal:Recognition ;
+    rdfs:range org:Organization ;
+    skos:definition "The body that recognises. For amity, either of the two."@en ,
+                    "Det organ som erkänner. För vänskapsförbund något av de två."@sv ,
+                    "L'organe qui reconnaît. Pour l'amitié, l'un ou l'autre des deux."@fr ,
+                    "Das Organ, das anerkennt. Beim Freundschaftsverhältnis eines der beiden."@de ,
+                    "L'organismo che riconosce. Per l'amicizia, l'uno o l'altro dei due."@it .
+
+fraternal:recognizedBody a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:label "recognised body"@en , "erkänt organ"@sv , "organe reconnu"@fr , "anerkanntes Organ"@de , "organismo riconosciuto"@it ;
+    rdfs:domain fraternal:Recognition ;
+    rdfs:range org:Organization ;
+    skos:definition "The body that is recognised."@en ,
+                    "Det organ som erkänns."@sv ,
+                    "L'organe qui est reconnu."@fr ,
+                    "Das Organ, das anerkannt wird."@de ,
+                    "L'organismo che è riconosciuto."@it .
+
+fraternal:recognitionType a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:label "recognition type"@en , "typ av erkännande"@sv , "type de reconnaissance"@fr , "Art der Anerkennung"@de , "tipo di riconoscimento"@it ;
+    rdfs:domain fraternal:Recognition ;
+    rdfs:range skos:Concept ;
+    skos:definition "The kind of relation a recognition states (see fraternalc:RecognitionTypes)."@en ,
+                    "Slaget av förhållande som ett erkännande anger (se fraternalc:RecognitionTypes)."@sv ,
+                    "La sorte de relation qu'énonce une reconnaissance (voir fraternalc:RecognitionTypes)."@fr ,
+                    "Die Art von Beziehung, die eine Anerkennung angibt (siehe fraternalc:RecognitionTypes)."@de ,
+                    "Il tipo di rapporto che un riconoscimento afferma (vedi fraternalc:RecognitionTypes)."@it .
+
+fraternal:requiresMembershipIn a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:label "requires membership in"@en , "kräver medlemskap i"@sv , "exige l'appartenance à"@fr , "setzt Mitgliedschaft voraus in"@de , "richiede l'appartenenza a"@it ;
+    rdfs:range org:Organization ;
+    skos:definition "Membership of this body is a condition of entry to the order or the degree it is given for: the Royal Arch is open to Master Masons only."@en ,
+                    "Medlemskap i det här organet är ett villkor för att tas in i den orden eller den graden som egenskapen anges för: Royal Arch är öppet bara för mästarmurare."@sv ,
+                    "L'appartenance à cet organe est une condition d'entrée dans l'ordre ou le degré pour lequel elle est indiquée : le Royal Arch n'est ouvert qu'aux maîtres maçons."@fr ,
+                    "Die Mitgliedschaft in diesem Organ ist Voraussetzung für den Eintritt in den Orden oder den Grad, für den sie angegeben ist: der Royal Arch steht nur Meistermaurern offen."@de ,
+                    "L'appartenenza a questo organismo è condizione per entrare nell'ordine o nel grado per cui è indicata: il Royal Arch è aperto solo ai maestri muratori."@it .
+
+fraternal:requiresDegree a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:label "requires degree"@en , "kräver grad"@sv , "exige le degré"@fr , "setzt Grad voraus"@de , "richiede il grado"@it ;
+    rdfs:range fraternal:Degree ;
+    skos:definition "Holding this degree is a condition of entry to the order or the degree it is given for. Use it where degrees are not one sequence: a degree system that branches is written as separate fraternal:DegreeSystem, each with its own fraternal:nextDegree, and the first degree of a branch requires the degree it grows from."@en ,
+                    "Att inneha den här graden är ett villkor för att tas in i den orden eller den graden som egenskapen anges för. Används där graderna inte är en enda följd: ett gradsystem som förgrenar sig skrivs som skilda fraternal:DegreeSystem, vart och ett med sin egen fraternal:nextDegree, och förgreningens första grad kräver den grad den växer ur."@sv ,
+                    "Détenir ce degré est une condition d'entrée dans l'ordre ou le degré pour lequel il est indiqué. À utiliser quand les degrés ne forment pas une seule suite : un système de degrés qui se ramifie s'écrit en fraternal:DegreeSystem distincts, chacun avec son fraternal:nextDegree, et le premier degré d'une branche exige le degré dont elle part."@fr ,
+                    "Diesen Grad innezuhaben ist Voraussetzung für den Eintritt in den Orden oder den Grad, für den er angegeben ist. Wird verwendet, wo die Grade keine einzige Folge bilden: ein sich verzweigendes Gradsystem wird als getrennte fraternal:DegreeSystem geschrieben, jedes mit eigenem fraternal:nextDegree, und der erste Grad eines Zweigs setzt den Grad voraus, aus dem er hervorgeht."@de ,
+                    "Possedere questo grado è condizione per entrare nell'ordine o nel grado per cui è indicato. Si usa dove i gradi non formano un'unica sequenza: un sistema di gradi che si ramifica si scrive come fraternal:DegreeSystem distinti, ciascuno con il proprio fraternal:nextDegree, e il primo grado di un ramo richiede il grado da cui parte."@it .
+
+fraternal:requiresRelationToMembersOf a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/fraternal> ;
+    rdfs:label "requires relation to members of"@en , "kräver släktskap med medlemmar i"@sv , "exige un lien avec des membres de"@fr , "setzt Verwandtschaft mit Mitgliedern voraus in"@de , "richiede un legame con i membri di"@it ;
+    rdfs:range org:Organization ;
+    skos:definition "A candidate must be related, for example as spouse, daughter or sister, to a member of this body, as in the Order of the Eastern Star, which is open to Master Masons and to women related to them. The kind of relation is stated in the order's own rules."@en ,
+                    "En kandidat måste vara släkt med, till exempel make eller maka, dotter eller syster till, en medlem i det här organet, som i Order of the Eastern Star, som är öppen för mästarmurare och kvinnor som är släkt med dem. Slaget av släktskap anges i ordens egna regler."@sv ,
+                    "Un candidat doit être apparenté, par exemple comme conjoint, fille ou sœur, à un membre de cet organe, comme dans l'Order of the Eastern Star, ouvert aux maîtres maçons et aux femmes qui leur sont apparentées. La nature du lien est fixée par les règles propres de l'ordre."@fr ,
+                    "Ein Kandidat muss mit einem Mitglied dieses Organs verwandt sein, etwa als Ehepartner, Tochter oder Schwester, wie im Order of the Eastern Star, der Meistermaurern und mit ihnen verwandten Frauen offensteht. Die Art der Verwandtschaft regeln die eigenen Regeln des Ordens."@de ,
+                    "Un candidato deve essere imparentato, per esempio come coniuge, figlia o sorella, con un membro di questo organismo, come nell'Order of the Eastern Star, aperto ai maestri muratori e alle donne a loro imparentate. Il tipo di legame è stabilito dalle regole proprie dell'ordine."@it .
+
 fraternal:LegitimacyAssessment a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf prov:Activity ;
@@ -414,7 +492,12 @@ fraternal:LegitimacyAssessment a owl:Class ;
                     "Ett uttalande av en agent — en kommission som ICOC, Den heliga stolen, en stat eller en annan orden — om huruvida en orden är en äkta riddarorden eller får bäras, med utfall (fraternal:assessmentOutcome), datum (mbr:startDate) och källa (dcterms:source)."@sv ,
                     "Déclaration d'un agent — une commission comme l'ICOC, le Saint-Siège, un État ou un autre ordre — sur le fait qu'un ordre est un véritable ordre de chevalerie ou peut être porté, avec son résultat (fraternal:assessmentOutcome), sa date (mbr:startDate) et sa source (dcterms:source)."@fr ,
                     "Eine Aussage eines Akteurs – einer Kommission wie der ICOC, des Heiligen Stuhls, eines Staates oder eines anderen Ordens – darüber, ob ein Orden ein echter Ritterorden ist oder getragen werden darf, mit ihrem Ergebnis (fraternal:assessmentOutcome), Datum (mbr:startDate) und ihrer Quelle (dcterms:source)."@de ,
-                    "Una dichiarazione di un agente — una commissione come l'ICOC, la Santa Sede, uno Stato o un altro ordine — sul fatto che un ordine sia un autentico ordine cavalleresco o possa essere portato, con il suo esito (fraternal:assessmentOutcome), la data (mbr:startDate) e la fonte (dcterms:source)."@it .
+                    "Una dichiarazione di un agente — una commissione come l'ICOC, la Santa Sede, uno Stato o un altro ordine — sul fatto che un ordine sia un autentico ordine cavalleresco o possa essere portato, con il suo esito (fraternal:assessmentOutcome), la data (mbr:startDate) e la fonte (dcterms:source)."@it ;
+    skos:scopeNote "Also used for the regularity of a Masonic body, as judged by another grand body: the outcome is then fraternalc:regular, fraternalc:irregular or fraternalc:clandestine. The recognition that follows is a fraternal:Recognition."@en ,
+                   "Används också för ett frimurarorgans reguljäritet, bedömd av ett annat överordnat organ: utfallet är då fraternalc:regular, fraternalc:irregular eller fraternalc:clandestine. Erkännandet som följer är en fraternal:Recognition."@sv ,
+                   "S'emploie aussi pour la régularité d'un organe maçonnique, jugée par un autre organe dirigeant : le résultat est alors fraternalc:regular, fraternalc:irregular ou fraternalc:clandestine. La reconnaissance qui s'ensuit est une fraternal:Recognition."@fr ,
+                   "Wird auch für die Regularität eines freimaurerischen Organs verwendet, beurteilt von einem anderen übergeordneten Organ: das Ergebnis ist dann fraternalc:regular, fraternalc:irregular oder fraternalc:clandestine. Die darauf folgende Anerkennung ist eine fraternal:Recognition."@de ,
+                   "Si usa anche per la regolarità di un organismo massonico, giudicata da un altro organismo di governo: l'esito è allora fraternalc:regular, fraternalc:irregular o fraternalc:clandestine. Il riconoscimento che ne segue è una fraternal:Recognition."@it .
 
 fraternal:assessedOrder a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;

@@ -1,0 +1,12 @@
+# EXPECT: a recognition where the body recognises itself
+# MESSAGE: A recognition needs exactly one recognising body (fraternal:recognizingBody), and it cannot be the body that is recognised
+@prefix org:       <http://www.w3.org/ns/org#> .
+@prefix mbr:       <https://w3id.org/membership#> .
+@prefix fraternal: <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:        <https://example.org/invalid/> .
+
+ex:Grand a fraternal:GrandBody ; org:classification fraternalc:fraternalOrder .
+ex:r a fraternal:Recognition ; fraternal:recognizingBody ex:Grand ; fraternal:recognizedBody ex:Grand ;
+    fraternal:recognitionType fraternalc:amity ; mbr:startDate "2020-01-01"^^xsd:date .
