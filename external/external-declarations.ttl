@@ -38,14 +38,16 @@
                "Dichiarazioni esterne per lo stack di ontologie membership/fraternal"@it ,
                "Externe Deklarationen für den Ontologie-Stack membership/fraternal"@de ,
                "Declaraciones externas para la pila de ontologías membership/fraternal"@es ,
-               "Declarações externas para a pilha de ontologias membership/fraternal"@pt ;
+               "Declarações externas para a pilha de ontologias membership/fraternal"@pt ,
+               "Külső deklarációk a membership/fraternal ontológiacsomaghoz"@hu ;
     rdfs:comment "OWL 2 DL declarations of the FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O and DCTERMS terms used by membership, fraternal and ontologies built on them."@en ,
                  "OWL 2 DL-deklarationer av de FOAF-, ORG-, ROV-, ADMS-, schema.org-, SKOS-, PROV-O- och DCTERMS-termer som används av membership, fraternal och ontologier som bygger på dem."@sv ,
                  "Déclarations OWL 2 DL des termes FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O et DCTERMS utilisés par membership, fraternal et les ontologies qui s'appuient sur eux."@fr ,
                  "Dichiarazioni OWL 2 DL dei termini FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O e DCTERMS usati da membership, fraternal e dalle ontologie costruite su di esse."@it ,
                  "OWL-2-DL-Deklarationen der Terme aus FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O und DCTERMS, die von membership, fraternal und darauf aufbauenden Ontologien verwendet werden."@de ,
                  "Declaraciones OWL 2 DL de los términos de FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O y DCTERMS usados por membership, fraternal y las ontologías construidas sobre ellas."@es ,
-                 "Declarações OWL 2 DL dos termos de FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O e DCTERMS usados por membership, fraternal e pelas ontologias construídas sobre elas."@pt ;
+                 "Declarações OWL 2 DL dos termos de FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O e DCTERMS usados por membership, fraternal e pelas ontologias construídas sobre elas."@pt ,
+                 "A FOAF, W3C ORG, W3C ROV, ADMS, schema.org, SKOS, PROV-O és DCTERMS azon fogalmainak OWL 2 DL deklarációi, amelyeket a membership, a fraternal és az ezekre épülő ontológiák használnak."@hu ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
     dcterms:rightsHolder <https://orcid.org/0009-0002-6239-5346> ;
