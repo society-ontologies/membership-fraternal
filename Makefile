@@ -179,6 +179,8 @@ docs: export PYTHONHASHSEED = 0
 docs:
 	$(PYLODE_PYTHON) tools/i18n.py docs membership/membership-ontology.ttl docs/membership
 	$(PYLODE_PYTHON) tools/i18n.py docs fraternal/fraternal-ontology.ttl docs/fraternal
+	$(PYLODE_PYTHON) tools/i18n.py anchors membership/membership-ontology.ttl docs/membership
+	$(PYLODE_PYTHON) tools/i18n.py anchors fraternal/fraternal-ontology.ttl docs/fraternal
 
 # --- Translations -------------------------------------------------------------
 # Well-formed, registered language tags, and English text behind every translation.

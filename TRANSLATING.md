@@ -67,3 +67,13 @@ pyLODE cannot show more than one language at a time: it runs a term's titles tog
 ("Membership OrganisationMedlemsorganisation"). `tools/i18n.py` therefore gives it one language at
 a time, with English text wherever a term has no translation, and adds a language switcher:
 English at `docs/<ontology>/`, the others at `docs/<ontology>/<language>/`.
+
+**Anchors.** pyLODE builds the anchor of a term from its label, with spaces and every non-ASCII
+character removed. Then `https://w3id.org/membership#MembershipOrganization` missed the English page
+(`#MembershipOrganisation`) and the German one (`#Mitgliederorganisation`), and a label in Greek
+or Hungarian would lose most of its letters. `tools/pylode_anchors.py` runs pyLODE with the
+anchor taken from the IRI instead, so the anchor is the same on every page and in every language.
+This holds only if the local name of a term is plain ASCII, which is the rule for all IRIs here
+(a Greek term gets an English local name). `make docs` ends with `tools/i18n.py anchors`, which
+fails if a term has no element with its local name as id, if a term id is repeated, or if a link
+to `#name` has no target.

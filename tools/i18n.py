@@ -11,13 +11,17 @@ file holds everything a reader of its IRI needs. See TRANSLATING.md.
            translator to work through.
   docs     Write the pyLODE documentation of one ontology once per language: the English
            page at OUTDIR/index.html, the others at OUTDIR/<language>/index.html, each with
-           a language switcher. A term without a translation shows its English text.
+           a language switcher. A term without a translation shows its English text. The
+           anchor of a term is the local name of its IRI (tools/pylode_anchors.py).
+  anchors  Check the pages `docs` wrote: every term has an element with the local name of its
+           IRI as id, no term id is repeated, every link to #name has a target.
 
 Needs rdflib and pyLODE, so run it with the pyLODE environment (see `make docs`, `make i18n`).
 
 Usage: python3 tools/i18n.py check FILE.ttl [FILE.ttl ...]
        python3 tools/i18n.py missing LANGUAGE FILE.ttl [FILE.ttl ...]
        python3 tools/i18n.py docs ONTOLOGY.ttl OUTDIR
+       python3 tools/i18n.py anchors ONTOLOGY.ttl OUTDIR
 """
 import argparse
 import re
@@ -27,7 +31,7 @@ import tempfile
 from pathlib import Path
 
 from rdflib import RDF, BNode, Graph, Literal
-from rdflib.namespace import DCTERMS, RDFS, SKOS
+from rdflib.namespace import DCTERMS, OWL, RDFS, SKOS
 
 # The languages the ontologies are written in, with the name shown in the language switcher.
 # Adding a language means adding it here, which also catches a mistyped code: "se" is
@@ -176,13 +180,54 @@ def docs(ontology, outdir):
             page.parent.mkdir(parents=True, exist_ok=True)
             source = Path(tmp) / f"{ontology.stem}-{language}.nt"
             write_ntriples(graph, in_language(graph, language), source)
-            subprocess.run([sys.executable, "-m", "pylode", str(source), "-o", str(page)],
+            # pylode_anchors.py is `python -m pylode` with the anchors taken from the IRIs
+            subprocess.run([sys.executable, str(Path(__file__).with_name("pylode_anchors.py")),
+                            str(source), "-o", str(page)],
                            check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             html = page.read_text(encoding="utf-8")
             html = html.replace("</h1>", "</h1>\n" + switcher(language, available), 1)
             html = html.replace("<html>", f'<html lang="{language}">', 1)
             page.write_text(html, encoding="utf-8")
             print(f"{page}: {LANGUAGE_NAMES.get(language, language)}")
+
+
+def anchors(ontology, outdir):
+    """Check the anchors of the pages `docs` wrote: every term of the ontology has an element
+    with its IRI's local name as id, so that https://w3id.org/membership#Term lands on the
+    term; no term id occurs more often than pyLODE lists the term; every link to #name points
+    to an id on the page. Returns the pages, the terms and the problems."""
+    graph = parse([ontology])
+    namespaces = [str(s) + "#" for s in graph.subjects(RDF.type, OWL.Ontology)]
+    kinds = (OWL.Class, OWL.ObjectProperty, OWL.DatatypeProperty, OWL.AnnotationProperty,
+             OWL.NamedIndividual)
+    # pyLODE lists a property once with its kind and once more under each characteristic
+    # (functional, symmetric ...), so such a term legitimately occurs more than once.
+    characteristics = (OWL.FunctionalProperty, OWL.InverseFunctionalProperty, OWL.SymmetricProperty,
+                       OWL.AsymmetricProperty, OWL.TransitiveProperty, OWL.ReflexiveProperty,
+                       OWL.IrreflexiveProperty)
+    allowed = {}
+    for kind in kinds:
+        for s in graph.subjects(RDF.type, kind):
+            for ns in namespaces:
+                if str(s).startswith(ns) and len(str(s)) > len(ns):
+                    allowed[str(s)[len(ns):]] = 1 + sum((s, RDF.type, c) in graph for c in characteristics)
+    terms = sorted(allowed)
+    outdir = Path(outdir)
+    pages = [outdir / "index.html"] + sorted(outdir.glob("*/index.html"))
+    problems = []
+    for page in pages:
+        html = page.read_text(encoding="utf-8")
+        ids = re.findall(r'\bid="([^"]*)"', html)
+        # only the ids of terms: pyLODE's own page furniture (the logo repeats id="Path") is not ours
+        for name in terms:
+            if ids.count(name) > allowed[name]:
+                problems.append(f"{page}: id=\"{name}\" occurs {ids.count(name)} times, at most {allowed[name]} expected")
+        for name in terms:
+            if name not in ids:
+                problems.append(f"{page}: no element with id=\"{name}\" for the term {name}")
+        for name in sorted({h for h in re.findall(r'href="#([^"]+)"', html) if h not in ids}):
+            problems.append(f"{page}: a link to #{name} has no target")
+    return pages, terms, problems
 
 
 if __name__ == "__main__":
@@ -195,6 +240,9 @@ if __name__ == "__main__":
     d = commands.add_parser("docs")
     d.add_argument("ontology")
     d.add_argument("outdir")
+    a = commands.add_parser("anchors")
+    a.add_argument("ontology")
+    a.add_argument("outdir")
     args = parser.parse_args()
     if args.command == "check":
         found = check(args.files)
@@ -202,5 +250,9 @@ if __name__ == "__main__":
         sys.exit(1 if found else 0)
     elif args.command == "missing":
         missing(args.language, args.files)
+    elif args.command == "anchors":
+        pages, terms, found = anchors(args.ontology, args.outdir)
+        print("\n".join(found) if found else f"anchors OK: {len(terms)} terms on {len(pages)} pages")
+        sys.exit(1 if found else 0)
     else:
         docs(args.ontology, args.outdir)
