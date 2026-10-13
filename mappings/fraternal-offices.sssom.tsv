@@ -14,5 +14,5 @@ fraternalc:consenior	Consenior	skos:broadMatch	mbrc:vicePresident	Vice President
 fraternalc:scriptor	Scriptor	skos:broadMatch	mbrc:secretary	Secretary	semapv:ManualMappingCuration	0.95	
 fraternalc:kassenwart	Kassenwart	skos:broadMatch	mbrc:treasurer	Treasurer	semapv:ManualMappingCuration	0.95	
 fraternalc:philistersenior	Philistersenior	skos:broadMatch	mbrc:president	President	semapv:ManualMappingCuration	0.6	Head of the alumni branch, not of the Verbindung as a whole.
-fraternalc:fuchsmajor	Fuchsmajor	skos:broadMatch	mbrc:introducer	Introducer	semapv:ManualMappingCuration	0.5	Trains new members; there is no closer generic office.
+fraternalc:fuchsmajor	Fuchsmajor	skos:broadMatch	mbrc:noviceMaster	Novice Master	semapv:ManualMappingCuration	0.9	Trains the new members (Füchse) until they are admitted in full.
 fraternalc:fechtwart	Fencing Officer	skos:broadMatch	mbrc:activityLeader	Activity Leader	semapv:ManualMappingCuration	0.8	Leads the fencing practice of the Verbindung.

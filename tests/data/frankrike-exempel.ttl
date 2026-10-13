@@ -223,3 +223,23 @@ fr:jean-secretaire a mbr:Tenure ;
     org:member fr:jean ; org:organization fr:AcademieExemplaire ;
     org:role fraternalc:perpetualSecretary ;
     mbr:startDate "2018"^^xsd:gYear .
+
+# Members elected from afar or from abroad, as in an academy, and two honorary offices.
+fr:ines a foaf:Person ; schema:name "Inès Lointaine" .
+fr:klaus a foaf:Person ; schema:name "Klaus Auswärtig" .
+fr:hugues a foaf:Person ; schema:name "Hugues Illustre" .
+
+fr:ines-correspondante a mbr:Membership ;
+    org:member fr:ines ; org:organization fr:AcademieExemplaire ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:correspondingMember ;
+    mbr:startDate "2020"^^xsd:gYear .
+
+fr:klaus-etranger a mbr:Membership ;
+    org:member fr:klaus ; org:organization fr:AcademieExemplaire ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:foreignMember ;
+    mbr:startDate "2022"^^xsd:gYear .
+
+fr:hugues-president-d-honneur a mbr:Tenure ;
+    org:member fr:hugues ; org:organization fr:AcademieExemplaire ;
+    org:role mbrc:honoraryPresident ;
+    mbr:startDate "2010"^^xsd:gYear .

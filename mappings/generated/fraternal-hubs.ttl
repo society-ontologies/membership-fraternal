@@ -183,15 +183,15 @@
   <https://w3id.org/sssom/subject_label> "Studentenverbindung" ;
   <https://w3id.org/sssom/object_label> "Student Society" ] .
 
-<https://w3id.org/fraternal/code/studentenverbindungDachverband> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/voluntaryAssociation> .
+<https://w3id.org/fraternal/code/studentenverbindungDachverband> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/federation> .
 [ a <http://www.w3.org/2002/07/owl#Axiom> ;
   <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/studentenverbindungDachverband> ;
   <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
-  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/voluntaryAssociation> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/federation> ;
   <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
-  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
   <https://w3id.org/sssom/subject_label> "Federation of Studentenverbindungen" ;
-  <https://w3id.org/sssom/object_label> "Voluntary Association" ;
+  <https://w3id.org/sssom/object_label> "Federation" ;
   <https://w3id.org/sssom/comment> "An association of associations." ] .
 
 <https://w3id.org/fraternal/code/corps> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/fraternalOrganization> .
