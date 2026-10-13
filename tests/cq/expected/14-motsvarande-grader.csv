@@ -1,6 +1,8 @@
 hubRank,hub,order,degree
 2,Active Stage,Corps Imaginaria at Exemplarburg,Bursch
+2,Active Stage,Katholische Studentenverbindung Habsburgia,Bursch
 3,Alumni Stage,Corps Imaginaria at Exemplarburg,Alter Herr
+3,Alumni Stage,Katholische Studentenverbindung Habsburgia,Alter Herr
 4,Commander,Ordine al Merito esemplare,Commendatore
 4,Commander,Ordre du Mérite exemplaire,Commandeur
 5,Commander First Class,Ordine al Merito esemplare,Grande Ufficiale
@@ -15,5 +17,6 @@ hubRank,hub,order,degree
 2,Knight,Ordine al Merito esemplare,Cavaliere
 2,Knight,Ordre du Mérite exemplaire,Chevalier
 1,Novice Stage,Corps Imaginaria at Exemplarburg,Fuchs
+1,Novice Stage,Katholische Studentenverbindung Habsburgia,Fuchs
 3,Officer,Ordine al Merito esemplare,Ufficiale
 3,Officer,Ordre du Mérite exemplaire,Officier

@@ -1,0 +1,182 @@
+# Fictional Austrian organisations (all names, numbers and people invented for testing):
+# an association under the Vereinsgesetz 2002 with its ZVR-Zahl and officers, an academy with
+# members of different kinds, a federation of Catholic Studentenverbindungen with a
+# Verbindung and a school fraternity, a grand lodge that was suppressed for a time, and a
+# decoration awarded by the Republic. Shows that Austria fits the generic model: Austrian
+# forms are the hub concepts, with the Austrian German wording as @de-AT altLabels on the hub
+# offices (Obmann, Kassier), and nothing new is needed in the codelists.
+#
+# A draft from general knowledge; the German wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix at:      <https://example.org/oesterreich/> .
+
+# --- An association under the Vereinsgesetz 2002 --------------------------------
+
+at:TheaterfreundeBeispielstadt a mbr:MembershipOrganization ;
+    rdfs:label "Verein der Theaterfreunde Beispielstadt"@de ;
+    org:classification mbrc:artsClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration at:theaterfreunde-zvr ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1987"^^xsd:gYear .
+
+# The Zentrales Vereinsregister gives every Verein a running number, the ZVR-Zahl.
+at:theaterfreunde-zvr a adms:Identifier ;
+    skos:notation "000000001" ;
+    adms:schemaAgency "Zentrales Vereinsregister (ZVR)" .
+
+at:anna a foaf:Person ; schema:name "Anna Beispiel" .
+at:bernd a foaf:Person ; schema:name "Bernd Muster" .
+at:clara a foaf:Person ; schema:name "Clara Probe" .
+at:dieter a foaf:Person ; schema:name "Dieter Probe" .
+at:eva a foaf:Person ; schema:name "Eva Fiktiv" .
+
+# Obfrau (the president), Kassier (the treasurer), Schriftführer (the secretary) and two
+# Rechnungsprüfer (the auditors, whom the Vereinsgesetz requires), all hub offices.
+at:anna-obfrau a mbr:Tenure ;
+    org:member at:anna ; org:organization at:TheaterfreundeBeispielstadt ;
+    org:role mbrc:president ; mbr:startDate "2022-03-19"^^xsd:date .
+at:bernd-kassier a mbr:Tenure ;
+    org:member at:bernd ; org:organization at:TheaterfreundeBeispielstadt ;
+    org:role mbrc:treasurer ; mbr:startDate "2019-03-16"^^xsd:date .
+at:clara-schriftfuehrerin a mbr:Tenure ;
+    org:member at:clara ; org:organization at:TheaterfreundeBeispielstadt ;
+    org:role mbrc:secretary ; mbr:startDate "2019-03-16"^^xsd:date .
+at:dieter-rechnungspruefer a mbr:Tenure ;
+    org:member at:dieter ; org:organization at:TheaterfreundeBeispielstadt ;
+    org:role mbrc:auditor ; mbr:startDate "2019-03-16"^^xsd:date .
+at:eva-rechnungspruefer a mbr:Tenure ;
+    org:member at:eva ; org:organization at:TheaterfreundeBeispielstadt ;
+    org:role mbrc:auditor ; mbr:startDate "2019-03-16"^^xsd:date .
+
+at:clara-familie a mbr:Membership ;
+    org:member at:clara ; org:organization at:TheaterfreundeBeispielstadt ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:familyMember ;
+    mbr:startDate "2018-09-01"^^xsd:date .
+
+at:generalversammlung-2026 a mbr:Gathering ;
+    rdfs:label "Generalversammlung 2026"@de ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer at:TheaterfreundeBeispielstadt ;
+    mbr:startDate "2026-03-21"^^xsd:date .
+
+# --- An academy ----------------------------------------------------------------
+
+at:AkademieExemplaria a mbr:MembershipOrganization ;
+    rdfs:label "Akademie der Wissenschaften Exemplaria"@de ;
+    org:classification mbrc:academy ;
+    rov:orgType mbrc:publicLawBody ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed .
+
+at:franz a foaf:Person ; schema:name "Franz Gelehrt" .
+at:greta a foaf:Person ; schema:name "Greta Fernab" .
+at:hans a foaf:Person ; schema:name "Hans Ehrenwert" .
+
+# A wirkliches Mitglied is an ordinary member; a korrespondierendes Mitglied im Ausland a
+# corresponding member, who lives elsewhere; a Ehrenmitglied an honorary member.
+at:franz-wirklich a mbr:Membership ;
+    org:member at:franz ; org:organization at:AkademieExemplaria ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2015"^^xsd:gYear .
+at:greta-korrespondierend a mbr:Membership ;
+    org:member at:greta ; org:organization at:AkademieExemplaria ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:correspondingMember ;
+    mbr:startDate "2021"^^xsd:gYear .
+at:hans-ehren a mbr:Membership ;
+    org:member at:hans ; org:organization at:AkademieExemplaria ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:honorary ;
+    mbr:startDate "2019"^^xsd:gYear .
+
+# --- A federation of Catholic Studentenverbindungen -----------------------------
+
+at:VerbandKatholischerVerbindungen a mbr:MembershipOrganization ;
+    rdfs:label "Exemplarischer Verband katholischer Verbindungen"@de ;
+    org:classification fraternalc:studentenverbindungDachverband ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1933"^^xsd:gYear .
+
+# A Catholic, non-fencing Verbindung of students that wears colours, and a school
+# fraternity (a Schülerverbindung).
+at:VerbindungHabsburgia a fraternal:FraternalOrder ;
+    rdfs:label "Katholische Studentenverbindung Habsburgia"@de ;
+    org:classification fraternalc:catholicStudentenverbindung ;
+    org:memberOf at:VerbandKatholischerVerbindungen ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:memberTitle fraternalc:cartellbruder ;
+    fraternal:degreeSystem fraternalc:StudentenverbindungDegrees ;
+    fraternal:characteristic fraternalc:nonFencing , fraternalc:colourWearing , fraternalc:lifelongBond .
+
+at:VerbindungKlosterschule a fraternal:FraternalOrder ;
+    rdfs:label "Mittelschulverbindung Klosterschule"@de ;
+    org:classification fraternalc:schuelerverbindung ;
+    org:memberOf at:VerbandKatholischerVerbindungen ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    fraternal:characteristic fraternalc:colourWearing .
+
+# --- A grand lodge, suppressed from 1938 to 1945 --------------------------------
+
+at:GrosslogeExemplaria a fraternal:GrandBody ;
+    rdfs:label "Großloge Exemplaria von Österreich"@de ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1918"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ,
+                             fraternalc:supremeBeingRequirement ;
+    mbr:hasPeriod at:grossloge-erste-periode , at:grossloge-verboten , at:grossloge-neugruendung .
+
+at:grossloge-erste-periode a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1918"^^xsd:gYear ; mbr:endDate "1938"^^xsd:gYear .
+
+# Dissolved and its property seized at the Anschluss in 1938.
+at:grossloge-verboten a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:suppressedOrganization ;
+    mbr:startDate "1938"^^xsd:gYear ; mbr:endDate "1945"^^xsd:gYear .
+
+# Founded again on 4 August 1945.
+at:grossloge-neugruendung a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1945-08-04"^^xsd:date .
+
+# --- A decoration awarded by the Republic (it has no members) ------------------
+
+at:RepublikExemplaria a org:Organization ;
+    rdfs:label "Republik Exemplaria"@de .
+
+at:Auszeichnungen a skos:ConceptScheme ;
+    skos:prefLabel "Auszeichnungen der Republik Exemplaria"@de ;
+    skos:hasTopConcept at:Ehrenzeichen .
+
+at:Ehrenzeichen a mbr:Distinction ;
+    skos:inScheme at:Auszeichnungen ; skos:topConceptOf at:Auszeichnungen ;
+    skos:prefLabel "Ehrenzeichen für Verdienste um die Republik Exemplaria"@de ;
+    mbr:distinctionType mbrc:badge .
+
+at:ehrenzeichen-verleihung-2025 a mbr:DistinctionConferral ;
+    mbr:recipient at:franz ;
+    mbr:conferred at:Ehrenzeichen ;
+    mbr:conferredBy at:RepublikExemplaria ;
+    mbr:startDate "2025-06-12"^^xsd:date .
