@@ -1,0 +1,25 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-spain
+# mapping_set_version: 1.0.0
+# mapping_set_description: Spanish grades, stages, insignia, ceremonies and offices (the Order of Charles III, the tuna, the cofradías) placed under the generic chivalric grades, stages, insignia types, ceremony types and office types.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:carlosIIICruz	Cross	skos:closeMatch	fraternalc:knightGrade	Knight	semapv:ManualMappingCuration	0.6	The lowest grade; the generic ladder has no cross, and the knight is the nearest entry grade.
+fraternalc:carlosIIIEncomienda	Commander	skos:closeMatch	fraternalc:commanderGrade	Commander	semapv:ManualMappingCuration	0.8	The commander grade (encomienda).
+fraternalc:carlosIIIEncomiendaDeNumero	Commander by Number	skos:closeMatch	fraternalc:commanderFirstClassGrade	Commander First Class	semapv:ManualMappingCuration	0.7	The grade between Encomienda and Gran Cruz.
+fraternalc:carlosIIIGranCruz	Grand Cross	skos:closeMatch	fraternalc:grandCrossGrade	Grand Cross	semapv:ManualMappingCuration	0.9	The grand cross.
+fraternalc:carlosIIICollar	Collar	skos:closeMatch	fraternalc:collarGrade	Grand Collar	semapv:ManualMappingCuration	0.9	The highest grade, worn with a collar.
+fraternalc:novato	Novato	skos:closeMatch	fraternalc:noviceStage	Novice Stage	semapv:ManualMappingCuration	0.85	The first stage of a candidate.
+fraternalc:pardillo	Pardillo	skos:closeMatch	fraternalc:noviceStage	Novice Stage	semapv:ManualMappingCuration	0.8	The second candidate stage, in the tunas that have one.
+fraternalc:tuno	Tuno	skos:closeMatch	fraternalc:activeStage	Active Stage	semapv:ManualMappingCuration	0.9	The baptised full member.
+fraternalc:beca	Beca	skos:broadMatch	fraternalc:sash	Sash	semapv:ManualMappingCuration	0.9	A band worn in a V over the chest and shoulders, in the colour of the faculty.
+fraternalc:capa	Cape	skos:broadMatch	fraternalc:robe	Robe	semapv:ManualMappingCuration	0.8	The cape or manteo of the tuno's costume.
+fraternalc:bautizoDeTuno	Baptism of a Tuno	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	The ceremony that recognises a candidate as a tuno.
+fraternalc:juraDeReglas	Oath on the Rule	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.9	The act of admission into a cofradía.
+fraternalc:estacionDePenitencia	Station of Penance	skos:closeMatch	mbrc:procession	Procession	semapv:ManualMappingCuration	0.8	The public procession of a penitential cofradía in Holy Week.
+fraternalc:hermanoMayor	Hermano Mayor	skos:closeMatch	mbrc:president	President	semapv:ManualMappingCuration	0.9	The president of a cofradía or hermandad.
