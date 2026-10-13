@@ -819,6 +819,79 @@ mbrc:familyMember a skos:Concept , owl:NamedIndividual ;
 # 4. MEMBERSHIP EVENT TYPES
 ##############################################################################
 
+mbrc:ApplicationStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    skos:prefLabel "Application Statuses"@en , "Ansökningsstatusar"@sv , "Statuts de la demande"@fr , "Antragsstatus"@de , "Stati della domanda"@it ;
+    skos:definition "Where a membership application stands, from received to decided. Used with mbr:applicationStatus."@en ,
+                    "Hur långt en medlemsansökan har kommit, från mottagen till avgjord. Används med mbr:applicationStatus."@sv ,
+                    "L'état d'avancement d'une demande d'adhésion, de la réception à la décision. S'utilise avec mbr:applicationStatus."@fr ,
+                    "Der Stand eines Mitgliedschaftsantrags, von eingegangen bis entschieden. Wird mit mbr:applicationStatus verwendet."@de ,
+                    "A che punto è una domanda di ammissione, dalla ricezione alla decisione. Si usa con mbr:applicationStatus."@it ;
+    skos:hasTopConcept mbrc:received , mbrc:postedForObjection , mbrc:onBallot , mbrc:deferred ,
+                       mbrc:accepted , mbrc:rejected , mbrc:withdrawn .
+
+mbrc:received a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "Received"@en , "Mottagen"@sv , "Reçue"@fr , "Eingegangen"@de , "Ricevuta"@it ;
+    skos:definition "The application has been received and not yet taken further."@en ,
+                    "Ansökan har kommit in och har inte tagits vidare."@sv ,
+                    "La demande a été reçue et n'a pas encore été traitée."@fr ,
+                    "Der Antrag ist eingegangen und noch nicht weiterbehandelt worden."@de ,
+                    "La domanda è stata ricevuta e non è ancora stata trattata."@it .
+
+mbrc:postedForObjection a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "Posted for Objection"@en , "Anslagen för invändningar"@sv , "Soumise à opposition"@fr , "Zur Einsprache ausgelegt"@de , "Esposta per opposizioni"@it ;
+    skos:definition "The application has been made known to the members for a set period, during which they may object (see mbrc:proposalAndObjectionPeriod)."@en ,
+                    "Ansökan har gjorts känd för medlemmarna under en bestämd tid, då de får invända (se mbrc:proposalAndObjectionPeriod)."@sv ,
+                    "La demande a été portée à la connaissance des membres pendant un délai fixé, durant lequel ils peuvent s'y opposer (voir mbrc:proposalAndObjectionPeriod)."@fr ,
+                    "Der Antrag ist den Mitgliedern für eine bestimmte Frist bekannt gemacht worden, in der sie Einspruch erheben können (siehe mbrc:proposalAndObjectionPeriod)."@de ,
+                    "La domanda è stata portata a conoscenza dei soci per un periodo stabilito, durante il quale possono opporsi (vedi mbrc:proposalAndObjectionPeriod)."@it .
+
+mbrc:onBallot a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "On Ballot"@en , "Under ballotering"@sv , "Au scrutin"@fr , "In Abstimmung"@de , "In votazione"@it ;
+    skos:definition "The application is being put to a vote by the members (see mbr:Ballot)."@en ,
+                    "Ansökan läggs fram för medlemmarnas omröstning (se mbr:Ballot)."@sv ,
+                    "La demande est soumise au vote des membres (voir mbr:Ballot)."@fr ,
+                    "Der Antrag wird den Mitgliedern zur Abstimmung vorgelegt (siehe mbr:Ballot)."@de ,
+                    "La domanda è sottoposta al voto dei soci (vedi mbr:Ballot)."@it .
+
+mbrc:deferred a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "Deferred"@en , "Uppskjuten"@sv , "Ajournée"@fr , "Zurückgestellt"@de , "Rinviata"@it ;
+    skos:definition "The decision on the application has been put off to a later meeting or ballot."@en ,
+                    "Beslutet om ansökan har skjutits upp till ett senare möte eller en senare omröstning."@sv ,
+                    "La décision sur la demande a été reportée à une réunion ou à un scrutin ultérieur."@fr ,
+                    "Die Entscheidung über den Antrag ist auf eine spätere Sitzung oder Abstimmung verschoben worden."@de ,
+                    "La decisione sulla domanda è stata rinviata a una riunione o a una votazione successiva."@it .
+
+mbrc:accepted a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "Accepted"@en , "Antagen"@sv , "Acceptée"@fr , "Angenommen"@de , "Accolta"@it ;
+    skos:definition "The application was granted. The membership it led to is given with mbr:resultingMembership."@en ,
+                    "Ansökan bifölls. Det medlemskap den ledde till anges med mbr:resultingMembership."@sv ,
+                    "La demande a été accueillie. L'adhésion qui en est issue est indiquée avec mbr:resultingMembership."@fr ,
+                    "Der Antrag wurde bewilligt. Die Mitgliedschaft, zu der er geführt hat, wird mit mbr:resultingMembership angegeben."@de ,
+                    "La domanda è stata accolta. L'appartenenza a cui ha portato si indica con mbr:resultingMembership."@it .
+
+mbrc:rejected a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "Rejected"@en , "Avslagen"@sv , "Rejetée"@fr , "Abgelehnt"@de , "Respinta"@it ;
+    skos:definition "The organisation decided not to admit the applicant, by ballot or otherwise."@en ,
+                    "Organisationen beslutade att inte ta upp den sökande, genom ballotering eller på annat sätt."@sv ,
+                    "L'organisation a décidé de ne pas admettre le candidat, par scrutin ou autrement."@fr ,
+                    "Die Organisation beschloss, den Antragsteller nicht aufzunehmen, durch Abstimmung oder auf andere Weise."@de ,
+                    "L'organizzazione ha deciso di non ammettere il richiedente, con una votazione o in altro modo."@it .
+
+mbrc:withdrawn a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:ApplicationStatuses ; skos:topConceptOf mbrc:ApplicationStatuses ;
+    skos:prefLabel "Withdrawn"@en , "Återkallad"@sv , "Retirée"@fr , "Zurückgezogen"@de , "Ritirata"@it ;
+    skos:definition "The applicant withdrew the application before it was decided."@en ,
+                    "Den sökande drog tillbaka ansökan innan den avgjordes."@sv ,
+                    "Le candidat a retiré sa demande avant qu'elle soit tranchée."@fr ,
+                    "Der Antragsteller hat den Antrag zurückgezogen, bevor über ihn entschieden wurde."@de ,
+                    "Il richiedente ha ritirato la domanda prima che fosse decisa."@it .
+
 mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
     skos:prefLabel "Membership Event Types"@en , "Typer av medlemskapshändelser"@sv , "Types d'événements d'adhésion"@fr , "Arten von Mitgliedschaftsereignissen"@de , "Tipi di evento di appartenenza"@it ;
     skos:definition "Kinds of event in the life of a membership, from application and admission to resignation, expulsion and death. Used with mbr:membershipEventType."@en ,
@@ -826,7 +899,7 @@ mbrc:MembershipEventTypes a skos:ConceptScheme , owl:NamedIndividual ;
                     "Types d'événements dans la vie d'une adhésion, de la candidature et de l'admission à la démission, l'exclusion et le décès. S'utilise avec mbr:membershipEventType."@fr ,
                     "Arten von Ereignissen im Verlauf einer Mitgliedschaft, von Antrag und Aufnahme bis zu Austritt, Ausschluss und Tod. Wird mit mbr:membershipEventType verwendet."@de ,
                     "Tipi di eventi nella vita di un'appartenenza, dalla domanda e dall'ammissione alle dimissioni, all'espulsione e alla morte. Si usa con mbr:membershipEventType."@it ;
-    skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:ballot , mbrc:rejection ,
+    skos:hasTopConcept mbrc:application , mbrc:proposal , mbrc:objection , mbrc:ballot , mbrc:rejection ,
                        mbrc:admission , mbrc:statusChange , mbrc:resignation , mbrc:lapse ,
                        mbrc:expulsion , mbrc:reinstatement , mbrc:death ,
                        mbrc:suspension , mbrc:transfer , mbrc:officeElection .
@@ -840,6 +913,20 @@ mbrc:proposal a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
     skos:prefLabel "Proposal"@en , "Förslag"@sv , "Proposition"@fr , "Vorschlag"@de , "Proposta"@it ;
     skos:definition "A member proposes a candidate."@en , "En medlem föreslår en kandidat."@sv , "Un membre propose un candidat."@fr , "Ein Mitglied schlägt einen Kandidaten vor."@de , "Un socio propone un candidato."@it .
+
+mbrc:objection a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;
+    skos:prefLabel "Objection"@en , "Invändning"@sv , "Opposition"@fr , "Einspruch"@de , "Opposizione"@it ;
+    skos:definition "A member objects to a proposal or application that has been made known for a set period (see mbrc:proposalAndObjectionPeriod)."@en ,
+                    "En medlem invänder mot ett förslag eller en ansökan som gjorts känd under en bestämd tid (se mbrc:proposalAndObjectionPeriod)."@sv ,
+                    "Un membre s'oppose à une proposition ou à une demande portée à la connaissance des membres pendant un délai fixé (voir mbrc:proposalAndObjectionPeriod)."@fr ,
+                    "Ein Mitglied erhebt Einspruch gegen einen Vorschlag oder Antrag, der für eine bestimmte Frist bekannt gemacht wurde (siehe mbrc:proposalAndObjectionPeriod)."@de ,
+                    "Un socio si oppone a una proposta o a una domanda portata a conoscenza dei soci per un periodo stabilito (vedi mbrc:proposalAndObjectionPeriod)."@it ;
+    skos:scopeNote "Whether the objection stops the proposal is for the organisation to decide. A proposal that is stopped is recorded as a mbrc:rejection."@en ,
+                   "Om invändningen stoppar förslaget avgör organisationen. Ett förslag som stoppas registreras som en mbrc:rejection."@sv ,
+                   "C'est à l'organisation de décider si l'opposition arrête la proposition. Une proposition arrêtée est consignée comme une mbrc:rejection."@fr ,
+                   "Ob der Einspruch den Vorschlag stoppt, entscheidet die Organisation. Ein gestoppter Vorschlag wird als mbrc:rejection festgehalten."@de ,
+                   "Spetta all'organizzazione decidere se l'opposizione ferma la proposta. Una proposta fermata si registra come mbrc:rejection."@it .
 
 mbrc:ballot a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipEventTypes ; skos:topConceptOf mbrc:MembershipEventTypes ;

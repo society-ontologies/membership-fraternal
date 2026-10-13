@@ -1,0 +1,12 @@
+# EXPECT: an application that uses org:member
+# MESSAGE: A membership application has mbr:applicant, not org:member
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Club a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:a a foaf:Person .
+ex:app a mbr:MembershipApplication ; mbr:applicant ex:a ; org:member ex:a ;
+    mbr:appliedTo ex:Club ; mbr:applicationStatus mbrc:received .

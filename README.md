@@ -272,6 +272,13 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - Reuse was checked: schema.org has no `mentor`. The Relationship vocabulary has `rel:mentorOf` and `rel:apprenticeTo`, but they link two persons without any organisation or time, so they cannot say in which organisation or for how long; the property's scope note says so.
 - SHACL: the mentor is an agent, and a member cannot be their own mentor. New competency question 18 and an invalid fixture.
 
+**Unreleased.** Membership applications. New classes and properties, additive; the texts are in English, Swedish, French, German and Italian.
+- `mbr:MembershipApplication`: a request to be admitted, with its decision. It exists before there is a membership and may never lead to one. `mbr:applicant`, `mbr:appliedTo`, `mbr:applicationStatus` (new hub codelist `mbrc:ApplicationStatuses`: received, postedForObjection, onBallot, deferred, accepted, rejected, withdrawn) and, for an accepted one, `mbr:resultingMembership`. `mbr:proposer`, `mbr:seconder`, `mbr:startDate` and `mbr:decisionDate` are reused. An application has no `org:member`, whose domain is `org:Membership`; SHACL says so.
+- `mbr:Ballot` on an application (`mbr:ballotOn`), with `mbr:votesFor` and `mbr:votesAgainst`. The rule that decides the vote (one black ball, two thirds) is the organisation's own and is not recorded; the outcome is `mbr:applicationStatus`.
+- A new event type `mbrc:objection` in `mbrc:MembershipEventTypes`, for the objection period of `mbrc:proposalAndObjectionPeriod`.
+- The lighter way, a membership with the status `mbrc:proposed` or `mbrc:candidate` and its events, stays as it was; the scope note of the class says when to use which.
+- SHACL: shapes for the application and the ballot (counts are non-negative integers). New competency question 19, five invalid fixtures, and an application with a ballot and one that was accepted in `tests/data/klubb-exempel.ttl`. SKOS check 08 knows the new hub scheme.
+
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).

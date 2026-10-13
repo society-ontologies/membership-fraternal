@@ -199,6 +199,10 @@ mbrsh:LegalFormValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:LegalForms ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:LegalForms ] ) .
 
+mbrsh:ApplicationStatusValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:ApplicationStatuses ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:ApplicationStatuses ] ) .
+
 mbrsh:PublicBenefitStatusValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:PublicBenefitStatuses ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:PublicBenefitStatuses ]
@@ -337,6 +341,41 @@ mbrsh:MembershipEventShape a sh:NodeShape ;
                 [ sh:path mbr:resultingCategory ; sh:class skos:Concept ;
                   sh:node mbrsh:MembershipCategoryValue ;
                   sh:message "mbr:resultingCategory must be a concept in mbrc:MembershipCategories, or one mapped to it. | mbr:resultingCategory ska vara ett begrepp i mbrc:MembershipCategories, eller ett som är mappat dit. | mbr:resultingCategory doit être un concept de mbrc:MembershipCategories, ou un concept qui y est mappé. | mbr:resultingCategory muss ein Konzept aus mbrc:MembershipCategories sein oder eines, das darauf abgebildet ist. | mbr:resultingCategory deve essere un concetto di mbrc:MembershipCategories, o uno associato a esso." ] .
+
+##############################################################################
+# Membership applications and ballots
+##############################################################################
+
+mbrsh:MembershipApplicationShape a sh:NodeShape ;
+    sh:targetClass mbr:MembershipApplication ;
+    sh:property [ sh:path mbr:applicant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class foaf:Agent ;
+                  sh:message "A membership application needs exactly one applicant (mbr:applicant). | En medlemsansökan behöver exakt en sökande (mbr:applicant). | Une demande d'adhésion a besoin d'exactement un candidat (mbr:applicant). | Ein Mitgliedschaftsantrag braucht genau einen Antragsteller (mbr:applicant). | Una domanda di ammissione richiede esattamente un richiedente (mbr:applicant)." ] ,
+                [ sh:path mbr:appliedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
+                  sh:message "A membership application needs exactly one organisation it is addressed to (mbr:appliedTo). | En medlemsansökan behöver exakt en organisation den riktas till (mbr:appliedTo). | Une demande d'adhésion a besoin d'exactement une organisation destinataire (mbr:appliedTo). | Ein Mitgliedschaftsantrag braucht genau eine Organisation, an die er gerichtet ist (mbr:appliedTo). | Una domanda di ammissione richiede esattamente un'organizzazione destinataria (mbr:appliedTo)." ] ,
+                [ sh:path mbr:applicationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node mbrsh:ApplicationStatusValue ;
+                  sh:message "mbr:applicationStatus must be exactly one concept in mbrc:ApplicationStatuses, or one mapped to it. | mbr:applicationStatus ska vara exakt ett begrepp i mbrc:ApplicationStatuses, eller ett som är mappat dit. | mbr:applicationStatus doit être exactement un concept de mbrc:ApplicationStatuses, ou un concept qui y est mis en correspondance. | mbr:applicationStatus muss genau ein Konzept in mbrc:ApplicationStatuses sein, oder eines, das darauf abgebildet ist. | mbr:applicationStatus deve essere esattamente un concetto di mbrc:ApplicationStatuses, o uno mappato su di esso." ] ,
+                [ sh:path mbr:resultingMembership ; sh:maxCount 1 ; sh:class org:Membership ] ,
+                [ sh:path mbr:proposer ; sh:class foaf:Agent ] ,
+                [ sh:path mbr:seconder ; sh:class foaf:Agent ] ;
+    # org:member is for a Membership; an applicant is not yet a member.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A membership application has mbr:applicant, not org:member (org:member is for a membership). | En medlemsansökan har mbr:applicant, inte org:member (org:member hör till ett medlemskap). | Une demande d'adhésion a mbr:applicant, pas org:member (org:member est pour une adhésion). | Ein Mitgliedschaftsantrag hat mbr:applicant, nicht org:member (org:member gehört zu einer Mitgliedschaft). | Una domanda di ammissione ha mbr:applicant, non org:member (org:member è per un'appartenenza)." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this ?m WHERE { $this org:member ?m . }
+        """
+    ] .
+
+mbrsh:BallotShape a sh:NodeShape ;
+    sh:targetClass mbr:Ballot ;
+    sh:property [ sh:path mbr:ballotOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mbr:MembershipApplication ;
+                  sh:message "A ballot needs exactly one application it is held on (mbr:ballotOn). | En ballotering behöver exakt en ansökan den gäller (mbr:ballotOn). | Un scrutin a besoin d'exactement une demande sur laquelle il porte (mbr:ballotOn). | Eine Abstimmung braucht genau einen Antrag, über den abgestimmt wird (mbr:ballotOn). | Una votazione richiede esattamente una domanda su cui si tiene (mbr:ballotOn)." ] ,
+                [ sh:path mbr:votesFor ; sh:maxCount 1 ; sh:node mbrsh:CountList ;
+                  sh:message "mbr:votesFor must be one non-negative integer. | mbr:votesFor ska vara ett enda icke-negativt heltal. | mbr:votesFor doit être un seul entier non négatif. | mbr:votesFor muss eine einzige nichtnegative ganze Zahl sein. | mbr:votesFor deve essere un solo intero non negativo." ] ,
+                [ sh:path mbr:votesAgainst ; sh:maxCount 1 ; sh:node mbrsh:CountList ;
+                  sh:message "mbr:votesAgainst must be one non-negative integer. | mbr:votesAgainst ska vara ett enda icke-negativt heltal. | mbr:votesAgainst doit être un seul entier non négatif. | mbr:votesAgainst muss eine einzige nichtnegative ganze Zahl sein. | mbr:votesAgainst deve essere un solo intero non negativo." ] .
 
 ##############################################################################
 # Membership fees

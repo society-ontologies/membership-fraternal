@@ -1,0 +1,24 @@
+# CQ19: Which applications were rejected, and how did the ballot go? One row per ballot
+# on a rejected application, with the votes for and against. The application is a record
+# of the request itself, so it is there whether or not the applicant ever became a member.
+# Labels: English if there is one, otherwise the first language alphabetically.
+
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX mbr:    <https://w3id.org/membership#>
+PREFIX mbrc:   <https://w3id.org/membership/code/>
+
+SELECT ?organisation ?applicant ?votesFor ?votesAgainst
+WHERE {
+    ?a a mbr:MembershipApplication ;
+       mbr:applicationStatus mbrc:rejected ;
+       mbr:applicant ?p ;
+       mbr:appliedTo ?o .
+    ?p schema:name ?applicant .
+    ?b mbr:ballotOn ?a ;
+       mbr:votesFor ?votesFor ;
+       mbr:votesAgainst ?votesAgainst .
+    OPTIONAL { { SELECT ?o (STRAFTER(MIN(CONCAT(IF(LANG(?l) = "en", "0", "1"), LANG(?l), "|", STR(?l))), "|") AS ?organisation)
+                 WHERE { ?o rdfs:label ?l } GROUP BY ?o } }
+}
+ORDER BY ?organisation ?applicant
