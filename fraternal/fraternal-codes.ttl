@@ -3073,3 +3073,169 @@ fraternalc:bajtars a skos:Concept , owl:NamedIndividual ;
                     "Cómo se tratan entre sí los miembros de una federación estudiantil húngara: camarada, para hombre o mujer (bajtársi szövetség: una federación de camaradas)."@es ,
                     "Como se tratam entre si os membros de uma federação estudantil húngara: camarada, para homem ou mulher (bajtársi szövetség: uma federação de camaradas)."@pt ,
                     "Ahogyan a magyar diákszövetség tagjai egymást megszólítják: bajtárs, férfira és nőre egyaránt (bajtársi szövetség)."@hu .
+
+##############################################################################
+# 14. GREECE  (the Order of the Redeemer, the Filiki Etaireia)
+# A first draft from general knowledge and Greek Wikipedia, for a Greek-speaking reviewer
+# to check against the primary sources (the royal decree of 1833 on the Order of the
+# Redeemer, the sources on the Filiki Etaireia). Each scheme is dcterms:isPartOf its hub
+# scheme and every concept is mapped in mappings/fraternal-greece.sssom.tsv. The IRIs are
+# ASCII with English local names; the Greek names are the el labels.
+##############################################################################
+
+fraternalc:RedeemerGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:ChivalricGrades ;
+    skos:prefLabel "Grades of the Order of the Redeemer"@en , "Grader i Frälsarens orden"@sv , "Grades de l'Ordre du Rédempteur"@fr , "Stufen des Erlöserordens"@de , "Gradi dell'Ordine del Redentore"@it , "Grados de la Orden del Redentor"@es , "Graus da Ordem do Redentor"@pt , "A Megváltó-rend fokozatai"@hu , "Τάξεις του Τάγματος του Σωτήρος"@el ;
+    skos:definition "The five classes of the Greek Order of the Redeemer, from the lowest to the highest: Silver Cross, Gold Cross, Commander, Senior Commander and Grand Cross. The order was established by royal decree in 1833 on the model of the French Legion of Honour; today only the Grand Cross is given, to foreign heads of state. Placed one to one under the generic chivalric grades in mappings/fraternal-greece.sssom.tsv."@en ,
+                    "De fem klasserna i den grekiska Frälsarens orden, från lägsta till högsta: Silverkors, Guldkors, Kommendör, Äldre kommendör och Storkors. Orden instiftades genom kungligt dekret 1833 efter förebild av den franska Hederslegionen; i dag ges bara Storkorset, till utländska statschefer. Placeras ett till ett under de generiska riddarordensgraderna i mappings/fraternal-greece.sssom.tsv."@sv ,
+                    "Les cinq classes de l'Ordre du Rédempteur grec, de la plus basse à la plus haute : croix d'argent, croix d'or, commandeur, commandeur supérieur et grand-croix. L'ordre a été établi par décret royal en 1833 sur le modèle de la Légion d'honneur française ; aujourd'hui seule la grand-croix est donnée, à des chefs d'État étrangers. Placées une à une sous les grades génériques de style chevaleresque dans mappings/fraternal-greece.sssom.tsv."@fr ,
+                    "Die fünf Klassen des griechischen Erlöserordens, von der niedrigsten bis zur höchsten: Silberkreuz, Goldkreuz, Komtur, Großkomtur und Großkreuz. Der Orden wurde 1833 durch königliches Dekret nach dem Vorbild der französischen Ehrenlegion gestiftet; heute wird nur noch das Großkreuz verliehen, an ausländische Staatsoberhäupter. Eins zu eins unter die allgemeinen Ritterordensstufen gestellt in mappings/fraternal-greece.sssom.tsv."@de ,
+                    "Le cinque classi dell'Ordine greco del Redentore, dalla più bassa alla più alta: croce d'argento, croce d'oro, comandante, comandante superiore e gran croce. L'ordine fu istituito con decreto reale nel 1833 sul modello della Legion d'onore francese; oggi si conferisce solo la gran croce, a capi di Stato stranieri. Collocate una a una sotto i gradi cavallereschi generici in mappings/fraternal-greece.sssom.tsv."@it ,
+                    "Las cinco clases de la Orden griega del Redentor, de la más baja a la más alta: Cruz de Plata, Cruz de Oro, Comendador, Comendador Superior y Gran Cruz. La orden se estableció por decreto real en 1833 según el modelo de la Legión de Honor francesa; hoy solo se concede la Gran Cruz, a jefes de Estado extranjeros. Colocadas una a una bajo los grados caballerescos genéricos en mappings/fraternal-greece.sssom.tsv."@es ,
+                    "As cinco classes da Ordem grega do Redentor, da mais baixa à mais alta: Cruz de Prata, Cruz de Ouro, Comendador, Comendador Superior e Grã-Cruz. A ordem foi estabelecida por decreto real em 1833 segundo o modelo da Legião de Honra francesa; hoje só se concede a Grã-Cruz, a chefes de Estado estrangeiros. Colocadas uma a uma sob os graus genéricos de estilo cavaleiresco em mappings/fraternal-greece.sssom.tsv."@pt ,
+                    "A görög Megváltó-rend öt osztálya a legalacsonyabbtól a legmagasabbig: Ezüstkereszt, Aranykereszt, Parancsnok, Főparancsnok és Nagykereszt. A rendet 1833-ban királyi rendelettel alapították a francia Becsületrend mintájára; ma csak a Nagykeresztet adják, külföldi államfőknek. Egy-egy megfeleltetéssel az általános lovagrendi fokozatok alá sorolva a mappings/fraternal-greece.sssom.tsv fájlban."@hu ,
+                    "Οι πέντε τάξεις του ελληνικού Τάγματος του Σωτήρος, από τη χαμηλότερη στην ανώτερη: Αργυρός Σταυρός, Χρυσός Σταυρός, Ταξιάρχης, Ανώτερος Ταξιάρχης και Μεγαλόσταυρος. Το τάγμα συστάθηκε με βασιλικό διάταγμα το 1833, κατά το πρότυπο της γαλλικής Λεγεώνας της Τιμής· σήμερα απονέμεται μόνο ο Μεγαλόσταυρος, σε αρχηγούς ξένων κρατών. Τοποθετούνται μία προς μία κάτω από τους γενικούς ιπποτικούς βαθμούς στο mappings/fraternal-greece.sssom.tsv."@el ;
+    skos:hasTopConcept fraternalc:elSilverCross , fraternalc:elGoldCross , fraternalc:elCommander ,
+                       fraternalc:elSeniorCommander , fraternalc:elGrandCross .
+
+fraternalc:elSilverCross a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RedeemerGrades ; skos:topConceptOf fraternalc:RedeemerGrades ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:elGoldCross ;
+    skos:prefLabel "Silver Cross"@en , "Silverkors"@sv , "Croix d'argent"@fr , "Silberkreuz"@de , "Croce d'argento"@it , "Cruz de Plata"@es , "Cruz de Prata"@pt , "Ezüstkereszt"@hu , "Αργυρός Σταυρός"@el ;
+    skos:definition "The lowest class of the Order of the Redeemer."@en ,
+                    "Den lägsta klassen i Frälsarens orden."@sv ,
+                    "La classe la plus basse de l'Ordre du Rédempteur."@fr ,
+                    "Die niedrigste Klasse des Erlöserordens."@de ,
+                    "La classe più bassa dell'Ordine del Redentore."@it ,
+                    "La clase más baja de la Orden del Redentor."@es ,
+                    "A classe mais baixa da Ordem do Redentor."@pt ,
+                    "A Megváltó-rend legalacsonyabb osztálya."@hu ,
+                    "Η χαμηλότερη τάξη του Τάγματος του Σωτήρος."@el .
+
+fraternalc:elGoldCross a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RedeemerGrades ; skos:topConceptOf fraternalc:RedeemerGrades ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:elCommander ;
+    skos:prefLabel "Gold Cross"@en , "Guldkors"@sv , "Croix d'or"@fr , "Goldkreuz"@de , "Croce d'oro"@it , "Cruz de Oro"@es , "Cruz de Ouro"@pt , "Aranykereszt"@hu , "Χρυσός Σταυρός"@el ;
+    skos:definition "The second class of the Order of the Redeemer, above the Silver Cross."@en ,
+                    "Den andra klassen i Frälsarens orden, över Silverkors."@sv ,
+                    "La deuxième classe de l'Ordre du Rédempteur, au-dessus de la croix d'argent."@fr ,
+                    "Die zweite Klasse des Erlöserordens, über dem Silberkreuz."@de ,
+                    "La seconda classe dell'Ordine del Redentore, sopra la croce d'argento."@it ,
+                    "La segunda clase de la Orden del Redentor, por encima de la Cruz de Plata."@es ,
+                    "A segunda classe da Ordem do Redentor, acima da Cruz de Prata."@pt ,
+                    "A Megváltó-rend második osztálya, az Ezüstkereszt felett."@hu ,
+                    "Η δεύτερη τάξη του Τάγματος του Σωτήρος, πάνω από τον Αργυρό Σταυρό."@el .
+
+fraternalc:elCommander a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RedeemerGrades ; skos:topConceptOf fraternalc:RedeemerGrades ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:elSeniorCommander ;
+    skos:prefLabel "Commander"@en , "Kommendör"@sv , "Commandeur"@fr , "Komtur"@de , "Comandante"@it , "Comendador"@es , "Comendador"@pt , "Parancsnok"@hu , "Ταξιάρχης"@el ;
+    skos:definition "The third class of the Order of the Redeemer, above the Gold Cross; the badge is worn on a collar."@en ,
+                    "Den tredje klassen i Frälsarens orden, över Guldkors; märket bärs i en kedja."@sv ,
+                    "La troisième classe de l'Ordre du Rédempteur, au-dessus de la croix d'or ; l'insigne se porte sur un collier."@fr ,
+                    "Die dritte Klasse des Erlöserordens, über dem Goldkreuz; das Abzeichen wird an einer Kette getragen."@de ,
+                    "La terza classe dell'Ordine del Redentore, sopra la croce d'oro; l'insegna si porta su un collare."@it ,
+                    "La tercera clase de la Orden del Redentor, por encima de la Cruz de Oro; la insignia se lleva en un collar."@es ,
+                    "A terceira classe da Ordem do Redentor, acima da Cruz de Ouro; a insígnia usa-se num colar."@pt ,
+                    "A Megváltó-rend harmadik osztálya, az Aranykereszt felett; a jelvényt láncon viselik."@hu ,
+                    "Η τρίτη τάξη του Τάγματος του Σωτήρος, πάνω από τον Χρυσό Σταυρό· το σήμα φοριέται σε κολλιέ."@el .
+
+fraternalc:elSeniorCommander a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RedeemerGrades ; skos:topConceptOf fraternalc:RedeemerGrades ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree fraternalc:elGrandCross ;
+    skos:prefLabel "Senior Commander"@en , "Äldre kommendör"@sv , "Commandeur supérieur"@fr , "Großkomtur"@de , "Comandante superiore"@it , "Comendador Superior"@es , "Comendador Superior"@pt , "Főparancsnok"@hu , "Ανώτερος Ταξιάρχης"@el ;
+    skos:definition "The fourth class of the Order of the Redeemer, above the Commander; the badge is worn on a collar and the star on the right breast."@en ,
+                    "Den fjärde klassen i Frälsarens orden, över Kommendör; märket bärs i en kedja och stjärnan på höger bröst."@sv ,
+                    "La quatrième classe de l'Ordre du Rédempteur, au-dessus du commandeur ; l'insigne se porte sur un collier et l'étoile sur la poitrine droite."@fr ,
+                    "Die vierte Klasse des Erlöserordens, über dem Komtur; das Abzeichen wird an einer Kette getragen, der Stern auf der rechten Brust."@de ,
+                    "La quarta classe dell'Ordine del Redentore, sopra il comandante; l'insegna si porta su un collare e la stella sul petto destro."@it ,
+                    "La cuarta clase de la Orden del Redentor, por encima del Comendador; la insignia se lleva en un collar y la estrella en el pecho derecho."@es ,
+                    "A quarta classe da Ordem do Redentor, acima do Comendador; a insígnia usa-se num colar e a estrela no peito direito."@pt ,
+                    "A Megváltó-rend negyedik osztálya, a Parancsnok felett; a jelvényt láncon viselik, a csillagot a jobb mellen."@hu ,
+                    "Η τέταρτη τάξη του Τάγματος του Σωτήρος, πάνω από τον Ταξιάρχη· το σήμα φοριέται σε κολλιέ και το αστέρι στο δεξιό στήθος."@el .
+
+fraternalc:elGrandCross a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:RedeemerGrades ; skos:topConceptOf fraternalc:RedeemerGrades ;
+    fraternal:degreeRank 5 ;
+    skos:prefLabel "Grand Cross"@en , "Storkors"@sv , "Grand-croix"@fr , "Großkreuz"@de , "Gran croce"@it , "Gran Cruz"@es , "Grã-Cruz"@pt , "Nagykereszt"@hu , "Μεγαλόσταυρος"@el ;
+    skos:definition "The highest class of the Order of the Redeemer; the badge is worn on a sash over the right shoulder and the star on the left breast. In practice it is given only to foreign heads of state."@en ,
+                    "Den högsta klassen i Frälsarens orden; märket bärs i ett skärp över höger axel och stjärnan på vänster bröst. I praktiken ges den bara till utländska statschefer."@sv ,
+                    "La classe la plus haute de l'Ordre du Rédempteur ; l'insigne se porte sur une écharpe sur l'épaule droite et l'étoile sur la poitrine gauche. En pratique, elle n'est donnée qu'à des chefs d'État étrangers."@fr ,
+                    "Die höchste Klasse des Erlöserordens; das Abzeichen wird an einer Schärpe über der rechten Schulter getragen, der Stern auf der linken Brust. In der Praxis wird sie nur an ausländische Staatsoberhäupter verliehen."@de ,
+                    "La classe più alta dell'Ordine del Redentore; l'insegna si porta su una fascia sulla spalla destra e la stella sul petto sinistro. In pratica si conferisce solo a capi di Stato stranieri."@it ,
+                    "La clase más alta de la Orden del Redentor; la insignia se lleva en una banda sobre el hombro derecho y la estrella en el pecho izquierdo. En la práctica solo se concede a jefes de Estado extranjeros."@es ,
+                    "A classe mais alta da Ordem do Redentor; a insígnia usa-se numa banda sobre o ombro direito e a estrela no peito esquerdo. Na prática só se concede a chefes de Estado estrangeiros."@pt ,
+                    "A Megváltó-rend legmagasabb osztálya; a jelvényt a jobb vállon átvetett szalagon viselik, a csillagot a bal mellen. A gyakorlatban csak külföldi államfőknek adják."@hu ,
+                    "Η ανώτερη τάξη του Τάγματος του Σωτήρος· το σήμα φοριέται σε ταινία στον δεξιό ώμο και το αστέρι στο αριστερό στήθος. Στην πράξη απονέμεται μόνο σε αρχηγούς ξένων κρατών."@el .
+
+fraternalc:FilikiDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:CraftDegrees ;
+    skos:prefLabel "Degrees of the Filiki Etaireia"@en , "Grader i Filiki Etaireia"@sv , "Degrés de la Filiki Etaireia"@fr , "Grade der Filiki Etaireia"@de , "Gradi della Filiki Etaireia"@it , "Grados de la Filiki Etaireia"@es , "Graus da Filiki Etaireia"@pt , "A Filiki Etaireia fokozatai"@hu , "Βαθμίδες της Φιλικής Εταιρείας"@el ;
+    skos:definition "The four degrees of initiation of the Filiki Etaireia, the secret society founded in 1814 at Odessa that prepared the Greek revolution of 1821: the sworn brother, the recommended, the priest and the shepherd. The society called itself the Temple and was led by an unknown Invisible Authority. Placed under the generic craft-style degrees in mappings/fraternal-greece.sssom.tsv."@en ,
+                    "De fyra invigningsgraderna i Filiki Etaireia, det hemliga sällskap som grundades 1814 i Odessa och förberedde den grekiska revolutionen 1821: edsbrodern, den rekommenderade, prästen och herden. Sällskapet kallade sig Templet och leddes av en okänd Osynlig Myndighet. Placeras under de generiska gradsystemen i hantverksstil i mappings/fraternal-greece.sssom.tsv."@sv ,
+                    "Les quatre degrés d'initiation de la Filiki Etaireia, la société secrète fondée en 1814 à Odessa qui prépara la révolution grecque de 1821 : le frère juré, le recommandé, le prêtre et le pasteur. La société s'appelait le Temple et était dirigée par une Autorité invisible inconnue. Placés sous les degrés génériques de style artisanal dans mappings/fraternal-greece.sssom.tsv."@fr ,
+                    "Die vier Einweihungsgrade der Filiki Etaireia, der 1814 in Odessa gegründeten Geheimgesellschaft, die die griechische Revolution von 1821 vorbereitete: der Eidbruder, der Empfohlene, der Priester und der Hirte. Die Gesellschaft nannte sich der Tempel und wurde von einer unbekannten Unsichtbaren Behörde geleitet. Unter die allgemeinen handwerklichen Grade gestellt in mappings/fraternal-greece.sssom.tsv."@de ,
+                    "I quattro gradi di iniziazione della Filiki Etaireia, la società segreta fondata nel 1814 a Odessa che preparò la rivoluzione greca del 1821: il fratello giurato, il raccomandato, il sacerdote e il pastore. La società si chiamava il Tempio ed era guidata da un'Autorità invisibile sconosciuta. Collocati sotto i gradi generici di stile artigianale in mappings/fraternal-greece.sssom.tsv."@it ,
+                    "Los cuatro grados de iniciación de la Filiki Etaireia, la sociedad secreta fundada en 1814 en Odesa que preparó la revolución griega de 1821: el hermano jurado, el recomendado, el sacerdote y el pastor. La sociedad se llamaba el Templo y la dirigía una Autoridad invisible desconocida. Colocados bajo los grados genéricos de estilo gremial en mappings/fraternal-greece.sssom.tsv."@es ,
+                    "Os quatro graus de iniciação da Filiki Etaireia, a sociedade secreta fundada em 1814 em Odessa que preparou a revolução grega de 1821: o irmão juramentado, o recomendado, o sacerdote e o pastor. A sociedade chamava-se o Templo e era dirigida por uma Autoridade invisível desconhecida. Colocados sob os graus genéricos de estilo corporativo em mappings/fraternal-greece.sssom.tsv."@pt ,
+                    "A Filiki Etaireia, az 1814-ben Odesszában alapított, az 1821-es görög forradalmat előkészítő titkos társaság négy beavatási fokozata: az eskütestvér, az ajánlott, a pap és a pásztor. A társaság Templomnak nevezte magát, és egy ismeretlen Láthatatlan Hatóság vezette. Az általános mesterségi stílusú fokozatok alá sorolva a mappings/fraternal-greece.sssom.tsv fájlban."@hu ,
+                    "Οι τέσσερις βαθμίδες μύησης της Φιλικής Εταιρείας, της μυστικής οργάνωσης που ιδρύθηκε το 1814 στην Οδησσό και προετοίμασε την Επανάσταση του 1821: οι αδελφοποιητοί, οι συστημένοι, οι ιερείς και οι ποιμένες. Η Εταιρεία αποκαλούνταν «Ναός» και την καθοδηγούσε μια άγνωστη «Αόρατος Αρχή». Τοποθετούνται κάτω από τους γενικούς βαθμούς τεχνικού τύπου στο mappings/fraternal-greece.sssom.tsv."@el ;
+    skos:hasTopConcept fraternalc:filikiSwornBrother , fraternalc:filikiRecommended ,
+                       fraternalc:filikiPriest , fraternalc:filikiShepherd .
+
+fraternalc:filikiSwornBrother a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FilikiDegrees ; skos:topConceptOf fraternalc:FilikiDegrees ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:filikiRecommended ; fraternal:degreeKind fraternalc:probationaryDegree ;
+    skos:prefLabel "Sworn Brother"@en , "Edsbroder"@sv , "Frère juré"@fr , "Eidbruder"@de , "Fratello giurato"@it , "Hermano jurado"@es , "Irmão juramentado"@pt , "Eskütestvér"@hu , "Αδελφοποιητός"@el ;
+    skos:altLabel "Vlamis"@en , "Βλάμης"@el ;
+    skos:definition "The first degree: the newly initiated member, who swore the small oath on the Gospel before a priest. The members of this degree and the next did not know the revolutionary aim of the society."@en ,
+                    "Den första graden: den nyinvigde medlemmen, som svor den lilla eden på Evangeliet inför en präst. Medlemmarna i denna grad och nästa kände inte sällskapets revolutionära mål."@sv ,
+                    "Le premier degré : le membre nouvellement initié, qui prêtait le petit serment sur l'Évangile devant un prêtre. Les membres de ce degré et du suivant ne connaissaient pas le but révolutionnaire de la société."@fr ,
+                    "Der erste Grad: das neu eingeweihte Mitglied, das den kleinen Eid auf das Evangelium vor einem Priester schwor. Die Mitglieder dieses und des nächsten Grades kannten das revolutionäre Ziel der Gesellschaft nicht."@de ,
+                    "Il primo grado: il membro appena iniziato, che prestava il piccolo giuramento sul Vangelo davanti a un sacerdote. I membri di questo grado e del successivo non conoscevano lo scopo rivoluzionario della società."@it ,
+                    "El primer grado: el miembro recién iniciado, que prestaba el pequeño juramento sobre el Evangelio ante un sacerdote. Los miembros de este grado y del siguiente no conocían el objetivo revolucionario de la sociedad."@es ,
+                    "O primeiro grau: o membro recém-iniciado, que prestava o pequeno juramento sobre o Evangelho perante um sacerdote. Os membros deste grau e do seguinte não conheciam o objetivo revolucionário da sociedade."@pt ,
+                    "Az első fokozat: az újonnan beavatott tag, aki a kis esküt a Szentíráson tette egy pap előtt. Ennek és a következő fokozatnak a tagjai nem ismerték a társaság forradalmi célját."@hu ,
+                    "Η πρώτη βαθμίδα: το νεοφώτιστο μέλος, που έδινε τον μικρό όρκο στο Ευαγγέλιο ενώπιον ιερέα. Τα μέλη αυτής και της επόμενης βαθμίδας αγνοούσαν τους επαναστατικούς σκοπούς της Εταιρείας."@el .
+
+fraternalc:filikiRecommended a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FilikiDegrees ; skos:topConceptOf fraternalc:FilikiDegrees ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:filikiPriest ;
+    skos:prefLabel "Recommended"@en , "Den rekommenderade"@sv , "Le recommandé"@fr , "Der Empfohlene"@de , "Il raccomandato"@it , "El recomendado"@es , "O recomendado"@pt , "Az ajánlott"@hu , "Συστημένος"@el ;
+    skos:definition "The second degree: a member chosen from the sworn brothers whose character and devotion to the cause of freedom had been watched, before passing to the priests."@en ,
+                    "Den andra graden: en medlem utvald bland edsbröderna vars karaktär och hängivenhet för frihetens sak hade iakttagits, före övergången till prästerna."@sv ,
+                    "Le deuxième degré : un membre choisi parmi les frères jurés dont on avait observé le caractère et le dévouement à la cause de la liberté, avant de passer aux prêtres."@fr ,
+                    "Der zweite Grad: ein unter den Eidbrüdern ausgewähltes Mitglied, dessen Charakter und Hingabe an die Sache der Freiheit beobachtet worden waren, vor dem Übergang zu den Priestern."@de ,
+                    "Il secondo grado: un membro scelto tra i fratelli giurati di cui si erano osservati il carattere e la dedizione alla causa della libertà, prima di passare ai sacerdoti."@it ,
+                    "El segundo grado: un miembro elegido entre los hermanos jurados cuyo carácter y entrega a la causa de la libertad habían sido observados, antes de pasar a los sacerdotes."@es ,
+                    "O segundo grau: um membro escolhido entre os irmãos juramentados cujo carácter e dedicação à causa da liberdade tinham sido observados, antes de passar aos sacerdotes."@pt ,
+                    "A második fokozat: az eskütestvérek közül kiválasztott tag, akinek jellemét és a szabadság ügye iránti odaadását megfigyelték, mielőtt a papok közé lépett."@hu ,
+                    "Η δεύτερη βαθμίδα: μέλος που επιλεγόταν από τους αδελφοποιητούς, αφού παρακολουθούνταν ο χαρακτήρας και η αφοσίωσή του στην υπόθεση της ελευθερίας, πριν περάσει στους ιερείς."@el .
+
+fraternalc:filikiPriest a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FilikiDegrees ; skos:topConceptOf fraternalc:FilikiDegrees ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:filikiShepherd ;
+    skos:prefLabel "Priest"@en , "Präst"@sv , "Prêtre"@fr , "Priester"@de , "Sacerdote"@it , "Sacerdote"@es , "Sacerdote"@pt , "Pap"@hu , "Ιερέας"@el ;
+    skos:definition "The third degree: the member who initiated others into the first two degrees, after making sure of their patriotism, and who knew the aim of the society."@en ,
+                    "Den tredje graden: medlemmen som invigde andra i de två första graderna, sedan han förvissat sig om deras fosterlandskärlek, och som kände sällskapets mål."@sv ,
+                    "Le troisième degré : le membre qui initiait d'autres aux deux premiers degrés, après s'être assuré de leur patriotisme, et qui connaissait le but de la société."@fr ,
+                    "Der dritte Grad: das Mitglied, das andere in die ersten beiden Grade einweihte, nachdem es sich ihres Patriotismus vergewissert hatte, und das das Ziel der Gesellschaft kannte."@de ,
+                    "Il terzo grado: il membro che iniziava altri ai primi due gradi, dopo essersi assicurato del loro patriottismo, e che conosceva lo scopo della società."@it ,
+                    "El tercer grado: el miembro que iniciaba a otros en los dos primeros grados, tras asegurarse de su patriotismo, y que conocía el objetivo de la sociedad."@es ,
+                    "O terceiro grau: o membro que iniciava outros nos dois primeiros graus, depois de se assegurar do seu patriotismo, e que conhecia o objetivo da sociedade."@pt ,
+                    "A harmadik fokozat: a tag, aki hazafiságukról megbizonyosodva beavatott másokat az első két fokozatba, és ismerte a társaság célját."@hu ,
+                    "Η τρίτη βαθμίδα: το μέλος που μύησε άλλους στις δύο πρώτες βαθμίδες, αφού βεβαιωνόταν για τη φιλοπατρία τους, και που γνώριζε τον σκοπό της Εταιρείας."@el .
+
+fraternalc:filikiShepherd a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FilikiDegrees ; skos:topConceptOf fraternalc:FilikiDegrees ;
+    fraternal:degreeRank 4 ;
+    skos:prefLabel "Shepherd"@en , "Herde"@sv , "Pasteur"@fr , "Hirte"@de , "Pastore"@it , "Pastor"@es , "Pastor"@pt , "Pásztor"@hu , "Ποιμένας"@el ;
+    skos:definition "The fourth and highest degree of the Filiki Etaireia, held by the leaders of the society."@en ,
+                    "Den fjärde och högsta graden i Filiki Etaireia, som innehades av sällskapets ledare."@sv ,
+                    "Le quatrième et plus haut degré de la Filiki Etaireia, détenu par les dirigeants de la société."@fr ,
+                    "Der vierte und höchste Grad der Filiki Etaireia, den die Führer der Gesellschaft innehatten."@de ,
+                    "Il quarto e più alto grado della Filiki Etaireia, detenuto dai capi della società."@it ,
+                    "El cuarto y más alto grado de la Filiki Etaireia, que ostentaban los dirigentes de la sociedad."@es ,
+                    "O quarto e mais alto grau da Filiki Etaireia, detido pelos dirigentes da sociedade."@pt ,
+                    "A Filiki Etaireia negyedik és legmagasabb fokozata, amelyet a társaság vezetői viseltek."@hu ,
+                    "Η τέταρτη και ανώτερη βαθμίδα της Φιλικής Εταιρείας, που κατείχαν οι ηγέτες της οργάνωσης."@el .

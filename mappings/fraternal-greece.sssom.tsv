@@ -1,0 +1,20 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-greece
+# mapping_set_version: 1.0.0
+# mapping_set_description: The classes of the Greek Order of the Redeemer and the degrees of the Filiki Etaireia placed under the generic chivalric grades and craft-style degrees.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:elSilverCross	Silver Cross	skos:closeMatch	fraternalc:knightGrade	Knight	semapv:ManualMappingCuration	0.6	The lowest class; the generic ladder has no cross, and the knight is the nearest entry grade.
+fraternalc:elGoldCross	Gold Cross	skos:closeMatch	fraternalc:officerGrade	Officer	semapv:ManualMappingCuration	0.6	The second class, between the Silver Cross and the Commander.
+fraternalc:elCommander	Commander	skos:closeMatch	fraternalc:commanderGrade	Commander	semapv:ManualMappingCuration	0.9	The Taxiarchis, the commander class.
+fraternalc:elSeniorCommander	Senior Commander	skos:closeMatch	fraternalc:commanderFirstClassGrade	Commander First Class	semapv:ManualMappingCuration	0.8	The Anoteros Taxiarchis, between the Commander and the Grand Cross.
+fraternalc:elGrandCross	Grand Cross	skos:closeMatch	fraternalc:grandCrossGrade	Grand Cross	semapv:ManualMappingCuration	0.95	The Megalostavros, the grand cross.
+fraternalc:filikiSwornBrother	Sworn Brother	skos:closeMatch	fraternalc:entryDegree	Entry Degree	semapv:ManualMappingCuration	0.8	The first degree, entered by the small oath.
+fraternalc:filikiRecommended	Recommended	skos:closeMatch	fraternalc:intermediateDegree	Intermediate Degree	semapv:ManualMappingCuration	0.7	The second degree, between the sworn brother and the priest.
+fraternalc:filikiPriest	Priest	skos:closeMatch	fraternalc:fullDegree	Full Degree	semapv:ManualMappingCuration	0.6	The third degree, which initiated others and knew the aim of the society.
+fraternalc:filikiShepherd	Shepherd	skos:closeMatch	fraternalc:higherDegree	Higher Degree	semapv:ManualMappingCuration	0.7	The fourth and highest degree, held by the leaders.
