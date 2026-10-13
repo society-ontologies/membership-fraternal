@@ -1,0 +1,24 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-netherlands
+# mapping_set_version: 1.0.0
+# mapping_set_description: The grades of the Dutch orders of civil merit and the candidate stages, ceremonies and offices of Dutch and Flemish student societies placed under the generic chivalric grades, member stages, ceremonies and offices.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:nlOrderMember	Member	skos:closeMatch	fraternalc:memberGrade	Member Grade	semapv:ManualMappingCuration	0.9	The lowest grade of the Order of Orange-Nassau.
+fraternalc:nlKnight	Knight	skos:closeMatch	fraternalc:knightGrade	Knight	semapv:ManualMappingCuration	0.95	The knight grade.
+fraternalc:nlOfficer	Officer	skos:closeMatch	fraternalc:officerGrade	Officer	semapv:ManualMappingCuration	0.95	The officer grade.
+fraternalc:nlCommander	Commander	skos:closeMatch	fraternalc:commanderGrade	Commander	semapv:ManualMappingCuration	0.95	The commander grade.
+fraternalc:nlGrandOfficer	Grand Officer	skos:closeMatch	fraternalc:commanderFirstClassGrade	Commander First Class	semapv:ManualMappingCuration	0.8	The grade between Commander and Knight Grand Cross.
+fraternalc:nlKnightGrandCross	Knight Grand Cross	skos:closeMatch	fraternalc:grandCrossGrade	Grand Cross	semapv:ManualMappingCuration	0.95	The highest grade of both orders.
+fraternalc:feut	Feut	skos:closeMatch	fraternalc:noviceStage	Novice Stage	semapv:ManualMappingCuration	0.85	The candidate member of a Dutch student society during the ontgroening.
+fraternalc:schacht	Schacht	skos:closeMatch	fraternalc:noviceStage	Novice Stage	semapv:ManualMappingCuration	0.85	The candidate member of a Flemish student society during the introductory period and the baptism.
+fraternalc:ontgroening	Ontgroening	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	The rite of passage with trials and tasks that candidates go through before they are received.
+fraternalc:inauguratie	Inauguratie	skos:broadMatch	mbrc:ceremony	Ceremony	semapv:ManualMappingCuration	0.8	The ritual by which a candidate is inaugurated as a full member; a kind of initiation.
+fraternalc:cantus	Cantus	skos:broadMatch	mbrc:socialEvening	Social Evening	semapv:ManualMappingCuration	0.8	A gathering of singing and drinking governed by fixed rules, like the Kneipe of the German student traditions.
+fraternalc:praeses	Praeses	skos:closeMatch	mbrc:president	President	semapv:ManualMappingCuration	0.9	The chair of a student society; also presides at a cantus.
+fraternalc:doopmeester	Doopmeester	skos:broadMatch	mbrc:noviceMaster	Novice Master	semapv:ManualMappingCuration	0.7	Runs the student baptism of the schachten; the novice master looks after novices for their whole time as novices, so the doopmeester is a narrower case.

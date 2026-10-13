@@ -3464,3 +3464,282 @@ fraternalc:filikiShepherd a fraternal:Degree , skos:Concept , owl:NamedIndividua
                     "O quarto e mais alto grau da Filiki Etaireia, detido pelos dirigentes da sociedade."@pt ,
                     "A Filiki Etaireia negyedik és legmagasabb fokozata, amelyet a társaság vezetői viseltek."@hu ,
                     "Η τέταρτη και ανώτερη βαθμίδα της Φιλικής Εταιρείας, που κατείχαν οι ηγέτες της οργάνωσης."@el .
+
+##############################################################################
+# 15. THE NETHERLANDS AND FLANDERS  (the civil orders, the student societies)
+# A first draft from general knowledge and Dutch Wikipedia, for a Dutch-speaking reviewer
+# to check against the primary sources (the regulation of the orders, the codes of a student
+# corps or club). Each scheme is dcterms:isPartOf its hub scheme and every concept is mapped
+# in mappings/fraternal-netherlands.sssom.tsv. The IRIs are ASCII with English local names;
+# the Dutch names are the nl labels.
+##############################################################################
+
+fraternalc:DutchOrderGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:ChivalricGrades ;
+    skos:prefLabel "Grades of the Dutch orders of civil merit"@en , "Grader i de nederländska förtjänstordnarna"@sv , "Grades des ordres civils néerlandais"@fr , "Stufen der niederländischen Verdienstorden"@de , "Gradi degli ordini civili olandesi"@it , "Grados de las órdenes civiles neerlandesas"@es , "Graus das ordens civis neerlandesas"@pt , "A holland érdemrendek fokozatai"@hu , "Βαθμοί των ολλανδικών πολιτικών ταγμάτων"@el , "Rangen van de Nederlandse civiele ridderorden"@nl ;
+    skos:definition "The six grades of the Dutch orders of civil merit, from the lowest to the highest: Member, Knight, Officer, Commander, Grand Officer and Knight Grand Cross. The Order of Orange-Nassau, established in 1892, has all six; the Order of the Netherlands Lion, established in 1815, has the Knight, the Commander and the Knight Grand Cross. The Military William Order is not covered."@en ,
+                    "De sex graderna i de nederländska civila förtjänstordnarna, från lägsta till högsta: Ledamot, Riddare, Officer, Kommendör, Storofficer och Riddare av storkorset. Orange-Nassauorden, instiftad 1892, har alla sex; Nederländska Lejonorden, instiftad 1815, har Riddare, Kommendör och Riddare av storkorset. Militära Wilhelmsorden ingår inte."@sv ,
+                    "Les six grades des ordres civils néerlandais, du plus bas au plus haut : membre, chevalier, officier, commandeur, grand officier et chevalier grand-croix. L'ordre d'Orange-Nassau, créé en 1892, les compte tous les six ; l'ordre du Lion néerlandais, créé en 1815, compte ceux de chevalier, de commandeur et de chevalier grand-croix. L'ordre militaire de Guillaume n'est pas couvert."@fr ,
+                    "Die sechs Stufen der niederländischen Verdienstorden, von der niedrigsten bis zur höchsten: Mitglied, Ritter, Offizier, Komtur, Großoffizier und Ritter Großkreuz. Der Orden von Oranien-Nassau, 1892 gestiftet, hat alle sechs; der Orden des Niederländischen Löwen, 1815 gestiftet, hat Ritter, Komtur und Ritter Großkreuz. Der Militär-Wilhelmsorden ist nicht erfasst."@de ,
+                    "I sei gradi degli ordini civili olandesi, dal più basso al più alto: membro, cavaliere, ufficiale, commendatore, grande ufficiale e cavaliere di gran croce. L'Ordine di Orange-Nassau, istituito nel 1892, li ha tutti e sei; l'Ordine del Leone dei Paesi Bassi, istituito nel 1815, ha quelli di cavaliere, commendatore e cavaliere di gran croce. L'Ordine Militare di Guglielmo non è coperto."@it ,
+                    "Los seis grados de las órdenes civiles neerlandesas, del más bajo al más alto: miembro, caballero, oficial, comendador, gran oficial y caballero gran cruz. La Orden de Orange-Nassau, creada en 1892, tiene los seis; la Orden del León Neerlandés, creada en 1815, tiene los de caballero, comendador y caballero gran cruz. La Orden Militar de Guillermo no está cubierta."@es ,
+                    "Os seis graus das ordens civis neerlandesas, do mais baixo ao mais alto: membro, cavaleiro, oficial, comendador, grande-oficial e cavaleiro grã-cruz. A Ordem de Orange-Nassau, instituída em 1892, tem os seis; a Ordem do Leão Neerlandês, instituída em 1815, tem os de cavaleiro, comendador e cavaleiro grã-cruz. A Ordem Militar de Guilherme não está abrangida."@pt ,
+                    "A holland polgári érdemrendek hat fokozata a legalacsonyabbtól a legmagasabbig: Tag, Lovag, Tiszt, Parancsnok, Nagytiszt és Nagykeresztes lovag. Az 1892-ben alapított Orange–Nassau-rendnek mind a hat megvan; az 1815-ben alapított Holland Oroszlán-rendnek a Lovag, a Parancsnok és a Nagykeresztes lovag. A Katonai Vilmos-rend nem tartozik ide."@hu ,
+                    "Οι έξι βαθμοί των ολλανδικών πολιτικών ταγμάτων αριστείας, από τον χαμηλότερο στον ανώτερο: Μέλος, Ιππότης, Αξιωματικός, Ταξιάρχης, Μέγας Αξιωματικός και Ιππότης Μεγαλόσταυρος. Το Τάγμα Ορανίων-Νασσάου, που ιδρύθηκε το 1892, τους έχει και τους έξι· το Τάγμα του Ολλανδικού Λέοντα, που ιδρύθηκε το 1815, έχει τον Ιππότη, τον Ταξιάρχη και τον Ιππότη Μεγαλόσταυρο. Το Στρατιωτικό Τάγμα του Γουλιέλμου δεν καλύπτεται."@el ,
+                    "De zes rangen van de Nederlandse civiele ridderorden, van laag naar hoog: Lid, Ridder, Officier, Commandeur, Grootofficier en Ridder Grootkruis. De Orde van Oranje-Nassau, ingesteld in 1892, kent ze alle zes; de Orde van de Nederlandse Leeuw, ingesteld in 1815, kent Ridder, Commandeur en Ridder Grootkruis. De Militaire Willems-Orde valt hier niet onder."@nl ;
+    skos:hasTopConcept fraternalc:nlOrderMember , fraternalc:nlKnight , fraternalc:nlOfficer ,
+                       fraternalc:nlCommander , fraternalc:nlGrandOfficer , fraternalc:nlKnightGrandCross .
+
+fraternalc:nlOrderMember a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchOrderGrades ; skos:topConceptOf fraternalc:DutchOrderGrades ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:nlKnight ;
+    skos:prefLabel "Member"@en , "Ledamot"@sv , "Membre"@fr , "Mitglied"@de , "Membro"@it , "Miembro"@es , "Membro"@pt , "Tag"@hu , "Μέλος"@el , "Lid"@nl ;
+    skos:definition "The lowest grade of the Order of Orange-Nassau; since 1994 it has taken the place of the honorary medals in gold, silver and bronze."@en ,
+                    "Den lägsta graden i Orange-Nassauorden; sedan 1994 har den ersatt hedersmedaljerna i guld, silver och brons."@sv ,
+                    "Le grade le plus bas de l'ordre d'Orange-Nassau ; depuis 1994, il remplace les médailles d'honneur en or, en argent et en bronze."@fr ,
+                    "Die niedrigste Stufe des Ordens von Oranien-Nassau; seit 1994 ersetzt sie die Ehrenmedaillen in Gold, Silber und Bronze."@de ,
+                    "Il grado più basso dell'Ordine di Orange-Nassau; dal 1994 ha preso il posto delle medaglie d'onore in oro, argento e bronzo."@it ,
+                    "El grado más bajo de la Orden de Orange-Nassau; desde 1994 ocupa el lugar de las medallas de honor de oro, plata y bronce."@es ,
+                    "O grau mais baixo da Ordem de Orange-Nassau; desde 1994 ocupa o lugar das medalhas de honra em ouro, prata e bronze."@pt ,
+                    "Az Orange–Nassau-rend legalacsonyabb fokozata; 1994 óta az arany-, ezüst- és bronz becsületérmek helyét veszi át."@hu ,
+                    "Ο χαμηλότερος βαθμός του Τάγματος Ορανίων-Νασσάου· από το 1994 έχει αντικαταστήσει τα επίτιμα μετάλλια σε χρυσό, ασήμι και μπρούντζο."@el ,
+                    "De laagste rang van de Orde van Oranje-Nassau; sinds 1994 vervangt hij de ere-medailles in goud, zilver en brons."@nl .
+
+fraternalc:nlKnight a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchOrderGrades ; skos:topConceptOf fraternalc:DutchOrderGrades ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:nlOfficer ;
+    skos:prefLabel "Knight"@en , "Riddare"@sv , "Chevalier"@fr , "Ritter"@de , "Cavaliere"@it , "Caballero"@es , "Cavaleiro"@pt , "Lovag"@hu , "Ιππότης"@el , "Ridder"@nl ;
+    skos:definition "The grade above Member in the Order of Orange-Nassau, and the lowest grade of the Order of the Netherlands Lion."@en ,
+                    "Graden över Ledamot i Orange-Nassauorden och den lägsta graden i Nederländska Lejonorden."@sv ,
+                    "Le grade au-dessus de membre dans l'ordre d'Orange-Nassau, et le grade le plus bas de l'ordre du Lion néerlandais."@fr ,
+                    "Die Stufe über dem Mitglied im Orden von Oranien-Nassau und die niedrigste Stufe des Ordens des Niederländischen Löwen."@de ,
+                    "Il grado sopra quello di membro nell'Ordine di Orange-Nassau e il grado più basso dell'Ordine del Leone dei Paesi Bassi."@it ,
+                    "El grado por encima de miembro en la Orden de Orange-Nassau y el grado más bajo de la Orden del León Neerlandés."@es ,
+                    "O grau acima de membro na Ordem de Orange-Nassau e o grau mais baixo da Ordem do Leão Neerlandês."@pt ,
+                    "Az Orange–Nassau-rendben a Tag feletti fokozat, a Holland Oroszlán-rendben pedig a legalacsonyabb fokozat."@hu ,
+                    "Ο βαθμός πάνω από το Μέλος στο Τάγμα Ορανίων-Νασσάου και ο χαμηλότερος βαθμός του Τάγματος του Ολλανδικού Λέοντα."@el ,
+                    "De rang boven Lid in de Orde van Oranje-Nassau, en de laagste rang van de Orde van de Nederlandse Leeuw."@nl .
+
+fraternalc:nlOfficer a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchOrderGrades ; skos:topConceptOf fraternalc:DutchOrderGrades ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:nlCommander ;
+    skos:prefLabel "Officer"@en , "Officer"@sv , "Officier"@fr , "Offizier"@de , "Ufficiale"@it , "Oficial"@es , "Oficial"@pt , "Tiszt"@hu , "Αξιωματικός"@el , "Officier"@nl ;
+    skos:definition "The grade above Knight in the Order of Orange-Nassau."@en ,
+                    "Graden över Riddare i Orange-Nassauorden."@sv ,
+                    "Le grade au-dessus de chevalier dans l'ordre d'Orange-Nassau."@fr ,
+                    "Die Stufe über dem Ritter im Orden von Oranien-Nassau."@de ,
+                    "Il grado sopra quello di cavaliere nell'Ordine di Orange-Nassau."@it ,
+                    "El grado por encima de caballero en la Orden de Orange-Nassau."@es ,
+                    "O grau acima de cavaleiro na Ordem de Orange-Nassau."@pt ,
+                    "Az Orange–Nassau-rendben a Lovag feletti fokozat."@hu ,
+                    "Ο βαθμός πάνω από τον Ιππότη στο Τάγμα Ορανίων-Νασσάου."@el ,
+                    "De rang boven Ridder in de Orde van Oranje-Nassau."@nl .
+
+fraternalc:nlCommander a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchOrderGrades ; skos:topConceptOf fraternalc:DutchOrderGrades ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree fraternalc:nlGrandOfficer ;
+    skos:prefLabel "Commander"@en , "Kommendör"@sv , "Commandeur"@fr , "Komtur"@de , "Commendatore"@it , "Comendador"@es , "Comendador"@pt , "Parancsnok"@hu , "Ταξιάρχης"@el , "Commandeur"@nl ;
+    skos:definition "The grade above Officer in the Order of Orange-Nassau, and the middle grade of the Order of the Netherlands Lion."@en ,
+                    "Graden över Officer i Orange-Nassauorden och mellangraden i Nederländska Lejonorden."@sv ,
+                    "Le grade au-dessus d'officier dans l'ordre d'Orange-Nassau, et le grade intermédiaire de l'ordre du Lion néerlandais."@fr ,
+                    "Die Stufe über dem Offizier im Orden von Oranien-Nassau und die mittlere Stufe des Ordens des Niederländischen Löwen."@de ,
+                    "Il grado sopra quello di ufficiale nell'Ordine di Orange-Nassau e il grado intermedio dell'Ordine del Leone dei Paesi Bassi."@it ,
+                    "El grado por encima de oficial en la Orden de Orange-Nassau y el grado intermedio de la Orden del León Neerlandés."@es ,
+                    "O grau acima de oficial na Ordem de Orange-Nassau e o grau intermédio da Ordem do Leão Neerlandês."@pt ,
+                    "Az Orange–Nassau-rendben a Tiszt feletti fokozat, a Holland Oroszlán-rendben pedig a középső fokozat."@hu ,
+                    "Ο βαθμός πάνω από τον Αξιωματικό στο Τάγμα Ορανίων-Νασσάου και ο μεσαίος βαθμός του Τάγματος του Ολλανδικού Λέοντα."@el ,
+                    "De rang boven Officier in de Orde van Oranje-Nassau, en de middelste rang van de Orde van de Nederlandse Leeuw."@nl .
+
+fraternalc:nlGrandOfficer a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchOrderGrades ; skos:topConceptOf fraternalc:DutchOrderGrades ;
+    fraternal:degreeRank 5 ; fraternal:nextDegree fraternalc:nlKnightGrandCross ;
+    skos:prefLabel "Grand Officer"@en , "Storofficer"@sv , "Grand officier"@fr , "Großoffizier"@de , "Grande ufficiale"@it , "Gran oficial"@es , "Grande-oficial"@pt , "Nagytiszt"@hu , "Μέγας Αξιωματικός"@el , "Grootofficier"@nl ;
+    skos:definition "The grade above Commander in the Order of Orange-Nassau; the Order of the Netherlands Lion has no such grade."@en ,
+                    "Graden över Kommendör i Orange-Nassauorden; Nederländska Lejonorden har ingen sådan grad."@sv ,
+                    "Le grade au-dessus de commandeur dans l'ordre d'Orange-Nassau ; l'ordre du Lion néerlandais n'a pas ce grade."@fr ,
+                    "Die Stufe über dem Komtur im Orden von Oranien-Nassau; der Orden des Niederländischen Löwen kennt diese Stufe nicht."@de ,
+                    "Il grado sopra quello di commendatore nell'Ordine di Orange-Nassau; l'Ordine del Leone dei Paesi Bassi non ha questo grado."@it ,
+                    "El grado por encima de comendador en la Orden de Orange-Nassau; la Orden del León Neerlandés no tiene este grado."@es ,
+                    "O grau acima de comendador na Ordem de Orange-Nassau; a Ordem do Leão Neerlandês não tem este grau."@pt ,
+                    "Az Orange–Nassau-rendben a Parancsnok feletti fokozat; a Holland Oroszlán-rendnek nincs ilyen fokozata."@hu ,
+                    "Ο βαθμός πάνω από τον Ταξιάρχη στο Τάγμα Ορανίων-Νασσάου· το Τάγμα του Ολλανδικού Λέοντα δεν έχει τέτοιο βαθμό."@el ,
+                    "De rang boven Commandeur in de Orde van Oranje-Nassau; de Orde van de Nederlandse Leeuw kent deze rang niet."@nl .
+
+fraternalc:nlKnightGrandCross a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchOrderGrades ; skos:topConceptOf fraternalc:DutchOrderGrades ;
+    fraternal:degreeRank 6 ;
+    skos:prefLabel "Knight Grand Cross"@en , "Riddare av storkorset"@sv , "Chevalier grand-croix"@fr , "Ritter Großkreuz"@de , "Cavaliere di gran croce"@it , "Caballero gran cruz"@es , "Cavaleiro grã-cruz"@pt , "Nagykeresztes lovag"@hu , "Ιππότης Μεγαλόσταυρος"@el , "Ridder Grootkruis"@nl ;
+    skos:definition "The highest grade of both orders. In the Order of the Netherlands Lion it has always been rare; in the Order of Orange-Nassau it is sometimes given to a departing ambassador."@en ,
+                    "Den högsta graden i båda orden. I Nederländska Lejonorden har den alltid varit sällsynt; i Orange-Nassauorden ges den ibland till en avgående ambassadör."@sv ,
+                    "Le grade le plus élevé des deux ordres. Dans l'ordre du Lion néerlandais, il a toujours été rare ; dans l'ordre d'Orange-Nassau, il est parfois remis à un ambassadeur sortant."@fr ,
+                    "Die höchste Stufe beider Orden. Im Orden des Niederländischen Löwen war sie stets selten; im Orden von Oranien-Nassau wird sie manchmal an einen scheidenden Botschafter verliehen."@de ,
+                    "Il grado più alto di entrambi gli ordini. Nell'Ordine del Leone dei Paesi Bassi è sempre stato raro; nell'Ordine di Orange-Nassau è talvolta conferito a un ambasciatore in partenza."@it ,
+                    "El grado más alto de ambas órdenes. En la Orden del León Neerlandés siempre ha sido raro; en la Orden de Orange-Nassau se concede a veces a un embajador que se despide."@es ,
+                    "O grau mais alto de ambas as ordens. Na Ordem do Leão Neerlandês sempre foi raro; na Ordem de Orange-Nassau é por vezes concedido a um embaixador que termina a missão."@pt ,
+                    "Mindkét rend legmagasabb fokozata. A Holland Oroszlán-rendben mindig ritka volt; az Orange–Nassau-rendben néha a távozó nagykövetek kapják."@hu ,
+                    "Ο ανώτατος βαθμός και των δύο ταγμάτων. Στο Τάγμα του Ολλανδικού Λέοντα υπήρξε πάντοτε σπάνιος· στο Τάγμα Ορανίων-Νασσάου απονέμεται μερικές φορές σε πρέσβη που αποχωρεί."@el ,
+                    "De hoogste rang van beide orden. In de Orde van de Nederlandse Leeuw is hij altijd zeldzaam geweest; in de Orde van Oranje-Nassau wordt hij soms aan een vertrekkende ambassadeur toegekend."@nl .
+
+fraternalc:DutchStudentStages a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:MemberStages ;
+    skos:prefLabel "Candidate stage of Dutch student societies"@en , "Kandidatstadium i nederländska studentsällskap"@sv , "Étape de candidat des sociétés étudiantes néerlandaises"@fr , "Kandidatenstufe niederländischer Studentenverbindungen"@de , "Stadio di candidato delle società studentesche olandesi"@it , "Etapa de candidato de las sociedades estudiantiles neerlandesas"@es , "Etapa de candidato das sociedades estudantis neerlandesas"@pt , "A holland diáktársaságok jelölti szakasza"@hu , "Στάδιο υποψηφίου των ολλανδικών φοιτητικών συλλόγων"@el , "Kandidaatstadium van Nederlandse studentenverenigingen"@nl ;
+    skos:definition "The name of a candidate member of a Dutch student society during the introductory period, the feut, placed under the generic novice stage in mappings/fraternal-netherlands.sssom.tsv."@en ,
+                    "Namnet på en kandidatmedlem i ett nederländskt studentsällskap under introduktionstiden, feut, placerat under det generiska novisstadiet i mappings/fraternal-netherlands.sssom.tsv."@sv ,
+                    "Le nom d'un candidat membre d'une société étudiante néerlandaise pendant la période d'introduction, le feut, placé sous l'étape de novice générique dans mappings/fraternal-netherlands.sssom.tsv."@fr ,
+                    "Die Bezeichnung eines Kandidaten einer niederländischen Studentenverbindung während der Einführungszeit, der Feut, unter die allgemeine Neulingsstufe gestellt in mappings/fraternal-netherlands.sssom.tsv."@de ,
+                    "Il nome di un candidato membro di una società studentesca olandese durante il periodo di introduzione, il feut, collocato sotto lo stadio di novizio generico in mappings/fraternal-netherlands.sssom.tsv."@it ,
+                    "El nombre de un candidato a miembro de una sociedad estudiantil neerlandesa durante el período de introducción, el feut, colocado bajo la etapa de novicio genérica en mappings/fraternal-netherlands.sssom.tsv."@es ,
+                    "O nome de um candidato a membro de uma sociedade estudantil neerlandesa durante o período de introdução, o feut, colocado sob a etapa de noviço genérica em mappings/fraternal-netherlands.sssom.tsv."@pt ,
+                    "Egy holland diáktársaság jelölt tagjának neve a bevezető időszakban, a feut, az általános újonc szakasz alá sorolva a mappings/fraternal-netherlands.sssom.tsv fájlban."@hu ,
+                    "Το όνομα του υποψήφιου μέλους ενός ολλανδικού φοιτητικού συλλόγου κατά την εισαγωγική περίοδο, το feut, τοποθετημένο κάτω από το γενικό στάδιο του δόκιμου στο mappings/fraternal-netherlands.sssom.tsv."@el ,
+                    "De naam van een kandidaat-lid van een Nederlandse studentenvereniging tijdens de introductietijd, de feut, geplaatst onder het algemene noviciaatstadium in mappings/fraternal-netherlands.sssom.tsv."@nl ;
+    skos:hasTopConcept fraternalc:feut .
+
+fraternalc:FlemishStudentStages a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:MemberStages ;
+    skos:prefLabel "Candidate stage of Flemish student societies"@en , "Kandidatstadium i flamländska studentsällskap"@sv , "Étape de candidat des sociétés étudiantes flamandes"@fr , "Kandidatenstufe flämischer Studentenverbindungen"@de , "Stadio di candidato delle società studentesche fiamminghe"@it , "Etapa de candidato de las sociedades estudiantiles flamencas"@es , "Etapa de candidato das sociedades estudantis flamengas"@pt , "A flamand diáktársaságok jelölti szakasza"@hu , "Στάδιο υποψηφίου των φλαμανδικών φοιτητικών συλλόγων"@el , "Kandidaatstadium van Vlaamse studentenverenigingen"@nl ;
+    skos:definition "The name of a candidate member of a Flemish student society during the introductory period, the schacht, placed under the generic novice stage in mappings/fraternal-netherlands.sssom.tsv."@en ,
+                    "Namnet på en kandidatmedlem i ett flamländskt studentsällskap under introduktionstiden, schacht, placerat under det generiska novisstadiet i mappings/fraternal-netherlands.sssom.tsv."@sv ,
+                    "Le nom d'un candidat membre d'une société étudiante flamande pendant la période d'introduction, le schacht, placé sous l'étape de novice générique dans mappings/fraternal-netherlands.sssom.tsv."@fr ,
+                    "Die Bezeichnung eines Kandidaten einer flämischen Studentenverbindung während der Einführungszeit, der Schacht, unter die allgemeine Neulingsstufe gestellt in mappings/fraternal-netherlands.sssom.tsv."@de ,
+                    "Il nome di un candidato membro di una società studentesca fiamminga durante il periodo di introduzione, lo schacht, collocato sotto lo stadio di novizio generico in mappings/fraternal-netherlands.sssom.tsv."@it ,
+                    "El nombre de un candidato a miembro de una sociedad estudiantil flamenca durante el período de introducción, el schacht, colocado bajo la etapa de novicio genérica en mappings/fraternal-netherlands.sssom.tsv."@es ,
+                    "O nome de um candidato a membro de uma sociedade estudantil flamenga durante o período de introdução, o schacht, colocado sob a etapa de noviço genérica em mappings/fraternal-netherlands.sssom.tsv."@pt ,
+                    "Egy flamand diáktársaság jelölt tagjának neve a bevezető időszakban, a schacht, az általános újonc szakasz alá sorolva a mappings/fraternal-netherlands.sssom.tsv fájlban."@hu ,
+                    "Το όνομα του υποψήφιου μέλους ενός φλαμανδικού φοιτητικού συλλόγου κατά την εισαγωγική περίοδο, το schacht, τοποθετημένο κάτω από το γενικό στάδιο του δόκιμου στο mappings/fraternal-netherlands.sssom.tsv."@el ,
+                    "De naam van een kandidaat-lid van een Vlaamse studentenvereniging tijdens de introductietijd, de schacht, geplaatst onder het algemene noviciaatstadium in mappings/fraternal-netherlands.sssom.tsv."@nl ;
+    skos:hasTopConcept fraternalc:schacht .
+
+fraternalc:feut a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchStudentStages ; skos:topConceptOf fraternalc:DutchStudentStages ;
+    fraternal:degreeRank 1 ;
+    skos:prefLabel "Feut"@en , "Feut"@sv , "Feut"@fr , "Feut"@de , "Feut"@it , "Feut"@es , "Feut"@pt , "Feut"@hu , "Feut"@el , "Feut"@nl ;
+    skos:altLabel "Candidate member"@en , "Kandidaat-lid"@nl ;
+    skos:definition "A candidate member of a Dutch student society during the ontgroening, before being inaugurated as a member. The word is said to come from foetus."@en ,
+                    "En kandidatmedlem i ett nederländskt studentsällskap under ontgroeningen, innan medlemmen installeras som medlem. Ordet sägs komma från foster."@sv ,
+                    "Un candidat membre d'une société étudiante néerlandaise pendant l'ontgroening, avant d'être investi comme membre. Le mot viendrait de foetus."@fr ,
+                    "Ein Kandidat einer niederländischen Studentenverbindung während der Ontgroening, bevor er als Mitglied aufgenommen wird. Das Wort soll von Fötus kommen."@de ,
+                    "Un candidato membro di una società studentesca olandese durante l'ontgroening, prima di essere insediato come membro. La parola deriverebbe da feto."@it ,
+                    "Un candidato a miembro de una sociedad estudiantil neerlandesa durante el ontgroening, antes de ser investido como miembro. La palabra vendría de feto."@es ,
+                    "Um candidato a membro de uma sociedade estudantil neerlandesa durante o ontgroening, antes de ser investido como membro. A palavra viria de feto."@pt ,
+                    "Egy holland diáktársaság jelölt tagja az ontgroening idején, mielőtt tagként beiktatják. A szó állítólag a magzat szóból ered."@hu ,
+                    "Υποψήφιο μέλος ενός ολλανδικού φοιτητικού συλλόγου κατά το ontgroening, πριν εγκαινιαστεί ως μέλος. Η λέξη λέγεται ότι προέρχεται από το έμβρυο."@el ,
+                    "Een kandidaat-lid van een Nederlandse studentenvereniging tijdens de ontgroening, voordat hij als lid wordt geïnaugureerd. Het woord zou van foetus komen."@nl .
+
+fraternalc:schacht a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:FlemishStudentStages ; skos:topConceptOf fraternalc:FlemishStudentStages ;
+    fraternal:degreeRank 1 ;
+    skos:prefLabel "Schacht"@en , "Schacht"@sv , "Schacht"@fr , "Schacht"@de , "Schacht"@it , "Schacht"@es , "Schacht"@pt , "Schacht"@hu , "Schacht"@el , "Schacht"@nl ;
+    skos:definition "A candidate member of a Flemish student society during the compulsory introductory period and the student baptism, before being a full member."@en ,
+                    "En kandidatmedlem i ett flamländskt studentsällskap under den obligatoriska introduktionstiden och studentdopet, innan medlemmen är fullvärdig."@sv ,
+                    "Un candidat membre d'une société étudiante flamande pendant la période d'introduction obligatoire et le baptême estudiantin, avant d'être membre à part entière."@fr ,
+                    "Ein Kandidat einer flämischen Studentenverbindung während der obligatorischen Einführungszeit und der Studententaufe, bevor er Vollmitglied ist."@de ,
+                    "Un candidato membro di una società studentesca fiamminga durante il periodo di introduzione obbligatorio e il battesimo studentesco, prima di essere membro a pieno titolo."@it ,
+                    "Un candidato a miembro de una sociedad estudiantil flamenca durante el período de introducción obligatorio y el bautizo estudiantil, antes de ser miembro de pleno derecho."@es ,
+                    "Um candidato a membro de uma sociedade estudantil flamenga durante o período de introdução obrigatório e o batismo estudantil, antes de ser membro de pleno direito."@pt ,
+                    "Egy flamand diáktársaság jelölt tagja a kötelező bevezető időszakban és a diákkeresztelő idején, mielőtt teljes jogú tag lenne."@hu ,
+                    "Υποψήφιο μέλος ενός φλαμανδικού φοιτητικού συλλόγου κατά την υποχρεωτική εισαγωγική περίοδο και τη φοιτητική βάπτιση, πριν γίνει πλήρες μέλος."@el ,
+                    "Een kandidaat-lid van een Vlaamse studentenvereniging tijdens de verplichte introductietijd en de studentendoop, voordat hij volwaardig lid is."@nl .
+
+fraternalc:DutchStudentCeremonies a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Ceremonies and gatherings of Dutch and Flemish student societies"@en , "Ceremonier och sammankomster i nederländska och flamländska studentsällskap"@sv , "Cérémonies et réunions des sociétés étudiantes néerlandaises et flamandes"@fr , "Zeremonien und Zusammenkünfte niederländischer und flämischer Studentenverbindungen"@de , "Cerimonie e incontri delle società studentesche olandesi e fiamminghe"@it , "Ceremonias y reuniones de las sociedades estudiantiles neerlandesas y flamencas"@es , "Cerimónias e reuniões das sociedades estudantis neerlandesas e flamengas"@pt , "A holland és flamand diáktársaságok szertartásai és összejövetelei"@hu , "Τελετές και συγκεντρώσεις των ολλανδικών και φλαμανδικών φοιτητικών συλλόγων"@el , "Ceremonies en bijeenkomsten van Nederlandse en Vlaamse studentenverenigingen"@nl ;
+    skos:definition "The rite of passage by which candidates become members, the inauguration that follows it, and the singing and drinking gathering of the societies. Placed under the generic ceremony, ceremonies and social evening in mappings/fraternal-netherlands.sssom.tsv."@en ,
+                    "Övergångsriten genom vilken kandidater blir medlemmar, installationen som följer på den, och sällskapens sång- och dryckessammankomst. Placerade under den generiska ceremonin och sällskapskvällen i mappings/fraternal-netherlands.sssom.tsv."@sv ,
+                    "Le rite de passage par lequel les candidats deviennent membres, l'investiture qui le suit, et la réunion de chant et de boisson des sociétés. Placés sous la cérémonie générique et la soirée conviviale dans mappings/fraternal-netherlands.sssom.tsv."@fr ,
+                    "Der Übergangsritus, durch den Kandidaten Mitglieder werden, die Aufnahme, die ihm folgt, und das Sing- und Trinkgelage der Verbindungen. Unter die allgemeine Zeremonie und den geselligen Abend gestellt in mappings/fraternal-netherlands.sssom.tsv."@de ,
+                    "Il rito di passaggio con cui i candidati diventano membri, l'insediamento che lo segue, e l'incontro di canto e di bevute delle società. Collocati sotto la cerimonia generica e la serata conviviale in mappings/fraternal-netherlands.sssom.tsv."@it ,
+                    "El rito de paso por el que los candidatos se hacen miembros, la investidura que lo sigue y la reunión de canto y bebida de las sociedades. Colocados bajo la ceremonia genérica y la velada social en mappings/fraternal-netherlands.sssom.tsv."@es ,
+                    "O rito de passagem pelo qual os candidatos se tornam membros, a investidura que se lhe segue e a reunião de canto e de bebida das sociedades. Colocados sob a cerimónia genérica e a noite de convívio em mappings/fraternal-netherlands.sssom.tsv."@pt ,
+                    "Az átmeneti rítus, amellyel a jelöltek taggá válnak, az azt követő beiktatás, valamint a társaságok ének- és ivászati összejövetele. Az általános szertartás és társas est alá sorolva a mappings/fraternal-netherlands.sssom.tsv fájlban."@hu ,
+                    "Το τελετουργικό διάβασης με το οποίο οι υποψήφιοι γίνονται μέλη, η εγκαθίδρυση που το ακολουθεί και η συγκέντρωση τραγουδιού και ποτού των συλλόγων. Τοποθετημένα κάτω από τη γενική τελετή και τη κοινωνική βραδιά στο mappings/fraternal-netherlands.sssom.tsv."@el ,
+                    "Het overgangsritueel waarmee kandidaten lid worden, de inauguratie die daarop volgt en de zang- en drinkbijeenkomst van de verenigingen. Geplaatst onder de algemene ceremonie en de gezellige avond in mappings/fraternal-netherlands.sssom.tsv."@nl ;
+    skos:hasTopConcept fraternalc:ontgroening , fraternalc:inauguratie , fraternalc:cantus .
+
+fraternalc:ontgroening a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchStudentCeremonies ; skos:topConceptOf fraternalc:DutchStudentCeremonies ;
+    skos:prefLabel "Ontgroening"@en , "Ontgroening"@sv , "Ontgroening"@fr , "Ontgroening"@de , "Ontgroening"@it , "Ontgroening"@es , "Ontgroening"@pt , "Ontgroening"@hu , "Ontgroening"@el , "Ontgroening"@nl ;
+    skos:altLabel "Studentendoop"@nl , "Student baptism"@en ;
+    skos:definition "The rite of passage with trials and tasks that candidates of a student society go through in their introductory period before they are received as members; in Flanders it is the studentendoop. Today it is limited by rules such as the baptism charters of the student cities."@en ,
+                    "Den övergångsrit med prövningar och uppgifter som kandidater i ett studentsällskap genomgår under sin introduktionstid innan de tas emot som medlemmar; i Flandern kallas den studentendoop. I dag begränsas den av regler som studentstädernas dopstadgar."@sv ,
+                    "Le rite de passage, avec épreuves et tâches, que les candidats d'une société étudiante traversent pendant leur période d'introduction avant d'être reçus comme membres ; en Flandre, c'est le studentendoop. Il est aujourd'hui encadré par des règles comme les chartes de baptême des villes universitaires."@fr ,
+                    "Der Übergangsritus mit Prüfungen und Aufgaben, den die Kandidaten einer Studentenverbindung in ihrer Einführungszeit durchlaufen, bevor sie als Mitglieder aufgenommen werden; in Flandern ist es die Studententaufe (studentendoop). Heute wird er durch Regeln wie die Taufcharten der Universitätsstädte begrenzt."@de ,
+                    "Il rito di passaggio con prove e compiti che i candidati di una società studentesca attraversano nel periodo di introduzione prima di essere accolti come membri; nelle Fiandre è lo studentendoop. Oggi è limitato da regole come le carte del battesimo delle città universitarie."@it ,
+                    "El rito de paso con pruebas y tareas que los candidatos de una sociedad estudiantil atraviesan en su período de introducción antes de ser recibidos como miembros; en Flandes es el studentendoop. Hoy está limitado por normas como las cartas de bautizo de las ciudades universitarias."@es ,
+                    "O rito de passagem com provas e tarefas que os candidatos de uma sociedade estudantil atravessam no período de introdução antes de serem recebidos como membros; na Flandres é o studentendoop. Hoje está limitado por regras como as cartas de batismo das cidades universitárias."@pt ,
+                    "Az átmeneti rítus próbatételekkel és feladatokkal, amelyen a diáktársaság jelöltjei a bevezető időszakukban átmennek, mielőtt tagként fogadják őket; Flandriában ez a studentendoop. Ma olyan szabályok korlátozzák, mint az egyetemi városok keresztelési chartái."@hu ,
+                    "Το τελετουργικό διάβασης με δοκιμασίες και καθήκοντα που περνούν οι υποψήφιοι ενός φοιτητικού συλλόγου στην εισαγωγική τους περίοδο προτού γίνουν δεκτοί ως μέλη· στη Φλάνδρα είναι το studentendoop. Σήμερα περιορίζεται από κανόνες όπως οι χάρτες βάπτισης των πανεπιστημιακών πόλεων."@el ,
+                    "Het overgangsritueel met beproevingen en opdrachten dat kandidaten van een studentenvereniging in hun introductietijd doorlopen voordat ze als lid worden ontvangen; in Vlaanderen is dat de studentendoop. Tegenwoordig wordt het beperkt door regels zoals de doopcharters van de studentensteden."@nl .
+
+fraternalc:inauguratie a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchStudentCeremonies ; skos:topConceptOf fraternalc:DutchStudentCeremonies ;
+    skos:prefLabel "Inauguratie"@en , "Inauguratie"@sv , "Inauguratie"@fr , "Inauguratie"@de , "Inauguratie"@it , "Inauguratie"@es , "Inauguratie"@pt , "Inauguratie"@hu , "Inauguratie"@el , "Inauguratie"@nl ;
+    skos:definition "The ritual that follows the ontgroening, by which a candidate is inaugurated as a full member of a Dutch student society."@en ,
+                    "Ritualen som följer på ontgroeningen och genom vilken en kandidat installeras som fullvärdig medlem i ett nederländskt studentsällskap."@sv ,
+                    "Le rituel qui suit l'ontgroening et par lequel un candidat est investi comme membre à part entière d'une société étudiante néerlandaise."@fr ,
+                    "Das Ritual, das auf die Ontgroening folgt und durch das ein Kandidat als Vollmitglied einer niederländischen Studentenverbindung aufgenommen wird."@de ,
+                    "Il rituale che segue l'ontgroening e con cui un candidato è insediato come membro a pieno titolo di una società studentesca olandese."@it ,
+                    "El ritual que sigue al ontgroening y por el que un candidato es investido como miembro de pleno derecho de una sociedad estudiantil neerlandesa."@es ,
+                    "O ritual que se segue ao ontgroening e pelo qual um candidato é investido como membro de pleno direito de uma sociedade estudantil neerlandesa."@pt ,
+                    "Az ontgroeninget követő rituálé, amellyel a jelöltet egy holland diáktársaság teljes jogú tagjává iktatják."@hu ,
+                    "Το τελετουργικό που ακολουθεί το ontgroening και με το οποίο ένας υποψήφιος εγκαθιδρύεται ως πλήρες μέλος ενός ολλανδικού φοιτητικού συλλόγου."@el ,
+                    "Het ritueel dat op de ontgroening volgt en waarmee een kandidaat als volwaardig lid van een Nederlandse studentenvereniging wordt geïnaugureerd."@nl .
+
+fraternalc:cantus a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchStudentCeremonies ; skos:topConceptOf fraternalc:DutchStudentCeremonies ;
+    skos:prefLabel "Cantus"@en , "Cantus"@sv , "Cantus"@fr , "Cantus"@de , "Cantus"@it , "Cantus"@es , "Cantus"@pt , "Cantus"@hu , "Cantus"@el , "Cantus"@nl ;
+    skos:definition "A gathering of singing and drinking in a student society, led by a presidium with a senior and a cantor, with fixed rules and commands in Latin."@en ,
+                    "En sång- och dryckessammankomst i ett studentsällskap, ledd av ett presidium med en senior och en kantor, med fasta regler och kommandon på latin."@sv ,
+                    "Une réunion de chant et de boisson dans une société étudiante, dirigée par un présidium avec un senior et un cantor, avec des règles fixes et des commandements en latin."@fr ,
+                    "Ein Sing- und Trinkgelage in einer Studentenverbindung, geleitet von einem Präsidium mit einem Senior und einem Kantor, mit festen Regeln und Kommandos auf Latein."@de ,
+                    "Un incontro di canto e di bevute in una società studentesca, guidato da un presidium con un senior e un cantore, con regole fisse e comandi in latino."@it ,
+                    "Una reunión de canto y bebida en una sociedad estudiantil, dirigida por un presidio con un senior y un cantor, con reglas fijas y órdenes en latín."@es ,
+                    "Uma reunião de canto e de bebida numa sociedade estudantil, dirigida por um presídio com um sénior e um cantor, com regras fixas e comandos em latim."@pt ,
+                    "Ének- és ivászati összejövetel egy diáktársaságban, amelyet egy senior és egy kantor alkotta elnökség vezet, rögzített szabályokkal és latin vezényszavakkal."@hu ,
+                    "Συγκέντρωση τραγουδιού και ποτού σε έναν φοιτητικό σύλλογο, με επικεφαλής ένα προεδρείο με έναν senior και έναν κάντορα, με σταθερούς κανόνες και εντολές στα λατινικά."@el ,
+                    "Een zang- en drinkbijeenkomst in een studentenvereniging, geleid door een presidium met een senior en een cantor, met vaste regels en commando's in het Latijn."@nl .
+
+fraternalc:DutchStudentOffices a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:OfficeTypes ;
+    skos:prefLabel "Offices of Dutch and Flemish student societies"@en , "Ämbeten i nederländska och flamländska studentsällskap"@sv , "Fonctions des sociétés étudiantes néerlandaises et flamandes"@fr , "Ämter niederländischer und flämischer Studentenverbindungen"@de , "Cariche delle società studentesche olandesi e fiamminghe"@it , "Cargos de las sociedades estudiantiles neerlandesas y flamencas"@es , "Cargos das sociedades estudantis neerlandesas e flamengas"@pt , "A holland és flamand diáktársaságok tisztségei"@hu , "Αξιώματα των ολλανδικών και φλαμανδικών φοιτητικών συλλόγων"@el , "Functies van Nederlandse en Vlaamse studentenverenigingen"@nl ;
+    skos:definition "The chair of a student society, the praeses, and the master of its student baptism, the doopmeester, placed under the generic president and novice master in mappings/fraternal-netherlands.sssom.tsv. The rest of the board uses the generic offices."@en ,
+                    "Ordföranden i ett studentsällskap, praeses, och mästaren för dess studentdop, doopmeester, placerade under den generiska ordföranden och novismästaren i mappings/fraternal-netherlands.sssom.tsv. Resten av styrelsen använder de generiska ämbetena."@sv ,
+                    "Le président d'une société étudiante, le praeses, et le maître de son baptême estudiantin, le doopmeester, placés sous le président et le maître des novices génériques dans mappings/fraternal-netherlands.sssom.tsv. Le reste du bureau utilise les fonctions génériques."@fr ,
+                    "Der Vorsitzende einer Studentenverbindung, der Praeses, und der Meister ihrer Studententaufe, der Doopmeester, unter den allgemeinen Präsidenten und Novizenmeister gestellt in mappings/fraternal-netherlands.sssom.tsv. Der übrige Vorstand verwendet die allgemeinen Ämter."@de ,
+                    "Il presidente di una società studentesca, il praeses, e il maestro del suo battesimo studentesco, il doopmeester, collocati sotto il presidente e il maestro dei novizi generici in mappings/fraternal-netherlands.sssom.tsv. Il resto del consiglio usa le cariche generiche."@it ,
+                    "El presidente de una sociedad estudiantil, el praeses, y el maestro de su bautizo estudiantil, el doopmeester, colocados bajo el presidente y el maestro de novicios genéricos en mappings/fraternal-netherlands.sssom.tsv. El resto de la junta usa los cargos genéricos."@es ,
+                    "O presidente de uma sociedade estudantil, o praeses, e o mestre do seu batismo estudantil, o doopmeester, colocados sob o presidente e o mestre de noviços genéricos em mappings/fraternal-netherlands.sssom.tsv. O resto da direção usa os cargos genéricos."@pt ,
+                    "Egy diáktársaság elnöke, a praeses, és a diákkeresztelő mestere, a doopmeester, az általános elnök és újoncmester alá sorolva a mappings/fraternal-netherlands.sssom.tsv fájlban. A vezetőség többi tagja az általános tisztségeket használja."@hu ,
+                    "Ο πρόεδρος ενός φοιτητικού συλλόγου, ο praeses, και ο διδάσκαλος της φοιτητικής βάπτισής του, ο doopmeester, τοποθετημένοι κάτω από τον γενικό πρόεδρο και δάσκαλο των δοκίμων στο mappings/fraternal-netherlands.sssom.tsv. Το υπόλοιπο συμβούλιο χρησιμοποιεί τα γενικά αξιώματα."@el ,
+                    "De voorzitter van een studentenvereniging, de praeses, en de meester van haar studentendoop, de doopmeester, geplaatst onder de algemene voorzitter en novicemeester in mappings/fraternal-netherlands.sssom.tsv. De rest van het bestuur gebruikt de algemene functies."@nl ;
+    skos:hasTopConcept fraternalc:praeses , fraternalc:doopmeester .
+
+fraternalc:praeses a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchStudentOffices ; skos:topConceptOf fraternalc:DutchStudentOffices ;
+    skos:prefLabel "Praeses"@en , "Praeses"@sv , "Praeses"@fr , "Praeses"@de , "Praeses"@it , "Praeses"@es , "Praeses"@pt , "Praeses"@hu , "Praeses"@el , "Praeses"@nl ;
+    skos:altLabel "Chair"@en , "Preses"@nl , "Senior"@nl ;
+    skos:definition "The chair of a Dutch or Flemish student society, who also presides at a cantus. The title is Latin for the chair; in Belgium the senior is often the same office. The praeses sometimes wears a ribbon of office."@en ,
+                    "Ordföranden i ett nederländskt eller flamländskt studentsällskap, som också leder en cantus. Titeln är latin för ordförande; i Belgien är senior ofta samma ämbete. Praeses bär ibland ett ämbetsband."@sv ,
+                    "Le président d'une société étudiante néerlandaise ou flamande, qui préside aussi un cantus. Le titre est le mot latin pour président ; en Belgique, le senior est souvent la même fonction. Le praeses porte parfois un ruban de fonction."@fr ,
+                    "Der Vorsitzende einer niederländischen oder flämischen Studentenverbindung, der auch einem Cantus vorsitzt. Der Titel ist lateinisch für Vorsitzender; in Belgien ist der Senior oft dasselbe Amt. Der Praeses trägt manchmal ein Amtsband."@de ,
+                    "Il presidente di una società studentesca olandese o fiamminga, che presiede anche un cantus. Il titolo è la parola latina per presidente; in Belgio il senior è spesso la stessa carica. Il praeses porta talvolta un nastro di carica."@it ,
+                    "El presidente de una sociedad estudiantil neerlandesa o flamenca, que también preside un cantus. El título es la palabra latina para presidente; en Bélgica el senior suele ser el mismo cargo. El praeses lleva a veces una cinta de cargo."@es ,
+                    "O presidente de uma sociedade estudantil neerlandesa ou flamenga, que também preside a um cantus. O título é a palavra latina para presidente; na Bélgica o sénior é muitas vezes o mesmo cargo. O praeses usa por vezes uma fita de cargo."@pt ,
+                    "Egy holland vagy flamand diáktársaság elnöke, aki a cantusnak is elnököl. A cím latinul elnököt jelent; Belgiumban a senior gyakran ugyanez a tisztség. A praeses néha tisztségi szalagot visel."@hu ,
+                    "Ο πρόεδρος ενός ολλανδικού ή φλαμανδικού φοιτητικού συλλόγου, ο οποίος προεδρεύει και σε ένα cantus. Ο τίτλος είναι η λατινική λέξη για τον πρόεδρο· στο Βέλγιο ο senior είναι συχνά το ίδιο αξίωμα. Ο praeses φορά μερικές φορές κορδέλα αξιώματος."@el ,
+                    "De voorzitter van een Nederlandse of Vlaamse studentenvereniging, die ook een cantus voorzit. De titel is Latijn voor voorzitter; in België is de senior vaak hetzelfde ambt. De praeses draagt soms een praeseslint."@nl .
+
+fraternalc:doopmeester a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:DutchStudentOffices ; skos:topConceptOf fraternalc:DutchStudentOffices ;
+    skos:prefLabel "Doopmeester"@en , "Doopmeester"@sv , "Doopmeester"@fr , "Doopmeester"@de , "Doopmeester"@it , "Doopmeester"@es , "Doopmeester"@pt , "Doopmeester"@hu , "Doopmeester"@el , "Doopmeester"@nl ;
+    skos:altLabel "Baptism master"@en ;
+    skos:definition "Appointed by a Flemish student society to run the student baptism of its schachten, sometimes with schachtentemmers to help."@en ,
+                    "Utses av ett flamländskt studentsällskap att leda studentdopet av dess schachten, ibland med schachtentemmers som hjälp."@sv ,
+                    "Désigné par une société étudiante flamande pour diriger le baptême estudiantin de ses schachten, parfois avec des schachtentemmers pour l'aider."@fr ,
+                    "Von einer flämischen Studentenverbindung ernannt, um die Studententaufe ihrer Schachten zu leiten, manchmal mit Schachtentemmers als Helfern."@de ,
+                    "Nominato da una società studentesca fiamminga per condurre il battesimo studentesco dei suoi schachten, talvolta con degli schachtentemmers ad aiutarlo."@it ,
+                    "Nombrado por una sociedad estudiantil flamenca para dirigir el bautizo estudiantil de sus schachten, a veces con schachtentemmers que le ayudan."@es ,
+                    "Nomeado por uma sociedade estudantil flamenga para dirigir o batismo estudantil dos seus schachten, por vezes com schachtentemmers a ajudá-lo."@pt ,
+                    "Egy flamand diáktársaság nevezi ki, hogy vezesse a schachtjai diákkeresztelőjét, olykor schachtentemmerek segítségével."@hu ,
+                    "Διορίζεται από έναν φλαμανδικό φοιτητικό σύλλογο για να διευθύνει τη φοιτητική βάπτιση των schachten του, μερικές φορές με schachtentemmers ως βοηθούς."@el ,
+                    "Door een Vlaamse studentenvereniging aangesteld om de studentendoop van haar schachten te leiden, soms met schachtentemmers als hulp."@nl .

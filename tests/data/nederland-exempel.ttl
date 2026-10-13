@@ -1,0 +1,335 @@
+# Fictional Dutch and Flemish organisations (all names, numbers and people invented for testing): a
+# vereniging with its Handelsregister number and a cultural ANBI status, an informal vereniging,
+# a Flemish vzw, a sociëteit, a student corps with its feuten, ontgroening, inauguratie, cantus
+# and praeses, a Flemish student club with a doopmeester, a brotherhood with a swan brother, a
+# civil order of the same kind as the Order of Orange-Nassau, a grand lodge that was banned in 1940
+# and a recognition that was withdrawn and restored.
+#
+# Most of the Dutch context fits the generic model: a vereniging with full legal capacity is a
+# registered association (statutes in a notarial deed, entered in the Handelsregister), one with
+# limited legal capacity is unincorporated, a vzw is a registered association (its statutes are
+# published in the Belgisch Staatsblad), a sociëteit is a private club, a corps or a Flemish
+# student club is a student society, a dispuut is a branch, and an ANBI is the generic public
+# benefit. What is new is in section 15 of fraternal-codes and section 21 of membership-codes: the
+# grades of the Dutch civil orders, the stages, ceremonies and offices of the student societies,
+# and the cultural ANBI.
+#
+# The IRIs are ASCII with English local names; the Dutch names are the labels.
+#
+# A draft from general knowledge and Dutch Wikipedia; the Dutch wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix nl:      <https://example.org/nederland/> .
+
+# --- A vereniging with full legal capacity, a cultural ANBI --------------------------------------------
+
+nl:Vereniging a mbr:MembershipOrganization ;
+    rdfs:label "Vereniging Voorbeeld voor Kunst en Cultuur"@nl , "The Example Association for Art and Culture"@en ;
+    org:classification mbrc:voluntaryAssociation ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration nl:vereniging-kvk ;
+    mbr:publicBenefitStatus mbrc:culturalAnbi ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1987"^^xsd:gYear ;
+    mbr:hasMemberCount nl:vereniging-count .
+
+# The entry in the Handelsregister of the Kamer van Koophandel (an invented number).
+nl:vereniging-kvk a adms:Identifier ;
+    skos:notation "12345678" ;
+    adms:schemaAgency "Handelsregister van de Kamer van Koophandel" .
+
+nl:vereniging-count a mbr:MemberCount ;
+    mbr:count 340 ; mbr:asOf "2026-01-01"^^xsd:date .
+
+nl:sanne a foaf:Person ; schema:name "Sanne de Vries" ; foaf:givenName "Sanne" ; foaf:familyName "de Vries" .
+nl:jeroen a foaf:Person ; schema:name "Jeroen Bakker" ; foaf:givenName "Jeroen" ; foaf:familyName "Bakker" .
+nl:fatma a foaf:Person ; schema:name "Fatma Yilmaz" ; foaf:givenName "Fatma" ; foaf:familyName "Yilmaz" .
+
+# Voorzitter, secretaris and penningmeester of the bestuur, all hub offices.
+nl:sanne-president a mbr:Tenure ;
+    org:member nl:sanne ; org:organization nl:Vereniging ;
+    org:role mbrc:president ; mbr:startDate "2024-04-10"^^xsd:date .
+nl:jeroen-secretary a mbr:Tenure ;
+    org:member nl:jeroen ; org:organization nl:Vereniging ;
+    org:role mbrc:secretary ; mbr:startDate "2024-04-10"^^xsd:date .
+nl:fatma-treasurer a mbr:Tenure ;
+    org:member nl:fatma ; org:organization nl:Vereniging ;
+    org:role mbrc:treasurer ; mbr:startDate "2024-04-10"^^xsd:date .
+
+nl:ledenvergadering-2026 a mbr:Gathering ;
+    rdfs:label "Algemene ledenvergadering 2026"@nl ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer nl:Vereniging ;
+    mbr:startDate "2026-04-09"^^xsd:date .
+
+# --- A vereniging with limited legal capacity (an informal vereniging) --------------------------------
+
+nl:Buurtclub a mbr:MembershipOrganization ;
+    rdfs:label "Buurtclub Voorbeeld"@nl , "The Example Neighbourhood Club"@en ;
+    org:classification mbrc:voluntaryAssociation ;
+    rov:orgType mbrc:unincorporated ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "2019"^^xsd:gYear .
+
+# --- A Flemish vzw -------------------------------------------------------------------------------------------
+
+nl:Vzw a mbr:MembershipOrganization ;
+    rdfs:label "Voorbeeld vzw"@nl , "The Example Non-profit Association"@en ;
+    org:classification mbrc:voluntaryAssociation ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration nl:vzw-kbo ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "2002"^^xsd:gYear .
+
+# The enterprise number in the Kruispuntbank van Ondernemingen (an invented number).
+nl:vzw-kbo a adms:Identifier ;
+    skos:notation "0123.456.789" ;
+    adms:schemaAgency "Kruispuntbank van Ondernemingen" .
+
+# --- A sociëteit, a closed club of the kind that has existed since the eighteenth century --------------
+
+nl:Societeit a mbr:MembershipOrganization ;
+    rdfs:label "Sociëteit Voorbeeld"@nl , "The Example Sociëteit"@en ;
+    org:classification mbrc:gentlemensClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1850"^^xsd:gYear .
+
+# --- A student corps, its dispuut, and the ontgroening of a feut ------------------------------------------
+
+nl:Corps a mbr:MembershipOrganization ;
+    rdfs:label "Studentencorps Voorbeeld"@nl , "The Example Student Corps"@en ;
+    org:classification mbrc:studentSociety ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1815"^^xsd:gYear ;
+    fraternal:degreeSystem fraternalc:DutchStudentStages .
+
+# A dispuut is a small society inside the corps.
+nl:Dispuut a mbr:Branch ;
+    rdfs:label "Dispuut Voorbeeld"@nl , "The Example Dispuut"@en ;
+    org:classification mbrc:studentSociety ;
+    org:subOrganizationOf nl:Corps ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1962"^^xsd:gYear .
+
+nl:lotte a foaf:Person ; schema:name "Lotte Jansen" ; foaf:givenName "Lotte" ; foaf:familyName "Jansen" .
+nl:daan a foaf:Person ; schema:name "Daan Visser" ; foaf:givenName "Daan" ; foaf:familyName "Visser" .
+
+nl:lotte-membership a mbr:Membership ;
+    org:member nl:lotte ; org:organization nl:Corps ;
+    mbr:membershipStatus mbrc:candidate ;
+    mbr:startDate "2026-09-01"^^xsd:date .
+nl:daan-membership a mbr:Membership ;
+    org:member nl:daan ; org:organization nl:Corps ;
+    mbr:membershipStatus mbrc:active ;
+    mbr:startDate "2023-09-01"^^xsd:date .
+
+# Lotte is a feut. Daan went through the ontgroening and was inaugurated in 2023; he is praeses.
+nl:ontgroening-2026 a fraternal:Ceremony ;
+    rdfs:label "Ontgroening, september 2026"@nl ;
+    mbr:gatheringType fraternalc:ontgroening ;
+    mbr:organizer nl:Corps ;
+    mbr:startDate "2026-09-07"^^xsd:date .
+
+nl:lotte-feut a fraternal:DegreeConferral ;
+    mbr:recipient nl:lotte ;
+    mbr:conferred fraternalc:feut ;
+    mbr:conferredBy nl:Corps ;
+    mbr:conferredAt nl:ontgroening-2026 ;
+    mbr:startDate "2026-09-07"^^xsd:date .
+
+nl:inauguratie-2023 a fraternal:Ceremony ;
+    rdfs:label "Inauguratie, december 2023"@nl ;
+    mbr:gatheringType fraternalc:inauguratie ;
+    mbr:organizer nl:Corps ;
+    mbr:startDate "2023-12-02"^^xsd:date .
+
+nl:daan-praeses a mbr:Tenure ;
+    org:member nl:daan ; org:organization nl:Corps ;
+    org:role fraternalc:praeses ; mbr:startDate "2025-09-01"^^xsd:date .
+
+# A cantus, presided over by the praeses.
+nl:cantus-2026 a fraternal:Ceremony ;
+    rdfs:label "Cantus, oktober 2026"@nl ;
+    mbr:gatheringType fraternalc:cantus ;
+    mbr:organizer nl:Corps ;
+    mbr:startDate "2026-10-16"^^xsd:date .
+
+nl:daan-cantus a mbr:Participation ;
+    mbr:participant nl:daan ;
+    mbr:participationIn nl:cantus-2026 ;
+    mbr:participationRole mbrc:host .
+
+# --- A Flemish student club, with a doopmeester and a schacht ----------------------------------------------
+
+nl:Studentenclub a mbr:MembershipOrganization ;
+    rdfs:label "Studentenclub Voorbeeld"@nl , "The Example Student Club"@en ;
+    org:classification mbrc:studentSociety ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1948"^^xsd:gYear ;
+    fraternal:degreeSystem fraternalc:FlemishStudentStages .
+
+nl:pieter a foaf:Person ; schema:name "Pieter Maes" ; foaf:givenName "Pieter" ; foaf:familyName "Maes" .
+nl:elke a foaf:Person ; schema:name "Elke Peeters" ; foaf:givenName "Elke" ; foaf:familyName "Peeters" .
+
+nl:pieter-doopmeester a mbr:Tenure ;
+    org:member nl:pieter ; org:organization nl:Studentenclub ;
+    org:role fraternalc:doopmeester ; mbr:startDate "2026-09-01"^^xsd:date .
+
+nl:elke-membership a mbr:Membership ;
+    org:member nl:elke ; org:organization nl:Studentenclub ;
+    mbr:membershipStatus mbrc:candidate ;
+    mbr:startDate "2026-09-21"^^xsd:date .
+
+nl:elke-schacht a fraternal:DegreeConferral ;
+    mbr:recipient nl:elke ;
+    mbr:conferred fraternalc:schacht ;
+    mbr:conferredBy nl:Studentenclub ;
+    mbr:startDate "2026-09-21"^^xsd:date .
+
+# --- A brotherhood of 36 members, as old as the Illustre Lieve Vrouwe Broederschap ------------------------
+# The sworn brothers are ordinary members, the outside members associate members, and a Zwanenbroeder
+# (swan brother) is an honorary member, a title for princely persons only.
+
+nl:Broederschap a fraternal:FraternalOrder ;
+    rdfs:label "Broederschap Voorbeeld"@nl , "The Example Brotherhood"@en ;
+    org:classification fraternalc:confraternity ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:byInvitation ;
+    mbr:foundingDate "1318"^^xsd:gYear ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:oathOfObligation ;
+    mbr:hasMemberCount nl:broederschap-count .
+
+nl:broederschap-count a mbr:MemberCount ;
+    mbr:count 36 ; mbr:asOf "2026-01-01"^^xsd:date .
+
+nl:mees a foaf:Person ; schema:name "Mees van Dijk" ; foaf:givenName "Mees" ; foaf:familyName "van Dijk" .
+nl:anna a foaf:Person ; schema:name "Anna Smit" ; foaf:givenName "Anna" ; foaf:familyName "Smit" .
+nl:prins a foaf:Person ; schema:name "A Prince of the Example Realm" .
+
+nl:mees-sworn a mbr:Membership ;
+    org:member nl:mees ; org:organization nl:Broederschap ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2001"^^xsd:gYear .
+nl:anna-outside a mbr:Membership ;
+    org:member nl:anna ; org:organization nl:Broederschap ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:associate ;
+    mbr:startDate "2010"^^xsd:gYear .
+nl:prins-swan a mbr:Membership ;
+    org:member nl:prins ; org:organization nl:Broederschap ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:honorary ;
+    mbr:startDate "1988"^^xsd:gYear .
+
+# --- A civil order of the same kind as the Order of Orange-Nassau ----------------------------------------------
+
+nl:Staat a org:Organization ;
+    rdfs:label "De Staat"@nl , "The State"@en .
+
+nl:Orde a fraternal:FraternalOrder ;
+    rdfs:label "Voorbeeldorde van Verdienste"@nl , "The Example Netherlands Order of Merit"@en ;
+    org:classification fraternalc:orderOfChivalry ;
+    fraternal:fonsHonorum nl:Staat ;
+    fraternal:degreeSystem fraternalc:DutchOrderGrades ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+
+nl:volunteer a foaf:Person ; schema:name "Truus Mulder" ; foaf:givenName "Truus" ; foaf:familyName "Mulder" .
+nl:ambassador a foaf:Person ; schema:name "Foreign Ambassador" .
+
+# A volunteer is made a Lid; a departing ambassador receives the Ridder Grootkruis.
+nl:volunteer-member a fraternal:DegreeConferral ;
+    mbr:recipient nl:volunteer ;
+    mbr:conferred fraternalc:nlOrderMember ;
+    mbr:conferredBy nl:Orde ;
+    mbr:startDate "2025-04-25"^^xsd:date .
+nl:ambassador-grand-cross a fraternal:DegreeConferral ;
+    mbr:recipient nl:ambassador ;
+    mbr:conferred fraternalc:nlKnightGrandCross ;
+    mbr:conferredBy nl:Orde ;
+    mbr:startDate "2024-09-12"^^xsd:date .
+
+# --- A grand lodge banned in 1940, and a foreign grand lodge that withdrew and restored recognition ---------
+
+nl:GrandLodge a fraternal:GrandBody ;
+    rdfs:label "Voorbeeld Grootoosten"@nl , "The Example Grand Orient"@en ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1756-12-26"^^xsd:date ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ;
+    mbr:hasPeriod nl:grandlodge-first , nl:grandlodge-banned , nl:grandlodge-restored .
+
+# Freemasonry in the occupied Netherlands was banned in September 1940 and resumed after the liberation.
+nl:grandlodge-first a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1756-12-26"^^xsd:date ; mbr:endDate "1940-09-01"^^xsd:date .
+nl:grandlodge-banned a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:suppressedOrganization ;
+    mbr:startDate "1940-09-01"^^xsd:date ; mbr:endDate "1945-05-05"^^xsd:date .
+nl:grandlodge-restored a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1945-05-05"^^xsd:date .
+
+nl:ForeignGrandLodge a fraternal:GrandBody ;
+    rdfs:label "Voorbeeld Buitenlandse Grootloge"@nl , "The Example Foreign Grand Lodge"@en ;
+    org:classification fraternalc:fraternalOrder ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1717"^^xsd:gYear ;
+    fraternal:recognizes nl:GrandLodge .
+
+# The foreign grand lodge withdrew its recognition in 1880 and restored it in 1906.
+nl:recognition-1860 a fraternal:Recognition ;
+    fraternal:recognizingBody nl:ForeignGrandLodge ;
+    fraternal:recognizedBody nl:GrandLodge ;
+    fraternal:recognitionType fraternalc:regularRecognition ;
+    mbr:startDate "1860"^^xsd:gYear ; mbr:endDate "1880"^^xsd:gYear .
+nl:recognition-1906 a fraternal:Recognition ;
+    fraternal:recognizingBody nl:ForeignGrandLodge ;
+    fraternal:recognizedBody nl:GrandLodge ;
+    fraternal:recognitionType fraternalc:regularRecognition ;
+    mbr:startDate "1906"^^xsd:gYear .
+
+# Three lodges left in 1919 and formed a mixed obedience, which the grand lodge held irregular.
+nl:MixedObedience a fraternal:GrandBody ;
+    rdfs:label "Voorbeeld Gemengde Obediëntie"@nl , "The Example Mixed Obedience"@en ;
+    org:classification fraternalc:fraternalOrder ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1919"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization .
+
+nl:split-1919 a org:ChangeEvent ;
+    rdfs:label "De afsplitsing van 1919"@nl , "The split of 1919"@en ;
+    org:originalOrganization nl:GrandLodge ;
+    org:resultingOrganization nl:MixedObedience ;
+    mbr:changeEventType mbrc:split ;
+    mbr:startDate "1919"^^xsd:gYear .
+
+nl:assessment-1919 a fraternal:LegitimacyAssessment ;
+    fraternal:assessedOrder nl:MixedObedience ;
+    fraternal:assessedBy nl:GrandLodge ;
+    fraternal:assessmentOutcome fraternalc:irregular ;
+    dcterms:source "Decision of the Example Grand Orient, 1919 (invented)" ;
+    mbr:startDate "1919"^^xsd:gYear .

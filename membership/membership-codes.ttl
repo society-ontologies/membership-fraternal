@@ -2875,3 +2875,43 @@ mbrc:ipss a skos:Concept , owl:NamedIndividual ;
                     "Instituição constituída sem finalidade lucrativa, por iniciativa de particulares, com o objetivo de dar expressão organizada ao dever moral de solidariedade e de justiça entre os indivíduos, não administrada pelo Estado nem por um corpo autárquico. Os seus objetivos incluem o apoio a crianças, jovens, família e idosos, a saúde, a educação e a habitação."@pt ,
                     "Nonprofit intézmény, amelyet magánszemélyek hoztak létre, hogy szervezett kifejezést adjanak a szolidaritás és igazságosság erkölcsi kötelességének, és amelyet nem az állam vagy helyi hatóság irányít. Céljai közé tartozik a gyermekek, fiatalok, a család és az idősek támogatása, az egészség, az oktatás és a lakhatás."@hu ,
                     "Ένα μη κερδοσκοπικό ίδρυμα που συστάθηκε από ιδιώτες για να δώσει οργανωμένη έκφραση στο ηθικό καθήκον αλληλεγγύης και δικαιοσύνης και που δεν διευθύνεται από το κράτος ή τοπική αρχή. Οι σκοποί του περιλαμβάνουν στήριξη παιδιών, νέων, οικογένειας και ηλικιωμένων, υγεία, εκπαίδευση και στέγαση."@el .
+
+##############################################################################
+# 21. THE NETHERLANDS  (the cultural ANBI)
+# A first draft from general knowledge and Dutch Wikipedia, for a Dutch-speaking reviewer
+# to check against the primary source (the General Act on State Taxes, article 5b, and the
+# rules of the tax authority). The scheme says dcterms:isPartOf mbrc:PublicBenefitStatuses and
+# its concept is mapped in mappings/membership-netherlands.sssom.tsv. The ANBI status itself
+# (algemeen nut beogende instelling) is the generic mbrc:publicBenefit and needs no concept
+# of its own.
+##############################################################################
+
+mbrc:DutchPublicBenefitStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:PublicBenefitStatuses ;
+    skos:prefLabel "Statuses under the Dutch rules on institutions for the public benefit"@en , "Statusar enligt de nederländska reglerna för allmännyttiga institutioner"@sv , "Statuts selon les règles néerlandaises sur les institutions d'utilité publique"@fr , "Status nach den niederländischen Regeln für gemeinnützige Einrichtungen"@de , "Stati secondo le norme olandesi sulle istituzioni di pubblica utilità"@it , "Estatus según las normas neerlandesas sobre instituciones de utilidad pública"@es , "Estatutos segundo as regras neerlandesas sobre instituições de utilidade pública"@pt , "Státuszok a közhasznú intézményekre vonatkozó holland szabályok szerint"@hu , "Καθεστώτα σύμφωνα με τους ολλανδικούς κανόνες για τα ιδρύματα κοινής ωφέλειας"@el , "Statussen onder de Nederlandse regels voor algemeen nut beogende instellingen"@nl ;
+    skos:definition "The status of a cultural ANBI, a particular kind of institution for the public benefit under the Dutch tax rules. The general status, the ANBI, is the generic public benefit."@en ,
+                    "Statusen som kulturell ANBI, en särskild sorts allmännyttig institution enligt de nederländska skattereglerna. Den allmänna statusen, ANBI, är den generiska allmännyttan."@sv ,
+                    "Le statut d'ANBI culturelle, un type particulier d'institution d'utilité publique selon les règles fiscales néerlandaises. Le statut général, l'ANBI, est l'utilité publique générique."@fr ,
+                    "Der Status einer Kultur-ANBI, einer besonderen Art gemeinnütziger Einrichtung nach dem niederländischen Steuerrecht. Der allgemeine Status, die ANBI, ist die allgemeine Gemeinnützigkeit."@de ,
+                    "Lo stato di ANBI culturale, un tipo particolare di istituzione di pubblica utilità secondo le norme fiscali olandesi. Lo stato generale, l'ANBI, è la pubblica utilità generica."@it ,
+                    "El estatus de ANBI cultural, un tipo particular de institución de utilidad pública según las normas fiscales neerlandesas. El estatus general, la ANBI, es la utilidad pública genérica."@es ,
+                    "O estatuto de ANBI cultural, um tipo particular de instituição de utilidade pública segundo as regras fiscais neerlandesas. O estatuto geral, a ANBI, é a utilidade pública genérica."@pt ,
+                    "A kulturális ANBI státusza, a közhasznú intézmények egy különleges fajtája a holland adószabályok szerint. Az általános státusz, az ANBI, az általános közhasznúság."@hu ,
+                    "Το καθεστώς του πολιτιστικού ANBI, ενός ιδιαίτερου είδους ιδρύματος κοινής ωφέλειας σύμφωνα με τους ολλανδικούς φορολογικούς κανόνες. Το γενικό καθεστώς, το ANBI, είναι η γενική κοινή ωφέλεια."@el ,
+                    "De status van culturele anbi, een bijzonder soort algemeen nut beogende instelling volgens de Nederlandse belastingregels. De algemene status, de anbi, is het generieke algemeen nut."@nl ;
+    skos:hasTopConcept mbrc:culturalAnbi .
+
+mbrc:culturalAnbi a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:DutchPublicBenefitStatuses ; skos:topConceptOf mbrc:DutchPublicBenefitStatuses ;
+    skos:prefLabel "Cultural ANBI"@en , "Kulturell ANBI"@sv , "ANBI culturelle"@fr , "Kultur-ANBI"@de , "ANBI culturale"@it , "ANBI cultural"@es , "ANBI cultural"@pt , "Kulturális ANBI"@hu , "Πολιτιστικό ANBI"@el , "Culturele ANBI"@nl ;
+    skos:altLabel "Cultural institution for the public benefit"@en , "Culturele algemeen nut beogende instelling"@nl ;
+    skos:definition "An ANBI that works solely or almost solely for culture. Since 2012 its donors can use a multiplier in the gift deduction, and the institution itself a spending reserve."@en ,
+                    "En ANBI som uteslutande eller nästan uteslutande verkar för kultur. Sedan 2012 kan dess givare använda en multiplikator i gåvoavdraget, och institutionen själv en utgiftsreserv."@sv ,
+                    "Une ANBI qui œuvre uniquement ou presque uniquement pour la culture. Depuis 2012, ses donateurs peuvent utiliser un multiplicateur dans la déduction des dons, et l'institution elle-même une réserve de dépenses."@fr ,
+                    "Eine ANBI, die ausschließlich oder fast ausschließlich für die Kultur tätig ist. Seit 2012 können ihre Spender einen Multiplikator beim Spendenabzug nutzen, die Einrichtung selbst eine Ausgabenrücklage."@de ,
+                    "Un'ANBI che opera esclusivamente o quasi esclusivamente per la cultura. Dal 2012 i suoi donatori possono usare un moltiplicatore nella deduzione delle donazioni e l'istituzione stessa una riserva di spesa."@it ,
+                    "Una ANBI que trabaja exclusiva o casi exclusivamente por la cultura. Desde 2012 sus donantes pueden usar un multiplicador en la deducción de donaciones, y la propia institución una reserva de gasto."@es ,
+                    "Uma ANBI que trabalha exclusiva ou quase exclusivamente pela cultura. Desde 2012 os seus doadores podem usar um multiplicador na dedução dos donativos, e a própria instituição uma reserva de despesa."@pt ,
+                    "Olyan ANBI, amely kizárólag vagy majdnem kizárólag a kultúráért dolgozik. 2012 óta adományozói szorzót alkalmazhatnak az adományok levonásánál, maga az intézmény pedig kiadási tartalékot használhat."@hu ,
+                    "Ένα ANBI που εργάζεται αποκλειστικά ή σχεδόν αποκλειστικά για τον πολιτισμό. Από το 2012 οι δωρητές του μπορούν να χρησιμοποιούν πολλαπλασιαστή στην έκπτωση δωρεών και το ίδιο το ίδρυμα ένα αποθεματικό δαπανών."@el ,
+                    "Een anbi die zich uitsluitend of nagenoeg uitsluitend op cultuur richt. Sinds 2012 kunnen haar donateurs gebruikmaken van de multiplier in de giftenaftrek en kan de instelling zelf gebruikmaken van de bestedingsreserve."@nl .
