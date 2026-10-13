@@ -2268,3 +2268,216 @@ fraternalc:estacionDePenitencia a skos:Concept , owl:NamedIndividual ;
                     "Die öffentliche Prozession, die eine Bußbruderschaft in der Karwoche hält."@de ,
                     "La processione pubblica che una cofradía penitenziale fa durante la Settimana Santa."@it ,
                     "La procesión pública que una cofradía penitencial hace en Semana Santa."@es .
+
+##############################################################################
+# 12. PORTUGAL  (the honorific orders, the praxe, the Misericórdias)
+# A first draft from general knowledge and Portuguese Wikipedia, for a Portuguese-speaking
+# reviewer to check against the primary sources (the Lei das Ordens Honoríficas, the
+# Código da Praxe of a university, the Compromisso of a Misericórdia). Each scheme is
+# dcterms:isPartOf its hub scheme and every concept is mapped in
+# mappings/fraternal-portugal.sssom.tsv.
+##############################################################################
+
+fraternalc:PortugueseOrderGrades a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:ChivalricGrades ;
+    skos:prefLabel "Grades of the Portuguese Honorific Orders"@en , "Grader i de portugisiska förtjänstorden"@sv , "Grades des ordres honorifiques portugais"@fr , "Stufen der portugiesischen Verdienstorden"@de , "Gradi degli ordini onorifici portoghesi"@it , "Grados de las órdenes honoríficas portuguesas"@es , "Graus das Ordens Honoríficas Portuguesas"@pt ;
+    skos:definition "The six grades of the Portuguese honorific orders, from the lowest to the highest: Cavaleiro or Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz and Grande-Colar. The Grande-Colar is a special grade held only in some of the orders. In the orders of civil merit the lowest grade is a Medalha in place of the Cavaleiro. The President of the Republic is the Grand Master of all the orders. Placed one to one under the generic chivalric grades in mappings/fraternal-portugal.sssom.tsv."@en ,
+                    "De sex graderna i de portugisiska förtjänstorden, från lägsta till högsta: Cavaleiro eller Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz och Grande-Colar. Grande-Colar är en särskild grad som bara finns i vissa av orden. I förtjänstorden för civila insatser är den lägsta graden en Medalha i stället för Cavaleiro. Republikens president är stormästare i alla orden. Placeras ett till ett under de generiska riddarordensgraderna i mappings/fraternal-portugal.sssom.tsv."@sv ,
+                    "Les six grades des ordres honorifiques portugais, du plus bas au plus haut : Cavaleiro ou Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz et Grande-Colar. Le Grande-Colar est un grade spécial qui n'existe que dans certains ordres. Dans les ordres du mérite civil, le grade le plus bas est une Medalha au lieu du Cavaleiro. Le président de la République est grand maître de tous les ordres. Placés un à un sous les grades génériques de style chevaleresque dans mappings/fraternal-portugal.sssom.tsv."@fr ,
+                    "Die sechs Stufen der portugiesischen Verdienstorden, von der niedrigsten bis zur höchsten: Cavaleiro oder Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz und Grande-Colar. Das Grande-Colar ist eine besondere Stufe, die es nur in einigen der Orden gibt. In den Orden des zivilen Verdienstes ist die niedrigste Stufe eine Medalha anstelle des Cavaleiro. Der Präsident der Republik ist Großmeister aller Orden. Eins zu eins unter die allgemeinen Ritterordensstufen gestellt in mappings/fraternal-portugal.sssom.tsv."@de ,
+                    "I sei gradi degli ordini onorifici portoghesi, dal più basso al più alto: Cavaleiro o Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz e Grande-Colar. Il Grande-Colar è un grado speciale che esiste solo in alcuni degli ordini. Negli ordini del merito civile il grado più basso è una Medalha al posto del Cavaleiro. Il Presidente della Repubblica è Gran Maestro di tutti gli ordini. Collocati uno a uno sotto i gradi cavallereschi generici in mappings/fraternal-portugal.sssom.tsv."@it ,
+                    "Los seis grados de las órdenes honoríficas portuguesas, del más bajo al más alto: Cavaleiro o Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz y Grande-Colar. El Grande-Colar es un grado especial que solo existe en algunas de las órdenes. En las órdenes de mérito civil el grado más bajo es una Medalha en lugar del Cavaleiro. El Presidente de la República es Gran Maestre de todas las órdenes. Colocados uno a uno bajo los grados caballerescos genéricos en mappings/fraternal-portugal.sssom.tsv."@es ,
+                    "Os seis graus das Ordens Honoríficas Portuguesas, do mais baixo ao mais alto: Cavaleiro ou Dama, Oficial, Comendador, Grande-Oficial, Grã-Cruz e Grande-Colar. O Grande-Colar é um grau especial que existe apenas em algumas das Ordens. Nas Ordens de Mérito Civil o grau mais baixo é a Medalha, em vez de Cavaleiro. O Presidente da República é o Grão-Mestre de todas as Ordens. Colocados um a um sob os graus genéricos de estilo cavaleiresco em mappings/fraternal-portugal.sssom.tsv."@pt ;
+    skos:hasTopConcept fraternalc:ptCavaleiro , fraternalc:ptOficial , fraternalc:ptComendador ,
+                       fraternalc:ptGrandeOficial , fraternalc:ptGraCruz , fraternalc:ptGrandeColar .
+
+fraternalc:ptCavaleiro a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PortugueseOrderGrades ; skos:topConceptOf fraternalc:PortugueseOrderGrades ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:ptOficial ;
+    skos:prefLabel "Knight or Dame"@en , "Cavaleiro eller Dama"@sv , "Cavaleiro ou Dama"@fr , "Cavaleiro oder Dama"@de , "Cavaleiro o Dama"@it , "Cavaleiro o Dama"@es , "Cavaleiro ou Dama"@pt ;
+    skos:altLabel "Cavaleiro"@pt , "Dama"@pt ;
+    skos:definition "The lowest grade of the Portuguese honorific orders, found in the old military orders and the national orders. In the orders of civil merit a Medalha takes its place."@en ,
+                    "Den lägsta graden i de portugisiska förtjänstorden, som finns i de gamla militärorden och de nationella orden. I förtjänstorden för civila insatser tar en Medalha dess plats."@sv ,
+                    "Le grade le plus bas des ordres honorifiques portugais, présent dans les anciens ordres militaires et les ordres nationaux. Dans les ordres du mérite civil, une Medalha le remplace."@fr ,
+                    "Die niedrigste Stufe der portugiesischen Verdienstorden, die es in den alten Militärorden und den Nationalorden gibt. In den Orden des zivilen Verdienstes tritt eine Medalha an ihre Stelle."@de ,
+                    "Il grado più basso degli ordini onorifici portoghesi, presente negli antichi ordini militari e negli ordini nazionali. Negli ordini del merito civile lo sostituisce una Medalha."@it ,
+                    "El grado más bajo de las órdenes honoríficas portuguesas, presente en las antiguas órdenes militares y en las órdenes nacionales. En las órdenes de mérito civil lo sustituye una Medalha."@es ,
+                    "O grau mais baixo das Ordens Honoríficas Portuguesas, existente nas Antigas Ordens Militares e nas Ordens Nacionais. Nas Ordens de Mérito Civil é substituído pela Medalha."@pt .
+
+fraternalc:ptOficial a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PortugueseOrderGrades ; skos:topConceptOf fraternalc:PortugueseOrderGrades ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:ptComendador ;
+    skos:prefLabel "Officer"@en , "Oficial"@sv , "Oficial"@fr , "Oficial"@de , "Oficial"@it , "Oficial"@es , "Oficial"@pt ;
+    skos:definition "The second grade of the Portuguese honorific orders, above the Cavaleiro; the badge is a medal with a rosette in the colour of the ribbon."@en ,
+                    "Den andra graden i de portugisiska förtjänstorden, över Cavaleiro; märket är en medalj med en rosett i bandets färg."@sv ,
+                    "Le deuxième grade des ordres honorifiques portugais, au-dessus du Cavaleiro ; l'insigne est une médaille avec une rosette de la couleur du ruban."@fr ,
+                    "Die zweite Stufe der portugiesischen Verdienstorden, über dem Cavaleiro; das Abzeichen ist eine Medaille mit einer Rosette in der Farbe des Bandes."@de ,
+                    "Il secondo grado degli ordini onorifici portoghesi, sopra il Cavaleiro; l'insegna è una medaglia con una rosetta del colore del nastro."@it ,
+                    "El segundo grado de las órdenes honoríficas portuguesas, por encima del Cavaleiro; la insignia es una medalla con una roseta del color de la cinta."@es ,
+                    "O segundo grau das Ordens Honoríficas Portuguesas, acima de Cavaleiro; a insígnia é uma medalha com roseta da cor da fita."@pt .
+
+fraternalc:ptComendador a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PortugueseOrderGrades ; skos:topConceptOf fraternalc:PortugueseOrderGrades ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:ptGrandeOficial ;
+    skos:prefLabel "Commander"@en , "Comendador"@sv , "Comendador"@fr , "Comendador"@de , "Comendador"@it , "Comendador"@es , "Comendador"@pt ;
+    skos:definition "The third grade of the Portuguese honorific orders, above the Oficial; the insignia are a ribbon at the neck and a silver enamelled plaque."@en ,
+                    "Den tredje graden i de portugisiska förtjänstorden, över Oficial; insignierna är ett band runt halsen och en emaljerad silverplakett."@sv ,
+                    "Le troisième grade des ordres honorifiques portugais, au-dessus de l'Oficial ; les insignes sont un ruban au cou et une plaque d'argent émaillé."@fr ,
+                    "Die dritte Stufe der portugiesischen Verdienstorden, über dem Oficial; die Insignien sind ein Band am Hals und eine Platte aus emailliertem Silber."@de ,
+                    "Il terzo grado degli ordini onorifici portoghesi, sopra l'Oficial; le insegne sono un nastro al collo e una placca d'argento smaltato."@it ,
+                    "El tercer grado de las órdenes honoríficas portuguesas, por encima del Oficial; las insignias son una cinta al cuello y una placa de plata esmaltada."@es ,
+                    "O terceiro grau das Ordens Honoríficas Portuguesas, acima de Oficial; as insígnias são uma fita ao pescoço e uma placa de prata esmaltada."@pt .
+
+fraternalc:ptGrandeOficial a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PortugueseOrderGrades ; skos:topConceptOf fraternalc:PortugueseOrderGrades ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree fraternalc:ptGraCruz ;
+    skos:prefLabel "Grand Officer"@en , "Grande-Oficial"@sv , "Grande-Oficial"@fr , "Grande-Oficial"@de , "Grande-Oficial"@it , "Grande-Oficial"@es , "Grande-Oficial"@pt ;
+    skos:definition "The fourth grade of the Portuguese honorific orders, above the Comendador; the same ribbon as the Comendador, with a gold enamelled plaque."@en ,
+                    "Den fjärde graden i de portugisiska förtjänstorden, över Comendador; samma band som Comendador, med en emaljerad guldplakett."@sv ,
+                    "Le quatrième grade des ordres honorifiques portugais, au-dessus du Comendador ; le même ruban que le Comendador, avec une plaque d'or émaillé."@fr ,
+                    "Die vierte Stufe der portugiesischen Verdienstorden, über dem Comendador; dasselbe Band wie beim Comendador, mit einer Platte aus emailliertem Gold."@de ,
+                    "Il quarto grado degli ordini onorifici portoghesi, sopra il Comendador; lo stesso nastro del Comendador, con una placca d'oro smaltato."@it ,
+                    "El cuarto grado de las órdenes honoríficas portuguesas, por encima del Comendador; la misma cinta que el Comendador, con una placa de oro esmaltado."@es ,
+                    "O quarto grau das Ordens Honoríficas Portuguesas, acima de Comendador; a mesma fita do Comendador, com placa de ouro esmaltado."@pt .
+
+fraternalc:ptGraCruz a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PortugueseOrderGrades ; skos:topConceptOf fraternalc:PortugueseOrderGrades ;
+    fraternal:degreeRank 5 ; fraternal:nextDegree fraternalc:ptGrandeColar ;
+    skos:prefLabel "Grand Cross"@en , "Grã-Cruz"@sv , "Grã-Cruz"@fr , "Grã-Cruz"@de , "Grã-Cruz"@it , "Grã-Cruz"@es , "Grã-Cruz"@pt ;
+    skos:definition "The fifth grade of the Portuguese honorific orders, above the Grande-Oficial; the insignia are a sash worn across the body from right to left and a gold enamelled plaque."@en ,
+                    "Den femte graden i de portugisiska förtjänstorden, över Grande-Oficial; insignierna är ett skärp som bärs diagonalt från höger till vänster och en emaljerad guldplakett."@sv ,
+                    "Le cinquième grade des ordres honorifiques portugais, au-dessus du Grande-Oficial ; les insignes sont une écharpe portée en travers du corps de droite à gauche et une plaque d'or émaillé."@fr ,
+                    "Die fünfte Stufe der portugiesischen Verdienstorden, über dem Grande-Oficial; die Insignien sind eine Schärpe, von rechts nach links quer über den Körper getragen, und eine Platte aus emailliertem Gold."@de ,
+                    "Il quinto grado degli ordini onorifici portoghesi, sopra il Grande-Oficial; le insegne sono una fascia portata a tracolla da destra a sinistra e una placca d'oro smaltato."@it ,
+                    "El quinto grado de las órdenes honoríficas portuguesas, por encima del Grande-Oficial; las insignias son una banda cruzada de derecha a izquierda y una placa de oro esmaltado."@es ,
+                    "O quinto grau das Ordens Honoríficas Portuguesas, acima de Grande-Oficial; as insígnias são uma banda a tiracolo da direita para a esquerda e uma placa de ouro esmaltado."@pt .
+
+fraternalc:ptGrandeColar a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PortugueseOrderGrades ; skos:topConceptOf fraternalc:PortugueseOrderGrades ;
+    fraternal:degreeRank 6 ;
+    skos:prefLabel "Grand Collar"@en , "Grande-Colar"@sv , "Grande-Colar"@fr , "Grande-Colar"@de , "Grande-Colar"@it , "Grande-Colar"@es , "Grande-Colar"@pt ;
+    skos:definition "The special highest grade of the Portuguese honorific orders, held only in some of them and traditionally reserved for heads of state; its insignia are a large enamelled gold collar, a sash and a plaque."@en ,
+                    "Den särskilda högsta graden i de portugisiska förtjänstorden, som bara finns i några av dem och traditionellt är förbehållen statschefer; insignierna är en stor emaljerad guldkedja, ett skärp och en plakett."@sv ,
+                    "Le grade spécial le plus élevé des ordres honorifiques portugais, qui n'existe que dans certains d'entre eux et est traditionnellement réservé aux chefs d'État ; ses insignes sont un grand collier d'or émaillé, une écharpe et une plaque."@fr ,
+                    "Die besondere höchste Stufe der portugiesischen Verdienstorden, die es nur in einigen von ihnen gibt und die traditionell Staatsoberhäuptern vorbehalten ist; ihre Insignien sind eine große Kette aus emailliertem Gold, eine Schärpe und eine Platte."@de ,
+                    "Il grado speciale più alto degli ordini onorifici portoghesi, presente solo in alcuni di essi e tradizionalmente riservato ai capi di Stato; le sue insegne sono un grande collare d'oro smaltato, una fascia e una placca."@it ,
+                    "El grado especial más alto de las órdenes honoríficas portuguesas, que solo existe en algunas de ellas y tradicionalmente se reserva a los jefes de Estado; sus insignias son un gran collar de oro esmaltado, una banda y una placa."@es ,
+                    "O grau especial máximo das Ordens Honoríficas Portuguesas, existente apenas em algumas delas e tradicionalmente reservado a chefes de Estado; as suas insígnias são um grande colar de ouro esmaltado, uma banda e uma placa."@pt .
+
+fraternalc:PraxeDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:MemberStages ;
+    skos:prefLabel "Stages of the praxe"@en , "Stadier i praxen"@sv , "Étapes de la praxe"@fr , "Stufen der Praxe"@de , "Stadi della praxe"@it , "Etapas de la praxe"@es , "Fases da praxe"@pt ;
+    skos:definition "The three stages of the Portuguese academic praxe, the student tradition with its code: the caloiro (a student in the first enrolment), the doutor (a student of a later year) and the veterano (a student with more enrolments than the course needs). At Coimbra the doutores have several ranks by number of enrolments."@en ,
+                    "De tre stadierna i den portugisiska akademiska praxen, studenttraditionen med sin kod: caloiro (en student på första inskrivningen), doutor (en student på ett senare år) och veterano (en student med fler inskrivningar än utbildningen kräver). I Coimbra har doutores flera led efter antalet inskrivningar."@sv ,
+                    "Les trois étapes de la praxe académique portugaise, la tradition étudiante avec son code : le caloiro (étudiant en première inscription), le doutor (étudiant d'une année ultérieure) et le veterano (étudiant avec plus d'inscriptions que le cursus n'en exige). À Coimbra, les doutores ont plusieurs rangs selon le nombre d'inscriptions."@fr ,
+                    "Die drei Stufen der portugiesischen akademischen Praxe, der studentischen Tradition mit ihrem Kodex: der Caloiro (ein Student im ersten Einschreibejahr), der Doutor (ein Student eines späteren Jahres) und der Veterano (ein Student mit mehr Einschreibungen, als das Studium verlangt). In Coimbra haben die Doutores mehrere Ränge nach der Zahl der Einschreibungen."@de ,
+                    "I tre stadi della praxe accademica portoghese, la tradizione studentesca con il suo codice: il caloiro (uno studente alla prima iscrizione), il doutor (uno studente di un anno successivo) e il veterano (uno studente con più iscrizioni di quante ne richieda il corso). A Coimbra i doutores hanno più gradi secondo il numero di iscrizioni."@it ,
+                    "Las tres etapas de la praxe académica portuguesa, la tradición estudiantil con su código: el caloiro (un estudiante en primera matrícula), el doutor (un estudiante de un curso posterior) y el veterano (un estudiante con más matrículas de las que exige la carrera). En Coímbra los doutores tienen varios rangos según el número de matrículas."@es ,
+                    "As três fases da praxe académica portuguesa, a tradição estudantil com o seu código: o caloiro (estudante na primeira matrícula), o doutor (estudante de um ano mais avançado) e o veterano (estudante com mais inscrições do que as necessárias para acabar o curso). Em Coimbra os doutores têm vários graus hierárquicos, consoante o número de inscrições."@pt ;
+    skos:hasTopConcept fraternalc:caloiro , fraternalc:doutor , fraternalc:veterano .
+
+fraternalc:caloiro a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PraxeDegrees ; skos:topConceptOf fraternalc:PraxeDegrees ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:doutor ; fraternal:degreeKind fraternalc:probationaryDegree ;
+    skos:prefLabel "Caloiro"@en , "Caloiro"@sv , "Caloiro"@fr , "Caloiro"@de , "Caloiro"@it , "Caloiro"@es , "Caloiro"@pt ;
+    skos:altLabel "Freshman"@en , "Novato"@pt ;
+    skos:definition "The first stage: the student in the first enrolment, subject to the praxe and the orders of the older students until the end of the academic year."@en ,
+                    "Det första stadiet: studenten på första inskrivningen, som står under praxen och de äldre studenternas order till läsårets slut."@sv ,
+                    "La première étape : l'étudiant en première inscription, soumis à la praxe et aux ordres des étudiants plus anciens jusqu'à la fin de l'année universitaire."@fr ,
+                    "Die erste Stufe: der Student im ersten Einschreibejahr, der bis zum Ende des akademischen Jahres der Praxe und den Anordnungen der älteren Studenten unterliegt."@de ,
+                    "Il primo stadio: lo studente alla prima iscrizione, soggetto alla praxe e agli ordini degli studenti più anziani fino alla fine dell'anno accademico."@it ,
+                    "La primera etapa: el estudiante en primera matrícula, sometido a la praxe y a las órdenes de los estudiantes mayores hasta el final del curso."@es ,
+                    "A primeira fase: o estudante na primeira matrícula, sujeito à praxe e às ordens dos estudantes mais antigos até ao fim do ano letivo."@pt .
+
+fraternalc:doutor a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PraxeDegrees ; skos:topConceptOf fraternalc:PraxeDegrees ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:veterano ;
+    skos:prefLabel "Doutor"@en , "Doutor"@sv , "Doutor"@fr , "Doutor"@de , "Doutor"@it , "Doutor"@es , "Doutor"@pt ;
+    skos:definition "The second stage: any student beyond the first enrolment, who may take part in the praxe and exercise it over the caloiros. It has several ranks by number of enrolments at Coimbra."@en ,
+                    "Det andra stadiet: varje student efter den första inskrivningen, som får delta i praxen och utöva den över caloiros. I Coimbra har den flera led efter antalet inskrivningar."@sv ,
+                    "La deuxième étape : tout étudiant au-delà de la première inscription, qui peut participer à la praxe et l'exercer sur les caloiros. À Coimbra, elle a plusieurs rangs selon le nombre d'inscriptions."@fr ,
+                    "Die zweite Stufe: jeder Student nach dem ersten Einschreibejahr, der an der Praxe teilnehmen und sie gegenüber den Caloiros ausüben darf. In Coimbra hat sie mehrere Ränge nach der Zahl der Einschreibungen."@de ,
+                    "Il secondo stadio: ogni studente oltre la prima iscrizione, che può prendere parte alla praxe ed esercitarla sui caloiros. A Coimbra ha più gradi secondo il numero di iscrizioni."@it ,
+                    "La segunda etapa: todo estudiante más allá de la primera matrícula, que puede participar en la praxe y ejercerla sobre los caloiros. En Coímbra tiene varios rangos según el número de matrículas."@es ,
+                    "A segunda fase: qualquer estudante para além da primeira matrícula, que pode participar na praxe e exercê-la sobre os caloiros. Em Coimbra tem vários graus consoante o número de matrículas."@pt .
+
+fraternalc:veterano a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PraxeDegrees ; skos:topConceptOf fraternalc:PraxeDegrees ;
+    fraternal:degreeRank 3 ;
+    skos:prefLabel "Veterano"@en , "Veterano"@sv , "Veterano"@fr , "Veterano"@de , "Veterano"@it , "Veterano"@es , "Veterano"@pt ;
+    skos:definition "The highest rank of the student: one with more enrolments than the course needs to finish. At Coimbra the veteranos form the Council of Veterans that elects the Dux Veteranorum."@en ,
+                    "Studentens högsta led: en som har fler inskrivningar än utbildningen kräver för att avsluta den. I Coimbra bildar veteranos Veteranrådet, som väljer Dux Veteranorum."@sv ,
+                    "Le rang le plus élevé de l'étudiant : celui qui a plus d'inscriptions que le cursus n'en exige pour le terminer. À Coimbra, les veteranos forment le Conseil des Vétérans, qui élit le Dux Veteranorum."@fr ,
+                    "Der höchste Rang des Studenten: wer mehr Einschreibungen hat, als das Studium zum Abschluss verlangt. In Coimbra bilden die Veteranos den Rat der Veteranen, der den Dux Veteranorum wählt."@de ,
+                    "Il rango più alto dello studente: chi ha più iscrizioni di quante ne richieda il corso per finire. A Coimbra i veteranos formano il Consiglio dei Veterani, che elegge il Dux Veteranorum."@it ,
+                    "El rango más alto del estudiante: quien tiene más matrículas de las que exige la carrera para terminar. En Coímbra los veteranos forman el Consejo de Veteranos, que elige al Dux Veteranorum."@es ,
+                    "O grau mais alto do estudante: aquele que tem mais inscrições do que as necessárias para acabar o curso. Em Coimbra os veteranos formam o Conselho de Veteranos, que elege o Dux Veteranorum."@pt .
+
+fraternalc:PraxeOffices a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:OfficeTypes ;
+    skos:prefLabel "Offices of the praxe"@en , "Ämbeten i praxen"@sv , "Fonctions de la praxe"@fr , "Ämter der Praxe"@de , "Cariche della praxe"@it , "Cargos de la praxe"@es , "Cargos da praxe"@pt ;
+    skos:definition "The head of the praxe at Coimbra, the Dux Veteranorum, placed under the generic president in mappings/fraternal-portugal.sssom.tsv."@en ,
+                    "Praxens chef i Coimbra, Dux Veteranorum, placerad under den generiska ordföranden i mappings/fraternal-portugal.sssom.tsv."@sv ,
+                    "Le chef de la praxe à Coimbra, le Dux Veteranorum, placé sous le président générique dans mappings/fraternal-portugal.sssom.tsv."@fr ,
+                    "Das Oberhaupt der Praxe in Coimbra, der Dux Veteranorum, unter den allgemeinen Präsidenten gestellt in mappings/fraternal-portugal.sssom.tsv."@de ,
+                    "Il capo della praxe a Coimbra, il Dux Veteranorum, collocato sotto il presidente generico in mappings/fraternal-portugal.sssom.tsv."@it ,
+                    "El jefe de la praxe en Coímbra, el Dux Veteranorum, colocado bajo el presidente genérico en mappings/fraternal-portugal.sssom.tsv."@es ,
+                    "O chefe da praxe em Coimbra, o Dux Veteranorum, colocado sob o presidente genérico em mappings/fraternal-portugal.sssom.tsv."@pt ;
+    skos:hasTopConcept fraternalc:duxVeteranorum .
+
+fraternalc:duxVeteranorum a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PraxeOffices ; skos:topConceptOf fraternalc:PraxeOffices ;
+    skos:prefLabel "Dux Veteranorum"@en , "Dux Veteranorum"@sv , "Dux Veteranorum"@fr , "Dux Veteranorum"@de , "Dux Veteranorum"@it , "Dux Veteranorum"@es , "Dux Veteranorum"@pt ;
+    skos:definition "The head of the praxe at the University of Coimbra, in principle the student with the most enrolments, elected by the Magnum Concilium Veteranum (the Council of Veterans)."@en ,
+                    "Praxens chef vid Coimbras universitet, i princip studenten med flest inskrivningar, vald av Magnum Concilium Veteranum (Veteranrådet)."@sv ,
+                    "Le chef de la praxe à l'université de Coimbra, en principe l'étudiant ayant le plus d'inscriptions, élu par le Magnum Concilium Veteranum (le Conseil des Vétérans)."@fr ,
+                    "Das Oberhaupt der Praxe an der Universität Coimbra, im Prinzip der Student mit den meisten Einschreibungen, gewählt vom Magnum Concilium Veteranum (dem Rat der Veteranen)."@de ,
+                    "Il capo della praxe all'Università di Coimbra, in principio lo studente con più iscrizioni, eletto dal Magnum Concilium Veteranum (il Consiglio dei Veterani)."@it ,
+                    "El jefe de la praxe en la Universidad de Coímbra, en principio el estudiante con más matrículas, elegido por el Magnum Concilium Veteranum (el Consejo de Veteranos)."@es ,
+                    "O chefe da praxe na Universidade de Coimbra, em princípio o estudante com mais inscrições, eleito pelo Magnum Concilium Veteranum (o Magno Conselho de Veteranos)."@pt .
+
+fraternalc:PraxeInsignia a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Insignia of the praxe"@en , "Insignier i praxen"@sv , "Insignes de la praxe"@fr , "Insignien der Praxe"@de , "Insegne della praxe"@it , "Insignias de la praxe"@es , "Insígnias da praxe"@pt ;
+    skos:definition "The academic dress worn in the praxe, placed under the generic robe in mappings/fraternal-portugal.sssom.tsv."@en ,
+                    "Den akademiska dräkt som bärs i praxen, placerad under den generiska mantlen i mappings/fraternal-portugal.sssom.tsv."@sv ,
+                    "L'habit académique porté dans la praxe, placé sous la robe générique dans mappings/fraternal-portugal.sssom.tsv."@fr ,
+                    "Die in der Praxe getragene akademische Tracht, unter das allgemeine Gewand gestellt in mappings/fraternal-portugal.sssom.tsv."@de ,
+                    "L'abito accademico portato nella praxe, collocato sotto la veste generica in mappings/fraternal-portugal.sssom.tsv."@it ,
+                    "El traje académico que se lleva en la praxe, colocado bajo la vestidura genérica en mappings/fraternal-portugal.sssom.tsv."@es ,
+                    "O traje académico usado na praxe, colocado sob a vestidura genérica em mappings/fraternal-portugal.sssom.tsv."@pt ;
+    skos:hasTopConcept fraternalc:trajeAcademico .
+
+fraternalc:trajeAcademico a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:PraxeInsignia ; skos:topConceptOf fraternalc:PraxeInsignia ;
+    skos:prefLabel "Academic Dress"@en , "Akademisk dräkt"@sv , "Habit académique"@fr , "Akademische Tracht"@de , "Abito accademico"@it , "Traje académico"@es , "Traje académico"@pt ;
+    skos:definition "The black suit and cape that students wear in the praxe and on academic occasions; its correct wear is part of the academic etiquette that the code of the praxe regulates."@en ,
+                    "Den svarta dräkt och kappa som studenter bär i praxen och vid akademiska tillfällen; hur den bärs hör till den akademiska etikett som praxens kod reglerar."@sv ,
+                    "Le costume noir et la cape que les étudiants portent dans la praxe et lors d'occasions académiques ; son port correct fait partie de l'étiquette académique que règle le code de la praxe."@fr ,
+                    "Der schwarze Anzug und Umhang, den Studenten in der Praxe und bei akademischen Anlässen tragen; sein richtiges Tragen gehört zur akademischen Etikette, die der Kodex der Praxe regelt."@de ,
+                    "L'abito nero e il mantello che gli studenti portano nella praxe e nelle occasioni accademiche; il modo corretto di portarlo fa parte dell'etichetta accademica che il codice della praxe regola."@it ,
+                    "El traje negro y la capa que llevan los estudiantes en la praxe y en las ocasiones académicas; su porte correcto forma parte de la etiqueta académica que regula el código de la praxe."@es ,
+                    "O traje negro e a capa que os estudantes usam na praxe e em ocasiões académicas; o seu porte adequado faz parte da etiqueta académica que o código da praxe regula."@pt .
+
+fraternalc:MisericordiaOffices a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:OfficeTypes ;
+    skos:prefLabel "Offices of a Misericórdia"@en , "Ämbeten i en Misericórdia"@sv , "Fonctions d'une Misericórdia"@fr , "Ämter einer Misericórdia"@de , "Cariche di una Misericórdia"@it , "Cargos de una Misericórdia"@es , "Cargos de uma Misericórdia"@pt ;
+    skos:definition "The head of a Santa Casa da Misericórdia, the Provedor, placed under the generic president in mappings/fraternal-portugal.sssom.tsv. The other members of the Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) use the generic offices."@en ,
+                    "Chefen för en Santa Casa da Misericórdia, Provedor, placerad under den generiska ordföranden i mappings/fraternal-portugal.sssom.tsv. Övriga ledamöter av Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) använder de generiska ämbetena."@sv ,
+                    "Le chef d'une Santa Casa da Misericórdia, le Provedor, placé sous le président générique dans mappings/fraternal-portugal.sssom.tsv. Les autres membres de la Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) utilisent les fonctions génériques."@fr ,
+                    "Das Oberhaupt einer Santa Casa da Misericórdia, der Provedor, unter den allgemeinen Präsidenten gestellt in mappings/fraternal-portugal.sssom.tsv. Die übrigen Mitglieder der Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) verwenden die allgemeinen Ämter."@de ,
+                    "Il capo di una Santa Casa da Misericórdia, il Provedor, collocato sotto il presidente generico in mappings/fraternal-portugal.sssom.tsv. Gli altri membri della Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) usano le cariche generiche."@it ,
+                    "El jefe de una Santa Casa da Misericórdia, el Provedor, colocado bajo el presidente genérico en mappings/fraternal-portugal.sssom.tsv. Los demás miembros de la Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) usan los cargos genéricos."@es ,
+                    "O chefe de uma Santa Casa da Misericórdia, o Provedor, colocado sob o presidente genérico em mappings/fraternal-portugal.sssom.tsv. Os restantes membros da Mesa Administrativa (Vice-Provedor, Secretário, Tesoureiro, Mesários) usam os cargos genéricos."@pt ;
+    skos:hasTopConcept fraternalc:provedor .
+
+fraternalc:provedor a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:MisericordiaOffices ; skos:topConceptOf fraternalc:MisericordiaOffices ;
+    skos:prefLabel "Provedor"@en , "Provedor"@sv , "Provedor"@fr , "Provedor"@de , "Provedor"@it , "Provedor"@es , "Provedor"@pt ;
+    skos:definition "The head of a Santa Casa da Misericórdia, a lay brotherhood of charity: he or she leads its Mesa Administrativa, the board that the Irmãos (the members) elect."@en ,
+                    "Chefen för en Santa Casa da Misericórdia, ett lekmannabrödraskap för välgörenhet: leder dess Mesa Administrativa, den styrelse som Irmãos (medlemmarna) väljer."@sv ,
+                    "Le chef d'une Santa Casa da Misericórdia, confrérie laïque de charité : il ou elle dirige sa Mesa Administrativa, le conseil que les Irmãos (les membres) élisent."@fr ,
+                    "Das Oberhaupt einer Santa Casa da Misericórdia, einer Laienbruderschaft der Wohltätigkeit: leitet ihre Mesa Administrativa, den Vorstand, den die Irmãos (die Mitglieder) wählen."@de ,
+                    "Il capo di una Santa Casa da Misericórdia, una confraternita laica di carità: guida la sua Mesa Administrativa, il consiglio che gli Irmãos (i soci) eleggono."@it ,
+                    "El jefe de una Santa Casa da Misericórdia, una cofradía laica de caridad: dirige su Mesa Administrativa, la junta que eligen los Irmãos (los miembros)."@es ,
+                    "O chefe de uma Santa Casa da Misericórdia, irmandade leiga de caridade: dirige a sua Mesa Administrativa, o órgão que os Irmãos elegem."@pt .

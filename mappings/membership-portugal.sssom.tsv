@@ -1,0 +1,11 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/membership/mappings/membership-portugal
+# mapping_set_version: 1.0.0
+# mapping_set_description: The Portuguese status of a private institution of social solidarity (IPSS) placed under the generic public-benefit status.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+mbrc:ipss	Private Institution of Social Solidarity	skos:broadMatch	mbrc:publicBenefit	Public Benefit	semapv:ManualMappingCuration	0.7	A kind of recognised non-profit institution for social solidarity; whether it counts as public benefit in every respect is for the statute to say.

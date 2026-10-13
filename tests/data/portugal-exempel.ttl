@@ -1,0 +1,224 @@
+# Fictional Portuguese organisations (all names, numbers and people invented for testing): an
+# association declared of public utility, a private institution of social solidarity (IPSS), a
+# Santa Casa da Misericórdia with a Provedor and a Mesa Administrativa, a literary club, an
+# academy, a university praxe with a Dux Veteranorum, an honorific order with a Grã-Cruz, and a
+# grand orient that was suppressed from 1935 to 1974 and from which another obedience split in
+# 1984.
+#
+# Most of Portugal fits the generic model: an associação is a registered association with its
+# number in the Registo Nacional de Pessoas Coletivas, a declaration of utilidade pública is the
+# generic public-benefit status, a sócio efetivo an ordinary member. What is new is in the Portuguese
+# schemes (section 12 of fraternal-codes and section 20 of membership-codes): the grades of the
+# honorific orders, the stages and offices of the praxe, the Provedor, and the IPSS.
+#
+# A draft from general knowledge; the Portuguese wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix pt:      <https://example.org/portugal/> .
+
+# --- An association declared of public utility ------------------------------------------------
+
+pt:AssociacaoRecreativa a mbr:MembershipOrganization ;
+    rdfs:label "Associação Recreativa e Cultural de Vila Exemplo"@pt , "The Vila Exemplo Recreational and Cultural Association"@en ;
+    org:classification mbrc:voluntaryAssociation ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration pt:associacao-nipc ;
+    mbr:publicBenefitStatus mbrc:publicBenefit ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1931"^^xsd:gYear .
+
+# The number in the Registo Nacional de Pessoas Coletivas (an invented number).
+pt:associacao-nipc a adms:Identifier ;
+    skos:notation "500000001" ;
+    adms:schemaAgency "Registo Nacional de Pessoas Coletivas (RNPC)" .
+
+pt:ana a foaf:Person ; schema:name "Ana Exemplo" .
+pt:bruno a foaf:Person ; schema:name "Bruno Inventado" .
+pt:carla a foaf:Person ; schema:name "Carla Fictícia" .
+
+# Presidente, secretário and tesoureiro of the Direção, all hub offices.
+pt:ana-presidente a mbr:Tenure ;
+    org:member pt:ana ; org:organization pt:AssociacaoRecreativa ;
+    org:role mbrc:president ; mbr:startDate "2024-03-23"^^xsd:date .
+pt:bruno-secretario a mbr:Tenure ;
+    org:member pt:bruno ; org:organization pt:AssociacaoRecreativa ;
+    org:role mbrc:secretary ; mbr:startDate "2024-03-23"^^xsd:date .
+pt:carla-tesoureira a mbr:Tenure ;
+    org:member pt:carla ; org:organization pt:AssociacaoRecreativa ;
+    org:role mbrc:treasurer ; mbr:startDate "2024-03-23"^^xsd:date .
+
+pt:assembleia-2026 a mbr:Gathering ;
+    rdfs:label "Assembleia geral 2026"@pt ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer pt:AssociacaoRecreativa ;
+    mbr:startDate "2026-03-28"^^xsd:date .
+
+# --- A Santa Casa da Misericórdia, also a private institution of social solidarity ---------------
+
+pt:Misericordia a fraternal:FraternalOrder ;
+    rdfs:label "Santa Casa da Misericórdia de Vila Exemplo"@pt , "Holy House of Mercy of Vila Exemplo"@en ;
+    org:classification fraternalc:confraternity ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:publicBenefitStatus mbrc:ipss ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1520"^^xsd:gYear ;
+    fraternal:memberTitle fraternalc:brother .
+
+pt:dina a foaf:Person ; schema:name "Dina Provedora" .
+pt:eduardo a foaf:Person ; schema:name "Eduardo Mesário" .
+
+# The Provedor heads the Mesa Administrativa; a Mesário is a member of the board.
+pt:dina-provedora a mbr:Tenure ;
+    org:member pt:dina ; org:organization pt:Misericordia ;
+    org:role fraternalc:provedor ; mbr:startDate "2023-01-01"^^xsd:date .
+pt:eduardo-mesario a mbr:Tenure ;
+    org:member pt:eduardo ; org:organization pt:Misericordia ;
+    org:role mbrc:boardMember ; mbr:startDate "2023-01-01"^^xsd:date .
+
+# --- A literary club and an academy -----------------------------------------------------------------
+
+pt:GremioLiterario a mbr:MembershipOrganization ;
+    rdfs:label "Grémio Literário de Vila Exemplo"@pt ;
+    org:classification mbrc:literaryClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1846"^^xsd:gYear .
+
+pt:AcademiaCiencias a mbr:MembershipOrganization ;
+    rdfs:label "Academia das Ciências Imaginárias"@pt ;
+    org:classification mbrc:academy ;
+    rov:orgType mbrc:publicLawBody ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed .
+
+pt:filipa a foaf:Person ; schema:name "Filipa Docta" .
+pt:gil a foaf:Person ; schema:name "Gil Distante" .
+
+# A sócio efetivo is an ordinary member, a sócio correspondente a corresponding member.
+pt:filipa-efetivo a mbr:Membership ;
+    org:member pt:filipa ; org:organization pt:AcademiaCiencias ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2014"^^xsd:gYear .
+pt:gil-correspondente a mbr:Membership ;
+    org:member pt:gil ; org:organization pt:AcademiaCiencias ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:correspondingMember ;
+    mbr:startDate "2020"^^xsd:gYear .
+
+# --- A university praxe ------------------------------------------------------------------------------------
+
+pt:ComissaoDePraxe a fraternal:FraternalOrder ;
+    rdfs:label "Comissão de Praxe da Universidade Exemplar"@pt ;
+    org:classification fraternalc:studentOrder ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:openEnrolment ;
+    fraternal:degreeSystem fraternalc:PraxeDegrees ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+
+pt:hugo a foaf:Person ; schema:name "Hugo Caloiro" .
+pt:ines a foaf:Person ; schema:name "Inês Veterana" .
+
+pt:hugo-membership a mbr:Membership ;
+    org:member pt:hugo ; org:organization pt:ComissaoDePraxe ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "2025-09-15"^^xsd:date ;
+    mbr:mentor pt:ines .   # his padrinho de praxe
+pt:ines-membership a mbr:Membership ;
+    org:member pt:ines ; org:organization pt:ComissaoDePraxe ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "2019-09-15"^^xsd:date .
+
+pt:hugo-caloiro a fraternal:DegreeConferral ;
+    mbr:recipient pt:hugo ;
+    mbr:conferred fraternalc:caloiro ;
+    mbr:conferredBy pt:ComissaoDePraxe ;
+    mbr:startDate "2025-09-15"^^xsd:date .
+pt:ines-veterana a fraternal:DegreeConferral ;
+    mbr:recipient pt:ines ;
+    mbr:conferred fraternalc:veterano ;
+    mbr:conferredBy pt:ComissaoDePraxe ;
+    mbr:startDate "2023-09-15"^^xsd:date .
+
+# The Dux Veteranorum, elected by the Council of Veterans.
+pt:ines-dux a mbr:Tenure ;
+    org:member pt:ines ; org:organization pt:ComissaoDePraxe ;
+    org:role fraternalc:duxVeteranorum ; mbr:startDate "2025-10-01"^^xsd:date .
+
+pt:traje-negro a fraternal:Insignia ;
+    skos:prefLabel "Traje académico negro"@pt ;
+    fraternal:insigniaOf fraternalc:doutor ;
+    fraternal:insigniaType fraternalc:trajeAcademico .
+
+# --- An honorific order, with the President of the Republic as its Grand Master -------------------------
+
+pt:Republica a org:Organization ;
+    rdfs:label "A República"@pt , "The Republic"@en .
+
+pt:OrdemExemplar a fraternal:FraternalOrder ;
+    rdfs:label "Ordem do Mérito Exemplar"@pt , "Order of Exemplary Merit"@en ;
+    org:classification fraternalc:orderOfChivalry ;
+    fraternal:fonsHonorum pt:Republica ;
+    fraternal:degreeSystem fraternalc:PortugueseOrderGrades ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+
+pt:joana a foaf:Person ; schema:name "Joana Condecorada" .
+
+pt:joana-gracruz a fraternal:DegreeConferral ;
+    mbr:recipient pt:joana ;
+    mbr:conferred fraternalc:ptGraCruz ;
+    mbr:conferredBy pt:OrdemExemplar ;
+    mbr:startDate "2022-06-10"^^xsd:date .
+
+# --- A grand orient, suppressed by Lei n.º 1901 of 21 May 1935 until the revolution of 25 April 1974 ------
+
+pt:GrandeOrienteImaginario a fraternal:GrandBody ;
+    rdfs:label "Grande Oriente Lusitano Imaginário"@pt ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1802"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ;
+    mbr:hasPeriod pt:grande-oriente-primeira , pt:grande-oriente-clandestino , pt:grande-oriente-legal .
+
+pt:grande-oriente-primeira a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1802"^^xsd:gYear ; mbr:endDate "1935-05-21"^^xsd:date .
+
+# Its property was confiscated while it worked in secret.
+pt:grande-oriente-clandestino a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:suppressedOrganization ;
+    mbr:startDate "1935-05-21"^^xsd:date ; mbr:endDate "1974-04-25"^^xsd:date .
+
+pt:grande-oriente-legal a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1974-04-25"^^xsd:date .
+
+# Another obedience split from it at the end of 1984.
+pt:GrandeLojaRegular a fraternal:GrandBody ;
+    rdfs:label "Grande Loja Regular Imaginária"@pt ;
+    org:classification fraternalc:fraternalOrder ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:foundingDate "1984"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization .
+
+pt:cisao-1984 a org:ChangeEvent ;
+    rdfs:label "Cisão de 1984"@pt , "The split of 1984"@en ;
+    org:originalOrganization pt:GrandeOrienteImaginario ;
+    org:resultingOrganization pt:GrandeLojaRegular ;
+    mbr:changeEventType mbrc:split ;
+    mbr:startDate "1984-12"^^xsd:gYearMonth .
