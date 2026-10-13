@@ -239,6 +239,13 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - Removed (unreleased): `fraternalc:FrenchOffices`, and `fraternalc:orator` and `fraternalc:almoner`, which were exact duplicates of the generic offices `mbrc:orator` and `mbrc:almoner`. A lodge's orator and almoner are those.
 - Kept in the hubs on purpose: `fraternalc:craftBrotherhood` and `gastronomicBrotherhood` (the kind exists in several countries), the insignia `staff` and `rosette`, and `openMeeting`. Not done here: Membership hub concepts of one country (`mbrc:studentNation`, `mbrc:contrada`), and the Studentenverbindung stages, which have no hub ladder yet.
 
+**Unreleased.** Generic fraternal concepts that more than one country needs. Additions, and one definition clarified; every text in English, Swedish, French, German and Italian.
+- Grades: `fraternalc:collarGrade` (rank 7, *Grand Collar*), above the grand cross in orders such as the Spanish, Portuguese and Hungarian ones. `fraternalc:grandCrossGrade` gets `fraternal:nextDegree fraternalc:collarGrade`, and its definition said "the highest grade of an order"; it now says "the highest regular grade; in some orders a collar stands above it" (a definition clarified in a term that is in 1.1.0).
+- Stages: a new generic degree system `fraternalc:MemberStages` with `noviceStage`, `activeStage` and `alumniStage`, the hub for the stages of student societies. The Fuchs, Bursch and Alter Herr are mapped to them (`mappings/fraternal-studentenverbindung.sssom.tsv`), and the tuna and *praxe* stages follow with Spain and Portugal.
+- Ceremonies `fraternalc:investiture` and `consecration` (of a lodge, a temple or a flag), both mapped to `mbrc:ceremony`; insignia types `fraternalc:robe`, `banner` and `gavel`.
+- Examples: a consecration and the master's gavel in `tests/data/frankrike-exempel.ttl`, and a collar above the grand cross in `tests/data/riddarorden-exempel.ttl`.
+- Left out: Getty AAT mappings for the insignia (I have not looked up the items), and a separate concept for a flag consecration (it is a consecration).
+
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).

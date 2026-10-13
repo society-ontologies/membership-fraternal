@@ -184,3 +184,23 @@
   <https://w3id.org/sssom/subject_label> "Torchlight Procession" ;
   <https://w3id.org/sssom/object_label> "Procession" ] .
 
+<https://w3id.org/fraternal/code/investiture> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/investiture> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Investiture" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+
+<https://w3id.org/fraternal/code/consecration> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/consecration> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Consecration" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ] .
+

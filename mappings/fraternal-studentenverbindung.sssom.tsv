@@ -5,7 +5,7 @@
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-studentenverbindung
 # mapping_set_version: 1.0.0
-# mapping_set_description: Member titles and insignia of a Studentenverbindung placed under the generic titles and insignia types of the fraternal codelists.
+# mapping_set_description: Member titles, insignia and stages of a Studentenverbindung placed under the generic titles, insignia types and stages of the fraternal codelists.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 # mapping_date: 2026-10-13
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
@@ -16,3 +16,6 @@ fraternalc:cartellbruder	Cartellbruder	skos:broadMatch	fraternalc:brother	Brothe
 fraternalc:couleurband	Colour Band	skos:broadMatch	fraternalc:ribbon	Ribbon	semapv:ManualMappingCuration	0.9	The ribbon in the colours of the Verbindung.
 fraternalc:cerevis	Cerevis	skos:broadMatch	fraternalc:hat	Hat	semapv:ManualMappingCuration	0.9	The cap of the Verbindung.
 fraternalc:schlaeger	Schläger	skos:broadMatch	fraternalc:sword	Sword	semapv:ManualMappingCuration	0.9	The sabre or rapier used in academic fencing.
+fraternalc:fuchs	Fuchs	skos:closeMatch	fraternalc:noviceStage	Novice Stage	semapv:ManualMappingCuration	0.85	The probationary first stage, before the Burschung.
+fraternalc:bursch	Bursch	skos:closeMatch	fraternalc:activeStage	Active Stage	semapv:ManualMappingCuration	0.9	The full active member.
+fraternalc:alterHerr	Alter Herr	skos:closeMatch	fraternalc:alumniStage	Alumni Stage	semapv:ManualMappingCuration	0.9	The alumnus, a member for life.

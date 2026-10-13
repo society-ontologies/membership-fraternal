@@ -91,6 +91,18 @@ fr:tenue-blanche a fraternal:Ceremony ;
     mbr:organizer fr:LogeLaLanterne ;
     mbr:startDate "2026-03-14"^^xsd:date .
 
+# The consecration of the lodge's new temple, and the gavel of its master.
+fr:consecration-temple a fraternal:Ceremony ;
+    rdfs:label "Consécration du temple"@fr ;
+    mbr:gatheringType fraternalc:consecration ;
+    mbr:organizer fr:LogeLaLanterne ;
+    mbr:startDate "2026-05-09"^^xsd:date .
+
+fr:maillet-venerable a fraternal:Insignia ;
+    skos:prefLabel "Maillet du Vénérable"@fr ;
+    fraternal:insigniaOf fraternalc:venerableMaster ;
+    fraternal:insigniaType fraternalc:gavel .
+
 # --- A state order of merit and the association of its holders ------------------
 
 fr:RepubliqueExemplaire a org:Organization ;
