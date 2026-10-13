@@ -468,6 +468,21 @@ mbr:seconder a owl:ObjectProperty ;
                     "Ein Mitglied, das den Vorschlag unterstützt hat."@de ,
                     "Un socio che ha appoggiato la proposta."@it .
 
+mbr:mentor a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/membership> ;
+    rdfs:label "mentor"@en , "fadder"@sv , "mentor"@fr , "Mentor"@de , "mentore"@it ;
+    rdfs:range foaf:Agent ;
+    skos:definition "An agent who personally guides and looks after the holder of the membership in the organisation, usually a more senior member: the Leibbursch of a Studentenverbindung, the big sister of a sorority, the fadder of a student nation. The relation goes on after the admission."@en ,
+                    "En agent som personligen vägleder och tar hand om medlemskapets innehavare i organisationen, vanligen en mer erfaren medlem: en Studentenverbindungs Leibbursch, en sororitys \"big sister\", en studentnations fadder. Relationen fortsätter efter upptagningen."@sv ,
+                    "Agent qui guide et prend personnellement en charge le titulaire de l'adhésion dans l'organisation, en général un membre plus ancien : le Leibbursch d'une Studentenverbindung, la « big sister » d'une sororité, le fadder d'une nation étudiante. La relation se poursuit après l'admission."@fr ,
+                    "Ein Akteur, der den Inhaber der Mitgliedschaft in der Organisation persönlich anleitet und betreut, meist ein älteres Mitglied: der Leibbursch einer Studentenverbindung, die „Big Sister“ einer Sorority, der Fadder einer Studentennation. Die Beziehung besteht über die Aufnahme hinaus."@de ,
+                    "Un agente che guida e segue personalmente il titolare dell'appartenenza nell'organizzazione, di solito un socio più anziano: il Leibbursch di una Studentenverbindung, la «big sister» di una sorority, il fadder di una nazione studentesca. La relazione prosegue dopo l'ammissione."@it ;
+    skos:scopeNote "Not mbr:sponsor, who vouches for the candidate at the admission. The Relationship vocabulary has rel:mentorOf, which links two persons without any organisation or time; this property is on the membership, so the relation belongs to one organisation and one period."@en ,
+                   "Inte mbr:sponsor, som går i god för kandidaten vid upptagningen. Relationship-vokabulären har rel:mentorOf, som länkar två personer utan organisation eller tid; den här egenskapen sitter på medlemskapet, så relationen hör till en organisation och en period."@sv ,
+                   "Ce n'est pas mbr:sponsor, qui se porte garant du candidat lors de l'admission. Le vocabulaire Relationship a rel:mentorOf, qui relie deux personnes sans organisation ni durée ; cette propriété est portée par l'adhésion, la relation appartient donc à une organisation et à une période."@fr ,
+                   "Nicht mbr:sponsor, der bei der Aufnahme für den Kandidaten bürgt. Das Vokabular Relationship hat rel:mentorOf, das zwei Personen ohne Organisation und Zeit verbindet; diese Eigenschaft hängt an der Mitgliedschaft, die Beziehung gehört also zu einer Organisation und einer Periode."@de ,
+                   "Non mbr:sponsor, che garantisce per il candidato all'ammissione. Il vocabolario Relationship ha rel:mentorOf, che collega due persone senza organizzazione né tempo; questa proprietà è sull'appartenenza, quindi la relazione appartiene a un'organizzazione e a un periodo."@it .
+
 mbr:concernsMembership a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/membership> ;
     rdfs:label "concerns membership"@en , "avser medlemskap"@sv , "concerne l'adhésion"@fr , "betrifft Mitgliedschaft"@de , "riguarda l'appartenenza"@it ;

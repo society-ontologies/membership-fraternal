@@ -267,6 +267,11 @@ Questions and proposals: [GitHub issues](https://github.com/society-ontologies/m
 - SHACL: a value must be in the hub scheme, in a scheme that is part of it, or mapped to it. `make skos` check 08 now covers the membership codelists as well as the fraternal ones. Example: an Italian arts circle with both statuses and their periods in `tests/data/italia-exempel.ttl`; new competency question 17; two invalid fixtures.
 - Not done: the statuses of the other countries, which come with their own PRs.
 
+**Unreleased.** Mentor. A new property, additive; the texts are in English, Swedish, French, German and Italian.
+- `mbr:mentor` on a membership: the agent who personally guides the holder, usually a more senior member and often for longer than the admission takes (a *Leibbursch* of a Studentenverbindung, the big sister of a sorority, the *fadder* of a student nation; the Spanish and Portuguese equivalents follow with those countries). It is not `mbr:sponsor`, who vouches for the candidate at the admission. The sorority sample now has both on one member (her proposer and her big sister are the same person but two relations), and the Corps sample gives the Fuchs a mentor where it had used `mbr:sponsor`.
+- Reuse was checked: schema.org has no `mentor`. The Relationship vocabulary has `rel:mentorOf` and `rel:apprenticeTo`, but they link two persons without any organisation or time, so they cannot say in which organisation or for how long; the property's scope note says so.
+- SHACL: the mentor is an agent, and a member cannot be their own mentor. New competency question 18 and an invalid fixture.
+
 **Unreleased.**
 - Documentation: one HTML page per language (`docs/<ontology>/` in English, `docs/<ontology>/sv/` in Swedish) with a language switcher, replacing the single page that ran the English and Swedish titles together ("Membership OrganisationMedlemsorganisation").
 - Translations: further languages are written beside the English text in the ontology files, checked by `make i18n`; see [`TRANSLATING.md`](TRANSLATING.md).

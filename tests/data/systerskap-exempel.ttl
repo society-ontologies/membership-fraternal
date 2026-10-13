@@ -78,7 +78,8 @@ sor:ada-membership a mbr:Membership ;
 sor:sofia-membership a mbr:Membership ;
     org:member sor:sofia ; org:organization sor:SororExemplum ;
     mbr:membershipStatus mbrc:active ; mbr:membershipNumber "A-17" ;
-    mbr:proposer sor:ada .
+    mbr:proposer sor:ada ;
+    mbr:mentor sor:ada .   # her big sister, who also proposed her: two relations, two properties
 
 sor:initiation-2025 a fraternal:Ceremony ;
     rdfs:label "Spring initiation 2025"@en ;
