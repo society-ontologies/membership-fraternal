@@ -2317,3 +2317,35 @@ mbrc:refoundation a skos:Concept , owl:NamedIndividual ;
                    "Ob das neue Organ das alte in Fortführung oder ein neues ist, sagen die Quellen; das alte wird als org:originalOrganization angegeben, wenn es als Vorgänger behandelt wird."@de ,
                    "Spetta alle fonti dire se il nuovo organismo è il vecchio che continua o uno nuovo; si indica il vecchio come org:originalOrganization quando è trattato come predecessore."@it ,
                    "Si el nuevo organismo es el antiguo que continúa o uno nuevo lo dicen las fuentes; el antiguo se registra como org:originalOrganization cuando se trata como predecesor."@es .
+
+##############################################################################
+# 20. PORTUGAL  (the status of a private social solidarity institution)
+# A first draft from general knowledge and Portuguese Wikipedia, for a Portuguese-speaking
+# reviewer. The scheme says dcterms:isPartOf mbrc:PublicBenefitStatuses and its concept is
+# mapped in mappings/membership-portugal.sssom.tsv. A declaration of public utility
+# (utilidade pública) is the generic mbrc:publicBenefit and needs no concept of its own.
+##############################################################################
+
+mbrc:PortugueseSolidarityStatuses a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:PublicBenefitStatuses ;
+    skos:prefLabel "Statuses under the Portuguese statute of social solidarity institutions"@en , "Statusar enligt den portugisiska stadgan för institutioner för social solidaritet"@sv , "Statuts selon le statut portugais des institutions de solidarité sociale"@fr , "Status nach dem portugiesischen Statut der Einrichtungen der sozialen Solidarität"@de , "Stati secondo lo statuto portoghese delle istituzioni di solidarietà sociale"@it , "Estatus según el estatuto portugués de las instituciones de solidaridad social"@es , "Estatutos ao abrigo do Estatuto das Instituições Particulares de Solidariedade Social"@pt ;
+    skos:definition "The status of a private institution of social solidarity (IPSS) under the Portuguese statute of such institutions, first approved in 1983."@en ,
+                    "Statusen som privat institution för social solidaritet (IPSS) enligt den portugisiska stadgan för sådana institutioner, som först antogs 1983."@sv ,
+                    "Le statut d'institution privée de solidarité sociale (IPSS) selon le statut portugais de ces institutions, approuvé pour la première fois en 1983."@fr ,
+                    "Der Status einer privaten Einrichtung der sozialen Solidarität (IPSS) nach dem portugiesischen Statut solcher Einrichtungen, erstmals 1983 genehmigt."@de ,
+                    "Lo stato di istituzione privata di solidarietà sociale (IPSS) secondo lo statuto portoghese di tali istituzioni, approvato per la prima volta nel 1983."@it ,
+                    "El estatus de institución particular de solidaridad social (IPSS) según el estatuto portugués de esas instituciones, aprobado por primera vez en 1983."@es ,
+                    "O estatuto de Instituição Particular de Solidariedade Social (IPSS) ao abrigo do respetivo Estatuto, aprovado pela primeira vez em 1983."@pt ;
+    skos:hasTopConcept mbrc:ipss .
+
+mbrc:ipss a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme mbrc:PortugueseSolidarityStatuses ; skos:topConceptOf mbrc:PortugueseSolidarityStatuses ;
+    skos:prefLabel "Private Institution of Social Solidarity"@en , "Privat institution för social solidaritet"@sv , "Institution privée de solidarité sociale"@fr , "Private Einrichtung der sozialen Solidarität"@de , "Istituzione privata di solidarietà sociale"@it , "Institución particular de solidaridad social"@es , "Instituição Particular de Solidariedade Social"@pt ;
+    skos:altLabel "IPSS"@en , "IPSS"@pt ;
+    skos:definition "A non-profit institution set up by private persons to give organised expression to the moral duty of solidarity and justice, not run by the State or a local authority. Its aims include support for children, young people, the family and the elderly, health, education and housing."@en ,
+                    "En ideell institution som bildats av enskilda för att ge organiserat uttryck åt den moraliska plikten till solidaritet och rättvisa, och som inte drivs av staten eller en lokal myndighet. Dess syften omfattar stöd till barn, ungdomar, familjen och äldre, hälsa, utbildning och bostäder."@sv ,
+                    "Une institution sans but lucratif créée par des particuliers pour donner une expression organisée au devoir moral de solidarité et de justice, non administrée par l'État ni par une collectivité locale. Ses objectifs comprennent l'aide aux enfants, aux jeunes, à la famille et aux personnes âgées, la santé, l'éducation et le logement."@fr ,
+                    "Eine gemeinnützige Einrichtung, die von Privatpersonen gegründet wurde, um der moralischen Pflicht zu Solidarität und Gerechtigkeit organisierten Ausdruck zu geben, und die nicht vom Staat oder einer Gebietskörperschaft verwaltet wird. Zu ihren Zielen gehören die Unterstützung von Kindern, Jugendlichen, der Familie und älteren Menschen, Gesundheit, Bildung und Wohnen."@de ,
+                    "Un'istituzione senza scopo di lucro creata da privati per dare espressione organizzata al dovere morale di solidarietà e giustizia, non amministrata dallo Stato o da un ente locale. I suoi scopi comprendono il sostegno a bambini, giovani, famiglia e anziani, la salute, l'istruzione e l'alloggio."@it ,
+                    "Una institución sin ánimo de lucro creada por particulares para dar expresión organizada al deber moral de solidaridad y justicia, no administrada por el Estado ni por una entidad local. Sus objetivos incluyen el apoyo a la infancia, la juventud, la familia y los mayores, la salud, la educación y la vivienda."@es ,
+                    "Instituição constituída sem finalidade lucrativa, por iniciativa de particulares, com o objetivo de dar expressão organizada ao dever moral de solidariedade e de justiça entre os indivíduos, não administrada pelo Estado nem por um corpo autárquico. Os seus objetivos incluem o apoio a crianças, jovens, família e idosos, a saúde, a educação e a habitação."@pt .

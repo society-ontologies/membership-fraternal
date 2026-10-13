@@ -1,0 +1,23 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-portugal
+# mapping_set_version: 1.0.0
+# mapping_set_description: Portuguese honorific-order grades, praxe stages, praxe insignia and the offices of the praxe and of a Misericórdia placed under the generic chivalric grades, member stages, insignia types and office types.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:ptCavaleiro	Knight or Dame	skos:closeMatch	fraternalc:knightGrade	Knight	semapv:ManualMappingCuration	0.9	The lowest grade of the orders; in the orders of civil merit a Medalha takes its place.
+fraternalc:ptOficial	Officer	skos:closeMatch	fraternalc:officerGrade	Officer	semapv:ManualMappingCuration	0.95	The grade between Cavaleiro and Comendador.
+fraternalc:ptComendador	Commander	skos:closeMatch	fraternalc:commanderGrade	Commander	semapv:ManualMappingCuration	0.95	The commander grade.
+fraternalc:ptGrandeOficial	Grand Officer	skos:closeMatch	fraternalc:commanderFirstClassGrade	Commander First Class	semapv:ManualMappingCuration	0.8	The grade between Comendador and Grã-Cruz.
+fraternalc:ptGraCruz	Grand Cross	skos:closeMatch	fraternalc:grandCrossGrade	Grand Cross	semapv:ManualMappingCuration	0.95	The grand cross.
+fraternalc:ptGrandeColar	Grand Collar	skos:closeMatch	fraternalc:collarGrade	Grand Collar	semapv:ManualMappingCuration	0.95	The special highest grade, held in some of the orders only.
+fraternalc:caloiro	Caloiro	skos:closeMatch	fraternalc:noviceStage	Novice Stage	semapv:ManualMappingCuration	0.85	The student in the first enrolment.
+fraternalc:doutor	Doutor	skos:closeMatch	fraternalc:activeStage	Active Stage	semapv:ManualMappingCuration	0.8	Any student beyond the first enrolment.
+fraternalc:veterano	Veterano	skos:broadMatch	fraternalc:activeStage	Active Stage	semapv:ManualMappingCuration	0.7	The most senior students; a narrower case of the active stage.
+fraternalc:duxVeteranorum	Dux Veteranorum	skos:closeMatch	mbrc:president	President	semapv:ManualMappingCuration	0.7	The head of the praxe at Coimbra, elected by the Council of Veterans.
+fraternalc:trajeAcademico	Academic Dress	skos:broadMatch	fraternalc:robe	Robe	semapv:ManualMappingCuration	0.8	The black suit and cape worn in the praxe.
+fraternalc:provedor	Provedor	skos:closeMatch	mbrc:president	President	semapv:ManualMappingCuration	0.9	The head of a Misericórdia and of its Mesa Administrativa.
