@@ -4,7 +4,7 @@ The order matters: each published step depends on the one before it.
 
 1. **Finish the release on a branch.**
    - Version: `owl:versionInfo`, `owl:versionIRI`, `owl:priorVersion` and `owl:backwardCompatibleWith` in every ontology and codelist file (the external declarations too), and `owl:versionInfo` in the shapes.
-   - The version also stands in the first-line comment of the six `.ttl` files in `membership/` and `fraternal/` ("— v1.1.0"), in `index.html` ("Version 1.1.0"), in the "Status: version" line of the README and in `version:` of CITATION.cff. Find every place with `grep -rn '<old version>' . --exclude-dir=versions --exclude-dir=docs --exclude-dir=.git`.
+   - The version also stands in the first-line comment of the six `.ttl` files in `membership/` and `fraternal/` ("— v1.1.0"), in `index.html` (the Version column, two cells, each also the link to the version IRI `https://w3id.org/<ontology>/<version>`), in the "Status: version" line of the README and in `version:` of CITATION.cff. Find every place with `grep -rn '<old version>' . --exclude-dir=versions --exclude-dir=docs --exclude-dir=.git`.
    - Set `dcterms:modified` to the date of the last change.
    - Mappings: set `mapping_set_version` and `mapping_date` in the header of every `mappings/*.sssom.tsv` that changed since the last release, then `make mappings`. The mapping sets are served from `mappings/generated/` by their unversioned IRIs, so `make freeze` does not copy them.
    - CITATION.cff: set `version` and `date-released`.
