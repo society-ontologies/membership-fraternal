@@ -712,6 +712,66 @@ td {
             </tr>
           </table>
         </div>
+        <div class="property entity" id="Charter">
+          <h3>Charte
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#Charter</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Le document ou l'acte par lequel un organe accorde à un autre le droit d'exister et d'agir comme une partie de lui : les lettres patentes d'une loge, la charte d'un club accordée par Rotary International, la charte d'une corporation étudiante accordée par sa fédération. Elle est délivrée par une organisation (mbr:issuedBy) à une autre (mbr:issuedTo), avec la date de son octroi (mbr:startDate), la date de sa fin, s'il y en a une (mbr:endDate), et son état (mbr:charterStatus).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>fraternal:warrantedBy est le raccourci pour l'état actuel : l'organe qui a délivré les lettres patentes de la loge. Utilisez une charte lorsque sa date, son état ou son historique comptent. Une charte rendue puis accordée de nouveau fait deux chartes, la seconde avec ses propres dates. Le numéro qu'une loge porte au tableau de sa grande loge n'est pas sur la charte : indiquez-le comme un adms:Identifier avec skos:notation et adms:schemaAgency, relié par adms:identifier.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#issuedBy">délivrée par</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#issuedTo">délivrée à</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#charterStatus">état de la charte</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="OrganizationPeriod">
           <h3>Période d'organisation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -825,6 +885,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#MembershipOrganization">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -837,11 +902,6 @@ td {
                       </span>
                     </span><br>
                   </span>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#MembershipOrganization">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -878,6 +938,11 @@ td {
               </th>
               <td>
                 <span>
+                  <a href="#MembershipOrganization">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -890,11 +955,6 @@ td {
                       </span>
                     </span><br>
                   </span>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
-                  <a href="#MembershipOrganization">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -931,11 +991,6 @@ td {
               </th>
               <td>
                 <span>
-                  <a href="#MembershipOrganization">Organisation de membres</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-                <span class="cardinality">and</span>
-                <span>
                   <span>
                     <a href="http://www.w3.org/ns/org#classification">http://www.w3.org/ns/org#classification</a>
                     <span>
@@ -948,6 +1003,11 @@ td {
                       </span>
                     </span><br>
                   </span>
+                </span>
+                <span class="cardinality">and</span>
+                <span>
+                  <a href="#MembershipOrganization">Organisation de membres</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
@@ -1828,6 +1888,193 @@ td {
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
               <td><p>Sur une organisation, c'est l'image actuelle enregistrée. Les valeurs antérieures et postérieures, avec les dates auxquelles elles s'appliquaient, sont indiquées avec mbr:OrganizationPeriod ; la valeur actuelle n'est pas déduite des périodes.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="issuedBy">
+          <h3>délivrée par
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#issuedBy</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>L'organisation qui a accordé une charte.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Charter">Charte</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">http://www.w3.org/ns/org#Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="issuedTo">
+          <h3>délivrée à
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#issuedTo</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>L'organisation qui détient une charte.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Charter">Charte</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#Organization">http://www.w3.org/ns/org#Organization</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="charterStatus">
+          <h3>état de la charte
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#charterStatus</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Si une charte est en vigueur, suspendue, rendue ou retirée (voir mbrc:CharterStatuses).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Charter">Charte</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="changeEventType">
+          <h3>type de changement
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/membership#changeEventType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://w3id.org/membership">Ontologie des organisations de membres</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Le genre de changement qu'un org:ChangeEvent consigne, comme une fusion, une scission ou un changement de nom (voir mbrc:ChangeEventTypes).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/org#ChangeEvent">http://www.w3.org/ns/org#ChangeEvent</a>
+              </td>
             </tr>
             <tr>
               <th>
@@ -4269,6 +4516,9 @@ td {
               <a href="#MemberCount">Effectif</a>
             </li>
             <li>
+              <a href="#Charter">Charte</a>
+            </li>
+            <li>
               <a href="#OrganizationPeriod">Période d'organisation</a>
             </li>
             <li>
@@ -4343,6 +4593,18 @@ td {
             </li>
             <li>
               <a href="#ownershipModel">mode de propriété</a>
+            </li>
+            <li>
+              <a href="#issuedBy">délivrée par</a>
+            </li>
+            <li>
+              <a href="#issuedTo">délivrée à</a>
+            </li>
+            <li>
+              <a href="#charterStatus">état de la charte</a>
+            </li>
+            <li>
+              <a href="#changeEventType">type de changement</a>
             </li>
             <li>
               <a href="#hasPeriod">a pour période</a>

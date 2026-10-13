@@ -97,6 +97,7 @@ club:merger-1976 a org:ChangeEvent ;
     rdfs:label "Merger of the Old Cardinal Club into the Lanternmere Club"@en ;
     org:originalOrganization club:OldCardinal ;
     org:resultingOrganization club:Lanternmere ;
+    mbr:changeEventType mbrc:merger ;
     mbr:startDate "1976"^^xsd:gYear .
 
 club:Heatherbrook a mbr:MembershipOrganization ;

@@ -1,0 +1,11 @@
+# EXPECT: a change event type from the wrong scheme
+# MESSAGE: mbr:changeEventType must be one concept in mbrc:ChangeEventTypes
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Old a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:New a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:e a org:ChangeEvent ; org:originalOrganization ex:Old ; org:resultingOrganization ex:New ;
+    mbr:changeEventType mbrc:admission .

@@ -1,0 +1,9 @@
+# EXPECT: a charter that does not say who issued it
+# MESSAGE: A charter needs exactly one issuing organisation
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix mbr:  <https://w3id.org/membership#> .
+@prefix mbrc: <https://w3id.org/membership/code/> .
+@prefix ex:   <https://example.org/invalid/> .
+
+ex:Lodge a mbr:MembershipOrganization ; org:classification mbrc:privateClub .
+ex:c a mbr:Charter ; mbr:issuedTo ex:Lodge ; mbr:charterStatus mbrc:charterGranted .

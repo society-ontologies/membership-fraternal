@@ -69,7 +69,21 @@ fraternalc:OrderTypes a skos:ConceptScheme , owl:NamedIndividual ;
                        fraternalc:chivalricStyleOrder , fraternalc:studentOrder , fraternalc:benevolentOrder ,
                        fraternalc:adoptiveOrder , fraternalc:orderOfChivalry ,
                        fraternalc:selfStyledOrderOfChivalry , fraternalc:gastronomicBrotherhood ,
-                       fraternalc:craftBrotherhood .
+                       fraternalc:craftBrotherhood , fraternalc:intermediateBody .
+
+fraternalc:intermediateBody a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
+    skos:prefLabel "Intermediate Body"@en , "Mellannivåorgan"@sv , "Organe intermédiaire"@fr , "Zwischenebene"@de , "Organo intermedio"@it ;
+    skos:definition "A provincial, district or regional body that stands between the local lodges and the grand body: a provincial grand lodge, a district, a priory."@en ,
+                    "Ett provins-, distrikts- eller regionalt organ mellan de lokala logerna och det överordnade organet: en provinsstorloge, ett distrikt, ett priorat."@sv ,
+                    "Un organe provincial, de district ou régional entre les loges locales et l'organe dirigeant : une grande loge provinciale, un district, un prieuré."@fr ,
+                    "Ein Provinz-, Distrikts- oder Regionalorgan zwischen den örtlichen Logen und dem übergeordneten Organ: eine Provinzialgroßloge, ein Distrikt, ein Priorat."@de ,
+                    "Un organismo provinciale, distrettuale o regionale tra le logge locali e l'organismo di governo: una gran loggia provinciale, un distretto, un priorato."@it ;
+    skos:scopeNote "Link the levels with org:subOrganizationOf: lodge, intermediate body, grand body. The type says where the body stands in the order, not what kind of order it is; give the order's own type to the grand body."@en ,
+                   "Länka nivåerna med org:subOrganizationOf: loge, mellannivåorgan, överordnat organ. Typen anger var organet står i orden, inte vilken sorts orden det är; ange ordens egen typ på det överordnade organet."@sv ,
+                   "Reliez les niveaux avec org:subOrganizationOf : loge, organe intermédiaire, organe dirigeant. Le type dit où l'organe se situe dans l'ordre, non de quelle sorte d'ordre il s'agit ; donnez le type propre de l'ordre à l'organe dirigeant."@fr ,
+                   "Die Ebenen werden mit org:subOrganizationOf verknüpft: Loge, Zwischenebene, übergeordnetes Organ. Der Typ sagt, wo das Organ im Orden steht, nicht welche Art von Orden es ist; die eigene Art des Ordens gehört dem übergeordneten Organ."@de ,
+                   "Si collegano i livelli con org:subOrganizationOf: loggia, organismo intermedio, organismo di governo. Il tipo dice dove si trova l'organismo nell'ordine, non di che specie di ordine si tratta; il tipo proprio dell'ordine va dato all'organismo di governo."@it .
 
 fraternalc:fraternalOrder a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;

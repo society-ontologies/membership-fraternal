@@ -203,6 +203,14 @@ mbrsh:ApplicationStatusValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:ApplicationStatuses ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:ApplicationStatuses ] ) .
 
+mbrsh:CharterStatusValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:CharterStatuses ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:CharterStatuses ] ) .
+
+mbrsh:ChangeEventTypeValue a sh:NodeShape ;
+    sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:ChangeEventTypes ]
+            [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:ChangeEventTypes ] ) .
+
 mbrsh:PublicBenefitStatusValue a sh:NodeShape ;
     sh:or ( [ sh:path skos:inScheme ; sh:hasValue mbrc:PublicBenefitStatuses ]
             [ sh:path ( [ sh:alternativePath ( skos:exactMatch skos:closeMatch skos:broadMatch ) ] skos:inScheme ) ; sh:hasValue mbrc:PublicBenefitStatuses ]
@@ -376,6 +384,35 @@ mbrsh:BallotShape a sh:NodeShape ;
                   sh:message "mbr:votesFor must be one non-negative integer. | mbr:votesFor ska vara ett enda icke-negativt heltal. | mbr:votesFor doit être un seul entier non négatif. | mbr:votesFor muss eine einzige nichtnegative ganze Zahl sein. | mbr:votesFor deve essere un solo intero non negativo." ] ,
                 [ sh:path mbr:votesAgainst ; sh:maxCount 1 ; sh:node mbrsh:CountList ;
                   sh:message "mbr:votesAgainst must be one non-negative integer. | mbr:votesAgainst ska vara ett enda icke-negativt heltal. | mbr:votesAgainst doit être un seul entier non négatif. | mbr:votesAgainst muss eine einzige nichtnegative ganze Zahl sein. | mbr:votesAgainst deve essere un solo intero non negativo." ] .
+
+##############################################################################
+# Charters and changes of organisation
+##############################################################################
+
+mbrsh:CharterShape a sh:NodeShape ;
+    sh:targetClass mbr:Charter ;
+    sh:property [ sh:path mbr:issuedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
+                  sh:message "A charter needs exactly one issuing organisation (mbr:issuedBy). | Ett stiftelsebrev behöver exakt en utfärdande organisation (mbr:issuedBy). | Une charte a besoin d'exactement une organisation émettrice (mbr:issuedBy). | Eine Urkunde braucht genau eine ausstellende Organisation (mbr:issuedBy). | Una carta richiede esattamente un'organizzazione emittente (mbr:issuedBy)." ] ,
+                [ sh:path mbr:issuedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class org:Organization ;
+                  sh:message "A charter needs exactly one organisation that holds it (mbr:issuedTo). | Ett stiftelsebrev behöver exakt en organisation som innehar det (mbr:issuedTo). | Une charte a besoin d'exactement une organisation qui la détient (mbr:issuedTo). | Eine Urkunde braucht genau eine Organisation, die sie innehat (mbr:issuedTo). | Una carta richiede esattamente un'organizzazione che la detiene (mbr:issuedTo)." ] ,
+                [ sh:path mbr:charterStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node mbrsh:CharterStatusValue ;
+                  sh:message "mbr:charterStatus must be exactly one concept in mbrc:CharterStatuses, or one mapped to it. | mbr:charterStatus ska vara exakt ett begrepp i mbrc:CharterStatuses, eller ett som är mappat dit. | mbr:charterStatus doit être exactement un concept de mbrc:CharterStatuses, ou un concept qui y est mis en correspondance. | mbr:charterStatus muss genau ein Konzept in mbrc:CharterStatuses sein, oder eines, das darauf abgebildet ist. | mbr:charterStatus deve essere esattamente un concetto di mbrc:CharterStatuses, o uno mappato su di esso." ] ;
+    # A body does not charter itself.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A charter cannot be issued by the organisation that holds it (mbr:issuedBy and mbr:issuedTo are the same). | Ett stiftelsebrev kan inte utfärdas av den organisation som innehar det (mbr:issuedBy och mbr:issuedTo är samma). | Une charte ne peut pas être délivrée par l'organisation qui la détient (mbr:issuedBy et mbr:issuedTo sont identiques). | Eine Urkunde kann nicht von der Organisation ausgestellt werden, die sie innehat (mbr:issuedBy und mbr:issuedTo sind dieselbe). | Una carta non può essere rilasciata dall'organizzazione che la detiene (mbr:issuedBy e mbr:issuedTo coincidono)." ;
+        sh:prefixes <https://w3id.org/membership/shapes> ;
+        sh:select """
+            SELECT $this ?o WHERE { $this mbr:issuedBy ?o ; mbr:issuedTo ?o . }
+        """
+    ] .
+
+mbrsh:ChangeEventShape a sh:NodeShape ;
+    sh:targetClass org:ChangeEvent ;
+    sh:property [ sh:path mbr:changeEventType ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:node mbrsh:ChangeEventTypeValue ;
+                  sh:message "mbr:changeEventType must be one concept in mbrc:ChangeEventTypes, or one mapped to it. | mbr:changeEventType ska vara ett begrepp i mbrc:ChangeEventTypes, eller ett som är mappat dit. | mbr:changeEventType doit être un concept de mbrc:ChangeEventTypes, ou un concept qui y est mis en correspondance. | mbr:changeEventType muss ein Konzept in mbrc:ChangeEventTypes sein, oder eines, das darauf abgebildet ist. | mbr:changeEventType deve essere un concetto di mbrc:ChangeEventTypes, o uno mappato su di esso." ] .
 
 ##############################################################################
 # Membership fees
