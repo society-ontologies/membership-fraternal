@@ -1,0 +1,18 @@
+# curie_map:
+#   mbrc: https://w3id.org/membership/code/
+#   fraternalc: https://w3id.org/fraternal/code/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-studentenverbindung
+# mapping_set_version: 1.0.0
+# mapping_set_description: Member titles and insignia of a Studentenverbindung placed under the generic titles and insignia types of the fraternal codelists.
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# mapping_date: 2026-10-13
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+fraternalc:bundesbruder	Bundesbruder	skos:broadMatch	fraternalc:brother	Brother	semapv:ManualMappingCuration	0.95	Every male member of a Verbindung.
+fraternalc:bundesschwester	Bundesschwester	skos:broadMatch	fraternalc:sister	Sister	semapv:ManualMappingCuration	0.95	Every female member of a Verbindung.
+fraternalc:corpsbruder	Corpsbruder	skos:broadMatch	fraternalc:brother	Brother	semapv:ManualMappingCuration	0.9	A member of a Corps.
+fraternalc:cartellbruder	Cartellbruder	skos:broadMatch	fraternalc:brother	Brother	semapv:ManualMappingCuration	0.9	A member of a Verbindung in the Cartellverband.
+fraternalc:couleurband	Colour Band	skos:broadMatch	fraternalc:ribbon	Ribbon	semapv:ManualMappingCuration	0.9	The ribbon in the colours of the Verbindung.
+fraternalc:cerevis	Cerevis	skos:broadMatch	fraternalc:hat	Hat	semapv:ManualMappingCuration	0.9	The cap of the Verbindung.
+fraternalc:schlaeger	Schläger	skos:broadMatch	fraternalc:sword	Sword	semapv:ManualMappingCuration	0.9	The sabre or rapier used in academic fencing.

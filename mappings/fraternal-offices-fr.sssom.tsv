@@ -5,7 +5,7 @@
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-offices-fr
 # mapping_set_version: 1.0.0
-# mapping_set_description: Offices of French lodges, learned societies and compagnonnage placed under the generic office types of the membership ontology. The orator and the almoner have no close generic office and are not mapped.
+# mapping_set_description: Offices of French lodges, learned societies and compagnonnage (fraternalc:MasonicLodgeOffices, CompagnonnageOffices, AcademyOffices) placed under the generic office types of the membership ontology. The orator and the almoner of a lodge are the generic mbrc:orator and mbrc:almoner and have no concept of their own.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 # mapping_date: 2026-10-11
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
@@ -17,5 +17,3 @@ fraternalc:perpetualSecretary	Permanent Secretary	skos:broadMatch	mbrc:secretary
 fraternalc:housePrevot	House Provost	skos:broadMatch	mbrc:president	President	semapv:ManualMappingCuration	0.5	Heads one compagnons' house, not the whole brotherhood.
 fraternalc:rolleur	Rôleur	skos:broadMatch	mbrc:masterOfCeremonies	Master of Ceremonies	semapv:ManualMappingCuration	0.5	Also handled hiring; today often acts as master of ceremonies.
 fraternalc:houseMother	House Mother	skos:broadMatch	mbrc:custodian	Custodian of Premises	semapv:ManualMappingCuration	0.6	Runs the house, lodging and meals.
-fraternalc:orator	Orator	skos:exactMatch	mbrc:orator	Orator	semapv:ManualMappingCuration	0.95	The same office; the hub concept is the generic one.
-fraternalc:almoner	Almoner	skos:exactMatch	mbrc:almoner	Almoner	semapv:ManualMappingCuration	0.95	The same office; the hub concept is the generic one.
