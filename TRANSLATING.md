@@ -51,10 +51,10 @@ The `sh:message` texts in the `*-shapes.ttl` files are not language-tagged. Each
 the languages in a fixed order, English first, separated by ` | `:
 
 ```turtle
-sh:message "The end date is before the start date. | Slutdatumet ligger före startdatumet. | La date de fin est antérieure à la date de début. | Das Enddatum liegt vor dem Startdatum. | La data di fine è anteriore alla data di inizio. | La fecha de fin es anterior a la fecha de inicio. | A data de fim é anterior à data de início."
+sh:message "The end date is before the start date. | Slutdatumet ligger före startdatumet. | La date de fin est antérieure à la date de début. | Das Enddatum liegt vor dem Startdatum. | La data di fine è anteriore alla data di inizio. | La fecha de fin es anterior a la fecha de inicio. | A data de fim é anterior à data de início. | A záró dátum korábbi a kezdő dátumnál."
 ```
 
-The order is English, Swedish, French, German, Italian, Spanish, Portuguese.
+The order is English, Swedish, French, German, Italian, Spanish, Portuguese, Hungarian.
 
 Tagged messages (`"…"@en , "…"@sv`) would be cleaner, but Apache Jena's `shacl` rejects more than one
 `sh:message` on a shape ("More than one match"), and `make shacl` uses it. A new language therefore adds
