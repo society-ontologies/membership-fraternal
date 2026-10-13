@@ -1,0 +1,272 @@
+# Fictional Spanish organisations (all names, numbers and people invented for testing):
+# a cultural association (an ateneo) with its registry number, public-benefit recognition and
+# officers; a gastronomic society that admitted women in 1990; a tertulia; a royal academy
+# with members of three kinds; a Holy Week hermandad with an application, a Jura de Reglas
+# and a procession; a student tuna with its stages, beca and baptism; the Order of Charles III
+# with a Grand Cross; and a grand lodge that was suppressed from 1940 to 1979.
+#
+# Most of Spain fits the generic model: an asociación is a registered association, a casino
+# or an ateneo a club, a utilidad pública declaration is the generic public-benefit status,
+# an académico de número an ordinary member. What is new is in the Spanish schemes of
+# fraternal-codes (section 11): the Order of Charles III, the tuna, the cofradía.
+#
+# A draft from general knowledge; the Spanish wording needs a native reviewer.
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix schema:  <http://schema.org/> .
+@prefix org:     <http://www.w3.org/ns/org#> .
+@prefix rov:     <http://www.w3.org/ns/regorg#> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix mbr:     <https://w3id.org/membership#> .
+@prefix mbrc:    <https://w3id.org/membership/code/> .
+@prefix fraternal:  <https://w3id.org/fraternal#> .
+@prefix fraternalc: <https://w3id.org/fraternal/code/> .
+@prefix es:      <https://example.org/espana/> .
+
+# --- A cultural association (Ley Orgánica 1/2002) ---------------------------------
+
+es:AteneoVillaejemplo a mbr:MembershipOrganization ;
+    rdfs:label "Ateneo de Villaejemplo"@es , "The Villaejemplo Ateneo"@en ;
+    org:classification mbrc:literaryClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    rov:registration es:ateneo-registro ;
+    mbr:publicBenefitStatus mbrc:publicBenefit ;
+    mbr:admissionMode mbrc:openApplication ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1879"^^xsd:gYear .
+
+# The registry number in the Registro Nacional de Asociaciones (an invented number).
+es:ateneo-registro a adms:Identifier ;
+    skos:notation "000001" ;
+    adms:schemaAgency "Registro Nacional de Asociaciones" .
+
+es:lucia a foaf:Person ; schema:name "Lucía Ejemplar" .
+es:mateo a foaf:Person ; schema:name "Mateo Inventado" .
+es:nuria a foaf:Person ; schema:name "Nuria Ficticia" .
+
+# Presidente, secretario and tesorero of the Junta Directiva, all hub offices.
+es:lucia-presidenta a mbr:Tenure ;
+    org:member es:lucia ; org:organization es:AteneoVillaejemplo ;
+    org:role mbrc:president ; mbr:startDate "2023-05-20"^^xsd:date .
+es:mateo-secretario a mbr:Tenure ;
+    org:member es:mateo ; org:organization es:AteneoVillaejemplo ;
+    org:role mbrc:secretary ; mbr:startDate "2023-05-20"^^xsd:date .
+es:nuria-tesorera a mbr:Tenure ;
+    org:member es:nuria ; org:organization es:AteneoVillaejemplo ;
+    org:role mbrc:treasurer ; mbr:startDate "2023-05-20"^^xsd:date .
+
+es:asamblea-2026 a mbr:Gathering ;
+    rdfs:label "Asamblea general 2026"@es ;
+    mbr:gatheringType mbrc:generalMeeting ;
+    mbr:organizer es:AteneoVillaejemplo ;
+    mbr:startDate "2026-04-25"^^xsd:date .
+
+# --- A gastronomic society that admitted women in 1990 -----------------------------
+
+es:SociedadGastronomica a mbr:MembershipOrganization ;
+    rdfs:label "Sociedad Gastronómica Villaejemplo"@es ;
+    org:classification mbrc:diningClub ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:foundingDate "1921"^^xsd:gYear ;
+    mbr:hasPeriod es:gastro-hombres , es:gastro-mixta .
+
+es:gastro-hombres a mbr:OrganizationPeriod ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:startDate "1921"^^xsd:gYear ; mbr:endDate "1990"^^xsd:gYear .
+
+es:gastro-mixta a mbr:OrganizationPeriod ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:startDate "1990"^^xsd:gYear .
+
+# --- A tertulia: no statutes, no register, joined by invitation ---------------------
+
+es:TertuliaDelCafe a mbr:MembershipOrganization ;
+    rdfs:label "Tertulia del Café Central"@es ;
+    org:classification mbrc:informalCircle ;
+    mbr:admissionMode mbrc:byInvitation .
+
+# --- A royal academy ---------------------------------------------------------------
+
+es:RealAcademia a mbr:MembershipOrganization ;
+    rdfs:label "Real Academia de Ciencias Imaginarias"@es ;
+    org:classification mbrc:academy ;
+    rov:orgType mbrc:publicLawBody ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:genderPolicy mbrc:mixed .
+
+es:ramon a foaf:Person ; schema:name "Ramón Docto" .
+es:sara a foaf:Person ; schema:name "Sara Lejana" .
+es:tomas a foaf:Person ; schema:name "Tomás Honorable" .
+
+# An académico de número is an ordinary member, a correspondiente a corresponding member,
+# an honorario an honorary member.
+es:ramon-numero a mbr:Membership ;
+    org:member es:ramon ; org:organization es:RealAcademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:ordinary ;
+    mbr:startDate "2012"^^xsd:gYear .
+es:sara-correspondiente a mbr:Membership ;
+    org:member es:sara ; org:organization es:RealAcademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:correspondingMember ;
+    mbr:startDate "2020"^^xsd:gYear .
+es:tomas-honorario a mbr:Membership ;
+    org:member es:tomas ; org:organization es:RealAcademia ;
+    mbr:membershipStatus mbrc:active ; mbr:membershipCategory mbrc:honorary ;
+    mbr:startDate "2018"^^xsd:gYear .
+
+# --- A Holy Week hermandad -----------------------------------------------------------
+
+es:HermandadDelCristo a fraternal:FraternalOrder ;
+    rdfs:label "Hermandad del Santo Cristo de la Esperanza"@es , "Brotherhood of the Holy Christ of Hope"@en ;
+    org:classification fraternalc:confraternity ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1594"^^xsd:gYear ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:characteristic fraternalc:initiationRitual .
+
+es:pilar a foaf:Person ; schema:name "Pilar Cofrade" .
+es:sergio a foaf:Person ; schema:name "Sergio Hermano" .
+es:violeta a foaf:Person ; schema:name "Violeta Nueva" .
+
+# The Hermano Mayor heads the Junta de Gobierno.
+es:pilar-hermana-mayor a mbr:Tenure ;
+    org:member es:pilar ; org:organization es:HermandadDelCristo ;
+    org:role fraternalc:hermanoMayor ; mbr:startDate "2024-06-01"^^xsd:date .
+
+es:pilar-membership a mbr:Membership ;
+    org:member es:pilar ; org:organization es:HermandadDelCristo ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "1998"^^xsd:gYear .
+es:sergio-membership a mbr:Membership ;
+    org:member es:sergio ; org:organization es:HermandadDelCristo ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "2005"^^xsd:gYear .
+
+# A new member needs the aval of a brother (the proposer), is admitted, and takes the
+# Jura de Reglas.
+es:violeta-solicitud a mbr:MembershipApplication ;
+    mbr:applicant es:violeta ; mbr:appliedTo es:HermandadDelCristo ;
+    mbr:proposer es:sergio ;
+    mbr:applicationStatus mbrc:accepted ;
+    mbr:resultingMembership es:violeta-membership ;
+    mbr:startDate "2026-01-12"^^xsd:date ; mbr:decisionDate "2026-02-09"^^xsd:date .
+
+es:violeta-membership a mbr:Membership ;
+    org:member es:violeta ; org:organization es:HermandadDelCristo ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "2026-03-01"^^xsd:date .
+
+es:jura-2026 a fraternal:Ceremony ;
+    rdfs:label "Jura de Reglas, cuaresma de 2026"@es ;
+    mbr:gatheringType fraternalc:juraDeReglas ;
+    mbr:organizer es:HermandadDelCristo ;
+    mbr:startDate "2026-03-01"^^xsd:date .
+
+es:violeta-jura a mbr:Participation ;
+    mbr:participant es:violeta ;
+    mbr:participationIn es:jura-2026 ;
+    mbr:participationRole mbrc:member .
+
+es:estacion-2026 a fraternal:Ceremony ;
+    rdfs:label "Estación de penitencia, Viernes Santo 2026"@es ;
+    mbr:gatheringType fraternalc:estacionDePenitencia ;
+    mbr:organizer es:HermandadDelCristo ;
+    mbr:startDate "2026-04-03"^^xsd:date .
+
+# --- A student tuna -------------------------------------------------------------------
+
+es:TunaDeDerecho a fraternal:FraternalOrder ;
+    rdfs:label "Tuna de Derecho de Villaejemplo"@es ;
+    org:classification fraternalc:studentOrder ;
+    mbr:genderPolicy mbrc:mixed ;
+    mbr:admissionMode mbrc:byInvitation ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:TunaDegrees ;
+    fraternal:characteristic fraternalc:gradedDegrees , fraternalc:initiationRitual .
+
+es:biel a foaf:Person ; schema:name "Biel Estudiante" .
+es:ines a foaf:Person ; schema:name "Inés Cantante" .
+
+es:biel-membership a mbr:Membership ;
+    org:member es:biel ; org:organization es:TunaDeDerecho ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "2025-10-01"^^xsd:date .
+es:ines-membership a mbr:Membership ;
+    org:member es:ines ; org:organization es:TunaDeDerecho ;
+    mbr:membershipStatus mbrc:active ; mbr:startDate "2023-10-01"^^xsd:date .
+
+# Biel is a pardillo; Inés was baptised a tuno and wears the beca, red for law.
+es:bautizo-2025 a fraternal:Ceremony ;
+    rdfs:label "Bautizo de tunos, mayo de 2025"@es ;
+    mbr:gatheringType fraternalc:bautizoDeTuno ;
+    mbr:organizer es:TunaDeDerecho ;
+    mbr:startDate "2025-05-17"^^xsd:date .
+
+es:ines-bautizo a fraternal:DegreeConferral ;
+    mbr:recipient es:ines ;
+    mbr:conferred fraternalc:tuno ;
+    mbr:conferredBy es:TunaDeDerecho ;
+    mbr:conferredAt es:bautizo-2025 ;
+    mbr:startDate "2025-05-17"^^xsd:date .
+
+es:biel-pardillo a fraternal:DegreeConferral ;
+    mbr:recipient es:biel ;
+    mbr:conferred fraternalc:pardillo ;
+    mbr:conferredBy es:TunaDeDerecho ;
+    mbr:startDate "2026-02-14"^^xsd:date .
+
+es:beca-de-derecho a fraternal:Insignia ;
+    skos:prefLabel "Beca roja de Derecho"@es ;
+    fraternal:insigniaOf fraternalc:tuno ;
+    fraternal:insigniaType fraternalc:beca .
+
+# --- The Order of Charles III, an order of the Crown ------------------------------------
+
+es:Corona a org:Organization ;
+    rdfs:label "La Corona"@es , "The Crown"@en .
+
+es:OrdenCarlosIII a fraternal:FraternalOrder ;
+    rdfs:label "Real y Distinguida Orden Española de Carlos III"@es , "Order of Charles III"@en ;
+    org:classification fraternalc:orderOfChivalry ;
+    fraternal:fonsHonorum es:Corona ;
+    fraternal:degreeSystem fraternalc:CharlesIIIDegrees ;
+    fraternal:characteristic fraternalc:gradedDegrees .
+
+es:alma a foaf:Person ; schema:name "Alma Distinguida" .
+
+es:alma-gran-cruz a fraternal:DegreeConferral ;
+    mbr:recipient es:alma ;
+    mbr:conferred fraternalc:carlosIIIGranCruz ;
+    mbr:conferredBy es:OrdenCarlosIII ;
+    mbr:startDate "2019-03-12"^^xsd:date .
+
+# --- A grand lodge, suppressed from 1940 to 1979 -------------------------------------------
+# The Ley para la Represión de la Masonería y el Comunismo of 1 March 1940 banned freemasonry;
+# a Supreme Court judgment of 3 July 1979 made the Gran Oriente Español register as a lawful
+# association. The dates below follow that history; the lodge is invented.
+
+es:GranOrienteImaginario a fraternal:GrandBody ;
+    rdfs:label "Gran Oriente Imaginario de España"@es ;
+    org:classification fraternalc:fraternalOrder ;
+    rov:orgType mbrc:registeredAssociation ;
+    mbr:genderPolicy mbrc:menOnly ;
+    mbr:admissionMode mbrc:proposalAndBallot ;
+    mbr:foundingDate "1888"^^xsd:gYear ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    fraternal:memberTitle fraternalc:brother ;
+    fraternal:degreeSystem fraternalc:CraftDegrees ;
+    fraternal:characteristic fraternalc:initiationRitual , fraternalc:gradedDegrees ;
+    mbr:hasPeriod es:gran-oriente-primera , es:gran-oriente-prohibido , es:gran-oriente-legal .
+
+es:gran-oriente-primera a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1888"^^xsd:gYear ; mbr:endDate "1940-03-01"^^xsd:date .
+
+es:gran-oriente-prohibido a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:suppressedOrganization ;
+    mbr:startDate "1940-03-01"^^xsd:date ; mbr:endDate "1979-07-03"^^xsd:date .
+
+es:gran-oriente-legal a mbr:OrganizationPeriod ;
+    mbr:organizationStatus mbrc:activeOrganization ;
+    mbr:startDate "1979-07-03"^^xsd:date .

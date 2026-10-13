@@ -1,0 +1,173 @@
+# Generated from fraternal-spain.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/fraternal/mappings/fraternal-spain> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "Spanish grades, stages, insignia, ceremonies and offices (the Order of Charles III, the tuna, the cofradías) placed under the generic chivalric grades, stages, insignia types, ceremony types and office types." ;
+    <http://purl.org/dc/terms/created> "2026-10-13" .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/fraternal/code/carlosIIICruz> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/knightGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/carlosIIICruz> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/knightGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Cross" ;
+  <https://w3id.org/sssom/object_label> "Knight" ;
+  <https://w3id.org/sssom/comment> "The lowest grade; the generic ladder has no cross, and the knight is the nearest entry grade." ] .
+
+<https://w3id.org/fraternal/code/carlosIIIEncomienda> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/commanderGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/carlosIIIEncomienda> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/commanderGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Commander" ;
+  <https://w3id.org/sssom/object_label> "Commander" ;
+  <https://w3id.org/sssom/comment> "The commander grade (encomienda)." ] .
+
+<https://w3id.org/fraternal/code/carlosIIIEncomiendaDeNumero> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/commanderFirstClassGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/carlosIIIEncomiendaDeNumero> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/commanderFirstClassGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Commander by Number" ;
+  <https://w3id.org/sssom/object_label> "Commander First Class" ;
+  <https://w3id.org/sssom/comment> "The grade between Encomienda and Gran Cruz." ] .
+
+<https://w3id.org/fraternal/code/carlosIIIGranCruz> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/grandCrossGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/carlosIIIGranCruz> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/grandCrossGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Grand Cross" ;
+  <https://w3id.org/sssom/object_label> "Grand Cross" ;
+  <https://w3id.org/sssom/comment> "The grand cross." ] .
+
+<https://w3id.org/fraternal/code/carlosIIICollar> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/collarGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/carlosIIICollar> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/collarGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Collar" ;
+  <https://w3id.org/sssom/object_label> "Grand Collar" ;
+  <https://w3id.org/sssom/comment> "The highest grade, worn with a collar." ] .
+
+<https://w3id.org/fraternal/code/novato> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/noviceStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/novato> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/noviceStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.85"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Novato" ;
+  <https://w3id.org/sssom/object_label> "Novice Stage" ;
+  <https://w3id.org/sssom/comment> "The first stage of a candidate." ] .
+
+<https://w3id.org/fraternal/code/pardillo> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/noviceStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/pardillo> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/noviceStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Pardillo" ;
+  <https://w3id.org/sssom/object_label> "Novice Stage" ;
+  <https://w3id.org/sssom/comment> "The second candidate stage, in the tunas that have one." ] .
+
+<https://w3id.org/fraternal/code/tuno> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/activeStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/tuno> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/activeStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Tuno" ;
+  <https://w3id.org/sssom/object_label> "Active Stage" ;
+  <https://w3id.org/sssom/comment> "The baptised full member." ] .
+
+<https://w3id.org/fraternal/code/beca> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/fraternal/code/sash> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/beca> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/sash> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Beca" ;
+  <https://w3id.org/sssom/object_label> "Sash" ;
+  <https://w3id.org/sssom/comment> "A band worn in a V over the chest and shoulders, in the colour of the faculty." ] .
+
+<https://w3id.org/fraternal/code/capa> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/fraternal/code/robe> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/capa> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/robe> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Cape" ;
+  <https://w3id.org/sssom/object_label> "Robe" ;
+  <https://w3id.org/sssom/comment> "The cape or manteo of the tuno's costume." ] .
+
+<https://w3id.org/fraternal/code/bautizoDeTuno> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/bautizoDeTuno> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Baptism of a Tuno" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ;
+  <https://w3id.org/sssom/comment> "The ceremony that recognises a candidate as a tuno." ] .
+
+<https://w3id.org/fraternal/code/juraDeReglas> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/juraDeReglas> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Oath on the Rule" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ;
+  <https://w3id.org/sssom/comment> "The act of admission into a cofradía." ] .
+
+<https://w3id.org/fraternal/code/estacionDePenitencia> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/membership/code/procession> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/estacionDePenitencia> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/procession> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Station of Penance" ;
+  <https://w3id.org/sssom/object_label> "Procession" ;
+  <https://w3id.org/sssom/comment> "The public procession of a penitential cofradía in Holy Week." ] .
+
+<https://w3id.org/fraternal/code/hermanoMayor> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/membership/code/president> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/hermanoMayor> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/president> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Hermano Mayor" ;
+  <https://w3id.org/sssom/object_label> "President" ;
+  <https://w3id.org/sssom/comment> "The president of a cofradía or hermandad." ] .
+

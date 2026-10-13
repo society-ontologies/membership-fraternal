@@ -1869,3 +1869,228 @@ fraternalc:StudentenverbindungInsignia a skos:ConceptScheme , owl:NamedIndividua
                     "Le insegne di una Studentenverbindung: il nastro dei colori (Couleurband), il berretto (Cerevis), la sciabola (Schläger), l'abito di gala (Wichs) e lo Zipfel. Il nastro, il berretto e la sciabola sono collocati sotto fraternalc:ribbon, fraternalc:hat e fraternalc:sword in mappings/fraternal-studentenverbindung.sssom.tsv. Si usa con fraternal:insigniaType."@it ;
     skos:hasTopConcept fraternalc:cerevis , fraternalc:couleurband , fraternalc:schlaeger , fraternalc:wichs ,
                        fraternalc:zipfel .
+
+##############################################################################
+# 11. SPAIN  (the Order of Charles III, the tuna, the cofradías)
+# A first draft from general knowledge and Spanish Wikipedia, for a Spanish-speaking
+# reviewer to check against the primary sources (the order's regulation in the BOE, the
+# statutes of a hermandad). Each scheme is dcterms:isPartOf its hub scheme and every
+# concept is mapped in mappings/fraternal-spain.sssom.tsv.
+##############################################################################
+
+fraternalc:CharlesIIIDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:ChivalricGrades ;
+    skos:prefLabel "Grades of the Order of Charles III"@en , "Grader i Karl III:s orden"@sv , "Grades de l'ordre de Charles III"@fr , "Stufen des Karls-III.-Ordens"@de , "Gradi dell'Ordine di Carlo III"@it , "Grados de la Orden de Carlos III"@es ;
+    skos:definition "The five grades of the Spanish Order of Charles III, from the lowest to the highest: Cross, Commander, Commander by Number, Grand Cross and Collar. Placed under the generic chivalric grades in mappings/fraternal-spain.sssom.tsv."@en ,
+                    "De fem graderna i den spanska Karl III:s orden, från lägsta till högsta: Cruz, Encomienda, Encomienda de Número, Gran Cruz och Collar. Placeras under de generiska riddarordensgraderna i mappings/fraternal-spain.sssom.tsv."@sv ,
+                    "Les cinq grades de l'ordre espagnol de Charles III, du plus bas au plus haut : Cruz, Encomienda, Encomienda de Número, Gran Cruz et Collar. Placés sous les grades génériques de style chevaleresque dans mappings/fraternal-spain.sssom.tsv."@fr ,
+                    "Die fünf Stufen des spanischen Karls-III.-Ordens, von der niedrigsten bis zur höchsten: Cruz, Encomienda, Encomienda de Número, Gran Cruz und Collar. Unter die allgemeinen Ritterordensstufen gestellt in mappings/fraternal-spain.sssom.tsv."@de ,
+                    "I cinque gradi dell'Ordine spagnolo di Carlo III, dal più basso al più alto: Cruz, Encomienda, Encomienda de Número, Gran Cruz e Collar. Collocati sotto i gradi cavallereschi generici in mappings/fraternal-spain.sssom.tsv."@it ,
+                    "Los cinco grados de la Orden española de Carlos III, del más bajo al más alto: Cruz, Encomienda, Encomienda de Número, Gran Cruz y Collar. Colocados bajo los grados caballerescos genéricos en mappings/fraternal-spain.sssom.tsv."@es ;
+    skos:hasTopConcept fraternalc:carlosIIICruz , fraternalc:carlosIIIEncomienda , fraternalc:carlosIIIEncomiendaDeNumero ,
+                       fraternalc:carlosIIIGranCruz , fraternalc:carlosIIICollar .
+
+fraternalc:carlosIIICruz a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CharlesIIIDegrees ; skos:topConceptOf fraternalc:CharlesIIIDegrees ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:carlosIIIEncomienda ;
+    skos:prefLabel "Cross"@en , "Cruz"@sv , "Cruz"@fr , "Cruz"@de , "Cruz"@it , "Cruz"@es ;
+    skos:definition "The lowest of the five grades of the Order of Charles III."@en ,
+                    "Den lägsta av de fem graderna i Karl III:s orden."@sv ,
+                    "Le plus bas des cinq grades de l'ordre de Charles III."@fr ,
+                    "Die niedrigste der fünf Stufen des Karls-III.-Ordens."@de ,
+                    "Il più basso dei cinque gradi dell'Ordine di Carlo III."@it ,
+                    "El más bajo de los cinco grados de la Orden de Carlos III."@es .
+
+fraternalc:carlosIIIEncomienda a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CharlesIIIDegrees ; skos:topConceptOf fraternalc:CharlesIIIDegrees ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:carlosIIIEncomiendaDeNumero ;
+    skos:prefLabel "Commander"@en , "Encomienda"@sv , "Encomienda"@fr , "Encomienda"@de , "Encomienda"@it , "Encomienda"@es ;
+    skos:definition "The second grade of the Order of Charles III, above the Cross."@en ,
+                    "Den andra graden i Karl III:s orden, över Cruz."@sv ,
+                    "Le deuxième grade de l'ordre de Charles III, au-dessus de la Cruz."@fr ,
+                    "Die zweite Stufe des Karls-III.-Ordens, über der Cruz."@de ,
+                    "Il secondo grado dell'Ordine di Carlo III, sopra la Cruz."@it ,
+                    "El segundo grado de la Orden de Carlos III, por encima de la Cruz."@es .
+
+fraternalc:carlosIIIEncomiendaDeNumero a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CharlesIIIDegrees ; skos:topConceptOf fraternalc:CharlesIIIDegrees ;
+    fraternal:degreeRank 3 ; fraternal:nextDegree fraternalc:carlosIIIGranCruz ;
+    skos:prefLabel "Commander by Number"@en , "Encomienda de Número"@sv , "Encomienda de Número"@fr , "Encomienda de Número"@de , "Encomienda de Número"@it , "Encomienda de Número"@es ;
+    skos:definition "The third grade of the Order of Charles III, above the Encomienda. It is given to citizens who have done notable service to Spain and have held the Encomienda for more than three years, or who meet the requirements for the Grand Cross without having held a high office."@en ,
+                    "Den tredje graden i Karl III:s orden, över Encomienda. Den ges till medborgare som gjort Spanien anmärkningsvärda tjänster och haft Encomienda i mer än tre år, eller som uppfyller kraven för Gran Cruz utan att ha innehaft något högt ämbete."@sv ,
+                    "Le troisième grade de l'ordre de Charles III, au-dessus de l'Encomienda. Il est accordé aux citoyens qui ont rendu des services notables à l'Espagne et détiennent l'Encomienda depuis plus de trois ans, ou qui remplissent les conditions de la Gran Cruz sans avoir exercé de haute fonction."@fr ,
+                    "Die dritte Stufe des Karls-III.-Ordens, über der Encomienda. Sie wird Bürgern verliehen, die sich um Spanien verdient gemacht und die Encomienda länger als drei Jahre getragen haben, oder die die Voraussetzungen der Gran Cruz erfüllen, ohne ein hohes Amt innegehabt zu haben."@de ,
+                    "Il terzo grado dell'Ordine di Carlo III, sopra l'Encomienda. È conferito ai cittadini che hanno reso servizi notevoli alla Spagna e hanno l'Encomienda da più di tre anni, o che soddisfano i requisiti della Gran Cruz senza aver ricoperto un'alta carica."@it ,
+                    "El tercer grado de la Orden de Carlos III, por encima de la Encomienda. Se concede a los ciudadanos que han prestado notables servicios a España y tienen la Encomienda desde hace más de tres años, o que reúnen los requisitos de la Gran Cruz sin haber ocupado un cargo elevado."@es .
+
+fraternalc:carlosIIIGranCruz a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CharlesIIIDegrees ; skos:topConceptOf fraternalc:CharlesIIIDegrees ;
+    fraternal:degreeRank 4 ; fraternal:nextDegree fraternalc:carlosIIICollar ;
+    skos:prefLabel "Grand Cross"@en , "Gran Cruz"@sv , "Gran Cruz"@fr , "Gran Cruz"@de , "Gran Cruz"@it , "Gran Cruz"@es ;
+    skos:definition "The fourth grade of the Order of Charles III, for those who have rendered outstanding service to Spain, in particular holders of high state office such as presidents of the chambers and of the high courts and ministers."@en ,
+                    "Den fjärde graden i Karl III:s orden, för dem som gjort Spanien enastående tjänster, särskilt innehavare av höga statliga ämbeten som talmän, ordförande i de högsta domstolarna och ministrar."@sv ,
+                    "Le quatrième grade de l'ordre de Charles III, pour ceux qui ont rendu des services éminents à l'Espagne, notamment les titulaires de hautes fonctions de l'État comme les présidents des chambres et des hautes juridictions et les ministres."@fr ,
+                    "Die vierte Stufe des Karls-III.-Ordens, für diejenigen, die sich in herausragender Weise um Spanien verdient gemacht haben, insbesondere Inhaber hoher Staatsämter wie die Präsidenten der Kammern und der obersten Gerichte und Minister."@de ,
+                    "Il quarto grado dell'Ordine di Carlo III, per coloro che hanno reso servizi eminenti alla Spagna, in particolare i titolari di alte cariche dello Stato come i presidenti delle camere e delle alte corti e i ministri."@it ,
+                    "El cuarto grado de la Orden de Carlos III, para quienes han prestado servicios relevantes a España, en particular quienes ocupan o han ocupado altos cargos del Estado, como los presidentes de las cámaras y de los altos tribunales y los ministros."@es .
+
+fraternalc:carlosIIICollar a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:CharlesIIIDegrees ; skos:topConceptOf fraternalc:CharlesIIIDegrees ;
+    fraternal:degreeRank 5 ;
+    skos:prefLabel "Collar"@en , "Collar"@sv , "Collar"@fr , "Collar"@de , "Collar"@it , "Collar"@es ;
+    skos:definition "The highest grade of the Order of Charles III, reserved for members of the royal family, heads of state and of government, and Spanish citizens who have held the Grand Cross for at least three years, in a limited number."@en ,
+                    "Den högsta graden i Karl III:s orden, förbehållen medlemmar av kungafamiljen, stats- och regeringschefer samt spanska medborgare som haft Gran Cruz i minst tre år, i begränsat antal."@sv ,
+                    "Le plus haut grade de l'ordre de Charles III, réservé aux membres de la famille royale, aux chefs d'État et de gouvernement et aux citoyens espagnols qui ont détenu la Gran Cruz pendant au moins trois ans, en nombre limité."@fr ,
+                    "Die höchste Stufe des Karls-III.-Ordens, vorbehalten den Mitgliedern der königlichen Familie, Staats- und Regierungschefs und spanischen Bürgern, die die Gran Cruz mindestens drei Jahre getragen haben, in begrenzter Zahl."@de ,
+                    "Il grado più alto dell'Ordine di Carlo III, riservato ai membri della famiglia reale, ai capi di Stato e di governo e ai cittadini spagnoli che hanno avuto la Gran Cruz per almeno tre anni, in numero limitato."@it ,
+                    "El grado más alto de la Orden de Carlos III, reservado a los miembros de la familia real, los jefes de Estado y de Gobierno y los ciudadanos españoles que posean la Gran Cruz al menos durante tres años, en número limitado."@es .
+
+fraternalc:TunaDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:MemberStages ;
+    skos:prefLabel "Stages of a tuna"@en , "Stadier i en tuna"@sv , "Étapes d'une tuna"@fr , "Stufen einer Tuna"@de , "Stadi di una tuna"@it , "Etapas de una tuna"@es ;
+    skos:definition "The stages of a member of a tuna, the Spanish student music group: novato, pardillo and tuno. Many tunas have both of the first two before a candidate is baptised as a tuno; others have one."@en ,
+                    "Stadierna för en medlem i en tuna, den spanska studentmusikgruppen: novato, pardillo och tuno. Många tunas har båda de två första innan en kandidat döps till tuno; andra har ett."@sv ,
+                    "Les étapes d'un membre d'une tuna, le groupe musical étudiant espagnol : novato, pardillo et tuno. Beaucoup de tunas ont les deux premières avant qu'un candidat soit baptisé tuno ; d'autres n'en ont qu'une."@fr ,
+                    "Die Stufen eines Mitglieds einer Tuna, der spanischen studentischen Musikgruppe: novato, pardillo und tuno. Viele Tunas kennen beide ersten Stufen, bevor ein Kandidat zum Tuno getauft wird; andere nur eine."@de ,
+                    "Gli stadi di un membro di una tuna, il gruppo musicale studentesco spagnolo: novato, pardillo e tuno. Molte tunas hanno entrambi i primi due prima che un candidato sia battezzato tuno; altre ne hanno uno."@it ,
+                    "Las etapas de un miembro de una tuna, el grupo musical estudiantil español: novato, pardillo y tuno. Muchas tunas tienen las dos primeras antes de que un candidato sea bautizado como tuno; otras tienen una."@es ;
+    skos:hasTopConcept fraternalc:novato , fraternalc:pardillo , fraternalc:tuno .
+
+fraternalc:novato a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:TunaDegrees ; skos:topConceptOf fraternalc:TunaDegrees ;
+    fraternal:degreeRank 1 ; fraternal:nextDegree fraternalc:pardillo ; fraternal:degreeKind fraternalc:probationaryDegree ;
+    skos:prefLabel "Novato"@en , "Novato"@sv , "Novato"@fr , "Novato"@de , "Novato"@it , "Novato"@es ;
+    skos:definition "The first stage: a new candidate who learns the music and customs of the tuna and helps the veterans, without the full costume."@en ,
+                    "Det första stadiet: en ny kandidat som lär sig tunans musik och seder och hjälper veteranerna, utan den fulla dräkten."@sv ,
+                    "La première étape : un nouveau candidat qui apprend la musique et les usages de la tuna et aide les vétérans, sans le costume complet."@fr ,
+                    "Die erste Stufe: ein neuer Kandidat, der die Musik und die Bräuche der Tuna lernt und den Veteranen hilft, ohne das volle Kostüm."@de ,
+                    "Il primo stadio: un nuovo candidato che impara la musica e le usanze della tuna e aiuta i veterani, senza il costume completo."@it ,
+                    "La primera etapa: un nuevo candidato que aprende la música y las costumbres de la tuna y ayuda a los veteranos, sin el traje completo."@es .
+
+fraternalc:pardillo a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:TunaDegrees ; skos:topConceptOf fraternalc:TunaDegrees ;
+    fraternal:degreeRank 2 ; fraternal:nextDegree fraternalc:tuno ; fraternal:degreeKind fraternalc:probationaryDegree ;
+    skos:prefLabel "Pardillo"@en , "Pardillo"@sv , "Pardillo"@fr , "Pardillo"@de , "Pardillo"@it , "Pardillo"@es ;
+    skos:definition "The second stage in the tunas that have two: the candidate who has passed the first trials and is still an apprentice, before being baptised as a tuno."@en ,
+                    "Det andra stadiet i de tunas som har två: kandidaten som klarat de första proven och fortfarande är lärling, före dopet till tuno."@sv ,
+                    "La deuxième étape dans les tunas qui en ont deux : le candidat qui a passé les premières épreuves et reste apprenti, avant d'être baptisé tuno."@fr ,
+                    "Die zweite Stufe in den Tunas, die zwei haben: der Kandidat, der die ersten Proben bestanden hat und noch Lehrling ist, vor der Taufe zum Tuno."@de ,
+                    "Il secondo stadio nelle tunas che ne hanno due: il candidato che ha superato le prime prove ed è ancora apprendista, prima di essere battezzato tuno."@it ,
+                    "La segunda etapa en las tunas que tienen dos: el candidato que ha superado las primeras pruebas y sigue siendo aprendiz, antes de ser bautizado como tuno."@es .
+
+fraternalc:tuno a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:TunaDegrees ; skos:topConceptOf fraternalc:TunaDegrees ;
+    fraternal:degreeRank 3 ;
+    skos:prefLabel "Tuno"@en , "Tuno"@sv , "Tuno"@fr , "Tuno"@de , "Tuno"@it , "Tuno"@es ;
+    skos:definition "The full member, baptised in public before the group and other tunas, who wears the full costume with the beca."@en ,
+                    "Den fulla medlemmen, döpt offentligt inför gruppen och andra tunas, som bär hela dräkten med beca."@sv ,
+                    "Le membre à part entière, baptisé en public devant le groupe et les autres tunas, qui porte le costume complet avec la beca."@fr ,
+                    "Das Vollmitglied, öffentlich vor der Gruppe und anderen Tunas getauft, das das volle Kostüm mit der Beca trägt."@de ,
+                    "Il membro pieno, battezzato in pubblico davanti al gruppo e alle altre tunas, che indossa il costume completo con la beca."@it ,
+                    "El miembro de pleno derecho, bautizado públicamente ante el grupo y las demás tunas, que viste el traje completo con la beca."@es .
+
+fraternalc:TunaInsignia a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:InsigniaTypes ;
+    skos:prefLabel "Insignia of a tuna"@en , "Insignier i en tuna"@sv , "Insignes d'une tuna"@fr , "Insignien einer Tuna"@de , "Insegne di una tuna"@it , "Insignias de una tuna"@es ;
+    skos:definition "The insignia of a tuno: the beca and the cape. Placed under the generic sash and robe in mappings/fraternal-spain.sssom.tsv."@en ,
+                    "Insignierna för en tuno: beca och kappan. Placeras under det generiska skärpet och mantlen i mappings/fraternal-spain.sssom.tsv."@sv ,
+                    "Les insignes d'un tuno : la beca et la cape. Placées sous l'écharpe et la robe génériques dans mappings/fraternal-spain.sssom.tsv."@fr ,
+                    "Die Insignien eines Tuno: die Beca und der Umhang. Unter die allgemeine Schärpe und das Gewand gestellt in mappings/fraternal-spain.sssom.tsv."@de ,
+                    "Le insegne di un tuno: la beca e il mantello. Collocate sotto la fascia e la veste generiche in mappings/fraternal-spain.sssom.tsv."@it ,
+                    "Las insignias de un tuno: la beca y la capa. Colocadas bajo la banda y la vestidura genéricas en mappings/fraternal-spain.sssom.tsv."@es ;
+    skos:hasTopConcept fraternalc:beca , fraternalc:capa .
+
+fraternalc:beca a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:TunaInsignia ; skos:topConceptOf fraternalc:TunaInsignia ;
+    skos:prefLabel "Beca"@en , "Beca"@sv , "Beca"@fr , "Beca"@de , "Beca"@it , "Beca"@es ;
+    skos:definition "The band of cloth, silk or felt worn in a V over the chest and shoulders, in the colour of the faculty of the tuna. It once showed that the wearer held a university scholarship."@en ,
+                    "Bandet av tyg, siden eller filt som bärs i V-form över bröstet och axlarna, i färgen på tunans fakultet. Det visade en gång att bäraren hade ett universitetsstipendium."@sv ,
+                    "La bande de drap, de soie ou de feutre portée en V sur la poitrine et les épaules, dans la couleur de la faculté de la tuna. Elle montrait autrefois que le porteur avait une bourse universitaire."@fr ,
+                    "Das Band aus Tuch, Seide oder Filz, in V-Form über Brust und Schultern getragen, in der Farbe der Fakultät der Tuna. Es zeigte einst, dass der Träger ein Universitätsstipendium hatte."@de ,
+                    "La fascia di panno, seta o feltro portata a V sul petto e sulle spalle, nel colore della facoltà della tuna. Un tempo indicava che chi la portava aveva una borsa di studio universitaria."@it ,
+                    "La banda de paño, seda o fieltro que se coloca en forma de V sobre el pecho y los hombros, del color de la facultad de la tuna. Antiguamente indicaba que su portador estaba becado por la universidad."@es .
+
+fraternalc:capa a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:TunaInsignia ; skos:topConceptOf fraternalc:TunaInsignia ;
+    skos:prefLabel "Cape"@en , "Kappa"@sv , "Cape"@fr , "Umhang"@de , "Mantello"@it , "Capa"@es ;
+    skos:altLabel "Manteo"@es ;
+    skos:definition "The cape or manteo worn with the tuno's costume."@en ,
+                    "Kappan eller manteon som bärs till tunons dräkt."@sv ,
+                    "La cape ou manteo portée avec le costume du tuno."@fr ,
+                    "Der Umhang oder Manteo, der zum Kostüm des Tuno getragen wird."@de ,
+                    "Il mantello o manteo portato con il costume del tuno."@it ,
+                    "La capa o manteo que se lleva con el traje del tuno."@es .
+
+fraternalc:TunaCeremonies a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Ceremonies of a tuna"@en , "Ceremonier i en tuna"@sv , "Cérémonies d'une tuna"@fr , "Zeremonien einer Tuna"@de , "Cerimonie di una tuna"@it , "Ceremonias de una tuna"@es ;
+    skos:definition "The ceremony by which a candidate is baptised as a tuno. Placed under the generic ceremony in mappings/fraternal-spain.sssom.tsv."@en ,
+                    "Ceremonin där en kandidat döps till tuno. Placeras under den generiska ceremonin i mappings/fraternal-spain.sssom.tsv."@sv ,
+                    "La cérémonie par laquelle un candidat est baptisé tuno. Placée sous la cérémonie générique dans mappings/fraternal-spain.sssom.tsv."@fr ,
+                    "Die Zeremonie, durch die ein Kandidat zum Tuno getauft wird. Unter die allgemeine Zeremonie gestellt in mappings/fraternal-spain.sssom.tsv."@de ,
+                    "La cerimonia con cui un candidato è battezzato tuno. Collocata sotto la cerimonia generica in mappings/fraternal-spain.sssom.tsv."@it ,
+                    "La ceremonia por la que un candidato es bautizado como tuno. Colocada bajo la ceremonia genérica en mappings/fraternal-spain.sssom.tsv."@es ;
+    skos:hasTopConcept fraternalc:bautizoDeTuno .
+
+fraternalc:bautizoDeTuno a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:TunaCeremonies ; skos:topConceptOf fraternalc:TunaCeremonies ;
+    skos:prefLabel "Baptism of a Tuno"@en , "Tunodop"@sv , "Baptême d'un tuno"@fr , "Tuno-Taufe"@de , "Battesimo del tuno"@it , "Bautizo de tuno"@es ;
+    skos:definition "The public ceremony before the group and other tunas at which a candidate is recognised as a tuno."@en ,
+                    "Den offentliga ceremoni inför gruppen och andra tunas där en kandidat erkänns som tuno."@sv ,
+                    "La cérémonie publique devant le groupe et les autres tunas où un candidat est reconnu comme tuno."@fr ,
+                    "Die öffentliche Zeremonie vor der Gruppe und anderen Tunas, bei der ein Kandidat als Tuno anerkannt wird."@de ,
+                    "La cerimonia pubblica davanti al gruppo e alle altre tunas in cui un candidato è riconosciuto come tuno."@it ,
+                    "La ceremonia pública ante el grupo y las demás tunas en que un candidato es reconocido como tuno."@es .
+
+fraternalc:SpanishConfraternityOffices a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf mbrc:OfficeTypes ;
+    skos:prefLabel "Offices of a Spanish confraternity"@en , "Ämbeten i en spansk brödraskapsförening"@sv , "Fonctions d'une confrérie espagnole"@fr , "Ämter einer spanischen Bruderschaft"@de , "Cariche di una confraternita spagnola"@it , "Cargos de una cofradía española"@es ;
+    skos:definition "The head of a Spanish cofradía or hermandad, the Hermano Mayor, placed under the generic president in mappings/fraternal-spain.sssom.tsv. The rest of the Junta de Gobierno uses the generic offices."@en ,
+                    "Chefen för en spansk cofradía eller hermandad, Hermano Mayor, placerad under den generiska ordföranden i mappings/fraternal-spain.sssom.tsv. Resten av Junta de Gobierno använder de generiska ämbetena."@sv ,
+                    "Le chef d'une cofradía ou hermandad espagnole, le Hermano Mayor, placé sous le président générique dans mappings/fraternal-spain.sssom.tsv. Le reste de la Junta de Gobierno utilise les fonctions génériques."@fr ,
+                    "Das Oberhaupt einer spanischen Cofradía oder Hermandad, der Hermano Mayor, unter den allgemeinen Präsidenten gestellt in mappings/fraternal-spain.sssom.tsv. Der Rest der Junta de Gobierno verwendet die allgemeinen Ämter."@de ,
+                    "Il capo di una cofradía o hermandad spagnola, l'Hermano Mayor, collocato sotto il presidente generico in mappings/fraternal-spain.sssom.tsv. Il resto della Junta de Gobierno usa le cariche generiche."@it ,
+                    "El responsable de una cofradía o hermandad española, el Hermano Mayor, colocado bajo el presidente genérico en mappings/fraternal-spain.sssom.tsv. El resto de la Junta de Gobierno usa los cargos genéricos."@es ;
+    skos:hasTopConcept fraternalc:hermanoMayor .
+
+fraternalc:hermanoMayor a mbr:Office , skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:SpanishConfraternityOffices ; skos:topConceptOf fraternalc:SpanishConfraternityOffices ;
+    skos:prefLabel "Hermano Mayor"@en , "Hermano Mayor"@sv , "Hermano Mayor"@fr , "Hermano Mayor"@de , "Hermano Mayor"@it , "Hermano Mayor"@es ;
+    skos:altLabel "Elder Brother"@en , "Presidente"@es ;
+    skos:definition "The president of a Spanish cofradía or hermandad, who heads its Junta de Gobierno and is elected to the office."@en ,
+                    "Ordförande i en spansk cofradía eller hermandad, som leder dess Junta de Gobierno och väljs till ämbetet."@sv ,
+                    "Le président d'une cofradía ou hermandad espagnole, qui dirige sa Junta de Gobierno et est élu à cette fonction."@fr ,
+                    "Der Präsident einer spanischen Cofradía oder Hermandad, der ihre Junta de Gobierno leitet und in das Amt gewählt wird."@de ,
+                    "Il presidente di una cofradía o hermandad spagnola, che guida la sua Junta de Gobierno ed è eletto alla carica."@it ,
+                    "El presidente de una cofradía o hermandad española, que encabeza su Junta de Gobierno y es elegido para el cargo."@es .
+
+fraternalc:SpanishConfraternityCeremonies a skos:ConceptScheme , owl:NamedIndividual ;
+    dcterms:isPartOf fraternalc:CeremonyTypes ;
+    skos:prefLabel "Ceremonies of a Spanish confraternity"@en , "Ceremonier i en spansk brödraskapsförening"@sv , "Cérémonies d'une confrérie espagnole"@fr , "Zeremonien einer spanischen Bruderschaft"@de , "Cerimonie di una confraternita spagnola"@it , "Ceremonias de una cofradía española"@es ;
+    skos:definition "The admission of a new brother (Jura de Reglas) and the public procession of the Holy Week confraternities (Estación de Penitencia). Placed under the generic ceremony and procession in mappings/fraternal-spain.sssom.tsv."@en ,
+                    "Upptagningen av en ny broder (Jura de Reglas) och påskveckans brödraskaps offentliga procession (Estación de Penitencia). Placeras under den generiska ceremonin och processionen i mappings/fraternal-spain.sssom.tsv."@sv ,
+                    "L'admission d'un nouveau frère (Jura de Reglas) et la procession publique des confréries de la Semaine sainte (Estación de Penitencia). Placées sous la cérémonie et la procession génériques dans mappings/fraternal-spain.sssom.tsv."@fr ,
+                    "Die Aufnahme eines neuen Bruders (Jura de Reglas) und die öffentliche Prozession der Bruderschaften der Karwoche (Estación de Penitencia). Unter die allgemeine Zeremonie und Prozession gestellt in mappings/fraternal-spain.sssom.tsv."@de ,
+                    "L'ammissione di un nuovo fratello (Jura de Reglas) e la processione pubblica delle confraternite della Settimana Santa (Estación de Penitencia). Collocate sotto la cerimonia e la processione generiche in mappings/fraternal-spain.sssom.tsv."@it ,
+                    "La admisión de un nuevo hermano (Jura de Reglas) y la procesión pública de las cofradías de Semana Santa (Estación de Penitencia). Colocadas bajo la ceremonia y la procesión genéricas en mappings/fraternal-spain.sssom.tsv."@es ;
+    skos:hasTopConcept fraternalc:juraDeReglas , fraternalc:estacionDePenitencia .
+
+fraternalc:juraDeReglas a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:SpanishConfraternityCeremonies ; skos:topConceptOf fraternalc:SpanishConfraternityCeremonies ;
+    skos:prefLabel "Oath on the Rule"@en , "Ed på reglerna"@sv , "Serment sur la Règle"@fr , "Eid auf die Regel"@de , "Giuramento sulla Regola"@it , "Jura de Reglas"@es ;
+    skos:definition "The act of admission into a cofradía: the new brother kisses the Book of Rules and swears to keep them, after a member has vouched for the candidate."@en ,
+                    "Upptagningsakten i en cofradía: den nye brodern kysser regelboken och svär att hålla den, sedan en medlem gått i god för kandidaten."@sv ,
+                    "L'acte d'admission dans une cofradía : le nouveau frère embrasse le Livre des Règles et jure de les respecter, après qu'un membre s'est porté garant du candidat."@fr ,
+                    "Der Aufnahmeakt in eine Cofradía: der neue Bruder küsst das Regelbuch und schwört, es zu halten, nachdem ein Mitglied für den Kandidaten gebürgt hat."@de ,
+                    "L'atto di ammissione in una cofradía: il nuovo fratello bacia il Libro delle Regole e giura di osservarle, dopo che un membro ha garantito per il candidato."@it ,
+                    "El acto de admisión en una cofradía: el nuevo hermano besa el Libro de Reglas y jura cumplirlas, tras el aval de un hermano."@es .
+
+fraternalc:estacionDePenitencia a skos:Concept , owl:NamedIndividual ;
+    skos:inScheme fraternalc:SpanishConfraternityCeremonies ; skos:topConceptOf fraternalc:SpanishConfraternityCeremonies ;
+    skos:prefLabel "Station of Penance"@en , "Botgöringsprocession"@sv , "Station de pénitence"@fr , "Bußprozession"@de , "Stazione di penitenza"@it , "Estación de penitencia"@es ;
+    skos:definition "The public procession that a penitential cofradía makes in Holy Week."@en ,
+                    "Den offentliga procession som en botgörande cofradía håller under påskveckan."@sv ,
+                    "La procession publique qu'une cofradía pénitentielle fait pendant la Semaine sainte."@fr ,
+                    "Die öffentliche Prozession, die eine Bußbruderschaft in der Karwoche hält."@de ,
+                    "La processione pubblica che una cofradía penitenziale fa durante la Settimana Santa."@it ,
+                    "La procesión pública que una cofradía penitencial hace en Semana Santa."@es .

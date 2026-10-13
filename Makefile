@@ -15,7 +15,7 @@ VALID := tests/data/klubb-exempel.ttl tests/data/systerskap-exempel.ttl tests/da
          tests/data/forening-exempel.ttl tests/data/medlemskap-exempel.ttl \
          tests/data/organisationsperioder-exempel.ttl tests/data/frankrike-exempel.ttl \
          tests/data/compagnonnage-exempel.ttl tests/data/studentenverbindung-exempel.ttl \
-         tests/data/italia-exempel.ttl tests/data/oesterreich-exempel.ttl
+         tests/data/italia-exempel.ttl tests/data/oesterreich-exempel.ttl tests/data/espana-exempel.ttl
 INVALID := $(wildcard tests/data/invalid/*.ttl)
 CANARY := $(wildcard tests/reasoning/canary/*.ttl)
 
