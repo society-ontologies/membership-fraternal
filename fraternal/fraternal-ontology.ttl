@@ -41,7 +41,8 @@
                   "Ontologia degli ordini fraternali e delle sororità"@it ,
                   "Ontología de órdenes fraternales y sororidades"@es ,
                   "Ontologia de ordens fraternais e sororidades"@pt ,
-                  "Testvéri rendek és női egyletek ontológiája"@hu ;
+                  "Testvéri rendek és női egyletek ontológiája"@hu ,
+                  "Οντολογία αδελφικών ταγμάτων και αδελφοτήτων γυναικών"@el ;
     dcterms:description "Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, recognition and amity between orders, and assessments of whether an order of chivalry is genuine."@en ,
                         "Utökning av ontologin för medlemsorganisationer (membership) för ordenssällskap, loger, studentordnar och systerskap: gradsystem och deras ordning, initiering och gradtilldelning, loger och storloger, ceremonier, insignier, erkännande och vänskap mellan ordnar samt bedömningar av om en riddarorden är äkta."@sv ,
                         "Extension de l'Ontologie des organisations de membres (membership) pour les ordres fraternels, loges, fraternités et sororités : systèmes de degrés et leur ordre, initiation et attribution de degrés, loges et corps dirigeants, cérémonies, insignes, reconnaissance et amitié entre ordres, et évaluations de l'authenticité d'un ordre de chevalerie."@fr ,
@@ -49,7 +50,8 @@
                         "Estensione dell'Ontologia delle organizzazioni associative (membership) per ordini fraternali, logge, fraternity e sororità: sistemi di gradi e il loro ordine, iniziazione e conferimento dei gradi, logge e organismi di governo, cerimonie, insegne, riconoscimento e amicizia tra ordini, e valutazioni sull'autenticità di un ordine cavalleresco."@it ,
                         "Extensión de la Ontología de organizaciones de miembros (membership) para órdenes fraternales, logias, fraternidades y sororidades: sistemas de grados y su orden, iniciación y concesión de grados, logias y organismos rectores, ceremonias, insignias, reconocimiento y amistad entre órdenes, y evaluaciones de si una orden de caballería es auténtica."@es ,
                         "Extensão da Ontologia de organizações de membros (membership) para ordens fraternais, lojas, fraternidades e sororidades: sistemas de graus e a sua ordem, iniciação e atribuição de graus, lojas e organismos dirigentes, cerimónias, insígnias, reconhecimento e amizade entre ordens, e avaliações sobre se uma ordem de cavalaria é autêntica."@pt ,
-                        "A Tagsági szervezetek ontológiájának (membership) kiterjesztése testvéri rendekre, páholyokra, fraternitásokra és női egyletekre: fokozatrendszerek és sorrendjük, beavatás és fokozatok adományozása, páholyok és irányító testületek, szertartások, jelvények, elismerés és barátság a rendek között, valamint annak értékelése, hogy egy lovagrend valódi-e."@hu ;
+                        "A Tagsági szervezetek ontológiájának (membership) kiterjesztése testvéri rendekre, páholyokra, fraternitásokra és női egyletekre: fokozatrendszerek és sorrendjük, beavatás és fokozatok adományozása, páholyok és irányító testületek, szertartások, jelvények, elismerés és barátság a rendek között, valamint annak értékelése, hogy egy lovagrend valódi-e."@hu ,
+                        "Επέκταση της Οντολογίας οργανώσεων μελών (membership) για αδελφικά τάγματα, στοές, αδελφότητες φοιτητών και αδελφότητες γυναικών: συστήματα βαθμών και η σειρά τους, μύηση και απονομή βαθμών, στοές και ανώτατα όργανα, τελετές, διάσημα, αναγνώριση και φιλία μεταξύ ταγμάτων, και αξιολογήσεις για το αν ένα ιπποτικό τάγμα είναι γνήσιο."@el ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
     dcterms:modified "2026-10-09"^^xsd:date ;
@@ -77,7 +79,7 @@
 fraternal:FraternalOrder a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf mbr:MembershipOrganization ;
-    rdfs:label "Fraternal Order"@en , "Ordenssällskap"@sv , "Ordre fraternel"@fr , "Ordensgesellschaft"@de , "Ordine fraternale"@it , "Orden fraternal"@es , "Ordem fraternal"@pt , "Testvéri rend"@hu ;
+    rdfs:label "Fraternal Order"@en , "Ordenssällskap"@sv , "Ordre fraternel"@fr , "Ordensgesellschaft"@de , "Ordine fraternale"@it , "Orden fraternal"@es , "Ordem fraternal"@pt , "Testvéri rend"@hu , "Αδελφικό τάγμα"@el ;
     skos:definition "A membership organisation whose members are admitted by initiation and advance through a system of degrees, usually under oath and with ritual. Covers fraternities, sororities, co-ed and adoptive orders. The kind of order is given with org:classification (see fraternalc:OrderTypes)."@en ,
                     "En medlemsorganisation där medlemmar upptas genom initiering och avancerar i ett gradsystem, vanligen under ed och med ritual. Omfattar brödra- och systerskap samt blandade ordnar. Ordens typ anges med org:classification (se fraternalc:OrderTypes)."@sv ,
                     "Organisation de membres dont les membres sont admis par initiation et progressent dans un système de degrés, en général sous serment et avec un rituel. Couvre les fraternités, sororités, ordres mixtes et ordres adoptifs. Le genre d'ordre est indiqué avec org:classification (voir fraternalc:OrderTypes)."@fr ,
@@ -85,7 +87,8 @@ fraternal:FraternalOrder a owl:Class ;
                     "Un'organizzazione associativa i cui soci sono ammessi per iniziazione e avanzano attraverso un sistema di gradi, di solito sotto giuramento e con un rituale. Comprende fraternity, sororità, ordini misti e ordini adottivi. Il tipo di ordine si indica con org:classification (vedi fraternalc:OrderTypes)."@it ,
                     "Una organización de miembros cuyos integrantes son admitidos por iniciación y avanzan a través de un sistema de grados, normalmente bajo juramento y con ritual. Abarca fraternidades, sororidades, órdenes mixtas y de adopción. El tipo de orden se indica con org:classification (véase fraternalc:OrderTypes)."@es ,
                     "Uma organização de membros cujos integrantes são admitidos por iniciação e avançam através de um sistema de graus, normalmente sob juramento e com ritual. Abrange fraternidades, sororidades, ordens mistas e de adoção. O tipo de ordem indica-se com org:classification (ver fraternalc:OrderTypes)."@pt ,
-                    "Tagsági szervezet, amelynek tagjait beavatással veszik fel, és fokozatrendszeren haladnak előre, rendszerint eskü alatt és szertartással. Magában foglalja a fraternitásokat, női egyleteket, vegyes és adoptív rendeket. A rend fajtáját az org:classification adja meg (lásd fraternalc:OrderTypes)."@hu ;
+                    "Tagsági szervezet, amelynek tagjait beavatással veszik fel, és fokozatrendszeren haladnak előre, rendszerint eskü alatt és szertartással. Magában foglalja a fraternitásokat, női egyleteket, vegyes és adoptív rendeket. A rend fajtáját az org:classification adja meg (lásd fraternalc:OrderTypes)."@hu ,
+                    "Μια οργάνωση μελών της οποίας τα μέλη γίνονται δεκτά με μύηση και προχωρούν μέσω ενός συστήματος βαθμών, συνήθως με όρκο και τελετουργικό. Καλύπτει αδελφότητες, αδελφότητες γυναικών, μικτά και υιοθετικά τάγματα. Το είδος του τάγματος δίνεται με το org:classification (βλ. fraternalc:OrderTypes)."@el ;
     skos:scopeNote "Also used for orders of chivalry, genuine or self-styled, described as organisations of their members (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). In Swedish these are riddarordnar, not ordenssällskap. An order of merit that consists only of a dignity and its insignia is a mbr:Distinction, not an organisation."@en ,
                    "Används även för riddarordnar, äkta eller självutnämnda, beskrivna som sammanslutningar av sina medlemmar (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). På svenska är dessa riddarordnar, inte ordenssällskap. En förtjänstorden som bara består av en värdighet och dess insignier är en mbr:Distinction, inte en organisation."@sv ,
                    "Employé aussi pour les ordres de chevalerie, authentiques ou autoproclamés, décrits comme des organisations de leurs membres (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). En suédois, ce sont des riddarordnar et non des ordenssällskap. Un ordre de mérite qui consiste seulement en une dignité et ses insignes est une mbr:Distinction et non une organisation."@fr ,
@@ -93,12 +96,13 @@ fraternal:FraternalOrder a owl:Class ;
                    "Si usa anche per gli ordini cavallereschi, autentici o autoproclamati, descritti come organizzazioni dei loro membri (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). In svedese sono riddarordnar, non ordenssällskap. Un ordine di merito che consiste soltanto in una dignità e nelle sue insegne è un mbr:Distinction, non un'organizzazione."@it ,
                    "Se usa también para las órdenes de caballería, auténticas o autoproclamadas, descritas como organizaciones de sus miembros (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). En sueco son riddarordnar, no ordenssällskap. Una orden de mérito que consiste solo en una dignidad y sus insignias es una mbr:Distinction, no una organización."@es ,
                    "Usa-se também para as ordens de cavalaria, autênticas ou autoproclamadas, descritas como organizações dos seus membros (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). Em sueco são riddarordnar, não ordenssällskap. Uma ordem de mérito que consiste apenas numa dignidade e nas suas insígnias é uma mbr:Distinction, não uma organização."@pt ,
-                   "Lovagrendekre is használatos, valódiakra és önmagukat annak nevezőkre, tagjaik szervezeteként leírva (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). Svédül ezek riddarordnar, nem ordenssällskap. Az az érdemrend, amely csupán egy méltóságból és annak jelvényeiből áll, mbr:Distinction, nem szervezet."@hu .
+                   "Lovagrendekre is használatos, valódiakra és önmagukat annak nevezőkre, tagjaik szervezeteként leírva (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). Svédül ezek riddarordnar, nem ordenssällskap. Az az érdemrend, amely csupán egy méltóságból és annak jelvényeiből áll, mbr:Distinction, nem szervezet."@hu ,
+                   "Χρησιμοποιείται και για ιπποτικά τάγματα, γνήσια ή αυτοανακηρυγμένα, περιγραφόμενα ως οργανώσεις των μελών τους (fraternalc:orderOfChivalry, fraternalc:selfStyledOrderOfChivalry). Στα σουηδικά είναι riddarordnar, όχι ordenssällskap. Ένα τάγμα αξίας που αποτελείται μόνο από ένα αξίωμα και τα διάσημά του είναι mbr:Distinction, όχι οργάνωση."@el .
 
 fraternal:GrandBody a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf fraternal:FraternalOrder ;
-    rdfs:label "Grand Body"@en , "Storloge"@sv , "Corps dirigeant"@fr , "Leitungsorgan"@de , "Organismo di governo"@it , "Organismo rector"@es , "Organismo dirigente"@pt , "Irányító testület"@hu ;
+    rdfs:label "Grand Body"@en , "Storloge"@sv , "Corps dirigeant"@fr , "Leitungsorgan"@de , "Organismo di governo"@it , "Organismo rector"@es , "Organismo dirigente"@pt , "Irányító testület"@hu , "Ανώτατο όργανο"@el ;
     skos:definition "A governing body of a fraternal order, such as a grand lodge or supreme council, with jurisdiction over lodges."@en ,
                     "Ett styrande organ för ett ordenssällskap, t.ex. en storloge eller ett högsta råd, med jurisdiktion över loger."@sv ,
                     "Organe dirigeant d'un ordre fraternel, comme une grande loge ou un suprême conseil, ayant juridiction sur les loges."@fr ,
@@ -106,12 +110,13 @@ fraternal:GrandBody a owl:Class ;
                     "Un organismo di governo di un ordine fraternale, come una gran loggia o un supremo consiglio (in massoneria un'obbedienza), con giurisdizione sulle logge."@it ,
                     "Un órgano de gobierno de una orden fraternal, como una gran logia o un supremo consejo, con jurisdicción sobre las logias."@es ,
                     "Um órgão de governo de uma ordem fraternal, como uma grande loja ou um supremo conselho, com jurisdição sobre as lojas."@pt ,
-                    "Egy testvéri rend vezető testülete, például nagypáholy vagy legfelsőbb tanács, a páholyok feletti joghatósággal."@hu .
+                    "Egy testvéri rend vezető testülete, például nagypáholy vagy legfelsőbb tanács, a páholyok feletti joghatósággal."@hu ,
+                    "Ένα διοικητικό όργανο ενός αδελφικού τάγματος, όπως μια μεγάλη στοά ή ένα ανώτατο συμβούλιο, με δικαιοδοσία επί των στοών."@el .
 
 fraternal:Lodge a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf mbr:Branch ;
-    rdfs:label "Lodge"@en , "Loge"@sv , "Loge"@fr , "Loge"@de , "Loggia"@it , "Logia"@es , "Loja"@pt , "Páholy"@hu ;
+    rdfs:label "Lodge"@en , "Loge"@sv , "Loge"@fr , "Loge"@de , "Loggia"@it , "Logia"@es , "Loja"@pt , "Páholy"@hu , "Στοά"@el ;
     skos:definition "A local unit of a fraternal order: lodge, chapter, court, tent and the like."@en ,
                     "En lokal enhet i ett ordenssällskap: loge, kapitel, avdelning och liknande."@sv ,
                     "Unité locale d'un ordre fraternel : loge, chapitre, cour, tente et semblables."@fr ,
@@ -119,7 +124,8 @@ fraternal:Lodge a owl:Class ;
                     "Un'unità locale di un ordine fraternale: loggia, capitolo, corte, tenda e simili."@it ,
                     "Una unidad local de una orden fraternal: logia, capítulo, corte, tienda y similares."@es ,
                     "Uma unidade local de uma ordem fraternal: loja, capítulo, corte, tenda e semelhantes."@pt ,
-                    "Egy testvéri rend helyi egysége: páholy, káptalan, udvar, sátor és hasonlók."@hu .
+                    "Egy testvéri rend helyi egysége: páholy, káptalan, udvar, sátor és hasonlók."@hu ,
+                    "Μια τοπική μονάδα ενός αδελφικού τάγματος: στοά, κεφάλαιο, αυλή, σκηνή και τα παρόμοια."@el .
 
 # Convenience classes defined by classification (pattern P2).
 fraternalc:sorority a owl:NamedIndividual .
@@ -134,7 +140,7 @@ fraternal:Sorority a owl:Class ;
                                owl:onProperty org:classification ;
                                owl:hasValue fraternalc:sorority ] )
     ] ;
-    rdfs:label "Sorority"@en , "Systerskap"@sv , "Sororité"@fr , "Sorority"@de , "Sororità"@it , "Sororidad"@es , "Sororidade"@pt , "Női egylet"@hu ;
+    rdfs:label "Sorority"@en , "Systerskap"@sv , "Sororité"@fr , "Sorority"@de , "Sororità"@it , "Sororidad"@es , "Sororidade"@pt , "Női egylet"@hu , "Αδελφότητα γυναικών"@el ;
     skos:definition "A fraternal order classified as a sorority."@en ,
                     "Ett ordenssällskap klassificerat som systerskap."@sv ,
                     "Ordre fraternel classé comme sororité."@fr ,
@@ -142,7 +148,8 @@ fraternal:Sorority a owl:Class ;
                     "Un ordine fraternale classificato come sororità."@it ,
                     "Una orden fraternal clasificada como sororidad."@es ,
                     "Uma ordem fraternal classificada como sororidade."@pt ,
-                    "Női egyletként besorolt testvéri rend."@hu .
+                    "Női egyletként besorolt testvéri rend."@hu ,
+                    "Ένα αδελφικό τάγμα ταξινομημένο ως αδελφότητα γυναικών."@el .
 
 fraternal:CollegeFraternity a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
@@ -153,7 +160,7 @@ fraternal:CollegeFraternity a owl:Class ;
                                owl:onProperty org:classification ;
                                owl:hasValue fraternalc:collegeFraternity ] )
     ] ;
-    rdfs:label "College Fraternity"@en , "Studentbrödraskap"@sv , "Fraternité universitaire"@fr , "College-Fraternity"@de , "Fraternity universitaria"@it , "Fraternidad universitaria"@es , "Fraternidade universitária"@pt , "Egyetemi fraternitás"@hu ;
+    rdfs:label "College Fraternity"@en , "Studentbrödraskap"@sv , "Fraternité universitaire"@fr , "College-Fraternity"@de , "Fraternity universitaria"@it , "Fraternidad universitaria"@es , "Fraternidade universitária"@pt , "Egyetemi fraternitás"@hu , "Πανεπιστημιακή αδελφότητα"@el ;
     skos:definition "A fraternal order classified as a college fraternity."@en ,
                     "Ett ordenssällskap klassificerat som studentbrödraskap."@sv ,
                     "Ordre fraternel classé comme fraternité universitaire."@fr ,
@@ -161,7 +168,8 @@ fraternal:CollegeFraternity a owl:Class ;
                     "Un ordine fraternale classificato come fraternity universitaria."@it ,
                     "Una orden fraternal clasificada como fraternidad universitaria."@es ,
                     "Uma ordem fraternal classificada como fraternidade universitária."@pt ,
-                    "Egyetemi fraternitásként besorolt testvéri rend."@hu .
+                    "Egyetemi fraternitásként besorolt testvéri rend."@hu ,
+                    "Ένα αδελφικό τάγμα ταξινομημένο ως πανεπιστημιακή αδελφότητα."@el .
 
 ##############################################################################
 # DEGREES
@@ -170,7 +178,7 @@ fraternal:CollegeFraternity a owl:Class ;
 fraternal:DegreeSystem a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf skos:ConceptScheme ;
-    rdfs:label "Degree System"@en , "Gradsystem"@sv , "Système de degrés"@fr , "Gradsystem"@de , "Sistema di gradi"@it , "Sistema de grados"@es , "Sistema de graus"@pt , "Fokozatrendszer"@hu ;
+    rdfs:label "Degree System"@en , "Gradsystem"@sv , "Système de degrés"@fr , "Gradsystem"@de , "Sistema di gradi"@it , "Sistema de grados"@es , "Sistema de graus"@pt , "Fokozatrendszer"@hu , "Σύστημα βαθμών"@el ;
     skos:definition "The ordered set of degrees of an order, its ladder. Each order's grade codelist is a DegreeSystem. Not the same as a rite, the ritual tradition an order works (see fraternalc:masonicRite)."@en ,
                     "Den ordnade mängden grader i en orden, dess gradstege. Varje ordens gradlista är ett Gradsystem. Inte detsamma som en rit, den ritualtradition en orden arbetar efter (se fraternalc:masonicRite)."@sv ,
                     "L'ensemble ordonné des degrés d'un ordre, son échelle. La liste de grades de chaque ordre est un système de degrés. À ne pas confondre avec un rite, la tradition rituelle que pratique l'ordre (voir fraternalc:masonicRite)."@fr ,
@@ -178,12 +186,13 @@ fraternal:DegreeSystem a owl:Class ;
                     "L'insieme ordinato dei gradi di un ordine, la sua scala. L'elenco dei gradi di ogni ordine è un sistema di gradi. Non è lo stesso di un rito, la tradizione rituale che un ordine pratica (vedi fraternalc:masonicRite)."@it ,
                     "El conjunto ordenado de grados de una orden, su escala. La lista de códigos de grados de cada orden es un sistema de grados. No es lo mismo que un rito, la tradición ritual que trabaja una orden (véase fraternalc:masonicRite)."@es ,
                     "O conjunto ordenado de graus de uma ordem, a sua escala. A lista de códigos de graus de cada ordem é um sistema de graus. Não é o mesmo que um rito, a tradição ritual que uma ordem trabalha (ver fraternalc:masonicRite)."@pt ,
-                    "Egy rend fokozatainak rendezett halmaza, a létrája. Minden rend fokozat-kódlistája egy fokozatrendszer. Nem azonos a ritussal, azzal a rituális hagyománnyal, amelyet egy rend művel (lásd fraternalc:masonicRite)."@hu .
+                    "Egy rend fokozatainak rendezett halmaza, a létrája. Minden rend fokozat-kódlistája egy fokozatrendszer. Nem azonos a ritussal, azzal a rituális hagyománnyal, amelyet egy rend művel (lásd fraternalc:masonicRite)."@hu ,
+                    "Το διατεταγμένο σύνολο των βαθμών ενός τάγματος, η κλίμακά του. Το κωδικολόγιο βαθμών κάθε τάγματος είναι ένα σύστημα βαθμών. Δεν ταυτίζεται με το τελετουργικό σύστημα (rite), την τελετουργική παράδοση που εργάζεται ένα τάγμα (βλ. fraternalc:masonicRite)."@el .
 
 fraternal:Degree a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "Degree"@en , "Grad"@sv , "Degré"@fr , "Grad"@de , "Grado"@it , "Grado"@es , "Grau"@pt , "Fokozat"@hu ;
+    rdfs:label "Degree"@en , "Grad"@sv , "Degré"@fr , "Grad"@de , "Grado"@it , "Grado"@es , "Grau"@pt , "Fokozat"@hu , "Βαθμός"@el ;
     skos:definition "A degree or grade within a degree system. A degree in the numbered sequence has its position given by fraternal:degreeRank and fraternal:nextDegree — not by skos:broader, which would state that a higher degree is a narrower concept of a lower one. Honorary, office and side degrees that stand outside the sequence have no rank; their kind is given with fraternal:degreeKind."@en ,
                     "En grad inom ett gradsystem. En grad i den numrerade följden får sin plats genom fraternal:degreeRank och fraternal:nextDegree — inte genom skos:broader, som skulle säga att en högre grad är ett underbegrepp till en lägre. Heders-, ämbets- och tilläggsgrader som står utanför följden saknar gradnummer; deras art anges med fraternal:degreeKind."@sv ,
                     "Degré ou grade au sein d'un système de degrés. Un degré de la suite numérotée a sa place donnée par fraternal:degreeRank et fraternal:nextDegree — et non par skos:broader, qui dirait qu'un degré supérieur est un concept plus étroit d'un degré inférieur. Les degrés honoraires, de fonction et annexes qui se tiennent hors de la suite n'ont pas de rang ; leur nature est indiquée avec fraternal:degreeKind."@fr ,
@@ -191,7 +200,8 @@ fraternal:Degree a owl:Class ;
                     "Un grado all'interno di un sistema di gradi. Un grado della sequenza numerata ha la sua posizione indicata da fraternal:degreeRank e fraternal:nextDegree, non da skos:broader, che affermerebbe che un grado superiore è un concetto più specifico di uno inferiore. I gradi onorari, di carica e laterali che stanno fuori dalla sequenza non hanno posizione; il loro tipo si indica con fraternal:degreeKind."@it ,
                     "Un grado o escalón dentro de un sistema de grados. Un grado de la secuencia numerada tiene su posición indicada por fraternal:degreeRank y fraternal:nextDegree —no por skos:broader, que afirmaría que un grado superior es un concepto más específico de uno inferior—. Los grados honoríficos, de cargo y laterales que quedan fuera de la secuencia no tienen rango; su tipo se indica con fraternal:degreeKind."@es ,
                     "Um grau ou degrau dentro de um sistema de graus. Um grau da sequência numerada tem a sua posição indicada por fraternal:degreeRank e fraternal:nextDegree — não por skos:broader, que afirmaria que um grau superior é um conceito mais específico de um inferior. Os graus honoríficos, de cargo e laterais que ficam fora da sequência não têm posição; o seu tipo indica-se com fraternal:degreeKind."@pt ,
-                    "Fokozat vagy lépcsőfok egy fokozatrendszeren belül. A számozott sorrendbe tartozó fokozat helyét a fraternal:degreeRank és a fraternal:nextDegree adja meg — nem a skos:broader, amely azt állítaná, hogy a magasabb fokozat az alacsonyabb szűkebb fogalma. A sorrenden kívül álló tiszteleti, tisztségi és mellék-fokozatoknak nincs rangjuk; a fajtájukat a fraternal:degreeKind adja meg."@hu ;
+                    "Fokozat vagy lépcsőfok egy fokozatrendszeren belül. A számozott sorrendbe tartozó fokozat helyét a fraternal:degreeRank és a fraternal:nextDegree adja meg — nem a skos:broader, amely azt állítaná, hogy a magasabb fokozat az alacsonyabb szűkebb fogalma. A sorrenden kívül álló tiszteleti, tisztségi és mellék-fokozatoknak nincs rangjuk; a fajtájukat a fraternal:degreeKind adja meg."@hu ,
+                    "Ένας βαθμός ή βαθμίδα μέσα σε ένα σύστημα βαθμών. Ένας βαθμός της αριθμημένης ακολουθίας έχει τη θέση του δοσμένη από τα fraternal:degreeRank και fraternal:nextDegree — όχι από το skos:broader, που θα υποστήριζε ότι ένας ανώτερος βαθμός είναι στενότερη έννοια ενός κατώτερου. Οι τιμητικοί βαθμοί, οι βαθμοί αξιώματος και οι πλευρικοί βαθμοί που βρίσκονται εκτός της ακολουθίας δεν έχουν σειρά· το είδος τους δίνεται με το fraternal:degreeKind."@el ;
     skos:scopeNote "The order's own numeral or abbreviation for a degree (e.g. IV–V, 3=8, RKFV) goes in skos:notation. It may differ from the rank or run in reverse."@en ,
                    "Ordens egen numrering eller förkortning för en grad (t.ex. IV–V, 3=8, RKFV) anges med skos:notation. Den kan skilja sig från gradnumret eller löpa baklänges."@sv ,
                    "Le chiffre ou l'abréviation propre à l'ordre pour un degré (par ex. IV–V, 3=8, RKFV) se met dans skos:notation. Il peut différer du rang ou courir en sens inverse."@fr ,
@@ -199,11 +209,12 @@ fraternal:Degree a owl:Class ;
                    "Il numerale o l'abbreviazione propri dell'ordine per un grado (per es. IV–V, 3=8, RKFV) vanno in skos:notation. Può differire dalla posizione o procedere in senso inverso."@it ,
                    "El numeral o la abreviatura propios de la orden para un grado (p. ej., IV–V, 3=8, RKFV) van en skos:notation. Puede diferir del rango o ir en sentido inverso."@es ,
                    "O numeral ou a abreviatura próprios da ordem para um grau (p. ex., IV–V, 3=8, RKFV) vão em skos:notation. Pode diferir da posição ou ir em sentido inverso."@pt ,
-                   "A rend saját számjegye vagy rövidítése egy fokozatra (pl. IV–V, 3=8, RKFV) a skos:notation-be kerül. Eltérhet a rangtól, vagy fordított lehet."@hu .
+                   "A rend saját számjegye vagy rövidítése egy fokozatra (pl. IV–V, 3=8, RKFV) a skos:notation-be kerül. Eltérhet a rangtól, vagy fordított lehet."@hu ,
+                   "Ο αριθμός ή η συντομογραφία που χρησιμοποιεί το ίδιο το τάγμα για έναν βαθμό (π.χ. IV–V, 3=8, RKFV) μπαίνει στο skos:notation. Μπορεί να διαφέρει από τη σειρά ή να είναι αντίστροφος."@el .
 
 fraternal:degreeRank a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "degree rank"@en , "gradnummer"@sv , "rang du degré"@fr , "Gradrang"@de , "posizione del grado"@it , "rango del grado"@es , "posição do grau"@pt , "fokozat rangja"@hu ;
+    rdfs:label "degree rank"@en , "gradnummer"@sv , "rang du degré"@fr , "Gradrang"@de , "posizione del grado"@it , "rango del grado"@es , "posição do grau"@pt , "fokozat rangja"@hu , "σειρά βαθμού"@el ;
     rdfs:domain fraternal:Degree ;
     rdfs:range xsd:positiveInteger ;
     skos:definition "Position of the degree in the numbered sequence of its system, starting at 1 for the entry degree. Positional only: degrees outside the sequence have no rank."@en ,
@@ -213,11 +224,12 @@ fraternal:degreeRank a owl:DatatypeProperty , owl:FunctionalProperty ;
                     "La posizione del grado nella sequenza numerata del suo sistema, a partire da 1 per il grado d'ingresso. Solo posizionale: i gradi fuori dalla sequenza non hanno posizione."@it ,
                     "Posición del grado en la secuencia numerada de su sistema, empezando por 1 para el grado de entrada. Solo posicional: los grados fuera de la secuencia no tienen rango."@es ,
                     "Posição do grau na sequência numerada do seu sistema, a começar em 1 para o grau de entrada. Apenas posicional: os graus fora da sequência não têm posição."@pt ,
-                    "A fokozat helye rendszerének számozott sorrendjében, 1-gyel kezdve a belépő fokozatra. Csak helyzeti: a sorrenden kívüli fokozatoknak nincs rangjuk."@hu .
+                    "A fokozat helye rendszerének számozott sorrendjében, 1-gyel kezdve a belépő fokozatra. Csak helyzeti: a sorrenden kívüli fokozatoknak nincs rangjuk."@hu ,
+                    "Η θέση του βαθμού στην αριθμημένη ακολουθία του συστήματός του, ξεκινώντας από το 1 για τον βαθμό εισόδου. Μόνο θέσης: οι βαθμοί εκτός ακολουθίας δεν έχουν σειρά."@el .
 
 fraternal:degreeKind a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "degree kind"@en , "gradart"@sv , "nature du degré"@fr , "Gradart"@de , "tipo di grado"@it , "tipo de grado"@es , "tipo de grau"@pt , "fokozat fajtája"@hu ;
+    rdfs:label "degree kind"@en , "gradart"@sv , "nature du degré"@fr , "Gradart"@de , "tipo di grado"@it , "tipo de grado"@es , "tipo de grau"@pt , "fokozat fajtája"@hu , "είδος βαθμού"@el ;
     rdfs:domain fraternal:Degree ;
     rdfs:range skos:Concept ;
     skos:definition "The kind of degree: honorary, office, side, probationary and so on (see fraternalc:DegreeKinds). A degree without a kind is an ordinary degree in the numbered sequence."@en ,
@@ -227,11 +239,12 @@ fraternal:degreeKind a owl:ObjectProperty ;
                     "Il tipo di grado: onorario, di carica, laterale, di prova e così via (vedi fraternalc:DegreeKinds). Un grado senza tipo è un grado ordinario della sequenza numerata."@it ,
                     "El tipo de grado: honorífico, de cargo, lateral, de prueba, etc. (véase fraternalc:DegreeKinds). Un grado sin tipo es un grado ordinario de la secuencia numerada."@es ,
                     "O tipo de grau: honorífico, de cargo, lateral, de prova, etc. (ver fraternalc:DegreeKinds). Um grau sem tipo é um grau ordinário da sequência numerada."@pt ,
-                    "A fokozat fajtája: tiszteleti, tisztségi, mellék, próba stb. (lásd fraternalc:DegreeKinds). A fajta nélküli fokozat a számozott sorrend rendes fokozata."@hu .
+                    "A fokozat fajtája: tiszteleti, tisztségi, mellék, próba stb. (lásd fraternalc:DegreeKinds). A fajta nélküli fokozat a számozott sorrend rendes fokozata."@hu ,
+                    "Το είδος του βαθμού: τιμητικός, αξιώματος, πλευρικός, δοκιμαστικός κ.ο.κ. (βλ. fraternalc:DegreeKinds). Ένας βαθμός χωρίς είδος είναι κανονικός βαθμός της αριθμημένης ακολουθίας."@el .
 
 fraternal:higherDegree a owl:ObjectProperty , owl:TransitiveProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "higher degree"@en , "högre grad"@sv , "degré supérieur"@fr , "höherer Grad"@de , "grado superiore"@it , "grado superior"@es , "grau superior"@pt , "magasabb fokozat"@hu ;
+    rdfs:label "higher degree"@en , "högre grad"@sv , "degré supérieur"@fr , "höherer Grad"@de , "grado superiore"@it , "grado superior"@es , "grau superior"@pt , "magasabb fokozat"@hu , "ανώτερος βαθμός"@el ;
     rdfs:domain fraternal:Degree ;
     rdfs:range fraternal:Degree ;
     skos:definition "Any degree above this one in the same system."@en ,
@@ -241,12 +254,13 @@ fraternal:higherDegree a owl:ObjectProperty , owl:TransitiveProperty ;
                     "Qualsiasi grado al di sopra di questo nello stesso sistema."@it ,
                     "Cualquier grado por encima de este en el mismo sistema."@es ,
                     "Qualquer grau acima deste no mesmo sistema."@pt ,
-                    "Bármely fokozat e fölött ugyanabban a rendszerben."@hu .
+                    "Bármely fokozat e fölött ugyanabban a rendszerben."@hu ,
+                    "Οποιοσδήποτε βαθμός πάνω από αυτόν στο ίδιο σύστημα."@el .
 
 fraternal:nextDegree a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subPropertyOf fraternal:higherDegree ;
-    rdfs:label "next degree"@en , "nästa grad"@sv , "degré suivant"@fr , "nächster Grad"@de , "grado successivo"@it , "grado siguiente"@es , "grau seguinte"@pt , "következő fokozat"@hu ;
+    rdfs:label "next degree"@en , "nästa grad"@sv , "degré suivant"@fr , "nächster Grad"@de , "grado successivo"@it , "grado siguiente"@es , "grau seguinte"@pt , "következő fokozat"@hu , "επόμενος βαθμός"@el ;
     skos:definition "The degree immediately above this one."@en ,
                     "Graden omedelbart ovanför denna."@sv ,
                     "Le degré situé immédiatement au-dessus de celui-ci."@fr ,
@@ -254,11 +268,12 @@ fraternal:nextDegree a owl:ObjectProperty , owl:FunctionalProperty ;
                     "Il grado immediatamente superiore a questo."@it ,
                     "El grado inmediatamente superior a este."@es ,
                     "O grau imediatamente acima deste."@pt ,
-                    "A fokozat, amely közvetlenül e fölött áll."@hu .
+                    "A fokozat, amely közvetlenül e fölött áll."@hu ,
+                    "Ο βαθμός αμέσως πάνω από αυτόν."@el .
 
 fraternal:degreeSystem a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "degree system"@en , "gradsystem"@sv , "système de degrés"@fr , "Gradsystem"@de , "sistema di gradi"@it , "sistema de grados"@es , "sistema de graus"@pt , "fokozatrendszer"@hu ;
+    rdfs:label "degree system"@en , "gradsystem"@sv , "système de degrés"@fr , "Gradsystem"@de , "sistema di gradi"@it , "sistema de grados"@es , "sistema de graus"@pt , "fokozatrendszer"@hu , "σύστημα βαθμών"@el ;
     rdfs:range fraternal:DegreeSystem ;
     skos:definition "The degree system an order works."@en ,
                     "Det gradsystem en orden arbetar i."@sv ,
@@ -267,12 +282,13 @@ fraternal:degreeSystem a owl:ObjectProperty ;
                     "Il sistema di gradi che un ordine pratica."@it ,
                     "El sistema de grados que trabaja una orden."@es ,
                     "O sistema de graus que uma ordem trabalha."@pt ,
-                    "A fokozatrendszer, amelyet egy rend művel."@hu .
+                    "A fokozatrendszer, amelyet egy rend művel."@hu ,
+                    "Το σύστημα βαθμών που εργάζεται ένα τάγμα."@el .
 
 fraternal:DegreeConferral a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf mbr:Conferral ;
-    rdfs:label "Degree Conferral"@en , "Gradtilldelning"@sv , "Attribution de degré"@fr , "Gradverleihung"@de , "Conferimento di un grado"@it , "Concesión de grado"@es , "Atribuição de grau"@pt , "Fokozat adományozása"@hu ;
+    rdfs:label "Degree Conferral"@en , "Gradtilldelning"@sv , "Attribution de degré"@fr , "Gradverleihung"@de , "Conferimento di un grado"@it , "Concesión de grado"@es , "Atribuição de grau"@pt , "Fokozat adományozása"@hu , "Απονομή βαθμού"@el ;
     skos:definition "The conferral of a degree (mbr:conferred is a fraternal:Degree), usually at a ceremony."@en ,
                     "Tilldelningen av en grad (mbr:conferred är en fraternal:Degree), vanligen vid en ceremoni."@sv ,
                     "L'attribution d'un degré (mbr:conferred est un fraternal:Degree), en général lors d'une cérémonie."@fr ,
@@ -280,12 +296,13 @@ fraternal:DegreeConferral a owl:Class ;
                     "Il conferimento di un grado (mbr:conferred è un fraternal:Degree), di solito durante una cerimonia."@it ,
                     "La concesión de un grado (mbr:conferred es un fraternal:Degree), normalmente en una ceremonia."@es ,
                     "A atribuição de um grau (mbr:conferred é um fraternal:Degree), normalmente numa cerimónia."@pt ,
-                    "Egy fokozat odaítélése (az mbr:conferred egy fraternal:Degree), rendszerint szertartáson."@hu .
+                    "Egy fokozat odaítélése (az mbr:conferred egy fraternal:Degree), rendszerint szertartáson."@hu ,
+                    "Η απονομή ενός βαθμού (το mbr:conferred είναι ένα fraternal:Degree), συνήθως σε μια τελετή."@el .
 
 fraternal:Initiation a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf fraternal:DegreeConferral ;
-    rdfs:label "Initiation"@en , "Initiering"@sv , "Initiation"@fr , "Initiation"@de , "Iniziazione"@it , "Iniciación"@es , "Iniciação"@pt , "Beavatás"@hu ;
+    rdfs:label "Initiation"@en , "Initiering"@sv , "Initiation"@fr , "Initiation"@de , "Iniziazione"@it , "Iniciación"@es , "Iniciação"@pt , "Beavatás"@hu , "Μύηση"@el ;
     skos:definition "The conferral of the entry degree, by which a candidate becomes a member. Record the admission itself as a mbr:MembershipEvent of type mbrc:admission."@en ,
                     "Tilldelningen av inträdesgraden, genom vilken en kandidat blir medlem. Själva upptagningen registreras som en mbr:MembershipEvent av typen mbrc:admission."@sv ,
                     "L'attribution du degré d'entrée, par laquelle un candidat devient membre. Consigner l'admission elle-même comme une mbr:MembershipEvent de type mbrc:admission."@fr ,
@@ -293,7 +310,8 @@ fraternal:Initiation a owl:Class ;
                     "Il conferimento del grado d'ingresso, con cui un candidato diventa socio. L'ammissione stessa si registra come mbr:MembershipEvent di tipo mbrc:admission."@it ,
                     "La concesión del grado de entrada, por la cual un candidato pasa a ser miembro. La admisión misma se registra como un mbr:MembershipEvent de tipo mbrc:admission."@es ,
                     "A atribuição do grau de entrada, pela qual um candidato passa a ser membro. A admissão em si regista-se como um mbr:MembershipEvent do tipo mbrc:admission."@pt ,
-                    "A belépő fokozat odaítélése, amellyel a jelölt taggá válik. Magát a felvételt mbrc:admission típusú mbr:MembershipEvent-ként kell rögzíteni."@hu .
+                    "A belépő fokozat odaítélése, amellyel a jelölt taggá válik. Magát a felvételt mbrc:admission típusú mbr:MembershipEvent-ként kell rögzíteni."@hu ,
+                    "Η απονομή του βαθμού εισόδου, με την οποία ένας υποψήφιος γίνεται μέλος. Η ίδια η εισδοχή καταγράφεται ως mbr:MembershipEvent τύπου mbrc:admission."@el .
 
 ##############################################################################
 # CEREMONIES AND INSIGNIA
@@ -302,7 +320,7 @@ fraternal:Initiation a owl:Class ;
 fraternal:Ceremony a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf mbr:Gathering ;
-    rdfs:label "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr , "Zeremonie"@de , "Cerimonia"@it , "Ceremonia"@es , "Cerimónia"@pt , "Szertartás"@hu ;
+    rdfs:label "Ceremony"@en , "Ceremoni"@sv , "Cérémonie"@fr , "Zeremonie"@de , "Cerimonia"@it , "Ceremonia"@es , "Cerimónia"@pt , "Szertartás"@hu , "Τελετή"@el ;
     skos:definition "A gathering at which ritual is worked or degrees and distinctions are conferred. The kind of ceremony is given with mbr:gatheringType (see fraternalc:CeremonyTypes)."@en ,
                     "En sammankomst där ritual utförs eller grader och utmärkelser tilldelas. Ceremonins typ anges med mbr:gatheringType (se fraternalc:CeremonyTypes)."@sv ,
                     "Réunion où un rituel est pratiqué ou des degrés et distinctions sont conférés. Le genre de cérémonie est indiqué avec mbr:gatheringType (voir fraternalc:CeremonyTypes)."@fr ,
@@ -310,12 +328,13 @@ fraternal:Ceremony a owl:Class ;
                     "Un incontro in cui si lavora il rituale o si conferiscono gradi e riconoscimenti. Il tipo di cerimonia si indica con mbr:gatheringType (vedi fraternalc:CeremonyTypes)."@it ,
                     "Una reunión en la que se trabaja el ritual o se conceden grados y distinciones. El tipo de ceremonia se indica con mbr:gatheringType (véase fraternalc:CeremonyTypes)."@es ,
                     "Uma reunião em que se trabalha o ritual ou se atribuem graus e distinções. O tipo de cerimónia indica-se com mbr:gatheringType (ver fraternalc:CeremonyTypes)."@pt ,
-                    "Összejövetel, amelyen szertartást végeznek, vagy fokozatokat és kitüntetéseket adományoznak. A szertartás fajtáját az mbr:gatheringType adja meg (lásd fraternalc:CeremonyTypes)."@hu .
+                    "Összejövetel, amelyen szertartást végeznek, vagy fokozatokat és kitüntetéseket adományoznak. A szertartás fajtáját az mbr:gatheringType adja meg (lásd fraternalc:CeremonyTypes)."@hu ,
+                    "Μια συγκέντρωση στην οποία τελείται τελετουργικό ή απονέμονται βαθμοί και διακρίσεις. Το είδος της τελετής δίνεται με το mbr:gatheringType (βλ. fraternalc:CeremonyTypes)."@el .
 
 fraternal:Insignia a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "Insignia"@en , "Insignie"@sv , "Insigne"@fr , "Insignien"@de , "Insegne"@it , "Insignia"@es , "Insígnia"@pt , "Jelvény"@hu ;
+    rdfs:label "Insignia"@en , "Insignie"@sv , "Insigne"@fr , "Insignien"@de , "Insegne"@it , "Insignia"@es , "Insígnia"@pt , "Jelvény"@hu , "Διάσημο"@el ;
     skos:definition "A kind of regalia or insignia belonging to a degree, office or distinction: apron, collar, jewel, cross, star and so on."@en ,
                     "En typ av ordensdräkt eller insignie som hör till en grad, ett ämbete eller en utmärkelse: förkläde, kedja, juvel, kors, kraschan osv."@sv ,
                     "Sorte de tenue ou d'insigne rattachée à un degré, une fonction ou une distinction : tablier, collier, bijou, croix, étoile, etc."@fr ,
@@ -323,11 +342,12 @@ fraternal:Insignia a owl:Class ;
                     "Un tipo di paramenti o insegne appartenente a un grado, a una carica o a un riconoscimento: grembiule, collare, gioiello, croce, stella e così via."@it ,
                     "Un tipo de regalía o insignia perteneciente a un grado, cargo o distinción: mandil, collar, joya, cruz, estrella, etc."@es ,
                     "Um tipo de regalia ou insígnia pertencente a um grau, cargo ou distinção: avental, colar, joia, cruz, estrela, etc."@pt ,
-                    "Egy fokozathoz, tisztséghez vagy kitüntetéshez tartozó jelvény vagy jelkép fajtája: kötény, lánc, ékszer, kereszt, csillag stb."@hu .
+                    "Egy fokozathoz, tisztséghez vagy kitüntetéshez tartozó jelvény vagy jelkép fajtája: kötény, lánc, ékszer, kereszt, csillag stb."@hu ,
+                    "Ένα είδος διασήμου ή εμβλήματος που ανήκει σε έναν βαθμό, αξίωμα ή διάκριση: ποδιά, κολλιέ, κόσμημα, σταυρός, αστέρι κ.ο.κ."@el .
 
 fraternal:insigniaOf a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "insignia of"@en , "insignie för"@sv , "insigne de"@fr , "Insignie von"@de , "insegne di"@it , "insignia de"@es , "insígnia de"@pt , "jelvénye ennek"@hu ;
+    rdfs:label "insignia of"@en , "insignie för"@sv , "insigne de"@fr , "Insignie von"@de , "insegne di"@it , "insignia de"@es , "insígnia de"@pt , "jelvénye ennek"@hu , "διάσημο του"@el ;
     rdfs:domain fraternal:Insignia ;
     rdfs:range skos:Concept ;
     skos:definition "The degree, office or distinction the insignia belongs to."@en ,
@@ -337,11 +357,12 @@ fraternal:insigniaOf a owl:ObjectProperty ;
                     "Il grado, la carica o il riconoscimento a cui appartengono le insegne."@it ,
                     "El grado, cargo o distinción al que pertenece la insignia."@es ,
                     "O grau, cargo ou distinção a que pertence a insígnia."@pt ,
-                    "A fokozat, tisztség vagy kitüntetés, amelyhez a jelvény tartozik."@hu .
+                    "A fokozat, tisztség vagy kitüntetés, amelyhez a jelvény tartozik."@hu ,
+                    "Ο βαθμός, το αξίωμα ή η διάκριση στην οποία ανήκει το διάσημο."@el .
 
 fraternal:insigniaType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "insignia type"@en , "insignietyp"@sv , "type d'insigne"@fr , "Insignienart"@de , "tipo di insegne"@it , "tipo de insignia"@es , "tipo de insígnia"@pt , "jelvény típusa"@hu ;
+    rdfs:label "insignia type"@en , "insignietyp"@sv , "type d'insigne"@fr , "Insignienart"@de , "tipo di insegne"@it , "tipo de insignia"@es , "tipo de insígnia"@pt , "jelvény típusa"@hu , "τύπος διασήμου"@el ;
     rdfs:domain fraternal:Insignia ;
     rdfs:range skos:Concept ;
     skos:definition "The generic kind of insignia (see fraternalc:InsigniaTypes)."@en ,
@@ -351,7 +372,8 @@ fraternal:insigniaType a owl:ObjectProperty ;
                     "Il tipo generico di insegne (vedi fraternalc:InsigniaTypes)."@it ,
                     "El tipo genérico de insignia (véase fraternalc:InsigniaTypes)."@es ,
                     "O tipo genérico de insígnia (ver fraternalc:InsigniaTypes)."@pt ,
-                    "A jelvény általános fajtája (lásd fraternalc:InsigniaTypes)."@hu .
+                    "A jelvény általános fajtája (lásd fraternalc:InsigniaTypes)."@hu ,
+                    "Το γενικό είδος διασήμου (βλ. fraternalc:InsigniaTypes)."@el .
 
 ##############################################################################
 # ORDER-LEVEL PROPERTIES
@@ -359,7 +381,7 @@ fraternal:insigniaType a owl:ObjectProperty ;
 
 fraternal:memberTitle a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "member title"@en , "medlemstitel"@sv , "titre des membres"@fr , "Mitgliedsanrede"@de , "appellativo dei soci"@it , "tratamiento de los miembros"@es , "tratamento dos membros"@pt , "tagok megszólítása"@hu ;
+    rdfs:label "member title"@en , "medlemstitel"@sv , "titre des membres"@fr , "Mitgliedsanrede"@de , "appellativo dei soci"@it , "tratamiento de los miembros"@es , "tratamento dos membros"@pt , "tagok megszólítása"@hu , "προσφώνηση μελών"@el ;
     rdfs:range skos:Concept ;
     skos:definition "How members address one another: brother, sister, sibling, companion … (see fraternalc:MemberTitles)."@en ,
                     "Hur medlemmar tituleras: broder, syster, syskon, kompanjon … (se fraternalc:MemberTitles)."@sv ,
@@ -368,11 +390,12 @@ fraternal:memberTitle a owl:ObjectProperty ;
                     "Come i soci si rivolgono l'uno all'altro: fratello, sorella, consocio, compagno … (vedi fraternalc:MemberTitles)."@it ,
                     "Cómo se dirigen los miembros unos a otros: hermano, hermana, compañero… (véase fraternalc:MemberTitles)."@es ,
                     "Como os membros se tratam uns aos outros: irmão, irmã, companheiro… (ver fraternalc:MemberTitles)."@pt ,
-                    "Hogyan szólítják meg egymást a tagok: testvér, nővér, társ… (lásd fraternalc:MemberTitles)."@hu .
+                    "Hogyan szólítják meg egymást a tagok: testvér, nővér, társ… (lásd fraternalc:MemberTitles)."@hu ,
+                    "Πώς προσφωνούν το ένα το άλλο τα μέλη: αδελφός, αδελφή, σύντροφος … (βλ. fraternalc:MemberTitles)."@el .
 
 fraternal:characteristic a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "characteristic"@en , "kännetecken"@sv , "caractéristique"@fr , "Merkmal"@de , "caratteristica"@it , "característica"@es , "característica"@pt , "jellemző"@hu ;
+    rdfs:label "characteristic"@en , "kännetecken"@sv , "caractéristique"@fr , "Merkmal"@de , "caratteristica"@it , "característica"@es , "característica"@pt , "jellemző"@hu , "χαρακτηριστικό"@el ;
     rdfs:range skos:Concept ;
     skos:definition "A defining feature of the order: initiation ritual, graded degrees, oath, secrecy … (see fraternalc:Characteristics)."@en ,
                     "Ett utmärkande drag hos orden: initieringsritual, grader, ed, tystnadsplikt … (se fraternalc:Characteristics)."@sv ,
@@ -381,11 +404,12 @@ fraternal:characteristic a owl:ObjectProperty ;
                     "Un tratto distintivo dell'ordine: rituale d'iniziazione, gradi, giuramento, segretezza … (vedi fraternalc:Characteristics)."@it ,
                     "Un rasgo definitorio de la orden: ritual de iniciación, grados, juramento, secreto… (véase fraternalc:Characteristics)."@es ,
                     "Um traço definidor da ordem: ritual de iniciação, graus, juramento, segredo… (ver fraternalc:Characteristics)."@pt ,
-                    "A rend meghatározó vonása: beavatási szertartás, fokozatok, eskü, titoktartás… (lásd fraternalc:Characteristics)."@hu .
+                    "A rend meghatározó vonása: beavatási szertartás, fokozatok, eskü, titoktartás… (lásd fraternalc:Characteristics)."@hu ,
+                    "Ένα καθοριστικό γνώρισμα του τάγματος: τελετουργικό μύησης, βαθμοί, όρκος, μυστικότητα … (βλ. fraternalc:Characteristics)."@el .
 
 fraternal:namedAfter a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "named after"@en , "uppkallad efter"@sv , "porte le nom de"@fr , "benannt nach"@de , "intitolato a"@it , "lleva el nombre de"@es , "tem o nome de"@pt , "névadója"@hu ;
+    rdfs:label "named after"@en , "uppkallad efter"@sv , "porte le nom de"@fr , "benannt nach"@de , "intitolato a"@it , "lleva el nombre de"@es , "tem o nome de"@pt , "névadója"@hu , "φέρει το όνομα του"@el ;
     skos:definition "The person or thing the order is named after, for example its patron."@en ,
                     "Den person eller sak orden är uppkallad efter, t.ex. dess patron."@sv ,
                     "La personne ou la chose dont l'ordre porte le nom, par exemple son patron."@fr ,
@@ -393,11 +417,12 @@ fraternal:namedAfter a owl:ObjectProperty ;
                     "La persona o la cosa a cui l'ordine è intitolato, per esempio il suo patrono."@it ,
                     "La persona o cosa de la que toma el nombre la orden, por ejemplo su patrón."@es ,
                     "A pessoa ou coisa de que a ordem toma o nome, por exemplo o seu patrono."@pt ,
-                    "A személy vagy dolog, akiről vagy amiről a rend a nevét kapta, például a védőszentje."@hu .
+                    "A személy vagy dolog, akiről vagy amiről a rend a nevét kapta, például a védőszentje."@hu ,
+                    "Το πρόσωπο ή το πράγμα από το οποίο παίρνει το όνομά του το τάγμα, για παράδειγμα ο προστάτης του."@el .
 
 fraternal:modelledOn a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "modelled on"@en , "förebild"@sv , "calqué sur"@fr , "nachempfunden"@de , "modellato su"@it , "modelada sobre"@es , "modelada sobre"@pt , "mintája"@hu ;
+    rdfs:label "modelled on"@en , "förebild"@sv , "calqué sur"@fr , "nachempfunden"@de , "modellato su"@it , "modelada sobre"@es , "modelada sobre"@pt , "mintája"@hu , "πρότυπο"@el ;
     skos:definition "An order, or other thing, whose structure this order imitates — for example grade names borrowed from a royal order of chivalry. States inspiration, not identity or hierarchy."@en ,
                     "En orden, eller annat, vars struktur denna orden efterbildar — t.ex. gradbenämningar lånade från en kunglig riddarorden. Anger förebild, inte identitet eller hierarki."@sv ,
                     "Ordre, ou autre chose, dont cet ordre imite la structure — par exemple des noms de grades empruntés à un ordre royal de chevalerie. Exprime une inspiration, non une identité ni une hiérarchie."@fr ,
@@ -405,7 +430,8 @@ fraternal:modelledOn a owl:ObjectProperty ;
                     "Un ordine, o altra cosa, di cui questo ordine imita la struttura — per esempio nomi di gradi presi in prestito da un ordine cavalleresco reale. Esprime ispirazione, non identità né gerarchia."@it ,
                     "Una orden, u otra cosa, cuya estructura imita esta orden —por ejemplo, nombres de grados tomados de una orden real de caballería—. Expresa inspiración, no identidad ni jerarquía."@es ,
                     "Uma ordem, ou outra coisa, cuja estrutura esta ordem imita — por exemplo, nomes de graus tomados de uma ordem real de cavalaria. Exprime inspiração, não identidade nem hierarquia."@pt ,
-                    "Rend vagy más dolog, amelynek szerkezetét ez a rend utánozza — például egy királyi lovagrendtől átvett fokozatnevek. Ihletet fejez ki, nem azonosságot vagy hierarchiát."@hu .
+                    "Rend vagy más dolog, amelynek szerkezetét ez a rend utánozza — például egy királyi lovagrendtől átvett fokozatnevek. Ihletet fejez ki, nem azonosságot vagy hierarchiát."@hu ,
+                    "Ένα τάγμα ή άλλο πράγμα του οποίου τη δομή μιμείται αυτό το τάγμα — για παράδειγμα ονόματα βαθμών δανεισμένα από ένα βασιλικό ιπποτικό τάγμα. Δηλώνει έμπνευση, όχι ταυτότητα ή ιεραρχία."@el .
 
 ##############################################################################
 # RELATIONS BETWEEN ORDERS
@@ -414,7 +440,7 @@ fraternal:modelledOn a owl:ObjectProperty ;
 fraternal:hasJurisdictionOver a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subPropertyOf org:hasSubOrganization ;
-    rdfs:label "has jurisdiction over"@en , "har jurisdiktion över"@sv , "a juridiction sur"@fr , "hat Jurisdiktion über"@de , "ha giurisdizione su"@it , "tiene jurisdicción sobre"@es , "tem jurisdição sobre"@pt , "joghatósága van felette"@hu ;
+    rdfs:label "has jurisdiction over"@en , "har jurisdiktion över"@sv , "a juridiction sur"@fr , "hat Jurisdiktion über"@de , "ha giurisdizione su"@it , "tiene jurisdicción sobre"@es , "tem jurisdição sobre"@pt , "joghatósága van felette"@hu , "έχει δικαιοδοσία επί"@el ;
     rdfs:domain fraternal:GrandBody ;
     skos:definition "A grand body governs the lodge or order."@en ,
                     "En storloge styr logen eller orden."@sv ,
@@ -423,11 +449,12 @@ fraternal:hasJurisdictionOver a owl:ObjectProperty ;
                     "Un organismo di governo governa la loggia o l'ordine."@it ,
                     "Un organismo rector gobierna la logia o la orden."@es ,
                     "Um organismo dirigente governa a loja ou a ordem."@pt ,
-                    "Egy irányító testület irányítja a páholyt vagy a rendet."@hu .
+                    "Egy irányító testület irányítja a páholyt vagy a rendet."@hu ,
+                    "Ένα ανώτατο όργανο διοικεί τη στοά ή το τάγμα."@el .
 
 fraternal:warrantedBy a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "warranted by"@en , "konstituerad av"@sv , "constitué par"@fr , "Patent erteilt durch"@de , "patentata da"@it , "constituida por"@es , "constituída por"@pt , "pátenst adta"@hu ;
+    rdfs:label "warranted by"@en , "konstituerad av"@sv , "constitué par"@fr , "Patent erteilt durch"@de , "patentata da"@it , "constituida por"@es , "constituída por"@pt , "pátenst adta"@hu , "έχει χάρτη από"@el ;
     rdfs:range org:Organization ;
     skos:definition "The body that issued the lodge's warrant or charter."@en ,
                     "Det organ som utfärdade logens stiftelsebrev."@sv ,
@@ -436,7 +463,8 @@ fraternal:warrantedBy a owl:ObjectProperty ;
                     "L'organismo che ha rilasciato la patente o la carta costitutiva della loggia."@it ,
                     "El organismo que expidió la patente o carta constitutiva de la logia."@es ,
                     "O organismo que emitiu a patente ou carta constitutiva da loja."@pt ,
-                    "A testület, amely a páholy pátensét vagy alapítólevelét kiállította."@hu ;
+                    "A testület, amely a páholy pátensét vagy alapítólevelét kiállította."@hu ,
+                    "Το σώμα που εξέδωσε τον χάρτη της στοάς."@el ;
     skos:scopeNote "The shortcut for the current state. When the date or the state of the warrant matters, or it has a history, use an mbr:Charter."@en ,
                    "Genvägen för det nuvarande läget. När stiftelsebrevets datum eller tillstånd har betydelse, eller det har en historia, används ett mbr:Charter."@sv ,
                    "Le raccourci pour l'état actuel. Quand la date ou l'état des lettres patentes compte, ou qu'elles ont un historique, on utilise une mbr:Charter."@fr ,
@@ -444,12 +472,13 @@ fraternal:warrantedBy a owl:ObjectProperty ;
                    "La scorciatoia per lo stato attuale. Quando contano la data o lo stato della patente, o ha una storia, si usa una mbr:Charter."@it ,
                    "El atajo para el estado actual. Cuando importan la fecha o el estado de la patente, o esta tiene una historia, se usa una mbr:Charter."@es ,
                    "O atalho para o estado atual. Quando importam a data ou o estado da patente, ou esta tem uma história, usa-se uma mbr:Charter."@pt ,
-                   "A rövidítés a jelenlegi állapotra. Ha a pátens dátuma vagy állapota számít, vagy története van, mbr:Charter használandó."@hu .
+                   "A rövidítés a jelenlegi állapotra. Ha a pátens dátuma vagy állapota számít, vagy története van, mbr:Charter használandó."@hu ,
+                   "Η συντόμευση για την τρέχουσα κατάσταση. Όταν μετράει η ημερομηνία ή η κατάσταση του χάρτη, ή έχει ιστορία, χρησιμοποιείται ένα mbr:Charter."@el .
 
 fraternal:recognizes a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subPropertyOf org:linkedTo ;
-    rdfs:label "recognises"@en , "erkänner"@sv , "reconnaît"@fr , "erkennt an"@de , "riconosce"@it , "reconoce"@es , "reconhece"@pt , "elismeri"@hu ;
+    rdfs:label "recognises"@en , "erkänner"@sv , "reconnaît"@fr , "erkennt an"@de , "riconosce"@it , "reconoce"@es , "reconhece"@pt , "elismeri"@hu , "αναγνωρίζει"@el ;
     skos:definition "The order formally recognises the other as regular (directional, as in Masonic recognition)."@en ,
                     "Orden erkänner formellt den andra som reguljär (riktad, som i frimurarnas erkännande)."@sv ,
                     "L'ordre reconnaît formellement l'autre comme régulier (de façon orientée, comme dans la reconnaissance maçonnique)."@fr ,
@@ -457,7 +486,8 @@ fraternal:recognizes a owl:ObjectProperty ;
                     "L'ordine riconosce formalmente l'altro come regolare (in una sola direzione, come nel riconoscimento massonico)."@it ,
                     "La orden reconoce formalmente a la otra como regular (con dirección, como en el reconocimiento masónico)."@es ,
                     "A ordem reconhece formalmente a outra como regular (com direção, como no reconhecimento maçónico)."@pt ,
-                    "A rend formálisan szabályosnak ismeri el a másikat (irányított, mint a szabadkőműves elismerésnél)."@hu ;
+                    "A rend formálisan szabályosnak ismeri el a másikat (irányított, mint a szabadkőműves elismerésnél)."@hu ,
+                    "Το τάγμα αναγνωρίζει επίσημα το άλλο ως κανονικό (με κατεύθυνση, όπως στην τεκτονική αναγνώριση)."@el ;
     skos:scopeNote "For a dated judgement by a commission, a state or the Holy See on whether an order of chivalry is genuine, use fraternal:LegitimacyAssessment."@en ,
                    "För en daterad bedömning av en kommission, en stat eller Den heliga stolen av om en riddarorden är äkta används fraternal:LegitimacyAssessment."@sv ,
                    "Pour un jugement daté d'une commission, d'un État ou du Saint-Siège sur l'authenticité d'un ordre de chevalerie, utiliser fraternal:LegitimacyAssessment."@fr ,
@@ -465,12 +495,13 @@ fraternal:recognizes a owl:ObjectProperty ;
                    "Per un giudizio datato di una commissione, di uno Stato o della Santa Sede sull'autenticità di un ordine cavalleresco si usa fraternal:LegitimacyAssessment."@it ,
                    "Para un juicio fechado de una comisión, un Estado o la Santa Sede sobre si una orden de caballería es auténtica, se usa fraternal:LegitimacyAssessment."@es ,
                    "Para um juízo datado de uma comissão, de um Estado ou da Santa Sé sobre se uma ordem de cavalaria é autêntica, usa-se fraternal:LegitimacyAssessment."@pt ,
-                   "Egy bizottság, egy állam vagy a Szentszék keltezett ítéletére arról, hogy egy lovagrend valódi-e, a fraternal:LegitimacyAssessment használandó."@hu .
+                   "Egy bizottság, egy állam vagy a Szentszék keltezett ítéletére arról, hogy egy lovagrend valódi-e, a fraternal:LegitimacyAssessment használandó."@hu ,
+                   "Για χρονολογημένη κρίση μιας επιτροπής, ενός κράτους ή της Αγίας Έδρας για το αν ένα ιπποτικό τάγμα είναι γνήσιο, χρησιμοποιείται το fraternal:LegitimacyAssessment."@el .
 
 fraternal:inAmityWith a owl:ObjectProperty , owl:SymmetricProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subPropertyOf org:linkedTo ;
-    rdfs:label "in amity with"@en , "i vänskap med"@sv , "en amitié avec"@fr , "in Freundschaft verbunden mit"@de , "in amicizia con"@it , "en amistad con"@es , "em amizade com"@pt , "barátságban áll vele"@hu ;
+    rdfs:label "in amity with"@en , "i vänskap med"@sv , "en amitié avec"@fr , "in Freundschaft verbunden mit"@de , "in amicizia con"@it , "en amistad con"@es , "em amizade com"@pt , "barátságban áll vele"@hu , "σε φιλία με"@el ;
     skos:definition "The two orders have a mutual friendship agreement, for example allowing visits."@en ,
                     "De två ordnarna har ett ömsesidigt vänskapsavtal, t.ex. om besök."@sv ,
                     "Les deux ordres ont un accord d'amitié réciproque, par exemple permettant les visites."@fr ,
@@ -478,7 +509,8 @@ fraternal:inAmityWith a owl:ObjectProperty , owl:SymmetricProperty ;
                     "I due ordini hanno un accordo di amicizia reciproca, che per esempio consente le visite."@it ,
                     "Las dos órdenes tienen un acuerdo de amistad mutuo, por ejemplo permitiendo visitas."@es ,
                     "As duas ordens têm um acordo de amizade mútuo, por exemplo permitindo visitas."@pt ,
-                    "A két rendnek kölcsönös baráti megállapodása van, például látogatások engedélyezéséről."@hu .
+                    "A két rendnek kölcsönös baráti megállapodása van, például látogatások engedélyezéséről."@hu ,
+                    "Τα δύο τάγματα έχουν αμοιβαία συμφωνία φιλίας, για παράδειγμα επιτρέποντας επισκέψεις."@el .
 
 ##############################################################################
 # LEGITIMACY OF ORDERS OF CHIVALRY
@@ -489,7 +521,7 @@ fraternal:inAmityWith a owl:ObjectProperty , owl:SymmetricProperty ;
 
 fraternal:fonsHonorum a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "fons honorum"@en , "fons honorum"@sv , "fons honorum"@fr , "fons honorum"@de , "fons honorum"@it , "fons honorum"@es , "fons honorum"@pt , "fons honorum"@hu ;
+    rdfs:label "fons honorum"@en , "fons honorum"@sv , "fons honorum"@fr , "fons honorum"@de , "fons honorum"@it , "fons honorum"@es , "fons honorum"@pt , "fons honorum"@hu , "fons honorum"@el ;
     rdfs:range foaf:Agent ;
     skos:definition "The authority from which an order derives its right to confer knighthood or honours: a sovereign state or its head, the head of a reigning or formerly reigning royal house, or the Holy See."@en ,
                     "Den auktoritet från vilken en orden härleder sin rätt att förläna riddarvärdighet eller utmärkelser: en suverän stat eller dess statschef, huvudmannen för ett regerande eller tidigare regerande furstehus, eller Den heliga stolen."@sv ,
@@ -498,7 +530,8 @@ fraternal:fonsHonorum a owl:ObjectProperty ;
                     "L'autorità da cui un ordine deriva il diritto di conferire il cavalierato o onorificenze: uno Stato sovrano o il suo capo, il capo di una casa reale regnante o già regnante, o la Santa Sede."@it ,
                     "La autoridad de la que una orden deriva su derecho a conferir la caballería o honores: un Estado soberano o su jefe, el jefe de una casa real reinante o que reinó, o la Santa Sede."@es ,
                     "A autoridade de que uma ordem deriva o seu direito de conferir a cavalaria ou honras: um Estado soberano ou o seu chefe, o chefe de uma casa real reinante ou que reinou, ou a Santa Sé."@pt ,
-                    "A hatalom, amelyből egy rend a lovaggá ütés vagy kitüntetések adományozásának jogát származtatja: egy szuverén állam vagy vezetője, egy uralkodó vagy egykor uralkodó királyi ház feje, vagy a Szentszék."@hu ;
+                    "A hatalom, amelyből egy rend a lovaggá ütés vagy kitüntetések adományozásának jogát származtatja: egy szuverén állam vagy vezetője, egy uralkodó vagy egykor uralkodó királyi ház feje, vagy a Szentszék."@hu ,
+                    "Η αρχή από την οποία ένα τάγμα αντλεί το δικαίωμά του να απονέμει ιπποτικό τίτλο ή τιμές: ένα κυρίαρχο κράτος ή ο αρχηγός του, ο αρχηγός ενός βασιλεύοντος ή πρώην βασιλεύοντος βασιλικού οίκου, ή η Αγία Έδρα."@el ;
     skos:scopeNote "States the fons honorum an order claims or is recorded with. Whether the claim is accepted is a fraternal:LegitimacyAssessment."@en ,
                    "Anger den fons honorum en orden hävdar eller registreras med. Om anspråket godtas är en fraternal:LegitimacyAssessment."@sv ,
                    "Indique la fons honorum qu'un ordre revendique ou avec laquelle il est enregistré. La reconnaissance de cette revendication relève d'une fraternal:LegitimacyAssessment."@fr ,
@@ -506,12 +539,13 @@ fraternal:fonsHonorum a owl:ObjectProperty ;
                    "Indica la fons honorum che un ordine rivendica o con cui è registrato. Se la rivendicazione sia accolta è una fraternal:LegitimacyAssessment."@it ,
                    "Indica el fons honorum que una orden reclama o con el que está registrada. Si la pretensión se acepta es una fraternal:LegitimacyAssessment."@es ,
                    "Indica o fons honorum que uma ordem reivindica ou com o qual está registada. Se a pretensão é aceite é uma fraternal:LegitimacyAssessment."@pt ,
-                   "Azt a fons honorumot adja meg, amelyet egy rend igényel, vagy amellyel nyilvántartják. Hogy az igényt elfogadják-e, fraternal:LegitimacyAssessment."@hu .
+                   "Azt a fons honorumot adja meg, amelyet egy rend igényel, vagy amellyel nyilvántartják. Hogy az igényt elfogadják-e, fraternal:LegitimacyAssessment."@hu ,
+                   "Δηλώνει το fons honorum που διεκδικεί ένα τάγμα ή με το οποίο είναι καταχωρισμένο. Το αν η διεκδίκηση γίνεται δεκτή είναι fraternal:LegitimacyAssessment."@el .
 
 fraternal:Recognition a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf prov:Activity ;
-    rdfs:label "Recognition"@en , "Erkännande"@sv , "Reconnaissance"@fr , "Anerkennung"@de , "Riconoscimento"@it , "Reconocimiento"@es , "Reconhecimento"@pt , "Elismerés"@hu ;
+    rdfs:label "Recognition"@en , "Erkännande"@sv , "Reconnaissance"@fr , "Anerkennung"@de , "Riconoscimento"@it , "Reconocimiento"@es , "Reconhecimento"@pt , "Elismerés"@hu , "Αναγνώριση"@el ;
     skos:definition "One body's formal recognition of another over a period: a grand lodge that recognises another as regular, two orders in amity, two bodies that allow each other's members to visit. It gives the recognising body (fraternal:recognizingBody), the recognised body (fraternal:recognizedBody), the kind (fraternal:recognitionType), and when it began and, if it ended, when (mbr:startDate, mbr:endDate)."@en ,
                     "Ett organs formella erkännande av ett annat under en period: en storloge som erkänner en annan som reguljär, två ordnar i vänskapsförbund, två organ som låter varandras medlemmar besöka sig. Den anger det erkännande organet (fraternal:recognizingBody), det erkända organet (fraternal:recognizedBody), slaget (fraternal:recognitionType), och när det började och, om det upphörde, när (mbr:startDate, mbr:endDate)."@sv ,
                     "La reconnaissance formelle d'un organe par un autre pendant une période : une grande loge qui en reconnaît une autre comme régulière, deux ordres en amitié, deux organes qui permettent aux membres de l'autre de leur rendre visite. Elle indique l'organe qui reconnaît (fraternal:recognizingBody), l'organe reconnu (fraternal:recognizedBody), la sorte (fraternal:recognitionType), et quand elle a commencé et, si elle a pris fin, quand (mbr:startDate, mbr:endDate)."@fr ,
@@ -519,7 +553,8 @@ fraternal:Recognition a owl:Class ;
                     "Il riconoscimento formale di un organismo da parte di un altro per un periodo: una gran loggia che ne riconosce un'altra come regolare, due ordini in amicizia, due organismi che permettono ai membri dell'altro di visitarli. Indica l'organismo che riconosce (fraternal:recognizingBody), l'organismo riconosciuto (fraternal:recognizedBody), il tipo (fraternal:recognitionType), e quando è iniziato e, se è finito, quando (mbr:startDate, mbr:endDate)."@it ,
                     "El reconocimiento formal de un organismo por otro durante un período: una gran logia que reconoce a otra como regular, dos órdenes en amistad, dos organismos que permiten visitar sus reuniones a los miembros del otro. Indica el organismo que reconoce (fraternal:recognizingBody), el organismo reconocido (fraternal:recognizedBody), el tipo (fraternal:recognitionType), y cuándo empezó y, si terminó, cuándo (mbr:startDate, mbr:endDate)."@es ,
                     "O reconhecimento formal de um organismo por outro durante um período: uma grande loja que reconhece outra como regular, duas ordens em amizade, dois organismos que permitem aos membros do outro visitar as suas reuniões. Indica o organismo que reconhece (fraternal:recognizingBody), o organismo reconhecido (fraternal:recognizedBody), o tipo (fraternal:recognitionType), e quando começou e, se terminou, quando (mbr:startDate, mbr:endDate)."@pt ,
-                    "Egy testület formális elismerése egy másik által egy időszakra: egy nagypáholy, amely egy másikat szabályosnak ismer el, két rend barátságban, két testület, amely megengedi, hogy a másik tagjai látogassák. Megadja az elismerő testületet (fraternal:recognizingBody), az elismert testületet (fraternal:recognizedBody), a fajtát (fraternal:recognitionType), és mikor kezdődött, és ha véget ért, mikor (mbr:startDate, mbr:endDate)."@hu ;
+                    "Egy testület formális elismerése egy másik által egy időszakra: egy nagypáholy, amely egy másikat szabályosnak ismer el, két rend barátságban, két testület, amely megengedi, hogy a másik tagjai látogassák. Megadja az elismerő testületet (fraternal:recognizingBody), az elismert testületet (fraternal:recognizedBody), a fajtát (fraternal:recognitionType), és mikor kezdődött, és ha véget ért, mikor (mbr:startDate, mbr:endDate)."@hu ,
+                    "Η επίσημη αναγνώριση ενός σώματος από ένα άλλο για μια περίοδο: μια μεγάλη στοά που αναγνωρίζει μια άλλη ως κανονική, δύο τάγματα σε φιλία, δύο σώματα που επιτρέπουν στα μέλη του άλλου να τα επισκέπτονται. Δίνει το σώμα που αναγνωρίζει (fraternal:recognizingBody), το σώμα που αναγνωρίζεται (fraternal:recognizedBody), το είδος (fraternal:recognitionType), και πότε άρχισε και, αν έληξε, πότε (mbr:startDate, mbr:endDate)."@el ;
     skos:scopeNote "fraternal:recognizes and fraternal:inAmityWith state the present in one triple and stay for that. Use a recognition when the dates or the end of the relation matter. Recognition is directional: if both bodies recognise each other, give two recognitions; amity is mutual and is given once. A recognition that was withdrawn has an end date. Whether the other body was found regular, irregular or clandestine is a fraternal:LegitimacyAssessment."@en ,
                    "fraternal:recognizes och fraternal:inAmityWith anger nuläget i ett enda påstående och finns kvar för det. Använd ett erkännande när datumen eller förhållandets slut har betydelse. Erkännande är riktat: erkänner båda organen varandra anges två erkännanden; vänskapsförbund är ömsesidigt och anges en gång. Ett erkännande som dragits tillbaka har ett slutdatum. Om det andra organet befunnits reguljärt, irreguljärt eller klandestint är en fraternal:LegitimacyAssessment."@sv ,
                    "fraternal:recognizes et fraternal:inAmityWith énoncent le présent en un seul triplet et restent pour cela. Utilisez une reconnaissance lorsque les dates ou la fin de la relation comptent. La reconnaissance est orientée : si les deux organes se reconnaissent, indiquez deux reconnaissances ; l'amitié est mutuelle et ne s'indique qu'une fois. Une reconnaissance retirée a une date de fin. Que l'autre organe ait été jugé régulier, irrégulier ou clandestin relève d'une fraternal:LegitimacyAssessment."@fr ,
@@ -527,11 +562,12 @@ fraternal:Recognition a owl:Class ;
                    "fraternal:recognizes e fraternal:inAmityWith dicono lo stato presente in una sola affermazione e restano per questo. Si usa un riconoscimento quando contano le date o la fine del rapporto. Il riconoscimento è orientato: se i due organismi si riconoscono a vicenda, si indicano due riconoscimenti; l'amicizia è reciproca e si indica una sola volta. Un riconoscimento ritirato ha una data di fine. Se l'altro organismo sia stato giudicato regolare, irregolare o clandestino è una fraternal:LegitimacyAssessment."@it ,
                    "fraternal:recognizes y fraternal:inAmityWith expresan el presente en un solo triple y se mantienen para eso. Se usa un reconocimiento cuando importan las fechas o el fin de la relación. El reconocimiento tiene dirección: si ambos organismos se reconocen entre sí, se dan dos reconocimientos; la amistad es mutua y se da una sola vez. Un reconocimiento retirado tiene fecha de fin. Que el otro organismo haya sido considerado regular, irregular o clandestino es una fraternal:LegitimacyAssessment."@es ,
                    "fraternal:recognizes e fraternal:inAmityWith exprimem o presente numa só tripla e mantêm-se para isso. Usa-se um reconhecimento quando importam as datas ou o fim da relação. O reconhecimento tem direção: se os dois organismos se reconhecem mutuamente, indicam-se dois reconhecimentos; a amizade é mútua e indica-se uma só vez. Um reconhecimento retirado tem data de fim. Que o outro organismo tenha sido considerado regular, irregular ou clandestino é uma fraternal:LegitimacyAssessment."@pt ,
-                   "A fraternal:recognizes és a fraternal:inAmityWith a jelent fejezi ki egyetlen hármasban, és erre maradnak. Elismerést akkor használjunk, ha a dátumok vagy a kapcsolat vége számít. Az elismerésnek iránya van: ha mindkét testület elismeri a másikat, két elismerést kell megadni; a barátság kölcsönös, és egyszer kell megadni. A visszavont elismerésnek van záró dátuma. Az, hogy a másik testületet szabályosnak, szabálytalannak vagy titkosnak találták-e, fraternal:LegitimacyAssessment."@hu .
+                   "A fraternal:recognizes és a fraternal:inAmityWith a jelent fejezi ki egyetlen hármasban, és erre maradnak. Elismerést akkor használjunk, ha a dátumok vagy a kapcsolat vége számít. Az elismerésnek iránya van: ha mindkét testület elismeri a másikat, két elismerést kell megadni; a barátság kölcsönös, és egyszer kell megadni. A visszavont elismerésnek van záró dátuma. Az, hogy a másik testületet szabályosnak, szabálytalannak vagy titkosnak találták-e, fraternal:LegitimacyAssessment."@hu ,
+                   "Τα fraternal:recognizes και fraternal:inAmityWith δηλώνουν το παρόν σε μία τριπλέτα και παραμένουν γι' αυτό. Η αναγνώριση χρησιμοποιείται όταν μετράνε οι ημερομηνίες ή το τέλος της σχέσης. Η αναγνώριση έχει κατεύθυνση: αν τα δύο σώματα αναγνωρίζουν το ένα το άλλο, δίνονται δύο αναγνωρίσεις· η φιλία είναι αμοιβαία και δίνεται μία φορά. Μια αναγνώριση που ανακλήθηκε έχει ημερομηνία λήξης. Το αν το άλλο σώμα κρίθηκε κανονικό, μη κανονικό ή κρυφό (clandestine) είναι fraternal:LegitimacyAssessment."@el .
 
 fraternal:recognizingBody a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "recognising body"@en , "erkännande organ"@sv , "organe qui reconnaît"@fr , "anerkennendes Organ"@de , "organismo che riconosce"@it , "organismo que reconoce"@es , "organismo que reconhece"@pt , "elismerő testület"@hu ;
+    rdfs:label "recognising body"@en , "erkännande organ"@sv , "organe qui reconnaît"@fr , "anerkennendes Organ"@de , "organismo che riconosce"@it , "organismo que reconoce"@es , "organismo que reconhece"@pt , "elismerő testület"@hu , "σώμα που αναγνωρίζει"@el ;
     rdfs:domain fraternal:Recognition ;
     rdfs:range org:Organization ;
     skos:definition "The body that recognises. For amity, either of the two."@en ,
@@ -541,11 +577,12 @@ fraternal:recognizingBody a owl:ObjectProperty ;
                     "L'organismo che riconosce. Per l'amicizia, l'uno o l'altro dei due."@it ,
                     "El organismo que reconoce. En la amistad, cualquiera de los dos."@es ,
                     "O organismo que reconhece. Na amizade, qualquer um dos dois."@pt ,
-                    "A testület, amely elismer. Barátságnál a kettő közül bármelyik."@hu .
+                    "A testület, amely elismer. Barátságnál a kettő közül bármelyik."@hu ,
+                    "Το σώμα που αναγνωρίζει. Στη φιλία, οποιοδήποτε από τα δύο."@el .
 
 fraternal:recognizedBody a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "recognised body"@en , "erkänt organ"@sv , "organe reconnu"@fr , "anerkanntes Organ"@de , "organismo riconosciuto"@it , "organismo reconocido"@es , "organismo reconhecido"@pt , "elismert testület"@hu ;
+    rdfs:label "recognised body"@en , "erkänt organ"@sv , "organe reconnu"@fr , "anerkanntes Organ"@de , "organismo riconosciuto"@it , "organismo reconocido"@es , "organismo reconhecido"@pt , "elismert testület"@hu , "σώμα που αναγνωρίζεται"@el ;
     rdfs:domain fraternal:Recognition ;
     rdfs:range org:Organization ;
     skos:definition "The body that is recognised."@en ,
@@ -555,11 +592,12 @@ fraternal:recognizedBody a owl:ObjectProperty ;
                     "L'organismo che è riconosciuto."@it ,
                     "El organismo que es reconocido."@es ,
                     "O organismo que é reconhecido."@pt ,
-                    "A testület, amelyet elismernek."@hu .
+                    "A testület, amelyet elismernek."@hu ,
+                    "Το σώμα που αναγνωρίζεται."@el .
 
 fraternal:recognitionType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "recognition type"@en , "typ av erkännande"@sv , "type de reconnaissance"@fr , "Art der Anerkennung"@de , "tipo di riconoscimento"@it , "tipo de reconocimiento"@es , "tipo de reconhecimento"@pt , "elismerés típusa"@hu ;
+    rdfs:label "recognition type"@en , "typ av erkännande"@sv , "type de reconnaissance"@fr , "Art der Anerkennung"@de , "tipo di riconoscimento"@it , "tipo de reconocimiento"@es , "tipo de reconhecimento"@pt , "elismerés típusa"@hu , "τύπος αναγνώρισης"@el ;
     rdfs:domain fraternal:Recognition ;
     rdfs:range skos:Concept ;
     skos:definition "The kind of relation a recognition states (see fraternalc:RecognitionTypes)."@en ,
@@ -569,11 +607,12 @@ fraternal:recognitionType a owl:ObjectProperty ;
                     "Il tipo di rapporto che un riconoscimento afferma (vedi fraternalc:RecognitionTypes)."@it ,
                     "El tipo de relación que expresa un reconocimiento (véase fraternalc:RecognitionTypes)."@es ,
                     "O tipo de relação que exprime um reconhecimento (ver fraternalc:RecognitionTypes)."@pt ,
-                    "A kapcsolat fajtája, amelyet egy elismerés kimond (lásd fraternalc:RecognitionTypes)."@hu .
+                    "A kapcsolat fajtája, amelyet egy elismerés kimond (lásd fraternalc:RecognitionTypes)."@hu ,
+                    "Το είδος της σχέσης που δηλώνει μια αναγνώριση (βλ. fraternalc:RecognitionTypes)."@el .
 
 fraternal:requiresMembershipIn a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "requires membership in"@en , "kräver medlemskap i"@sv , "exige l'appartenance à"@fr , "setzt Mitgliedschaft voraus in"@de , "richiede l'appartenenza a"@it , "exige pertenecer a"@es , "exige pertencer a"@pt , "tagságot követel ebben"@hu ;
+    rdfs:label "requires membership in"@en , "kräver medlemskap i"@sv , "exige l'appartenance à"@fr , "setzt Mitgliedschaft voraus in"@de , "richiede l'appartenenza a"@it , "exige pertenecer a"@es , "exige pertencer a"@pt , "tagságot követel ebben"@hu , "απαιτεί ιδιότητα μέλους σε"@el ;
     rdfs:range org:Organization ;
     skos:definition "Membership of this body is a condition of entry to the order or the degree it is given for: the Royal Arch is open to Master Masons only."@en ,
                     "Medlemskap i det här organet är ett villkor för att tas in i den orden eller den graden som egenskapen anges för: Royal Arch är öppet bara för mästarmurare."@sv ,
@@ -582,11 +621,12 @@ fraternal:requiresMembershipIn a owl:ObjectProperty ;
                     "L'appartenenza a questo organismo è condizione per entrare nell'ordine o nel grado per cui è indicata: il Royal Arch è aperto solo ai maestri muratori."@it ,
                     "Pertenecer a este organismo es condición de entrada en la orden o el grado para el que se indica: el Arco Real está abierto solo a maestros masones."@es ,
                     "Pertencer a este organismo é condição de entrada na ordem ou no grau para que se indica: o Arco Real está aberto apenas a mestres maçons."@pt ,
-                    "E testület tagsága feltétele a belépésnek abba a rendbe vagy fokozatba, amelyre megadták: a Royal Arch csak mester fokozatú szabadkőműveseknek nyitott."@hu .
+                    "E testület tagsága feltétele a belépésnek abba a rendbe vagy fokozatba, amelyre megadták: a Royal Arch csak mester fokozatú szabadkőműveseknek nyitott."@hu ,
+                    "Η ιδιότητα μέλους σε αυτό το σώμα είναι προϋπόθεση εισόδου στο τάγμα ή στον βαθμό για τον οποίο δίνεται: η Βασιλική Αψίδα (Royal Arch) είναι ανοιχτή μόνο σε Διδασκάλους τέκτονες."@el .
 
 fraternal:requiresDegree a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "requires degree"@en , "kräver grad"@sv , "exige le degré"@fr , "setzt Grad voraus"@de , "richiede il grado"@it , "exige el grado"@es , "exige o grau"@pt , "fokozatot követel"@hu ;
+    rdfs:label "requires degree"@en , "kräver grad"@sv , "exige le degré"@fr , "setzt Grad voraus"@de , "richiede il grado"@it , "exige el grado"@es , "exige o grau"@pt , "fokozatot követel"@hu , "απαιτεί βαθμό"@el ;
     rdfs:range fraternal:Degree ;
     skos:definition "Holding this degree is a condition of entry to the order or the degree it is given for. Use it where degrees are not one sequence: a degree system that branches is written as separate fraternal:DegreeSystem, each with its own fraternal:nextDegree, and the first degree of a branch requires the degree it grows from."@en ,
                     "Att inneha den här graden är ett villkor för att tas in i den orden eller den graden som egenskapen anges för. Används där graderna inte är en enda följd: ett gradsystem som förgrenar sig skrivs som skilda fraternal:DegreeSystem, vart och ett med sin egen fraternal:nextDegree, och förgreningens första grad kräver den grad den växer ur."@sv ,
@@ -595,11 +635,12 @@ fraternal:requiresDegree a owl:ObjectProperty ;
                     "Possedere questo grado è condizione per entrare nell'ordine o nel grado per cui è indicato. Si usa dove i gradi non formano un'unica sequenza: un sistema di gradi che si ramifica si scrive come fraternal:DegreeSystem distinti, ciascuno con il proprio fraternal:nextDegree, e il primo grado di un ramo richiede il grado da cui parte."@it ,
                     "Tener este grado es condición de entrada en la orden o el grado para el que se indica. Se usa donde los grados no forman una sola secuencia: un sistema de grados que se ramifica se escribe como fraternal:DegreeSystem separados, cada uno con su propio fraternal:nextDegree, y el primer grado de una rama exige el grado del que parte."@es ,
                     "Ter este grau é condição de entrada na ordem ou no grau para que se indica. Usa-se onde os graus não formam uma só sequência: um sistema de graus que se ramifica escreve-se como fraternal:DegreeSystem separados, cada um com o seu fraternal:nextDegree, e o primeiro grau de um ramo exige o grau de que parte."@pt ,
-                    "E fokozat birtoklása feltétele a belépésnek abba a rendbe vagy fokozatba, amelyre megadták. Ott használjuk, ahol a fokozatok nem egyetlen sorrendet alkotnak: az elágazó fokozatrendszert külön fraternal:DegreeSystem-ekként kell leírni, mindegyiket a saját fraternal:nextDegree értékével, és egy ág első fokozata azt a fokozatot követeli meg, amelyből kinő."@hu .
+                    "E fokozat birtoklása feltétele a belépésnek abba a rendbe vagy fokozatba, amelyre megadták. Ott használjuk, ahol a fokozatok nem egyetlen sorrendet alkotnak: az elágazó fokozatrendszert külön fraternal:DegreeSystem-ekként kell leírni, mindegyiket a saját fraternal:nextDegree értékével, és egy ág első fokozata azt a fokozatot követeli meg, amelyből kinő."@hu ,
+                    "Η κατοχή αυτού του βαθμού είναι προϋπόθεση εισόδου στο τάγμα ή στον βαθμό για τον οποίο δίνεται. Χρησιμοποιείται όπου οι βαθμοί δεν αποτελούν μία ακολουθία: ένα σύστημα βαθμών που διακλαδίζεται γράφεται ως χωριστά fraternal:DegreeSystem, το καθένα με το δικό του fraternal:nextDegree, και ο πρώτος βαθμός ενός κλάδου απαιτεί τον βαθμό από τον οποίο φυτρώνει."@el .
 
 fraternal:requiresRelationToMembersOf a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "requires relation to members of"@en , "kräver släktskap med medlemmar i"@sv , "exige un lien avec des membres de"@fr , "setzt Verwandtschaft mit Mitgliedern voraus in"@de , "richiede un legame con i membri di"@it , "exige parentesco con miembros de"@es , "exige parentesco com membros de"@pt , "rokonságot követel tagokkal ebben"@hu ;
+    rdfs:label "requires relation to members of"@en , "kräver släktskap med medlemmar i"@sv , "exige un lien avec des membres de"@fr , "setzt Verwandtschaft mit Mitgliedern voraus in"@de , "richiede un legame con i membri di"@it , "exige parentesco con miembros de"@es , "exige parentesco com membros de"@pt , "rokonságot követel tagokkal ebben"@hu , "απαιτεί συγγένεια με μέλη του"@el ;
     rdfs:range org:Organization ;
     skos:definition "A candidate must be related, for example as spouse, daughter or sister, to a member of this body, as in the Order of the Eastern Star, which is open to Master Masons and to women related to them. The kind of relation is stated in the order's own rules."@en ,
                     "En kandidat måste vara släkt med, till exempel make eller maka, dotter eller syster till, en medlem i det här organet, som i Order of the Eastern Star, som är öppen för mästarmurare och kvinnor som är släkt med dem. Slaget av släktskap anges i ordens egna regler."@sv ,
@@ -608,12 +649,13 @@ fraternal:requiresRelationToMembersOf a owl:ObjectProperty ;
                     "Un candidato deve essere imparentato, per esempio come coniuge, figlia o sorella, con un membro di questo organismo, come nell'Order of the Eastern Star, aperto ai maestri muratori e alle donne a loro imparentate. Il tipo di legame è stabilito dalle regole proprie dell'ordine."@it ,
                     "Un candidato debe estar emparentado, por ejemplo como cónyuge, hija o hermana, con un miembro de este organismo, como en la Orden de la Estrella de Oriente, abierta a maestros masones y a mujeres emparentadas con ellos. El tipo de parentesco lo fijan las reglas propias de la orden."@es ,
                     "Um candidato tem de ser parente, por exemplo como cônjuge, filha ou irmã, de um membro deste organismo, como na Ordem da Estrela do Oriente, aberta a mestres maçons e a mulheres com eles aparentadas. O tipo de parentesco é fixado pelas regras próprias da ordem."@pt ,
-                    "A jelöltnek rokonnak kell lennie, például házastársként, lányaként vagy nővéreként, e testület egy tagjának, mint a Keleti Csillag Rendjében, amely mester szabadkőműveseknek és velük rokon nőknek nyitott. A rokonság fajtáját a rend saját szabályai írják elő."@hu .
+                    "A jelöltnek rokonnak kell lennie, például házastársként, lányaként vagy nővéreként, e testület egy tagjának, mint a Keleti Csillag Rendjében, amely mester szabadkőműveseknek és velük rokon nőknek nyitott. A rokonság fajtáját a rend saját szabályai írják elő."@hu ,
+                    "Ένας υποψήφιος πρέπει να είναι συγγενής, για παράδειγμα ως σύζυγος, κόρη ή αδελφή, ενός μέλους αυτού του σώματος, όπως στο Τάγμα του Ανατολικού Αστέρα, που είναι ανοιχτό σε Διδασκάλους τέκτονες και σε γυναίκες συγγενείς τους. Το είδος της συγγένειας ορίζεται από τους δικούς κανόνες του τάγματος."@el .
 
 fraternal:LegitimacyAssessment a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subClassOf prov:Activity ;
-    rdfs:label "Legitimacy Assessment"@en , "Legitimitetsbedömning"@sv , "Évaluation de légitimité"@fr , "Legitimitätsbewertung"@de , "Valutazione di legittimità"@it , "Evaluación de legitimidad"@es , "Avaliação de legitimidade"@pt , "Jogosság értékelése"@hu ;
+    rdfs:label "Legitimacy Assessment"@en , "Legitimitetsbedömning"@sv , "Évaluation de légitimité"@fr , "Legitimitätsbewertung"@de , "Valutazione di legittimità"@it , "Evaluación de legitimidad"@es , "Avaliação de legitimidade"@pt , "Jogosság értékelése"@hu , "Αξιολόγηση νομιμότητας"@el ;
     skos:definition "A statement by an agent — a commission such as the ICOC, the Holy See, a state or another order — about whether an order is a genuine order of chivalry or may be worn, with its outcome (fraternal:assessmentOutcome), date (mbr:startDate) and source (dcterms:source)."@en ,
                     "Ett uttalande av en agent — en kommission som ICOC, Den heliga stolen, en stat eller en annan orden — om huruvida en orden är en äkta riddarorden eller får bäras, med utfall (fraternal:assessmentOutcome), datum (mbr:startDate) och källa (dcterms:source)."@sv ,
                     "Déclaration d'un agent — une commission comme l'ICOC, le Saint-Siège, un État ou un autre ordre — sur le fait qu'un ordre est un véritable ordre de chevalerie ou peut être porté, avec son résultat (fraternal:assessmentOutcome), sa date (mbr:startDate) et sa source (dcterms:source)."@fr ,
@@ -621,7 +663,8 @@ fraternal:LegitimacyAssessment a owl:Class ;
                     "Una dichiarazione di un agente — una commissione come l'ICOC, la Santa Sede, uno Stato o un altro ordine — sul fatto che un ordine sia un autentico ordine cavalleresco o possa essere portato, con il suo esito (fraternal:assessmentOutcome), la data (mbr:startDate) e la fonte (dcterms:source)."@it ,
                     "Una declaración de un agente —una comisión como el ICOC, la Santa Sede, un Estado u otra orden— sobre si una orden es una auténtica orden de caballería o puede llevarse, con su resultado (fraternal:assessmentOutcome), fecha (mbr:startDate) y fuente (dcterms:source)."@es ,
                     "Uma declaração de um agente — uma comissão como o ICOC, a Santa Sé, um Estado ou outra ordem — sobre se uma ordem é uma autêntica ordem de cavalaria ou pode ser usada, com o seu resultado (fraternal:assessmentOutcome), data (mbr:startDate) e fonte (dcterms:source)."@pt ,
-                    "Egy ágens — egy bizottság, mint az ICOC, a Szentszék, egy állam vagy egy másik rend — nyilatkozata arról, hogy egy rend valódi lovagrend-e vagy viselhető-e, az eredményével (fraternal:assessmentOutcome), dátumával (mbr:startDate) és forrásával (dcterms:source)."@hu ;
+                    "Egy ágens — egy bizottság, mint az ICOC, a Szentszék, egy állam vagy egy másik rend — nyilatkozata arról, hogy egy rend valódi lovagrend-e vagy viselhető-e, az eredményével (fraternal:assessmentOutcome), dátumával (mbr:startDate) és forrásával (dcterms:source)."@hu ,
+                    "Μια δήλωση ενός παράγοντα — μιας επιτροπής όπως η ICOC, της Αγίας Έδρας, ενός κράτους ή ενός άλλου τάγματος — για το αν ένα τάγμα είναι γνήσιο ιπποτικό τάγμα ή μπορεί να φέρεται, με το αποτέλεσμά της (fraternal:assessmentOutcome), την ημερομηνία (mbr:startDate) και την πηγή (dcterms:source)."@el ;
     skos:scopeNote "Also used for the regularity of a Masonic body, as judged by another grand body: the outcome is then fraternalc:regular, fraternalc:irregular or fraternalc:clandestine. The recognition that follows is a fraternal:Recognition."@en ,
                    "Används också för ett frimurarorgans reguljäritet, bedömd av ett annat överordnat organ: utfallet är då fraternalc:regular, fraternalc:irregular eller fraternalc:clandestine. Erkännandet som följer är en fraternal:Recognition."@sv ,
                    "S'emploie aussi pour la régularité d'un organe maçonnique, jugée par un autre organe dirigeant : le résultat est alors fraternalc:regular, fraternalc:irregular ou fraternalc:clandestine. La reconnaissance qui s'ensuit est une fraternal:Recognition."@fr ,
@@ -629,26 +672,27 @@ fraternal:LegitimacyAssessment a owl:Class ;
                    "Si usa anche per la regolarità di un organismo massonico, giudicata da un altro organismo di governo: l'esito è allora fraternalc:regular, fraternalc:irregular o fraternalc:clandestine. Il riconoscimento che ne segue è una fraternal:Recognition."@it ,
                    "Se usa también para la regularidad de un organismo masónico, juzgada por otro organismo rector: el resultado es entonces fraternalc:regular, fraternalc:irregular o fraternalc:clandestine. El reconocimiento que sigue es un fraternal:Recognition."@es ,
                    "Usa-se também para a regularidade de um organismo maçónico, julgada por outro organismo dirigente: o resultado é então fraternalc:regular, fraternalc:irregular ou fraternalc:clandestine. O reconhecimento que se segue é um fraternal:Recognition."@pt ,
-                   "Szabadkőműves testület szabályosságára is használatos, egy másik irányító testület megítélése szerint: az eredmény ekkor fraternalc:regular, fraternalc:irregular vagy fraternalc:clandestine. Az ezt követő elismerés egy fraternal:Recognition."@hu .
+                   "Szabadkőműves testület szabályosságára is használatos, egy másik irányító testület megítélése szerint: az eredmény ekkor fraternalc:regular, fraternalc:irregular vagy fraternalc:clandestine. Az ezt követő elismerés egy fraternal:Recognition."@hu ,
+                   "Χρησιμοποιείται και για την κανονικότητα ενός τεκτονικού σώματος, όπως κρίνεται από άλλο ανώτατο όργανο: το αποτέλεσμα είναι τότε fraternalc:regular, fraternalc:irregular ή fraternalc:clandestine. Η αναγνώριση που ακολουθεί είναι fraternal:Recognition."@el .
 
 fraternal:assessedOrder a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "assessed order"@en , "bedömd orden"@sv , "ordre évalué"@fr , "bewerteter Orden"@de , "ordine valutato"@it , "orden evaluada"@es , "ordem avaliada"@pt , "értékelt rend"@hu ;
+    rdfs:label "assessed order"@en , "bedömd orden"@sv , "ordre évalué"@fr , "bewerteter Orden"@de , "ordine valutato"@it , "orden evaluada"@es , "ordem avaliada"@pt , "értékelt rend"@hu , "τάγμα που αξιολογείται"@el ;
     rdfs:domain fraternal:LegitimacyAssessment ;
     rdfs:range org:Organization ;
-    skos:definition "The order the assessment is about."@en , "Den orden som bedömningen avser."@sv , "L'ordre sur lequel porte l'évaluation."@fr , "Der Orden, auf den sich die Bewertung bezieht."@de , "L'ordine a cui si riferisce la valutazione."@it , "La orden sobre la que trata la evaluación."@es , "A ordem sobre a qual trata a avaliação."@pt , "A rend, amelyről az értékelés szól."@hu .
+    skos:definition "The order the assessment is about."@en , "Den orden som bedömningen avser."@sv , "L'ordre sur lequel porte l'évaluation."@fr , "Der Orden, auf den sich die Bewertung bezieht."@de , "L'ordine a cui si riferisce la valutazione."@it , "La orden sobre la que trata la evaluación."@es , "A ordem sobre a qual trata a avaliação."@pt , "A rend, amelyről az értékelés szól."@hu , "Το τάγμα για το οποίο γίνεται η αξιολόγηση."@el .
 
 fraternal:assessedBy a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
     rdfs:subPropertyOf prov:wasAssociatedWith ;
-    rdfs:label "assessed by"@en , "bedömd av"@sv , "évalué par"@fr , "bewertet durch"@de , "valutato da"@it , "evaluada por"@es , "avaliada por"@pt , "értékelte"@hu ;
+    rdfs:label "assessed by"@en , "bedömd av"@sv , "évalué par"@fr , "bewertet durch"@de , "valutato da"@it , "evaluada por"@es , "avaliada por"@pt , "értékelte"@hu , "αξιολογήθηκε από"@el ;
     rdfs:domain fraternal:LegitimacyAssessment ;
     rdfs:range foaf:Agent ;
-    skos:definition "The agent that made the assessment."@en , "Den agent som gjorde bedömningen."@sv , "L'agent qui a fait l'évaluation."@fr , "Der Akteur, der die Bewertung vorgenommen hat."@de , "L'agente che ha fatto la valutazione."@it , "El agente que hizo la evaluación."@es , "O agente que fez a avaliação."@pt , "Az ágens, aki az értékelést végezte."@hu .
+    skos:definition "The agent that made the assessment."@en , "Den agent som gjorde bedömningen."@sv , "L'agent qui a fait l'évaluation."@fr , "Der Akteur, der die Bewertung vorgenommen hat."@de , "L'agente che ha fatto la valutazione."@it , "El agente que hizo la evaluación."@es , "O agente que fez a avaliação."@pt , "Az ágens, aki az értékelést végezte."@hu , "Ο παράγοντας που έκανε την αξιολόγηση."@el .
 
 fraternal:assessmentOutcome a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/fraternal> ;
-    rdfs:label "assessment outcome"@en , "bedömningens utfall"@sv , "résultat de l'évaluation"@fr , "Bewertungsergebnis"@de , "esito della valutazione"@it , "resultado de la evaluación"@es , "resultado da avaliação"@pt , "értékelés eredménye"@hu ;
+    rdfs:label "assessment outcome"@en , "bedömningens utfall"@sv , "résultat de l'évaluation"@fr , "Bewertungsergebnis"@de , "esito della valutazione"@it , "resultado de la evaluación"@es , "resultado da avaliação"@pt , "értékelés eredménye"@hu , "αποτέλεσμα αξιολόγησης"@el ;
     rdfs:domain fraternal:LegitimacyAssessment ;
     rdfs:range skos:Concept ;
     skos:definition "What the assessment concluded (see fraternalc:AssessmentOutcomes)."@en ,
@@ -658,4 +702,5 @@ fraternal:assessmentOutcome a owl:ObjectProperty ;
                     "Ciò che la valutazione ha concluso (vedi fraternalc:AssessmentOutcomes)."@it ,
                     "Lo que concluyó la evaluación (véase fraternalc:AssessmentOutcomes)."@es ,
                     "O que concluiu a avaliação (ver fraternalc:AssessmentOutcomes)."@pt ,
-                    "Amit az értékelés megállapított (lásd fraternalc:AssessmentOutcomes)."@hu .
+                    "Amit az értékelés megállapított (lásd fraternalc:AssessmentOutcomes)."@hu ,
+                    "Αυτό που κατέληξε η αξιολόγηση (βλ. fraternalc:AssessmentOutcomes)."@el .
