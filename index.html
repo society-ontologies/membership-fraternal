@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="owl: http://www.w3.org/2002/07/owl# rdfs: http://www.w3.org/2000/01/rdf-schema# dcterms: http://purl.org/dc/terms/ dcat: http://www.w3.org/ns/dcat# vann: http://purl.org/vocab/vann/ schema: http://schema.org/ foaf: http://xmlns.com/foaf/0.1/">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,21 +9,55 @@
   code { background: #f2f2f2; padding: 0 .25em; border-radius: 3px; }
   h1 { font-size: 1.6rem; }
   td, th { padding: .3rem .6rem; text-align: left; vertical-align: top; }
+  td code { overflow-wrap: anywhere; }
+  .scroll { overflow-x: auto; }
   @media (prefers-color-scheme: dark) { body { color: #e8e8e8; background: #161616; } code { background: #2a2a2a; } a { color: #8ab4f8; } }
 </style>
 </head>
 <body>
-<h1>Membership and Fraternal Ontologies</h1>
-<p>Two layered OWL 2 DL + SKOS ontologies for describing membership organisations of every kind, closed or open — clubs, societies, associations, political parties, trade unions, fraternal orders and sororities — as Linked Open Data.</p>
+<!-- The page is also data (RDFa 1.1): the catalog, the two ontologies with their codelists and
+     shapes, the mapping sets, their versions, licenses, documentation pages and Turtle files.
+     A value is the text that is shown, so the two cannot drift apart. The exceptions are the
+     prefixes (written without the colon) and the empty spans with rel="owl:imports". Keep
+     the version in the Version column in step with owl:versionInfo in the ontology files. -->
+<main resource="#catalog" typeof="dcat:Catalog">
+<h1 property="dcterms:title">Membership and Fraternal Ontologies</h1>
+<p property="dcterms:description">Two layered OWL 2 DL + SKOS ontologies for describing membership organisations of every kind, closed or open — clubs, societies, associations, political parties, trade unions, fraternal orders and sororities — as Linked Open Data.</p>
 
-<table>
-<tr><th>Ontology</th><th>IRI</th><th>Documentation</th><th>Turtle</th></tr>
-<tr><td>Membership Organisations (<code>mbr:</code>)</td><td><code>https://w3id.org/membership#</code></td><td><a href="docs/membership/" lang="en">English</a> · <a href="docs/membership/de/" lang="de">Deutsch</a> · <a href="docs/membership/fr/" lang="fr">Français</a> · <a href="docs/membership/it/" lang="it">Italiano</a> · <a href="docs/membership/sv/" lang="sv">Svenska</a></td><td><a href="membership/membership-ontology.ttl">ontology</a> · <a href="membership/membership-codes.ttl">codelists</a> · <a href="membership/membership-shapes.ttl">shapes</a></td></tr>
-<tr><td>Fraternal Orders and Sororities (<code>fraternal:</code>)</td><td><code>https://w3id.org/fraternal#</code></td><td><a href="docs/fraternal/" lang="en">English</a> · <a href="docs/fraternal/de/" lang="de">Deutsch</a> · <a href="docs/fraternal/fr/" lang="fr">Français</a> · <a href="docs/fraternal/it/" lang="it">Italiano</a> · <a href="docs/fraternal/sv/" lang="sv">Svenska</a></td><td><a href="fraternal/fraternal-ontology.ttl">ontology</a> · <a href="fraternal/fraternal-codes.ttl">codelists</a> · <a href="fraternal/fraternal-shapes.ttl">shapes</a></td></tr>
-</table>
+<div class="scroll"><table>
+<tr><th>Ontology</th><th>Namespace</th><th>Version</th><th>License</th><th>Documentation</th><th>Turtle</th></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/membership" typeof="owl:Ontology">
+<td><span property="schema:name">Membership Organisations</span> (<code property="vann:preferredNamespacePrefix" content="mbr" lang="">mbr:</code>)</td>
+<td><code property="vann:preferredNamespaceUri" lang="">https://w3id.org/membership#</code></td>
+<td><a rel="owl:versionIRI" href="https://w3id.org/membership/1.1.0" property="owl:versionInfo" lang="">1.1.0</a></td>
+<td><a rel="dcterms:license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td><a rel="foaf:page" typeof="foaf:Document" href="docs/membership/" lang="en" hreflang="en"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/en">English</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/membership/de/" lang="de" hreflang="de"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/de">Deutsch</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/membership/fr/" lang="fr" hreflang="fr"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/fr">Français</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/membership/it/" lang="it" hreflang="it"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/it">Italiano</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/membership/sv/" lang="sv" hreflang="sv"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/sv">Svenska</span></a></td>
+<td><a rel="dcterms:hasFormat" href="membership/membership-ontology.ttl" type="text/turtle">ontology</a> · <span rel="rdfs:seeAlso" resource="https://w3id.org/membership/code" typeof="owl:Ontology"><span rel="owl:imports" resource="https://w3id.org/membership"></span><a rel="dcterms:hasFormat" href="membership/membership-codes.ttl" type="text/turtle">codelists</a></span> · <span rel="rdfs:seeAlso" resource="https://w3id.org/membership/shapes" typeof="owl:Ontology"><a rel="dcterms:hasFormat" href="membership/membership-shapes.ttl" type="text/turtle">shapes</a></span></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal" typeof="owl:Ontology">
+<td><span property="schema:name">Fraternal Orders and Sororities</span> (<code property="vann:preferredNamespacePrefix" content="fraternal" lang="">fraternal:</code>)</td>
+<td><code property="vann:preferredNamespaceUri" lang="">https://w3id.org/fraternal#</code></td>
+<td><a rel="owl:versionIRI" href="https://w3id.org/fraternal/1.1.0" property="owl:versionInfo" lang="">1.1.0</a></td>
+<td><a rel="dcterms:license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td><a rel="foaf:page" typeof="foaf:Document" href="docs/fraternal/" lang="en" hreflang="en"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/en">English</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/fraternal/de/" lang="de" hreflang="de"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/de">Deutsch</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/fraternal/fr/" lang="fr" hreflang="fr"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/fr">Français</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/fraternal/it/" lang="it" hreflang="it"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/it">Italiano</span></a> · <a rel="foaf:page" typeof="foaf:Document" href="docs/fraternal/sv/" lang="sv" hreflang="sv"><span rel="dcterms:language" resource="http://id.loc.gov/vocabulary/iso639-1/sv">Svenska</span></a></td>
+<td><a rel="dcterms:hasFormat" href="fraternal/fraternal-ontology.ttl" type="text/turtle">ontology</a> · <span rel="rdfs:seeAlso" resource="https://w3id.org/fraternal/code" typeof="owl:Ontology"><span rel="owl:imports" resource="https://w3id.org/fraternal"></span><span rel="owl:imports" resource="https://w3id.org/membership/code"></span><a rel="dcterms:hasFormat" href="fraternal/fraternal-codes.ttl" type="text/turtle">codelists</a></span> · <span rel="rdfs:seeAlso" resource="https://w3id.org/fraternal/shapes" typeof="owl:Ontology"><a rel="dcterms:hasFormat" href="fraternal/fraternal-shapes.ttl" type="text/turtle">shapes</a></span></td></tr>
+</table></div>
 
-<p>Version 1.1.0. Every release stays available at its version IRI, such as <code>https://w3id.org/membership/1.0.0</code>.</p>
-<p>Source, design notes, mappings and tests: <a href="https://github.com/society-ontologies/membership-fraternal">github.com/society-ontologies/membership-fraternal</a>.</p>
-<p>Ontologies: CC BY 4.0 · Mappings: CC0 1.0 · Code: MIT.</p>
+<p>Every release stays available at its version IRI, such as <code>https://w3id.org/membership/1.0.0</code>.</p>
+
+<div class="scroll"><table>
+<tr><th>Mapping set</th><th>License</th></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/membership/mappings/membership-wikidata" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/membership-wikidata.ttl" type="text/turtle">membership-wikidata</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/membership/mappings/membership-aat" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/membership-aat.ttl" type="text/turtle">membership-aat</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal/mappings/fraternal-wikidata" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/fraternal-wikidata.ttl" type="text/turtle">fraternal-wikidata</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal/mappings/fraternal-aat" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/fraternal-aat.ttl" type="text/turtle">fraternal-aat</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal/mappings/fraternal-hubs" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/fraternal-hubs.ttl" type="text/turtle">fraternal-hubs</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal/mappings/fraternal-offices" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/fraternal-offices.ttl" type="text/turtle">fraternal-offices</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal/mappings/fraternal-offices-fr" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/fraternal-offices-fr.ttl" type="text/turtle">fraternal-offices-fr</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+<tr rel="dcat:dataset" resource="https://w3id.org/fraternal/mappings/fraternal-ceremonies" typeof="dcat:Dataset"><td><a rel="dcterms:hasFormat" href="mappings/generated/fraternal-ceremonies.ttl" type="text/turtle">fraternal-ceremonies</a></td><td><a rel="dcterms:license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+</table></div>
+
+<p>Source, design notes, mappings and tests: <a rel="dcterms:source" typeof="schema:SoftwareSourceCode" href="https://github.com/society-ontologies/membership-fraternal">github.com/society-ontologies/membership-fraternal</a>.</p>
+<p>Code: <a about="https://github.com/society-ontologies/membership-fraternal" rel="dcterms:license" href="https://spdx.org/licenses/MIT">MIT</a>.</p>
+</main>
 </body>
 </html>

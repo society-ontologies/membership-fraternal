@@ -24,6 +24,9 @@ mbr:Branch a owl:Class ;
    term without one is shown in English in the documentation.
 4. Run `make i18n`. It must say `i18n OK`.
 5. Run `make docs`. It writes the documentation in your language to `docs/<ontology>/<language>/`.
+   Then add the language to both rows of `index.html`, with the same markup as the others: the
+   link to the page, and the Library of Congress IRI of the language (`http://id.loc.gov/vocabulary/iso639-1/<code>`)
+   in `dcterms:language`.
 6. Open a pull request. Say who translated it and whether a native speaker has reviewed it, and
    mark machine translations so they are not mistaken for reviewed ones. A translator who agrees
    can be credited as `dcterms:contributor` in the ontology header (none is yet; the README says
