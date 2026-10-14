@@ -1,5 +1,5 @@
 ##############################################################################
-# fraternal SHACL shapes  —  v1.1.0   (use together with membership-shapes.ttl)
+# fraternal SHACL shapes  —  v1.2.0   (use together with membership-shapes.ttl)
 ##############################################################################
 
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -20,7 +20,7 @@
 
 <https://w3id.org/fraternal/shapes>
     a owl:Ontology ;
-    owl:versionInfo "1.1.0" ;
+    owl:versionInfo "1.2.0" ;
     rdfs:label "fraternal SHACL shapes"@en , "SHACL-regler för fraternal"@sv , "SHACL-Shapes für fraternal"@de , "Shapes SHACL pour fraternal"@fr , "Shape SHACL per fraternal"@it , "Formas SHACL de fraternal"@es , "Formas SHACL de fraternal (regras de validação)"@pt , "A fraternal SHACL-szabályai"@hu , "Κανόνες SHACL για το fraternal"@el , "SHACL-regels voor fraternal"@nl ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;

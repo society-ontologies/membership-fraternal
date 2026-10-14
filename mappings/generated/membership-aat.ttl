@@ -1,10 +1,10 @@
 # Generated from membership-aat.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
 
 <https://w3id.org/membership/mappings/membership-aat> a <http://www.w3.org/2002/07/owl#Ontology> ;
-    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.1.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
     <http://purl.org/dc/terms/description> "membership classes and codelist hubs mapped to the Getty Art & Architecture Thesaurus. Targets found via the Getty SPARQL endpoint on 2026-09-29. The object_label values are from the Art & Architecture Thesaurus (AAT), © J. Paul Getty Trust, used under the Open Data Commons Attribution License (ODC-By) 1.0." ;
-    <http://purl.org/dc/terms/created> "2026-09-29" .
+    <http://purl.org/dc/terms/created> "2026-10-14" .
 
 <http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .

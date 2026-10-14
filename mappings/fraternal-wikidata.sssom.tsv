@@ -5,10 +5,10 @@
 #   skos: http://www.w3.org/2004/02/skos/core#
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-wikidata
-# mapping_set_version: 1.0.0
+# mapping_set_version: 1.1.0
 # mapping_set_description: fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-30
+# mapping_date: 2026-10-14
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 fraternal:FraternalOrder	Fraternal Order	skos:closeMatch	wd:Q996839	fraternal organization	semapv:ManualMappingCuration	0.8	Wikidata item is broader in practice.
 fraternal:Lodge	Lodge	skos:narrowMatch	wd:Q1454597	masonic lodge	semapv:ManualMappingCuration	0.9	fraternal:Lodge covers the local unit of any order.

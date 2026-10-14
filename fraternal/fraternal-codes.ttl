@@ -1,5 +1,5 @@
 ##############################################################################
-# fraternal codelists  —  v1.1.0
+# fraternal codelists  —  v1.2.0
 #
 # SKOS codelists for the Fraternal Orders and Sororities Ontology. Like the membership
 # codelists these are hubs: an order's own degrees and titles map to them in
@@ -26,10 +26,10 @@
 
 <https://w3id.org/fraternal/code>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/fraternal/code/1.1.0> ;
-    owl:versionInfo "1.1.0" ;
-    owl:priorVersion <https://w3id.org/fraternal/code/1.0.0> ;
-    owl:backwardCompatibleWith <https://w3id.org/fraternal/code/1.0.0> ;
+    owl:versionIRI <https://w3id.org/fraternal/code/1.2.0> ;
+    owl:versionInfo "1.2.0" ;
+    owl:priorVersion <https://w3id.org/fraternal/code/1.1.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/fraternal/code/1.1.0> ;
     owl:imports <https://w3id.org/fraternal> , <https://w3id.org/membership/code> ;
     dcterms:title "Fraternal Orders and Sororities — codelists"@en ,
                   "Ordenssällskap — kodlistor"@sv ,
@@ -43,7 +43,7 @@
                   "Ordegenootschappen en zusterschappen — codelijsten"@nl ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
-    dcterms:modified "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-14"^^xsd:date ;
     vann:preferredNamespacePrefix "fraternalc" ;
     vann:preferredNamespaceUri "https://w3id.org/fraternal/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;

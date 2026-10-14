@@ -1,5 +1,5 @@
 ##############################################################################
-# membership SHACL shapes  —  v1.1.0
+# membership SHACL shapes  —  v1.2.0
 #
 # Validation lives here, not in OWL domains/ranges. Validate a data graph that
 # is merged with the ontology and codelists, so sh:class sees the subclass
@@ -36,7 +36,7 @@
 
 <https://w3id.org/membership/shapes>
     a owl:Ontology ;
-    owl:versionInfo "1.1.0" ;
+    owl:versionInfo "1.2.0" ;
     rdfs:label "membership SHACL shapes"@en , "SHACL-regler för membership"@sv , "SHACL-Shapes für membership"@de , "Shapes SHACL pour membership"@fr , "Shape SHACL per membership"@it , "Formas SHACL de membership"@es , "Formas SHACL de membership (regras de validação)"@pt , "A membership SHACL-szabályai"@hu , "Κανόνες SHACL για το membership"@el , "SHACL-regels voor membership"@nl ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://orcid.org/0009-0002-6239-5346> ;
