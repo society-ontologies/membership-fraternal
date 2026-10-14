@@ -1,0 +1,162 @@
+# Generated from fraternal-netherlands.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
+
+<https://w3id.org/fraternal/mappings/fraternal-netherlands> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/description> "The grades of the Dutch orders of civil merit and the candidate stages, ceremonies and offices of Dutch and Flemish student societies placed under the generic chivalric grades, member stages, ceremonies and offices." ;
+    <http://purl.org/dc/terms/created> "2026-10-13" .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_justification> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/author_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_tool_id> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/confidence> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/subject_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/object_label> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/comment> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/sssom/mapping_date> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+<https://w3id.org/fraternal/code/nlOrderMember> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/memberGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/nlOrderMember> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/memberGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Member" ;
+  <https://w3id.org/sssom/object_label> "Member Grade" ;
+  <https://w3id.org/sssom/comment> "The lowest grade of the Order of Orange-Nassau." ] .
+
+<https://w3id.org/fraternal/code/nlKnight> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/knightGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/nlKnight> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/knightGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Knight" ;
+  <https://w3id.org/sssom/object_label> "Knight" ;
+  <https://w3id.org/sssom/comment> "The knight grade." ] .
+
+<https://w3id.org/fraternal/code/nlOfficer> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/officerGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/nlOfficer> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/officerGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Officer" ;
+  <https://w3id.org/sssom/object_label> "Officer" ;
+  <https://w3id.org/sssom/comment> "The officer grade." ] .
+
+<https://w3id.org/fraternal/code/nlCommander> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/commanderGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/nlCommander> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/commanderGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Commander" ;
+  <https://w3id.org/sssom/object_label> "Commander" ;
+  <https://w3id.org/sssom/comment> "The commander grade." ] .
+
+<https://w3id.org/fraternal/code/nlGrandOfficer> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/commanderFirstClassGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/nlGrandOfficer> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/commanderFirstClassGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Grand Officer" ;
+  <https://w3id.org/sssom/object_label> "Commander First Class" ;
+  <https://w3id.org/sssom/comment> "The grade between Commander and Knight Grand Cross." ] .
+
+<https://w3id.org/fraternal/code/nlKnightGrandCross> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/grandCrossGrade> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/nlKnightGrandCross> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/grandCrossGrade> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.95"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Knight Grand Cross" ;
+  <https://w3id.org/sssom/object_label> "Grand Cross" ;
+  <https://w3id.org/sssom/comment> "The highest grade of both orders." ] .
+
+<https://w3id.org/fraternal/code/feut> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/noviceStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/feut> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/noviceStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.85"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Feut" ;
+  <https://w3id.org/sssom/object_label> "Novice Stage" ;
+  <https://w3id.org/sssom/comment> "The candidate member of a Dutch student society during the ontgroening." ] .
+
+<https://w3id.org/fraternal/code/schacht> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fraternal/code/noviceStage> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/schacht> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/fraternal/code/noviceStage> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.85"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Schacht" ;
+  <https://w3id.org/sssom/object_label> "Novice Stage" ;
+  <https://w3id.org/sssom/comment> "The candidate member of a Flemish student society during the introductory period and the baptism." ] .
+
+<https://w3id.org/fraternal/code/ontgroening> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/ontgroening> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Ontgroening" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ;
+  <https://w3id.org/sssom/comment> "The rite of passage with trials and tasks that candidates go through before they are received." ] .
+
+<https://w3id.org/fraternal/code/inauguratie> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/ceremony> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/inauguratie> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/ceremony> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Inauguratie" ;
+  <https://w3id.org/sssom/object_label> "Ceremony" ;
+  <https://w3id.org/sssom/comment> "The ritual by which a candidate is inaugurated as a full member; a kind of initiation." ] .
+
+<https://w3id.org/fraternal/code/cantus> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/socialEvening> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/cantus> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/socialEvening> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Cantus" ;
+  <https://w3id.org/sssom/object_label> "Social Evening" ;
+  <https://w3id.org/sssom/comment> "A gathering of singing and drinking governed by fixed rules, like the Kneipe of the German student traditions." ] .
+
+<https://w3id.org/fraternal/code/praeses> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/membership/code/president> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/praeses> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/president> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.9"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Praeses" ;
+  <https://w3id.org/sssom/object_label> "President" ;
+  <https://w3id.org/sssom/comment> "The chair of a student society; also presides at a cantus." ] .
+
+<https://w3id.org/fraternal/code/doopmeester> <http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/membership/code/noviceMaster> .
+[ a <http://www.w3.org/2002/07/owl#Axiom> ;
+  <http://www.w3.org/2002/07/owl#annotatedSource> <https://w3id.org/fraternal/code/doopmeester> ;
+  <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+  <http://www.w3.org/2002/07/owl#annotatedTarget> <https://w3id.org/membership/code/noviceMaster> ;
+  <https://w3id.org/sssom/mapping_justification> <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+  <https://w3id.org/sssom/confidence> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> ;
+  <https://w3id.org/sssom/subject_label> "Doopmeester" ;
+  <https://w3id.org/sssom/object_label> "Novice Master" ;
+  <https://w3id.org/sssom/comment> "Runs the student baptism of the schachten; the novice master looks after novices for their whole time as novices, so the doopmeester is a narrower case." ] .
+
