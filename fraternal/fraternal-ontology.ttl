@@ -1,5 +1,5 @@
 ##############################################################################
-# fraternal — Fraternal Orders and Sororities Ontology  —  v1.1.0
+# fraternal — Fraternal Orders and Sororities Ontology  —  v1.2.0
 #
 # Specialises membership for organisations bound together by initiation, ritual and
 # graded degrees: fraternal orders, lodges, college fraternities, sororities,
@@ -29,10 +29,10 @@
 
 <https://w3id.org/fraternal>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/fraternal/1.1.0> ;
-    owl:versionInfo "1.1.0" ;
-    owl:priorVersion <https://w3id.org/fraternal/1.0.0> ;
-    owl:backwardCompatibleWith <https://w3id.org/fraternal/1.0.0> ;
+    owl:versionIRI <https://w3id.org/fraternal/1.2.0> ;
+    owl:versionInfo "1.2.0" ;
+    owl:priorVersion <https://w3id.org/fraternal/1.1.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/fraternal/1.1.0> ;
     owl:imports <https://w3id.org/membership> ;
     dcterms:title "Fraternal Orders and Sororities Ontology"@en ,
                   "Ontologi för ordenssällskap"@sv ,
@@ -56,7 +56,7 @@
                         "Uitbreiding van de Ontologie van ledenorganisaties (membership) voor ordegenootschappen, loges, broederschappen en zusterschappen: gradenstelsels en hun volgorde, inwijding en graadverlening, loges en leidinggevende organen, ceremonies, insignes, erkenning en vriendschap tussen ordes, en beoordelingen of een ridderorde echt is."@nl ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
-    dcterms:modified "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-14"^^xsd:date ;
     vann:preferredNamespacePrefix "fraternal" ;
     vann:preferredNamespaceUri "https://w3id.org/fraternal#" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;

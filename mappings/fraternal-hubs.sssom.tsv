@@ -4,10 +4,10 @@
 #   skos: http://www.w3.org/2004/02/skos/core#
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-hubs
-# mapping_set_version: 1.0.0
+# mapping_set_version: 1.1.0
 # mapping_set_description: fraternal order types, Studentenverbindung membership forms and gathering roles placed under the membership hubs.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-30
+# mapping_date: 2026-10-14
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 fraternalc:fraternalOrder	Fraternal Order	skos:exactMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	1.0
 fraternalc:collegeFraternity	College Fraternity	skos:broadMatch	mbrc:fraternalOrganization	Fraternal Organisation	semapv:ManualMappingCuration	0.95

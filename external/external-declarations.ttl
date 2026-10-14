@@ -28,10 +28,10 @@
 
 <https://w3id.org/membership/external>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/membership/external/1.1.0> ;
-    owl:versionInfo "1.1.0" ;
-    owl:priorVersion <https://w3id.org/membership/external/1.0.0> ;
-    owl:backwardCompatibleWith <https://w3id.org/membership/external/1.0.0> ;
+    owl:versionIRI <https://w3id.org/membership/external/1.2.0> ;
+    owl:versionInfo "1.2.0" ;
+    owl:priorVersion <https://w3id.org/membership/external/1.1.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/membership/external/1.1.0> ;
     rdfs:label "External declarations for the membership/fraternal ontology stack"@en ,
                "Externa deklarationer för ontologistacken membership/fraternal"@sv ,
                "Déclarations externes pour la pile d'ontologies membership/fraternal"@fr ,

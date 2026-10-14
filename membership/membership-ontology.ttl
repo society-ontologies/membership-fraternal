@@ -1,5 +1,5 @@
 ##############################################################################
-# membership — Membership Organisations Ontology  —  v1.1.0
+# membership — Membership Organisations Ontology  —  v1.2.0
 #
 # Generic layer for membership organisations of every kind, closed or open:
 # private clubs (gentlemen's and ladies' clubs, dining clubs), societies and
@@ -41,10 +41,10 @@
 
 <https://w3id.org/membership>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/membership/1.1.0> ;
-    owl:versionInfo "1.1.0" ;
-    owl:priorVersion <https://w3id.org/membership/1.0.0> ;
-    owl:backwardCompatibleWith <https://w3id.org/membership/1.0.0> ;
+    owl:versionIRI <https://w3id.org/membership/1.2.0> ;
+    owl:versionInfo "1.2.0" ;
+    owl:priorVersion <https://w3id.org/membership/1.1.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/membership/1.1.0> ;
     owl:imports <https://w3id.org/membership/external> ;
     dcterms:title "Membership Organisations Ontology"@en ,
                   "Ontologi för medlemsorganisationer"@sv ,
@@ -68,7 +68,7 @@
                         "Generieke ontologie voor ledenorganisaties van elke soort, besloten of open: van besloten clubs, verenigingen, studentennaties en (via de fraternal-uitbreiding) broederschappen en ordes tot hobby- en supportersclubs, verenigingen, politieke partijen en vakbonden: lidmaatschappen en hun levenscyclus, toelating en contributie, functies en ambtstermijnen, bijeenkomsten en deelname, onderscheidingen en hun verlening, onderkomens en wederkerigheid tussen organisaties."@nl ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
-    dcterms:modified "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-14"^^xsd:date ;
     vann:preferredNamespacePrefix "mbr" ;
     vann:preferredNamespaceUri "https://w3id.org/membership#" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;

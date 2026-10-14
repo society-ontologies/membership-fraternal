@@ -5,10 +5,10 @@
 #   skos: http://www.w3.org/2004/02/skos/core#
 #   semapv: https://w3id.org/semapv/vocab/
 # mapping_set_id: https://w3id.org/fraternal/mappings/fraternal-aat
-# mapping_set_version: 1.0.0
+# mapping_set_version: 1.1.0
 # mapping_set_description: fraternal classes and codelist hubs mapped to the Getty Art & Architecture Thesaurus. Targets found via the Getty SPARQL endpoint on 2026-09-29. The object_label values are from the Art & Architecture Thesaurus (AAT), © J. Paul Getty Trust, used under the Open Data Commons Attribution License (ODC-By) 1.0.
 # license: https://creativecommons.org/publicdomain/zero/1.0/
-# mapping_date: 2026-09-29
+# mapping_date: 2026-10-14
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
 fraternal:Insignia	Insignia	skos:closeMatch	aat:300390959	order insignias	semapv:ManualMappingCuration	0.7
 fraternal:Lodge	Lodge	skos:relatedMatch	aat:300007071	fraternal lodges	semapv:ManualMappingCuration	0.6	AAT concept denotes the building.

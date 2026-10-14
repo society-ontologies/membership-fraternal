@@ -1,10 +1,10 @@
 # Generated from fraternal-wikidata.sssom.tsv by mappings/sssom2ttl.py — do not edit by hand.
 
 <https://w3id.org/fraternal/mappings/fraternal-wikidata> a <http://www.w3.org/2002/07/owl#Ontology> ;
-    <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" ;
+    <http://www.w3.org/2002/07/owl#versionInfo> "1.1.0" ;
     <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
     <http://purl.org/dc/terms/description> "fraternal classes, properties and codelist hubs mapped to Wikidata. Targets checked against the Wikidata API on 2026-09-30." ;
-    <http://purl.org/dc/terms/created> "2026-09-30" .
+    <http://purl.org/dc/terms/created> "2026-10-14" .
 
 <http://www.w3.org/2004/02/skos/core#closeMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://www.w3.org/2004/02/skos/core#exactMatch> a <http://www.w3.org/2002/07/owl#AnnotationProperty> .

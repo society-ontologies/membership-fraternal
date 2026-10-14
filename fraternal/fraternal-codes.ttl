@@ -1,5 +1,5 @@
 ##############################################################################
-# fraternal codelists  —  v1.1.0
+# fraternal codelists  —  v1.2.0
 #
 # SKOS codelists for the Fraternal Orders and Sororities Ontology. Like the membership
 # codelists these are hubs: an order's own degrees and titles map to them in
@@ -26,10 +26,10 @@
 
 <https://w3id.org/fraternal/code>
     a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/fraternal/code/1.1.0> ;
-    owl:versionInfo "1.1.0" ;
-    owl:priorVersion <https://w3id.org/fraternal/code/1.0.0> ;
-    owl:backwardCompatibleWith <https://w3id.org/fraternal/code/1.0.0> ;
+    owl:versionIRI <https://w3id.org/fraternal/code/1.2.0> ;
+    owl:versionInfo "1.2.0" ;
+    owl:priorVersion <https://w3id.org/fraternal/code/1.1.0> ;
+    owl:backwardCompatibleWith <https://w3id.org/fraternal/code/1.1.0> ;
     owl:imports <https://w3id.org/fraternal> , <https://w3id.org/membership/code> ;
     dcterms:title "Fraternal Orders and Sororities — codelists"@en ,
                   "Ordenssällskap — kodlistor"@sv ,
@@ -43,7 +43,7 @@
                   "Ordegenootschappen en zusterschappen — codelijsten"@nl ;
     dcterms:created "2026-09-29"^^xsd:date ;
     dcterms:issued "2026-10-09"^^xsd:date ;
-    dcterms:modified "2026-10-09"^^xsd:date ;
+    dcterms:modified "2026-10-14"^^xsd:date ;
     vann:preferredNamespacePrefix "fraternalc" ;
     vann:preferredNamespaceUri "https://w3id.org/fraternal/code/" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -321,7 +321,7 @@ fraternalc:selfStyledOrderOfChivalry a skos:Concept , owl:NamedIndividual ;
 fraternalc:gastronomicBrotherhood a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:OrderTypes ; skos:topConceptOf fraternalc:OrderTypes ;
     skos:prefLabel "Food and Wine Brotherhood"@en , "Gastronomiskt brödraskap"@sv , "Confrérie gastronomique"@fr , "Wein- und Gastronomiebruderschaft"@de , "Confraternita enogastronomica"@it , "Cofradía gastronómica"@es , "Confraria gastronómica"@pt , "Gasztronómiai testvériség"@hu , "Γαστρονομική αδελφότητα"@el , "Wijn- en gastronomiebroederschap"@nl ;
-    skos:altLabel "Wine Brotherhood"@en , "Confrérie bachique"@fr , "Confrérie vineuse"@fr , "Confraternita del vino"@it ;
+    skos:altLabel "Wine Brotherhood"@en , "Confrérie vineuse"@fr , "Confraternita del vino"@it ;
     skos:definition "A brotherhood devoted to a regional food or drink tradition, such as a wine, cheese or beer brotherhood, whose members are inducted at a ceremonial chapter and often wear robes and bear titles in the chivalric style."@en ,
                     "Ett brödraskap ägnat en regional mat- eller dryckestradition, som ett vin-, ost- eller ölbrödraskap, vars medlemmar upptas vid en ceremoniell sammankomst och ofta bär dräkt och titlar i riddarordensstil."@sv ,
                     "Confrérie vouée à une tradition gastronomique ou viticole régionale, dont les membres sont intronisés lors d'un chapitre et portent souvent une robe et des titres de style chevaleresque."@fr ,
@@ -571,7 +571,7 @@ fraternalc:CraftDegrees a skos:ConceptScheme , fraternal:DegreeSystem , owl:Name
     skos:prefLabel "Generic Craft-style Degrees"@en , "Generiska grader i hantverksstil"@sv , "Degrés génériques de style artisanal"@fr , "Allgemeine Grade im Stil der Handwerkslogen"@de , "Gradi generici in stile artigiano"@it , "Grados genéricos de estilo gremial"@es , "Graus genéricos de estilo corporativo"@pt , "Általános mesterségi stílusú fokozatok"@hu , "Γενικοί βαθμοί τεχνικού τύπου"@el , "Generieke graden in ambachtsstijl"@nl ;
     skos:definition "A generic ladder of degrees in the style of craft lodges: entry, intermediate, full, higher."@en ,
                     "En generisk gradstege i hantverkslogernas stil: inträde, mellangrad, fullgrad, högre grad."@sv ,
-                    "Échelle générique de degrés dans le style des loges artisanales : entrée, intermédiaire, plein, supérieur."@fr ,
+                    "Échelle générique de degrés dans le style des loges artisanales : apprenti, compagnon, maître et grades supérieurs."@fr ,
                     "Eine allgemeine Stufenfolge von Graden im Stil der Handwerkslogen: Eingangs-, Mittel-, Voll- und höherer Grad."@de ,
                     "Una scala generica di gradi nello stile delle logge artigiane: ingresso, intermedio, pieno, superiore."@it ,
                     "Una escala genérica de grados al estilo de las logias de oficio: de entrada, intermedio, pleno, superior."@es ,
@@ -682,8 +682,8 @@ fraternalc:commanderGrade a fraternal:Degree , skos:Concept , owl:NamedIndividua
 fraternalc:commanderFirstClassGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:ChivalricGrades ; skos:topConceptOf fraternalc:ChivalricGrades ;
     fraternal:degreeRank 5 ; fraternal:nextDegree fraternalc:grandCrossGrade ;
-    skos:prefLabel "Commander First Class"@en , "Kommendör av första klassen"@sv , "Commandeur de première classe"@fr , "Kommandeur 1. Klasse"@de , "Commendatore di prima classe"@it , "Comendador de primera clase"@es , "Comendador de primeira classe"@pt , "Elsőosztályú parancsnok"@hu , "Ταξιάρχης πρώτης τάξης"@el , "Commandeur eerste klasse"@nl ;
-    skos:altLabel "Grand Officer"@en , "Grand officier"@fr , "Grande Ufficiale"@it ;
+    skos:prefLabel "Commander First Class"@en , "Kommendör av första klassen"@sv , "Grand officier"@fr , "Kommandeur 1. Klasse"@de , "Commendatore di prima classe"@it , "Comendador de primera clase"@es , "Comendador de primeira classe"@pt , "Elsőosztályú parancsnok"@hu , "Ταξιάρχης πρώτης τάξης"@el , "Commandeur eerste klasse"@nl ;
+    skos:altLabel "Grand Officer"@en , "Commandeur de première classe"@fr , "Grande Ufficiale"@it ;
     skos:definition "The grade between commander and grand cross."@en , "Graden mellan kommendör och storkors."@sv , "Le grade entre commandeur et grand-croix."@fr , "Die Stufe zwischen Kommandeur und Großkreuz."@de , "Il grado tra commendatore e gran croce."@it , "El grado entre comendador y gran cruz."@es , "O grau entre comendador e grã-cruz."@pt , "A parancsnok és a nagykereszt közötti fokozat."@hu , "Ο βαθμός μεταξύ ταξιάρχη και μεγαλόσταυρου."@el , "De graad tussen commandeur en grootkruis."@nl .
 
 fraternalc:grandCrossGrade a fraternal:Degree , skos:Concept , owl:NamedIndividual ;
@@ -1246,16 +1246,16 @@ fraternalc:rectifiedScottishRite a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:MasonicRites ; skos:broader fraternalc:masonicRite ;
     skos:prefLabel "Rectified Scottish Rite"@en , "Rektifierade skotska riten"@sv , "Rite écossais rectifié"@fr , "Rektifizierter Schottischer Ritus"@de , "Rito Scozzese Rettificato"@it , "Rito Escocés Rectificado"@es , "Rito Escocês Retificado"@pt , "Reformált Skót Rítus"@hu , "Διορθωμένος Σκωτικός Τύπος"@el , "Gerectificeerde Schotse Ritus"@nl ;
     skos:altLabel "RER"@fr ;
-    skos:definition "A rite descending from the Strict Observance, reformed at the Convent of Lyon in 1778, with a Christian-rooted ritual and chivalric higher degrees."@en ,
-                    "En rit som härstammar från Strikt observans, reformerat vid konventet i Lyon 1778, med en kristet förankrad ritual och riddargrader som högre grader."@sv ,
-                    "Rite issu de la Stricte Observance, réformé au convent de Lyon en 1778, au rituel d'inspiration chrétienne et aux grades supérieurs chevaleresques."@fr ,
-                    "Ein Ritus, der von der Strikten Observanz abstammt und auf dem Konvent von Lyon 1778 reformiert wurde, mit einem christlich verwurzelten Ritual und ritterlichen höheren Graden."@de ,
-                    "Un rito discendente dalla Stretta Osservanza, riformato al Convento di Lione nel 1778, con un rituale di radice cristiana e gradi superiori cavallereschi."@it ,
-                    "Un rito descendiente de la Estricta Observancia, reformado en el Convento de Lyon en 1778, con un ritual de raíz cristiana y grados superiores caballerescos."@es ,
-                    "Um rito descendente da Estrita Observância, reformado no Convento de Lião em 1778, com um ritual de raiz cristã e graus superiores cavaleirescos."@pt ,
-                    "A Szigorú Megfigyelésből származó rítus, amelyet az 1778-as lyoni konventen reformáltak, keresztény gyökerű szertartással és lovagi magasabb fokozatokkal."@hu ,
-                    "Ένας τύπος που προέρχεται από την Αυστηρή Τήρηση, μεταρρυθμισμένος στο Convent της Λυών το 1778, με τελετουργικό χριστιανικής ρίζας και ιπποτικούς ανώτερους βαθμούς."@el ,
-                    "Een ritus die afstamt van de Strikte Observantie, hervormd op de Conventus van Lyon in 1778, met een in het christendom wortelend ritueel en ridderlijke hogere graden."@nl .
+    skos:definition "A rite descending from the Strict Observance, reformed at the Convent of Lyon in 1778 and codified at the Convent of Wilhelmsbad in 1782, with a Christian-rooted ritual and chivalric higher degrees."@en ,
+                    "En rit som härstammar från Strikt observans, reformerat vid konventet i Lyon 1778 och kodifierat vid konventet i Wilhelmsbad 1782, med en kristet förankrad ritual och riddargrader som högre grader."@sv ,
+                    "Rite issu de la Stricte Observance, réformé au convent de Lyon en 1778 et codifié au convent de Wilhelmsbad en 1782, au rituel d'inspiration chrétienne et aux grades supérieurs de chevaliers."@fr ,
+                    "Ein Ritus, der von der Strikten Observanz abstammt und auf dem Konvent von Lyon 1778 reformiert und auf dem Konvent von Wilhelmsbad 1782 kodifiziert wurde, mit einem christlich verwurzelten Ritual und ritterlichen höheren Graden."@de ,
+                    "Un rito discendente dalla Stretta Osservanza, riformato al Convento di Lione nel 1778 e codificato al Convento di Wilhelmsbad nel 1782, con un rituale di radice cristiana e gradi superiori cavallereschi."@it ,
+                    "Un rito descendiente de la Estricta Observancia, reformado en el Convento de Lyon en 1778 y codificado en el Convento de Wilhelmsbad en 1782, con un ritual de raíz cristiana y grados superiores caballerescos."@es ,
+                    "Um rito descendente da Estrita Observância, reformado no Convento de Lião em 1778 e codificado no Convento de Wilhelmsbad em 1782, com um ritual de raiz cristã e graus superiores cavaleirescos."@pt ,
+                    "A Szigorú Megfigyelésből származó rítus, amelyet az 1778-as lyoni konventen reformáltak, és az 1782-es wilhelmsbadi konventen kodifikáltak, keresztény gyökerű szertartással és lovagi magasabb fokozatokkal."@hu ,
+                    "Ένας τύπος που προέρχεται από την Αυστηρή Τήρηση, μεταρρυθμισμένος στο Convent της Λυών το 1778 και κωδικοποιημένος στο Convent του Βίλχελμσμπαντ το 1782, με τελετουργικό χριστιανικής ρίζας και ιπποτικούς ανώτερους βαθμούς."@el ,
+                    "Een ritus die afstamt van de Strikte Observantie, hervormd op de Conventus van Lyon in 1778 en gecodificeerd op de Conventus van Wilhelmsbad in 1782, met een in het christendom wortelend ritueel en ridderlijke hogere graden."@nl .
 
 fraternalc:lifelongBond a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:StudentenverbindungCharacteristics ; skos:topConceptOf fraternalc:StudentenverbindungCharacteristics ;
@@ -1409,7 +1409,7 @@ fraternalc:CeremonyTypes a skos:ConceptScheme , owl:NamedIndividual ;
 fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
     skos:prefLabel "Initiation Ceremony"@en , "Initieringsceremoni"@sv , "Cérémonie d'initiation"@fr , "Initiationszeremonie"@de , "Cerimonia d'iniziazione"@it , "Ceremonia de iniciación"@es , "Cerimónia de iniciação"@pt , "Beavatási szertartás"@hu , "Τελετή μύησης"@el , "Inwijdingsceremonie"@nl ;
-    skos:altLabel "Recipiering"@sv , "Intronisation"@fr , "Iniziazione"@it ;
+    skos:altLabel "Recipiering"@sv , "Iniziazione"@it ;
     skos:definition "The ceremony in which a new member is admitted to the order."@en ,
                     "Ceremonin där en ny medlem upptas i ordern."@sv ,
                     "La cérémonie où un nouveau membre est admis dans l'ordre."@fr ,
@@ -1423,8 +1423,8 @@ fraternalc:initiationCeremony a skos:Concept , owl:NamedIndividual ;
 
 fraternalc:degreeCeremony a skos:Concept , owl:NamedIndividual ;
     skos:inScheme fraternalc:CeremonyTypes ; skos:topConceptOf fraternalc:CeremonyTypes ;
-    skos:prefLabel "Degree Ceremony"@en , "Gradceremoni"@sv , "Cérémonie de passage de degré"@fr , "Gradzeremonie"@de , "Cerimonia di grado"@it , "Ceremonia de grado"@es , "Cerimónia de grau"@pt , "Fokozati szertartás"@hu , "Τελετή βαθμού"@el , "Graadceremonie"@nl ;
-    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv , "Passage"@fr , "Élévation"@fr , "Passaggio di grado"@it , "Innalzamento"@it ;
+    skos:prefLabel "Degree Ceremony"@en , "Gradceremoni"@sv , "Cérémonie d'élévation"@fr , "Gradzeremonie"@de , "Cerimonia di grado"@it , "Ceremonia de grado"@es , "Cerimónia de grau"@pt , "Fokozati szertartás"@hu , "Τελετή βαθμού"@el , "Graadceremonie"@nl ;
+    skos:altLabel "Passing"@en , "Raising"@en , "Befordran"@sv , "Passaggio di grado"@it , "Innalzamento"@it ;
     skos:definition "The ceremony in which a member is advanced to the next degree."@en ,
                     "Ceremonin där en medlem avancerar till nästa grad."@sv ,
                     "La cérémonie où un membre passe au degré suivant."@fr ,
