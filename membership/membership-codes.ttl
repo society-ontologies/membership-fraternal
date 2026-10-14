@@ -88,7 +88,7 @@ mbrc:informalCircle a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:OrganizationTypes ; skos:broader mbrc:voluntaryAssociation ;
     skos:prefLabel "Informal Circle"@en , "Kotteri"@sv , "Cercle informel"@fr , "Informeller Kreis"@de , "Cerchia informale"@it , "Círculo informal"@es , "Círculo informal"@pt , "Informális kör"@hu , "Άτυπος κύκλος"@el , "Informele kring"@nl ;
     skos:altLabel "Coterie"@en , "Circle of Friends"@en , "Vänkrets"@sv , "Umgängeskrets"@sv ,
-                  "Coterie"@fr , "Cercle d'amis"@fr , "Freundeskreis"@de ,
+                  "Cercle d'amis"@fr , "Freundeskreis"@de ,
                   "Cerchia di amici"@it ,
                   "Consorteria"@it ;
     skos:definition "A relatively closed company of friends or associates without legal status or registration, held together by friendship or invitation rather than formal admission. It may be a temporary group that keeps together at a larger gathering, or a more lasting circle of friends, often formed to arrange or take part in an occasion such as a ball, a banquet or a student celebration."@en ,
@@ -438,7 +438,7 @@ mbrc:academy a skos:Concept , owl:NamedIndividual ;
     skos:prefLabel "Academy"@en , "Akademi"@sv , "Académie"@fr , "Akademie"@de , "Accademia"@it , "Academia"@es , "Academia"@pt , "Akadémia"@hu , "Ακαδημία"@el , "Academie"@nl ;
     skos:definition "A learned society whose members are elected by its existing members, usually for life and often to a fixed number of numbered seats, as in the Académie française or the Swedish Academy."@en ,
                     "Ett lärt sällskap vars ledamöter väljs av de sittande ledamöterna, vanligen på livstid och ofta till ett fast antal numrerade stolar, som i Académie française eller Svenska Akademien."@sv ,
-                    "Société savante dont les membres sont élus par ses membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ,
+                    "Société savante dont les membres élisent les nouveaux membres, en général à vie et souvent à un nombre fixe de fauteuils numérotés, comme l'Académie française ou l'Académie suédoise."@fr ,
                     "Eine gelehrte Gesellschaft, deren Mitglieder von den bisherigen Mitgliedern gewählt werden, meist auf Lebenszeit und oft auf eine feste Zahl nummerierter Sitze, wie bei der Académie française oder der Schwedischen Akademie."@de ,
                     "Una società dotta i cui membri sono eletti dai membri già in carica, di solito a vita e spesso per un numero fisso di seggi numerati, come nell'Académie française o nell'Accademia svedese."@it ,
                     "Una sociedad científica cuyos miembros son elegidos por sus miembros actuales, normalmente de por vida y a menudo para un número fijo de sillones numerados, como en la Académie française o la Academia Sueca."@es ,
@@ -1030,8 +1030,8 @@ mbrc:founding a skos:Concept , owl:NamedIndividual ;
 
 mbrc:benefactorMember a skos:Concept , owl:NamedIndividual ;
     skos:inScheme mbrc:MembershipCategories , mbrc:CategoryContribution ; skos:topConceptOf mbrc:MembershipCategories , mbrc:CategoryContribution ;
-    skos:prefLabel "Benefactor Member"@en , "Understödjande medlem"@sv , "Membre bienfaiteur"@fr , "Fördermitglied"@de , "Socio sostenitore"@it , "Miembro protector"@es , "Membro benemérito"@pt , "Támogató tag"@hu , "Ευεργετικό μέλος"@el , "Begunstigend lid"@nl ;
-    skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Gynnare"@sv , "Stödmedlem"@sv , "Socio benefattore"@it ;
+    skos:prefLabel "Benefactor Member"@en , "Stödmedlem"@sv , "Membre bienfaiteur"@fr , "Fördermitglied"@de , "Socio sostenitore"@it , "Miembro protector"@es , "Membro benemérito"@pt , "Támogató tag"@hu , "Ευεργετικό μέλος"@el , "Begunstigend lid"@nl ;
+    skos:altLabel "Supporting Member"@en , "Patron Member"@en , "Understödjande medlem"@sv , "Gynnare"@sv , "Socio benefattore"@it ;
     skos:definition "A member who supports the organisation with a contribution above the ordinary fee. Whether the category carries a vote depends on the statutes."@en ,
                     "En medlem som stöder organisationen med ett bidrag utöver den ordinarie avgiften. Om kategorin har rösträtt avgörs av stadgarna."@sv ,
                     "Membre qui soutient l'association par une cotisation supérieure à la cotisation ordinaire. Le droit de vote dépend des statuts."@fr ,
